@@ -33,6 +33,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ListSearchHypernymsResponse)
     ListSearchHypernymsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListSearchHypernymsResponse.newBuilder() to construct.
   private ListSearchHypernymsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.SearchHypernym> searchHypernyms_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.visionai.v1.SearchHypernym> getSearchHypernymsList() {
     return searchHypernyms_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       getSearchHypernymsOrBuilderList() {
     return searchHypernyms_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
   public int getSearchHypernymsCount() {
     return searchHypernyms_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
   public com.google.cloud.visionai.v1.SearchHypernym getSearchHypernyms(int index) {
     return searchHypernyms_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +646,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
         return searchHypernymsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -653,6 +663,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
         return searchHypernymsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
         return searchHypernymsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +793,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +855,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +889,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
         int index) {
       return getSearchHypernymsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -885,6 +907,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
         return searchHypernymsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -902,6 +925,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(searchHypernyms_);
       }
     }
+
     /**
      *
      *
@@ -915,6 +939,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       return getSearchHypernymsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.SearchHypernym.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -929,6 +954,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       return getSearchHypernymsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.SearchHypernym.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -964,6 +990,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -987,6 +1014,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1038,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1032,6 +1061,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1080,7 @@ public final class ListSearchHypernymsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

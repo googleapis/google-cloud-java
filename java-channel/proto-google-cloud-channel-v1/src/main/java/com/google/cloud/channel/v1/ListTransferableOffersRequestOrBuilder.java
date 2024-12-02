@@ -36,6 +36,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return Whether the cloudIdentityId field is set.
    */
   boolean hasCloudIdentityId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return The cloudIdentityId.
    */
   java.lang.String getCloudIdentityId();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return Whether the customerName field is set.
    */
   boolean hasCustomerName();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return The customerName.
    */
   java.lang.String getCustomerName();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return The sku.
    */
   java.lang.String getSku();
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public interface ListTransferableOffersRequestOrBuilder
    * @return The billingAccount.
    */
   java.lang.String getBillingAccount();
+
   /**
    *
    *

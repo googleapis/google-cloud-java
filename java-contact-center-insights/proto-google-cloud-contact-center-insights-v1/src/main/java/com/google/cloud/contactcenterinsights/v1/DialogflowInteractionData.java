@@ -33,6 +33,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.DialogflowInteractionData)
     DialogflowInteractionDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DialogflowInteractionData.newBuilder() to construct.
   private DialogflowInteractionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dialogflowIntentId_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -306,6 +310,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -510,6 +515,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object dialogflowIntentId_ = "";
+
     /**
      *
      *
@@ -533,6 +539,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -556,6 +563,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +631,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface SuggestArticlesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ArticleAnswer article_answers = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.ArticleAnswer> getArticleAnswersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SuggestArticlesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ArticleAnswer article_answers = 1;</code>
    */
   com.google.cloud.dialogflow.v2.ArticleAnswer getArticleAnswers(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SuggestArticlesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ArticleAnswer article_answers = 1;</code>
    */
   int getArticleAnswersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SuggestArticlesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ArticleAnswerOrBuilder>
       getArticleAnswersOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface SuggestArticlesResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

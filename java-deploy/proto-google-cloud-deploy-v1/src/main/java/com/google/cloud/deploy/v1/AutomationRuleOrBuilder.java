@@ -39,6 +39,7 @@ public interface AutomationRuleOrBuilder
    * @return Whether the promoteReleaseRule field is set.
    */
   boolean hasPromoteReleaseRule();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface AutomationRuleOrBuilder
    * @return The promoteReleaseRule.
    */
   com.google.cloud.deploy.v1.PromoteReleaseRule getPromoteReleaseRule();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface AutomationRuleOrBuilder
    * @return Whether the advanceRolloutRule field is set.
    */
   boolean hasAdvanceRolloutRule();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface AutomationRuleOrBuilder
    * @return The advanceRolloutRule.
    */
   com.google.cloud.deploy.v1.AdvanceRolloutRule getAdvanceRolloutRule();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface AutomationRuleOrBuilder
    * @return Whether the repairRolloutRule field is set.
    */
   boolean hasRepairRolloutRule();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface AutomationRuleOrBuilder
    * @return The repairRolloutRule.
    */
   com.google.cloud.deploy.v1.RepairRolloutRule getRepairRolloutRule();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface AutomationRuleOrBuilder
    * @return Whether the timedPromoteReleaseRule field is set.
    */
   boolean hasTimedPromoteReleaseRule();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface AutomationRuleOrBuilder
    * @return The timedPromoteReleaseRule.
    */
   com.google.cloud.deploy.v1.TimedPromoteReleaseRule getTimedPromoteReleaseRule();
+
   /**
    *
    *

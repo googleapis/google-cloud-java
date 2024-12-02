@@ -38,6 +38,7 @@ public interface DSSEAttestationOccurrenceOrBuilder
    * @return Whether the envelope field is set.
    */
   boolean hasEnvelope();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface DSSEAttestationOccurrenceOrBuilder
    * @return The envelope.
    */
   io.grafeas.v1.Envelope getEnvelope();
+
   /**
    *
    *
@@ -69,12 +71,14 @@ public interface DSSEAttestationOccurrenceOrBuilder
    * @return Whether the statement field is set.
    */
   boolean hasStatement();
+
   /**
    * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
    *
    * @return The statement.
    */
   io.grafeas.v1.InTotoStatement getStatement();
+
   /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
   io.grafeas.v1.InTotoStatementOrBuilder getStatementOrBuilder();
 

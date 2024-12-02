@@ -45,6 +45,7 @@ public interface RomanizeTextRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface RomanizeTextRequestOrBuilder
    * @return A list containing the contents.
    */
   java.util.List<java.lang.String> getContentsList();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface RomanizeTextRequestOrBuilder
    * @return The count of contents.
    */
   int getContentsCount();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface RomanizeTextRequestOrBuilder
    * @return The contents at the given index.
    */
   java.lang.String getContents(int index);
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface RomanizeTextRequestOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
+
   /**
    *
    *

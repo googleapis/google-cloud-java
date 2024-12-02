@@ -37,6 +37,7 @@ public interface BuildOccurrenceOrBuilder
    * @return Whether the provenance field is set.
    */
   boolean hasProvenance();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface BuildOccurrenceOrBuilder
    * @return The provenance.
    */
   io.grafeas.v1.BuildProvenance getProvenance();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface BuildOccurrenceOrBuilder
    * @return The provenanceBytes.
    */
   java.lang.String getProvenanceBytes();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface BuildOccurrenceOrBuilder
    * @return Whether the intotoProvenance field is set.
    */
   boolean hasIntotoProvenance();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface BuildOccurrenceOrBuilder
    * @return The intotoProvenance.
    */
   io.grafeas.v1.InTotoProvenance getIntotoProvenance();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface BuildOccurrenceOrBuilder
    * @return Whether the intotoStatement field is set.
    */
   boolean hasIntotoStatement();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface BuildOccurrenceOrBuilder
    * @return The intotoStatement.
    */
   io.grafeas.v1.InTotoStatement getIntotoStatement();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface BuildOccurrenceOrBuilder
    * @return Whether the inTotoSlsaProvenanceV1 field is set.
    */
   boolean hasInTotoSlsaProvenanceV1();
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public interface BuildOccurrenceOrBuilder
    * @return The inTotoSlsaProvenanceV1.
    */
   io.grafeas.v1.InTotoSlsaProvenanceV1 getInTotoSlsaProvenanceV1();
+
   /**
    *
    *

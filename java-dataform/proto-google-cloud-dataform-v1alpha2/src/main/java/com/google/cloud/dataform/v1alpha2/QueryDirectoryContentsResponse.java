@@ -33,6 +33,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse)
     QueryDirectoryContentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryDirectoryContentsResponse.newBuilder() to construct.
   private QueryDirectoryContentsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,6 +83,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
      * @return Whether the file field is set.
      */
     boolean hasFile();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
      * @return The file.
      */
     java.lang.String getFile();
+
     /**
      *
      *
@@ -119,6 +122,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
      * @return Whether the directory field is set.
      */
     boolean hasDirectory();
+
     /**
      *
      *
@@ -131,6 +135,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
      * @return The directory.
      */
     java.lang.String getDirectory();
+
     /**
      *
      *
@@ -147,6 +152,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry.EntryCase
         getEntryCase();
   }
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry)
       DirectoryEntryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DirectoryEntry.newBuilder() to construct.
     private DirectoryEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -209,6 +216,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       private EntryCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -242,6 +250,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     }
 
     public static final int FILE_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -256,6 +265,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     public boolean hasFile() {
       return entryCase_ == 1;
     }
+
     /**
      *
      *
@@ -283,6 +293,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return s;
       }
     }
+
     /**
      *
      *
@@ -312,6 +323,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     }
 
     public static final int DIRECTORY_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -326,6 +338,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     public boolean hasDirectory() {
       return entryCase_ == 2;
     }
+
     /**
      *
      *
@@ -353,6 +366,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return s;
       }
     }
+
     /**
      *
      *
@@ -577,6 +591,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       public boolean hasFile() {
         return entryCase_ == 1;
       }
+
       /**
        *
        *
@@ -865,6 +881,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -893,6 +910,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -914,6 +932,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -933,6 +952,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         }
         return this;
       }
+
       /**
        *
        *
@@ -971,6 +991,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       public boolean hasDirectory() {
         return entryCase_ == 2;
       }
+
       /**
        *
        *
@@ -999,6 +1020,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1027,6 +1049,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1048,6 +1071,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1067,6 +1091,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         }
         return this;
       }
+
       /**
        *
        *
@@ -1165,6 +1190,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
   private java.util.List<
           com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry>
       directoryEntries_;
+
   /**
    *
    *
@@ -1182,6 +1208,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       getDirectoryEntriesList() {
     return directoryEntries_;
   }
+
   /**
    *
    *
@@ -1201,6 +1228,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       getDirectoryEntriesOrBuilderList() {
     return directoryEntries_;
   }
+
   /**
    *
    *
@@ -1216,6 +1244,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
   public int getDirectoryEntriesCount() {
     return directoryEntries_.size();
   }
+
   /**
    *
    *
@@ -1232,6 +1261,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       getDirectoryEntries(int index) {
     return directoryEntries_.get(index);
   }
+
   /**
    *
    *
@@ -1253,6 +1283,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -1277,6 +1308,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1474,6 +1506,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1767,6 +1800,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return directoryEntriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1785,6 +1819,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return directoryEntriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1839,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return directoryEntriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1830,6 +1866,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1854,6 +1891,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1879,6 +1917,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1905,6 +1944,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1928,6 +1968,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1952,6 +1993,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1978,6 +2020,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2042,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -2020,6 +2064,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -2035,6 +2080,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         getDirectoryEntriesBuilder(int index) {
       return getDirectoryEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2054,6 +2100,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return directoryEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2076,6 +2123,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(directoryEntries_);
       }
     }
+
     /**
      *
      *
@@ -2094,6 +2142,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
               com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2113,6 +2162,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
               com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2156,6 +2206,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -2179,6 +2230,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2202,6 +2254,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2224,6 +2277,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2242,6 +2296,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

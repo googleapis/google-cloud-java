@@ -33,6 +33,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.IOSKeySettings)
     IOSKeySettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IOSKeySettings.newBuilder() to construct.
   private IOSKeySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ALLOW_ALL_BUNDLE_IDS_FIELD_NUMBER = 2;
   private boolean allowAllBundleIds_ = false;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedBundleIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAllowedBundleIdsList() {
     return allowedBundleIds_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   public int getAllowedBundleIdsCount() {
     return allowedBundleIds_.size();
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAllowedBundleIds(int index) {
     return allowedBundleIds_.get(index);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPLE_DEVELOPER_ID_FIELD_NUMBER = 3;
   private com.google.recaptchaenterprise.v1.AppleDeveloperId appleDeveloperId_;
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAppleDeveloperId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.AppleDeveloperId.getDefaultInstance()
         : appleDeveloperId_;
   }
+
   /**
    *
    *
@@ -408,6 +417,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +653,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean allowAllBundleIds_;
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public boolean getAllowAllBundleIds() {
       return allowAllBundleIds_;
     }
+
     /**
      *
      *
@@ -677,6 +689,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       allowedBundleIds_.makeImmutable();
       return allowedBundleIds_;
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public int getAllowedBundleIdsCount() {
       return allowedBundleIds_.size();
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowedBundleIds(int index) {
       return allowedBundleIds_.get(index);
     }
+
     /**
      *
      *
@@ -771,6 +788,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAllowedBundleIdsBytes(int index) {
       return allowedBundleIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -796,6 +814,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +839,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +861,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.AppleDeveloperId.Builder,
             com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder>
         appleDeveloperIdBuilder_;
+
     /**
      *
      *
@@ -913,6 +936,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAppleDeveloperId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -939,6 +963,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
         return appleDeveloperIdBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -967,6 +992,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1019,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1054,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1080,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1101,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAppleDeveloperIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1097,6 +1127,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
             : appleDeveloperId_;
       }
     }
+
     /**
      *
      *

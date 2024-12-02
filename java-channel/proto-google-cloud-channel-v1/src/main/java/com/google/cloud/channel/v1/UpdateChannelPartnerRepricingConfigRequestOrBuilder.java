@@ -38,6 +38,7 @@ public interface UpdateChannelPartnerRepricingConfigRequestOrBuilder
    * @return Whether the channelPartnerRepricingConfig field is set.
    */
   boolean hasChannelPartnerRepricingConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateChannelPartnerRepricingConfigRequestOrBuilder
    * @return The channelPartnerRepricingConfig.
    */
   com.google.cloud.channel.v1.ChannelPartnerRepricingConfig getChannelPartnerRepricingConfig();
+
   /**
    *
    *

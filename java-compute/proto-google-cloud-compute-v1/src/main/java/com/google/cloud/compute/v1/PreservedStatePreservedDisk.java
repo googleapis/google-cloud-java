@@ -32,6 +32,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PreservedStatePreservedDisk)
     PreservedStatePreservedDiskOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PreservedStatePreservedDisk.newBuilder() to construct.
   private PreservedStatePreservedDisk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,8 +102,10 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * <code>UNDEFINED_AUTO_DELETE = 0;</code>
      */
     public static final int UNDEFINED_AUTO_DELETE_VALUE = 0;
+
     /** <code>NEVER = 74175084;</code> */
     public static final int NEVER_VALUE = 74175084;
+
     /** <code>ON_PERMANENT_INSTANCE_DELETION = 95727719;</code> */
     public static final int ON_PERMANENT_INSTANCE_DELETION_VALUE = 95727719;
 
@@ -244,6 +247,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
+
     /**
      *
      *
@@ -254,6 +258,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * <code>READ_ONLY = 91950261;</code>
      */
     public static final int READ_ONLY_VALUE = 91950261;
+
     /**
      *
      *
@@ -355,6 +360,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object autoDelete_ = "";
+
   /**
    *
    *
@@ -371,6 +377,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
   public boolean hasAutoDelete() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -395,6 +402,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -424,6 +432,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mode_ = "";
+
   /**
    *
    *
@@ -440,6 +449,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
   public boolean hasMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -464,6 +474,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -493,6 +504,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
+
   /**
    *
    *
@@ -508,6 +520,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
   public boolean hasSource() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -531,6 +544,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -748,6 +762,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -966,6 +981,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object autoDelete_ = "";
+
     /**
      *
      *
@@ -981,6 +997,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     public boolean hasAutoDelete() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1004,6 +1021,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1045,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1068,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1087,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1113,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     }
 
     private java.lang.Object mode_ = "";
+
     /**
      *
      *
@@ -1107,6 +1129,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     public boolean hasMode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1130,6 +1153,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1153,6 +1177,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1200,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1219,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1245,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     }
 
     private java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -1232,6 +1260,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     public boolean hasSource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1254,6 +1283,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1276,6 +1306,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1297,6 +1328,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1346,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

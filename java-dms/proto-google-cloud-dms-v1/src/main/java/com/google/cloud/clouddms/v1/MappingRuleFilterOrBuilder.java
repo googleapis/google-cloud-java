@@ -41,6 +41,7 @@ public interface MappingRuleFilterOrBuilder
    * @return The parentEntity.
    */
   java.lang.String getParentEntity();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface MappingRuleFilterOrBuilder
    * @return The entityNamePrefix.
    */
   java.lang.String getEntityNamePrefix();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface MappingRuleFilterOrBuilder
    * @return The entityNameSuffix.
    */
   java.lang.String getEntityNameSuffix();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface MappingRuleFilterOrBuilder
    * @return The entityNameContains.
    */
   java.lang.String getEntityNameContains();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface MappingRuleFilterOrBuilder
    * @return A list containing the entities.
    */
   java.util.List<java.lang.String> getEntitiesList();
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public interface MappingRuleFilterOrBuilder
    * @return The count of entities.
    */
   int getEntitiesCount();
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public interface MappingRuleFilterOrBuilder
    * @return The entities at the given index.
    */
   java.lang.String getEntities(int index);
+
   /**
    *
    *

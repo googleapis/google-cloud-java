@@ -283,7 +283,8 @@ public class MockGkeHubImpl extends GkeHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateConnectManifest, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateConnectManifest, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateConnectManifestResponse.class.getName(),
                   Exception.class.getName())));

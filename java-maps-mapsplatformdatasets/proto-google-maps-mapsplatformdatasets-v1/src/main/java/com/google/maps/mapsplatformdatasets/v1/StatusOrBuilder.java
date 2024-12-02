@@ -36,6 +36,7 @@ public interface StatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface StatusOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *

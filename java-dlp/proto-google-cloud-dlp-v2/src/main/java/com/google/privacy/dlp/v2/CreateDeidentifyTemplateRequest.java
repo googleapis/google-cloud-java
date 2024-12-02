@@ -33,6 +33,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CreateDeidentifyTemplateRequest)
     CreateDeidentifyTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDeidentifyTemplateRequest.newBuilder() to construct.
   private CreateDeidentifyTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -162,6 +165,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
 
   public static final int DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DeidentifyTemplate deidentifyTemplate_;
+
   /**
    *
    *
@@ -179,6 +183,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
   public boolean hasDeidentifyTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
         ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()
         : deidentifyTemplate_;
   }
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object templateId_ = "";
+
   /**
    *
    *
@@ -246,6 +253,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -277,6 +285,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
+
   /**
    *
    *
@@ -300,6 +309,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -516,6 +526,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -763,6 +774,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -806,6 +818,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -849,6 +862,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -891,6 +905,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +944,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +995,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
             com.google.privacy.dlp.v2.DeidentifyTemplate.Builder,
             com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder>
         deidentifyTemplateBuilder_;
+
     /**
      *
      *
@@ -995,6 +1012,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
     public boolean hasDeidentifyTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1017,6 +1035,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
         return deidentifyTemplateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1060,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1083,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1114,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1136,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1153,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return getDeidentifyTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1150,6 +1174,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
             : deidentifyTemplate_;
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1204,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object templateId_ = "";
+
     /**
      *
      *
@@ -1204,6 +1230,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1229,6 +1256,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1281,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1302,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1330,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object locationId_ = "";
+
     /**
      *
      *
@@ -1322,6 +1353,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1376,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1365,6 +1398,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1382,6 +1416,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

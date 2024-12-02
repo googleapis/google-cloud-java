@@ -38,6 +38,7 @@ public interface QueryDirectoryContentsRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface QueryDirectoryContentsRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface QueryDirectoryContentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface UpdateUserRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateUserRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface UpdateUserRequestOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateUserRequestOrBuilder
    * @return The user.
    */
   com.google.cloud.alloydb.v1.User getUser();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface UpdateUserRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

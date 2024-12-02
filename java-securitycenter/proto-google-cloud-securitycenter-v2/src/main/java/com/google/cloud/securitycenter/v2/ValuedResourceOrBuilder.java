@@ -38,6 +38,7 @@ public interface ValuedResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ValuedResourceOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface ValuedResourceOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface ValuedResourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface ValuedResourceOrBuilder
    * @return The enum numeric value on the wire for resourceValue.
    */
   int getResourceValueValue();
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public interface ValuedResourceOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v2.ResourceValueConfigMetadata>
       getResourceValueConfigsUsedList();
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public interface ValuedResourceOrBuilder
    */
   com.google.cloud.securitycenter.v2.ResourceValueConfigMetadata getResourceValueConfigsUsed(
       int index);
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface ValuedResourceOrBuilder
    * </code>
    */
   int getResourceValueConfigsUsedCount();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface ValuedResourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ResourceValueConfigMetadataOrBuilder>
       getResourceValueConfigsUsedOrBuilderList();
+
   /**
    *
    *

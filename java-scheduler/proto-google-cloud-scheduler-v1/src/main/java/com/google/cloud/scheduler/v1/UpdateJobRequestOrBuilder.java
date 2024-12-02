@@ -40,6 +40,7 @@ public interface UpdateJobRequestOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateJobRequestOrBuilder
    * @return The job.
    */
   com.google.cloud.scheduler.v1.Job getJob();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateJobRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateJobRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

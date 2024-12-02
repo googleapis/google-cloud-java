@@ -33,6 +33,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.chat.v1.ContextualAddOnMarkup)
     ContextualAddOnMarkupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContextualAddOnMarkup.newBuilder() to construct.
   private ContextualAddOnMarkup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * @return Whether the header field is set.
      */
     boolean hasHeader();
+
     /**
      *
      *
@@ -90,6 +92,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * @return The header.
      */
     com.google.chat.v1.ContextualAddOnMarkup.Card.CardHeader getHeader();
+
     /**
      *
      *
@@ -111,6 +114,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.chat.v1.ContextualAddOnMarkup.Card.Section sections = 2;</code>
      */
     java.util.List<com.google.chat.v1.ContextualAddOnMarkup.Card.Section> getSectionsList();
+
     /**
      *
      *
@@ -121,6 +125,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.chat.v1.ContextualAddOnMarkup.Card.Section sections = 2;</code>
      */
     com.google.chat.v1.ContextualAddOnMarkup.Card.Section getSections(int index);
+
     /**
      *
      *
@@ -131,6 +136,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.chat.v1.ContextualAddOnMarkup.Card.Section sections = 2;</code>
      */
     int getSectionsCount();
+
     /**
      *
      *
@@ -142,6 +148,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      */
     java.util.List<? extends com.google.chat.v1.ContextualAddOnMarkup.Card.SectionOrBuilder>
         getSectionsOrBuilderList();
+
     /**
      *
      *
@@ -163,6 +170,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.chat.v1.ContextualAddOnMarkup.Card.CardAction card_actions = 3;</code>
      */
     java.util.List<com.google.chat.v1.ContextualAddOnMarkup.Card.CardAction> getCardActionsList();
+
     /**
      *
      *
@@ -173,6 +181,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.chat.v1.ContextualAddOnMarkup.Card.CardAction card_actions = 3;</code>
      */
     com.google.chat.v1.ContextualAddOnMarkup.Card.CardAction getCardActions(int index);
+
     /**
      *
      *
@@ -183,6 +192,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.chat.v1.ContextualAddOnMarkup.Card.CardAction card_actions = 3;</code>
      */
     int getCardActionsCount();
+
     /**
      *
      *
@@ -194,6 +204,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      */
     java.util.List<? extends com.google.chat.v1.ContextualAddOnMarkup.Card.CardActionOrBuilder>
         getCardActionsOrBuilderList();
+
     /**
      *
      *
@@ -218,6 +229,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -231,6 +243,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -246,6 +259,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.chat.v1.ContextualAddOnMarkup.Card)
       CardOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Card.newBuilder() to construct.
     private Card(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -297,6 +311,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * @return The title.
        */
       java.lang.String getTitle();
+
       /**
        *
        *
@@ -324,6 +339,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * @return The subtitle.
        */
       java.lang.String getSubtitle();
+
       /**
        *
        *
@@ -350,6 +366,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * @return The enum numeric value on the wire for imageStyle.
        */
       int getImageStyleValue();
+
       /**
        *
        *
@@ -376,6 +393,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * @return The imageUrl.
        */
       java.lang.String getImageUrl();
+
       /**
        *
        *
@@ -389,12 +407,14 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        */
       com.google.protobuf.ByteString getImageUrlBytes();
     }
+
     /** Protobuf type {@code google.chat.v1.ContextualAddOnMarkup.Card.CardHeader} */
     public static final class CardHeader extends com.google.protobuf.GeneratedMessageV3
         implements
         // @@protoc_insertion_point(message_implements:google.chat.v1.ContextualAddOnMarkup.Card.CardHeader)
         CardHeaderOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CardHeader.newBuilder() to construct.
       private CardHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -457,6 +477,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
         /** <code>IMAGE_STYLE_UNSPECIFIED = 0;</code> */
         public static final int IMAGE_STYLE_UNSPECIFIED_VALUE = 0;
+
         /**
          *
          *
@@ -467,6 +488,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
          * <code>IMAGE = 1;</code>
          */
         public static final int IMAGE_VALUE = 1;
+
         /**
          *
          *
@@ -568,6 +590,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -593,6 +616,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return s;
         }
       }
+
       /**
        *
        *
@@ -623,6 +647,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object subtitle_ = "";
+
       /**
        *
        *
@@ -646,6 +671,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return s;
         }
       }
+
       /**
        *
        *
@@ -672,6 +698,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
       public static final int IMAGE_STYLE_FIELD_NUMBER = 3;
       private int imageStyle_ = 0;
+
       /**
        *
        *
@@ -688,6 +715,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       public int getImageStyleValue() {
         return imageStyle_;
       }
+
       /**
        *
        *
@@ -714,6 +742,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object imageUrl_ = "";
+
       /**
        *
        *
@@ -737,6 +766,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return s;
         }
       }
+
       /**
        *
        *
@@ -955,6 +985,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /** Protobuf type {@code google.chat.v1.ContextualAddOnMarkup.Card.CardHeader} */
       public static final class Builder
           extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -1180,6 +1211,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         private int bitField0_;
 
         private java.lang.Object title_ = "";
+
         /**
          *
          *
@@ -1204,6 +1236,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1228,6 +1261,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1251,6 +1285,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1270,6 +1305,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1296,6 +1332,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
 
         private java.lang.Object subtitle_ = "";
+
         /**
          *
          *
@@ -1318,6 +1355,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1340,6 +1378,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1361,6 +1400,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1378,6 +1418,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1402,6 +1443,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
 
         private int imageStyle_ = 0;
+
         /**
          *
          *
@@ -1418,6 +1460,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         public int getImageStyleValue() {
           return imageStyle_;
         }
+
         /**
          *
          *
@@ -1437,6 +1480,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1458,6 +1502,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
               ? com.google.chat.v1.ContextualAddOnMarkup.Card.CardHeader.ImageStyle.UNRECOGNIZED
               : result;
         }
+
         /**
          *
          *
@@ -1481,6 +1526,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1501,6 +1547,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
 
         private java.lang.Object imageUrl_ = "";
+
         /**
          *
          *
@@ -1523,6 +1570,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1545,6 +1593,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1566,6 +1615,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1583,6 +1633,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1696,6 +1747,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * @return The header.
        */
       java.lang.String getHeader();
+
       /**
        *
        *
@@ -1727,6 +1779,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * <code>repeated .google.chat.v1.WidgetMarkup widgets = 2;</code>
        */
       java.util.List<com.google.chat.v1.WidgetMarkup> getWidgetsList();
+
       /**
        *
        *
@@ -1737,6 +1790,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * <code>repeated .google.chat.v1.WidgetMarkup widgets = 2;</code>
        */
       com.google.chat.v1.WidgetMarkup getWidgets(int index);
+
       /**
        *
        *
@@ -1747,6 +1801,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * <code>repeated .google.chat.v1.WidgetMarkup widgets = 2;</code>
        */
       int getWidgetsCount();
+
       /**
        *
        *
@@ -1757,6 +1812,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * <code>repeated .google.chat.v1.WidgetMarkup widgets = 2;</code>
        */
       java.util.List<? extends com.google.chat.v1.WidgetMarkupOrBuilder> getWidgetsOrBuilderList();
+
       /**
        *
        *
@@ -1768,6 +1824,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        */
       com.google.chat.v1.WidgetMarkupOrBuilder getWidgetsOrBuilder(int index);
     }
+
     /**
      *
      *
@@ -1785,6 +1842,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         // @@protoc_insertion_point(message_implements:google.chat.v1.ContextualAddOnMarkup.Card.Section)
         SectionOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Section.newBuilder() to construct.
       private Section(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1820,6 +1878,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object header_ = "";
+
       /**
        *
        *
@@ -1851,6 +1910,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return s;
         }
       }
+
       /**
        *
        *
@@ -1887,6 +1947,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
       @SuppressWarnings("serial")
       private java.util.List<com.google.chat.v1.WidgetMarkup> widgets_;
+
       /**
        *
        *
@@ -1900,6 +1961,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       public java.util.List<com.google.chat.v1.WidgetMarkup> getWidgetsList() {
         return widgets_;
       }
+
       /**
        *
        *
@@ -1914,6 +1976,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           getWidgetsOrBuilderList() {
         return widgets_;
       }
+
       /**
        *
        *
@@ -1927,6 +1990,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       public int getWidgetsCount() {
         return widgets_.size();
       }
+
       /**
        *
        *
@@ -1940,6 +2004,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       public com.google.chat.v1.WidgetMarkup getWidgets(int index) {
         return widgets_.get(index);
       }
+
       /**
        *
        *
@@ -2126,6 +2191,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2377,6 +2443,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         private int bitField0_;
 
         private java.lang.Object header_ = "";
+
         /**
          *
          *
@@ -2407,6 +2474,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2437,6 +2505,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2466,6 +2535,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2491,6 +2561,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2554,6 +2625,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return widgetsBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -2570,6 +2642,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return widgetsBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -2586,6 +2659,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return widgetsBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -2608,6 +2682,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2628,6 +2703,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2650,6 +2726,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2672,6 +2749,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2691,6 +2769,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2711,6 +2790,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2731,6 +2811,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2750,6 +2831,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2769,6 +2851,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -2781,6 +2864,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         public com.google.chat.v1.WidgetMarkup.Builder getWidgetsBuilder(int index) {
           return getWidgetsFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -2797,6 +2881,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return widgetsBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -2814,6 +2899,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return java.util.Collections.unmodifiableList(widgets_);
           }
         }
+
         /**
          *
          *
@@ -2827,6 +2913,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return getWidgetsFieldBuilder()
               .addBuilder(com.google.chat.v1.WidgetMarkup.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -2840,6 +2927,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return getWidgetsFieldBuilder()
               .addBuilder(index, com.google.chat.v1.WidgetMarkup.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -2951,6 +3039,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * @return The actionLabel.
        */
       java.lang.String getActionLabel();
+
       /**
        *
        *
@@ -2976,6 +3065,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * @return Whether the onClick field is set.
        */
       boolean hasOnClick();
+
       /**
        *
        *
@@ -2988,6 +3078,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        * @return The onClick.
        */
       com.google.chat.v1.WidgetMarkup.OnClick getOnClick();
+
       /**
        *
        *
@@ -2999,6 +3090,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
        */
       com.google.chat.v1.WidgetMarkup.OnClickOrBuilder getOnClickOrBuilder();
     }
+
     /**
      *
      *
@@ -3018,6 +3110,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         // @@protoc_insertion_point(message_implements:google.chat.v1.ContextualAddOnMarkup.Card.CardAction)
         CardActionOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CardAction.newBuilder() to construct.
       private CardAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3053,6 +3146,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object actionLabel_ = "";
+
       /**
        *
        *
@@ -3076,6 +3170,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return s;
         }
       }
+
       /**
        *
        *
@@ -3102,6 +3197,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
       public static final int ON_CLICK_FIELD_NUMBER = 2;
       private com.google.chat.v1.WidgetMarkup.OnClick onClick_;
+
       /**
        *
        *
@@ -3117,6 +3213,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       public boolean hasOnClick() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -3134,6 +3231,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             ? com.google.chat.v1.WidgetMarkup.OnClick.getDefaultInstance()
             : onClick_;
       }
+
       /**
        *
        *
@@ -3325,6 +3423,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3549,6 +3648,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         private int bitField0_;
 
         private java.lang.Object actionLabel_ = "";
+
         /**
          *
          *
@@ -3571,6 +3671,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -3593,6 +3694,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -3614,6 +3716,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3631,6 +3734,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3660,6 +3764,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
                 com.google.chat.v1.WidgetMarkup.OnClick.Builder,
                 com.google.chat.v1.WidgetMarkup.OnClickOrBuilder>
             onClickBuilder_;
+
         /**
          *
          *
@@ -3674,6 +3779,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         public boolean hasOnClick() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -3694,6 +3800,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             return onClickBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -3716,6 +3823,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3735,6 +3843,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3762,6 +3871,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           }
           return this;
         }
+
         /**
          *
          *
@@ -3781,6 +3891,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3795,6 +3906,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           onChanged();
           return getOnClickFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -3813,6 +3925,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
                 : onClick_;
           }
         }
+
         /**
          *
          *
@@ -3907,6 +4020,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     private int bitField0_;
     public static final int HEADER_FIELD_NUMBER = 1;
     private com.google.chat.v1.ContextualAddOnMarkup.Card.CardHeader header_;
+
     /**
      *
      *
@@ -3922,6 +4036,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3939,6 +4054,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           ? com.google.chat.v1.ContextualAddOnMarkup.Card.CardHeader.getDefaultInstance()
           : header_;
     }
+
     /**
      *
      *
@@ -3959,6 +4075,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.chat.v1.ContextualAddOnMarkup.Card.Section> sections_;
+
     /**
      *
      *
@@ -3972,6 +4089,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     public java.util.List<com.google.chat.v1.ContextualAddOnMarkup.Card.Section> getSectionsList() {
       return sections_;
     }
+
     /**
      *
      *
@@ -3986,6 +4104,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         getSectionsOrBuilderList() {
       return sections_;
     }
+
     /**
      *
      *
@@ -3999,6 +4118,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     public int getSectionsCount() {
       return sections_.size();
     }
+
     /**
      *
      *
@@ -4012,6 +4132,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     public com.google.chat.v1.ContextualAddOnMarkup.Card.Section getSections(int index) {
       return sections_.get(index);
     }
+
     /**
      *
      *
@@ -4031,6 +4152,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.chat.v1.ContextualAddOnMarkup.Card.CardAction> cardActions_;
+
     /**
      *
      *
@@ -4045,6 +4167,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         getCardActionsList() {
       return cardActions_;
     }
+
     /**
      *
      *
@@ -4060,6 +4183,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         getCardActionsOrBuilderList() {
       return cardActions_;
     }
+
     /**
      *
      *
@@ -4073,6 +4197,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     public int getCardActionsCount() {
       return cardActions_.size();
     }
+
     /**
      *
      *
@@ -4086,6 +4211,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     public com.google.chat.v1.ContextualAddOnMarkup.Card.CardAction getCardActions(int index) {
       return cardActions_.get(index);
     }
+
     /**
      *
      *
@@ -4105,6 +4231,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4128,6 +4255,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -4348,6 +4476,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4691,6 +4820,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
               com.google.chat.v1.ContextualAddOnMarkup.Card.CardHeader.Builder,
               com.google.chat.v1.ContextualAddOnMarkup.Card.CardHeaderOrBuilder>
           headerBuilder_;
+
       /**
        *
        *
@@ -4705,6 +4835,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       public boolean hasHeader() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4725,6 +4856,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return headerBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4747,6 +4879,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4767,6 +4900,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4796,6 +4930,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -4815,6 +4950,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4829,6 +4965,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         onChanged();
         return getHeaderFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4848,6 +4985,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
               : header_;
         }
       }
+
       /**
        *
        *
@@ -4909,6 +5047,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return sectionsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4925,6 +5064,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return sectionsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4941,6 +5081,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return sectionsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4964,6 +5105,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -4985,6 +5127,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5007,6 +5150,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5030,6 +5174,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5050,6 +5195,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5071,6 +5217,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5092,6 +5239,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5111,6 +5259,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5130,6 +5279,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5143,6 +5293,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           int index) {
         return getSectionsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -5160,6 +5311,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return sectionsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -5178,6 +5330,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return java.util.Collections.unmodifiableList(sections_);
         }
       }
+
       /**
        *
        *
@@ -5191,6 +5344,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         return getSectionsFieldBuilder()
             .addBuilder(com.google.chat.v1.ContextualAddOnMarkup.Card.Section.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5206,6 +5360,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             .addBuilder(
                 index, com.google.chat.v1.ContextualAddOnMarkup.Card.Section.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5273,6 +5428,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return cardActionsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -5290,6 +5446,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return cardActionsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -5307,6 +5464,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return cardActionsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -5331,6 +5489,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5353,6 +5512,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5377,6 +5537,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5401,6 +5562,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5422,6 +5584,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5444,6 +5607,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5466,6 +5630,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5486,6 +5651,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5506,6 +5672,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5520,6 +5687,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           int index) {
         return getCardActionsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -5538,6 +5706,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return cardActionsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -5557,6 +5726,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return java.util.Collections.unmodifiableList(cardActions_);
         }
       }
+
       /**
        *
        *
@@ -5573,6 +5743,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
             .addBuilder(
                 com.google.chat.v1.ContextualAddOnMarkup.Card.CardAction.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5590,6 +5761,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
                 index,
                 com.google.chat.v1.ContextualAddOnMarkup.Card.CardAction.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5626,6 +5798,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -5648,6 +5821,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5670,6 +5844,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5691,6 +5866,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5708,6 +5884,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5944,6 +6121,7 @@ public final class ContextualAddOnMarkup extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface OperationMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface OperationMetadataOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface OperationMetadataOrBuilder
    * @return The method.
    */
   java.lang.String getMethod();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface OperationMetadataOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface OperationMetadataOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the batchRecognizeRequest field is set.
    */
   boolean hasBatchRecognizeRequest();
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public interface OperationMetadataOrBuilder
    * @return The batchRecognizeRequest.
    */
   com.google.cloud.speech.v2.BatchRecognizeRequest getBatchRecognizeRequest();
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createRecognizerRequest field is set.
    */
   boolean hasCreateRecognizerRequest();
+
   /**
    *
    *
@@ -265,6 +276,7 @@ public interface OperationMetadataOrBuilder
    * @return The createRecognizerRequest.
    */
   com.google.cloud.speech.v2.CreateRecognizerRequest getCreateRecognizerRequest();
+
   /**
    *
    *
@@ -288,6 +300,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the updateRecognizerRequest field is set.
    */
   boolean hasUpdateRecognizerRequest();
+
   /**
    *
    *
@@ -300,6 +313,7 @@ public interface OperationMetadataOrBuilder
    * @return The updateRecognizerRequest.
    */
   com.google.cloud.speech.v2.UpdateRecognizerRequest getUpdateRecognizerRequest();
+
   /**
    *
    *
@@ -323,6 +337,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the deleteRecognizerRequest field is set.
    */
   boolean hasDeleteRecognizerRequest();
+
   /**
    *
    *
@@ -335,6 +350,7 @@ public interface OperationMetadataOrBuilder
    * @return The deleteRecognizerRequest.
    */
   com.google.cloud.speech.v2.DeleteRecognizerRequest getDeleteRecognizerRequest();
+
   /**
    *
    *
@@ -359,6 +375,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the undeleteRecognizerRequest field is set.
    */
   boolean hasUndeleteRecognizerRequest();
+
   /**
    *
    *
@@ -372,6 +389,7 @@ public interface OperationMetadataOrBuilder
    * @return The undeleteRecognizerRequest.
    */
   com.google.cloud.speech.v2.UndeleteRecognizerRequest getUndeleteRecognizerRequest();
+
   /**
    *
    *
@@ -397,6 +415,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createCustomClassRequest field is set.
    */
   boolean hasCreateCustomClassRequest();
+
   /**
    *
    *
@@ -409,6 +428,7 @@ public interface OperationMetadataOrBuilder
    * @return The createCustomClassRequest.
    */
   com.google.cloud.speech.v2.CreateCustomClassRequest getCreateCustomClassRequest();
+
   /**
    *
    *
@@ -433,6 +453,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the updateCustomClassRequest field is set.
    */
   boolean hasUpdateCustomClassRequest();
+
   /**
    *
    *
@@ -445,6 +466,7 @@ public interface OperationMetadataOrBuilder
    * @return The updateCustomClassRequest.
    */
   com.google.cloud.speech.v2.UpdateCustomClassRequest getUpdateCustomClassRequest();
+
   /**
    *
    *
@@ -469,6 +491,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the deleteCustomClassRequest field is set.
    */
   boolean hasDeleteCustomClassRequest();
+
   /**
    *
    *
@@ -481,6 +504,7 @@ public interface OperationMetadataOrBuilder
    * @return The deleteCustomClassRequest.
    */
   com.google.cloud.speech.v2.DeleteCustomClassRequest getDeleteCustomClassRequest();
+
   /**
    *
    *
@@ -506,6 +530,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the undeleteCustomClassRequest field is set.
    */
   boolean hasUndeleteCustomClassRequest();
+
   /**
    *
    *
@@ -519,6 +544,7 @@ public interface OperationMetadataOrBuilder
    * @return The undeleteCustomClassRequest.
    */
   com.google.cloud.speech.v2.UndeleteCustomClassRequest getUndeleteCustomClassRequest();
+
   /**
    *
    *
@@ -544,6 +570,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createPhraseSetRequest field is set.
    */
   boolean hasCreatePhraseSetRequest();
+
   /**
    *
    *
@@ -556,6 +583,7 @@ public interface OperationMetadataOrBuilder
    * @return The createPhraseSetRequest.
    */
   com.google.cloud.speech.v2.CreatePhraseSetRequest getCreatePhraseSetRequest();
+
   /**
    *
    *
@@ -579,6 +607,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the updatePhraseSetRequest field is set.
    */
   boolean hasUpdatePhraseSetRequest();
+
   /**
    *
    *
@@ -591,6 +620,7 @@ public interface OperationMetadataOrBuilder
    * @return The updatePhraseSetRequest.
    */
   com.google.cloud.speech.v2.UpdatePhraseSetRequest getUpdatePhraseSetRequest();
+
   /**
    *
    *
@@ -614,6 +644,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the deletePhraseSetRequest field is set.
    */
   boolean hasDeletePhraseSetRequest();
+
   /**
    *
    *
@@ -626,6 +657,7 @@ public interface OperationMetadataOrBuilder
    * @return The deletePhraseSetRequest.
    */
   com.google.cloud.speech.v2.DeletePhraseSetRequest getDeletePhraseSetRequest();
+
   /**
    *
    *
@@ -649,6 +681,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the undeletePhraseSetRequest field is set.
    */
   boolean hasUndeletePhraseSetRequest();
+
   /**
    *
    *
@@ -661,6 +694,7 @@ public interface OperationMetadataOrBuilder
    * @return The undeletePhraseSetRequest.
    */
   com.google.cloud.speech.v2.UndeletePhraseSetRequest getUndeletePhraseSetRequest();
+
   /**
    *
    *
@@ -690,6 +724,7 @@ public interface OperationMetadataOrBuilder
    */
   @java.lang.Deprecated
   boolean hasUpdateConfigRequest();
+
   /**
    *
    *
@@ -707,6 +742,7 @@ public interface OperationMetadataOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.speech.v2.UpdateConfigRequest getUpdateConfigRequest();
+
   /**
    *
    *
@@ -747,6 +783,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the batchRecognizeMetadata field is set.
    */
   boolean hasBatchRecognizeMetadata();
+
   /**
    *
    *
@@ -759,6 +796,7 @@ public interface OperationMetadataOrBuilder
    * @return The batchRecognizeMetadata.
    */
   com.google.cloud.speech.v2.BatchRecognizeMetadata getBatchRecognizeMetadata();
+
   /**
    *
    *

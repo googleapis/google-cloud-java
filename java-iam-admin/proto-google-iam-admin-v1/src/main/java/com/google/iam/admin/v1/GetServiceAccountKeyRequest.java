@@ -33,6 +33,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.GetServiceAccountKeyRequest)
     GetServiceAccountKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetServiceAccountKeyRequest.newBuilder() to construct.
   private GetServiceAccountKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
 
   public static final int PUBLIC_KEY_TYPE_FIELD_NUMBER = 2;
   private int publicKeyType_ = 0;
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
   public int getPublicKeyTypeValue() {
     return publicKeyType_;
   }
+
   /**
    *
    *
@@ -342,6 +347,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -539,6 +545,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -568,6 +575,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -597,6 +605,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
     }
 
     private int publicKeyType_ = 0;
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
     public int getPublicKeyTypeValue() {
       return publicKeyType_;
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +755,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
           ? com.google.iam.admin.v1.ServiceAccountPublicKeyType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

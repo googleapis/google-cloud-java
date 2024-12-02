@@ -37,6 +37,7 @@ public interface ListUserWorkloadsSecretsResponseOrBuilder
    */
   java.util.List<com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
       getUserWorkloadsSecretsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListUserWorkloadsSecretsResponseOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret getUserWorkloadsSecrets(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListUserWorkloadsSecretsResponseOrBuilder
    * </code>
    */
   int getUserWorkloadsSecretsCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface ListUserWorkloadsSecretsResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecretOrBuilder>
       getUserWorkloadsSecretsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListUserWorkloadsSecretsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

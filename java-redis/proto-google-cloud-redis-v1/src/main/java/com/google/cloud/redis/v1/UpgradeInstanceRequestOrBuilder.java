@@ -40,6 +40,7 @@ public interface UpgradeInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface UpgradeInstanceRequestOrBuilder
    * @return The redisVersion.
    */
   java.lang.String getRedisVersion();
+
   /**
    *
    *

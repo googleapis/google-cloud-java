@@ -33,6 +33,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.FileTypeFilter)
     FileTypeFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FileTypeFilter.newBuilder() to construct.
   private FileTypeFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>FILE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int FILE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>ALL = 1;</code>
      */
     public static final int ALL_VALUE = 1;
+
     /**
      *
      *
@@ -156,6 +159,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>FOLDER = 2;</code>
      */
     public static final int FOLDER_VALUE = 2;
+
     /**
      *
      *
@@ -166,6 +170,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>DOCUMENT = 3;</code>
      */
     public static final int DOCUMENT_VALUE = 3;
+
     /**
      *
      *
@@ -268,6 +273,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILE_TYPE_FIELD_NUMBER = 1;
   private int fileType_ = 0;
+
   /**
    *
    *
@@ -283,6 +289,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
   public int getFileTypeValue() {
     return fileType_;
   }
+
   /**
    *
    *
@@ -466,6 +473,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +656,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int fileType_ = 0;
+
     /**
      *
      *
@@ -663,6 +672,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
     public int getFileTypeValue() {
       return fileType_;
     }
+
     /**
      *
      *
@@ -681,6 +691,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

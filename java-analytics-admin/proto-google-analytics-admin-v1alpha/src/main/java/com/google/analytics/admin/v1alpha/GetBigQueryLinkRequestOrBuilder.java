@@ -40,6 +40,7 @@ public interface GetBigQueryLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

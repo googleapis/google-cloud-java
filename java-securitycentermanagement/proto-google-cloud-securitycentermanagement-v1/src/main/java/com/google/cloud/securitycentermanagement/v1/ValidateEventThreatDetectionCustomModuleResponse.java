@@ -36,6 +36,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse)
     ValidateEventThreatDetectionCustomModuleResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidateEventThreatDetectionCustomModuleResponse.newBuilder() to construct.
   private ValidateEventThreatDetectionCustomModuleResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -86,6 +87,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -113,6 +115,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      * @return The fieldPath.
      */
     java.lang.String getFieldPath();
+
     /**
      *
      *
@@ -144,6 +147,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      * @return Whether the start field is set.
      */
     boolean hasStart();
+
     /**
      *
      *
@@ -162,6 +166,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
     com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse
             .Position
         getStart();
+
     /**
      *
      *
@@ -195,6 +200,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      * @return Whether the end field is set.
      */
     boolean hasEnd();
+
     /**
      *
      *
@@ -213,6 +219,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
     com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse
             .Position
         getEnd();
+
     /**
      *
      *
@@ -230,6 +237,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
             .PositionOrBuilder
         getEndOrBuilder();
   }
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse.CustomModuleValidationError)
       CustomModuleValidationErrorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CustomModuleValidationError.newBuilder() to construct.
     private CustomModuleValidationError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -287,6 +296,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -310,6 +320,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         return s;
       }
     }
+
     /**
      *
      *
@@ -338,6 +349,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fieldPath_ = "";
+
     /**
      *
      *
@@ -363,6 +375,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         return s;
       }
     }
+
     /**
      *
      *
@@ -393,6 +406,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
     private com.google.cloud.securitycentermanagement.v1
             .ValidateEventThreatDetectionCustomModuleResponse.Position
         start_;
+
     /**
      *
      *
@@ -412,6 +426,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
     public boolean hasStart() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -436,6 +451,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
               .ValidateEventThreatDetectionCustomModuleResponse.Position.getDefaultInstance()
           : start_;
     }
+
     /**
      *
      *
@@ -463,6 +479,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
     private com.google.cloud.securitycentermanagement.v1
             .ValidateEventThreatDetectionCustomModuleResponse.Position
         end_;
+
     /**
      *
      *
@@ -482,6 +499,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
     public boolean hasEnd() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -506,6 +524,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
               .ValidateEventThreatDetectionCustomModuleResponse.Position.getDefaultInstance()
           : end_;
     }
+
     /**
      *
      *
@@ -754,6 +773,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1040,6 +1060,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       private int bitField0_;
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -1062,6 +1083,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1084,6 +1106,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1105,6 +1128,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1122,6 +1146,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1146,6 +1171,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
 
       private java.lang.Object fieldPath_ = "";
+
       /**
        *
        *
@@ -1170,6 +1196,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1194,6 +1221,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1217,6 +1245,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1236,6 +1265,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1272,6 +1302,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
               com.google.cloud.securitycentermanagement.v1
                   .ValidateEventThreatDetectionCustomModuleResponse.PositionOrBuilder>
           startBuilder_;
+
       /**
        *
        *
@@ -1290,6 +1321,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       public boolean hasStart() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1317,6 +1349,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
           return startBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1346,6 +1379,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1372,6 +1406,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1409,6 +1444,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -1432,6 +1468,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1452,6 +1489,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return getStartFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1477,6 +1515,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
               : start_;
         }
       }
+
       /**
        *
        *
@@ -1524,6 +1563,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
               com.google.cloud.securitycentermanagement.v1
                   .ValidateEventThreatDetectionCustomModuleResponse.PositionOrBuilder>
           endBuilder_;
+
       /**
        *
        *
@@ -1542,6 +1582,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       public boolean hasEnd() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -1569,6 +1610,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
           return endBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1598,6 +1640,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1624,6 +1667,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1661,6 +1705,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -1684,6 +1729,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1704,6 +1750,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return getEndFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1729,6 +1776,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
               : end_;
         }
       }
+
       /**
        *
        *
@@ -1868,6 +1916,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      */
     int getColumnNumber();
   }
+
   /**
    *
    *
@@ -1883,6 +1932,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse.Position)
       PositionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Position.newBuilder() to construct.
     private Position(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1915,6 +1965,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
 
     public static final int LINE_NUMBER_FIELD_NUMBER = 1;
     private int lineNumber_ = 0;
+
     /**
      *
      *
@@ -1933,6 +1984,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
 
     public static final int COLUMN_NUMBER_FIELD_NUMBER = 2;
     private int columnNumber_ = 0;
+
     /**
      *
      *
@@ -2146,6 +2198,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2375,6 +2428,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       private int bitField0_;
 
       private int lineNumber_;
+
       /**
        *
        *
@@ -2390,6 +2444,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       public int getLineNumber() {
         return lineNumber_;
       }
+
       /**
        *
        *
@@ -2409,6 +2464,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2428,6 +2484,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
 
       private int columnNumber_;
+
       /**
        *
        *
@@ -2443,6 +2500,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       public int getColumnNumber() {
         return columnNumber_;
       }
+
       /**
        *
        *
@@ -2462,6 +2520,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2559,6 +2618,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
           com.google.cloud.securitycentermanagement.v1
               .ValidateEventThreatDetectionCustomModuleResponse.CustomModuleValidationError>
       errors_;
+
   /**
    *
    *
@@ -2578,6 +2638,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -2599,6 +2660,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -2615,6 +2677,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -2633,6 +2696,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -2839,6 +2903,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3154,6 +3219,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3173,6 +3239,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3194,6 +3261,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3223,6 +3291,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3250,6 +3319,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3278,6 +3348,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3307,6 +3378,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3333,6 +3405,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3360,6 +3433,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3388,6 +3462,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3410,6 +3485,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3432,6 +3508,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -3449,6 +3526,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3470,6 +3548,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3494,6 +3573,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -3515,6 +3595,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
                   .ValidateEventThreatDetectionCustomModuleResponse.CustomModuleValidationError
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3537,6 +3618,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
                   .ValidateEventThreatDetectionCustomModuleResponse.CustomModuleValidationError
                   .getDefaultInstance());
     }
+
     /**
      *
      *

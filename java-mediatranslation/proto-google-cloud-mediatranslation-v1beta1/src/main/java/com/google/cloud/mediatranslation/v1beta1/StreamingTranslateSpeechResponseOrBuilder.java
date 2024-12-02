@@ -37,6 +37,7 @@ public interface StreamingTranslateSpeechResponseOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface StreamingTranslateSpeechResponseOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface StreamingTranslateSpeechResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface StreamingTranslateSpeechResponseOrBuilder
    * @return The result.
    */
   com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult getResult();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface StreamingTranslateSpeechResponseOrBuilder
    * @return The enum numeric value on the wire for speechEventType.
    */
   int getSpeechEventTypeValue();
+
   /**
    *
    *

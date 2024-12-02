@@ -36,6 +36,7 @@ public interface ListReusableConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.security.privateca.v1beta1.ReusableConfig>
       getReusableConfigsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListReusableConfigsResponseOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1beta1.ReusableConfig getReusableConfigs(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListReusableConfigsResponseOrBuilder
    * </code>
    */
   int getReusableConfigsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListReusableConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1beta1.ReusableConfigOrBuilder>
       getReusableConfigsOrBuilderList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface ListReusableConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface ListReusableConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface ListReusableConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -149,6 +156,7 @@ public interface ListReusableConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

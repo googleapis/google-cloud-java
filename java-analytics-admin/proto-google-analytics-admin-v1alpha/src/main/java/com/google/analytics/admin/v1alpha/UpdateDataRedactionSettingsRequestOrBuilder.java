@@ -39,6 +39,7 @@ public interface UpdateDataRedactionSettingsRequestOrBuilder
    * @return Whether the dataRedactionSettings field is set.
    */
   boolean hasDataRedactionSettings();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateDataRedactionSettingsRequestOrBuilder
    * @return The dataRedactionSettings.
    */
   com.google.analytics.admin.v1alpha.DataRedactionSettings getDataRedactionSettings();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateDataRedactionSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UpdateDataRedactionSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

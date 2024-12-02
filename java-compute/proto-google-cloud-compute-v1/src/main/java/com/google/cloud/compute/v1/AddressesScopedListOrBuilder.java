@@ -34,6 +34,7 @@ public interface AddressesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Address> getAddressesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AddressesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
    */
   com.google.cloud.compute.v1.Address getAddresses(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AddressesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
    */
   int getAddressesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AddressesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AddressOrBuilder>
       getAddressesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface AddressesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface AddressesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

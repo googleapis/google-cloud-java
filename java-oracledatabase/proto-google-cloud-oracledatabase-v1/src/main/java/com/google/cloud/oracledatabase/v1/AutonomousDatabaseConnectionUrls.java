@@ -35,6 +35,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionUrls)
     AutonomousDatabaseConnectionUrlsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutonomousDatabaseConnectionUrls.newBuilder() to construct.
   private AutonomousDatabaseConnectionUrls(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -77,6 +78,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object apexUri_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseTransformsUri_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object graphStudioUri_ = "";
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineLearningNotebookUri_ = "";
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +296,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineLearningUserManagementUri_ = "";
+
   /**
    *
    *
@@ -313,6 +323,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -344,6 +355,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mongoDbUri_ = "";
+
   /**
    *
    *
@@ -367,6 +379,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -395,6 +408,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ordsUri_ = "";
+
   /**
    *
    *
@@ -419,6 +433,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -448,6 +463,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sqlDevWebUri_ = "";
+
   /**
    *
    *
@@ -472,6 +488,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -727,6 +744,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1025,6 +1043,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object apexUri_ = "";
+
     /**
      *
      *
@@ -1047,6 +1066,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1089,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1111,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1129,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1154,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     }
 
     private java.lang.Object databaseTransformsUri_ = "";
+
     /**
      *
      *
@@ -1154,6 +1178,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1202,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1199,6 +1225,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1244,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1270,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     }
 
     private java.lang.Object graphStudioUri_ = "";
+
     /**
      *
      *
@@ -1264,6 +1293,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1316,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1338,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1356,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1381,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     }
 
     private java.lang.Object machineLearningNotebookUri_ = "";
+
     /**
      *
      *
@@ -1372,6 +1406,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1396,6 +1431,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1419,6 +1455,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1475,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1502,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     }
 
     private java.lang.Object machineLearningUserManagementUri_ = "";
+
     /**
      *
      *
@@ -1489,6 +1528,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1514,6 +1554,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1538,6 +1579,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1601,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1586,6 +1629,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     }
 
     private java.lang.Object mongoDbUri_ = "";
+
     /**
      *
      *
@@ -1608,6 +1652,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1630,6 +1675,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1651,6 +1697,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1715,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1692,6 +1740,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     }
 
     private java.lang.Object ordsUri_ = "";
+
     /**
      *
      *
@@ -1715,6 +1764,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1738,6 +1788,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1760,6 +1811,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1830,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1856,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
     }
 
     private java.lang.Object sqlDevWebUri_ = "";
+
     /**
      *
      *
@@ -1826,6 +1880,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1849,6 +1904,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1871,6 +1927,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1889,6 +1946,7 @@ public final class AutonomousDatabaseConnectionUrls extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

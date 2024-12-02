@@ -36,6 +36,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; text_sections = 5;</code>
    */
   int getTextSectionsCount();
+
   /**
    *
    *
@@ -73,9 +75,11 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; text_sections = 5;</code>
    */
   boolean containsTextSections(java.lang.String key);
+
   /** Use {@link #getTextSectionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTextSections();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; text_sections = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -152,9 +159,11 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -166,6 +175,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -181,6 +191,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -207,6 +218,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface ConversationSummarizationSuggestionDataOrBuilder
    * @return The conversationModel.
    */
   java.lang.String getConversationModel();
+
   /**
    *
    *

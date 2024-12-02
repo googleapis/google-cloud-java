@@ -39,6 +39,7 @@ public interface GetProductRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

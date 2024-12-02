@@ -37,6 +37,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    * @return Whether the entity field is set.
    */
   boolean hasEntity();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    * @return The entity.
    */
   com.google.cloud.videointelligence.v1p3beta1.Entity getEntity();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 2;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.Track> getTracksList();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 2;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.Track getTracks(int index);
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 2;</code>
    */
   int getTracksCount();
+
   /**
    *
    *
@@ -107,6 +112,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder>
       getTracksOrBuilderList();
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment segments = 3;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.VideoSegment> getSegmentsList();
+
   /**
    *
    *
@@ -141,6 +148,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment segments = 3;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegments(int index);
+
   /**
    *
    *
@@ -152,6 +160,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment segments = 3;</code>
    */
   int getSegmentsCount();
+
   /**
    *
    *
@@ -164,6 +173,7 @@ public interface LogoRecognitionAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
       getSegmentsOrBuilderList();
+
   /**
    *
    *

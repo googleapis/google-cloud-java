@@ -36,6 +36,7 @@ public interface EntityDdlOrBuilder
    * @return The ddlType.
    */
   java.lang.String getDdlType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EntityDdlOrBuilder
    * @return The entity.
    */
   java.lang.String getEntity();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface EntityDdlOrBuilder
    * @return The ddl.
    */
   java.lang.String getDdl();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface EntityDdlOrBuilder
    * @return The enum numeric value on the wire for entityType.
    */
   int getEntityTypeValue();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface EntityDdlOrBuilder
    * @return A list containing the issueId.
    */
   java.util.List<java.lang.String> getIssueIdList();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface EntityDdlOrBuilder
    * @return The count of issueId.
    */
   int getIssueIdCount();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface EntityDdlOrBuilder
    * @return The issueId at the given index.
    */
   java.lang.String getIssueId(int index);
+
   /**
    *
    *

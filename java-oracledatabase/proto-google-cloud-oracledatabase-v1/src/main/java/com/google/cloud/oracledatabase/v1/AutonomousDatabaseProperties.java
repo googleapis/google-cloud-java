@@ -33,6 +33,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.AutonomousDatabaseProperties)
     AutonomousDatabasePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutonomousDatabaseProperties.newBuilder() to construct.
   private AutonomousDatabaseProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -148,6 +149,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>DATABASE_EDITION_UNSPECIFIED = 0;</code>
      */
     public static final int DATABASE_EDITION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -158,6 +160,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>STANDARD_EDITION = 1;</code>
      */
     public static final int STANDARD_EDITION_VALUE = 1;
+
     /**
      *
      *
@@ -309,6 +312,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>LICENSE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LICENSE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -319,6 +323,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>LICENSE_INCLUDED = 1;</code>
      */
     public static final int LICENSE_INCLUDED_VALUE = 1;
+
     /**
      *
      *
@@ -470,6 +475,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>MAINTENANCE_SCHEDULE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MAINTENANCE_SCHEDULE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -481,6 +487,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>EARLY = 1;</code>
      */
     public static final int EARLY_VALUE = 1;
+
     /**
      *
      *
@@ -634,6 +641,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>LOCAL_DISASTER_RECOVERY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LOCAL_DISASTER_RECOVERY_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -644,6 +652,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>ADG = 1;</code>
      */
     public static final int ADG_VALUE = 1;
+
     /**
      *
      *
@@ -826,6 +835,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>DATA_SAFE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_SAFE_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -836,6 +846,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>REGISTERING = 1;</code>
      */
     public static final int REGISTERING_VALUE = 1;
+
     /**
      *
      *
@@ -846,6 +857,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>REGISTERED = 2;</code>
      */
     public static final int REGISTERED_VALUE = 2;
+
     /**
      *
      *
@@ -856,6 +868,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>DEREGISTERING = 3;</code>
      */
     public static final int DEREGISTERING_VALUE = 3;
+
     /**
      *
      *
@@ -866,6 +879,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>NOT_REGISTERED = 4;</code>
      */
     public static final int NOT_REGISTERED_VALUE = 4;
+
     /**
      *
      *
@@ -1062,6 +1076,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>DATABASE_MANAGEMENT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int DATABASE_MANAGEMENT_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1072,6 +1087,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>ENABLING = 1;</code>
      */
     public static final int ENABLING_VALUE = 1;
+
     /**
      *
      *
@@ -1082,6 +1098,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>ENABLED = 2;</code>
      */
     public static final int ENABLED_VALUE = 2;
+
     /**
      *
      *
@@ -1092,6 +1109,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>DISABLING = 3;</code>
      */
     public static final int DISABLING_VALUE = 3;
+
     /**
      *
      *
@@ -1102,6 +1120,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>NOT_ENABLED = 4;</code>
      */
     public static final int NOT_ENABLED_VALUE = 4;
+
     /**
      *
      *
@@ -1112,6 +1131,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>FAILED_ENABLING = 5;</code>
      */
     public static final int FAILED_ENABLING_VALUE = 5;
+
     /**
      *
      *
@@ -1272,6 +1292,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>OPEN_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int OPEN_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1282,6 +1303,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>READ_ONLY = 1;</code>
      */
     public static final int READ_ONLY_VALUE = 1;
+
     /**
      *
      *
@@ -1432,6 +1454,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>PERMISSION_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int PERMISSION_LEVEL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1442,6 +1465,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>RESTRICTED = 1;</code>
      */
     public static final int RESTRICTED_VALUE = 1;
+
     /**
      *
      *
@@ -1596,6 +1620,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>REFRESHABLE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int REFRESHABLE_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1607,6 +1632,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>AUTOMATIC = 1;</code>
      */
     public static final int AUTOMATIC_VALUE = 1;
+
     /**
      *
      *
@@ -1760,6 +1786,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>REFRESHABLE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int REFRESHABLE_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1770,6 +1797,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>REFRESHING = 1;</code>
      */
     public static final int REFRESHING_VALUE = 1;
+
     /**
      *
      *
@@ -1951,6 +1979,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>ROLE_UNSPECIFIED = 0;</code>
      */
     public static final int ROLE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1961,6 +1990,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>PRIMARY = 1;</code>
      */
     public static final int PRIMARY_VALUE = 1;
+
     /**
      *
      *
@@ -1971,6 +2001,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>STANDBY = 2;</code>
      */
     public static final int STANDBY_VALUE = 2;
+
     /**
      *
      *
@@ -1981,6 +2012,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>DISABLED_STANDBY = 3;</code>
      */
     public static final int DISABLED_STANDBY_VALUE = 3;
+
     /**
      *
      *
@@ -1991,6 +2023,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>BACKUP_COPY = 4;</code>
      */
     public static final int BACKUP_COPY_VALUE = 4;
+
     /**
      *
      *
@@ -2098,6 +2131,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ocid_ = "";
+
   /**
    *
    *
@@ -2122,6 +2156,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2149,6 +2184,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int COMPUTE_COUNT_FIELD_NUMBER = 2;
   private float computeCount_ = 0F;
+
   /**
    *
    *
@@ -2167,6 +2203,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int CPU_CORE_COUNT_FIELD_NUMBER = 3;
   private int cpuCoreCount_ = 0;
+
   /**
    *
    *
@@ -2185,6 +2222,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int DATA_STORAGE_SIZE_TB_FIELD_NUMBER = 4;
   private int dataStorageSizeTb_ = 0;
+
   /**
    *
    *
@@ -2203,6 +2241,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int DATA_STORAGE_SIZE_GB_FIELD_NUMBER = 63;
   private int dataStorageSizeGb_ = 0;
+
   /**
    *
    *
@@ -2221,6 +2260,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int DB_WORKLOAD_FIELD_NUMBER = 5;
   private int dbWorkload_ = 0;
+
   /**
    *
    *
@@ -2238,6 +2278,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getDbWorkloadValue() {
     return dbWorkload_;
   }
+
   /**
    *
    *
@@ -2260,6 +2301,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int DB_EDITION_FIELD_NUMBER = 6;
   private int dbEdition_ = 0;
+
   /**
    *
    *
@@ -2277,6 +2319,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getDbEditionValue() {
     return dbEdition_;
   }
+
   /**
    *
    *
@@ -2306,6 +2349,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object characterSet_ = "";
+
   /**
    *
    *
@@ -2330,6 +2374,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2359,6 +2404,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nCharacterSet_ = "";
+
   /**
    *
    *
@@ -2383,6 +2429,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2412,6 +2459,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateEndpointIp_ = "";
+
   /**
    *
    *
@@ -2435,6 +2483,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2463,6 +2512,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateEndpointLabel_ = "";
+
   /**
    *
    *
@@ -2486,6 +2536,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2514,6 +2565,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dbVersion_ = "";
+
   /**
    *
    *
@@ -2537,6 +2589,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2563,6 +2616,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int IS_AUTO_SCALING_ENABLED_FIELD_NUMBER = 14;
   private boolean isAutoScalingEnabled_ = false;
+
   /**
    *
    *
@@ -2582,6 +2636,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int IS_STORAGE_AUTO_SCALING_ENABLED_FIELD_NUMBER = 15;
   private boolean isStorageAutoScalingEnabled_ = false;
+
   /**
    *
    *
@@ -2602,6 +2657,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int LICENSE_TYPE_FIELD_NUMBER = 16;
   private int licenseType_ = 0;
+
   /**
    *
    *
@@ -2619,6 +2675,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getLicenseTypeValue() {
     return licenseType_;
   }
+
   /**
    *
    *
@@ -2647,6 +2704,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.CustomerContact> customerContacts_;
+
   /**
    *
    *
@@ -2663,6 +2721,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       getCustomerContactsList() {
     return customerContacts_;
   }
+
   /**
    *
    *
@@ -2679,6 +2738,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       getCustomerContactsOrBuilderList() {
     return customerContacts_;
   }
+
   /**
    *
    *
@@ -2694,6 +2754,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getCustomerContactsCount() {
     return customerContacts_.size();
   }
+
   /**
    *
    *
@@ -2709,6 +2770,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public com.google.cloud.oracledatabase.v1.CustomerContact getCustomerContacts(int index) {
     return customerContacts_.get(index);
   }
+
   /**
    *
    *
@@ -2730,6 +2792,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secretId_ = "";
+
   /**
    *
    *
@@ -2753,6 +2816,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2781,6 +2845,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vaultId_ = "";
+
   /**
    *
    *
@@ -2804,6 +2869,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2830,6 +2896,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int MAINTENANCE_SCHEDULE_TYPE_FIELD_NUMBER = 20;
   private int maintenanceScheduleType_ = 0;
+
   /**
    *
    *
@@ -2847,6 +2914,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getMaintenanceScheduleTypeValue() {
     return maintenanceScheduleType_;
   }
+
   /**
    *
    *
@@ -2874,6 +2942,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int MTLS_CONNECTION_REQUIRED_FIELD_NUMBER = 34;
   private boolean mtlsConnectionRequired_ = false;
+
   /**
    *
    *
@@ -2893,6 +2962,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int BACKUP_RETENTION_PERIOD_DAYS_FIELD_NUMBER = 57;
   private int backupRetentionPeriodDays_ = 0;
+
   /**
    *
    *
@@ -2913,6 +2983,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int ACTUAL_USED_DATA_STORAGE_SIZE_TB_FIELD_NUMBER = 21;
   private double actualUsedDataStorageSizeTb_ = 0D;
+
   /**
    *
    *
@@ -2934,6 +3005,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int ALLOCATED_STORAGE_SIZE_TB_FIELD_NUMBER = 22;
   private double allocatedStorageSizeTb_ = 0D;
+
   /**
    *
    *
@@ -2954,6 +3026,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int APEX_DETAILS_FIELD_NUMBER = 23;
   private com.google.cloud.oracledatabase.v1.AutonomousDatabaseApex apexDetails_;
+
   /**
    *
    *
@@ -2971,6 +3044,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasApexDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2990,6 +3064,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseApex.getDefaultInstance()
         : apexDetails_;
   }
+
   /**
    *
    *
@@ -3011,6 +3086,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int ARE_PRIMARY_ALLOWLISTED_IPS_USED_FIELD_NUMBER = 24;
   private boolean arePrimaryAllowlistedIpsUsed_ = false;
+
   /**
    *
    *
@@ -3035,6 +3111,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasArePrimaryAllowlistedIpsUsed() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3064,6 +3141,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lifecycleDetails_ = "";
+
   /**
    *
    *
@@ -3088,6 +3166,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -3115,6 +3194,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int STATE_FIELD_NUMBER = 26;
   private int state_ = 0;
+
   /**
    *
    *
@@ -3132,6 +3212,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -3156,6 +3237,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object autonomousContainerDatabaseId_ = "";
+
   /**
    *
    *
@@ -3181,6 +3263,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -3212,6 +3295,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList availableUpgradeVersions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -3229,6 +3313,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getAvailableUpgradeVersionsList() {
     return availableUpgradeVersions_;
   }
+
   /**
    *
    *
@@ -3246,6 +3331,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getAvailableUpgradeVersionsCount() {
     return availableUpgradeVersions_.size();
   }
+
   /**
    *
    *
@@ -3264,6 +3350,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public java.lang.String getAvailableUpgradeVersions(int index) {
     return availableUpgradeVersions_.get(index);
   }
+
   /**
    *
    *
@@ -3285,6 +3372,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int CONNECTION_STRINGS_FIELD_NUMBER = 29;
   private com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionStrings connectionStrings_;
+
   /**
    *
    *
@@ -3303,6 +3391,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasConnectionStrings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3325,6 +3414,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             .getDefaultInstance()
         : connectionStrings_;
   }
+
   /**
    *
    *
@@ -3348,6 +3438,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int CONNECTION_URLS_FIELD_NUMBER = 30;
   private com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionUrls connectionUrls_;
+
   /**
    *
    *
@@ -3365,6 +3456,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasConnectionUrls() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -3384,6 +3476,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionUrls.getDefaultInstance()
         : connectionUrls_;
   }
+
   /**
    *
    *
@@ -3405,6 +3498,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int FAILED_DATA_RECOVERY_DURATION_FIELD_NUMBER = 31;
   private com.google.protobuf.Duration failedDataRecoveryDuration_;
+
   /**
    *
    *
@@ -3423,6 +3517,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasFailedDataRecoveryDuration() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -3443,6 +3538,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         ? com.google.protobuf.Duration.getDefaultInstance()
         : failedDataRecoveryDuration_;
   }
+
   /**
    *
    *
@@ -3464,6 +3560,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int MEMORY_TABLE_GBS_FIELD_NUMBER = 32;
   private int memoryTableGbs_ = 0;
+
   /**
    *
    *
@@ -3483,6 +3580,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int IS_LOCAL_DATA_GUARD_ENABLED_FIELD_NUMBER = 33;
   private boolean isLocalDataGuardEnabled_ = false;
+
   /**
    *
    *
@@ -3503,6 +3601,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int LOCAL_ADG_AUTO_FAILOVER_MAX_DATA_LOSS_LIMIT_FIELD_NUMBER = 35;
   private int localAdgAutoFailoverMaxDataLossLimit_ = 0;
+
   /**
    *
    *
@@ -3524,6 +3623,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int LOCAL_STANDBY_DB_FIELD_NUMBER = 36;
   private com.google.cloud.oracledatabase.v1.AutonomousDatabaseStandbySummary localStandbyDb_;
+
   /**
    *
    *
@@ -3541,6 +3641,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasLocalStandbyDb() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -3560,6 +3661,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseStandbySummary.getDefaultInstance()
         : localStandbyDb_;
   }
+
   /**
    *
    *
@@ -3581,6 +3683,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int MEMORY_PER_ORACLE_COMPUTE_UNIT_GBS_FIELD_NUMBER = 37;
   private int memoryPerOracleComputeUnitGbs_ = 0;
+
   /**
    *
    *
@@ -3601,6 +3704,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int LOCAL_DISASTER_RECOVERY_TYPE_FIELD_NUMBER = 38;
   private int localDisasterRecoveryType_ = 0;
+
   /**
    *
    *
@@ -3619,6 +3723,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getLocalDisasterRecoveryTypeValue() {
     return localDisasterRecoveryType_;
   }
+
   /**
    *
    *
@@ -3648,6 +3753,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int DATA_SAFE_STATE_FIELD_NUMBER = 39;
   private int dataSafeState_ = 0;
+
   /**
    *
    *
@@ -3666,6 +3772,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getDataSafeStateValue() {
     return dataSafeState_;
   }
+
   /**
    *
    *
@@ -3693,6 +3800,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int DATABASE_MANAGEMENT_STATE_FIELD_NUMBER = 40;
   private int databaseManagementState_ = 0;
+
   /**
    *
    *
@@ -3711,6 +3819,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getDatabaseManagementStateValue() {
     return databaseManagementState_;
   }
+
   /**
    *
    *
@@ -3739,6 +3848,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int OPEN_MODE_FIELD_NUMBER = 41;
   private int openMode_ = 0;
+
   /**
    *
    *
@@ -3757,6 +3867,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getOpenModeValue() {
     return openMode_;
   }
+
   /**
    *
    *
@@ -3783,6 +3894,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int OPERATIONS_INSIGHTS_STATE_FIELD_NUMBER = 42;
   private int operationsInsightsState_ = 0;
+
   /**
    *
    *
@@ -3801,6 +3913,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getOperationsInsightsStateValue() {
     return operationsInsightsState_;
   }
+
   /**
    *
    *
@@ -3830,6 +3943,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList peerDbIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -3845,6 +3959,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getPeerDbIdsList() {
     return peerDbIds_;
   }
+
   /**
    *
    *
@@ -3860,6 +3975,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getPeerDbIdsCount() {
     return peerDbIds_.size();
   }
+
   /**
    *
    *
@@ -3876,6 +3992,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public java.lang.String getPeerDbIds(int index) {
     return peerDbIds_.get(index);
   }
+
   /**
    *
    *
@@ -3895,6 +4012,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int PERMISSION_LEVEL_FIELD_NUMBER = 44;
   private int permissionLevel_ = 0;
+
   /**
    *
    *
@@ -3912,6 +4030,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getPermissionLevelValue() {
     return permissionLevel_;
   }
+
   /**
    *
    *
@@ -3941,6 +4060,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateEndpoint_ = "";
+
   /**
    *
    *
@@ -3964,6 +4084,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -3990,6 +4111,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int REFRESHABLE_MODE_FIELD_NUMBER = 46;
   private int refreshableMode_ = 0;
+
   /**
    *
    *
@@ -4007,6 +4129,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getRefreshableModeValue() {
     return refreshableMode_;
   }
+
   /**
    *
    *
@@ -4034,6 +4157,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int REFRESHABLE_STATE_FIELD_NUMBER = 47;
   private int refreshableState_ = 0;
+
   /**
    *
    *
@@ -4051,6 +4175,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getRefreshableStateValue() {
     return refreshableState_;
   }
+
   /**
    *
    *
@@ -4078,6 +4203,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int ROLE_FIELD_NUMBER = 48;
   private int role_ = 0;
+
   /**
    *
    *
@@ -4095,6 +4221,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getRoleValue() {
     return role_;
   }
+
   /**
    *
    *
@@ -4122,6 +4249,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.ScheduledOperationDetails>
       scheduledOperationDetails_;
+
   /**
    *
    *
@@ -4139,6 +4267,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       getScheduledOperationDetailsList() {
     return scheduledOperationDetails_;
   }
+
   /**
    *
    *
@@ -4157,6 +4286,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       getScheduledOperationDetailsOrBuilderList() {
     return scheduledOperationDetails_;
   }
+
   /**
    *
    *
@@ -4173,6 +4303,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getScheduledOperationDetailsCount() {
     return scheduledOperationDetails_.size();
   }
+
   /**
    *
    *
@@ -4190,6 +4321,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       int index) {
     return scheduledOperationDetails_.get(index);
   }
+
   /**
    *
    *
@@ -4212,6 +4344,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sqlWebDeveloperUrl_ = "";
+
   /**
    *
    *
@@ -4235,6 +4368,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -4264,6 +4398,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList supportedCloneRegions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -4281,6 +4416,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getSupportedCloneRegionsList() {
     return supportedCloneRegions_;
   }
+
   /**
    *
    *
@@ -4298,6 +4434,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public int getSupportedCloneRegionsCount() {
     return supportedCloneRegions_.size();
   }
+
   /**
    *
    *
@@ -4316,6 +4453,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public java.lang.String getSupportedCloneRegions(int index) {
     return supportedCloneRegions_.get(index);
   }
+
   /**
    *
    *
@@ -4337,6 +4475,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int USED_DATA_STORAGE_SIZE_TBS_FIELD_NUMBER = 53;
   private int usedDataStorageSizeTbs_ = 0;
+
   /**
    *
    *
@@ -4358,6 +4497,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ociUrl_ = "";
+
   /**
    *
    *
@@ -4382,6 +4522,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -4409,6 +4550,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int TOTAL_AUTO_BACKUP_STORAGE_SIZE_GBS_FIELD_NUMBER = 59;
   private float totalAutoBackupStorageSizeGbs_ = 0F;
+
   /**
    *
    *
@@ -4430,6 +4572,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int NEXT_LONG_TERM_BACKUP_TIME_FIELD_NUMBER = 60;
   private com.google.protobuf.Timestamp nextLongTermBackupTime_;
+
   /**
    *
    *
@@ -4447,6 +4590,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasNextLongTermBackupTime() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -4466,6 +4610,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : nextLongTermBackupTime_;
   }
+
   /**
    *
    *
@@ -4486,6 +4631,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int MAINTENANCE_BEGIN_TIME_FIELD_NUMBER = 65;
   private com.google.protobuf.Timestamp maintenanceBeginTime_;
+
   /**
    *
    *
@@ -4503,6 +4649,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasMaintenanceBeginTime() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -4522,6 +4669,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : maintenanceBeginTime_;
   }
+
   /**
    *
    *
@@ -4542,6 +4690,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
   public static final int MAINTENANCE_END_TIME_FIELD_NUMBER = 66;
   private com.google.protobuf.Timestamp maintenanceEndTime_;
+
   /**
    *
    *
@@ -4559,6 +4708,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
   public boolean hasMaintenanceEndTime() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -4578,6 +4728,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : maintenanceEndTime_;
   }
+
   /**
    *
    *
@@ -5442,6 +5593,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6599,6 +6751,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     private int bitField1_;
 
     private java.lang.Object ocid_ = "";
+
     /**
      *
      *
@@ -6622,6 +6775,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6645,6 +6799,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6667,6 +6822,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6685,6 +6841,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6710,6 +6867,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private float computeCount_;
+
     /**
      *
      *
@@ -6725,6 +6883,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public float getComputeCount() {
       return computeCount_;
     }
+
     /**
      *
      *
@@ -6744,6 +6903,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6763,6 +6923,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int cpuCoreCount_;
+
     /**
      *
      *
@@ -6778,6 +6939,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getCpuCoreCount() {
       return cpuCoreCount_;
     }
+
     /**
      *
      *
@@ -6797,6 +6959,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6816,6 +6979,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int dataStorageSizeTb_;
+
     /**
      *
      *
@@ -6831,6 +6995,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getDataStorageSizeTb() {
       return dataStorageSizeTb_;
     }
+
     /**
      *
      *
@@ -6850,6 +7015,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6869,6 +7035,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int dataStorageSizeGb_;
+
     /**
      *
      *
@@ -6884,6 +7051,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getDataStorageSizeGb() {
       return dataStorageSizeGb_;
     }
+
     /**
      *
      *
@@ -6903,6 +7071,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6922,6 +7091,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int dbWorkload_ = 0;
+
     /**
      *
      *
@@ -6939,6 +7109,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getDbWorkloadValue() {
       return dbWorkload_;
     }
+
     /**
      *
      *
@@ -6959,6 +7130,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6978,6 +7150,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           com.google.cloud.oracledatabase.v1.DBWorkload.forNumber(dbWorkload_);
       return result == null ? com.google.cloud.oracledatabase.v1.DBWorkload.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -7001,6 +7174,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7022,6 +7196,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int dbEdition_ = 0;
+
     /**
      *
      *
@@ -7039,6 +7214,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getDbEditionValue() {
       return dbEdition_;
     }
+
     /**
      *
      *
@@ -7059,6 +7235,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7083,6 +7260,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -7107,6 +7285,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7128,6 +7307,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object characterSet_ = "";
+
     /**
      *
      *
@@ -7151,6 +7331,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7174,6 +7355,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7196,6 +7378,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7214,6 +7397,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7239,6 +7423,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nCharacterSet_ = "";
+
     /**
      *
      *
@@ -7262,6 +7447,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7285,6 +7471,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7307,6 +7494,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7325,6 +7513,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7350,6 +7539,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object privateEndpointIp_ = "";
+
     /**
      *
      *
@@ -7372,6 +7562,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7394,6 +7585,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7415,6 +7607,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7432,6 +7625,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7456,6 +7650,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object privateEndpointLabel_ = "";
+
     /**
      *
      *
@@ -7478,6 +7673,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7500,6 +7696,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7521,6 +7718,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7538,6 +7736,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7562,6 +7761,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object dbVersion_ = "";
+
     /**
      *
      *
@@ -7584,6 +7784,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7606,6 +7807,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7627,6 +7829,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7644,6 +7847,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7668,6 +7872,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private boolean isAutoScalingEnabled_;
+
     /**
      *
      *
@@ -7684,6 +7889,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean getIsAutoScalingEnabled() {
       return isAutoScalingEnabled_;
     }
+
     /**
      *
      *
@@ -7704,6 +7910,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7724,6 +7931,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private boolean isStorageAutoScalingEnabled_;
+
     /**
      *
      *
@@ -7741,6 +7949,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean getIsStorageAutoScalingEnabled() {
       return isStorageAutoScalingEnabled_;
     }
+
     /**
      *
      *
@@ -7762,6 +7971,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7783,6 +7993,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int licenseType_ = 0;
+
     /**
      *
      *
@@ -7800,6 +8011,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getLicenseTypeValue() {
       return licenseType_;
     }
+
     /**
      *
      *
@@ -7820,6 +8032,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7843,6 +8056,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -7867,6 +8081,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7924,6 +8139,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return customerContactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7942,6 +8158,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return customerContactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7960,6 +8177,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return customerContactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7985,6 +8203,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8007,6 +8226,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8031,6 +8251,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8056,6 +8277,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8078,6 +8300,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8100,6 +8323,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8122,6 +8346,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8143,6 +8368,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8164,6 +8390,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8179,6 +8406,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         int index) {
       return getCustomerContactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8198,6 +8426,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return customerContactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8217,6 +8446,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(customerContacts_);
       }
     }
+
     /**
      *
      *
@@ -8232,6 +8462,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return getCustomerContactsFieldBuilder()
           .addBuilder(com.google.cloud.oracledatabase.v1.CustomerContact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8249,6 +8480,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.oracledatabase.v1.CustomerContact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8286,6 +8518,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object secretId_ = "";
+
     /**
      *
      *
@@ -8308,6 +8541,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8330,6 +8564,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8351,6 +8586,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8368,6 +8604,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8392,6 +8629,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object vaultId_ = "";
+
     /**
      *
      *
@@ -8414,6 +8652,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8436,6 +8675,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8457,6 +8697,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8474,6 +8715,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8498,6 +8740,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int maintenanceScheduleType_ = 0;
+
     /**
      *
      *
@@ -8515,6 +8758,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getMaintenanceScheduleTypeValue() {
       return maintenanceScheduleType_;
     }
+
     /**
      *
      *
@@ -8535,6 +8779,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8560,6 +8805,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8585,6 +8831,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8606,6 +8853,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private boolean mtlsConnectionRequired_;
+
     /**
      *
      *
@@ -8622,6 +8870,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean getMtlsConnectionRequired() {
       return mtlsConnectionRequired_;
     }
+
     /**
      *
      *
@@ -8642,6 +8891,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8662,6 +8912,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int backupRetentionPeriodDays_;
+
     /**
      *
      *
@@ -8680,6 +8931,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getBackupRetentionPeriodDays() {
       return backupRetentionPeriodDays_;
     }
+
     /**
      *
      *
@@ -8702,6 +8954,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8724,6 +8977,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private double actualUsedDataStorageSizeTb_;
+
     /**
      *
      *
@@ -8742,6 +8996,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public double getActualUsedDataStorageSizeTb() {
       return actualUsedDataStorageSizeTb_;
     }
+
     /**
      *
      *
@@ -8764,6 +9019,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8786,6 +9042,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private double allocatedStorageSizeTb_;
+
     /**
      *
      *
@@ -8803,6 +9060,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public double getAllocatedStorageSizeTb() {
       return allocatedStorageSizeTb_;
     }
+
     /**
      *
      *
@@ -8824,6 +9082,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8850,6 +9109,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseApex.Builder,
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseApexOrBuilder>
         apexDetailsBuilder_;
+
     /**
      *
      *
@@ -8866,6 +9126,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasApexDetails() {
       return ((bitField0_ & 0x00800000) != 0);
     }
+
     /**
      *
      *
@@ -8888,6 +9149,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return apexDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8912,6 +9174,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8934,6 +9197,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8965,6 +9229,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -8986,6 +9251,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9003,6 +9269,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return getApexDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9024,6 +9291,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             : apexDetails_;
       }
     }
+
     /**
      *
      *
@@ -9053,6 +9321,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private boolean arePrimaryAllowlistedIpsUsed_;
+
     /**
      *
      *
@@ -9077,6 +9346,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasArePrimaryAllowlistedIpsUsed() {
       return ((bitField0_ & 0x01000000) != 0);
     }
+
     /**
      *
      *
@@ -9101,6 +9371,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean getArePrimaryAllowlistedIpsUsed() {
       return arePrimaryAllowlistedIpsUsed_;
     }
+
     /**
      *
      *
@@ -9129,6 +9400,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9157,6 +9429,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object lifecycleDetails_ = "";
+
     /**
      *
      *
@@ -9180,6 +9453,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9203,6 +9477,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9225,6 +9500,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9243,6 +9519,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9268,6 +9545,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -9285,6 +9563,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -9305,6 +9584,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9324,6 +9604,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           com.google.cloud.oracledatabase.v1.State.forNumber(state_);
       return result == null ? com.google.cloud.oracledatabase.v1.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -9347,6 +9628,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9368,6 +9650,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object autonomousContainerDatabaseId_ = "";
+
     /**
      *
      *
@@ -9392,6 +9675,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9416,6 +9700,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9439,6 +9724,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9458,6 +9744,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9493,6 +9780,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x10000000;
     }
+
     /**
      *
      *
@@ -9511,6 +9799,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       availableUpgradeVersions_.makeImmutable();
       return availableUpgradeVersions_;
     }
+
     /**
      *
      *
@@ -9528,6 +9817,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getAvailableUpgradeVersionsCount() {
       return availableUpgradeVersions_.size();
     }
+
     /**
      *
      *
@@ -9546,6 +9836,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public java.lang.String getAvailableUpgradeVersions(int index) {
       return availableUpgradeVersions_.get(index);
     }
+
     /**
      *
      *
@@ -9564,6 +9855,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getAvailableUpgradeVersionsBytes(int index) {
       return availableUpgradeVersions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -9590,6 +9882,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9615,6 +9908,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9637,6 +9931,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9658,6 +9953,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9692,6 +9988,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionStrings.Builder,
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionStringsOrBuilder>
         connectionStringsBuilder_;
+
     /**
      *
      *
@@ -9709,6 +10006,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasConnectionStrings() {
       return ((bitField0_ & 0x20000000) != 0);
     }
+
     /**
      *
      *
@@ -9734,6 +10032,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return connectionStringsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9760,6 +10059,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9784,6 +10084,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9817,6 +10118,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -9839,6 +10141,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9857,6 +10160,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return getConnectionStringsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9880,6 +10184,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             : connectionStrings_;
       }
     }
+
     /**
      *
      *
@@ -9915,6 +10220,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionUrls.Builder,
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionUrlsOrBuilder>
         connectionUrlsBuilder_;
+
     /**
      *
      *
@@ -9931,6 +10237,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasConnectionUrls() {
       return ((bitField0_ & 0x40000000) != 0);
     }
+
     /**
      *
      *
@@ -9954,6 +10261,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return connectionUrlsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9979,6 +10287,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10002,6 +10311,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10034,6 +10344,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -10055,6 +10366,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10072,6 +10384,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return getConnectionUrlsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10094,6 +10407,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             : connectionUrls_;
       }
     }
+
     /**
      *
      *
@@ -10128,6 +10442,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         failedDataRecoveryDurationBuilder_;
+
     /**
      *
      *
@@ -10145,6 +10460,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasFailedDataRecoveryDuration() {
       return ((bitField0_ & 0x80000000) != 0);
     }
+
     /**
      *
      *
@@ -10168,6 +10484,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return failedDataRecoveryDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10193,6 +10510,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10216,6 +10534,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10246,6 +10565,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -10268,6 +10588,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10285,6 +10606,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return getFailedDataRecoveryDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10306,6 +10628,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             : failedDataRecoveryDuration_;
       }
     }
+
     /**
      *
      *
@@ -10336,6 +10659,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int memoryTableGbs_;
+
     /**
      *
      *
@@ -10352,6 +10676,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getMemoryTableGbs() {
       return memoryTableGbs_;
     }
+
     /**
      *
      *
@@ -10372,6 +10697,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10392,6 +10718,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private boolean isLocalDataGuardEnabled_;
+
     /**
      *
      *
@@ -10409,6 +10736,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean getIsLocalDataGuardEnabled() {
       return isLocalDataGuardEnabled_;
     }
+
     /**
      *
      *
@@ -10430,6 +10758,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10451,6 +10780,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int localAdgAutoFailoverMaxDataLossLimit_;
+
     /**
      *
      *
@@ -10469,6 +10799,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getLocalAdgAutoFailoverMaxDataLossLimit() {
       return localAdgAutoFailoverMaxDataLossLimit_;
     }
+
     /**
      *
      *
@@ -10491,6 +10822,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10518,6 +10850,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseStandbySummary.Builder,
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseStandbySummaryOrBuilder>
         localStandbyDbBuilder_;
+
     /**
      *
      *
@@ -10534,6 +10867,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasLocalStandbyDb() {
       return ((bitField1_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -10557,6 +10891,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return localStandbyDbBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10582,6 +10917,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10605,6 +10941,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10637,6 +10974,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -10658,6 +10996,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10675,6 +11014,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return getLocalStandbyDbFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10697,6 +11037,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             : localStandbyDb_;
       }
     }
+
     /**
      *
      *
@@ -10726,6 +11067,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int memoryPerOracleComputeUnitGbs_;
+
     /**
      *
      *
@@ -10743,6 +11085,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getMemoryPerOracleComputeUnitGbs() {
       return memoryPerOracleComputeUnitGbs_;
     }
+
     /**
      *
      *
@@ -10764,6 +11107,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10785,6 +11129,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int localDisasterRecoveryType_ = 0;
+
     /**
      *
      *
@@ -10803,6 +11148,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getLocalDisasterRecoveryTypeValue() {
       return localDisasterRecoveryType_;
     }
+
     /**
      *
      *
@@ -10824,6 +11170,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10850,6 +11197,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               .LocalDisasterRecoveryType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -10876,6 +11224,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10898,6 +11247,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int dataSafeState_ = 0;
+
     /**
      *
      *
@@ -10916,6 +11266,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getDataSafeStateValue() {
       return dataSafeState_;
     }
+
     /**
      *
      *
@@ -10937,6 +11288,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10962,6 +11314,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -10987,6 +11340,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11009,6 +11363,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int databaseManagementState_ = 0;
+
     /**
      *
      *
@@ -11027,6 +11382,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getDatabaseManagementStateValue() {
       return databaseManagementState_;
     }
+
     /**
      *
      *
@@ -11048,6 +11404,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11074,6 +11431,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11100,6 +11458,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11122,6 +11481,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int openMode_ = 0;
+
     /**
      *
      *
@@ -11140,6 +11500,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getOpenModeValue() {
       return openMode_;
     }
+
     /**
      *
      *
@@ -11161,6 +11522,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11184,6 +11546,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.OpenMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11209,6 +11572,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11231,6 +11595,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int operationsInsightsState_ = 0;
+
     /**
      *
      *
@@ -11249,6 +11614,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getOperationsInsightsStateValue() {
       return operationsInsightsState_;
     }
+
     /**
      *
      *
@@ -11270,6 +11636,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11293,6 +11660,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           ? com.google.cloud.oracledatabase.v1.OperationsInsightsState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11318,6 +11686,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11348,6 +11717,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       bitField1_ |= 0x00000400;
     }
+
     /**
      *
      *
@@ -11364,6 +11734,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       peerDbIds_.makeImmutable();
       return peerDbIds_;
     }
+
     /**
      *
      *
@@ -11379,6 +11750,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getPeerDbIdsCount() {
       return peerDbIds_.size();
     }
+
     /**
      *
      *
@@ -11395,6 +11767,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public java.lang.String getPeerDbIds(int index) {
       return peerDbIds_.get(index);
     }
+
     /**
      *
      *
@@ -11411,6 +11784,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getPeerDbIdsBytes(int index) {
       return peerDbIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -11435,6 +11809,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11458,6 +11833,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11478,6 +11854,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11497,6 +11874,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11523,6 +11901,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int permissionLevel_ = 0;
+
     /**
      *
      *
@@ -11540,6 +11919,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getPermissionLevelValue() {
       return permissionLevel_;
     }
+
     /**
      *
      *
@@ -11560,6 +11940,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11584,6 +11965,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11608,6 +11990,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11629,6 +12012,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object privateEndpoint_ = "";
+
     /**
      *
      *
@@ -11651,6 +12035,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -11673,6 +12058,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11694,6 +12080,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11711,6 +12098,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11735,6 +12123,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int refreshableMode_ = 0;
+
     /**
      *
      *
@@ -11752,6 +12141,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getRefreshableModeValue() {
       return refreshableMode_;
     }
+
     /**
      *
      *
@@ -11772,6 +12162,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11796,6 +12187,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11820,6 +12212,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11841,6 +12234,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int refreshableState_ = 0;
+
     /**
      *
      *
@@ -11858,6 +12252,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getRefreshableStateValue() {
       return refreshableState_;
     }
+
     /**
      *
      *
@@ -11878,6 +12273,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11902,6 +12298,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11926,6 +12323,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11947,6 +12345,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int role_ = 0;
+
     /**
      *
      *
@@ -11964,6 +12363,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getRoleValue() {
       return role_;
     }
+
     /**
      *
      *
@@ -11984,6 +12384,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12005,6 +12406,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.Role.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -12029,6 +12431,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12087,6 +12490,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return scheduledOperationDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -12106,6 +12510,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return scheduledOperationDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -12126,6 +12531,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return scheduledOperationDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -12152,6 +12558,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12176,6 +12583,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12202,6 +12610,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12228,6 +12637,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12251,6 +12661,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12275,6 +12686,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12299,6 +12711,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12321,6 +12734,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12343,6 +12757,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -12359,6 +12774,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         getScheduledOperationDetailsBuilder(int index) {
       return getScheduledOperationDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -12379,6 +12795,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return scheduledOperationDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -12400,6 +12817,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(scheduledOperationDetails_);
       }
     }
+
     /**
      *
      *
@@ -12418,6 +12836,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           .addBuilder(
               com.google.cloud.oracledatabase.v1.ScheduledOperationDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -12437,6 +12856,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               index,
               com.google.cloud.oracledatabase.v1.ScheduledOperationDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -12475,6 +12895,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object sqlWebDeveloperUrl_ = "";
+
     /**
      *
      *
@@ -12497,6 +12918,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -12519,6 +12941,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -12540,6 +12963,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12557,6 +12981,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12590,6 +13015,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       bitField1_ |= 0x00040000;
     }
+
     /**
      *
      *
@@ -12608,6 +13034,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       supportedCloneRegions_.makeImmutable();
       return supportedCloneRegions_;
     }
+
     /**
      *
      *
@@ -12625,6 +13052,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getSupportedCloneRegionsCount() {
       return supportedCloneRegions_.size();
     }
+
     /**
      *
      *
@@ -12643,6 +13071,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public java.lang.String getSupportedCloneRegions(int index) {
       return supportedCloneRegions_.get(index);
     }
+
     /**
      *
      *
@@ -12661,6 +13090,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getSupportedCloneRegionsBytes(int index) {
       return supportedCloneRegions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -12687,6 +13117,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12712,6 +13143,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12734,6 +13166,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12755,6 +13188,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12783,6 +13217,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private int usedDataStorageSizeTbs_;
+
     /**
      *
      *
@@ -12799,6 +13234,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public int getUsedDataStorageSizeTbs() {
       return usedDataStorageSizeTbs_;
     }
+
     /**
      *
      *
@@ -12819,6 +13255,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12839,6 +13276,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private java.lang.Object ociUrl_ = "";
+
     /**
      *
      *
@@ -12862,6 +13300,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -12885,6 +13324,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -12907,6 +13347,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12925,6 +13366,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12950,6 +13392,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
 
     private float totalAutoBackupStorageSizeGbs_;
+
     /**
      *
      *
@@ -12968,6 +13411,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public float getTotalAutoBackupStorageSizeGbs() {
       return totalAutoBackupStorageSizeGbs_;
     }
+
     /**
      *
      *
@@ -12990,6 +13434,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13017,6 +13462,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         nextLongTermBackupTimeBuilder_;
+
     /**
      *
      *
@@ -13033,6 +13479,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasNextLongTermBackupTime() {
       return ((bitField1_ & 0x00400000) != 0);
     }
+
     /**
      *
      *
@@ -13055,6 +13502,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return nextLongTermBackupTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13079,6 +13527,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13101,6 +13550,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13130,6 +13580,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -13151,6 +13602,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13167,6 +13619,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return getNextLongTermBackupTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13187,6 +13640,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             : nextLongTermBackupTime_;
       }
     }
+
     /**
      *
      *
@@ -13221,6 +13675,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         maintenanceBeginTimeBuilder_;
+
     /**
      *
      *
@@ -13237,6 +13692,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasMaintenanceBeginTime() {
       return ((bitField1_ & 0x00800000) != 0);
     }
+
     /**
      *
      *
@@ -13259,6 +13715,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return maintenanceBeginTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13283,6 +13740,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13304,6 +13762,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13333,6 +13792,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -13354,6 +13814,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13370,6 +13831,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return getMaintenanceBeginTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13390,6 +13852,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             : maintenanceBeginTime_;
       }
     }
+
     /**
      *
      *
@@ -13424,6 +13887,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         maintenanceEndTimeBuilder_;
+
     /**
      *
      *
@@ -13440,6 +13904,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public boolean hasMaintenanceEndTime() {
       return ((bitField1_ & 0x01000000) != 0);
     }
+
     /**
      *
      *
@@ -13462,6 +13927,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         return maintenanceEndTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13486,6 +13952,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13507,6 +13974,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13536,6 +14004,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -13557,6 +14026,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13573,6 +14043,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       onChanged();
       return getMaintenanceEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13593,6 +14064,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
             : maintenanceEndTime_;
       }
     }
+
     /**
      *
      *

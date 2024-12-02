@@ -73,6 +73,7 @@ public enum LinkProposalInitiatingProduct implements com.google.protobuf.Protoco
    * <code>LINK_PROPOSAL_INITIATING_PRODUCT_UNSPECIFIED = 0;</code>
    */
   public static final int LINK_PROPOSAL_INITIATING_PRODUCT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum LinkProposalInitiatingProduct implements com.google.protobuf.Protoco
    * <code>GOOGLE_ANALYTICS = 1;</code>
    */
   public static final int GOOGLE_ANALYTICS_VALUE = 1;
+
   /**
    *
    *

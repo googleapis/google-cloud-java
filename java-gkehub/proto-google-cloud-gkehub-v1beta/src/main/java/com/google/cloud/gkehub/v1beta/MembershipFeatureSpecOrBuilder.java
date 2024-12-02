@@ -37,6 +37,7 @@ public interface MembershipFeatureSpecOrBuilder
    * @return Whether the configmanagement field is set.
    */
   boolean hasConfigmanagement();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MembershipFeatureSpecOrBuilder
    * @return The configmanagement.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec getConfigmanagement();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface MembershipFeatureSpecOrBuilder
    * @return Whether the mesh field is set.
    */
   boolean hasMesh();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface MembershipFeatureSpecOrBuilder
    * @return The mesh.
    */
   com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec getMesh();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface MembershipFeatureSpecOrBuilder
    * @return Whether the policycontroller field is set.
    */
   boolean hasPolicycontroller();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface MembershipFeatureSpecOrBuilder
    * @return The policycontroller.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec getPolicycontroller();
+
   /**
    *
    *

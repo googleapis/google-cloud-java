@@ -34,6 +34,7 @@ public interface ListCdnKeysResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.CdnKey cdn_keys = 1;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.CdnKey> getCdnKeysList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCdnKeysResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.CdnKey cdn_keys = 1;</code>
    */
   com.google.cloud.video.stitcher.v1.CdnKey getCdnKeys(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCdnKeysResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.CdnKey cdn_keys = 1;</code>
    */
   int getCdnKeysCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCdnKeysResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.CdnKeyOrBuilder>
       getCdnKeysOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListCdnKeysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListCdnKeysResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListCdnKeysResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListCdnKeysResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

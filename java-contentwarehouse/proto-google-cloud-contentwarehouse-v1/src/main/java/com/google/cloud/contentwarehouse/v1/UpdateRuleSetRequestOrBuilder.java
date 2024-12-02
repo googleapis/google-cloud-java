@@ -40,6 +40,7 @@ public interface UpdateRuleSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UpdateRuleSetRequestOrBuilder
    * @return Whether the ruleSet field is set.
    */
   boolean hasRuleSet();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateRuleSetRequestOrBuilder
    * @return The ruleSet.
    */
   com.google.cloud.contentwarehouse.v1.RuleSet getRuleSet();
+
   /**
    *
    *

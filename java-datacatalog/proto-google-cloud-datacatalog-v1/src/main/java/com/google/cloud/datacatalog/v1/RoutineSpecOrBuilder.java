@@ -36,6 +36,7 @@ public interface RoutineSpecOrBuilder
    * @return The enum numeric value on the wire for routineType.
    */
   int getRoutineTypeValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RoutineSpecOrBuilder
    * @return The language.
    */
   java.lang.String getLanguage();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface RoutineSpecOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.RoutineSpec.Argument routine_arguments = 3;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.RoutineSpec.Argument> getRoutineArgumentsList();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface RoutineSpecOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.RoutineSpec.Argument routine_arguments = 3;</code>
    */
   com.google.cloud.datacatalog.v1.RoutineSpec.Argument getRoutineArguments(int index);
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface RoutineSpecOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.RoutineSpec.Argument routine_arguments = 3;</code>
    */
   int getRoutineArgumentsCount();
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface RoutineSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.RoutineSpec.ArgumentOrBuilder>
       getRoutineArgumentsOrBuilderList();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface RoutineSpecOrBuilder
    * @return The returnType.
    */
   java.lang.String getReturnType();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface RoutineSpecOrBuilder
    * @return The definitionBody.
    */
   java.lang.String getDefinitionBody();
+
   /**
    *
    *
@@ -199,6 +207,7 @@ public interface RoutineSpecOrBuilder
    * @return Whether the bigqueryRoutineSpec field is set.
    */
   boolean hasBigqueryRoutineSpec();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface RoutineSpecOrBuilder
    * @return The bigqueryRoutineSpec.
    */
   com.google.cloud.datacatalog.v1.BigQueryRoutineSpec getBigqueryRoutineSpec();
+
   /**
    *
    *

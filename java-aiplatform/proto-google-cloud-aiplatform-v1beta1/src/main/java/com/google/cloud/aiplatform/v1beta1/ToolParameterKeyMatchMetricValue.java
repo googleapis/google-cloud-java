@@ -33,6 +33,7 @@ public final class ToolParameterKeyMatchMetricValue extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ToolParameterKeyMatchMetricValue)
     ToolParameterKeyMatchMetricValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ToolParameterKeyMatchMetricValue.newBuilder() to construct.
   private ToolParameterKeyMatchMetricValue(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class ToolParameterKeyMatchMetricValue extends com.google.protobuf.
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ToolParameterKeyMatchMetricValue extends com.google.protobuf.
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -263,6 +266,7 @@ public final class ToolParameterKeyMatchMetricValue extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -455,6 +459,7 @@ public final class ToolParameterKeyMatchMetricValue extends com.google.protobuf.
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -470,6 +475,7 @@ public final class ToolParameterKeyMatchMetricValue extends com.google.protobuf.
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -485,6 +491,7 @@ public final class ToolParameterKeyMatchMetricValue extends com.google.protobuf.
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -504,6 +511,7 @@ public final class ToolParameterKeyMatchMetricValue extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface AzureClusterUserOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ShieldedInstanceIntegrityPolicyOrBuilder
    * @return Whether the updateAutoLearnPolicy field is set.
    */
   boolean hasUpdateAutoLearnPolicy();
+
   /**
    *
    *

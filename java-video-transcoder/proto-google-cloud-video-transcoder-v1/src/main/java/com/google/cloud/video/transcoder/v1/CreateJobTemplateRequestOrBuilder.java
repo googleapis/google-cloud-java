@@ -39,6 +39,7 @@ public interface CreateJobTemplateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateJobTemplateRequestOrBuilder
    * @return Whether the jobTemplate field is set.
    */
   boolean hasJobTemplate();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateJobTemplateRequestOrBuilder
    * @return The jobTemplate.
    */
   com.google.cloud.video.transcoder.v1.JobTemplate getJobTemplate();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateJobTemplateRequestOrBuilder
    * @return The jobTemplateId.
    */
   java.lang.String getJobTemplateId();
+
   /**
    *
    *

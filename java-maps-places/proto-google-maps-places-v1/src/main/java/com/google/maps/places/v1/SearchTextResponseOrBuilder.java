@@ -34,6 +34,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   java.util.List<com.google.maps.places.v1.Place> getPlacesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   com.google.maps.places.v1.Place getPlaces(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   int getPlacesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   java.util.List<? extends com.google.maps.places.v1.PlaceOrBuilder> getPlacesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
    */
   java.util.List<com.google.maps.places.v1.RoutingSummary> getRoutingSummariesList();
+
   /**
    *
    *
@@ -103,6 +108,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
    */
   com.google.maps.places.v1.RoutingSummary getRoutingSummaries(int index);
+
   /**
    *
    *
@@ -117,6 +123,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
    */
   int getRoutingSummariesCount();
+
   /**
    *
    *
@@ -132,6 +139,7 @@ public interface SearchTextResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.RoutingSummaryOrBuilder>
       getRoutingSummariesOrBuilderList();
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
    */
   java.util.List<com.google.maps.places.v1.ContextualContent> getContextualContentsList();
+
   /**
    *
    *
@@ -187,6 +196,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
    */
   com.google.maps.places.v1.ContextualContent getContextualContents(int index);
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface SearchTextResponseOrBuilder
    * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
    */
   int getContextualContentsCount();
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public interface SearchTextResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.ContextualContentOrBuilder>
       getContextualContentsOrBuilderList();
+
   /**
    *
    *

@@ -72,6 +72,7 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVICE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int SERVICE_LEVEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GOOGLE_ANALYTICS_STANDARD = 1;</code>
    */
   public static final int GOOGLE_ANALYTICS_STANDARD_VALUE = 1;
+
   /**
    *
    *

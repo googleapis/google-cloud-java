@@ -33,6 +33,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DistillationSpec)
     DistillationSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DistillationSpec.newBuilder() to construct.
   private DistillationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     private TeacherModelCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int BASE_TEACHER_MODEL_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
   public boolean hasBaseTeacherModel() {
     return teacherModelCase_ == 5;
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TUNED_TEACHER_MODEL_SOURCE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
   public boolean hasTunedTeacherModelSource() {
     return teacherModelCase_ == 6;
   }
+
   /**
    *
    *
@@ -233,6 +240,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -266,6 +274,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trainingDatasetUri_ = "";
+
   /**
    *
    *
@@ -290,6 +299,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -319,6 +329,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object validationDatasetUri_ = "";
+
   /**
    *
    *
@@ -336,6 +347,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
   public boolean hasValidationDatasetUri() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -361,6 +373,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -389,6 +402,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
 
   public static final int HYPER_PARAMETERS_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.DistillationHyperParameters hyperParameters_;
+
   /**
    *
    *
@@ -406,6 +420,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
   public boolean hasHyperParameters() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -425,6 +440,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.aiplatform.v1beta1.DistillationHyperParameters.getDefaultInstance()
         : hyperParameters_;
   }
+
   /**
    *
    *
@@ -448,6 +464,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object studentModel_ = "";
+
   /**
    *
    *
@@ -471,6 +488,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -499,6 +517,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineRootDirectory_ = "";
+
   /**
    *
    *
@@ -524,6 +543,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -790,6 +810,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1121,6 +1142,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     public boolean hasBaseTeacherModel() {
       return teacherModelCase_ == 5;
     }
+
     /**
      *
      *
@@ -1150,6 +1172,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1202,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1201,6 +1225,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1246,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1288,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     public boolean hasTunedTeacherModelSource() {
       return teacherModelCase_ == 6;
     }
+
     /**
      *
      *
@@ -1292,6 +1319,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1350,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1345,6 +1374,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1396,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1423,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object trainingDatasetUri_ = "";
+
     /**
      *
      *
@@ -1415,6 +1447,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1471,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1460,6 +1494,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1478,6 +1513,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1539,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object validationDatasetUri_ = "";
+
     /**
      *
      *
@@ -1519,6 +1556,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     public boolean hasValidationDatasetUri() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1543,6 +1581,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1567,6 +1606,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1590,6 +1630,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1650,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1640,6 +1682,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.DistillationHyperParameters.Builder,
             com.google.cloud.aiplatform.v1beta1.DistillationHyperParametersOrBuilder>
         hyperParametersBuilder_;
+
     /**
      *
      *
@@ -1656,6 +1699,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     public boolean hasHyperParameters() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1678,6 +1722,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return hyperParametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1703,6 +1748,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1771,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1804,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1826,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1795,6 +1844,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getHyperParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1816,6 +1866,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
             : hyperParameters_;
       }
     }
+
     /**
      *
      *
@@ -1845,6 +1896,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object studentModel_ = "";
+
     /**
      *
      *
@@ -1867,6 +1919,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1889,6 +1942,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1910,6 +1964,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1927,6 +1982,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1951,6 +2007,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object pipelineRootDirectory_ = "";
+
     /**
      *
      *
@@ -1975,6 +2032,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1999,6 +2057,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2022,6 +2081,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2041,6 +2101,7 @@ public final class DistillationSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

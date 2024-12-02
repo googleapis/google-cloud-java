@@ -35,6 +35,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CheckGroundingRequest)
     CheckGroundingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckGroundingRequest.newBuilder() to construct.
   private CheckGroundingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object groundingConfig_ = "";
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerCandidate_ = "";
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1beta.GroundingFact> facts_;
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.discoveryengine.v1beta.GroundingFact> getFactsList() {
     return facts_;
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       getFactsOrBuilderList() {
     return facts_;
   }
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
   public int getFactsCount() {
     return facts_.size();
   }
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
   public com.google.cloud.discoveryengine.v1beta.GroundingFact getFacts(int index) {
     return facts_.get(index);
   }
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
 
   public static final int GROUNDING_SPEC_FIELD_NUMBER = 4;
   private com.google.cloud.discoveryengine.v1beta.CheckGroundingSpec groundingSpec_;
+
   /**
    *
    *
@@ -282,6 +293,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
   public boolean hasGroundingSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -299,6 +311,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.discoveryengine.v1beta.CheckGroundingSpec.getDefaultInstance()
         : groundingSpec_;
   }
+
   /**
    *
    *
@@ -342,6 +355,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
   public int getUserLabelsCount() {
     return internalGetUserLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -374,12 +388,14 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     }
     return internalGetUserLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
     return getUserLabelsMap();
   }
+
   /**
    *
    *
@@ -409,6 +425,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
     return internalGetUserLabels().getMap();
   }
+
   /**
    *
    *
@@ -445,6 +462,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -693,6 +711,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1031,6 +1050,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object groundingConfig_ = "";
+
     /**
      *
      *
@@ -1056,6 +1076,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1102,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1105,6 +1127,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1148,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1176,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object answerCandidate_ = "";
+
     /**
      *
      *
@@ -1174,6 +1199,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1222,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1244,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1262,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1320,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return factsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1308,6 +1338,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return factsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1325,6 +1356,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return factsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1349,6 +1381,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1403,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1427,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1452,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1474,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1496,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1481,6 +1519,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1540,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1521,6 +1561,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1535,6 +1576,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         int index) {
       return getFactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1553,6 +1595,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return factsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1571,6 +1614,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(facts_);
       }
     }
+
     /**
      *
      *
@@ -1585,6 +1629,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       return getFactsFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1beta.GroundingFact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1601,6 +1646,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1beta.GroundingFact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1639,6 +1685,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.discoveryengine.v1beta.CheckGroundingSpec.Builder,
             com.google.cloud.discoveryengine.v1beta.CheckGroundingSpecOrBuilder>
         groundingSpecBuilder_;
+
     /**
      *
      *
@@ -1653,6 +1700,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     public boolean hasGroundingSpec() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1673,6 +1721,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
         return groundingSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1696,6 +1745,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1716,6 +1766,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +1797,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1817,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1833,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getGroundingSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1799,6 +1853,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
             : groundingSpec_;
       }
     }
+
     /**
      *
      *
@@ -1853,6 +1908,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     public int getUserLabelsCount() {
       return internalGetUserLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1885,12 +1941,14 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       }
       return internalGetUserLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getUserLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
       return getUserLabelsMap();
     }
+
     /**
      *
      *
@@ -1920,6 +1978,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
       return internalGetUserLabels().getMap();
     }
+
     /**
      *
      *
@@ -1956,6 +2015,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1998,6 +2058,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2030,12 +2091,14 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableUserLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2072,6 +2135,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *

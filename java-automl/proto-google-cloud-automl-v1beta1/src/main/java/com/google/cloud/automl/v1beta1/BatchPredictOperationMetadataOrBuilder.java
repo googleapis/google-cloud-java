@@ -37,6 +37,7 @@ public interface BatchPredictOperationMetadataOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BatchPredictOperationMetadataOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.automl.v1beta1.BatchPredictInputConfig getInputConfig();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface BatchPredictOperationMetadataOrBuilder
    * @return Whether the outputInfo field is set.
    */
   boolean hasOutputInfo();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface BatchPredictOperationMetadataOrBuilder
    */
   com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.BatchPredictOutputInfo
       getOutputInfo();
+
   /**
    *
    *

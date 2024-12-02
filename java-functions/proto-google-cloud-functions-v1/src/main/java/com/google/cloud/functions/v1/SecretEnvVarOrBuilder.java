@@ -36,6 +36,7 @@ public interface SecretEnvVarOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SecretEnvVarOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface SecretEnvVarOrBuilder
    * @return The secret.
    */
   java.lang.String getSecret();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface SecretEnvVarOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

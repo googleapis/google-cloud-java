@@ -33,6 +33,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.CreateCompilationResultRequest)
     CreateCompilationResultRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateCompilationResultRequest.newBuilder() to construct.
   private CreateCompilationResultRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
 
   public static final int COMPILATION_RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.dataform.v1alpha2.CompilationResult compilationResult_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
   public boolean hasCompilationResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
         ? com.google.cloud.dataform.v1alpha2.CompilationResult.getDefaultInstance()
         : compilationResult_;
   }
+
   /**
    *
    *
@@ -354,6 +360,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -576,6 +583,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -601,6 +609,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -626,6 +635,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +681,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
             com.google.cloud.dataform.v1alpha2.CompilationResult.Builder,
             com.google.cloud.dataform.v1alpha2.CompilationResultOrBuilder>
         compilationResultBuilder_;
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
     public boolean hasCompilationResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
         return compilationResultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +835,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +857,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
       onChanged();
       return getCompilationResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -877,6 +897,7 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
             : compilationResult_;
       }
     }
+
     /**
      *
      *

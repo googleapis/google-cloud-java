@@ -38,6 +38,7 @@ public interface UpdateWorkstationClusterRequestOrBuilder
    * @return Whether the workstationCluster field is set.
    */
   boolean hasWorkstationCluster();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateWorkstationClusterRequestOrBuilder
    * @return The workstationCluster.
    */
   com.google.cloud.workstations.v1beta.WorkstationCluster getWorkstationCluster();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateWorkstationClusterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateWorkstationClusterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

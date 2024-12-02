@@ -33,6 +33,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.ValidationMessage)
     ValidationMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidationMessage.newBuilder() to construct.
   private ValidationMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int LEVEL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>WARNING = 1;</code>
      */
     public static final int WARNING_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -261,6 +265,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +292,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
 
   public static final int LEVEL_FIELD_NUMBER = 2;
   private int level_ = 0;
+
   /**
    *
    *
@@ -302,6 +308,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   public int getLevelValue() {
     return level_;
   }
+
   /**
    *
    *
@@ -348,6 +355,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
+
   /**
    *
    *
@@ -364,12 +372,14 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
+
   /**
    *
    *
@@ -383,6 +393,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
+
   /**
    *
    *
@@ -403,6 +414,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -428,6 +440,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
+
   /**
    *
    *
@@ -451,6 +464,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -671,6 +685,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -924,6 +939,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -946,6 +962,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +985,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1007,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1025,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1050,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     }
 
     private int level_ = 0;
+
     /**
      *
      *
@@ -1045,6 +1066,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     public int getLevelValue() {
       return level_;
     }
+
     /**
      *
      *
@@ -1063,6 +1085,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1105,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.datastream.v1.ValidationMessage.Level.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1103,6 +1127,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1172,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -1163,12 +1189,14 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
+
     /**
      *
      *
@@ -1182,6 +1210,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
+
     /**
      *
      *
@@ -1202,6 +1231,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1228,6 +1258,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1244,12 +1275,14 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
+
     /**
      *
      *
@@ -1270,6 +1303,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1320,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object code_ = "";
+
     /**
      *
      *
@@ -1308,6 +1343,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1330,6 +1366,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1351,6 +1388,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1406,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

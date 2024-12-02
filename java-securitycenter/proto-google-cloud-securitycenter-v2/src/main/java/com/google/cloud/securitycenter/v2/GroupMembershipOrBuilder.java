@@ -36,6 +36,7 @@ public interface GroupMembershipOrBuilder
    * @return The enum numeric value on the wire for groupType.
    */
   int getGroupTypeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GroupMembershipOrBuilder
    * @return The groupId.
    */
   java.lang.String getGroupId();
+
   /**
    *
    *

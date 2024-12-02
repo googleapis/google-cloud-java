@@ -36,6 +36,7 @@ public interface K8sBetaAPIConfigOrBuilder
    * @return A list containing the enabledApis.
    */
   java.util.List<java.lang.String> getEnabledApisList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface K8sBetaAPIConfigOrBuilder
    * @return The count of enabledApis.
    */
   int getEnabledApisCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface K8sBetaAPIConfigOrBuilder
    * @return The enabledApis at the given index.
    */
   java.lang.String getEnabledApis(int index);
+
   /**
    *
    *

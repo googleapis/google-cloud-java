@@ -33,6 +33,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.XyChart)
     XyChartOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use XyChart.newBuilder() to construct.
   private XyChart(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeSeriesQuery field is set.
      */
     boolean hasTimeSeriesQuery();
+
     /**
      *
      *
@@ -99,6 +101,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return The timeSeriesQuery.
      */
     com.google.monitoring.dashboard.v1.TimeSeriesQuery getTimeSeriesQuery();
+
     /**
      *
      *
@@ -125,6 +128,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for plotType.
      */
     int getPlotTypeValue();
+
     /**
      *
      *
@@ -152,6 +156,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return The legendTemplate.
      */
     java.lang.String getLegendTemplate();
+
     /**
      *
      *
@@ -185,6 +190,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minAlignmentPeriod field is set.
      */
     boolean hasMinAlignmentPeriod();
+
     /**
      *
      *
@@ -203,6 +209,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return The minAlignmentPeriod.
      */
     com.google.protobuf.Duration getMinAlignmentPeriod();
+
     /**
      *
      *
@@ -234,6 +241,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for targetAxis.
      */
     int getTargetAxisValue();
+
     /**
      *
      *
@@ -249,6 +257,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis getTargetAxis();
   }
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.XyChart.DataSet)
       DataSetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DataSet.newBuilder() to construct.
     private DataSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -377,6 +387,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <code>PLOT_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int PLOT_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -387,6 +398,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <code>LINE = 1;</code>
        */
       public static final int LINE_VALUE = 1;
+
       /**
        *
        *
@@ -400,6 +412,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <code>STACKED_AREA = 2;</code>
        */
       public static final int STACKED_AREA_VALUE = 2;
+
       /**
        *
        *
@@ -413,6 +426,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <code>STACKED_BAR = 3;</code>
        */
       public static final int STACKED_BAR_VALUE = 3;
+
       /**
        *
        *
@@ -569,6 +583,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <code>TARGET_AXIS_UNSPECIFIED = 0;</code>
        */
       public static final int TARGET_AXIS_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -579,6 +594,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <code>Y1 = 1;</code>
        */
       public static final int Y1_VALUE = 1;
+
       /**
        *
        *
@@ -678,6 +694,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int TIME_SERIES_QUERY_FIELD_NUMBER = 1;
     private com.google.monitoring.dashboard.v1.TimeSeriesQuery timeSeriesQuery_;
+
     /**
      *
      *
@@ -696,6 +713,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeSeriesQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -716,6 +734,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           ? com.google.monitoring.dashboard.v1.TimeSeriesQuery.getDefaultInstance()
           : timeSeriesQuery_;
     }
+
     /**
      *
      *
@@ -738,6 +757,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PLOT_TYPE_FIELD_NUMBER = 2;
     private int plotType_ = 0;
+
     /**
      *
      *
@@ -753,6 +773,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public int getPlotTypeValue() {
       return plotType_;
     }
+
     /**
      *
      *
@@ -777,6 +798,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object legendTemplate_ = "";
+
     /**
      *
      *
@@ -802,6 +824,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -830,6 +853,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MIN_ALIGNMENT_PERIOD_FIELD_NUMBER = 4;
     private com.google.protobuf.Duration minAlignmentPeriod_;
+
     /**
      *
      *
@@ -851,6 +875,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinAlignmentPeriod() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -874,6 +899,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : minAlignmentPeriod_;
     }
+
     /**
      *
      *
@@ -898,6 +924,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TARGET_AXIS_FIELD_NUMBER = 5;
     private int targetAxis_ = 0;
+
     /**
      *
      *
@@ -915,6 +942,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public int getTargetAxisValue() {
       return targetAxis_;
     }
+
     /**
      *
      *
@@ -1152,6 +1180,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1424,6 +1453,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder,
               com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder>
           timeSeriesQueryBuilder_;
+
       /**
        *
        *
@@ -1441,6 +1471,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTimeSeriesQuery() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1464,6 +1495,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           return timeSeriesQueryBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1489,6 +1521,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1512,6 +1545,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1544,6 +1578,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1566,6 +1601,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1584,6 +1620,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTimeSeriesQueryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1606,6 +1643,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               : timeSeriesQuery_;
         }
       }
+
       /**
        *
        *
@@ -1636,6 +1674,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int plotType_ = 0;
+
       /**
        *
        *
@@ -1651,6 +1690,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       public int getPlotTypeValue() {
         return plotType_;
       }
+
       /**
        *
        *
@@ -1669,6 +1709,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1688,6 +1729,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.XyChart.DataSet.PlotType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1710,6 +1752,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1729,6 +1772,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object legendTemplate_ = "";
+
       /**
        *
        *
@@ -1753,6 +1797,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1777,6 +1822,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1800,6 +1846,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1819,6 +1866,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1850,6 +1898,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minAlignmentPeriodBuilder_;
+
       /**
        *
        *
@@ -1870,6 +1919,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinAlignmentPeriod() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -1896,6 +1946,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           return minAlignmentPeriodBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1924,6 +1975,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1949,6 +2001,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1982,6 +2035,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2007,6 +2061,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2027,6 +2082,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMinAlignmentPeriodFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2051,6 +2107,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               : minAlignmentPeriod_;
         }
       }
+
       /**
        *
        *
@@ -2084,6 +2141,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int targetAxis_ = 0;
+
       /**
        *
        *
@@ -2101,6 +2159,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       public int getTargetAxisValue() {
         return targetAxis_;
       }
+
       /**
        *
        *
@@ -2121,6 +2180,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2142,6 +2202,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2166,6 +2227,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2267,6 +2329,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return The label.
      */
     java.lang.String getLabel();
+
     /**
      *
      *
@@ -2292,6 +2355,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for scale.
      */
     int getScaleValue();
+
     /**
      *
      *
@@ -2305,6 +2369,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.monitoring.dashboard.v1.XyChart.Axis.Scale getScale();
   }
+
   /**
    *
    *
@@ -2319,6 +2384,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.XyChart.Axis)
       AxisOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Axis.newBuilder() to construct.
     private Axis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2403,6 +2469,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <code>SCALE_UNSPECIFIED = 0;</code>
        */
       public static final int SCALE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2413,6 +2480,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <code>LINEAR = 1;</code>
        */
       public static final int LINEAR_VALUE = 1;
+
       /**
        *
        *
@@ -2513,6 +2581,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object label_ = "";
+
     /**
      *
      *
@@ -2536,6 +2605,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2562,6 +2632,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SCALE_FIELD_NUMBER = 2;
     private int scale_ = 0;
+
     /**
      *
      *
@@ -2577,6 +2648,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public int getScaleValue() {
       return scale_;
     }
+
     /**
      *
      *
@@ -2768,6 +2840,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2968,6 +3041,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object label_ = "";
+
       /**
        *
        *
@@ -2990,6 +3064,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3012,6 +3087,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3033,6 +3109,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3050,6 +3127,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3074,6 +3152,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int scale_ = 0;
+
       /**
        *
        *
@@ -3089,6 +3168,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       public int getScaleValue() {
         return scale_;
       }
+
       /**
        *
        *
@@ -3107,6 +3187,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3126,6 +3207,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.XyChart.Axis.Scale.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3147,6 +3229,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3234,6 +3317,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.XyChart.DataSet> dataSets_;
+
   /**
    *
    *
@@ -3249,6 +3333,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.monitoring.dashboard.v1.XyChart.DataSet> getDataSetsList() {
     return dataSets_;
   }
+
   /**
    *
    *
@@ -3265,6 +3350,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       getDataSetsOrBuilderList() {
     return dataSets_;
   }
+
   /**
    *
    *
@@ -3280,6 +3366,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public int getDataSetsCount() {
     return dataSets_.size();
   }
+
   /**
    *
    *
@@ -3295,6 +3382,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.dashboard.v1.XyChart.DataSet getDataSets(int index) {
     return dataSets_.get(index);
   }
+
   /**
    *
    *
@@ -3314,6 +3402,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMESHIFT_DURATION_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration timeshiftDuration_;
+
   /**
    *
    *
@@ -3333,6 +3422,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeshiftDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3354,6 +3444,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : timeshiftDuration_;
   }
+
   /**
    *
    *
@@ -3378,6 +3469,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.Threshold> thresholds_;
+
   /**
    *
    *
@@ -3391,6 +3483,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.monitoring.dashboard.v1.Threshold> getThresholdsList() {
     return thresholds_;
   }
+
   /**
    *
    *
@@ -3405,6 +3498,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       getThresholdsOrBuilderList() {
     return thresholds_;
   }
+
   /**
    *
    *
@@ -3418,6 +3512,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public int getThresholdsCount() {
     return thresholds_.size();
   }
+
   /**
    *
    *
@@ -3431,6 +3526,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.dashboard.v1.Threshold getThresholds(int index) {
     return thresholds_.get(index);
   }
+
   /**
    *
    *
@@ -3447,6 +3543,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
   public static final int X_AXIS_FIELD_NUMBER = 6;
   private com.google.monitoring.dashboard.v1.XyChart.Axis xAxis_;
+
   /**
    *
    *
@@ -3462,6 +3559,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public boolean hasXAxis() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3479,6 +3577,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.dashboard.v1.XyChart.Axis.getDefaultInstance()
         : xAxis_;
   }
+
   /**
    *
    *
@@ -3497,6 +3596,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
   public static final int Y_AXIS_FIELD_NUMBER = 7;
   private com.google.monitoring.dashboard.v1.XyChart.Axis yAxis_;
+
   /**
    *
    *
@@ -3512,6 +3612,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public boolean hasYAxis() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3529,6 +3630,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.dashboard.v1.XyChart.Axis.getDefaultInstance()
         : yAxis_;
   }
+
   /**
    *
    *
@@ -3547,6 +3649,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
   public static final int Y2_AXIS_FIELD_NUMBER = 9;
   private com.google.monitoring.dashboard.v1.XyChart.Axis y2Axis_;
+
   /**
    *
    *
@@ -3562,6 +3665,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public boolean hasY2Axis() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -3579,6 +3683,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.dashboard.v1.XyChart.Axis.getDefaultInstance()
         : y2Axis_;
   }
+
   /**
    *
    *
@@ -3597,6 +3702,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHART_OPTIONS_FIELD_NUMBER = 8;
   private com.google.monitoring.dashboard.v1.ChartOptions chartOptions_;
+
   /**
    *
    *
@@ -3612,6 +3718,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
   public boolean hasChartOptions() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -3629,6 +3736,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.dashboard.v1.ChartOptions.getDefaultInstance()
         : chartOptions_;
   }
+
   /**
    *
    *
@@ -3887,6 +3995,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4318,6 +4427,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return dataSetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4336,6 +4446,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return dataSetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4354,6 +4465,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return dataSetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4379,6 +4491,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4401,6 +4514,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4425,6 +4539,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4450,6 +4565,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4472,6 +4588,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4494,6 +4611,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4516,6 +4634,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4537,6 +4656,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4558,6 +4678,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4573,6 +4694,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDataSetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4592,6 +4714,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return dataSetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4611,6 +4734,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(dataSets_);
       }
     }
+
     /**
      *
      *
@@ -4626,6 +4750,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       return getDataSetsFieldBuilder()
           .addBuilder(com.google.monitoring.dashboard.v1.XyChart.DataSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4643,6 +4768,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.monitoring.dashboard.v1.XyChart.DataSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4682,6 +4808,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeshiftDurationBuilder_;
+
     /**
      *
      *
@@ -4700,6 +4827,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeshiftDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4724,6 +4852,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return timeshiftDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4750,6 +4879,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4773,6 +4903,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4804,6 +4935,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4827,6 +4959,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4845,6 +4978,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeshiftDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4867,6 +5001,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             : timeshiftDuration_;
       }
     }
+
     /**
      *
      *
@@ -4930,6 +5065,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return thresholdsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4946,6 +5082,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return thresholdsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4962,6 +5099,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return thresholdsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4984,6 +5122,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5004,6 +5143,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5026,6 +5166,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5048,6 +5189,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5068,6 +5210,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5088,6 +5231,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5108,6 +5252,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5127,6 +5272,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5146,6 +5292,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5158,6 +5305,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Threshold.Builder getThresholdsBuilder(int index) {
       return getThresholdsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5174,6 +5322,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return thresholdsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5191,6 +5340,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(thresholds_);
       }
     }
+
     /**
      *
      *
@@ -5204,6 +5354,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       return getThresholdsFieldBuilder()
           .addBuilder(com.google.monitoring.dashboard.v1.Threshold.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5217,6 +5368,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       return getThresholdsFieldBuilder()
           .addBuilder(index, com.google.monitoring.dashboard.v1.Threshold.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5254,6 +5406,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.XyChart.Axis.Builder,
             com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder>
         xAxisBuilder_;
+
     /**
      *
      *
@@ -5268,6 +5421,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasXAxis() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5288,6 +5442,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return xAxisBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5310,6 +5465,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5330,6 +5486,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5357,6 +5514,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5376,6 +5534,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5390,6 +5549,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getXAxisFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5408,6 +5568,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             : xAxis_;
       }
     }
+
     /**
      *
      *
@@ -5440,6 +5601,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.XyChart.Axis.Builder,
             com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder>
         yAxisBuilder_;
+
     /**
      *
      *
@@ -5454,6 +5616,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasYAxis() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -5474,6 +5637,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return yAxisBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5496,6 +5660,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5516,6 +5681,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5543,6 +5709,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5562,6 +5729,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5576,6 +5744,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getYAxisFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5594,6 +5763,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             : yAxis_;
       }
     }
+
     /**
      *
      *
@@ -5626,6 +5796,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.XyChart.Axis.Builder,
             com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder>
         y2AxisBuilder_;
+
     /**
      *
      *
@@ -5640,6 +5811,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasY2Axis() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5660,6 +5832,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return y2AxisBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5682,6 +5855,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5702,6 +5876,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5729,6 +5904,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5748,6 +5924,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5762,6 +5939,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getY2AxisFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5780,6 +5958,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             : y2Axis_;
       }
     }
+
     /**
      *
      *
@@ -5812,6 +5991,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.ChartOptions.Builder,
             com.google.monitoring.dashboard.v1.ChartOptionsOrBuilder>
         chartOptionsBuilder_;
+
     /**
      *
      *
@@ -5826,6 +6006,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChartOptions() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -5846,6 +6027,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         return chartOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5868,6 +6050,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5888,6 +6071,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5916,6 +6100,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5935,6 +6120,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5949,6 +6135,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getChartOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5967,6 +6154,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             : chartOptions_;
       }
     }
+
     /**
      *
      *

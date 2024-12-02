@@ -33,6 +33,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1.NFDeploySiteStatus)
     NFDeploySiteStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NFDeploySiteStatus.newBuilder() to construct.
   private NFDeploySiteStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object site_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
 
   public static final int PENDING_DELETION_FIELD_NUMBER = 2;
   private boolean pendingDeletion_ = false;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
 
   public static final int HYDRATION_FIELD_NUMBER = 3;
   private com.google.cloud.telcoautomation.v1.HydrationStatus hydration_;
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
   public boolean hasHydration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.telcoautomation.v1.HydrationStatus.getDefaultInstance()
         : hydration_;
   }
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
 
   public static final int WORKLOAD_FIELD_NUMBER = 4;
   private com.google.cloud.telcoautomation.v1.WorkloadStatus workload_;
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
   public boolean hasWorkload() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -227,6 +236,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.telcoautomation.v1.WorkloadStatus.getDefaultInstance()
         : workload_;
   }
+
   /**
    *
    *
@@ -442,6 +452,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +698,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object site_ = "";
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean pendingDeletion_;
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
     public boolean getPendingDeletion() {
       return pendingDeletion_;
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +870,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
             com.google.cloud.telcoautomation.v1.HydrationStatus.Builder,
             com.google.cloud.telcoautomation.v1.HydrationStatusOrBuilder>
         hydrationBuilder_;
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
     public boolean hasHydration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -889,6 +910,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
         return hydrationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -913,6 +935,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +989,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1011,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1028,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getHydrationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1022,6 +1049,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
             : hydration_;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1084,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
             com.google.cloud.telcoautomation.v1.WorkloadStatus.Builder,
             com.google.cloud.telcoautomation.v1.WorkloadStatusOrBuilder>
         workloadBuilder_;
+
     /**
      *
      *
@@ -1072,6 +1101,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
     public boolean hasWorkload() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1094,6 +1124,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
         return workloadBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1149,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1172,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1203,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1225,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1242,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getWorkloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1227,6 +1263,7 @@ public final class NFDeploySiteStatus extends com.google.protobuf.GeneratedMessa
             : workload_;
       }
     }
+
     /**
      *
      *

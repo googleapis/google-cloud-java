@@ -35,6 +35,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.MerchantCenterAccountLink)
     MerchantCenterAccountLinkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MerchantCenterAccountLink.newBuilder() to construct.
   private MerchantCenterAccountLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -156,6 +159,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -285,6 +289,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * @return The primaryFeedName.
      */
     java.lang.String getPrimaryFeedName();
+
     /**
      *
      *
@@ -299,6 +304,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getPrimaryFeedNameBytes();
   }
+
   /**
    *
    *
@@ -314,6 +320,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter)
       MerchantCenterFeedFilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MerchantCenterFeedFilter.newBuilder() to construct.
     private MerchantCenterFeedFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -348,6 +355,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
     public static final int PRIMARY_FEED_ID_FIELD_NUMBER = 1;
     private long primaryFeedId_ = 0L;
+
     /**
      *
      *
@@ -368,6 +376,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object primaryFeedName_ = "";
+
     /**
      *
      *
@@ -392,6 +401,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -596,6 +606,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -816,6 +827,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       private int bitField0_;
 
       private long primaryFeedId_;
+
       /**
        *
        *
@@ -831,6 +843,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       public long getPrimaryFeedId() {
         return primaryFeedId_;
       }
+
       /**
        *
        *
@@ -850,6 +863,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -869,6 +883,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
 
       private java.lang.Object primaryFeedName_ = "";
+
       /**
        *
        *
@@ -892,6 +907,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -915,6 +931,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -937,6 +954,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -955,6 +973,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1052,6 +1071,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1079,6 +1099,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1111,6 +1132,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -1142,6 +1164,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1176,6 +1199,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   public static final int MERCHANT_CENTER_ACCOUNT_ID_FIELD_NUMBER = 2;
   private long merchantCenterAccountId_ = 0L;
+
   /**
    *
    *
@@ -1198,6 +1222,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object branchId_ = "";
+
   /**
    *
    *
@@ -1226,6 +1251,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1259,6 +1285,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object feedLabel_ = "";
+
   /**
    *
    *
@@ -1287,6 +1314,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1320,6 +1348,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -1350,6 +1379,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1387,6 +1417,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
   private java.util.List<
           com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter>
       feedFilters_;
+
   /**
    *
    *
@@ -1406,6 +1437,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       getFeedFiltersList() {
     return feedFilters_;
   }
+
   /**
    *
    *
@@ -1427,6 +1459,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       getFeedFiltersOrBuilderList() {
     return feedFilters_;
   }
+
   /**
    *
    *
@@ -1444,6 +1477,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
   public int getFeedFiltersCount() {
     return feedFilters_.size();
   }
+
   /**
    *
    *
@@ -1462,6 +1496,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       getFeedFilters(int index) {
     return feedFilters_.get(index);
   }
+
   /**
    *
    *
@@ -1483,6 +1518,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1500,6 +1536,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1526,6 +1563,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -1549,6 +1587,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1577,6 +1616,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
+
   /**
    *
    *
@@ -1601,6 +1641,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1873,6 +1914,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2239,6 +2281,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2265,6 +2308,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2291,6 +2335,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2316,6 +2361,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2337,6 +2383,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2365,6 +2412,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -2395,6 +2443,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2425,6 +2474,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2454,6 +2504,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2479,6 +2530,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2511,6 +2563,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     }
 
     private long merchantCenterAccountId_;
+
     /**
      *
      *
@@ -2528,6 +2581,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     public long getMerchantCenterAccountId() {
       return merchantCenterAccountId_;
     }
+
     /**
      *
      *
@@ -2549,6 +2603,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2570,6 +2625,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     }
 
     private java.lang.Object branchId_ = "";
+
     /**
      *
      *
@@ -2597,6 +2653,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2624,6 +2681,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2650,6 +2708,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2672,6 +2731,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2701,6 +2761,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     }
 
     private java.lang.Object feedLabel_ = "";
+
     /**
      *
      *
@@ -2728,6 +2789,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2755,6 +2817,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2781,6 +2844,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2803,6 +2867,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2832,6 +2897,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -2861,6 +2927,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2890,6 +2957,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2918,6 +2986,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2942,6 +3011,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3016,6 +3086,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return feedFiltersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3036,6 +3107,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return feedFiltersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3057,6 +3129,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return feedFiltersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3085,6 +3158,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3111,6 +3185,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3138,6 +3213,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3166,6 +3242,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3191,6 +3268,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3217,6 +3295,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3245,6 +3324,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3268,6 +3348,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3291,6 +3372,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -3309,6 +3391,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         getFeedFiltersBuilder(int index) {
       return getFeedFiltersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3331,6 +3414,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return feedFiltersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3355,6 +3439,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(feedFilters_);
       }
     }
+
     /**
      *
      *
@@ -3376,6 +3461,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
               com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3398,6 +3484,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
               com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3440,6 +3527,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3457,6 +3545,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3477,6 +3566,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3498,6 +3588,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
           ? com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3521,6 +3612,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3542,6 +3634,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -3564,6 +3657,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3586,6 +3680,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3607,6 +3702,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3624,6 +3720,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3648,6 +3745,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     }
 
     private java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -3671,6 +3769,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3694,6 +3793,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3716,6 +3816,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3734,6 +3835,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

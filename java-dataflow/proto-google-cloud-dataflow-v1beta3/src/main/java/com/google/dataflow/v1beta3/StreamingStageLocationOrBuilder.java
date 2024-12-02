@@ -37,6 +37,7 @@ public interface StreamingStageLocationOrBuilder
    * @return The streamId.
    */
   java.lang.String getStreamId();
+
   /**
    *
    *

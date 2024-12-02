@@ -34,6 +34,7 @@ public interface TimeSeriesDescriptorOrBuilder
    * <code>repeated .google.api.LabelDescriptor label_descriptors = 1;</code>
    */
   java.util.List<com.google.api.LabelDescriptor> getLabelDescriptorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface TimeSeriesDescriptorOrBuilder
    * <code>repeated .google.api.LabelDescriptor label_descriptors = 1;</code>
    */
   com.google.api.LabelDescriptor getLabelDescriptors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface TimeSeriesDescriptorOrBuilder
    * <code>repeated .google.api.LabelDescriptor label_descriptors = 1;</code>
    */
   int getLabelDescriptorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface TimeSeriesDescriptorOrBuilder
    */
   java.util.List<? extends com.google.api.LabelDescriptorOrBuilder>
       getLabelDescriptorsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface TimeSeriesDescriptorOrBuilder
    */
   java.util.List<com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor>
       getPointDescriptorsList();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface TimeSeriesDescriptorOrBuilder
    * </code>
    */
   com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor getPointDescriptors(int index);
+
   /**
    *
    *
@@ -113,6 +119,7 @@ public interface TimeSeriesDescriptorOrBuilder
    * </code>
    */
   int getPointDescriptorsCount();
+
   /**
    *
    *
@@ -126,6 +133,7 @@ public interface TimeSeriesDescriptorOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptorOrBuilder>
       getPointDescriptorsOrBuilderList();
+
   /**
    *
    *

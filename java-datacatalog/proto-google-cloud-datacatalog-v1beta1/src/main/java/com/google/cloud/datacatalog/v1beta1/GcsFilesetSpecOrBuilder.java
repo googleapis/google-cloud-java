@@ -63,6 +63,7 @@ public interface GcsFilesetSpecOrBuilder
    * @return A list containing the filePatterns.
    */
   java.util.List<java.lang.String> getFilePatternsList();
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public interface GcsFilesetSpecOrBuilder
    * @return The count of filePatterns.
    */
   int getFilePatternsCount();
+
   /**
    *
    *
@@ -142,6 +144,7 @@ public interface GcsFilesetSpecOrBuilder
    * @return The filePatterns at the given index.
    */
   java.lang.String getFilePatterns(int index);
+
   /**
    *
    *
@@ -196,6 +199,7 @@ public interface GcsFilesetSpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.GcsFileSpec> getSampleGcsFileSpecsList();
+
   /**
    *
    *
@@ -209,6 +213,7 @@ public interface GcsFilesetSpecOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1beta1.GcsFileSpec getSampleGcsFileSpecs(int index);
+
   /**
    *
    *
@@ -222,6 +227,7 @@ public interface GcsFilesetSpecOrBuilder
    * </code>
    */
   int getSampleGcsFileSpecsCount();
+
   /**
    *
    *
@@ -236,6 +242,7 @@ public interface GcsFilesetSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1beta1.GcsFileSpecOrBuilder>
       getSampleGcsFileSpecsOrBuilderList();
+
   /**
    *
    *

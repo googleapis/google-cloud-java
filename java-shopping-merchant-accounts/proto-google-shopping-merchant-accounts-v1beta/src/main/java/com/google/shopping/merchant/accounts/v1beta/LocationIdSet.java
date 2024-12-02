@@ -34,6 +34,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.LocationIdSet)
     LocationIdSetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationIdSet.newBuilder() to construct.
   private LocationIdSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList locationIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLocationIdsList() {
     return locationIds_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
   public int getLocationIdsCount() {
     return locationIds_.size();
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLocationIds(int index) {
     return locationIds_.get(index);
   }
+
   /**
    *
    *
@@ -311,6 +316,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -511,6 +517,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -530,6 +537,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
       locationIds_.makeImmutable();
       return locationIds_;
     }
+
     /**
      *
      *
@@ -548,6 +556,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
     public int getLocationIdsCount() {
       return locationIds_.size();
     }
+
     /**
      *
      *
@@ -567,6 +576,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLocationIds(int index) {
       return locationIds_.get(index);
     }
+
     /**
      *
      *
@@ -586,6 +596,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLocationIdsBytes(int index) {
       return locationIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -613,6 +624,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +675,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +698,7 @@ public final class LocationIdSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

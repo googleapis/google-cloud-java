@@ -33,6 +33,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.BigQueryConnectionSpec)
     BigQueryConnectionSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryConnectionSpec.newBuilder() to construct.
   private BigQueryConnectionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
      * <code>CONNECTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CONNECTION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -216,6 +218,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     private ConnectionSpecCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -248,6 +251,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
 
   public static final int CONNECTION_TYPE_FIELD_NUMBER = 1;
   private int connectionType_ = 0;
+
   /**
    *
    *
@@ -264,6 +268,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
   public int getConnectionTypeValue() {
     return connectionType_;
   }
+
   /**
    *
    *
@@ -287,6 +292,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
   }
 
   public static final int CLOUD_SQL_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -302,6 +308,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
   public boolean hasCloudSql() {
     return connectionSpecCase_ == 2;
   }
+
   /**
    *
    *
@@ -320,6 +327,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -340,6 +348,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
 
   public static final int HAS_CREDENTIAL_FIELD_NUMBER = 3;
   private boolean hasCredential_ = false;
+
   /**
    *
    *
@@ -557,6 +566,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -797,6 +807,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int connectionType_ = 0;
+
     /**
      *
      *
@@ -813,6 +824,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     public int getConnectionTypeValue() {
       return connectionType_;
     }
+
     /**
      *
      *
@@ -832,6 +844,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +867,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
           ? com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -877,6 +891,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +916,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
             com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.Builder,
             com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpecOrBuilder>
         cloudSqlBuilder_;
+
     /**
      *
      *
@@ -916,6 +932,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     public boolean hasCloudSql() {
       return connectionSpecCase_ == 2;
     }
+
     /**
      *
      *
@@ -941,6 +958,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
         return com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -964,6 +982,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       connectionSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1003,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       connectionSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1040,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       connectionSpecCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1066,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
         getCloudSqlBuilder() {
       return getCloudSqlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1079,6 +1102,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
         return com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1138,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     }
 
     private boolean hasCredential_;
+
     /**
      *
      *
@@ -1130,6 +1155,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     public boolean getHasCredential() {
       return hasCredential_;
     }
+
     /**
      *
      *
@@ -1150,6 +1176,7 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

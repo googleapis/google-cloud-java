@@ -36,6 +36,7 @@ public interface WeeklyMaintenanceWindowOrBuilder
    * @return The enum numeric value on the wire for day.
    */
   int getDayValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface WeeklyMaintenanceWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface WeeklyMaintenanceWindowOrBuilder
    * @return The startTime.
    */
   com.google.type.TimeOfDay getStartTime();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface WeeklyMaintenanceWindowOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface WeeklyMaintenanceWindowOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *

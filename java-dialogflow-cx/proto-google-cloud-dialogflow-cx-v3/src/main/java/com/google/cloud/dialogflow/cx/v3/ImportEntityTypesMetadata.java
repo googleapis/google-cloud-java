@@ -35,6 +35,7 @@ public final class ImportEntityTypesMetadata extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ImportEntityTypesMetadata)
     ImportEntityTypesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportEntityTypesMetadata.newBuilder() to construct.
   private ImportEntityTypesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,6 +215,7 @@ public final class ImportEntityTypesMetadata extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

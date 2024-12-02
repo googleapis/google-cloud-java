@@ -37,6 +37,7 @@ public interface SlsaProvenanceOrBuilder
    * @return Whether the builder field is set.
    */
   boolean hasBuilder();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface SlsaProvenanceOrBuilder
    * @return The builder.
    */
   io.grafeas.v1.SlsaProvenance.SlsaBuilder getBuilder();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SlsaProvenanceOrBuilder
    * @return Whether the recipe field is set.
    */
   boolean hasRecipe();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface SlsaProvenanceOrBuilder
    * @return The recipe.
    */
   io.grafeas.v1.SlsaProvenance.SlsaRecipe getRecipe();
+
   /**
    *
    *
@@ -110,12 +114,14 @@ public interface SlsaProvenanceOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
    *
    * @return The metadata.
    */
   io.grafeas.v1.SlsaProvenance.SlsaMetadata getMetadata();
+
   /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
   io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder getMetadataOrBuilder();
 
@@ -132,6 +138,7 @@ public interface SlsaProvenanceOrBuilder
    * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
    */
   java.util.List<io.grafeas.v1.SlsaProvenance.Material> getMaterialsList();
+
   /**
    *
    *
@@ -145,6 +152,7 @@ public interface SlsaProvenanceOrBuilder
    * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
    */
   io.grafeas.v1.SlsaProvenance.Material getMaterials(int index);
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface SlsaProvenanceOrBuilder
    * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
    */
   int getMaterialsCount();
+
   /**
    *
    *
@@ -172,6 +181,7 @@ public interface SlsaProvenanceOrBuilder
    */
   java.util.List<? extends io.grafeas.v1.SlsaProvenance.MaterialOrBuilder>
       getMaterialsOrBuilderList();
+
   /**
    *
    *

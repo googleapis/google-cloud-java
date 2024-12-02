@@ -38,6 +38,7 @@ public interface ListServiceConfigsRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ListServiceConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

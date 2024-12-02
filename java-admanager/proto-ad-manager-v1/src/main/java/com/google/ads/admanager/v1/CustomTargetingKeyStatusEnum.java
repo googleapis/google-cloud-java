@@ -34,6 +34,7 @@ public final class CustomTargetingKeyStatusEnum extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomTargetingKeyStatusEnum)
     CustomTargetingKeyStatusEnumOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomTargetingKeyStatusEnum.newBuilder() to construct.
   private CustomTargetingKeyStatusEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class CustomTargetingKeyStatusEnum extends com.google.protobuf.Gene
      * <code>CUSTOM_TARGETING_KEY_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_TARGETING_KEY_STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class CustomTargetingKeyStatusEnum extends com.google.protobuf.Gene
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -376,6 +379,7 @@ public final class CustomTargetingKeyStatusEnum extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1.AnalyzeEntitiesRequest)
     AnalyzeEntitiesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeEntitiesRequest.newBuilder() to construct.
   private AnalyzeEntitiesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v1.Document document_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.language.v1.Document.getDefaultInstance()
         : document_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
 
   public static final int ENCODING_TYPE_FIELD_NUMBER = 2;
   private int encodingType_ = 0;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
   public int getEncodingTypeValue() {
     return encodingType_;
   }
+
   /**
    *
    *
@@ -328,6 +334,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -544,6 +551,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.language.v1.Document.Builder,
             com.google.cloud.language.v1.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -560,6 +568,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -582,6 +591,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +638,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +668,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +690,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +707,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -713,6 +728,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
             : document_;
       }
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
     }
 
     private int encodingType_ = 0;
+
     /**
      *
      *
@@ -757,6 +774,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
     public int getEncodingTypeValue() {
       return encodingType_;
     }
+
     /**
      *
      *
@@ -775,6 +793,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +811,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
           com.google.cloud.language.v1.EncodingType.forNumber(encodingType_);
       return result == null ? com.google.cloud.language.v1.EncodingType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -813,6 +833,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

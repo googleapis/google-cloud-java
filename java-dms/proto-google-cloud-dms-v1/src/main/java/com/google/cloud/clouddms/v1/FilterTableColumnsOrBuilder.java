@@ -36,6 +36,7 @@ public interface FilterTableColumnsOrBuilder
    * @return A list containing the includeColumns.
    */
   java.util.List<java.lang.String> getIncludeColumnsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FilterTableColumnsOrBuilder
    * @return The count of includeColumns.
    */
   int getIncludeColumnsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface FilterTableColumnsOrBuilder
    * @return The includeColumns at the given index.
    */
   java.lang.String getIncludeColumns(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface FilterTableColumnsOrBuilder
    * @return A list containing the excludeColumns.
    */
   java.util.List<java.lang.String> getExcludeColumnsList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface FilterTableColumnsOrBuilder
    * @return The count of excludeColumns.
    */
   int getExcludeColumnsCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface FilterTableColumnsOrBuilder
    * @return The excludeColumns at the given index.
    */
   java.lang.String getExcludeColumns(int index);
+
   /**
    *
    *

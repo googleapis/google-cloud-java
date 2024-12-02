@@ -38,6 +38,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the computeEngineTargetDefaults field is set.
    */
   boolean hasComputeEngineTargetDefaults();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface MigratingVmOrBuilder
    * @return The computeEngineTargetDefaults.
    */
   com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults getComputeEngineTargetDefaults();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the awsSourceVmDetails field is set.
    */
   boolean hasAwsSourceVmDetails();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface MigratingVmOrBuilder
    * @return The awsSourceVmDetails.
    */
   com.google.cloud.vmmigration.v1.AwsSourceVmDetails getAwsSourceVmDetails();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface MigratingVmOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface MigratingVmOrBuilder
    * @return The sourceVmId.
    */
   java.lang.String getSourceVmId();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface MigratingVmOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface MigratingVmOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public interface MigratingVmOrBuilder
    * @return The policy.
    */
   com.google.cloud.vmmigration.v1.SchedulePolicy getPolicy();
+
   /**
    *
    *
@@ -260,6 +270,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -274,6 +285,7 @@ public interface MigratingVmOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -313,6 +326,7 @@ public interface MigratingVmOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -340,6 +354,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the lastSync field is set.
    */
   boolean hasLastSync();
+
   /**
    *
    *
@@ -355,6 +370,7 @@ public interface MigratingVmOrBuilder
    * @return The lastSync.
    */
   com.google.cloud.vmmigration.v1.ReplicationSync getLastSync();
+
   /**
    *
    *
@@ -383,6 +399,7 @@ public interface MigratingVmOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -411,6 +428,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the stateTime field is set.
    */
   boolean hasStateTime();
+
   /**
    *
    *
@@ -424,6 +442,7 @@ public interface MigratingVmOrBuilder
    * @return The stateTime.
    */
   com.google.protobuf.Timestamp getStateTime();
+
   /**
    *
    *
@@ -451,6 +470,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the currentSyncInfo field is set.
    */
   boolean hasCurrentSyncInfo();
+
   /**
    *
    *
@@ -466,6 +486,7 @@ public interface MigratingVmOrBuilder
    * @return The currentSyncInfo.
    */
   com.google.cloud.vmmigration.v1.ReplicationCycle getCurrentSyncInfo();
+
   /**
    *
    *
@@ -496,6 +517,7 @@ public interface MigratingVmOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
+
   /**
    *
    *
@@ -523,6 +545,7 @@ public interface MigratingVmOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -533,9 +556,11 @@ public interface MigratingVmOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -546,6 +571,7 @@ public interface MigratingVmOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -560,6 +586,7 @@ public interface MigratingVmOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -587,6 +614,7 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.CloneJob> getRecentCloneJobsList();
+
   /**
    *
    *
@@ -603,6 +631,7 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.CloneJob getRecentCloneJobs(int index);
+
   /**
    *
    *
@@ -619,6 +648,7 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   int getRecentCloneJobsCount();
+
   /**
    *
    *
@@ -636,6 +666,7 @@ public interface MigratingVmOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.CloneJobOrBuilder>
       getRecentCloneJobsOrBuilderList();
+
   /**
    *
    *
@@ -666,6 +697,7 @@ public interface MigratingVmOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -679,6 +711,7 @@ public interface MigratingVmOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -707,6 +740,7 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.CutoverJob> getRecentCutoverJobsList();
+
   /**
    *
    *
@@ -723,6 +757,7 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.CutoverJob getRecentCutoverJobs(int index);
+
   /**
    *
    *
@@ -739,6 +774,7 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   int getRecentCutoverJobsCount();
+
   /**
    *
    *
@@ -756,6 +792,7 @@ public interface MigratingVmOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>
       getRecentCutoverJobsOrBuilderList();
+
   /**
    *
    *

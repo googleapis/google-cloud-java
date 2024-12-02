@@ -33,6 +33,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1.CloudSqlProperties)
     CloudSqlPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudSqlProperties.newBuilder() to construct.
   private CloudSqlProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <code>DATABASE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATABASE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <code>POSTGRES = 1;</code>
      */
     public static final int POSTGRES_VALUE = 1;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +286,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
+
   /**
    *
    *
@@ -304,6 +310,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -330,6 +337,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
+
   /**
    *
    *
@@ -345,6 +353,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -367,6 +376,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
 
   public static final int CREDENTIAL_FIELD_NUMBER = 4;
   private com.google.cloud.bigquery.connection.v1.CloudSqlCredential credential_;
+
   /**
    *
    *
@@ -384,6 +394,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   public boolean hasCredential() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -403,6 +414,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.bigquery.connection.v1.CloudSqlCredential.getDefaultInstance()
         : credential_;
   }
+
   /**
    *
    *
@@ -426,6 +438,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountId_ = "";
+
   /**
    *
    *
@@ -454,6 +467,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -690,6 +704,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -946,6 +961,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object instanceId_ = "";
+
     /**
      *
      *
@@ -968,6 +984,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1007,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1029,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1047,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1072,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -1074,6 +1095,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1118,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1140,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1158,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1183,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1173,6 +1199,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1191,6 +1218,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1238,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.bigquery.connection.v1.CloudSqlProperties.DatabaseType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1232,6 +1261,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1286,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.connection.v1.CloudSqlCredential.Builder,
             com.google.cloud.bigquery.connection.v1.CloudSqlCredentialOrBuilder>
         credentialBuilder_;
+
     /**
      *
      *
@@ -1272,6 +1303,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public boolean hasCredential() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1294,6 +1326,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return credentialBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1351,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1374,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1407,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1429,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1447,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCredentialFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1431,6 +1469,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
             : credential_;
       }
     }
+
     /**
      *
      *
@@ -1460,6 +1499,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object serviceAccountId_ = "";
+
     /**
      *
      *
@@ -1487,6 +1527,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1514,6 +1555,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1540,6 +1582,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1562,6 +1605,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

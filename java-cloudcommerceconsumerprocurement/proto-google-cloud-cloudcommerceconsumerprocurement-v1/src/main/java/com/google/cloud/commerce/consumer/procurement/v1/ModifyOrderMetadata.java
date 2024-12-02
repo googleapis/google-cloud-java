@@ -34,6 +34,7 @@ public final class ModifyOrderMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.ModifyOrderMetadata)
     ModifyOrderMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModifyOrderMetadata.newBuilder() to construct.
   private ModifyOrderMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,6 +215,7 @@ public final class ModifyOrderMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface GetGrantRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

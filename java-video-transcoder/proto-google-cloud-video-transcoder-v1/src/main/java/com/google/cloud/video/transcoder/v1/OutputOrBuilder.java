@@ -39,6 +39,7 @@ public interface OutputOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ConsistentHashLoadBalancerSettings)
     ConsistentHashLoadBalancerSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConsistentHashLoadBalancerSettings.newBuilder() to construct.
   private ConsistentHashLoadBalancerSettings(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
   private int bitField0_;
   public static final int HTTP_COOKIE_FIELD_NUMBER = 6673915;
   private com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie httpCookie_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
   public boolean hasHttpCookie() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
             .getDefaultInstance()
         : httpCookie_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object httpHeaderName_ = "";
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
   public boolean hasHttpHeaderName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
 
   public static final int MINIMUM_RING_SIZE_FIELD_NUMBER = 234380735;
   private long minimumRingSize_ = 0L;
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
   public boolean hasMinimumRingSize() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -416,6 +425,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +662,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
             com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie.Builder,
             com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder>
         httpCookieBuilder_;
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     public boolean hasHttpCookie() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
         return httpCookieBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       onChanged();
       return getHttpCookieFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
             : httpCookie_;
       }
     }
+
     /**
      *
      *
@@ -861,6 +880,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     }
 
     private java.lang.Object httpHeaderName_ = "";
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     public boolean hasHttpHeaderName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -897,6 +918,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -919,6 +941,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +981,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1006,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     }
 
     private long minimumRingSize_;
+
     /**
      *
      *
@@ -996,6 +1022,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     public boolean hasMinimumRingSize() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1011,6 +1038,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     public long getMinimumRingSize() {
       return minimumRingSize_;
     }
+
     /**
      *
      *
@@ -1030,6 +1058,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

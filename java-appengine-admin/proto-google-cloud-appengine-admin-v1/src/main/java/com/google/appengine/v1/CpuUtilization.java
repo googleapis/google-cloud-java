@@ -33,6 +33,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.CpuUtilization)
     CpuUtilizationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CpuUtilization.newBuilder() to construct.
   private CpuUtilization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AGGREGATION_WINDOW_LENGTH_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration aggregationWindowLength_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAggregationWindowLength() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : aggregationWindowLength_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_UTILIZATION_FIELD_NUMBER = 2;
   private double targetUtilization_ = 0D;
+
   /**
    *
    *
@@ -308,6 +313,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -527,6 +533,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         aggregationWindowLengthBuilder_;
+
     /**
      *
      *
@@ -541,6 +548,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAggregationWindowLength() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -561,6 +569,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
         return aggregationWindowLengthBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +613,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +661,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +676,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAggregationWindowLengthFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -681,6 +695,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
             : aggregationWindowLength_;
       }
     }
+
     /**
      *
      *
@@ -708,6 +723,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double targetUtilization_;
+
     /**
      *
      *
@@ -724,6 +740,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
     public double getTargetUtilization() {
       return targetUtilization_;
     }
+
     /**
      *
      *
@@ -744,6 +761,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

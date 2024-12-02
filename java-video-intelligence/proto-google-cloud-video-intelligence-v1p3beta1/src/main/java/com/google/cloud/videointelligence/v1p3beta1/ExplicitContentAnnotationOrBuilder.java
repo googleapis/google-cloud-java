@@ -35,6 +35,7 @@ public interface ExplicitContentAnnotationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame> getFramesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ExplicitContentAnnotationOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame getFrames(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ExplicitContentAnnotationOrBuilder
    * </code>
    */
   int getFramesCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ExplicitContentAnnotationOrBuilder
   java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrameOrBuilder>
       getFramesOrBuilderList();
+
   /**
    *
    *

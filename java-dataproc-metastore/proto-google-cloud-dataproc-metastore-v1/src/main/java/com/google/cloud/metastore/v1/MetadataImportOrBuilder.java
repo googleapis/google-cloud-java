@@ -38,6 +38,7 @@ public interface MetadataImportOrBuilder
    * @return Whether the databaseDump field is set.
    */
   boolean hasDatabaseDump();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface MetadataImportOrBuilder
    * @return The databaseDump.
    */
   com.google.cloud.metastore.v1.MetadataImport.DatabaseDump getDatabaseDump();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface MetadataImportOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface MetadataImportOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface MetadataImportOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface MetadataImportOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface MetadataImportOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface MetadataImportOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface MetadataImportOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface MetadataImportOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public interface MetadataImportOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

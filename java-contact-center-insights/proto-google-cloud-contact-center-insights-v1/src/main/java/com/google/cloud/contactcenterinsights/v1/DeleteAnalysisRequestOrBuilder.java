@@ -38,6 +38,7 @@ public interface DeleteAnalysisRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

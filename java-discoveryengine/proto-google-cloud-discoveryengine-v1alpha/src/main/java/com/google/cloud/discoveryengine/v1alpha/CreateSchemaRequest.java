@@ -35,6 +35,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.CreateSchemaRequest)
     CreateSchemaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSchemaRequest.newBuilder() to construct.
   private CreateSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SCHEMA_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1alpha.Schema schema_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSchema() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.discoveryengine.v1alpha.Schema.getDefaultInstance()
         : schema_;
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schemaId_ = "";
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -431,6 +439,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -664,6 +673,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -689,6 +699,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -714,6 +725,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -738,6 +750,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1alpha.Schema.Builder,
             com.google.cloud.discoveryengine.v1alpha.SchemaOrBuilder>
         schemaBuilder_;
+
     /**
      *
      *
@@ -807,6 +822,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSchema() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
         return schemaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -855,6 +872,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +896,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +968,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
             : schema_;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1021,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object schemaId_ = "";
+
     /**
      *
      *
@@ -1027,6 +1051,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1081,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1110,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1135,7 @@ public final class CreateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

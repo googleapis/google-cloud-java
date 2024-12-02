@@ -38,6 +38,7 @@ public interface CheckGroundingResponseOrBuilder
    * @return Whether the supportScore field is set.
    */
   boolean hasSupportScore();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CheckGroundingResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.FactChunk cited_chunks = 3;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.FactChunk> getCitedChunksList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface CheckGroundingResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.FactChunk cited_chunks = 3;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.FactChunk getCitedChunks(int index);
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface CheckGroundingResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.FactChunk cited_chunks = 3;</code>
    */
   int getCitedChunksCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface CheckGroundingResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.FactChunkOrBuilder>
       getCitedChunksOrBuilderList();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface CheckGroundingResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.CheckGroundingResponse.Claim>
       getClaimsList();
+
   /**
    *
    *
@@ -133,6 +139,7 @@ public interface CheckGroundingResponseOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1alpha.CheckGroundingResponse.Claim getClaims(int index);
+
   /**
    *
    *
@@ -144,6 +151,7 @@ public interface CheckGroundingResponseOrBuilder
    * </code>
    */
   int getClaimsCount();
+
   /**
    *
    *
@@ -157,6 +165,7 @@ public interface CheckGroundingResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.discoveryengine.v1alpha.CheckGroundingResponse.ClaimOrBuilder>
       getClaimsOrBuilderList();
+
   /**
    *
    *

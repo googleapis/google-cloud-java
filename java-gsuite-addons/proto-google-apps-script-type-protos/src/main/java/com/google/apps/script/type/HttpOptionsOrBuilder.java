@@ -36,6 +36,7 @@ public interface HttpOptionsOrBuilder
    * @return The enum numeric value on the wire for authorizationHeader.
    */
   int getAuthorizationHeaderValue();
+
   /**
    *
    *

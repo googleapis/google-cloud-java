@@ -34,6 +34,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.CreateEntryRequest)
     CreateEntryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateEntryRequest.newBuilder() to construct.
   private CreateEntryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entryId_ = "";
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ENTRY_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1.Entry entry_;
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasEntry() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.datacatalog.v1.Entry getEntry() {
     return entry_ == null ? com.google.cloud.datacatalog.v1.Entry.getDefaultInstance() : entry_;
   }
+
   /**
    *
    *
@@ -417,6 +425,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -673,6 +683,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -726,6 +738,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +761,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object entryId_ = "";
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datacatalog.v1.Entry.Builder,
             com.google.cloud.datacatalog.v1.EntryOrBuilder>
         entryBuilder_;
+
     /**
      *
      *
@@ -923,6 +943,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasEntry() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -942,6 +963,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         return entryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -965,6 +987,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1058,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1074,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEntryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1065,6 +1092,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         return entry_ == null ? com.google.cloud.datacatalog.v1.Entry.getDefaultInstance() : entry_;
       }
     }
+
     /**
      *
      *

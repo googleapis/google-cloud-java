@@ -40,6 +40,7 @@ public interface UpdateFeatureGroupRequestOrBuilder
    * @return Whether the featureGroup field is set.
    */
   boolean hasFeatureGroup();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateFeatureGroupRequestOrBuilder
    * @return The featureGroup.
    */
   com.google.cloud.aiplatform.v1.FeatureGroup getFeatureGroup();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface UpdateFeatureGroupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface UpdateFeatureGroupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

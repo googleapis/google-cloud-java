@@ -36,6 +36,7 @@ public interface ExportModelOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExportModelOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ExportModelOperationMetadataOrBuilder
    * @return Whether the outputInfo field is set.
    */
   boolean hasOutputInfo();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface ExportModelOperationMetadataOrBuilder
    * @return The outputInfo.
    */
   com.google.cloud.aiplatform.v1beta1.ExportModelOperationMetadata.OutputInfo getOutputInfo();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.CreateNodeRequest)
     CreateNodeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateNodeRequest.newBuilder() to construct.
   private CreateNodeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodeId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int NODE_FIELD_NUMBER = 3;
   private com.google.cloud.tpu.v2alpha1.Node node_;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasNode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.tpu.v2alpha1.Node getNode() {
     return node_ == null ? com.google.cloud.tpu.v2alpha1.Node.getDefaultInstance() : node_;
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -463,6 +473,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -706,6 +717,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -754,6 +767,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +838,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nodeId_ = "";
+
     /**
      *
      *
@@ -844,6 +861,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +924,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +954,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.tpu.v2alpha1.Node.Builder,
             com.google.cloud.tpu.v2alpha1.NodeOrBuilder>
         nodeBuilder_;
+
     /**
      *
      *
@@ -948,6 +970,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasNode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         return nodeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1101,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getNodeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1090,6 +1119,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         return node_ == null ? com.google.cloud.tpu.v2alpha1.Node.getDefaultInstance() : node_;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1148,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1140,6 +1171,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1194,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1216,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1234,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

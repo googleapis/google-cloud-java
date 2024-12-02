@@ -36,6 +36,7 @@ public interface RestrictionsOrBuilder
    * @return Whether the browserKeyRestrictions field is set.
    */
   boolean hasBrowserKeyRestrictions();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RestrictionsOrBuilder
    * @return The browserKeyRestrictions.
    */
   com.google.api.apikeys.v2.BrowserKeyRestrictions getBrowserKeyRestrictions();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RestrictionsOrBuilder
    * @return Whether the serverKeyRestrictions field is set.
    */
   boolean hasServerKeyRestrictions();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RestrictionsOrBuilder
    * @return The serverKeyRestrictions.
    */
   com.google.api.apikeys.v2.ServerKeyRestrictions getServerKeyRestrictions();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface RestrictionsOrBuilder
    * @return Whether the androidKeyRestrictions field is set.
    */
   boolean hasAndroidKeyRestrictions();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface RestrictionsOrBuilder
    * @return The androidKeyRestrictions.
    */
   com.google.api.apikeys.v2.AndroidKeyRestrictions getAndroidKeyRestrictions();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface RestrictionsOrBuilder
    * @return Whether the iosKeyRestrictions field is set.
    */
   boolean hasIosKeyRestrictions();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface RestrictionsOrBuilder
    * @return The iosKeyRestrictions.
    */
   com.google.api.apikeys.v2.IosKeyRestrictions getIosKeyRestrictions();
+
   /**
    *
    *
@@ -177,6 +185,7 @@ public interface RestrictionsOrBuilder
    * <code>repeated .google.api.apikeys.v2.ApiTarget api_targets = 5;</code>
    */
   java.util.List<com.google.api.apikeys.v2.ApiTarget> getApiTargetsList();
+
   /**
    *
    *
@@ -190,6 +199,7 @@ public interface RestrictionsOrBuilder
    * <code>repeated .google.api.apikeys.v2.ApiTarget api_targets = 5;</code>
    */
   com.google.api.apikeys.v2.ApiTarget getApiTargets(int index);
+
   /**
    *
    *
@@ -203,6 +213,7 @@ public interface RestrictionsOrBuilder
    * <code>repeated .google.api.apikeys.v2.ApiTarget api_targets = 5;</code>
    */
   int getApiTargetsCount();
+
   /**
    *
    *
@@ -217,6 +228,7 @@ public interface RestrictionsOrBuilder
    */
   java.util.List<? extends com.google.api.apikeys.v2.ApiTargetOrBuilder>
       getApiTargetsOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Processor)
     ProcessorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Processor.newBuilder() to construct.
   private Processor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -157,6 +158,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>PROCESSOR_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PROCESSOR_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -171,6 +173,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>PRETRAINED = 1;</code>
      */
     public static final int PRETRAINED_VALUE = 1;
+
     /**
      *
      *
@@ -184,6 +187,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>CUSTOM = 2;</code>
      */
     public static final int CUSTOM_VALUE = 2;
+
     /**
      *
      *
@@ -348,6 +352,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>PROCESSOR_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int PROCESSOR_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -358,6 +363,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -368,6 +374,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -378,6 +385,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
+
     /**
      *
      *
@@ -481,6 +489,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -504,6 +513,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -530,6 +540,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -546,6 +557,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -562,6 +574,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -579,6 +592,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -595,6 +609,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -611,6 +626,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -652,6 +668,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -668,12 +685,14 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -687,6 +706,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -707,6 +727,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -732,6 +753,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -755,6 +777,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -783,6 +806,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -806,6 +830,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -832,6 +857,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROCESSOR_TYPE_FIELD_NUMBER = 6;
   private int processorType_ = 0;
+
   /**
    *
    *
@@ -849,6 +875,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public int getProcessorTypeValue() {
     return processorType_;
   }
+
   /**
    *
    *
@@ -873,6 +900,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 13;
   private int modelType_ = 0;
+
   /**
    *
    *
@@ -888,6 +916,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public int getModelTypeValue() {
     return modelType_;
   }
+
   /**
    *
    *
@@ -908,6 +937,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_PROCESSOR_SOURCE_INFO_FIELD_NUMBER = 7;
   private com.google.cloud.visionai.v1.CustomProcessorSourceInfo customProcessorSourceInfo_;
+
   /**
    *
    *
@@ -924,6 +954,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomProcessorSourceInfo() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -942,6 +973,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.CustomProcessorSourceInfo.getDefaultInstance()
         : customProcessorSourceInfo_;
   }
+
   /**
    *
    *
@@ -962,6 +994,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
+
   /**
    *
    *
@@ -979,6 +1012,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1003,6 +1037,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROCESSOR_IO_SPEC_FIELD_NUMBER = 11;
   private com.google.cloud.visionai.v1.ProcessorIOSpec processorIoSpec_;
+
   /**
    *
    *
@@ -1022,6 +1057,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProcessorIoSpec() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1043,6 +1079,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.ProcessorIOSpec.getDefaultInstance()
         : processorIoSpec_;
   }
+
   /**
    *
    *
@@ -1067,6 +1104,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object configurationTypeurl_ = "";
+
   /**
    *
    *
@@ -1091,6 +1129,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1135,6 +1174,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1149,6 +1189,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.visionai.v1.StreamAnnotationType>(
         supportedAnnotationTypes_, supportedAnnotationTypes_converter_);
   }
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1160,6 +1201,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public int getSupportedAnnotationTypesCount() {
     return supportedAnnotationTypes_.size();
   }
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1172,6 +1214,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.StreamAnnotationType getSupportedAnnotationTypes(int index) {
     return supportedAnnotationTypes_converter_.convert(supportedAnnotationTypes_.get(index));
   }
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1183,6 +1226,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getSupportedAnnotationTypesValueList() {
     return supportedAnnotationTypes_;
   }
+
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1200,6 +1244,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUPPORTS_POST_PROCESSING_FIELD_NUMBER = 17;
   private boolean supportsPostProcessing_ = false;
+
   /**
    *
    *
@@ -1235,6 +1280,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -1255,6 +1301,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.visionai.v1.Instance.InstanceType>(
         supportedInstanceTypes_, supportedInstanceTypes_converter_);
   }
+
   /**
    *
    *
@@ -1272,6 +1319,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public int getSupportedInstanceTypesCount() {
     return supportedInstanceTypes_.size();
   }
+
   /**
    *
    *
@@ -1290,6 +1338,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.Instance.InstanceType getSupportedInstanceTypes(int index) {
     return supportedInstanceTypes_converter_.convert(supportedInstanceTypes_.get(index));
   }
+
   /**
    *
    *
@@ -1307,6 +1356,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getSupportedInstanceTypesValueList() {
     return supportedInstanceTypes_;
   }
+
   /**
    *
    *
@@ -1686,6 +1736,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2176,6 +2227,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2198,6 +2250,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2220,6 +2273,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2241,6 +2295,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2258,6 +2313,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2287,6 +2343,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2303,6 +2360,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2325,6 +2383,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2349,6 +2408,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2370,6 +2430,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2399,6 +2460,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2420,6 +2482,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2436,6 +2499,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2456,6 +2520,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2490,6 +2555,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2506,6 +2572,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2528,6 +2595,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2552,6 +2620,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2573,6 +2642,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2602,6 +2672,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2623,6 +2694,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2639,6 +2711,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2659,6 +2732,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2712,6 +2786,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2728,12 +2803,14 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2747,6 +2824,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2767,6 +2845,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2793,6 +2872,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2809,12 +2889,14 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2835,6 +2917,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2851,6 +2934,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2873,6 +2957,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2895,6 +2980,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2916,6 +3002,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2933,6 +3020,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2957,6 +3045,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2979,6 +3068,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3001,6 +3091,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3022,6 +3113,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3039,6 +3131,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3063,6 +3156,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int processorType_ = 0;
+
     /**
      *
      *
@@ -3080,6 +3174,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public int getProcessorTypeValue() {
       return processorType_;
     }
+
     /**
      *
      *
@@ -3100,6 +3195,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3121,6 +3217,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.visionai.v1.Processor.ProcessorType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3144,6 +3241,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3165,6 +3263,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int modelType_ = 0;
+
     /**
      *
      *
@@ -3180,6 +3279,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public int getModelTypeValue() {
       return modelType_;
     }
+
     /**
      *
      *
@@ -3198,6 +3298,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3215,6 +3316,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.visionai.v1.ModelType.forNumber(modelType_);
       return result == null ? com.google.cloud.visionai.v1.ModelType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3236,6 +3338,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3260,6 +3363,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.CustomProcessorSourceInfo.Builder,
             com.google.cloud.visionai.v1.CustomProcessorSourceInfoOrBuilder>
         customProcessorSourceInfoBuilder_;
+
     /**
      *
      *
@@ -3275,6 +3379,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomProcessorSourceInfo() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3296,6 +3401,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return customProcessorSourceInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3320,6 +3426,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3341,6 +3448,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3371,6 +3479,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3391,6 +3500,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3407,6 +3517,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomProcessorSourceInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3427,6 +3538,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             : customProcessorSourceInfo_;
       }
     }
+
     /**
      *
      *
@@ -3455,6 +3567,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3472,6 +3585,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3492,6 +3606,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3513,6 +3628,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.visionai.v1.Processor.ProcessorState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3536,6 +3652,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3562,6 +3679,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.ProcessorIOSpec.Builder,
             com.google.cloud.visionai.v1.ProcessorIOSpecOrBuilder>
         processorIoSpecBuilder_;
+
     /**
      *
      *
@@ -3580,6 +3698,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProcessorIoSpec() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3604,6 +3723,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return processorIoSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3630,6 +3750,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3654,6 +3775,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3686,6 +3808,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3709,6 +3832,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3727,6 +3851,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProcessorIoSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3749,6 +3874,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             : processorIoSpec_;
       }
     }
+
     /**
      *
      *
@@ -3780,6 +3906,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object configurationTypeurl_ = "";
+
     /**
      *
      *
@@ -3803,6 +3930,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3826,6 +3954,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3848,6 +3977,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3866,6 +3996,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3900,6 +4031,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3913,6 +4045,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.visionai.v1.StreamAnnotationType>(
           supportedAnnotationTypes_, supportedAnnotationTypes_converter_);
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3923,6 +4056,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public int getSupportedAnnotationTypesCount() {
       return supportedAnnotationTypes_.size();
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3935,6 +4069,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return supportedAnnotationTypes_converter_.convert(supportedAnnotationTypes_.get(index));
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3954,6 +4089,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3972,6 +4108,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3989,6 +4126,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4002,6 +4140,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4012,6 +4151,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSupportedAnnotationTypesValueList() {
       return java.util.Collections.unmodifiableList(supportedAnnotationTypes_);
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4023,6 +4163,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public int getSupportedAnnotationTypesValue(int index) {
       return supportedAnnotationTypes_.get(index);
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4038,6 +4179,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4052,6 +4194,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.StreamAnnotationType supported_annotation_types = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4071,6 +4214,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean supportsPostProcessing_;
+
     /**
      *
      *
@@ -4086,6 +4230,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public boolean getSupportsPostProcessing() {
       return supportsPostProcessing_;
     }
+
     /**
      *
      *
@@ -4105,6 +4250,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4133,6 +4279,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00004000;
       }
     }
+
     /**
      *
      *
@@ -4152,6 +4299,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.visionai.v1.Instance.InstanceType>(
           supportedInstanceTypes_, supportedInstanceTypes_converter_);
     }
+
     /**
      *
      *
@@ -4168,6 +4316,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public int getSupportedInstanceTypesCount() {
       return supportedInstanceTypes_.size();
     }
+
     /**
      *
      *
@@ -4185,6 +4334,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.Instance.InstanceType getSupportedInstanceTypes(int index) {
       return supportedInstanceTypes_converter_.convert(supportedInstanceTypes_.get(index));
     }
+
     /**
      *
      *
@@ -4210,6 +4360,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4234,6 +4385,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4257,6 +4409,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4276,6 +4429,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4292,6 +4446,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSupportedInstanceTypesValueList() {
       return java.util.Collections.unmodifiableList(supportedInstanceTypes_);
     }
+
     /**
      *
      *
@@ -4309,6 +4464,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public int getSupportedInstanceTypesValue(int index) {
       return supportedInstanceTypes_.get(index);
     }
+
     /**
      *
      *
@@ -4330,6 +4486,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4350,6 +4507,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

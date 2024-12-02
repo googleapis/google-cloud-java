@@ -38,6 +38,7 @@ public interface ModelOrBuilder
    * @return Whether the pageOptimizationConfig field is set.
    */
   boolean hasPageOptimizationConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ModelOrBuilder
    * @return The pageOptimizationConfig.
    */
   com.google.cloud.retail.v2alpha.Model.PageOptimizationConfig getPageOptimizationConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface ModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for trainingState.
    */
   int getTrainingStateValue();
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for servingState.
    */
   int getServingStateValue();
+
   /**
    *
    *
@@ -219,6 +225,7 @@ public interface ModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public interface ModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public interface ModelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public interface ModelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -315,6 +325,7 @@ public interface ModelOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -377,6 +388,7 @@ public interface ModelOrBuilder
    * @return The optimizationObjective.
    */
   java.lang.String getOptimizationObjective();
+
   /**
    *
    *
@@ -430,6 +442,7 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for periodicTuningState.
    */
   int getPeriodicTuningStateValue();
+
   /**
    *
    *
@@ -463,6 +476,7 @@ public interface ModelOrBuilder
    * @return Whether the lastTuneTime field is set.
    */
   boolean hasLastTuneTime();
+
   /**
    *
    *
@@ -477,6 +491,7 @@ public interface ModelOrBuilder
    * @return The lastTuneTime.
    */
   com.google.protobuf.Timestamp getLastTuneTime();
+
   /**
    *
    *
@@ -505,6 +520,7 @@ public interface ModelOrBuilder
    * @return The tuningOperation.
    */
   java.lang.String getTuningOperation();
+
   /**
    *
    *
@@ -542,6 +558,7 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for dataState.
    */
   int getDataStateValue();
+
   /**
    *
    *
@@ -579,6 +596,7 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for filteringOption.
    */
   int getFilteringOptionValue();
+
   /**
    *
    *
@@ -609,6 +627,7 @@ public interface ModelOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2alpha.Model.ServingConfigList>
       getServingConfigListsList();
+
   /**
    *
    *
@@ -622,6 +641,7 @@ public interface ModelOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2alpha.Model.ServingConfigList getServingConfigLists(int index);
+
   /**
    *
    *
@@ -635,6 +655,7 @@ public interface ModelOrBuilder
    * </code>
    */
   int getServingConfigListsCount();
+
   /**
    *
    *
@@ -649,6 +670,7 @@ public interface ModelOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.Model.ServingConfigListOrBuilder>
       getServingConfigListsOrBuilderList();
+
   /**
    *
    *
@@ -678,6 +700,7 @@ public interface ModelOrBuilder
    * @return Whether the modelFeaturesConfig field is set.
    */
   boolean hasModelFeaturesConfig();
+
   /**
    *
    *
@@ -692,6 +715,7 @@ public interface ModelOrBuilder
    * @return The modelFeaturesConfig.
    */
   com.google.cloud.retail.v2alpha.Model.ModelFeaturesConfig getModelFeaturesConfig();
+
   /**
    *
    *

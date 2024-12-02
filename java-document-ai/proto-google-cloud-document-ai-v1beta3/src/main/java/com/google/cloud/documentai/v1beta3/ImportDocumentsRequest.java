@@ -25,6 +25,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportDocumentsRequest)
     ImportDocumentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportDocumentsRequest.newBuilder() to construct.
   private ImportDocumentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the datasetSplit field is set.
      */
     boolean hasDatasetSplit();
+
     /**
      *
      *
@@ -85,6 +87,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for datasetSplit.
      */
     int getDatasetSplitValue();
+
     /**
      *
      *
@@ -113,6 +116,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the autoSplitConfig field is set.
      */
     boolean hasAutoSplitConfig();
+
     /**
      *
      *
@@ -130,6 +134,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig
             .AutoSplitConfig
         getAutoSplitConfig();
+
     /**
      *
      *
@@ -159,6 +164,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the batchInputConfig field is set.
      */
     boolean hasBatchInputConfig();
+
     /**
      *
      *
@@ -172,6 +178,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return The batchInputConfig.
      */
     com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig getBatchInputConfig();
+
     /**
      *
      *
@@ -189,6 +196,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             .SplitTypeConfigCase
         getSplitTypeConfigCase();
   }
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig)
       BatchDocumentsImportConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BatchDocumentsImportConfig.newBuilder() to construct.
     private BatchDocumentsImportConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -254,6 +263,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
        */
       float getTrainingSplitRatio();
     }
+
     /**
      *
      *
@@ -269,6 +279,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig.AutoSplitConfig)
         AutoSplitConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use AutoSplitConfig.newBuilder() to construct.
       private AutoSplitConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -301,6 +312,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
       public static final int TRAINING_SPLIT_RATIO_FIELD_NUMBER = 1;
       private float trainingSplitRatio_ = 0F;
+
       /**
        *
        *
@@ -508,6 +520,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -723,6 +736,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private float trainingSplitRatio_;
+
         /**
          *
          *
@@ -738,6 +752,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         public float getTrainingSplitRatio() {
           return trainingSplitRatio_;
         }
+
         /**
          *
          *
@@ -757,6 +772,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -865,6 +881,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       private SplitTypeConfigCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -898,6 +915,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     public static final int DATASET_SPLIT_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -912,6 +930,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasDatasetSplit() {
       return splitTypeConfigCase_ == 2;
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return 0;
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     public static final int AUTO_SPLIT_CONFIG_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasAutoSplitConfig() {
       return splitTypeConfigCase_ == 3;
     }
+
     /**
      *
      *
@@ -997,6 +1019,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       return com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig
           .AutoSplitConfig.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1024,6 +1047,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
     public static final int BATCH_INPUT_CONFIG_FIELD_NUMBER = 1;
     private com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig batchInputConfig_;
+
     /**
      *
      *
@@ -1040,6 +1064,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasBatchInputConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1058,6 +1083,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           ? com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.getDefaultInstance()
           : batchInputConfig_;
     }
+
     /**
      *
      *
@@ -1310,6 +1336,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1612,6 +1639,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       public boolean hasDatasetSplit() {
         return splitTypeConfigCase_ == 2;
       }
+
       /**
        *
        *
@@ -1630,6 +1658,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return 0;
       }
+
       /**
        *
        *
@@ -1648,6 +1677,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1671,6 +1701,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return com.google.cloud.documentai.v1beta3.DatasetSplitType.DATASET_SPLIT_TYPE_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -1692,6 +1723,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1720,6 +1752,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig
                   .AutoSplitConfigOrBuilder>
           autoSplitConfigBuilder_;
+
       /**
        *
        *
@@ -1738,6 +1771,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       public boolean hasAutoSplitConfig() {
         return splitTypeConfigCase_ == 3;
       }
+
       /**
        *
        *
@@ -1772,6 +1806,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               .BatchDocumentsImportConfig.AutoSplitConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1800,6 +1835,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         splitTypeConfigCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1825,6 +1861,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         splitTypeConfigCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1868,6 +1905,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         splitTypeConfigCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1896,6 +1934,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1913,6 +1952,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           getAutoSplitConfigBuilder() {
         return getAutoSplitConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1941,6 +1981,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               .BatchDocumentsImportConfig.AutoSplitConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1993,6 +2034,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder,
               com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder>
           batchInputConfigBuilder_;
+
       /**
        *
        *
@@ -2008,6 +2050,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       public boolean hasBatchInputConfig() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -2029,6 +2072,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           return batchInputConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2053,6 +2097,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2074,6 +2119,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2105,6 +2151,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -2125,6 +2172,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2141,6 +2189,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return getBatchInputConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2161,6 +2210,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               : batchInputConfig_;
         }
       }
+
       /**
        *
        *
@@ -2263,6 +2313,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
+
   /**
    *
    *
@@ -2290,6 +2341,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -2324,6 +2376,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   private java.util.List<
           com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig>
       batchDocumentsImportConfigs_;
+
   /**
    *
    *
@@ -2342,6 +2395,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       getBatchDocumentsImportConfigsList() {
     return batchDocumentsImportConfigs_;
   }
+
   /**
    *
    *
@@ -2362,6 +2416,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       getBatchDocumentsImportConfigsOrBuilderList() {
     return batchDocumentsImportConfigs_;
   }
+
   /**
    *
    *
@@ -2378,6 +2433,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public int getBatchDocumentsImportConfigsCount() {
     return batchDocumentsImportConfigs_.size();
   }
+
   /**
    *
    *
@@ -2395,6 +2451,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       getBatchDocumentsImportConfigs(int index) {
     return batchDocumentsImportConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -2588,6 +2645,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.documentai.v1beta3.ImportDocumentsRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -2830,6 +2888,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -2856,6 +2915,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2882,6 +2942,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2907,6 +2968,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2928,6 +2990,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2998,6 +3061,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return batchDocumentsImportConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3017,6 +3081,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return batchDocumentsImportConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3037,6 +3102,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return batchDocumentsImportConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3065,6 +3131,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3091,6 +3158,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3118,6 +3186,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3146,6 +3215,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3171,6 +3241,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3197,6 +3268,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3225,6 +3297,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3247,6 +3320,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3269,6 +3343,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3286,6 +3361,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         getBatchDocumentsImportConfigsBuilder(int index) {
       return getBatchDocumentsImportConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3307,6 +3383,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return batchDocumentsImportConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3330,6 +3407,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(batchDocumentsImportConfigs_);
       }
     }
+
     /**
      *
      *
@@ -3350,6 +3428,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3371,6 +3450,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *

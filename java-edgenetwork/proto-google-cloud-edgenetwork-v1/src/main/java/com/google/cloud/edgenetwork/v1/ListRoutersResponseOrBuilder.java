@@ -34,6 +34,7 @@ public interface ListRoutersResponseOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router routers = 1;</code>
    */
   java.util.List<com.google.cloud.edgenetwork.v1.Router> getRoutersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRoutersResponseOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router routers = 1;</code>
    */
   com.google.cloud.edgenetwork.v1.Router getRouters(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRoutersResponseOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router routers = 1;</code>
    */
   int getRoutersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRoutersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgenetwork.v1.RouterOrBuilder>
       getRoutersOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListRoutersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListRoutersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListRoutersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListRoutersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

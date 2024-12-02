@@ -98,6 +98,7 @@ public enum LogLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOG_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int LOG_LEVEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -108,6 +109,7 @@ public enum LogLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NONE = 10;</code>
    */
   public static final int NONE_VALUE = 10;
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public enum LogLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ERROR = 20;</code>
    */
   public static final int ERROR_VALUE = 20;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public enum LogLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INFO = 30;</code>
    */
   public static final int INFO_VALUE = 30;
+
   /**
    *
    *

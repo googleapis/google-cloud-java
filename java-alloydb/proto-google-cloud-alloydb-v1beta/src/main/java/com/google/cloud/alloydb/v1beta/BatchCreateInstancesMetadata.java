@@ -34,6 +34,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata)
     BatchCreateInstancesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateInstancesMetadata.newBuilder() to construct.
   private BatchCreateInstancesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instanceTargets_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getInstanceTargetsList() {
     return instanceTargets_;
   }
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
   public int getInstanceTargetsCount() {
     return instanceTargets_.size();
   }
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
   public java.lang.String getInstanceTargets(int index) {
     return instanceTargets_.get(index);
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
   public int getInstanceStatusesCount() {
     return internalGetInstanceStatuses().getMap().size();
   }
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     }
     return internalGetInstanceStatuses().getMap().containsKey(key);
   }
+
   /** Use {@link #getInstanceStatusesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -218,6 +225,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       getInstanceStatuses() {
     return getInstanceStatusesMap();
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       getInstanceStatusesMap() {
     return internalGetInstanceStatuses().getMap();
   }
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
         internalGetInstanceStatuses().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -485,6 +495,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -731,6 +742,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -749,6 +761,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       instanceTargets_.makeImmutable();
       return instanceTargets_;
     }
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     public int getInstanceTargetsCount() {
       return instanceTargets_.size();
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     public java.lang.String getInstanceTargets(int index) {
       return instanceTargets_.get(index);
     }
+
     /**
      *
      *
@@ -802,6 +817,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getInstanceTargetsBytes(int index) {
       return instanceTargets_.getByteString(index);
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +915,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -943,7 +963,8 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
           defaultEntry() {
         return InstanceStatusesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final InstanceStatusesConverter instanceStatusesConverter =
         new InstanceStatusesConverter();
@@ -984,6 +1005,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     public int getInstanceStatusesCount() {
       return internalGetInstanceStatuses().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1007,6 +1029,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       }
       return internalGetInstanceStatuses().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getInstanceStatusesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1015,6 +1038,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
         getInstanceStatuses() {
       return getInstanceStatusesMap();
     }
+
     /**
      *
      *
@@ -1037,6 +1061,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
         getInstanceStatusesMap() {
       return internalGetInstanceStatuses().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1067,6 +1092,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
           map = internalGetMutableInstanceStatuses().ensureBuilderMap();
       return map.containsKey(key) ? instanceStatusesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1103,6 +1129,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       internalGetMutableInstanceStatuses().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       internalGetMutableInstanceStatuses().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1134,6 +1162,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       bitField0_ |= 0x00000002;
       return internalGetMutableInstanceStatuses().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1162,6 +1191,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1222,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface ActionDetailsOrBuilder
    * @return Whether the deidentifyDetails field is set.
    */
   boolean hasDeidentifyDetails();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ActionDetailsOrBuilder
    * @return The deidentifyDetails.
    */
   com.google.privacy.dlp.v2.DeidentifyDataSourceDetails getDeidentifyDetails();
+
   /**
    *
    *

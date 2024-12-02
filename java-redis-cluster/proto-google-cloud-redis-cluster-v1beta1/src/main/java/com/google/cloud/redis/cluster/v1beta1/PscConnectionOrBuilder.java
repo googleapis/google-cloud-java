@@ -37,6 +37,7 @@ public interface PscConnectionOrBuilder
    * @return The pscConnectionId.
    */
   java.lang.String getPscConnectionId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface PscConnectionOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface PscConnectionOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface PscConnectionOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface PscConnectionOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *

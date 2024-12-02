@@ -38,6 +38,7 @@ public interface WafSettingsOrBuilder
    * @return The enum numeric value on the wire for wafService.
    */
   int getWafServiceValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface WafSettingsOrBuilder
    * @return The enum numeric value on the wire for wafFeature.
    */
   int getWafFeatureValue();
+
   /**
    *
    *

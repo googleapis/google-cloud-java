@@ -33,6 +33,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TokenOptions)
     TokenOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TokenOptions.newBuilder() to construct.
   private TokenOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object audience_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList nonce_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getNonceList() {
     return nonce_;
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public int getNonceCount() {
     return nonce_.size();
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getNonce(int index) {
     return nonce_.get(index);
   }
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOKEN_TYPE_FIELD_NUMBER = 3;
   private int tokenType_ = 0;
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public int getTokenTypeValue() {
     return tokenType_;
   }
+
   /**
    *
    *
@@ -418,6 +427,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +647,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object audience_ = "";
+
     /**
      *
      *
@@ -660,6 +671,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +737,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +771,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       nonce_.makeImmutable();
       return nonce_;
     }
+
     /**
      *
      *
@@ -789,6 +806,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public int getNonceCount() {
       return nonce_.size();
     }
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNonce(int index) {
       return nonce_.get(index);
     }
+
     /**
      *
      *
@@ -823,6 +842,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getNonceBytes(int index) {
       return nonce_.getByteString(index);
     }
+
     /**
      *
      *
@@ -848,6 +868,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +893,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +936,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +964,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int tokenType_ = 0;
+
     /**
      *
      *
@@ -957,6 +982,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public int getTokenTypeValue() {
       return tokenType_;
     }
+
     /**
      *
      *
@@ -977,6 +1003,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1025,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.confidentialcomputing.v1.TokenType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1021,6 +1049,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

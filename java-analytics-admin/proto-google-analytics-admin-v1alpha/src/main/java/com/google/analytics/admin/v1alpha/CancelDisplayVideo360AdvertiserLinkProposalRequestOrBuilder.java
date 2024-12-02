@@ -39,6 +39,7 @@ public interface CancelDisplayVideo360AdvertiserLinkProposalRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface AddGroupMigrationRequestOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AddGroupMigrationRequestOrBuilder
    * @return The migratingVm.
    */
   java.lang.String getMigratingVm();
+
   /**
    *
    *

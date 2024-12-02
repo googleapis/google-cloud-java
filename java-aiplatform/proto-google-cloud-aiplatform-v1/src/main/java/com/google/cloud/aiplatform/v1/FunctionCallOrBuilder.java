@@ -37,6 +37,7 @@ public interface FunctionCallOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface FunctionCallOrBuilder
    * @return Whether the args field is set.
    */
   boolean hasArgs();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface FunctionCallOrBuilder
    * @return The args.
    */
   com.google.protobuf.Struct getArgs();
+
   /**
    *
    *

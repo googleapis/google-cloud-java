@@ -34,6 +34,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1beta1.ReusableConfigWrapper)
     ReusableConfigWrapperOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReusableConfigWrapper.newBuilder() to construct.
   private ReusableConfigWrapper(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     private ConfigValuesCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REUSABLE_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
   public boolean hasReusableConfig() {
     return configValuesCase_ == 1;
   }
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REUSABLE_CONFIG_VALUES_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
   public boolean hasReusableConfigValues() {
     return configValuesCase_ == 2;
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -433,6 +441,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +693,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     public boolean hasReusableConfig() {
       return configValuesCase_ == 1;
     }
+
     /**
      *
      *
@@ -713,6 +723,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +753,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +776,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +797,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +827,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
             com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.Builder,
             com.google.cloud.security.privateca.v1beta1.ReusableConfigValuesOrBuilder>
         reusableConfigValuesBuilder_;
+
     /**
      *
      *
@@ -830,6 +845,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     public boolean hasReusableConfigValues() {
       return configValuesCase_ == 2;
     }
+
     /**
      *
      *
@@ -860,6 +876,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       configValuesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +925,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       configValuesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       configValuesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1008,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
         getReusableConfigValuesBuilder() {
       return getReusableConfigValuesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

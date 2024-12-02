@@ -33,6 +33,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.BatchUpdateAssetsResponse)
     BatchUpdateAssetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchUpdateAssetsResponse.newBuilder() to construct.
   private BatchUpdateAssetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.Asset> assets_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.migrationcenter.v1.Asset> getAssetsList() {
     return assets_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       getAssetsOrBuilderList() {
     return assets_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
   public int getAssetsCount() {
     return assets_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
   public com.google.cloud.migrationcenter.v1.Asset getAssets(int index) {
     return assets_.get(index);
   }
+
   /**
    *
    *
@@ -301,6 +307,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +573,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
         return assetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -583,6 +591,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
         return assetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -600,6 +609,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
         return assetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +679,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +703,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +724,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +746,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +768,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +810,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +824,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
     public com.google.cloud.migrationcenter.v1.Asset.Builder getAssetsBuilder(int index) {
       return getAssetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -822,6 +842,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
         return assetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -840,6 +861,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(assets_);
       }
     }
+
     /**
      *
      *
@@ -854,6 +876,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       return getAssetsFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.Asset.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -868,6 +891,7 @@ public final class BatchUpdateAssetsResponse extends com.google.protobuf.Generat
       return getAssetsFieldBuilder()
           .addBuilder(index, com.google.cloud.migrationcenter.v1.Asset.getDefaultInstance());
     }
+
     /**
      *
      *

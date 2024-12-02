@@ -38,6 +38,7 @@ public interface SubpropertyEventFilterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SubpropertyEventFilterOrBuilder
    * @return Whether the applyToProperty field is set.
    */
   boolean hasApplyToProperty();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SubpropertyEventFilterOrBuilder
    * @return The applyToProperty.
    */
   java.lang.String getApplyToProperty();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface SubpropertyEventFilterOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.SubpropertyEventFilterClause>
       getFilterClausesList();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface SubpropertyEventFilterOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilterClause getFilterClauses(int index);
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface SubpropertyEventFilterOrBuilder
    * </code>
    */
   int getFilterClausesCount();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface SubpropertyEventFilterOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.SubpropertyEventFilterClauseOrBuilder>
       getFilterClausesOrBuilderList();
+
   /**
    *
    *

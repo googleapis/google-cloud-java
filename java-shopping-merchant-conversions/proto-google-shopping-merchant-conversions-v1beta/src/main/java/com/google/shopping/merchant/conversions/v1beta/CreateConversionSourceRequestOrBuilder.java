@@ -39,6 +39,7 @@ public interface CreateConversionSourceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateConversionSourceRequestOrBuilder
    * @return Whether the conversionSource field is set.
    */
   boolean hasConversionSource();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateConversionSourceRequestOrBuilder
    * @return The conversionSource.
    */
   com.google.shopping.merchant.conversions.v1beta.ConversionSource getConversionSource();
+
   /**
    *
    *

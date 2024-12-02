@@ -78,6 +78,7 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CONVERSATION_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int CONVERSATION_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    * <code>FULL = 2;</code>
    */
   public static final int FULL_VALUE = 2;
+
   /**
    *
    *

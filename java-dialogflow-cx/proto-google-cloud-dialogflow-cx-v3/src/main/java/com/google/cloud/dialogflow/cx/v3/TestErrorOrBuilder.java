@@ -36,6 +36,7 @@ public interface TestErrorOrBuilder
    * @return The testCase.
    */
   java.lang.String getTestCase();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TestErrorOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TestErrorOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface TestErrorOrBuilder
    * @return Whether the testTime field is set.
    */
   boolean hasTestTime();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface TestErrorOrBuilder
    * @return The testTime.
    */
   com.google.protobuf.Timestamp getTestTime();
+
   /**
    *
    *

@@ -142,7 +142,8 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetVulnerabilityOccurrencesSummary, expected %s or %s",
+                  "Unrecognized response type %s for method GetVulnerabilityOccurrencesSummary,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VulnerabilityOccurrencesSummary.class.getName(),
                   Exception.class.getName())));

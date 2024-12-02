@@ -33,6 +33,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.GetVehicleRequest)
     GetVehicleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetVehicleRequest.newBuilder() to construct.
   private GetVehicleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.v1.RequestHeader header_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.fleetengine.v1.RequestHeader.getDefaultInstance()
         : header_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int CURRENT_ROUTE_SEGMENT_VERSION_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp currentRouteSegmentVersion_;
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasCurrentRouteSegmentVersion() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : currentRouteSegmentVersion_;
   }
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int WAYPOINTS_VERSION_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp waypointsVersion_;
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasWaypointsVersion() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : waypointsVersion_;
   }
+
   /**
    *
    *
@@ -502,6 +514,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -764,6 +777,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.fleetengine.v1.RequestHeader.Builder,
             com.google.maps.fleetengine.v1.RequestHeaderOrBuilder>
         headerBuilder_;
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -798,6 +813,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
         return headerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -820,6 +836,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +856,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
             : header_;
       }
     }
+
     /**
      *
      *
@@ -944,6 +966,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1052,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1076,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1112,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         currentRouteSegmentVersionBuilder_;
+
     /**
      *
      *
@@ -1103,6 +1131,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasCurrentRouteSegmentVersion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1127,6 +1156,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
         return currentRouteSegmentVersionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1153,6 +1183,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1208,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1240,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1264,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1249,6 +1283,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCurrentRouteSegmentVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1271,6 +1306,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
             : currentRouteSegmentVersion_;
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1343,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         waypointsVersionBuilder_;
+
     /**
      *
      *
@@ -1324,6 +1361,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasWaypointsVersion() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1347,6 +1385,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
         return waypointsVersionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1372,6 +1411,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1434,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1465,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1446,6 +1488,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1506,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWaypointsVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1484,6 +1528,7 @@ public final class GetVehicleRequest extends com.google.protobuf.GeneratedMessag
             : waypointsVersion_;
       }
     }
+
     /**
      *
      *

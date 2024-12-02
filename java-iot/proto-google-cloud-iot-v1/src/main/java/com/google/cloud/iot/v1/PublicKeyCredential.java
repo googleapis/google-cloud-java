@@ -33,6 +33,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.PublicKeyCredential)
     PublicKeyCredentialOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublicKeyCredential.newBuilder() to construct.
   private PublicKeyCredential(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
 
   public static final int FORMAT_FIELD_NUMBER = 1;
   private int format_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
   public int getFormatValue() {
     return format_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -320,6 +325,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -516,6 +522,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int format_ = 0;
+
     /**
      *
      *
@@ -531,6 +538,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
     public int getFormatValue() {
       return format_;
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -566,6 +575,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
           com.google.cloud.iot.v1.PublicKeyFormat.forNumber(format_);
       return result == null ? com.google.cloud.iot.v1.PublicKeyFormat.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +617,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -628,6 +640,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -650,6 +663,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -671,6 +685,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +703,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

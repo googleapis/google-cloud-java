@@ -34,6 +34,7 @@ public interface ListProvidersResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Provider providers = 1;</code>
    */
   java.util.List<com.google.cloud.eventarc.v1.Provider> getProvidersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProvidersResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Provider providers = 1;</code>
    */
   com.google.cloud.eventarc.v1.Provider getProviders(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProvidersResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Provider providers = 1;</code>
    */
   int getProvidersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListProvidersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.ProviderOrBuilder>
       getProvidersOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListProvidersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListProvidersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListProvidersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListProvidersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

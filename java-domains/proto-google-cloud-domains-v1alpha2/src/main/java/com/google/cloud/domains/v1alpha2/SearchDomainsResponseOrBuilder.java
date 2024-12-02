@@ -35,6 +35,7 @@ public interface SearchDomainsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.domains.v1alpha2.RegisterParameters> getRegisterParametersList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface SearchDomainsResponseOrBuilder
    * </code>
    */
   com.google.cloud.domains.v1alpha2.RegisterParameters getRegisterParameters(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface SearchDomainsResponseOrBuilder
    * </code>
    */
   int getRegisterParametersCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface SearchDomainsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.domains.v1alpha2.RegisterParametersOrBuilder>
       getRegisterParametersOrBuilderList();
+
   /**
    *
    *

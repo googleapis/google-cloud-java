@@ -34,6 +34,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig)
     NaturalLanguageQueryUnderstandingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NaturalLanguageQueryUnderstandingConfig.newBuilder() to construct.
   private NaturalLanguageQueryUnderstandingConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -124,6 +125,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -134,6 +136,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -233,6 +236,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
 
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -252,6 +256,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -453,6 +458,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +655,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -668,6 +675,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -690,6 +698,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +725,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -743,6 +753,7 @@ public final class NaturalLanguageQueryUnderstandingConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *

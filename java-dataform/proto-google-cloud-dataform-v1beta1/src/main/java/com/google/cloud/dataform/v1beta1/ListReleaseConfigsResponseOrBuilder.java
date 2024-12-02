@@ -34,6 +34,7 @@ public interface ListReleaseConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.ReleaseConfig release_configs = 1;</code>
    */
   java.util.List<com.google.cloud.dataform.v1beta1.ReleaseConfig> getReleaseConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListReleaseConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.ReleaseConfig release_configs = 1;</code>
    */
   com.google.cloud.dataform.v1beta1.ReleaseConfig getReleaseConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListReleaseConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.ReleaseConfig release_configs = 1;</code>
    */
   int getReleaseConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListReleaseConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.ReleaseConfigOrBuilder>
       getReleaseConfigsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListReleaseConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListReleaseConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListReleaseConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListReleaseConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

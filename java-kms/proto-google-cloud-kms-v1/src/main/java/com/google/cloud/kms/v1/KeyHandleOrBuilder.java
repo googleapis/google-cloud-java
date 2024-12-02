@@ -38,6 +38,7 @@ public interface KeyHandleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface KeyHandleOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
+
   /**
    *
    *
@@ -117,6 +119,7 @@ public interface KeyHandleOrBuilder
    * @return The resourceTypeSelector.
    */
   java.lang.String getResourceTypeSelector();
+
   /**
    *
    *

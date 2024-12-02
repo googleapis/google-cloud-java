@@ -34,6 +34,7 @@ public interface BatchCreateInstancesResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1.Instance instances = 1;</code>
    */
   java.util.List<com.google.cloud.alloydb.v1.Instance> getInstancesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchCreateInstancesResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1.Instance instances = 1;</code>
    */
   com.google.cloud.alloydb.v1.Instance getInstances(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchCreateInstancesResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1.Instance instances = 1;</code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchCreateInstancesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.alloydb.v1.InstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *

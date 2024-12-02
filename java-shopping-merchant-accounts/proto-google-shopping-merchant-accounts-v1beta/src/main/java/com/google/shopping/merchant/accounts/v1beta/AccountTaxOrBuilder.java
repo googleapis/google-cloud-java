@@ -38,6 +38,7 @@ public interface AccountTaxOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface AccountTaxOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.TaxRule tax_rules = 3;</code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.TaxRule> getTaxRulesList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface AccountTaxOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.TaxRule tax_rules = 3;</code>
    */
   com.google.shopping.merchant.accounts.v1beta.TaxRule getTaxRules(int index);
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface AccountTaxOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.TaxRule tax_rules = 3;</code>
    */
   int getTaxRulesCount();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface AccountTaxOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.TaxRuleOrBuilder>
       getTaxRulesOrBuilderList();
+
   /**
    *
    *

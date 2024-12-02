@@ -42,6 +42,7 @@ public interface GetSavedQueryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

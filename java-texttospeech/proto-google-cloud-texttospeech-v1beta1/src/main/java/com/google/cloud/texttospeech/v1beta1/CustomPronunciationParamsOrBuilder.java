@@ -38,6 +38,7 @@ public interface CustomPronunciationParamsOrBuilder
    * @return Whether the phrase field is set.
    */
   boolean hasPhrase();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CustomPronunciationParamsOrBuilder
    * @return The phrase.
    */
   java.lang.String getPhrase();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CustomPronunciationParamsOrBuilder
    * @return Whether the phoneticEncoding field is set.
    */
   boolean hasPhoneticEncoding();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface CustomPronunciationParamsOrBuilder
    * @return The enum numeric value on the wire for phoneticEncoding.
    */
   int getPhoneticEncodingValue();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface CustomPronunciationParamsOrBuilder
    * @return Whether the pronunciation field is set.
    */
   boolean hasPronunciation();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface CustomPronunciationParamsOrBuilder
    * @return The pronunciation.
    */
   java.lang.String getPronunciation();
+
   /**
    *
    *

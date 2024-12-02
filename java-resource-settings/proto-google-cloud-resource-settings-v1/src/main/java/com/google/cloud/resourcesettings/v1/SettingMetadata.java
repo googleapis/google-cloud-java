@@ -33,6 +33,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.resourcesettings.v1.SettingMetadata)
     SettingMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SettingMetadata.newBuilder() to construct.
   private SettingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -140,6 +141,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>DATA_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -150,6 +152,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>BOOLEAN = 1;</code>
      */
     public static final int BOOLEAN_VALUE = 1;
+
     /**
      *
      *
@@ -160,6 +163,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>STRING = 2;</code>
      */
     public static final int STRING_VALUE = 2;
+
     /**
      *
      *
@@ -170,6 +174,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>STRING_SET = 3;</code>
      */
     public static final int STRING_SET_VALUE = 3;
+
     /**
      *
      *
@@ -275,6 +280,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -326,6 +333,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -349,6 +357,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -375,6 +384,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
 
   public static final int READ_ONLY_FIELD_NUMBER = 3;
   private boolean readOnly_ = false;
+
   /**
    *
    *
@@ -394,6 +404,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
 
   public static final int DATA_TYPE_FIELD_NUMBER = 4;
   private int dataType_ = 0;
+
   /**
    *
    *
@@ -409,6 +420,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
   public int getDataTypeValue() {
     return dataType_;
   }
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
 
   public static final int DEFAULT_VALUE_FIELD_NUMBER = 5;
   private com.google.cloud.resourcesettings.v1.Value defaultValue_;
+
   /**
    *
    *
@@ -450,6 +463,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
   public boolean hasDefaultValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -471,6 +485,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.resourcesettings.v1.Value.getDefaultInstance()
         : defaultValue_;
   }
+
   /**
    *
    *
@@ -695,6 +710,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -950,6 +966,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -972,6 +989,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -994,6 +1012,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1034,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1052,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1077,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1078,6 +1100,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1123,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1121,6 +1145,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1163,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1188,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean readOnly_;
+
     /**
      *
      *
@@ -1178,6 +1205,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean getReadOnly() {
       return readOnly_;
     }
+
     /**
      *
      *
@@ -1198,6 +1226,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1247,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private int dataType_ = 0;
+
     /**
      *
      *
@@ -1233,6 +1263,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     public int getDataTypeValue() {
       return dataType_;
     }
+
     /**
      *
      *
@@ -1251,6 +1282,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1302,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.resourcesettings.v1.SettingMetadata.DataType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1292,6 +1325,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1316,6 +1350,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.resourcesettings.v1.Value.Builder,
             com.google.cloud.resourcesettings.v1.ValueOrBuilder>
         defaultValueBuilder_;
+
     /**
      *
      *
@@ -1334,6 +1369,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean hasDefaultValue() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1358,6 +1394,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
         return defaultValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1384,6 +1421,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1446,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1478,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1462,6 +1502,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1521,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDefaultValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1502,6 +1544,7 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
             : defaultValue_;
       }
     }
+
     /**
      *
      *

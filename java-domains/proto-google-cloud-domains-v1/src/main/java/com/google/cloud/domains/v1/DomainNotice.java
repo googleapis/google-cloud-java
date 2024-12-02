@@ -66,6 +66,7 @@ public enum DomainNotice implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DOMAIN_NOTICE_UNSPECIFIED = 0;</code>
    */
   public static final int DOMAIN_NOTICE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

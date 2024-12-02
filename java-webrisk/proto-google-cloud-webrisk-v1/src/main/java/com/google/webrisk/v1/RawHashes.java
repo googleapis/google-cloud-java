@@ -40,6 +40,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.RawHashes)
     RawHashesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RawHashes.newBuilder() to construct.
   private RawHashes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PREFIX_SIZE_FIELD_NUMBER = 1;
   private int prefixSize_ = 0;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RAW_HASHES_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString rawHashes_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -275,6 +278,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -474,6 +478,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int prefixSize_;
+
     /**
      *
      *
@@ -491,6 +496,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     public int getPrefixSize() {
       return prefixSize_;
     }
+
     /**
      *
      *
@@ -512,6 +518,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -533,6 +540,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString rawHashes_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -550,6 +558,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRawHashes() {
       return rawHashes_;
     }
+
     /**
      *
      *
@@ -573,6 +582,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

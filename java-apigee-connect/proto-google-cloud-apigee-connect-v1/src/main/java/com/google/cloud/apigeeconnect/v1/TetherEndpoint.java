@@ -82,6 +82,7 @@ public enum TetherEndpoint implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TETHER_ENDPOINT_UNSPECIFIED = 0;</code>
    */
   public static final int TETHER_ENDPOINT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum TetherEndpoint implements com.google.protobuf.ProtocolMessageEnum {
    * <code>APIGEE_MART = 1;</code>
    */
   public static final int APIGEE_MART_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum TetherEndpoint implements com.google.protobuf.ProtocolMessageEnum {
    * <code>APIGEE_RUNTIME = 2;</code>
    */
   public static final int APIGEE_RUNTIME_VALUE = 2;
+
   /**
    *
    *

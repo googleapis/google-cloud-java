@@ -33,6 +33,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.ResourceRequirements)
     ResourceRequirementsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceRequirements.newBuilder() to construct.
   private ResourceRequirements(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int LIMITS_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.policycontroller.v1beta.ResourceList limits_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
   public boolean hasLimits() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.gkehub.policycontroller.v1beta.ResourceList.getDefaultInstance()
         : limits_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
 
   public static final int REQUESTS_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.policycontroller.v1beta.ResourceList requests_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
   public boolean hasRequests() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.gkehub.policycontroller.v1beta.ResourceList.getDefaultInstance()
         : requests_;
   }
+
   /**
    *
    *
@@ -350,6 +357,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +587,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
             com.google.cloud.gkehub.policycontroller.v1beta.ResourceList.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.ResourceListOrBuilder>
         limitsBuilder_;
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public boolean hasLimits() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
         return limitsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +723,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +739,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return getLimitsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -744,6 +760,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
             : limits_;
       }
     }
+
     /**
      *
      *
@@ -777,6 +794,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
             com.google.cloud.gkehub.policycontroller.v1beta.ResourceList.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.ResourceListOrBuilder>
         requestsBuilder_;
+
     /**
      *
      *
@@ -792,6 +810,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public boolean hasRequests() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -813,6 +832,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
         return requestsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +878,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +910,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +931,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +948,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRequestsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -944,6 +969,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
             : requests_;
       }
     }
+
     /**
      *
      *

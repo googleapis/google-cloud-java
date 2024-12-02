@@ -36,6 +36,7 @@ public interface ListHydratedDeploymentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.telcoautomation.v1.HydratedDeployment>
       getHydratedDeploymentsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListHydratedDeploymentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.telcoautomation.v1.HydratedDeployment getHydratedDeployments(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListHydratedDeploymentsResponseOrBuilder
    * </code>
    */
   int getHydratedDeploymentsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListHydratedDeploymentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1.HydratedDeploymentOrBuilder>
       getHydratedDeploymentsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface ListHydratedDeploymentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

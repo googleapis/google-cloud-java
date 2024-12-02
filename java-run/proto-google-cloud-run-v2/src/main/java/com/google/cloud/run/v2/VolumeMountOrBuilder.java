@@ -36,6 +36,7 @@ public interface VolumeMountOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface VolumeMountOrBuilder
    * @return The mountPath.
    */
   java.lang.String getMountPath();
+
   /**
    *
    *

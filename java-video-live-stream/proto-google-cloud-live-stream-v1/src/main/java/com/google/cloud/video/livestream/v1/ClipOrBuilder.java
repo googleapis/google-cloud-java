@@ -42,6 +42,7 @@ public interface ClipOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface ClipOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface ClipOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface ClipOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ClipOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface ClipOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface ClipOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface ClipOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -195,9 +203,11 @@ public interface ClipOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -208,6 +218,7 @@ public interface ClipOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -222,6 +233,7 @@ public interface ClipOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -247,6 +259,7 @@ public interface ClipOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -281,6 +294,7 @@ public interface ClipOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
+
   /**
    *
    *
@@ -314,6 +328,7 @@ public interface ClipOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -327,6 +342,7 @@ public interface ClipOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -349,6 +365,7 @@ public interface ClipOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Clip.Slice slices = 10;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.Clip.Slice> getSlicesList();
+
   /**
    *
    *
@@ -359,6 +376,7 @@ public interface ClipOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Clip.Slice slices = 10;</code>
    */
   com.google.cloud.video.livestream.v1.Clip.Slice getSlices(int index);
+
   /**
    *
    *
@@ -369,6 +387,7 @@ public interface ClipOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Clip.Slice slices = 10;</code>
    */
   int getSlicesCount();
+
   /**
    *
    *
@@ -380,6 +399,7 @@ public interface ClipOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.Clip.SliceOrBuilder>
       getSlicesOrBuilderList();
+
   /**
    *
    *
@@ -404,6 +424,7 @@ public interface ClipOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.Clip.ClipManifest> getClipManifestsList();
+
   /**
    *
    *
@@ -417,6 +438,7 @@ public interface ClipOrBuilder
    * </code>
    */
   com.google.cloud.video.livestream.v1.Clip.ClipManifest getClipManifests(int index);
+
   /**
    *
    *
@@ -430,6 +452,7 @@ public interface ClipOrBuilder
    * </code>
    */
   int getClipManifestsCount();
+
   /**
    *
    *
@@ -444,6 +467,7 @@ public interface ClipOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.Clip.ClipManifestOrBuilder>
       getClipManifestsOrBuilderList();
+
   /**
    *
    *

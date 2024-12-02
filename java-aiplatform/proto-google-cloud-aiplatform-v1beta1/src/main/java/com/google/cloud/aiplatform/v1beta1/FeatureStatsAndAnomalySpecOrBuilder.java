@@ -38,6 +38,7 @@ public interface FeatureStatsAndAnomalySpecOrBuilder
    * @return Whether the latestStatsCount field is set.
    */
   boolean hasLatestStatsCount();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface FeatureStatsAndAnomalySpecOrBuilder
    * @return Whether the statsTimeRange field is set.
    */
   boolean hasStatsTimeRange();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface FeatureStatsAndAnomalySpecOrBuilder
    * @return The statsTimeRange.
    */
   com.google.type.Interval getStatsTimeRange();
+
   /**
    *
    *

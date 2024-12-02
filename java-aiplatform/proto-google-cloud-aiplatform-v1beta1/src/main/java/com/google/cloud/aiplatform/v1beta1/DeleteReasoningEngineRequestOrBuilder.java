@@ -40,6 +40,7 @@ public interface DeleteReasoningEngineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

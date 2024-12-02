@@ -37,6 +37,7 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the regionInstanceGroupManagersAbandonInstancesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersAbandonInstancesRequestResource();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest
       getRegionInstanceGroupManagersAbandonInstancesRequestResource();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

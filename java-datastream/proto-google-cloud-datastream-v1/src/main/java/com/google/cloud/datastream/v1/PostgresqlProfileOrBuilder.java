@@ -36,6 +36,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface CreateReferenceImageRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateReferenceImageRequestOrBuilder
    * @return Whether the referenceImage field is set.
    */
   boolean hasReferenceImage();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CreateReferenceImageRequestOrBuilder
    * @return The referenceImage.
    */
   com.google.cloud.vision.v1p3beta1.ReferenceImage getReferenceImage();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface CreateReferenceImageRequestOrBuilder
    * @return The referenceImageId.
    */
   java.lang.String getReferenceImageId();
+
   /**
    *
    *

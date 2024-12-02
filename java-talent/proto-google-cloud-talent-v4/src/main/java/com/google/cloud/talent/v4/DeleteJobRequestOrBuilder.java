@@ -42,6 +42,7 @@ public interface DeleteJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

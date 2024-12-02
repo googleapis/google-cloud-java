@@ -36,6 +36,7 @@ public interface CharsToIgnoreOrBuilder
    * @return Whether the charactersToSkip field is set.
    */
   boolean hasCharactersToSkip();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CharsToIgnoreOrBuilder
    * @return The charactersToSkip.
    */
   java.lang.String getCharactersToSkip();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface CharsToIgnoreOrBuilder
    * @return Whether the commonCharactersToIgnore field is set.
    */
   boolean hasCommonCharactersToIgnore();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface CharsToIgnoreOrBuilder
    * @return The enum numeric value on the wire for commonCharactersToIgnore.
    */
   int getCommonCharactersToIgnoreValue();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface VmUtilizationInfoOrBuilder
    * @return Whether the vmwareVmDetails field is set.
    */
   boolean hasVmwareVmDetails();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface VmUtilizationInfoOrBuilder
    * @return The vmwareVmDetails.
    */
   com.google.cloud.vmmigration.v1.VmwareVmDetails getVmwareVmDetails();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface VmUtilizationInfoOrBuilder
    * @return The vmId.
    */
   java.lang.String getVmId();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface VmUtilizationInfoOrBuilder
    * @return Whether the utilization field is set.
    */
   boolean hasUtilization();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface VmUtilizationInfoOrBuilder
    * @return The utilization.
    */
   com.google.cloud.vmmigration.v1.VmUtilizationMetrics getUtilization();
+
   /**
    *
    *

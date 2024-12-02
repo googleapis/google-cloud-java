@@ -33,6 +33,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.BatchCreateJobsRequest)
     BatchCreateJobsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateJobsRequest.newBuilder() to construct.
   private BatchCreateJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.Job> jobs_;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList() {
     return jobs_;
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       getJobsOrBuilderList() {
     return jobs_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
   public int getJobsCount() {
     return jobs_.size();
   }
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
   public com.google.cloud.talent.v4beta1.Job getJobs(int index) {
     return jobs_.get(index);
   }
+
   /**
    *
    *
@@ -379,6 +387,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -624,6 +633,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         return jobsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         return jobsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         return jobsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +942,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +964,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +986,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1031,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1068,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.talent.v4beta1.Job.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1060,6 +1087,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         return jobsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1107,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(jobs_);
       }
     }
+
     /**
      *
      *
@@ -1094,6 +1123,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       return getJobsFieldBuilder()
           .addBuilder(com.google.cloud.talent.v4beta1.Job.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1109,6 +1139,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       return getJobsFieldBuilder()
           .addBuilder(index, com.google.cloud.talent.v4beta1.Job.getDefaultInstance());
     }
+
     /**
      *
      *

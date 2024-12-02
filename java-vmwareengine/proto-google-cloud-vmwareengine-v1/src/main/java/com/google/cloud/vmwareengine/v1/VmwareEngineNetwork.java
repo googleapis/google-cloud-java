@@ -34,6 +34,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.VmwareEngineNetwork)
     VmwareEngineNetworkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VmwareEngineNetwork.newBuilder() to construct.
   private VmwareEngineNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,6 +144,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -153,6 +155,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -163,6 +166,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -173,6 +177,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -328,6 +333,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -340,6 +346,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * <code>LEGACY = 1;</code>
      */
     public static final int LEGACY_VALUE = 1;
+
     /**
      *
      *
@@ -456,6 +463,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -488,6 +496,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return The network.
      */
     java.lang.String getNetwork();
+
     /**
      *
      *
@@ -505,6 +514,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getNetworkBytes();
   }
+
   /**
    *
    *
@@ -520,6 +530,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork)
       VpcNetworkOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use VpcNetwork.newBuilder() to construct.
     private VpcNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -619,6 +630,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -632,6 +644,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
        * <code>INTRANET = 1;</code>
        */
       public static final int INTRANET_VALUE = 1;
+
       /**
        *
        *
@@ -642,6 +655,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
        * <code>INTERNET = 2;</code>
        */
       public static final int INTERNET_VALUE = 2;
+
       /**
        *
        *
@@ -743,6 +757,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1036,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1224,6 +1243,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -1242,6 +1262,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -1263,6 +1284,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1285,6 +1307,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
             ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1310,6 +1333,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1332,6 +1356,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object network_ = "";
+
       /**
        *
        *
@@ -1358,6 +1383,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1384,6 +1410,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1409,6 +1436,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1430,6 +1458,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1529,6 +1558,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1556,6 +1586,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -1586,6 +1617,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1602,6 +1634,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1618,6 +1651,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1635,6 +1669,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1651,6 +1686,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1667,6 +1703,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1686,6 +1723,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1709,6 +1747,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -1738,6 +1777,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork>
       vpcNetworks_;
+
   /**
    *
    *
@@ -1756,6 +1796,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       getVpcNetworksList() {
     return vpcNetworks_;
   }
+
   /**
    *
    *
@@ -1775,6 +1816,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       getVpcNetworksOrBuilderList() {
     return vpcNetworks_;
   }
+
   /**
    *
    *
@@ -1792,6 +1834,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   public int getVpcNetworksCount() {
     return vpcNetworks_.size();
   }
+
   /**
    *
    *
@@ -1809,6 +1852,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork getVpcNetworks(int index) {
     return vpcNetworks_.get(index);
   }
+
   /**
    *
    *
@@ -1830,6 +1874,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1847,6 +1892,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1871,6 +1917,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
   public static final int TYPE_FIELD_NUMBER = 8;
   private int type_ = 0;
+
   /**
    *
    *
@@ -1888,6 +1935,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -1914,6 +1962,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -1937,6 +1986,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -1965,6 +2015,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -1991,6 +2042,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -2267,6 +2319,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2634,6 +2687,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2660,6 +2714,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2686,6 +2741,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2711,6 +2767,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2732,6 +2789,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2765,6 +2823,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2781,6 +2840,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2803,6 +2863,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2827,6 +2888,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2848,6 +2910,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2877,6 +2940,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2898,6 +2962,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2914,6 +2979,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2934,6 +3000,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2968,6 +3035,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2984,6 +3052,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3006,6 +3075,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3030,6 +3100,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3051,6 +3122,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3080,6 +3152,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3101,6 +3174,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3117,6 +3191,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3137,6 +3212,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3166,6 +3242,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3188,6 +3265,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3210,6 +3288,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3231,6 +3310,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3248,6 +3328,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3310,6 +3391,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return vpcNetworksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3330,6 +3412,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return vpcNetworksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3351,6 +3434,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return vpcNetworksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3378,6 +3462,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3403,6 +3488,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3430,6 +3516,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3457,6 +3544,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3481,6 +3569,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3506,6 +3595,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3532,6 +3622,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3555,6 +3646,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3578,6 +3670,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3595,6 +3688,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         getVpcNetworksBuilder(int index) {
       return getVpcNetworksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3616,6 +3710,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return vpcNetworksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3638,6 +3733,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(vpcNetworks_);
       }
     }
+
     /**
      *
      *
@@ -3657,6 +3753,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3677,6 +3774,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
               index,
               com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3713,6 +3811,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3730,6 +3829,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3750,6 +3850,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3771,6 +3872,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3794,6 +3896,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3815,6 +3918,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -3832,6 +3936,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -3852,6 +3957,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3873,6 +3979,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3896,6 +4003,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3917,6 +4025,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -3939,6 +4048,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3961,6 +4071,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3982,6 +4093,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3999,6 +4111,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4023,6 +4136,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -4048,6 +4162,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4073,6 +4188,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4097,6 +4213,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4117,6 +4234,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

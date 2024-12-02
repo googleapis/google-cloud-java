@@ -135,7 +135,8 @@ public class MockVehicleServiceImpl extends VehicleServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateVehicleAttributes, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateVehicleAttributes, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   UpdateVehicleAttributesResponse.class.getName(),
                   Exception.class.getName())));

@@ -38,6 +38,7 @@ public interface UpdateDnsForwardingRequestOrBuilder
    * @return Whether the dnsForwarding field is set.
    */
   boolean hasDnsForwarding();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateDnsForwardingRequestOrBuilder
    * @return The dnsForwarding.
    */
   com.google.cloud.vmwareengine.v1.DnsForwarding getDnsForwarding();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateDnsForwardingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateDnsForwardingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdateDnsForwardingRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface DeleteRegionNetworkEndpointGroupRequestOrBuilder
    * @return The networkEndpointGroup.
    */
   java.lang.String getNetworkEndpointGroup();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DeleteRegionNetworkEndpointGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DeleteRegionNetworkEndpointGroupRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface DeleteRegionNetworkEndpointGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DeleteRegionNetworkEndpointGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

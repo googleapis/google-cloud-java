@@ -83,6 +83,7 @@ public enum ComputeEngineDiskType implements com.google.protobuf.ProtocolMessage
    * <code>COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public enum ComputeEngineDiskType implements com.google.protobuf.ProtocolMessage
    * <code>COMPUTE_ENGINE_DISK_TYPE_STANDARD = 1;</code>
    */
   public static final int COMPUTE_ENGINE_DISK_TYPE_STANDARD_VALUE = 1;
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public enum ComputeEngineDiskType implements com.google.protobuf.ProtocolMessage
    * <code>COMPUTE_ENGINE_DISK_TYPE_SSD = 2;</code>
    */
   public static final int COMPUTE_ENGINE_DISK_TYPE_SSD_VALUE = 2;
+
   /**
    *
    *

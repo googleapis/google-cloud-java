@@ -39,6 +39,7 @@ public interface EnrollSolutionRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface EnrollSolutionRequestOrBuilder
    * @return The enum numeric value on the wire for solution.
    */
   int getSolutionValue();
+
   /**
    *
    *

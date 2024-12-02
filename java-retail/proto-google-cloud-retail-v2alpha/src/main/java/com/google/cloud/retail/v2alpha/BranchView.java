@@ -75,6 +75,7 @@ public enum BranchView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BRANCH_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int BRANCH_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public enum BranchView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BRANCH_VIEW_BASIC = 1;</code>
    */
   public static final int BRANCH_VIEW_BASIC_VALUE = 1;
+
   /**
    *
    *

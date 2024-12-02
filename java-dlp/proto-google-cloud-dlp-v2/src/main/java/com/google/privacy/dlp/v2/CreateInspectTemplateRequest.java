@@ -33,6 +33,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CreateInspectTemplateRequest)
     CreateInspectTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateInspectTemplateRequest.newBuilder() to construct.
   private CreateInspectTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
 
   public static final int INSPECT_TEMPLATE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectTemplate inspectTemplate_;
+
   /**
    *
    *
@@ -178,6 +182,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
   public boolean hasInspectTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()
         : inspectTemplate_;
   }
+
   /**
    *
    *
@@ -219,6 +225,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object templateId_ = "";
+
   /**
    *
    *
@@ -245,6 +252,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +284,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
+
   /**
    *
    *
@@ -299,6 +308,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -515,6 +525,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -759,6 +770,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -802,6 +814,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -845,6 +858,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -887,6 +901,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +940,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +991,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.InspectTemplate.Builder,
             com.google.privacy.dlp.v2.InspectTemplateOrBuilder>
         inspectTemplateBuilder_;
+
     /**
      *
      *
@@ -991,6 +1008,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
     public boolean hasInspectTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1013,6 +1031,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         return inspectTemplateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1056,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1079,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1109,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1131,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1148,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return getInspectTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1145,6 +1169,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
             : inspectTemplate_;
       }
     }
+
     /**
      *
      *
@@ -1174,6 +1199,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object templateId_ = "";
+
     /**
      *
      *
@@ -1199,6 +1225,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1251,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1248,6 +1276,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1297,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1325,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object locationId_ = "";
+
     /**
      *
      *
@@ -1317,6 +1348,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1339,6 +1371,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1360,6 +1393,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1411,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

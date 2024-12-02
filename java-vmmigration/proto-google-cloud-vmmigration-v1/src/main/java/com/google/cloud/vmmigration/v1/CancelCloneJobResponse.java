@@ -33,6 +33,7 @@ public final class CancelCloneJobResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.CancelCloneJobResponse)
     CancelCloneJobResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CancelCloneJobResponse.newBuilder() to construct.
   private CancelCloneJobResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class CancelCloneJobResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

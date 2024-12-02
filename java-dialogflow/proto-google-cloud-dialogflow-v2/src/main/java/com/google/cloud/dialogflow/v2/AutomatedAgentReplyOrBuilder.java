@@ -38,6 +38,7 @@ public interface AutomatedAgentReplyOrBuilder
    * @return Whether the detectIntentResponse field is set.
    */
   boolean hasDetectIntentResponse();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The detectIntentResponse.
    */
   com.google.cloud.dialogflow.v2.DetectIntentResponse getDetectIntentResponse();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The enum numeric value on the wire for automatedAgentReplyType.
    */
   int getAutomatedAgentReplyTypeValue();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The cxCurrentPage.
    */
   java.lang.String getCxCurrentPage();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.ReleaseRenderEvent)
     ReleaseRenderEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReleaseRenderEvent.newBuilder() to construct.
   private ReleaseRenderEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineUid_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object release_ = "";
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
 
   public static final int TYPE_FIELD_NUMBER = 5;
   private int type_ = 0;
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
 
   public static final int RELEASE_RENDER_STATE_FIELD_NUMBER = 3;
   private int releaseRenderState_ = 0;
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
   public int getReleaseRenderStateValue() {
     return releaseRenderState_;
   }
+
   /**
    *
    *
@@ -493,6 +504,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -733,6 +745,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +835,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +861,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pipelineUid_ = "";
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +907,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -909,6 +929,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +947,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object release_ = "";
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1022,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1046,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1066,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1093,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1081,6 +1109,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1099,6 +1128,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1145,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1136,6 +1167,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1187,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private int releaseRenderState_ = 0;
+
     /**
      *
      *
@@ -1170,6 +1203,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     public int getReleaseRenderStateValue() {
       return releaseRenderState_;
     }
+
     /**
      *
      *
@@ -1188,6 +1222,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1240,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
           com.google.cloud.deploy.v1.Release.RenderState.forNumber(releaseRenderState_);
       return result == null ? com.google.cloud.deploy.v1.Release.RenderState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1226,6 +1262,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

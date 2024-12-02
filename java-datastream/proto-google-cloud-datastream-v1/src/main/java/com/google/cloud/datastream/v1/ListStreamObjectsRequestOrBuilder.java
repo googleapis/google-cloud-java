@@ -38,6 +38,7 @@ public interface ListStreamObjectsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface ListStreamObjectsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

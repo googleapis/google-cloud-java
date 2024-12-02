@@ -40,6 +40,7 @@ public interface UpdateOrderRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateOrderRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateOrderRequestOrBuilder
    * @return Whether the order field is set.
    */
   boolean hasOrder();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateOrderRequestOrBuilder
    * @return The order.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Order getOrder();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface UpdateOrderRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

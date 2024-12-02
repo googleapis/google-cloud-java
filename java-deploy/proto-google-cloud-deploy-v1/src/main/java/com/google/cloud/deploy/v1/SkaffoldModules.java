@@ -33,6 +33,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.SkaffoldModules)
     SkaffoldModulesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SkaffoldModules.newBuilder() to construct.
   private SkaffoldModules(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      * @return The repo.
      */
     java.lang.String getRepo();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      * @return The path.
      */
     java.lang.String getPath();
+
     /**
      *
      *
@@ -130,6 +133,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      * @return The ref.
      */
     java.lang.String getRef();
+
     /**
      *
      *
@@ -143,6 +147,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getRefBytes();
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource)
       SkaffoldGitSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SkaffoldGitSource.newBuilder() to construct.
     private SkaffoldGitSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -193,6 +199,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object repo_ = "";
+
     /**
      *
      *
@@ -216,6 +223,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -244,6 +252,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -267,6 +276,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -295,6 +305,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ref_ = "";
+
     /**
      *
      *
@@ -318,6 +329,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -521,6 +533,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object repo_ = "";
+
       /**
        *
        *
@@ -763,6 +777,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -785,6 +800,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -806,6 +822,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -823,6 +840,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -847,6 +865,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object path_ = "";
+
       /**
        *
        *
@@ -869,6 +888,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -891,6 +911,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -912,6 +933,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -929,6 +951,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -953,6 +976,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object ref_ = "";
+
       /**
        *
        *
@@ -975,6 +999,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -997,6 +1022,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1018,6 +1044,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1035,6 +1062,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1144,6 +1172,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      * @return The source.
      */
     java.lang.String getSource();
+
     /**
      *
      *
@@ -1171,6 +1200,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      * @return The path.
      */
     java.lang.String getPath();
+
     /**
      *
      *
@@ -1184,6 +1214,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getPathBytes();
   }
+
   /**
    *
    *
@@ -1198,6 +1229,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource)
       SkaffoldGCSSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SkaffoldGCSSource.newBuilder() to construct.
     private SkaffoldGCSSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1233,6 +1265,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -1258,6 +1291,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -1288,6 +1322,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -1311,6 +1346,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -1505,6 +1541,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1710,6 +1747,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object source_ = "";
+
       /**
        *
        *
@@ -1734,6 +1772,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1758,6 +1797,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1781,6 +1821,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1800,6 +1841,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1826,6 +1868,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object path_ = "";
+
       /**
        *
        *
@@ -1848,6 +1891,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1870,6 +1914,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1891,6 +1936,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1908,6 +1954,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2019,6 +2066,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      * @return The repository.
      */
     java.lang.String getRepository();
+
     /**
      *
      *
@@ -2049,6 +2097,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      * @return The path.
      */
     java.lang.String getPath();
+
     /**
      *
      *
@@ -2075,6 +2124,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      * @return The ref.
      */
     java.lang.String getRef();
+
     /**
      *
      *
@@ -2088,6 +2138,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getRefBytes();
   }
+
   /**
    *
    *
@@ -2102,6 +2153,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource)
       SkaffoldGCBRepoSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SkaffoldGCBRepoSource.newBuilder() to construct.
     private SkaffoldGCBRepoSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2138,6 +2190,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object repository_ = "";
+
     /**
      *
      *
@@ -2165,6 +2218,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -2197,6 +2251,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -2221,6 +2276,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -2250,6 +2306,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ref_ = "";
+
     /**
      *
      *
@@ -2273,6 +2330,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -2477,6 +2535,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2701,6 +2760,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object repository_ = "";
+
       /**
        *
        *
@@ -2727,6 +2787,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2753,6 +2814,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2778,6 +2840,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2799,6 +2862,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2827,6 +2891,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object path_ = "";
+
       /**
        *
        *
@@ -2850,6 +2915,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2873,6 +2939,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2895,6 +2962,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2913,6 +2981,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2938,6 +3007,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object ref_ = "";
+
       /**
        *
        *
@@ -2960,6 +3030,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2982,6 +3053,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3003,6 +3075,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3020,6 +3093,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3128,6 +3202,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3167,6 +3242,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList configs_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -3181,6 +3257,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getConfigsList() {
     return configs_;
   }
+
   /**
    *
    *
@@ -3195,6 +3272,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   public int getConfigsCount() {
     return configs_.size();
   }
+
   /**
    *
    *
@@ -3210,6 +3288,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getConfigs(int index) {
     return configs_.get(index);
   }
+
   /**
    *
    *
@@ -3227,6 +3306,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GIT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -3242,6 +3322,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   public boolean hasGit() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -3260,6 +3341,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3278,6 +3360,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GOOGLE_CLOUD_STORAGE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -3294,6 +3377,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   public boolean hasGoogleCloudStorage() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -3313,6 +3397,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3333,6 +3418,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GOOGLE_CLOUD_BUILD_REPO_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -3350,6 +3436,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
   public boolean hasGoogleCloudBuildRepo() {
     return sourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -3371,6 +3458,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3614,6 +3702,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3893,6 +3982,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -3908,6 +3998,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       configs_.makeImmutable();
       return configs_;
     }
+
     /**
      *
      *
@@ -3922,6 +4013,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     public int getConfigsCount() {
       return configs_.size();
     }
+
     /**
      *
      *
@@ -3937,6 +4029,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getConfigs(int index) {
       return configs_.get(index);
     }
+
     /**
      *
      *
@@ -3952,6 +4045,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getConfigsBytes(int index) {
       return configs_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3975,6 +4069,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3997,6 +4092,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4016,6 +4112,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4034,6 +4131,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4063,6 +4161,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource.Builder,
             com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSourceOrBuilder>
         gitBuilder_;
+
     /**
      *
      *
@@ -4078,6 +4177,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     public boolean hasGit() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -4103,6 +4203,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4125,6 +4226,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4145,6 +4247,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4179,6 +4282,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4204,6 +4308,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4216,6 +4321,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource.Builder getGitBuilder() {
       return getGitFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4236,6 +4342,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4275,6 +4382,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource.Builder,
             com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSourceOrBuilder>
         googleCloudStorageBuilder_;
+
     /**
      *
      *
@@ -4291,6 +4399,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     public boolean hasGoogleCloudStorage() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -4317,6 +4426,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4341,6 +4451,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4362,6 +4473,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4398,6 +4510,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4424,6 +4537,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4438,6 +4552,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         getGoogleCloudStorageBuilder() {
       return getGoogleCloudStorageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4460,6 +4575,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4500,6 +4616,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource.Builder,
             com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSourceOrBuilder>
         googleCloudBuildRepoBuilder_;
+
     /**
      *
      *
@@ -4517,6 +4634,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
     public boolean hasGoogleCloudBuildRepo() {
       return sourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -4547,6 +4665,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4572,6 +4691,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4594,6 +4714,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4631,6 +4752,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4658,6 +4780,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4673,6 +4796,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
         getGoogleCloudBuildRepoBuilder() {
       return getGoogleCloudBuildRepoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4697,6 +4821,7 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

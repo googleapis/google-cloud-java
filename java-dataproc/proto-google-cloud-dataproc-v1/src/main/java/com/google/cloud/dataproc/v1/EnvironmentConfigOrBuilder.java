@@ -38,6 +38,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the executionConfig field is set.
    */
   boolean hasExecutionConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The executionConfig.
    */
   com.google.cloud.dataproc.v1.ExecutionConfig getExecutionConfig();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the peripheralsConfig field is set.
    */
   boolean hasPeripheralsConfig();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The peripheralsConfig.
    */
   com.google.cloud.dataproc.v1.PeripheralsConfig getPeripheralsConfig();
+
   /**
    *
    *

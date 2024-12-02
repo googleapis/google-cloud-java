@@ -89,6 +89,7 @@ public interface VmwareEnginePreferencesOrBuilder
    * @return The enum numeric value on the wire for commitmentPlan.
    */
   int getCommitmentPlanValue();
+
   /**
    *
    *

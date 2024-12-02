@@ -93,6 +93,7 @@ public enum DBWorkload implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DB_WORKLOAD_UNSPECIFIED = 0;</code>
    */
   public static final int DB_WORKLOAD_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -103,6 +104,7 @@ public enum DBWorkload implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OLTP = 1;</code>
    */
   public static final int OLTP_VALUE = 1;
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public enum DBWorkload implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DW = 2;</code>
    */
   public static final int DW_VALUE = 2;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public enum DBWorkload implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AJD = 3;</code>
    */
   public static final int AJD_VALUE = 3;
+
   /**
    *
    *

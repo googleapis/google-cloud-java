@@ -36,6 +36,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the canIpForward field is set.
    */
   boolean hasCanIpForward();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the deletionProtection field is set.
    */
   boolean hasDeletionProtection();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.SavedAttachedDisk disks = 95594102;</code>
    */
   java.util.List<com.google.cloud.compute.v1.SavedAttachedDisk> getDisksList();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.SavedAttachedDisk disks = 95594102;</code>
    */
   com.google.cloud.compute.v1.SavedAttachedDisk getDisks(int index);
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.SavedAttachedDisk disks = 95594102;</code>
    */
   int getDisksCount();
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public interface SourceInstancePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SavedAttachedDiskOrBuilder>
       getDisksOrBuilderList();
+
   /**
    *
    *
@@ -174,6 +182,7 @@ public interface SourceInstancePropertiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
+
   /**
    *
    *
@@ -185,6 +194,7 @@ public interface SourceInstancePropertiesOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
+
   /**
    *
    *
@@ -196,6 +206,7 @@ public interface SourceInstancePropertiesOrBuilder
    * </code>
    */
   int getGuestAcceleratorsCount();
+
   /**
    *
    *
@@ -208,6 +219,7 @@ public interface SourceInstancePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getGuestAcceleratorsOrBuilderList();
+
   /**
    *
    *
@@ -233,6 +245,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the keyRevocationActionType field is set.
    */
   boolean hasKeyRevocationActionType();
+
   /**
    *
    *
@@ -246,6 +259,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return The keyRevocationActionType.
    */
   java.lang.String getKeyRevocationActionType();
+
   /**
    *
    *
@@ -270,6 +284,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -280,9 +295,11 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -293,6 +310,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -307,6 +325,7 @@ public interface SourceInstancePropertiesOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -330,6 +349,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the machineType field is set.
    */
   boolean hasMachineType();
+
   /**
    *
    *
@@ -342,6 +362,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -367,6 +388,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -379,6 +401,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return The metadata.
    */
   com.google.cloud.compute.v1.Metadata getMetadata();
+
   /**
    *
    *
@@ -402,6 +425,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the minCpuPlatform field is set.
    */
   boolean hasMinCpuPlatform();
+
   /**
    *
    *
@@ -414,6 +438,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
+
   /**
    *
    *
@@ -437,6 +462,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NetworkInterface> getNetworkInterfacesList();
+
   /**
    *
    *
@@ -447,6 +473,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   com.google.cloud.compute.v1.NetworkInterface getNetworkInterfaces(int index);
+
   /**
    *
    *
@@ -457,6 +484,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   int getNetworkInterfacesCount();
+
   /**
    *
    *
@@ -468,6 +496,7 @@ public interface SourceInstancePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkInterfaceOrBuilder>
       getNetworkInterfacesOrBuilderList();
+
   /**
    *
    *
@@ -491,6 +520,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
+
   /**
    *
    *
@@ -503,6 +533,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return The scheduling.
    */
   com.google.cloud.compute.v1.Scheduling getScheduling();
+
   /**
    *
    *
@@ -524,6 +555,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList();
+
   /**
    *
    *
@@ -534,6 +566,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index);
+
   /**
    *
    *
@@ -544,6 +577,7 @@ public interface SourceInstancePropertiesOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   int getServiceAccountsCount();
+
   /**
    *
    *
@@ -555,6 +589,7 @@ public interface SourceInstancePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
       getServiceAccountsOrBuilderList();
+
   /**
    *
    *
@@ -578,6 +613,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return Whether the tags field is set.
    */
   boolean hasTags();
+
   /**
    *
    *
@@ -590,6 +626,7 @@ public interface SourceInstancePropertiesOrBuilder
    * @return The tags.
    */
   com.google.cloud.compute.v1.Tags getTags();
+
   /**
    *
    *

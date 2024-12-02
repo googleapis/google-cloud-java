@@ -39,6 +39,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The enum numeric value on the wire for searchResultType.
    */
   int getSearchResultTypeValue();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The searchResultSubtype.
    */
   java.lang.String getSearchResultSubtype();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The relativeResourceName.
    */
   java.lang.String getRelativeResourceName();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public interface SearchCatalogResultOrBuilder
    * @return Whether the modifyTime field is set.
    */
   boolean hasModifyTime();
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The modifyTime.
    */
   com.google.protobuf.Timestamp getModifyTime();
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public interface SearchCatalogResultOrBuilder
    * @return Whether the integratedSystem field is set.
    */
   boolean hasIntegratedSystem();
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The enum numeric value on the wire for integratedSystem.
    */
   int getIntegratedSystemValue();
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public interface SearchCatalogResultOrBuilder
    * @return Whether the userSpecifiedSystem field is set.
    */
   boolean hasUserSpecifiedSystem();
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The userSpecifiedSystem.
    */
   java.lang.String getUserSpecifiedSystem();
+
   /**
    *
    *
@@ -308,6 +318,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The fullyQualifiedName.
    */
   java.lang.String getFullyQualifiedName();
+
   /**
    *
    *
@@ -347,6 +358,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -373,6 +385,7 @@ public interface SearchCatalogResultOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

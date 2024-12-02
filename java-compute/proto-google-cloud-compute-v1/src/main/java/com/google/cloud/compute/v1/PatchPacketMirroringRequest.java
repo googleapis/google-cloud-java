@@ -33,6 +33,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchPacketMirroringRequest)
     PatchPacketMirroringRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchPacketMirroringRequest.newBuilder() to construct.
   private PatchPacketMirroringRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object packetMirroring_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
 
   public static final int PACKET_MIRRORING_RESOURCE_FIELD_NUMBER = 493501985;
   private com.google.cloud.compute.v1.PacketMirroring packetMirroringResource_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
   public boolean hasPacketMirroringResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.PacketMirroring.getDefaultInstance()
         : packetMirroringResource_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -289,6 +299,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -304,6 +315,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -327,6 +339,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -559,6 +572,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -822,6 +836,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object packetMirroring_ = "";
+
     /**
      *
      *
@@ -844,6 +859,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -866,6 +882,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -887,6 +904,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +952,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.PacketMirroring.Builder,
             com.google.cloud.compute.v1.PacketMirroringOrBuilder>
         packetMirroringResourceBuilder_;
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     public boolean hasPacketMirroringResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return packetMirroringResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -995,6 +1017,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1071,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1093,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1110,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return getPacketMirroringResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1105,6 +1132,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
             : packetMirroringResource_;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1162,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1158,6 +1187,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1212,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1205,6 +1236,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1283,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1274,6 +1308,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1298,6 +1333,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1321,6 +1357,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1377,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1404,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1380,6 +1419,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1402,6 +1442,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1465,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1445,6 +1487,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1462,6 +1505,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

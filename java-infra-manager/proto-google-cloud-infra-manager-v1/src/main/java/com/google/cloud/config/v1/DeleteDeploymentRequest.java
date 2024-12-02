@@ -25,6 +25,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.DeleteDeploymentRequest)
     DeleteDeploymentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteDeploymentRequest.newBuilder() to construct.
   private DeleteDeploymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,6 +111,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
      * <code>DELETE_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int DELETE_POLICY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -120,6 +122,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
      * <code>DELETE = 1;</code>
      */
     public static final int DELETE_VALUE = 1;
+
     /**
      *
      *
@@ -220,6 +223,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -246,6 +250,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -277,6 +282,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -312,6 +318,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -350,6 +357,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
 
   public static final int FORCE_FIELD_NUMBER = 3;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -370,6 +378,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
 
   public static final int DELETE_POLICY_FIELD_NUMBER = 4;
   private int deletePolicy_ = 0;
+
   /**
    *
    *
@@ -389,6 +398,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
   public int getDeletePolicyValue() {
     return deletePolicy_;
   }
+
   /**
    *
    *
@@ -603,6 +613,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.config.v1.DeleteDeploymentRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -820,6 +831,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -845,6 +857,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -870,6 +883,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +908,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +929,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +957,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -975,6 +992,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1027,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1061,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1091,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1128,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -1124,6 +1146,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -1145,6 +1168,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1190,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     }
 
     private int deletePolicy_ = 0;
+
     /**
      *
      *
@@ -1185,6 +1210,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     public int getDeletePolicyValue() {
       return deletePolicy_;
     }
+
     /**
      *
      *
@@ -1207,6 +1233,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1257,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
           ? com.google.cloud.config.v1.DeleteDeploymentRequest.DeletePolicy.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1256,6 +1284,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

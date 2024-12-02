@@ -39,6 +39,7 @@ public interface ListRecurringAudienceListsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface ListRecurringAudienceListsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

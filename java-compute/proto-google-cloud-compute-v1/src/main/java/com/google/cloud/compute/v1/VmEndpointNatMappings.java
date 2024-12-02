@@ -33,6 +33,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VmEndpointNatMappings)
     VmEndpointNatMappingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VmEndpointNatMappings.newBuilder() to construct.
   private VmEndpointNatMappings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceName_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
   public boolean hasInstanceName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings>
       interfaceNatMappings_;
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -146,6 +151,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       getInterfaceNatMappingsList() {
     return interfaceNatMappings_;
   }
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -157,6 +163,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       getInterfaceNatMappingsOrBuilderList() {
     return interfaceNatMappings_;
   }
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -166,6 +173,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
   public int getInterfaceNatMappingsCount() {
     return interfaceNatMappings_.size();
   }
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -176,6 +184,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       getInterfaceNatMappings(int index) {
     return interfaceNatMappings_.get(index);
   }
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -364,6 +373,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -614,6 +624,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object instanceName_ = "";
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     public boolean hasInstanceName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -650,6 +662,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -672,6 +685,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -693,6 +707,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +781,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         return interfaceNatMappingsBuilder_.getMessageList();
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -777,6 +794,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         return interfaceNatMappingsBuilder_.getCount();
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -790,6 +808,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         return interfaceNatMappingsBuilder_.getMessage(index);
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -809,6 +828,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -827,6 +847,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -846,6 +867,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -865,6 +887,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -882,6 +905,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -900,6 +924,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -918,6 +943,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -933,6 +959,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -948,6 +975,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -957,6 +985,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         getInterfaceNatMappingsBuilder(int index) {
       return getInterfaceNatMappingsFieldBuilder().getBuilder(index);
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -970,6 +999,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         return interfaceNatMappingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -985,6 +1015,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(interfaceNatMappings_);
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -997,6 +1028,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
               com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings
                   .getDefaultInstance());
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -1010,6 +1042,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
               com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings
                   .getDefaultInstance());
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;

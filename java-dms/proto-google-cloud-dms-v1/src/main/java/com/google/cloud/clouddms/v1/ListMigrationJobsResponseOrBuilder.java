@@ -34,6 +34,7 @@ public interface ListMigrationJobsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.MigrationJob migration_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.MigrationJob> getMigrationJobsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListMigrationJobsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.MigrationJob migration_jobs = 1;</code>
    */
   com.google.cloud.clouddms.v1.MigrationJob getMigrationJobs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListMigrationJobsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.MigrationJob migration_jobs = 1;</code>
    */
   int getMigrationJobsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListMigrationJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.MigrationJobOrBuilder>
       getMigrationJobsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListMigrationJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListMigrationJobsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListMigrationJobsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListMigrationJobsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

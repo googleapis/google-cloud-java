@@ -38,6 +38,7 @@ public interface ScanRunOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ScanRunOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface ScanRunOrBuilder
    * @return The enum numeric value on the wire for resultState.
    */
   int getResultStateValue();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface ScanRunOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ScanRunOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface ScanRunOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface ScanRunOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

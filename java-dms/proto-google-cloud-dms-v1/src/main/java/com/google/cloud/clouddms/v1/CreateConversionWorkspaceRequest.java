@@ -34,6 +34,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.CreateConversionWorkspaceRequest)
     CreateConversionWorkspaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateConversionWorkspaceRequest.newBuilder() to construct.
   private CreateConversionWorkspaceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversionWorkspaceId_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
 
   public static final int CONVERSION_WORKSPACE_FIELD_NUMBER = 3;
   private com.google.cloud.clouddms.v1.ConversionWorkspace conversionWorkspace_;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
   public boolean hasConversionWorkspace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
         ? com.google.cloud.clouddms.v1.ConversionWorkspace.getDefaultInstance()
         : conversionWorkspace_;
   }
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -486,6 +496,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -737,6 +748,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -761,6 +773,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -785,6 +798,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -808,6 +822,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +842,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +869,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object conversionWorkspaceId_ = "";
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +915,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -918,6 +937,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +985,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
             com.google.cloud.clouddms.v1.ConversionWorkspace.Builder,
             com.google.cloud.clouddms.v1.ConversionWorkspaceOrBuilder>
         conversionWorkspaceBuilder_;
+
     /**
      *
      *
@@ -980,6 +1002,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
     public boolean hasConversionWorkspace() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1002,6 +1025,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
         return conversionWorkspaceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1050,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1073,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1105,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1127,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1145,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return getConversionWorkspaceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1138,6 +1167,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
             : conversionWorkspace_;
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1197,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1195,6 +1226,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1223,6 +1255,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1250,6 +1283,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1307,7 @@ public final class CreateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

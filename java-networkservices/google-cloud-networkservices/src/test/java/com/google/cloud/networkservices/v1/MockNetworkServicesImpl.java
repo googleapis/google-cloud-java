@@ -74,7 +74,8 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListEndpointPolicies, expected %s or %s",
+                  "Unrecognized response type %s for method ListEndpointPolicies, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEndpointPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +117,8 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateEndpointPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method CreateEndpointPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +139,8 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateEndpointPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateEndpointPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +161,8 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteEndpointPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteEndpointPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -744,7 +748,8 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceBinding, expected %s or %s",
+                  "Unrecognized response type %s for method CreateServiceBinding, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -765,7 +770,8 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServiceBinding, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteServiceBinding, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

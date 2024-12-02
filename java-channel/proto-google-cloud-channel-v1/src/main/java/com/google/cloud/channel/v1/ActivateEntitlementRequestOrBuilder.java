@@ -38,6 +38,7 @@ public interface ActivateEntitlementRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ActivateEntitlementRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

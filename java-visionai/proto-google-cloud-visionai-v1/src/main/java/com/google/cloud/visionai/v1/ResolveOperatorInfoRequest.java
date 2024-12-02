@@ -33,6 +33,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ResolveOperatorInfoRequest)
     ResolveOperatorInfoRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResolveOperatorInfoRequest.newBuilder() to construct.
   private ResolveOperatorInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.OperatorQuery> queries_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.visionai.v1.OperatorQuery> getQueriesList() {
     return queries_;
   }
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       getQueriesOrBuilderList() {
     return queries_;
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
   public int getQueriesCount() {
     return queries_.size();
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
   public com.google.cloud.visionai.v1.OperatorQuery getQueries(int index) {
     return queries_.get(index);
   }
+
   /**
    *
    *
@@ -371,6 +379,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -616,6 +625,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -687,6 +699,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +779,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
         return queriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -783,6 +798,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
         return queriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
         return queriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -825,6 +842,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +915,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +937,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +960,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +983,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1005,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1027,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1042,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
     public com.google.cloud.visionai.v1.OperatorQuery.Builder getQueriesBuilder(int index) {
       return getQueriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
         return queriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1081,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(queries_);
       }
     }
+
     /**
      *
      *
@@ -1068,6 +1097,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       return getQueriesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.OperatorQuery.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1083,6 +1113,7 @@ public final class ResolveOperatorInfoRequest extends com.google.protobuf.Genera
       return getQueriesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.OperatorQuery.getDefaultInstance());
     }
+
     /**
      *
      *

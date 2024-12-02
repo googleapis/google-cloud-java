@@ -39,6 +39,7 @@ public interface GetJobTriggerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

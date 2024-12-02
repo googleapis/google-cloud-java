@@ -36,6 +36,7 @@ public final class AddLocalInventoriesMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.AddLocalInventoriesMetadata)
     AddLocalInventoriesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddLocalInventoriesMetadata.newBuilder() to construct.
   private AddLocalInventoriesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,6 +216,7 @@ public final class AddLocalInventoriesMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

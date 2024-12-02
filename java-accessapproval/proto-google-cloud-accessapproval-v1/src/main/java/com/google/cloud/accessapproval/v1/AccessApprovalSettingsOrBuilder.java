@@ -40,6 +40,7 @@ public interface AccessApprovalSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface AccessApprovalSettingsOrBuilder
    * @return A list containing the notificationEmails.
    */
   java.util.List<java.lang.String> getNotificationEmailsList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface AccessApprovalSettingsOrBuilder
    * @return The count of notificationEmails.
    */
   int getNotificationEmailsCount();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface AccessApprovalSettingsOrBuilder
    * @return The notificationEmails at the given index.
    */
   java.lang.String getNotificationEmails(int index);
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface AccessApprovalSettingsOrBuilder
    * <code>repeated .google.cloud.accessapproval.v1.EnrolledService enrolled_services = 3;</code>
    */
   java.util.List<com.google.cloud.accessapproval.v1.EnrolledService> getEnrolledServicesList();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface AccessApprovalSettingsOrBuilder
    * <code>repeated .google.cloud.accessapproval.v1.EnrolledService enrolled_services = 3;</code>
    */
   com.google.cloud.accessapproval.v1.EnrolledService getEnrolledServices(int index);
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public interface AccessApprovalSettingsOrBuilder
    * <code>repeated .google.cloud.accessapproval.v1.EnrolledService enrolled_services = 3;</code>
    */
   int getEnrolledServicesCount();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface AccessApprovalSettingsOrBuilder
    */
   java.util.List<? extends com.google.cloud.accessapproval.v1.EnrolledServiceOrBuilder>
       getEnrolledServicesOrBuilderList();
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public interface AccessApprovalSettingsOrBuilder
    * @return The activeKeyVersion.
    */
   java.lang.String getActiveKeyVersion();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.UpdateDashboardRequest)
     UpdateDashboardRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDashboardRequest.newBuilder() to construct.
   private UpdateDashboardRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int DASHBOARD_FIELD_NUMBER = 1;
   private com.google.monitoring.dashboard.v1.Dashboard dashboard_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
   public boolean hasDashboard() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
         ? com.google.monitoring.dashboard.v1.Dashboard.getDefaultInstance()
         : dashboard_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -311,6 +316,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -527,6 +533,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
             com.google.monitoring.dashboard.v1.Dashboard.Builder,
             com.google.monitoring.dashboard.v1.DashboardOrBuilder>
         dashboardBuilder_;
+
     /**
      *
      *
@@ -543,6 +550,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     public boolean hasDashboard() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -565,6 +573,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
         return dashboardBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +673,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +690,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getDashboardFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
             : dashboard_;
       }
     }
+
     /**
      *
      *
@@ -726,6 +741,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface SearchBackgroundJobsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.BackgroundJobLogEntry jobs = 1;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.BackgroundJobLogEntry> getJobsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchBackgroundJobsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.BackgroundJobLogEntry jobs = 1;</code>
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry getJobs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchBackgroundJobsResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.BackgroundJobLogEntry jobs = 1;</code>
    */
   int getJobsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchBackgroundJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.BackgroundJobLogEntryOrBuilder>
       getJobsOrBuilderList();
+
   /**
    *
    *

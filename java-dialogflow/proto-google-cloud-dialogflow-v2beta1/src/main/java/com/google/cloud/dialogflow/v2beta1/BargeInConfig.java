@@ -68,6 +68,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.BargeInConfig)
     BargeInConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BargeInConfig.newBuilder() to construct.
   private BargeInConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int NO_BARGE_IN_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration noBargeInDuration_;
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNoBargeInDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : noBargeInDuration_;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration totalDuration_;
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTotalDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : totalDuration_;
   }
+
   /**
    *
    *
@@ -378,6 +385,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +648,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         noBargeInDurationBuilder_;
+
     /**
      *
      *
@@ -655,6 +664,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNoBargeInDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
         return noBargeInDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -699,6 +710,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNoBargeInDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
             : noBargeInDuration_;
       }
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         totalDurationBuilder_;
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTotalDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -868,6 +887,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
         return totalDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +930,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +958,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +993,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTotalDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -987,6 +1012,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
             : totalDuration_;
       }
     }
+
     /**
      *
      *

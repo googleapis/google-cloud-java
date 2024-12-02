@@ -34,6 +34,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ImportExtensionRequest)
     ImportExtensionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportExtensionRequest.newBuilder() to construct.
   private ImportExtensionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
 
   public static final int EXTENSION_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Extension extension_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
   public boolean hasExtension() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.aiplatform.v1beta1.Extension.getDefaultInstance()
         : extension_;
   }
+
   /**
    *
    *
@@ -352,6 +358,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +573,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +671,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.Extension.Builder,
             com.google.cloud.aiplatform.v1beta1.ExtensionOrBuilder>
         extensionBuilder_;
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
     public boolean hasExtension() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
         return extensionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getExtensionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class ImportExtensionRequest extends com.google.protobuf.GeneratedM
             : extension_;
       }
     }
+
     /**
      *
      *

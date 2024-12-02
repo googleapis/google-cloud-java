@@ -36,6 +36,7 @@ public interface UpgradeClusterResponseOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface UpgradeClusterResponseOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface UpgradeClusterResponseOrBuilder
    */
   java.util.List<com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.ClusterUpgradeDetails>
       getClusterUpgradeDetailsList();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UpgradeClusterResponseOrBuilder
    */
   com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse.ClusterUpgradeDetails
       getClusterUpgradeDetails(int index);
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface UpgradeClusterResponseOrBuilder
    * </code>
    */
   int getClusterUpgradeDetailsCount();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface UpgradeClusterResponseOrBuilder
               com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse
                   .ClusterUpgradeDetailsOrBuilder>
       getClusterUpgradeDetailsOrBuilderList();
+
   /**
    *
    *

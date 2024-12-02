@@ -34,6 +34,7 @@ public interface ListQueuedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.QueuedResource queued_resources = 1;</code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.QueuedResource> getQueuedResourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListQueuedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.QueuedResource queued_resources = 1;</code>
    */
   com.google.cloud.tpu.v2alpha1.QueuedResource getQueuedResources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListQueuedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.QueuedResource queued_resources = 1;</code>
    */
   int getQueuedResourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListQueuedResourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.QueuedResourceOrBuilder>
       getQueuedResourcesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListQueuedResourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListQueuedResourcesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListQueuedResourcesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListQueuedResourcesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

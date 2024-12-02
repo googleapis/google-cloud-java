@@ -36,6 +36,7 @@ public interface TableOrBuilder
    * @return Whether the hiveOptions field is set.
    */
   boolean hasHiveOptions();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TableOrBuilder
    * @return The hiveOptions.
    */
   com.google.cloud.bigquery.biglake.v1.HiveTableOptions getHiveOptions();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface TableOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface TableOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface TableOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface TableOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface TableOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface TableOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface TableOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -223,6 +232,7 @@ public interface TableOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface TableOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public interface TableOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -290,6 +302,7 @@ public interface TableOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

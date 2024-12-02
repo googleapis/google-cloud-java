@@ -40,6 +40,7 @@ public interface GetEngineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

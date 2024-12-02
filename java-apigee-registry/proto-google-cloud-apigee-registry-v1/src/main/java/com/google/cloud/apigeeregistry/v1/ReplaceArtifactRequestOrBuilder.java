@@ -41,6 +41,7 @@ public interface ReplaceArtifactRequestOrBuilder
    * @return Whether the artifact field is set.
    */
   boolean hasArtifact();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface ReplaceArtifactRequestOrBuilder
    * @return The artifact.
    */
   com.google.cloud.apigeeregistry.v1.Artifact getArtifact();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class BatchOptimizeToursMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.BatchOptimizeToursMetadata)
     BatchOptimizeToursMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchOptimizeToursMetadata.newBuilder() to construct.
   private BatchOptimizeToursMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class BatchOptimizeToursMetadata extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

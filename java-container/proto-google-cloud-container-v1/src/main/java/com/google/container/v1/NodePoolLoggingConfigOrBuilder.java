@@ -36,6 +36,7 @@ public interface NodePoolLoggingConfigOrBuilder
    * @return Whether the variantConfig field is set.
    */
   boolean hasVariantConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NodePoolLoggingConfigOrBuilder
    * @return The variantConfig.
    */
   com.google.container.v1.LoggingVariantConfig getVariantConfig();
+
   /**
    *
    *

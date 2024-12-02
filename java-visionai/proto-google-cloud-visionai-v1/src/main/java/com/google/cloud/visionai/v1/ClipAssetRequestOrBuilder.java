@@ -40,6 +40,7 @@ public interface ClipAssetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ClipAssetRequestOrBuilder
    * @return Whether the temporalPartition field is set.
    */
   boolean hasTemporalPartition();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface ClipAssetRequestOrBuilder
    * @return The temporalPartition.
    */
   com.google.cloud.visionai.v1.Partition.TemporalPartition getTemporalPartition();
+
   /**
    *
    *

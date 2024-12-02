@@ -33,6 +33,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.resourcesettings.v1.Setting)
     SettingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Setting.newBuilder() to construct.
   private Setting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METADATA_FIELD_NUMBER = 7;
   private com.google.cloud.resourcesettings.v1.SettingMetadata metadata_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.resourcesettings.v1.SettingMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCAL_VALUE_FIELD_NUMBER = 8;
   private com.google.cloud.resourcesettings.v1.Value localValue_;
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocalValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.resourcesettings.v1.Value.getDefaultInstance()
         : localValue_;
   }
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EFFECTIVE_VALUE_FIELD_NUMBER = 9;
   private com.google.cloud.resourcesettings.v1.Value effectiveValue_;
+
   /**
    *
    *
@@ -284,6 +294,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEffectiveValue() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -319,6 +330,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.resourcesettings.v1.Value.getDefaultInstance()
         : effectiveValue_;
   }
+
   /**
    *
    *
@@ -357,6 +369,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -382,6 +395,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -618,6 +632,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -884,6 +899,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -912,6 +928,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -940,6 +957,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -967,6 +985,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1009,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1045,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.resourcesettings.v1.SettingMetadata.Builder,
             com.google.cloud.resourcesettings.v1.SettingMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -1042,6 +1063,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1065,6 +1087,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1113,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1137,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1169,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1192,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1210,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1204,6 +1232,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
             : metadata_;
       }
     }
+
     /**
      *
      *
@@ -1239,6 +1268,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.resourcesettings.v1.Value.Builder,
             com.google.cloud.resourcesettings.v1.ValueOrBuilder>
         localValueBuilder_;
+
     /**
      *
      *
@@ -1257,6 +1287,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocalValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1281,6 +1312,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         return localValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1339,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1364,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1396,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1420,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1439,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocalValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1425,6 +1462,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
             : localValue_;
       }
     }
+
     /**
      *
      *
@@ -1461,6 +1499,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.resourcesettings.v1.Value.Builder,
             com.google.cloud.resourcesettings.v1.ValueOrBuilder>
         effectiveValueBuilder_;
+
     /**
      *
      *
@@ -1493,6 +1532,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEffectiveValue() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1531,6 +1571,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         return effectiveValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1571,6 +1612,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1651,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1697,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1735,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1723,6 +1768,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEffectiveValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1759,6 +1805,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
             : effectiveValue_;
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1851,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -1828,6 +1876,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1852,6 +1901,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1875,6 +1925,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1894,6 +1945,7 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

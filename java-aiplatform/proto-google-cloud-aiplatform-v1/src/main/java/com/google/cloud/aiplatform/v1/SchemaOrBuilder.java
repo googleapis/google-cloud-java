@@ -37,6 +37,7 @@ public interface SchemaOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SchemaOrBuilder
    * @return The format.
    */
   java.lang.String getFormat();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface SchemaOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface SchemaOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public interface SchemaOrBuilder
    * @return Whether the default field is set.
    */
   boolean hasDefault();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface SchemaOrBuilder
    * @return The default.
    */
   com.google.protobuf.Value getDefault();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface SchemaOrBuilder
    * @return Whether the items field is set.
    */
   boolean hasItems();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface SchemaOrBuilder
    * @return The items.
    */
   com.google.cloud.aiplatform.v1.Schema getItems();
+
   /**
    *
    *
@@ -266,6 +274,7 @@ public interface SchemaOrBuilder
    * @return A list containing the enum.
    */
   java.util.List<java.lang.String> getEnumList();
+
   /**
    *
    *
@@ -283,6 +292,7 @@ public interface SchemaOrBuilder
    * @return The count of enum.
    */
   int getEnumCount();
+
   /**
    *
    *
@@ -301,6 +311,7 @@ public interface SchemaOrBuilder
    * @return The enum at the given index.
    */
   java.lang.String getEnum(int index);
+
   /**
    *
    *
@@ -333,6 +344,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -346,9 +358,11 @@ public interface SchemaOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Schema> getProperties();
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Schema> getPropertiesMap();
+
   /**
    *
    *
@@ -379,6 +394,7 @@ public interface SchemaOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1.Schema defaultValue);
+
   /**
    *
    *
@@ -407,6 +423,7 @@ public interface SchemaOrBuilder
    * @return A list containing the propertyOrdering.
    */
   java.util.List<java.lang.String> getPropertyOrderingList();
+
   /**
    *
    *
@@ -421,6 +438,7 @@ public interface SchemaOrBuilder
    * @return The count of propertyOrdering.
    */
   int getPropertyOrderingCount();
+
   /**
    *
    *
@@ -436,6 +454,7 @@ public interface SchemaOrBuilder
    * @return The propertyOrdering at the given index.
    */
   java.lang.String getPropertyOrdering(int index);
+
   /**
    *
    *
@@ -464,6 +483,7 @@ public interface SchemaOrBuilder
    * @return A list containing the required.
    */
   java.util.List<java.lang.String> getRequiredList();
+
   /**
    *
    *
@@ -476,6 +496,7 @@ public interface SchemaOrBuilder
    * @return The count of required.
    */
   int getRequiredCount();
+
   /**
    *
    *
@@ -489,6 +510,7 @@ public interface SchemaOrBuilder
    * @return The required at the given index.
    */
   java.lang.String getRequired(int index);
+
   /**
    *
    *
@@ -596,6 +618,7 @@ public interface SchemaOrBuilder
    * @return The pattern.
    */
   java.lang.String getPattern();
+
   /**
    *
    *
@@ -623,6 +646,7 @@ public interface SchemaOrBuilder
    * @return Whether the example field is set.
    */
   boolean hasExample();
+
   /**
    *
    *
@@ -636,6 +660,7 @@ public interface SchemaOrBuilder
    * @return The example.
    */
   com.google.protobuf.Value getExample();
+
   /**
    *
    *
@@ -661,6 +686,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Schema> getAnyOfList();
+
   /**
    *
    *
@@ -674,6 +700,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Schema getAnyOf(int index);
+
   /**
    *
    *
@@ -687,6 +714,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   int getAnyOfCount();
+
   /**
    *
    *
@@ -700,6 +728,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.SchemaOrBuilder> getAnyOfOrBuilderList();
+
   /**
    *
    *

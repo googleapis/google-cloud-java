@@ -33,6 +33,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ActionDetails)
     ActionDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ActionDetails.newBuilder() to construct.
   private ActionDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
     private DetailsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEIDENTIFY_DETAILS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeidentifyDetails() {
     return detailsCase_ == 1;
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.DeidentifyDataSourceDetails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -332,6 +337,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -550,6 +556,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.DeidentifyDataSourceDetails.Builder,
             com.google.privacy.dlp.v2.DeidentifyDataSourceDetailsOrBuilder>
         deidentifyDetailsBuilder_;
+
     /**
      *
      *
@@ -565,6 +572,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeidentifyDetails() {
       return detailsCase_ == 1;
     }
+
     /**
      *
      *
@@ -590,6 +598,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DeidentifyDataSourceDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -613,6 +622,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
         getDeidentifyDetailsBuilder() {
       return getDeidentifyDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class ActionDetails extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DeidentifyDataSourceDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface FeatureOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FeatureOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -71,9 +73,11 @@ public interface FeatureOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -84,6 +88,7 @@ public interface FeatureOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -98,6 +103,7 @@ public interface FeatureOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -123,6 +129,7 @@ public interface FeatureOrBuilder
    * @return Whether the resourceState field is set.
    */
   boolean hasResourceState();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface FeatureOrBuilder
    * @return The resourceState.
    */
   com.google.cloud.gkehub.v1alpha.FeatureResourceState getResourceState();
+
   /**
    *
    *
@@ -165,6 +173,7 @@ public interface FeatureOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public interface FeatureOrBuilder
    * @return The spec.
    */
   com.google.cloud.gkehub.v1alpha.CommonFeatureSpec getSpec();
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public interface FeatureOrBuilder
    * </code>
    */
   int getMembershipSpecsCount();
+
   /**
    *
    *
@@ -250,10 +261,12 @@ public interface FeatureOrBuilder
    * </code>
    */
   boolean containsMembershipSpecs(java.lang.String key);
+
   /** Use {@link #getMembershipSpecsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec>
       getMembershipSpecs();
+
   /**
    *
    *
@@ -283,6 +296,7 @@ public interface FeatureOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec>
       getMembershipSpecsMap();
+
   /**
    *
    *
@@ -315,6 +329,7 @@ public interface FeatureOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec defaultValue);
+
   /**
    *
    *
@@ -359,6 +374,7 @@ public interface FeatureOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -373,6 +389,7 @@ public interface FeatureOrBuilder
    * @return The state.
    */
   com.google.cloud.gkehub.v1alpha.CommonFeatureState getState();
+
   /**
    *
    *
@@ -407,6 +424,7 @@ public interface FeatureOrBuilder
    * </code>
    */
   int getMembershipStatesCount();
+
   /**
    *
    *
@@ -428,10 +446,12 @@ public interface FeatureOrBuilder
    * </code>
    */
   boolean containsMembershipStates(java.lang.String key);
+
   /** Use {@link #getMembershipStatesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureState>
       getMembershipStates();
+
   /**
    *
    *
@@ -454,6 +474,7 @@ public interface FeatureOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureState>
       getMembershipStatesMap();
+
   /**
    *
    *
@@ -479,6 +500,7 @@ public interface FeatureOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.gkehub.v1alpha.MembershipFeatureState defaultValue);
+
   /**
    *
    *
@@ -515,6 +537,7 @@ public interface FeatureOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -528,6 +551,7 @@ public interface FeatureOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -553,6 +577,7 @@ public interface FeatureOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -566,6 +591,7 @@ public interface FeatureOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -591,6 +617,7 @@ public interface FeatureOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -604,6 +631,7 @@ public interface FeatureOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *

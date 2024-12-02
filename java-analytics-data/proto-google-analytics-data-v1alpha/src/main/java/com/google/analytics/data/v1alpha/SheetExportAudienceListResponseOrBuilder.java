@@ -36,6 +36,7 @@ public interface SheetExportAudienceListResponseOrBuilder
    * @return Whether the spreadsheetUri field is set.
    */
   boolean hasSpreadsheetUri();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SheetExportAudienceListResponseOrBuilder
    * @return The spreadsheetUri.
    */
   java.lang.String getSpreadsheetUri();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SheetExportAudienceListResponseOrBuilder
    * @return Whether the spreadsheetId field is set.
    */
   boolean hasSpreadsheetId();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SheetExportAudienceListResponseOrBuilder
    * @return The spreadsheetId.
    */
   java.lang.String getSpreadsheetId();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface SheetExportAudienceListResponseOrBuilder
    * @return Whether the rowCount field is set.
    */
   boolean hasRowCount();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface SheetExportAudienceListResponseOrBuilder
    * @return Whether the audienceList field is set.
    */
   boolean hasAudienceList();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface SheetExportAudienceListResponseOrBuilder
    * @return The audienceList.
    */
   com.google.analytics.data.v1alpha.AudienceList getAudienceList();
+
   /**
    *
    *

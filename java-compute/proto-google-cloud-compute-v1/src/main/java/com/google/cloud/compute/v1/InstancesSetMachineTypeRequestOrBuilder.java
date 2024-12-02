@@ -36,6 +36,7 @@ public interface InstancesSetMachineTypeRequestOrBuilder
    * @return Whether the machineType field is set.
    */
   boolean hasMachineType();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstancesSetMachineTypeRequestOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *

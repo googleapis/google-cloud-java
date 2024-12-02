@@ -36,6 +36,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.Snooze)
     SnoozeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Snooze.newBuilder() to construct.
   private Snooze(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,6 +90,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the policies.
      */
     java.util.List<java.lang.String> getPoliciesList();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * @return The count of policies.
      */
     int getPoliciesCount();
+
     /**
      *
      *
@@ -126,6 +129,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * @return The policies at the given index.
      */
     java.lang.String getPolicies(int index);
+
     /**
      *
      *
@@ -146,6 +150,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPoliciesBytes(int index);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.Snooze.Criteria)
       CriteriaOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Criteria.newBuilder() to construct.
     private Criteria(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -197,6 +203,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList policies_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -217,6 +224,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getPoliciesList() {
       return policies_;
     }
+
     /**
      *
      *
@@ -237,6 +245,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     public int getPoliciesCount() {
       return policies_.size();
     }
+
     /**
      *
      *
@@ -258,6 +267,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPolicies(int index) {
       return policies_.get(index);
     }
+
     /**
      *
      *
@@ -447,6 +457,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -650,6 +661,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -671,6 +683,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         policies_.makeImmutable();
         return policies_;
       }
+
       /**
        *
        *
@@ -691,6 +704,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       public int getPoliciesCount() {
         return policies_.size();
       }
+
       /**
        *
        *
@@ -712,6 +726,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getPolicies(int index) {
         return policies_.get(index);
       }
+
       /**
        *
        *
@@ -733,6 +748,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getPoliciesBytes(int index) {
         return policies_.getByteString(index);
       }
+
       /**
        *
        *
@@ -762,6 +778,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -790,6 +807,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -815,6 +833,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -839,6 +858,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -938,6 +958,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -965,6 +986,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -995,6 +1017,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CRITERIA_FIELD_NUMBER = 3;
   private com.google.monitoring.v3.Snooze.Criteria criteria_;
+
   /**
    *
    *
@@ -1013,6 +1036,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCriteria() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1033,6 +1057,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.v3.Snooze.Criteria.getDefaultInstance()
         : criteria_;
   }
+
   /**
    *
    *
@@ -1054,6 +1079,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTERVAL_FIELD_NUMBER = 4;
   private com.google.monitoring.v3.TimeInterval interval_;
+
   /**
    *
    *
@@ -1075,6 +1101,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInterval() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1098,6 +1125,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
         : interval_;
   }
+
   /**
    *
    *
@@ -1124,6 +1152,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1148,6 +1177,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1367,6 +1397,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1614,6 +1645,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1640,6 +1672,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1666,6 +1699,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1691,6 +1725,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1747,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1745,6 +1781,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.v3.Snooze.Criteria.Builder,
             com.google.monitoring.v3.Snooze.CriteriaOrBuilder>
         criteriaBuilder_;
+
     /**
      *
      *
@@ -1762,6 +1799,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCriteria() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1785,6 +1823,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         return criteriaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1810,6 +1849,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1832,6 +1872,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1862,6 +1903,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1884,6 +1926,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1901,6 +1944,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCriteriaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1922,6 +1966,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
             : criteria_;
       }
     }
+
     /**
      *
      *
@@ -1957,6 +2002,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.v3.TimeInterval.Builder,
             com.google.monitoring.v3.TimeIntervalOrBuilder>
         intervalBuilder_;
+
     /**
      *
      *
@@ -1977,6 +2023,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInterval() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2003,6 +2050,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         return intervalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2031,6 +2079,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2056,6 +2105,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2089,6 +2139,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2114,6 +2165,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2134,6 +2186,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2158,6 +2211,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
             : interval_;
       }
     }
+
     /**
      *
      *
@@ -2191,6 +2245,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2214,6 +2269,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2237,6 +2293,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2259,6 +2316,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2277,6 +2335,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

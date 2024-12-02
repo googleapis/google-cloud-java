@@ -40,6 +40,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -130,6 +132,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The branchId.
    */
   java.lang.String getBranchId();
+
   /**
    *
    *
@@ -165,6 +168,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -202,6 +206,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -237,6 +242,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter>
       getFeedFiltersList();
+
   /**
    *
    *
@@ -252,6 +258,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    */
   com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter getFeedFilters(
       int index);
+
   /**
    *
    *
@@ -266,6 +273,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * </code>
    */
   int getFeedFiltersCount();
+
   /**
    *
    *
@@ -284,6 +292,7 @@ public interface MerchantCenterAccountLinkOrBuilder
               com.google.cloud.retail.v2alpha.MerchantCenterAccountLink
                   .MerchantCenterFeedFilterOrBuilder>
       getFeedFiltersOrBuilderList();
+
   /**
    *
    *
@@ -314,6 +323,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -341,6 +351,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -367,6 +378,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *

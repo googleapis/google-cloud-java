@@ -38,6 +38,7 @@ public interface SetCommonInstanceMetadataProjectRequestOrBuilder
    * @return Whether the metadataResource field is set.
    */
   boolean hasMetadataResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SetCommonInstanceMetadataProjectRequestOrBuilder
    * @return The metadataResource.
    */
   com.google.cloud.compute.v1.Metadata getMetadataResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SetCommonInstanceMetadataProjectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SetCommonInstanceMetadataProjectRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface SetCommonInstanceMetadataProjectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface TerminalLocationOrBuilder
    * @return Whether the point field is set.
    */
   boolean hasPoint();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TerminalLocationOrBuilder
    * @return The point.
    */
   com.google.type.LatLng getPoint();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface TerminalLocationOrBuilder
    */
   @java.lang.Deprecated
   boolean hasTerminalPointId();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface TerminalLocationOrBuilder
    */
   @java.lang.Deprecated
   com.google.maps.fleetengine.v1.TerminalPointId getTerminalPointId();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface TerminalLocationOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getAccessPointId();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface TerminalLocationOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getTripId();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface TerminalLocationOrBuilder
    */
   @java.lang.Deprecated
   int getTerminalLocationTypeValue();
+
   /**
    *
    *

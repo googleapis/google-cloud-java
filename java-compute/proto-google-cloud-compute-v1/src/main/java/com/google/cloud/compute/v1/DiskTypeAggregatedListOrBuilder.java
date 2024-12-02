@@ -36,6 +36,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.DiskTypesScopedList&gt; items = 100526016;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -81,9 +84,11 @@ public interface DiskTypeAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.DiskTypesScopedList&gt; items = 100526016;</code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.DiskTypesScopedList> getItems();
+
   /**
    *
    *
@@ -94,6 +99,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.DiskTypesScopedList&gt; items = 100526016;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.DiskTypesScopedList> getItemsMap();
+
   /**
    *
    *
@@ -108,6 +114,7 @@ public interface DiskTypeAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.DiskTypesScopedList defaultValue);
+
   /**
    *
    *
@@ -131,6 +138,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -143,6 +151,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -168,6 +177,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -180,6 +190,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -205,6 +216,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -217,6 +229,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -242,6 +255,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -254,6 +268,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -267,6 +282,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -293,6 +309,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -305,6 +322,7 @@ public interface DiskTypeAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

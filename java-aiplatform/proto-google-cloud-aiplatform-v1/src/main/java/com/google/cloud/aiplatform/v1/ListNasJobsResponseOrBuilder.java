@@ -36,6 +36,7 @@ public interface ListNasJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.NasJob nas_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.NasJob> getNasJobsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListNasJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.NasJob nas_jobs = 1;</code>
    */
   com.google.cloud.aiplatform.v1.NasJob getNasJobs(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListNasJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.NasJob nas_jobs = 1;</code>
    */
   int getNasJobsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListNasJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.NasJobOrBuilder>
       getNasJobsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListNasJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

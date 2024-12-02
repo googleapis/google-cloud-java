@@ -36,6 +36,7 @@ public interface RunPipelineRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RunPipelineRequestOrBuilder
    * @return Whether the pipeline field is set.
    */
   boolean hasPipeline();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface RunPipelineRequestOrBuilder
    * @return The pipeline.
    */
   com.google.cloud.lifesciences.v2beta.Pipeline getPipeline();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface RunPipelineRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -120,9 +124,11 @@ public interface RunPipelineRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface RunPipelineRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface RunPipelineRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface RunPipelineRequestOrBuilder
    * @return The pubSubTopic.
    */
   java.lang.String getPubSubTopic();
+
   /**
    *
    *

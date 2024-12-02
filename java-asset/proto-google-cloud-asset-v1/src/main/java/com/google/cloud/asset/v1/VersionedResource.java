@@ -34,6 +34,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.VersionedResource)
     VersionedResourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VersionedResource.newBuilder() to construct.
   private VersionedResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
 
   public static final int RESOURCE_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct resource_;
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Struct getResource() {
     return resource_ == null ? com.google.protobuf.Struct.getDefaultInstance() : resource_;
   }
+
   /**
    *
    *
@@ -378,6 +384,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -591,6 +598,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -618,6 +626,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -645,6 +654,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +704,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +739,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         resourceBuilder_;
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
     public boolean hasResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
         return resourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -814,6 +829,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +899,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +930,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +956,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -964,6 +984,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
         return resource_ == null ? com.google.protobuf.Struct.getDefaultInstance() : resource_;
       }
     }
+
     /**
      *
      *

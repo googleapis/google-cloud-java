@@ -38,6 +38,7 @@ public interface ModifyEntryContactsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ModifyEntryContactsRequestOrBuilder
    * @return Whether the contacts field is set.
    */
   boolean hasContacts();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ModifyEntryContactsRequestOrBuilder
    * @return The contacts.
    */
   com.google.cloud.datacatalog.v1.Contacts getContacts();
+
   /**
    *
    *

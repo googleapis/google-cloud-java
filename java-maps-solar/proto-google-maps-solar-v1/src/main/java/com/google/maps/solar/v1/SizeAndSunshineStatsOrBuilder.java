@@ -55,6 +55,7 @@ public interface SizeAndSunshineStatsOrBuilder
    * @return A list containing the sunshineQuantiles.
    */
   java.util.List<java.lang.Float> getSunshineQuantilesList();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface SizeAndSunshineStatsOrBuilder
    * @return The count of sunshineQuantiles.
    */
   int getSunshineQuantilesCount();
+
   /**
    *
    *

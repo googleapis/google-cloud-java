@@ -33,6 +33,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.ExportAssetsRequest)
     ExportAssetsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportAssetsRequest.newBuilder() to construct.
   private ExportAssetsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int READ_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp readTime_;
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList assetTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getAssetTypesList() {
     return assetTypes_;
   }
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public int getAssetTypesCount() {
     return assetTypes_.size();
   }
+
   /**
    *
    *
@@ -285,6 +294,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getAssetTypes(int index) {
     return assetTypes_.get(index);
   }
+
   /**
    *
    *
@@ -320,6 +330,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 4;
   private int contentType_ = 0;
+
   /**
    *
    *
@@ -336,6 +347,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public int getContentTypeValue() {
     return contentType_;
   }
+
   /**
    *
    *
@@ -357,6 +369,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.asset.v1.OutputConfig outputConfig_;
+
   /**
    *
    *
@@ -375,6 +388,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -395,6 +409,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.asset.v1.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList relationshipTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -447,6 +463,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getRelationshipTypesList() {
     return relationshipTypes_;
   }
+
   /**
    *
    *
@@ -475,6 +492,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public int getRelationshipTypesCount() {
     return relationshipTypes_.size();
   }
+
   /**
    *
    *
@@ -504,6 +522,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getRelationshipTypes(int index) {
     return relationshipTypes_.get(index);
   }
+
   /**
    *
    *
@@ -764,6 +783,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1053,6 +1073,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1080,6 +1101,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1129,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1156,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1179,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1214,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1207,6 +1233,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1229,6 +1256,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         return readTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1283,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1307,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1339,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1363,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1382,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1370,6 +1403,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
+
     /**
      *
      *
@@ -1409,6 +1443,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1441,6 +1476,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       assetTypes_.makeImmutable();
       return assetTypes_;
     }
+
     /**
      *
      *
@@ -1472,6 +1508,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public int getAssetTypesCount() {
       return assetTypes_.size();
     }
+
     /**
      *
      *
@@ -1504,6 +1541,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getAssetTypes(int index) {
       return assetTypes_.get(index);
     }
+
     /**
      *
      *
@@ -1536,6 +1574,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getAssetTypesBytes(int index) {
       return assetTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1576,6 +1615,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1615,6 +1655,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1692,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1728,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1771,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int contentType_ = 0;
+
     /**
      *
      *
@@ -1744,6 +1788,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public int getContentTypeValue() {
       return contentType_;
     }
+
     /**
      *
      *
@@ -1763,6 +1808,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1827,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
           com.google.cloud.asset.v1.ContentType.forNumber(contentType_);
       return result == null ? com.google.cloud.asset.v1.ContentType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1803,6 +1850,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1828,6 +1876,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.asset.v1.OutputConfig.Builder,
             com.google.cloud.asset.v1.OutputConfigOrBuilder>
         outputConfigBuilder_;
+
     /**
      *
      *
@@ -1845,6 +1894,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1868,6 +1918,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         return outputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1893,6 +1944,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1915,6 +1967,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1945,6 +1998,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1967,6 +2021,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1984,6 +2039,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2005,6 +2061,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
             : outputConfig_;
       }
     }
+
     /**
      *
      *
@@ -2043,6 +2100,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2072,6 +2130,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       relationshipTypes_.makeImmutable();
       return relationshipTypes_;
     }
+
     /**
      *
      *
@@ -2100,6 +2159,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public int getRelationshipTypesCount() {
       return relationshipTypes_.size();
     }
+
     /**
      *
      *
@@ -2129,6 +2189,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getRelationshipTypes(int index) {
       return relationshipTypes_.get(index);
     }
+
     /**
      *
      *
@@ -2158,6 +2219,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getRelationshipTypesBytes(int index) {
       return relationshipTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2195,6 +2257,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2231,6 +2294,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2264,6 +2328,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2296,6 +2361,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

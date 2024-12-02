@@ -39,6 +39,7 @@ public interface CreateScheduleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateScheduleRequestOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateScheduleRequestOrBuilder
    * @return The schedule.
    */
   com.google.cloud.aiplatform.v1beta1.Schedule getSchedule();
+
   /**
    *
    *

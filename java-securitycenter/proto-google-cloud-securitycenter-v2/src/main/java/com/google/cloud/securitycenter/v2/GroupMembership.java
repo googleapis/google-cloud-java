@@ -34,6 +34,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.GroupMembership)
     GroupMembershipOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GroupMembership.newBuilder() to construct.
   private GroupMembership(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
      * <code>GROUP_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int GROUP_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -204,6 +206,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
 
   public static final int GROUP_TYPE_FIELD_NUMBER = 1;
   private int groupType_ = 0;
+
   /**
    *
    *
@@ -219,6 +222,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
   public int getGroupTypeValue() {
     return groupType_;
   }
+
   /**
    *
    *
@@ -243,6 +247,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object groupId_ = "";
+
   /**
    *
    *
@@ -266,6 +271,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -462,6 +468,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -660,6 +667,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int groupType_ = 0;
+
     /**
      *
      *
@@ -675,6 +683,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
     public int getGroupTypeValue() {
       return groupType_;
     }
+
     /**
      *
      *
@@ -693,6 +702,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +722,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.securitycenter.v2.GroupMembership.GroupType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -734,6 +745,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +765,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object groupId_ = "";
+
     /**
      *
      *
@@ -775,6 +788,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

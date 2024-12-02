@@ -36,6 +36,7 @@ public interface StatusDetailsOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StatusDetailsOrBuilder
    * @return The details.
    */
   java.lang.String getDetails();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListAssetsResponse)
     ListAssetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAssetsResponse.newBuilder() to construct.
   private ListAssetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the asset field is set.
      */
     boolean hasAsset();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * @return The asset.
      */
     com.google.cloud.securitycenter.v1.Asset getAsset();
+
     /**
      *
      *
@@ -118,6 +121,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * @return The enum numeric value on the wire for stateChange.
      */
     int getStateChangeValue();
+
     /**
      *
      *
@@ -134,6 +138,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange
         getStateChange();
   }
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult)
       ListAssetsResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ListAssetsResult.newBuilder() to construct.
     private ListAssetsResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -247,6 +253,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * <code>UNUSED = 0;</code>
        */
       public static final int UNUSED_VALUE = 0;
+
       /**
        *
        *
@@ -257,6 +264,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * <code>ADDED = 1;</code>
        */
       public static final int ADDED_VALUE = 1;
+
       /**
        *
        *
@@ -267,6 +275,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * <code>REMOVED = 2;</code>
        */
       public static final int REMOVED_VALUE = 2;
+
       /**
        *
        *
@@ -369,6 +378,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int ASSET_FIELD_NUMBER = 1;
     private com.google.cloud.securitycenter.v1.Asset asset_;
+
     /**
      *
      *
@@ -384,6 +394,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasAsset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -401,6 +412,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.securitycenter.v1.Asset.getDefaultInstance()
           : asset_;
     }
+
     /**
      *
      *
@@ -419,6 +431,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int STATE_CHANGE_FIELD_NUMBER = 2;
     private int stateChange_ = 0;
+
     /**
      *
      *
@@ -436,6 +449,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     public int getStateChangeValue() {
       return stateChange_;
     }
+
     /**
      *
      *
@@ -644,6 +658,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -873,6 +888,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
               com.google.cloud.securitycenter.v1.Asset.Builder,
               com.google.cloud.securitycenter.v1.AssetOrBuilder>
           assetBuilder_;
+
       /**
        *
        *
@@ -887,6 +903,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       public boolean hasAsset() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -907,6 +924,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
           return assetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -929,6 +947,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -948,6 +967,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -975,6 +995,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -994,6 +1015,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1008,6 +1030,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getAssetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1026,6 +1049,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
               : asset_;
         }
       }
+
       /**
        *
        *
@@ -1053,6 +1077,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
 
       private int stateChange_ = 0;
+
       /**
        *
        *
@@ -1070,6 +1095,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       public int getStateChangeValue() {
         return stateChange_;
       }
+
       /**
        *
        *
@@ -1090,6 +1116,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1114,6 +1141,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1139,6 +1167,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1233,6 +1262,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult>
       listAssetsResults_;
+
   /**
    *
    *
@@ -1249,6 +1279,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       getListAssetsResultsList() {
     return listAssetsResults_;
   }
+
   /**
    *
    *
@@ -1266,6 +1297,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       getListAssetsResultsOrBuilderList() {
     return listAssetsResults_;
   }
+
   /**
    *
    *
@@ -1281,6 +1313,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   public int getListAssetsResultsCount() {
     return listAssetsResults_.size();
   }
+
   /**
    *
    *
@@ -1297,6 +1330,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       getListAssetsResults(int index) {
     return listAssetsResults_.get(index);
   }
+
   /**
    *
    *
@@ -1316,6 +1350,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int READ_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp readTime_;
+
   /**
    *
    *
@@ -1331,6 +1366,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1346,6 +1382,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
+
   /**
    *
    *
@@ -1364,6 +1401,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -1388,6 +1426,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1415,6 +1454,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -1626,6 +1666,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1953,6 +1994,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return listAssetsResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1971,6 +2013,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return listAssetsResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1990,6 +2033,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return listAssetsResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2015,6 +2059,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2039,6 +2084,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2064,6 +2110,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2089,6 +2136,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2112,6 +2160,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2136,6 +2185,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2160,6 +2210,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2181,6 +2232,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2202,6 +2254,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2217,6 +2270,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         getListAssetsResultsBuilder(int index) {
       return getListAssetsResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2236,6 +2290,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return listAssetsResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2257,6 +2312,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(listAssetsResults_);
       }
     }
+
     /**
      *
      *
@@ -2275,6 +2331,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
               com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2294,6 +2351,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
               com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2337,6 +2395,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -2351,6 +2410,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2369,6 +2429,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return readTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2391,6 +2452,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2410,6 +2472,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2437,6 +2500,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2456,6 +2520,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2470,6 +2535,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2486,6 +2552,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
+
     /**
      *
      *
@@ -2513,6 +2580,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -2536,6 +2604,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2559,6 +2628,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2581,6 +2651,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2599,6 +2670,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2624,6 +2696,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -2639,6 +2712,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -2658,6 +2732,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.UserSegmentSequenceGroup)
     UserSegmentSequenceGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserSegmentSequenceGroup.newBuilder() to construct.
   private UserSegmentSequenceGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int SEQUENCE_SCOPING_FIELD_NUMBER = 1;
   private int sequenceScoping_ = 0;
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
   public int getSequenceScopingValue() {
     return sequenceScoping_;
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
 
   public static final int SEQUENCE_MAXIMUM_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration sequenceMaximumDuration_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
   public boolean hasSequenceMaximumDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
         ? com.google.protobuf.Duration.getDefaultInstance()
         : sequenceMaximumDuration_;
   }
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.UserSequenceStep> userSequenceSteps_;
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       getUserSequenceStepsList() {
     return userSequenceSteps_;
   }
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       getUserSequenceStepsOrBuilderList() {
     return userSequenceSteps_;
   }
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
   public int getUserSequenceStepsCount() {
     return userSequenceSteps_.size();
   }
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
   public com.google.analytics.data.v1alpha.UserSequenceStep getUserSequenceSteps(int index) {
     return userSequenceSteps_.get(index);
   }
+
   /**
    *
    *
@@ -462,6 +473,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -741,6 +753,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int sequenceScoping_ = 0;
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
     public int getSequenceScopingValue() {
       return sequenceScoping_;
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +829,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
           ? com.google.analytics.data.v1alpha.UserCriteriaScoping.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -842,6 +858,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +890,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         sequenceMaximumDurationBuilder_;
+
     /**
      *
      *
@@ -894,6 +912,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
     public boolean hasSequenceMaximumDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -921,6 +940,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
         return sequenceMaximumDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1082,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       onChanged();
       return getSequenceMaximumDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1083,6 +1108,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
             : sequenceMaximumDuration_;
       }
     }
+
     /**
      *
      *
@@ -1154,6 +1180,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
         return userSequenceStepsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1200,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
         return userSequenceStepsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1220,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
         return userSequenceStepsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1218,6 +1247,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1271,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1297,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1324,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1348,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1372,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1396,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1419,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1405,6 +1442,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1421,6 +1459,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
         int index) {
       return getUserSequenceStepsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1441,6 +1480,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
         return userSequenceStepsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1461,6 +1501,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(userSequenceSteps_);
       }
     }
+
     /**
      *
      *
@@ -1478,6 +1519,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
       return getUserSequenceStepsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.UserSequenceStep.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1496,6 +1538,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.analytics.data.v1alpha.UserSequenceStep.getDefaultInstance());
     }
+
     /**
      *
      *

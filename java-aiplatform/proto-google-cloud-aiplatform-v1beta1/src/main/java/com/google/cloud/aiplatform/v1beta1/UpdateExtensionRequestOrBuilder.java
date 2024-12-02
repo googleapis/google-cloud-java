@@ -38,6 +38,7 @@ public interface UpdateExtensionRequestOrBuilder
    * @return Whether the extension field is set.
    */
   boolean hasExtension();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateExtensionRequestOrBuilder
    * @return The extension.
    */
   com.google.cloud.aiplatform.v1beta1.Extension getExtension();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateExtensionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdateExtensionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

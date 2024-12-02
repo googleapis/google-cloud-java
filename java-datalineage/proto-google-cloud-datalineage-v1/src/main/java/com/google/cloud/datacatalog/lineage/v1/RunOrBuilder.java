@@ -40,6 +40,7 @@ public interface RunOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface RunOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface RunOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -116,9 +119,11 @@ public interface RunOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getAttributes();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface RunOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getAttributesMap();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface RunOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface RunOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface RunOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface RunOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface RunOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public interface RunOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

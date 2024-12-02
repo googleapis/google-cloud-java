@@ -83,6 +83,7 @@ public enum PublisherModelView implements com.google.protobuf.ProtocolMessageEnu
    * <code>PUBLISHER_MODEL_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int PUBLISHER_MODEL_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public enum PublisherModelView implements com.google.protobuf.ProtocolMessageEnu
    * <code>PUBLISHER_MODEL_VIEW_BASIC = 1;</code>
    */
   public static final int PUBLISHER_MODEL_VIEW_BASIC_VALUE = 1;
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public enum PublisherModelView implements com.google.protobuf.ProtocolMessageEnu
    * <code>PUBLISHER_MODEL_VIEW_FULL = 2;</code>
    */
   public static final int PUBLISHER_MODEL_VIEW_FULL_VALUE = 2;
+
   /**
    *
    *

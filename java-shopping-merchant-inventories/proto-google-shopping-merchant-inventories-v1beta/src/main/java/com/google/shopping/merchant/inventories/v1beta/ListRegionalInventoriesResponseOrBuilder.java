@@ -38,6 +38,7 @@ public interface ListRegionalInventoriesResponseOrBuilder
    */
   java.util.List<com.google.shopping.merchant.inventories.v1beta.RegionalInventory>
       getRegionalInventoriesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ListRegionalInventoriesResponseOrBuilder
    */
   com.google.shopping.merchant.inventories.v1beta.RegionalInventory getRegionalInventories(
       int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface ListRegionalInventoriesResponseOrBuilder
    * </code>
    */
   int getRegionalInventoriesCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface ListRegionalInventoriesResponseOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.inventories.v1beta.RegionalInventoryOrBuilder>
       getRegionalInventoriesOrBuilderList();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ListRegionalInventoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface DestinationConfigOrBuilder
    * @return The destinationConnectionProfileName.
    */
   java.lang.String getDestinationConnectionProfileName();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface DestinationConfigOrBuilder
    * @return Whether the gcsDestinationConfig field is set.
    */
   boolean hasGcsDestinationConfig();
+
   /**
    * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
    * </code>
@@ -65,6 +67,7 @@ public interface DestinationConfigOrBuilder
    * @return The gcsDestinationConfig.
    */
   com.google.cloud.datastream.v1alpha1.GcsDestinationConfig getGcsDestinationConfig();
+
   /**
    * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
    * </code>

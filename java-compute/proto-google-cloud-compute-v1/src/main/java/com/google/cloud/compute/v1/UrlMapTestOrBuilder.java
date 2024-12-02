@@ -36,6 +36,7 @@ public interface UrlMapTestOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UrlMapTestOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UrlMapTestOrBuilder
    * @return Whether the expectedOutputUrl field is set.
    */
   boolean hasExpectedOutputUrl();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface UrlMapTestOrBuilder
    * @return The expectedOutputUrl.
    */
   java.lang.String getExpectedOutputUrl();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface UrlMapTestOrBuilder
    * @return Whether the expectedRedirectResponseCode field is set.
    */
   boolean hasExpectedRedirectResponseCode();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface UrlMapTestOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
    */
   java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> getHeadersList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface UrlMapTestOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
    */
   com.google.cloud.compute.v1.UrlMapTestHeader getHeaders(int index);
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface UrlMapTestOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -164,6 +172,7 @@ public interface UrlMapTestOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>
       getHeadersOrBuilderList();
+
   /**
    *
    *
@@ -187,6 +196,7 @@ public interface UrlMapTestOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface UrlMapTestOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -224,6 +235,7 @@ public interface UrlMapTestOrBuilder
    * @return Whether the path field is set.
    */
   boolean hasPath();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface UrlMapTestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -261,6 +274,7 @@ public interface UrlMapTestOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -273,6 +287,7 @@ public interface UrlMapTestOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *

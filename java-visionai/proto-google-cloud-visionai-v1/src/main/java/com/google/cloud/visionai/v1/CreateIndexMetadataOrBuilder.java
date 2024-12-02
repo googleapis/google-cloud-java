@@ -36,6 +36,7 @@ public interface CreateIndexMetadataOrBuilder
    * @return Whether the operationMetadata field is set.
    */
   boolean hasOperationMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CreateIndexMetadataOrBuilder
    * @return The operationMetadata.
    */
   com.google.cloud.visionai.v1.OperationMetadata getOperationMetadata();
+
   /**
    *
    *

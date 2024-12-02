@@ -37,6 +37,7 @@ public interface OriginalDetectIntentRequestOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface OriginalDetectIntentRequestOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface OriginalDetectIntentRequestOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface OriginalDetectIntentRequestOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
+
   /**
    *
    *

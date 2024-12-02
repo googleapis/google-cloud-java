@@ -33,6 +33,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.SearchHashesRequest)
     SearchHashesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchHashesRequest.newBuilder() to construct.
   private SearchHashesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
 
   public static final int HASH_PREFIX_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString hashPrefix_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
               return result == null ? com.google.webrisk.v1beta1.ThreatType.UNRECOGNIZED : result;
             }
           };
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
         java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>(
         threatTypes_, threatTypes_converter_);
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
   public int getThreatTypesCount() {
     return threatTypes_.size();
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
   public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
     return threatTypes_converter_.convert(threatTypes_.get(index));
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getThreatTypesValueList() {
     return threatTypes_;
   }
+
   /**
    *
    *
@@ -375,6 +382,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -596,6 +604,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private com.google.protobuf.ByteString hashPrefix_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -612,6 +621,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getHashPrefix() {
       return hashPrefix_;
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000002;
       }
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
           java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>(
           threatTypes_, threatTypes_converter_);
     }
+
     /**
      *
      *
@@ -695,6 +708,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     public int getThreatTypesCount() {
       return threatTypes_.size();
     }
+
     /**
      *
      *
@@ -712,6 +726,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
     }
+
     /**
      *
      *
@@ -736,6 +751,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +799,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +819,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return java.util.Collections.unmodifiableList(threatTypes_);
     }
+
     /**
      *
      *
@@ -834,6 +854,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     public int getThreatTypesValue(int index) {
       return threatTypes_.get(index);
     }
+
     /**
      *
      *
@@ -855,6 +876,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +897,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

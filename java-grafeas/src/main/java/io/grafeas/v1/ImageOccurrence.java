@@ -36,6 +36,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:grafeas.v1.ImageOccurrence)
     ImageOccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageOccurrence.newBuilder() to construct.
   private ImageOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 1;
   private io.grafeas.v1.Fingerprint fingerprint_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   public io.grafeas.v1.Fingerprint getFingerprint() {
     return fingerprint_ == null ? io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
 
   public static final int DISTANCE_FIELD_NUMBER = 2;
   private int distance_ = 0;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Layer> layerInfo_;
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   public java.util.List<io.grafeas.v1.Layer> getLayerInfoList() {
     return layerInfo_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   public java.util.List<? extends io.grafeas.v1.LayerOrBuilder> getLayerInfoOrBuilderList() {
     return layerInfo_;
   }
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   public int getLayerInfoCount() {
     return layerInfo_.size();
   }
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   public io.grafeas.v1.Layer getLayerInfo(int index) {
     return layerInfo_.get(index);
   }
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseResourceUrl_ = "";
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -454,6 +466,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -742,6 +755,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
             io.grafeas.v1.Fingerprint.Builder,
             io.grafeas.v1.FingerprintOrBuilder>
         fingerprintBuilder_;
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return fingerprintBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +880,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getFingerprintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -891,6 +912,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return fingerprint_ == null ? io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
       }
     }
+
     /**
      *
      *
@@ -918,6 +940,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     }
 
     private int distance_;
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     public int getDistance() {
       return distance_;
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return layerInfoBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1048,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return layerInfoBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1067,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return layerInfoBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1092,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1114,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1139,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1164,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1186,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1208,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1230,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1252,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1274,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1289,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     public io.grafeas.v1.Layer.Builder getLayerInfoBuilder(int index) {
       return getLayerInfoFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1270,6 +1308,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return layerInfoBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1288,6 +1327,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(layerInfo_);
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1342,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     public io.grafeas.v1.Layer.Builder addLayerInfoBuilder() {
       return getLayerInfoFieldBuilder().addBuilder(io.grafeas.v1.Layer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1316,6 +1357,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     public io.grafeas.v1.Layer.Builder addLayerInfoBuilder(int index) {
       return getLayerInfoFieldBuilder().addBuilder(index, io.grafeas.v1.Layer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1345,6 +1387,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object baseResourceUrl_ = "";
+
     /**
      *
      *
@@ -1368,6 +1411,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1435,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1458,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1477,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

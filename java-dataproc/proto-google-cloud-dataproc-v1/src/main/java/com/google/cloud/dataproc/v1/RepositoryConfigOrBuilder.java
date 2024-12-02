@@ -38,6 +38,7 @@ public interface RepositoryConfigOrBuilder
    * @return Whether the pypiRepositoryConfig field is set.
    */
   boolean hasPypiRepositoryConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RepositoryConfigOrBuilder
    * @return The pypiRepositoryConfig.
    */
   com.google.cloud.dataproc.v1.PyPiRepositoryConfig getPypiRepositoryConfig();
+
   /**
    *
    *

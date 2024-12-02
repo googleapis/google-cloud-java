@@ -25,6 +25,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse)
     DiscoverConnectionProfileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoverConnectionProfileResponse.newBuilder() to construct.
   private DiscoverConnectionProfileResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     private DataObjectCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -104,6 +106,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
   }
 
   public static final int ORACLE_RDBMS_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
   public boolean hasOracleRdbms() {
     return dataObjectCase_ == 100;
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     }
     return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
   }
 
   public static final int MYSQL_RDBMS_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
   public boolean hasMysqlRdbms() {
     return dataObjectCase_ == 101;
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     }
     return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -396,6 +404,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -632,6 +641,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
             com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder,
             com.google.cloud.datastream.v1alpha1.OracleRdbmsOrBuilder>
         oracleRdbmsBuilder_;
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     public boolean hasOracleRdbms() {
       return dataObjectCase_ == 100;
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
         return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       dataObjectCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       dataObjectCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       dataObjectCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +800,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     public com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder getOracleRdbmsBuilder() {
       return getOracleRdbmsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -804,6 +821,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
         return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
             com.google.cloud.datastream.v1alpha1.MysqlRdbms.Builder,
             com.google.cloud.datastream.v1alpha1.MysqlRdbmsOrBuilder>
         mysqlRdbmsBuilder_;
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     public boolean hasMysqlRdbms() {
       return dataObjectCase_ == 101;
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
         return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -904,6 +925,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       dataObjectCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +946,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       dataObjectCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +980,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       dataObjectCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1006,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1019,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     public com.google.cloud.datastream.v1alpha1.MysqlRdbms.Builder getMysqlRdbmsBuilder() {
       return getMysqlRdbmsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1014,6 +1040,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
         return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
       }
     }
+
     /**
      *
      *

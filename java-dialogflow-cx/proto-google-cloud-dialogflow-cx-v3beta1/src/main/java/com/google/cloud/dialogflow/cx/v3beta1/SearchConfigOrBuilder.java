@@ -36,6 +36,7 @@ public interface SearchConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.BoostSpecs> getBoostSpecsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SearchConfigOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.BoostSpecs getBoostSpecs(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface SearchConfigOrBuilder
    * </code>
    */
   int getBoostSpecsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface SearchConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.BoostSpecsOrBuilder>
       getBoostSpecsOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface SearchConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.FilterSpecs> getFilterSpecsList();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface SearchConfigOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.FilterSpecs getFilterSpecs(int index);
+
   /**
    *
    *
@@ -122,6 +128,7 @@ public interface SearchConfigOrBuilder
    * </code>
    */
   int getFilterSpecsCount();
+
   /**
    *
    *
@@ -135,6 +142,7 @@ public interface SearchConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.FilterSpecsOrBuilder>
       getFilterSpecsOrBuilderList();
+
   /**
    *
    *

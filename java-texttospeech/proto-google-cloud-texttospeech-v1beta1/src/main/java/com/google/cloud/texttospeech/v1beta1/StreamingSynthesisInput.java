@@ -33,6 +33,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.StreamingSynthesisInput)
     StreamingSynthesisInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingSynthesisInput.newBuilder() to construct.
   private StreamingSynthesisInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     private InputSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
   public boolean hasText() {
     return inputSourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +364,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -591,6 +597,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     public boolean hasText() {
       return inputSourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -622,6 +629,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -653,6 +661,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -677,6 +686,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +709,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *

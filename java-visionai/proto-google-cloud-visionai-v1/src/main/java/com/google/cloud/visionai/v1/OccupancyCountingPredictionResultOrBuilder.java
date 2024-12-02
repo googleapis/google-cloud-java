@@ -36,6 +36,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * @return Whether the currentTime field is set.
    */
   boolean hasCurrentTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * @return The currentTime.
    */
   com.google.protobuf.Timestamp getCurrentTime();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox>
       getIdentifiedBoxesList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    */
   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox getIdentifiedBoxes(
       int index);
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * </code>
    */
   int getIdentifiedBoxesCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
           ? extends
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBoxOrBuilder>
       getIdentifiedBoxesOrBuilderList();
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * @return Whether the stats field is set.
    */
   boolean hasStats();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * @return The stats.
    */
   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats getStats();
+
   /**
    *
    *
@@ -175,6 +183,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.TrackInfo>
       getTrackInfoList();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.TrackInfo getTrackInfo(int index);
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * </code>
    */
   int getTrackInfoCount();
+
   /**
    *
    *
@@ -217,6 +228,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
           ? extends
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.TrackInfoOrBuilder>
       getTrackInfoOrBuilderList();
+
   /**
    *
    *
@@ -246,6 +258,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.DwellTimeInfo>
       getDwellTimeInfoList();
+
   /**
    *
    *
@@ -260,6 +273,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    */
   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.DwellTimeInfo getDwellTimeInfo(
       int index);
+
   /**
    *
    *
@@ -273,6 +287,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * </code>
    */
   int getDwellTimeInfoCount();
+
   /**
    *
    *
@@ -289,6 +304,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
           ? extends
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.DwellTimeInfoOrBuilder>
       getDwellTimeInfoOrBuilderList();
+
   /**
    *
    *
@@ -316,6 +332,7 @@ public interface OccupancyCountingPredictionResultOrBuilder
    * @return Whether the pts field is set.
    */
   boolean hasPts();
+
   /**
    *
    *

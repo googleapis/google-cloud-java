@@ -38,6 +38,7 @@ public interface SafetySettingOrBuilder
    * @return The enum numeric value on the wire for category.
    */
   int getCategoryValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SafetySettingOrBuilder
    * @return The enum numeric value on the wire for threshold.
    */
   int getThresholdValue();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface SafetySettingOrBuilder
    * @return The enum numeric value on the wire for method.
    */
   int getMethodValue();
+
   /**
    *
    *

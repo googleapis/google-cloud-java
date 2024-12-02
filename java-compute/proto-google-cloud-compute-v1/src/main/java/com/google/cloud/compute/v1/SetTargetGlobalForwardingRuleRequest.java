@@ -34,6 +34,7 @@ public final class SetTargetGlobalForwardingRuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetTargetGlobalForwardingRuleRequest)
     SetTargetGlobalForwardingRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetTargetGlobalForwardingRuleRequest.newBuilder() to construct.
   private SetTargetGlobalForwardingRuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SetTargetGlobalForwardingRuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forwardingRule_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class SetTargetGlobalForwardingRuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class SetTargetGlobalForwardingRuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class SetTargetGlobalForwardingRuleRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class SetTargetGlobalForwardingRuleRequest
 
   public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 523721712;
   private com.google.cloud.compute.v1.TargetReference targetReferenceResource_;
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class SetTargetGlobalForwardingRuleRequest
   public boolean hasTargetReferenceResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class SetTargetGlobalForwardingRuleRequest
         ? com.google.cloud.compute.v1.TargetReference.getDefaultInstance()
         : targetReferenceResource_;
   }
+
   /**
    *
    *
@@ -496,6 +507,7 @@ public final class SetTargetGlobalForwardingRuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -748,6 +760,7 @@ public final class SetTargetGlobalForwardingRuleRequest
     private int bitField0_;
 
     private java.lang.Object forwardingRule_ = "";
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class SetTargetGlobalForwardingRuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +806,7 @@ public final class SetTargetGlobalForwardingRuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class SetTargetGlobalForwardingRuleRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -878,6 +896,7 @@ public final class SetTargetGlobalForwardingRuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +921,7 @@ public final class SetTargetGlobalForwardingRuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -925,6 +945,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +965,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +992,7 @@ public final class SetTargetGlobalForwardingRuleRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -984,6 +1007,7 @@ public final class SetTargetGlobalForwardingRuleRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1006,6 +1030,7 @@ public final class SetTargetGlobalForwardingRuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class SetTargetGlobalForwardingRuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1075,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1093,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1123,7 @@ public final class SetTargetGlobalForwardingRuleRequest
             com.google.cloud.compute.v1.TargetReference.Builder,
             com.google.cloud.compute.v1.TargetReferenceOrBuilder>
         targetReferenceResourceBuilder_;
+
     /**
      *
      *
@@ -1111,6 +1140,7 @@ public final class SetTargetGlobalForwardingRuleRequest
     public boolean hasTargetReferenceResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1133,6 +1163,7 @@ public final class SetTargetGlobalForwardingRuleRequest
         return targetReferenceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1157,6 +1188,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1211,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1242,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1264,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1246,6 +1281,7 @@ public final class SetTargetGlobalForwardingRuleRequest
       onChanged();
       return getTargetReferenceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1267,6 +1303,7 @@ public final class SetTargetGlobalForwardingRuleRequest
             : targetReferenceResource_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.ExecutionTemplate)
     ExecutionTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExecutionTemplate.newBuilder() to construct.
   private ExecutionTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,6 +104,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -130,12 +132,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -250,6 +256,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
+
   /**
    *
    *
@@ -276,12 +283,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
+
   /**
    *
    *
@@ -305,6 +314,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
+
   /**
    *
    *
@@ -335,6 +345,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -368,6 +379,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int PARALLELISM_FIELD_NUMBER = 3;
   private int parallelism_ = 0;
+
   /**
    *
    *
@@ -392,6 +404,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int TASK_COUNT_FIELD_NUMBER = 4;
   private int taskCount_ = 0;
+
   /**
    *
    *
@@ -412,6 +425,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int TEMPLATE_FIELD_NUMBER = 5;
   private com.google.cloud.run.v2.TaskTemplate template_;
+
   /**
    *
    *
@@ -429,6 +443,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public boolean hasTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -448,6 +463,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.run.v2.TaskTemplate.getDefaultInstance()
         : template_;
   }
+
   /**
    *
    *
@@ -682,6 +698,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -994,6 +1011,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1021,12 +1039,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1051,6 +1071,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1082,6 +1103,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1119,6 +1141,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1146,12 +1169,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000001;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1183,6 +1208,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1263,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /**
      *
      *
@@ -1263,12 +1290,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /**
      *
      *
@@ -1292,6 +1321,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /**
      *
      *
@@ -1322,6 +1352,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1358,6 +1389,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1384,12 +1416,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000002;
       return internalGetMutableAnnotations().getMutableMap();
     }
+
     /**
      *
      *
@@ -1420,6 +1454,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1446,6 +1481,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private int parallelism_;
+
     /**
      *
      *
@@ -1467,6 +1503,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getParallelism() {
       return parallelism_;
     }
+
     /**
      *
      *
@@ -1492,6 +1529,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1555,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private int taskCount_;
+
     /**
      *
      *
@@ -1534,6 +1573,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getTaskCount() {
       return taskCount_;
     }
+
     /**
      *
      *
@@ -1555,6 +1595,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1622,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             com.google.cloud.run.v2.TaskTemplate.Builder,
             com.google.cloud.run.v2.TaskTemplateOrBuilder>
         templateBuilder_;
+
     /**
      *
      *
@@ -1598,6 +1640,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public boolean hasTemplate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1621,6 +1664,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return templateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1646,6 +1690,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1713,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1698,6 +1744,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1720,6 +1767,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1737,6 +1785,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1758,6 +1807,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             : template_;
       }
     }
+
     /**
      *
      *

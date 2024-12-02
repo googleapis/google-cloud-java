@@ -40,6 +40,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.CompetitiveVisibilityBenchmarkView)
     CompetitiveVisibilityBenchmarkViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompetitiveVisibilityBenchmarkView.newBuilder() to construct.
   private CompetitiveVisibilityBenchmarkView(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,6 +77,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   private int bitField0_;
   public static final int DATE_FIELD_NUMBER = 1;
   private com.google.type.Date date_;
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   public boolean hasDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reportCountryCode_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   public boolean hasReportCountryCode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
 
   public static final int REPORT_CATEGORY_ID_FIELD_NUMBER = 3;
   private long reportCategoryId_ = 0L;
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   public boolean hasReportCategoryId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
 
   public static final int TRAFFIC_SOURCE_FIELD_NUMBER = 4;
   private int trafficSource_ = 0;
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   public boolean hasTrafficSource() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -287,6 +298,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   public int getTrafficSourceValue() {
     return trafficSource_;
   }
+
   /**
    *
    *
@@ -315,6 +327,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
 
   public static final int YOUR_DOMAIN_VISIBILITY_TREND_FIELD_NUMBER = 5;
   private double yourDomainVisibilityTrend_ = 0D;
+
   /**
    *
    *
@@ -334,6 +347,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   public boolean hasYourDomainVisibilityTrend() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -356,6 +370,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
 
   public static final int CATEGORY_BENCHMARK_VISIBILITY_TREND_FIELD_NUMBER = 6;
   private double categoryBenchmarkVisibilityTrend_ = 0D;
+
   /**
    *
    *
@@ -376,6 +391,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
   public boolean hasCategoryBenchmarkVisibilityTrend() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -653,6 +669,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -946,6 +963,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateBuilder_;
+
     /**
      *
      *
@@ -963,6 +981,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public boolean hasDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -984,6 +1003,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
         return dateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1029,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1052,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1083,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1106,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1124,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return getDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1119,6 +1144,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
         return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1171,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     }
 
     private java.lang.Object reportCountryCode_ = "";
+
     /**
      *
      *
@@ -1162,6 +1189,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public boolean hasReportCountryCode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1187,6 +1215,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1241,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1266,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1287,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1315,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     }
 
     private long reportCategoryId_;
+
     /**
      *
      *
@@ -1303,6 +1336,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public boolean hasReportCategoryId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1323,6 +1357,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public long getReportCategoryId() {
       return reportCategoryId_;
     }
+
     /**
      *
      *
@@ -1347,6 +1382,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1407,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     }
 
     private int trafficSource_ = 0;
+
     /**
      *
      *
@@ -1390,6 +1427,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public boolean hasTrafficSource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1409,6 +1447,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public int getTrafficSourceValue() {
       return trafficSource_;
     }
+
     /**
      *
      *
@@ -1431,6 +1470,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1496,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
           ? com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1482,6 +1523,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1547,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     }
 
     private double yourDomainVisibilityTrend_;
+
     /**
      *
      *
@@ -1524,6 +1567,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public boolean hasYourDomainVisibilityTrend() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1543,6 +1587,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public double getYourDomainVisibilityTrend() {
       return yourDomainVisibilityTrend_;
     }
+
     /**
      *
      *
@@ -1566,6 +1611,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1635,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     }
 
     private double categoryBenchmarkVisibilityTrend_;
+
     /**
      *
      *
@@ -1609,6 +1656,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public boolean hasCategoryBenchmarkVisibilityTrend() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1629,6 +1677,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
     public double getCategoryBenchmarkVisibilityTrend() {
       return categoryBenchmarkVisibilityTrend_;
     }
+
     /**
      *
      *
@@ -1653,6 +1702,7 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

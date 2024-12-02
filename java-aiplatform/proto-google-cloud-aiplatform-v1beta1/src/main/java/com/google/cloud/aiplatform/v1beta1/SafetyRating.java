@@ -33,6 +33,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SafetyRating)
     SafetyRatingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SafetyRating.newBuilder() to construct.
   private SafetyRating(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,6 +139,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * <code>HARM_PROBABILITY_UNSPECIFIED = 0;</code>
      */
     public static final int HARM_PROBABILITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +150,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * <code>NEGLIGIBLE = 1;</code>
      */
     public static final int NEGLIGIBLE_VALUE = 1;
+
     /**
      *
      *
@@ -158,6 +161,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW = 2;</code>
      */
     public static final int LOW_VALUE = 2;
+
     /**
      *
      *
@@ -168,6 +172,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * <code>MEDIUM = 3;</code>
      */
     public static final int MEDIUM_VALUE = 3;
+
     /**
      *
      *
@@ -341,6 +346,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * <code>HARM_SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int HARM_SEVERITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -351,6 +357,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * <code>HARM_SEVERITY_NEGLIGIBLE = 1;</code>
      */
     public static final int HARM_SEVERITY_NEGLIGIBLE_VALUE = 1;
+
     /**
      *
      *
@@ -361,6 +368,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * <code>HARM_SEVERITY_LOW = 2;</code>
      */
     public static final int HARM_SEVERITY_LOW_VALUE = 2;
+
     /**
      *
      *
@@ -371,6 +379,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * <code>HARM_SEVERITY_MEDIUM = 3;</code>
      */
     public static final int HARM_SEVERITY_MEDIUM_VALUE = 3;
+
     /**
      *
      *
@@ -471,6 +480,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CATEGORY_FIELD_NUMBER = 1;
   private int category_ = 0;
+
   /**
    *
    *
@@ -488,6 +498,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
   public int getCategoryValue() {
     return category_;
   }
+
   /**
    *
    *
@@ -510,6 +521,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROBABILITY_FIELD_NUMBER = 2;
   private int probability_ = 0;
+
   /**
    *
    *
@@ -527,6 +539,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
   public int getProbabilityValue() {
     return probability_;
   }
+
   /**
    *
    *
@@ -551,6 +564,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROBABILITY_SCORE_FIELD_NUMBER = 5;
   private float probabilityScore_ = 0F;
+
   /**
    *
    *
@@ -569,6 +583,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 6;
   private int severity_ = 0;
+
   /**
    *
    *
@@ -586,6 +601,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
+
   /**
    *
    *
@@ -610,6 +626,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_SCORE_FIELD_NUMBER = 7;
   private float severityScore_ = 0F;
+
   /**
    *
    *
@@ -628,6 +645,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BLOCKED_FIELD_NUMBER = 3;
   private boolean blocked_ = false;
+
   /**
    *
    *
@@ -863,6 +881,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1110,6 +1129,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int category_ = 0;
+
     /**
      *
      *
@@ -1127,6 +1147,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     public int getCategoryValue() {
       return category_;
     }
+
     /**
      *
      *
@@ -1147,6 +1168,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1190,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.HarmCategory.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1191,6 +1214,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1236,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int probability_ = 0;
+
     /**
      *
      *
@@ -1229,6 +1254,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     public int getProbabilityValue() {
       return probability_;
     }
+
     /**
      *
      *
@@ -1249,6 +1275,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1297,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmProbability.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1294,6 +1322,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1344,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float probabilityScore_;
+
     /**
      *
      *
@@ -1330,6 +1360,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     public float getProbabilityScore() {
       return probabilityScore_;
     }
+
     /**
      *
      *
@@ -1349,6 +1380,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1400,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int severity_ = 0;
+
     /**
      *
      *
@@ -1385,6 +1418,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
+
     /**
      *
      *
@@ -1405,6 +1439,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1426,6 +1461,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1450,6 +1486,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1508,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float severityScore_;
+
     /**
      *
      *
@@ -1486,6 +1524,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     public float getSeverityScore() {
       return severityScore_;
     }
+
     /**
      *
      *
@@ -1505,6 +1544,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1524,6 +1564,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean blocked_;
+
     /**
      *
      *
@@ -1540,6 +1581,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     public boolean getBlocked() {
       return blocked_;
     }
+
     /**
      *
      *
@@ -1560,6 +1602,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

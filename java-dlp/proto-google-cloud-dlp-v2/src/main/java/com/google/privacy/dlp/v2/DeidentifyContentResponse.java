@@ -33,6 +33,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DeidentifyContentResponse)
     DeidentifyContentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeidentifyContentResponse.newBuilder() to construct.
   private DeidentifyContentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int ITEM_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.ContentItem item_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
   public boolean hasItem() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
 
   public static final int OVERVIEW_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.TransformationOverview overview_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
   public boolean hasOverview() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.TransformationOverview.getDefaultInstance()
         : overview_;
   }
+
   /**
    *
    *
@@ -336,6 +343,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +566,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.ContentItem.Builder,
             com.google.privacy.dlp.v2.ContentItemOrBuilder>
         itemBuilder_;
+
     /**
      *
      *
@@ -572,6 +581,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
     public boolean hasItem() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -590,6 +600,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
         return itemBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -612,6 +623,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +643,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +691,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +706,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       onChanged();
       return getItemFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -707,6 +723,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
         return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
       }
     }
+
     /**
      *
      *
@@ -739,6 +756,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.TransformationOverview.Builder,
             com.google.privacy.dlp.v2.TransformationOverviewOrBuilder>
         overviewBuilder_;
+
     /**
      *
      *
@@ -753,6 +771,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
     public boolean hasOverview() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -773,6 +792,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
         return overviewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -795,6 +815,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +836,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +864,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +884,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +899,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
       onChanged();
       return getOverviewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -893,6 +918,7 @@ public final class DeidentifyContentResponse extends com.google.protobuf.Generat
             : overview_;
       }
     }
+
     /**
      *
      *

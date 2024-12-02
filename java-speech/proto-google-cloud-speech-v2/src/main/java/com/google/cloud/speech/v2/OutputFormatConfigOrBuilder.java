@@ -38,6 +38,7 @@ public interface OutputFormatConfigOrBuilder
    * @return Whether the native field is set.
    */
   boolean hasNative();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface OutputFormatConfigOrBuilder
    * @return The native.
    */
   com.google.cloud.speech.v2.NativeOutputFileFormatConfig getNative();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface OutputFormatConfigOrBuilder
    * @return Whether the vtt field is set.
    */
   boolean hasVtt();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface OutputFormatConfigOrBuilder
    * @return The vtt.
    */
   com.google.cloud.speech.v2.VttOutputFileFormatConfig getVtt();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface OutputFormatConfigOrBuilder
    * @return Whether the srt field is set.
    */
   boolean hasSrt();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface OutputFormatConfigOrBuilder
    * @return The srt.
    */
   com.google.cloud.speech.v2.SrtOutputFileFormatConfig getSrt();
+
   /**
    *
    *

@@ -256,7 +256,8 @@ public class AccessApprovalSettingsName implements ResourceName {
     private Builder(AccessApprovalSettingsName accessApprovalSettingsName) {
       Preconditions.checkArgument(
           Objects.equals(accessApprovalSettingsName.pathTemplate, PROJECT),
-          "toBuilder is only supported when AccessApprovalSettingsName has the pattern of projects/{project}/accessApprovalSettings");
+          "toBuilder is only supported when AccessApprovalSettingsName has the pattern of"
+              + " projects/{project}/accessApprovalSettings");
       this.project = accessApprovalSettingsName.project;
     }
 

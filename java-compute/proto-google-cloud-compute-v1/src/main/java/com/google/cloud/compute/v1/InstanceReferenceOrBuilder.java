@@ -36,6 +36,7 @@ public interface InstanceReferenceOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceReferenceOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DeleteGlobalAddressRequestOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteGlobalAddressRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeleteGlobalAddressRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteGlobalAddressRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

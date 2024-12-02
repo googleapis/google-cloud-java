@@ -33,6 +33,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.GcsFilesetSpec)
     GcsFilesetSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcsFilesetSpec.newBuilder() to construct.
   private GcsFilesetSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList filePatterns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getFilePatternsList() {
     return filePatterns_;
   }
+
   /**
    *
    *
@@ -151,6 +154,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   public int getFilePatternsCount() {
     return filePatterns_.size();
   }
+
   /**
    *
    *
@@ -193,6 +197,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getFilePatterns(int index) {
     return filePatterns_.get(index);
   }
+
   /**
    *
    *
@@ -240,6 +245,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1beta1.GcsFileSpec> sampleGcsFileSpecs_;
+
   /**
    *
    *
@@ -257,6 +263,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       getSampleGcsFileSpecsList() {
     return sampleGcsFileSpecs_;
   }
+
   /**
    *
    *
@@ -274,6 +281,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       getSampleGcsFileSpecsOrBuilderList() {
     return sampleGcsFileSpecs_;
   }
+
   /**
    *
    *
@@ -290,6 +298,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   public int getSampleGcsFileSpecsCount() {
     return sampleGcsFileSpecs_.size();
   }
+
   /**
    *
    *
@@ -306,6 +315,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1beta1.GcsFileSpec getSampleGcsFileSpecs(int index) {
     return sampleGcsFileSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -502,6 +512,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -763,6 +774,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -805,6 +817,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       filePatterns_.makeImmutable();
       return filePatterns_;
     }
+
     /**
      *
      *
@@ -846,6 +859,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     public int getFilePatternsCount() {
       return filePatterns_.size();
     }
+
     /**
      *
      *
@@ -888,6 +902,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getFilePatterns(int index) {
       return filePatterns_.get(index);
     }
+
     /**
      *
      *
@@ -930,6 +945,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFilePatternsBytes(int index) {
       return filePatterns_.getByteString(index);
     }
+
     /**
      *
      *
@@ -980,6 +996,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1046,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1093,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1139,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1229,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
         return sampleGcsFileSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1249,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
         return sampleGcsFileSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1269,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
         return sampleGcsFileSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1273,6 +1296,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1320,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1346,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1347,6 +1373,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1397,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1421,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1416,6 +1445,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1468,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1460,6 +1491,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1508,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSampleGcsFileSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1496,6 +1529,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
         return sampleGcsFileSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1516,6 +1550,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(sampleGcsFileSpecs_);
       }
     }
+
     /**
      *
      *
@@ -1532,6 +1567,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       return getSampleGcsFileSpecsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1beta1.GcsFileSpec.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1549,6 +1585,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       return getSampleGcsFileSpecsFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1beta1.GcsFileSpec.getDefaultInstance());
     }
+
     /**
      *
      *

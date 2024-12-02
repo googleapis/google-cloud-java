@@ -37,6 +37,7 @@ public interface UpdateEntryRequestOrBuilder
    * @return Whether the entry field is set.
    */
   boolean hasEntry();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateEntryRequestOrBuilder
    * @return The entry.
    */
   com.google.cloud.dataplex.v1.Entry getEntry();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateEntryRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface UpdateEntryRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public interface UpdateEntryRequestOrBuilder
    * @return A list containing the aspectKeys.
    */
   java.util.List<java.lang.String> getAspectKeysList();
+
   /**
    *
    *
@@ -199,6 +204,7 @@ public interface UpdateEntryRequestOrBuilder
    * @return The count of aspectKeys.
    */
   int getAspectKeysCount();
+
   /**
    *
    *
@@ -229,6 +235,7 @@ public interface UpdateEntryRequestOrBuilder
    * @return The aspectKeys at the given index.
    */
   java.lang.String getAspectKeys(int index);
+
   /**
    *
    *

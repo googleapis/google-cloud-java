@@ -35,6 +35,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest)
     RemoveFulfillmentPlacesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveFulfillmentPlacesRequest.newBuilder() to construct.
   private RemoveFulfillmentPlacesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object product_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -230,6 +235,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList placeIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -253,6 +259,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getPlaceIdsList() {
     return placeIds_;
   }
+
   /**
    *
    *
@@ -276,6 +283,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   public int getPlaceIdsCount() {
     return placeIds_.size();
   }
+
   /**
    *
    *
@@ -300,6 +308,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   public java.lang.String getPlaceIds(int index) {
     return placeIds_.get(index);
   }
+
   /**
    *
    *
@@ -327,6 +336,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
 
   public static final int REMOVE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp removeTime_;
+
   /**
    *
    *
@@ -344,6 +354,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   public boolean hasRemoveTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -361,6 +372,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   public com.google.protobuf.Timestamp getRemoveTime() {
     return removeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : removeTime_;
   }
+
   /**
    *
    *
@@ -379,6 +391,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 5;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -608,6 +621,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -876,6 +890,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object product_ = "";
+
     /**
      *
      *
@@ -906,6 +921,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -936,6 +952,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -965,6 +982,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1008,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1041,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -1063,6 +1083,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1125,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1166,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1203,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1255,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1255,6 +1280,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       placeIds_.makeImmutable();
       return placeIds_;
     }
+
     /**
      *
      *
@@ -1278,6 +1304,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public int getPlaceIdsCount() {
       return placeIds_.size();
     }
+
     /**
      *
      *
@@ -1302,6 +1329,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public java.lang.String getPlaceIds(int index) {
       return placeIds_.get(index);
     }
+
     /**
      *
      *
@@ -1326,6 +1354,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getPlaceIdsBytes(int index) {
       return placeIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1358,6 +1387,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1419,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1448,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1444,6 +1476,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1516,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         removeTimeBuilder_;
+
     /**
      *
      *
@@ -1499,6 +1533,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public boolean hasRemoveTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1521,6 +1556,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
         return removeTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1545,6 +1581,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1566,6 +1603,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1595,6 +1633,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1655,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1632,6 +1672,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return getRemoveTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1652,6 +1693,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
             : removeTime_;
       }
     }
+
     /**
      *
      *
@@ -1681,6 +1723,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -1701,6 +1744,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -1725,6 +1769,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

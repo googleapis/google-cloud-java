@@ -38,6 +38,7 @@ public interface GetCloneJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

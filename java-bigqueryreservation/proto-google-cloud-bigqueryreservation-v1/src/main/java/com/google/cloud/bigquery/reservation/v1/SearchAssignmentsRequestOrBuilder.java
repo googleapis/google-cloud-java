@@ -40,6 +40,7 @@ public interface SearchAssignmentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SearchAssignmentsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface SearchAssignmentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

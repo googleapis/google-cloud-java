@@ -36,6 +36,7 @@ public interface MigrateResourceResponseOrBuilder
    * @return Whether the dataset field is set.
    */
   boolean hasDataset();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MigrateResourceResponseOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface MigrateResourceResponseOrBuilder
    * @return Whether the model field is set.
    */
   boolean hasModel();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface MigrateResourceResponseOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface MigrateResourceResponseOrBuilder
    * @return Whether the migratableResource field is set.
    */
   boolean hasMigratableResource();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface MigrateResourceResponseOrBuilder
    * @return The migratableResource.
    */
   com.google.cloud.aiplatform.v1beta1.MigratableResource getMigratableResource();
+
   /**
    *
    *

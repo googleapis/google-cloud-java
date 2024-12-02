@@ -36,6 +36,7 @@ public interface DataLabelingJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface DataLabelingJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface DataLabelingJobOrBuilder
    * @return A list containing the datasets.
    */
   java.util.List<java.lang.String> getDatasetsList();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface DataLabelingJobOrBuilder
    * @return The count of datasets.
    */
   int getDatasetsCount();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface DataLabelingJobOrBuilder
    * @return The datasets at the given index.
    */
   java.lang.String getDatasets(int index);
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface DataLabelingJobOrBuilder
    * <code>map&lt;string, string&gt; annotation_labels = 12;</code>
    */
   int getAnnotationLabelsCount();
+
   /**
    *
    *
@@ -181,9 +187,11 @@ public interface DataLabelingJobOrBuilder
    * <code>map&lt;string, string&gt; annotation_labels = 12;</code>
    */
   boolean containsAnnotationLabels(java.lang.String key);
+
   /** Use {@link #getAnnotationLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotationLabels();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface DataLabelingJobOrBuilder
    * <code>map&lt;string, string&gt; annotation_labels = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationLabelsMap();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface DataLabelingJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public interface DataLabelingJobOrBuilder
    * @return The instructionUri.
    */
   java.lang.String getInstructionUri();
+
   /**
    *
    *
@@ -298,6 +309,7 @@ public interface DataLabelingJobOrBuilder
    * @return The inputsSchemaUri.
    */
   java.lang.String getInputsSchemaUri();
+
   /**
    *
    *
@@ -327,6 +339,7 @@ public interface DataLabelingJobOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
+
   /**
    *
    *
@@ -339,6 +352,7 @@ public interface DataLabelingJobOrBuilder
    * @return The inputs.
    */
   com.google.protobuf.Value getInputs();
+
   /**
    *
    *
@@ -364,6 +378,7 @@ public interface DataLabelingJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -407,6 +422,7 @@ public interface DataLabelingJobOrBuilder
    * @return Whether the currentSpend field is set.
    */
   boolean hasCurrentSpend();
+
   /**
    *
    *
@@ -421,6 +437,7 @@ public interface DataLabelingJobOrBuilder
    * @return The currentSpend.
    */
   com.google.type.Money getCurrentSpend();
+
   /**
    *
    *
@@ -447,6 +464,7 @@ public interface DataLabelingJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -460,6 +478,7 @@ public interface DataLabelingJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -485,6 +504,7 @@ public interface DataLabelingJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -498,6 +518,7 @@ public interface DataLabelingJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -523,6 +544,7 @@ public interface DataLabelingJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -536,6 +558,7 @@ public interface DataLabelingJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -570,6 +593,7 @@ public interface DataLabelingJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -592,9 +616,11 @@ public interface DataLabelingJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -617,6 +643,7 @@ public interface DataLabelingJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -643,6 +670,7 @@ public interface DataLabelingJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -678,6 +706,7 @@ public interface DataLabelingJobOrBuilder
    * @return A list containing the specialistPools.
    */
   java.util.List<java.lang.String> getSpecialistPoolsList();
+
   /**
    *
    *
@@ -690,6 +719,7 @@ public interface DataLabelingJobOrBuilder
    * @return The count of specialistPools.
    */
   int getSpecialistPoolsCount();
+
   /**
    *
    *
@@ -703,6 +733,7 @@ public interface DataLabelingJobOrBuilder
    * @return The specialistPools at the given index.
    */
   java.lang.String getSpecialistPools(int index);
+
   /**
    *
    *
@@ -733,6 +764,7 @@ public interface DataLabelingJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -749,6 +781,7 @@ public interface DataLabelingJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *
@@ -778,6 +811,7 @@ public interface DataLabelingJobOrBuilder
    * @return Whether the activeLearningConfig field is set.
    */
   boolean hasActiveLearningConfig();
+
   /**
    *
    *
@@ -792,6 +826,7 @@ public interface DataLabelingJobOrBuilder
    * @return The activeLearningConfig.
    */
   com.google.cloud.aiplatform.v1.ActiveLearningConfig getActiveLearningConfig();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
   java.util.List<
           com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy>
       getFirewallPolicysList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    */
   com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       getFirewallPolicys(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    * </code>
    */
   int getFirewallPolicysCount();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
               com.google.cloud.compute.v1
                   .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrBuilder>
       getFirewallPolicysOrBuilderList();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.Firewall firewalls = 272245619;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Firewall> getFirewallsList();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.Firewall firewalls = 272245619;</code>
    */
   com.google.cloud.compute.v1.Firewall getFirewalls(int index);
+
   /**
    *
    *
@@ -123,6 +129,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.Firewall firewalls = 272245619;</code>
    */
   int getFirewallsCount();
+
   /**
    *
    *
@@ -134,6 +141,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallOrBuilder>
       getFirewallsOrBuilderList();
+
   /**
    *
    *

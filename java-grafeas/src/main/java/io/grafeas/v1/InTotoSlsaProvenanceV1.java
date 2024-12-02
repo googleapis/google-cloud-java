@@ -26,6 +26,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoSlsaProvenanceV1)
     InTotoSlsaProvenanceV1OrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InTotoSlsaProvenanceV1.newBuilder() to construct.
   private InTotoSlsaProvenanceV1(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,12 +70,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return Whether the buildDefinition field is set.
      */
     boolean hasBuildDefinition();
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code>
      *
      * @return The buildDefinition.
      */
     io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition getBuildDefinition();
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
     io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinitionOrBuilder getBuildDefinitionOrBuilder();
 
@@ -84,15 +87,18 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return Whether the runDetails field is set.
      */
     boolean hasRunDetails();
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code>
      *
      * @return The runDetails.
      */
     io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails getRunDetails();
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
     io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetailsOrBuilder getRunDetailsOrBuilder();
   }
+
   /**
    *
    *
@@ -109,6 +115,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1)
       SlsaProvenanceV1OrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SlsaProvenanceV1.newBuilder() to construct.
     private SlsaProvenanceV1(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -140,6 +147,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     private int bitField0_;
     public static final int BUILD_DEFINITION_FIELD_NUMBER = 1;
     private io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition buildDefinition_;
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code>
      *
@@ -149,6 +157,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasBuildDefinition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code>
      *
@@ -160,6 +169,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           ? io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition.getDefaultInstance()
           : buildDefinition_;
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
     @java.lang.Override
     public io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinitionOrBuilder
@@ -171,6 +181,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     public static final int RUN_DETAILS_FIELD_NUMBER = 2;
     private io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails runDetails_;
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code>
      *
@@ -180,6 +191,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasRunDetails() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code>
      *
@@ -191,6 +203,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           ? io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails.getDefaultInstance()
           : runDetails_;
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
     @java.lang.Override
     public io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetailsOrBuilder getRunDetailsOrBuilder() {
@@ -379,6 +392,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -609,6 +623,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition.Builder,
               io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinitionOrBuilder>
           buildDefinitionBuilder_;
+
       /**
        * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code>
        *
@@ -617,6 +632,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public boolean hasBuildDefinition() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code>
        *
@@ -631,6 +647,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return buildDefinitionBuilder_.getMessage();
         }
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
       public Builder setBuildDefinition(
           io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition value) {
@@ -646,6 +663,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
       public Builder setBuildDefinition(
           io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition.Builder builderForValue) {
@@ -658,6 +676,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
       public Builder mergeBuildDefinition(
           io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition value) {
@@ -679,6 +698,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
       public Builder clearBuildDefinition() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -690,6 +710,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
       public io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition.Builder
           getBuildDefinitionBuilder() {
@@ -697,6 +718,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return getBuildDefinitionFieldBuilder().getBuilder();
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
       public io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinitionOrBuilder
           getBuildDefinitionOrBuilder() {
@@ -708,6 +730,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               : buildDefinition_;
         }
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition build_definition = 1;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               io.grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition,
@@ -732,6 +755,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails.Builder,
               io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetailsOrBuilder>
           runDetailsBuilder_;
+
       /**
        * <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code>
        *
@@ -740,6 +764,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public boolean hasRunDetails() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code>
        *
@@ -754,6 +779,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return runDetailsBuilder_.getMessage();
         }
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
       public Builder setRunDetails(io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails value) {
         if (runDetailsBuilder_ == null) {
@@ -768,6 +794,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
       public Builder setRunDetails(
           io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails.Builder builderForValue) {
@@ -780,6 +807,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
       public Builder mergeRunDetails(io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails value) {
         if (runDetailsBuilder_ == null) {
@@ -800,6 +828,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
       public Builder clearRunDetails() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -811,12 +840,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
       public io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails.Builder getRunDetailsBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getRunDetailsFieldBuilder().getBuilder();
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
       public io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetailsOrBuilder getRunDetailsOrBuilder() {
         if (runDetailsBuilder_ != null) {
@@ -827,6 +858,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               : runDetails_;
         }
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails run_details = 2;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               io.grafeas.v1.InTotoSlsaProvenanceV1.RunDetails,
@@ -920,6 +952,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return The buildType.
      */
     java.lang.String getBuildType();
+
     /**
      * <code>string build_type = 1;</code>
      *
@@ -933,12 +966,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return Whether the externalParameters field is set.
      */
     boolean hasExternalParameters();
+
     /**
      * <code>.google.protobuf.Struct external_parameters = 2;</code>
      *
      * @return The externalParameters.
      */
     com.google.protobuf.Struct getExternalParameters();
+
     /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
     com.google.protobuf.StructOrBuilder getExternalParametersOrBuilder();
 
@@ -948,12 +983,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return Whether the internalParameters field is set.
      */
     boolean hasInternalParameters();
+
     /**
      * <code>.google.protobuf.Struct internal_parameters = 3;</code>
      *
      * @return The internalParameters.
      */
     com.google.protobuf.Struct getInternalParameters();
+
     /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
     com.google.protobuf.StructOrBuilder getInternalParametersOrBuilder();
 
@@ -964,18 +1001,21 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      */
     java.util.List<io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor>
         getResolvedDependenciesList();
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
      * </code>
      */
     io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor getResolvedDependencies(int index);
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
      * </code>
      */
     int getResolvedDependenciesCount();
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -983,6 +1023,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      */
     java.util.List<? extends io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptorOrBuilder>
         getResolvedDependenciesOrBuilderList();
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -991,12 +1032,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptorOrBuilder
         getResolvedDependenciesOrBuilder(int index);
   }
+
   /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition} */
   public static final class BuildDefinition extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition)
       BuildDefinitionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BuildDefinition.newBuilder() to construct.
     private BuildDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1033,6 +1076,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object buildType_ = "";
+
     /**
      * <code>string build_type = 1;</code>
      *
@@ -1050,6 +1094,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      * <code>string build_type = 1;</code>
      *
@@ -1070,6 +1115,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     public static final int EXTERNAL_PARAMETERS_FIELD_NUMBER = 2;
     private com.google.protobuf.Struct externalParameters_;
+
     /**
      * <code>.google.protobuf.Struct external_parameters = 2;</code>
      *
@@ -1079,6 +1125,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasExternalParameters() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>.google.protobuf.Struct external_parameters = 2;</code>
      *
@@ -1090,6 +1137,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           ? com.google.protobuf.Struct.getDefaultInstance()
           : externalParameters_;
     }
+
     /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getExternalParametersOrBuilder() {
@@ -1100,6 +1148,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     public static final int INTERNAL_PARAMETERS_FIELD_NUMBER = 3;
     private com.google.protobuf.Struct internalParameters_;
+
     /**
      * <code>.google.protobuf.Struct internal_parameters = 3;</code>
      *
@@ -1109,6 +1158,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasInternalParameters() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>.google.protobuf.Struct internal_parameters = 3;</code>
      *
@@ -1120,6 +1170,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           ? com.google.protobuf.Struct.getDefaultInstance()
           : internalParameters_;
     }
+
     /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getInternalParametersOrBuilder() {
@@ -1133,6 +1184,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private java.util.List<io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor>
         resolvedDependencies_;
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -1143,6 +1195,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         getResolvedDependenciesList() {
       return resolvedDependencies_;
     }
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -1154,6 +1207,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         getResolvedDependenciesOrBuilderList() {
       return resolvedDependencies_;
     }
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -1163,6 +1217,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public int getResolvedDependenciesCount() {
       return resolvedDependencies_.size();
     }
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -1173,6 +1228,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         int index) {
       return resolvedDependencies_.get(index);
     }
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -1388,6 +1444,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.BuildDefinition} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -1686,6 +1743,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object buildType_ = "";
+
       /**
        * <code>string build_type = 1;</code>
        *
@@ -1702,6 +1760,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string build_type = 1;</code>
        *
@@ -1718,6 +1777,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string build_type = 1;</code>
        *
@@ -1733,6 +1793,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string build_type = 1;</code>
        *
@@ -1744,6 +1805,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string build_type = 1;</code>
        *
@@ -1767,6 +1829,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           externalParametersBuilder_;
+
       /**
        * <code>.google.protobuf.Struct external_parameters = 2;</code>
        *
@@ -1775,6 +1838,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public boolean hasExternalParameters() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <code>.google.protobuf.Struct external_parameters = 2;</code>
        *
@@ -1789,6 +1853,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return externalParametersBuilder_.getMessage();
         }
       }
+
       /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
       public Builder setExternalParameters(com.google.protobuf.Struct value) {
         if (externalParametersBuilder_ == null) {
@@ -1803,6 +1868,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
       public Builder setExternalParameters(com.google.protobuf.Struct.Builder builderForValue) {
         if (externalParametersBuilder_ == null) {
@@ -1814,6 +1880,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
       public Builder mergeExternalParameters(com.google.protobuf.Struct value) {
         if (externalParametersBuilder_ == null) {
@@ -1833,6 +1900,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
       public Builder clearExternalParameters() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1844,12 +1912,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
       public com.google.protobuf.Struct.Builder getExternalParametersBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getExternalParametersFieldBuilder().getBuilder();
       }
+
       /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
       public com.google.protobuf.StructOrBuilder getExternalParametersOrBuilder() {
         if (externalParametersBuilder_ != null) {
@@ -1860,6 +1930,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               : externalParameters_;
         }
       }
+
       /** <code>.google.protobuf.Struct external_parameters = 2;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Struct,
@@ -1884,6 +1955,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           internalParametersBuilder_;
+
       /**
        * <code>.google.protobuf.Struct internal_parameters = 3;</code>
        *
@@ -1892,6 +1964,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public boolean hasInternalParameters() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <code>.google.protobuf.Struct internal_parameters = 3;</code>
        *
@@ -1906,6 +1979,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return internalParametersBuilder_.getMessage();
         }
       }
+
       /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
       public Builder setInternalParameters(com.google.protobuf.Struct value) {
         if (internalParametersBuilder_ == null) {
@@ -1920,6 +1994,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
       public Builder setInternalParameters(com.google.protobuf.Struct.Builder builderForValue) {
         if (internalParametersBuilder_ == null) {
@@ -1931,6 +2006,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
       public Builder mergeInternalParameters(com.google.protobuf.Struct value) {
         if (internalParametersBuilder_ == null) {
@@ -1950,6 +2026,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
       public Builder clearInternalParameters() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1961,12 +2038,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
       public com.google.protobuf.Struct.Builder getInternalParametersBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getInternalParametersFieldBuilder().getBuilder();
       }
+
       /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
       public com.google.protobuf.StructOrBuilder getInternalParametersOrBuilder() {
         if (internalParametersBuilder_ != null) {
@@ -1977,6 +2056,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               : internalParameters_;
         }
       }
+
       /** <code>.google.protobuf.Struct internal_parameters = 3;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Struct,
@@ -2026,6 +2106,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return resolvedDependenciesBuilder_.getMessageList();
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2038,6 +2119,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return resolvedDependenciesBuilder_.getCount();
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2051,6 +2133,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return resolvedDependenciesBuilder_.getMessage(index);
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2070,6 +2153,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2087,6 +2171,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2106,6 +2191,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2125,6 +2211,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2141,6 +2228,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2158,6 +2246,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2175,6 +2264,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2190,6 +2280,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2205,6 +2296,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2214,6 +2306,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           getResolvedDependenciesBuilder(int index) {
         return getResolvedDependenciesFieldBuilder().getBuilder(index);
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2227,6 +2320,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return resolvedDependenciesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2241,6 +2335,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(resolvedDependencies_);
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2252,6 +2347,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
             .addBuilder(
                 io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor.getDefaultInstance());
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2264,6 +2360,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
                 index,
                 io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor.getDefaultInstance());
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor resolved_dependencies = 4;
@@ -2369,6 +2466,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      * <code>string name = 1;</code>
      *
@@ -2382,6 +2480,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      * <code>string uri = 2;</code>
      *
@@ -2391,19 +2490,24 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     int getDigestCount();
+
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     boolean containsDigest(java.lang.String key);
+
     /** Use {@link #getDigestMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getDigest();
+
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     java.util.Map<java.lang.String, java.lang.String> getDigestMap();
+
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     /* nullable */
     java.lang.String getDigestOrDefault(
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     java.lang.String getDigestOrThrow(java.lang.String key);
 
@@ -2420,6 +2524,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return The downloadLocation.
      */
     java.lang.String getDownloadLocation();
+
     /**
      * <code>string download_location = 5;</code>
      *
@@ -2433,6 +2538,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return The mediaType.
      */
     java.lang.String getMediaType();
+
     /**
      * <code>string media_type = 6;</code>
      *
@@ -2442,28 +2548,35 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     int getAnnotationsCount();
+
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     boolean containsAnnotations(java.lang.String key);
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.protobuf.Value> getAnnotations();
+
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     java.util.Map<java.lang.String, com.google.protobuf.Value> getAnnotationsMap();
+
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     /* nullable */
     com.google.protobuf.Value getAnnotationsOrDefault(
         java.lang.String key,
         /* nullable */
         com.google.protobuf.Value defaultValue);
+
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     com.google.protobuf.Value getAnnotationsOrThrow(java.lang.String key);
   }
+
   /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor} */
   public static final class ResourceDescriptor extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor)
       ResourceDescriptorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResourceDescriptor.newBuilder() to construct.
     private ResourceDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2516,6 +2629,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      * <code>string name = 1;</code>
      *
@@ -2533,6 +2647,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      * <code>string name = 1;</code>
      *
@@ -2555,6 +2670,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      * <code>string uri = 2;</code>
      *
@@ -2572,6 +2688,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      * <code>string uri = 2;</code>
      *
@@ -2616,6 +2733,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public int getDigestCount() {
       return internalGetDigest().getMap().size();
     }
+
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     @java.lang.Override
     public boolean containsDigest(java.lang.String key) {
@@ -2624,17 +2742,20 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return internalGetDigest().getMap().containsKey(key);
     }
+
     /** Use {@link #getDigestMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDigest() {
       return getDigestMap();
     }
+
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
       return internalGetDigest().getMap();
     }
+
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     @java.lang.Override
     public /* nullable */ java.lang.String getDigestOrDefault(
@@ -2647,6 +2768,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /** <code>map&lt;string, string&gt; digest = 3;</code> */
     @java.lang.Override
     public java.lang.String getDigestOrThrow(java.lang.String key) {
@@ -2662,6 +2784,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     public static final int CONTENT_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      * <code>bytes content = 4;</code>
      *
@@ -2676,6 +2799,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object downloadLocation_ = "";
+
     /**
      * <code>string download_location = 5;</code>
      *
@@ -2693,6 +2817,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      * <code>string download_location = 5;</code>
      *
@@ -2715,6 +2840,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object mediaType_ = "";
+
     /**
      * <code>string media_type = 6;</code>
      *
@@ -2732,6 +2858,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      * <code>string media_type = 6;</code>
      *
@@ -2780,6 +2907,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -2788,17 +2916,20 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     @java.lang.Override
     public /* nullable */ com.google.protobuf.Value getAnnotationsOrDefault(
@@ -2812,6 +2943,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
     @java.lang.Override
     public com.google.protobuf.Value getAnnotationsOrThrow(java.lang.String key) {
@@ -3057,6 +3189,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -3359,6 +3492,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3375,6 +3509,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3391,6 +3526,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3406,6 +3542,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3417,6 +3554,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -3435,6 +3573,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object uri_ = "";
+
       /**
        * <code>string uri = 2;</code>
        *
@@ -3451,6 +3590,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string uri = 2;</code>
        *
@@ -3467,6 +3607,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string uri = 2;</code>
        *
@@ -3482,6 +3623,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string uri = 2;</code>
        *
@@ -3493,6 +3635,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string uri = 2;</code>
        *
@@ -3535,6 +3678,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public int getDigestCount() {
         return internalGetDigest().getMap().size();
       }
+
       /** <code>map&lt;string, string&gt; digest = 3;</code> */
       @java.lang.Override
       public boolean containsDigest(java.lang.String key) {
@@ -3543,17 +3687,20 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return internalGetDigest().getMap().containsKey(key);
       }
+
       /** Use {@link #getDigestMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getDigest() {
         return getDigestMap();
       }
+
       /** <code>map&lt;string, string&gt; digest = 3;</code> */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
         return internalGetDigest().getMap();
       }
+
       /** <code>map&lt;string, string&gt; digest = 3;</code> */
       @java.lang.Override
       public /* nullable */ java.lang.String getDigestOrDefault(
@@ -3566,6 +3713,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /** <code>map&lt;string, string&gt; digest = 3;</code> */
       @java.lang.Override
       public java.lang.String getDigestOrThrow(java.lang.String key) {
@@ -3584,6 +3732,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         internalGetMutableDigest().getMutableMap().clear();
         return this;
       }
+
       /** <code>map&lt;string, string&gt; digest = 3;</code> */
       public Builder removeDigest(java.lang.String key) {
         if (key == null) {
@@ -3592,12 +3741,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         internalGetMutableDigest().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
         bitField0_ |= 0x00000004;
         return internalGetMutableDigest().getMutableMap();
       }
+
       /** <code>map&lt;string, string&gt; digest = 3;</code> */
       public Builder putDigest(java.lang.String key, java.lang.String value) {
         if (key == null) {
@@ -3610,6 +3761,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000004;
         return this;
       }
+
       /** <code>map&lt;string, string&gt; digest = 3;</code> */
       public Builder putAllDigest(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableDigest().getMutableMap().putAll(values);
@@ -3618,6 +3770,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
 
       private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
       /**
        * <code>bytes content = 4;</code>
        *
@@ -3627,6 +3780,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getContent() {
         return content_;
       }
+
       /**
        * <code>bytes content = 4;</code>
        *
@@ -3642,6 +3796,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>bytes content = 4;</code>
        *
@@ -3655,6 +3810,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object downloadLocation_ = "";
+
       /**
        * <code>string download_location = 5;</code>
        *
@@ -3671,6 +3827,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string download_location = 5;</code>
        *
@@ -3687,6 +3844,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string download_location = 5;</code>
        *
@@ -3702,6 +3860,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string download_location = 5;</code>
        *
@@ -3713,6 +3872,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string download_location = 5;</code>
        *
@@ -3731,6 +3891,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object mediaType_ = "";
+
       /**
        * <code>string media_type = 6;</code>
        *
@@ -3747,6 +3908,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string media_type = 6;</code>
        *
@@ -3763,6 +3925,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string media_type = 6;</code>
        *
@@ -3778,6 +3941,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string media_type = 6;</code>
        *
@@ -3789,6 +3953,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string media_type = 6;</code>
        *
@@ -3822,7 +3987,8 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
             defaultEntry() {
           return AnnotationsDefaultEntryHolder.defaultEntry;
         }
-      };
+      }
+      ;
 
       private static final AnnotationsConverter annotationsConverter = new AnnotationsConverter();
 
@@ -3862,6 +4028,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public int getAnnotationsCount() {
         return internalGetAnnotations().ensureBuilderMap().size();
       }
+
       /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
       @java.lang.Override
       public boolean containsAnnotations(java.lang.String key) {
@@ -3870,17 +4037,20 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return internalGetAnnotations().ensureBuilderMap().containsKey(key);
       }
+
       /** Use {@link #getAnnotationsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getAnnotations() {
         return getAnnotationsMap();
       }
+
       /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
       @java.lang.Override
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getAnnotationsMap() {
         return internalGetAnnotations().getImmutableMap();
       }
+
       /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
       @java.lang.Override
       public /* nullable */ com.google.protobuf.Value getAnnotationsOrDefault(
@@ -3894,6 +4064,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
             internalGetMutableAnnotations().ensureBuilderMap();
         return map.containsKey(key) ? annotationsConverter.build(map.get(key)) : defaultValue;
       }
+
       /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
       @java.lang.Override
       public com.google.protobuf.Value getAnnotationsOrThrow(java.lang.String key) {
@@ -3913,6 +4084,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         internalGetMutableAnnotations().clear();
         return this;
       }
+
       /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
       public Builder removeAnnotations(java.lang.String key) {
         if (key == null) {
@@ -3921,12 +4093,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         internalGetMutableAnnotations().ensureBuilderMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableAnnotations() {
         bitField0_ |= 0x00000040;
         return internalGetMutableAnnotations().ensureMessageMap();
       }
+
       /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
       public Builder putAnnotations(java.lang.String key, com.google.protobuf.Value value) {
         if (key == null) {
@@ -3939,6 +4113,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000040;
         return this;
       }
+
       /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
       public Builder putAllAnnotations(
           java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
@@ -3952,6 +4127,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000040;
         return this;
       }
+
       /** <code>map&lt;string, .google.protobuf.Value&gt; annotations = 7;</code> */
       public com.google.protobuf.Value.Builder putAnnotationsBuilderIfAbsent(java.lang.String key) {
         java.util.Map<java.lang.String, com.google.protobuf.ValueOrBuilder> builderMap =
@@ -4043,12 +4219,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return Whether the builder field is set.
      */
     boolean hasBuilder();
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code>
      *
      * @return The builder.
      */
     io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder getBuilder();
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
     io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilderOrBuilder getBuilderOrBuilder();
 
@@ -4058,12 +4236,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code>
      *
      * @return The metadata.
      */
     io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata getMetadata();
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
     io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadataOrBuilder getMetadataOrBuilder();
 
@@ -4071,31 +4251,37 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
     java.util.List<io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor> getByproductsList();
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
     io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor getByproducts(int index);
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
     int getByproductsCount();
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
     java.util.List<? extends io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptorOrBuilder>
         getByproductsOrBuilderList();
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
     io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptorOrBuilder getByproductsOrBuilder(
         int index);
   }
+
   /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.RunDetails} */
   public static final class RunDetails extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoSlsaProvenanceV1.RunDetails)
       RunDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RunDetails.newBuilder() to construct.
     private RunDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4129,6 +4315,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     private int bitField0_;
     public static final int BUILDER_FIELD_NUMBER = 1;
     private io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder_;
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code>
      *
@@ -4138,6 +4325,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasBuilder() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code>
      *
@@ -4149,6 +4337,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           ? io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder.getDefaultInstance()
           : builder_;
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
     @java.lang.Override
     public io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilderOrBuilder getBuilderOrBuilder() {
@@ -4159,6 +4348,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     public static final int METADATA_FIELD_NUMBER = 2;
     private io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata_;
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code>
      *
@@ -4168,6 +4358,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code>
      *
@@ -4179,6 +4370,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           ? io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata.getDefaultInstance()
           : metadata_;
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
     @java.lang.Override
     public io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadataOrBuilder getMetadataOrBuilder() {
@@ -4191,6 +4383,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private java.util.List<io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor> byproducts_;
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
@@ -4199,6 +4392,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         getByproductsList() {
       return byproducts_;
     }
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
@@ -4208,6 +4402,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         getByproductsOrBuilderList() {
       return byproducts_;
     }
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
@@ -4215,6 +4410,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public int getByproductsCount() {
       return byproducts_.size();
     }
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
@@ -4222,6 +4418,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor getByproducts(int index) {
       return byproducts_.get(index);
     }
+
     /**
      * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
      */
@@ -4421,6 +4618,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.RunDetails} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -4701,6 +4899,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder.Builder,
               io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilderOrBuilder>
           builderBuilder_;
+
       /**
        * <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code>
        *
@@ -4709,6 +4908,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public boolean hasBuilder() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code>
        *
@@ -4723,6 +4923,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return builderBuilder_.getMessage();
         }
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
       public Builder setBuilder(io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder value) {
         if (builderBuilder_ == null) {
@@ -4737,6 +4938,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
       public Builder setBuilder(
           io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder.Builder builderForValue) {
@@ -4749,6 +4951,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
       public Builder mergeBuilder(io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder value) {
         if (builderBuilder_ == null) {
@@ -4769,6 +4972,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
       public Builder clearBuilder() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4780,12 +4984,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
       public io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder.Builder getBuilderBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getBuilderFieldBuilder().getBuilder();
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
       public io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilderOrBuilder getBuilderOrBuilder() {
         if (builderBuilder_ != null) {
@@ -4796,6 +5002,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               : builder_;
         }
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder builder = 1;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               io.grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder,
@@ -4820,6 +5027,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata.Builder,
               io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadataOrBuilder>
           metadataBuilder_;
+
       /**
        * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code>
        *
@@ -4828,6 +5036,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public boolean hasMetadata() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code>
        *
@@ -4842,6 +5051,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return metadataBuilder_.getMessage();
         }
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
       public Builder setMetadata(io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata value) {
         if (metadataBuilder_ == null) {
@@ -4856,6 +5066,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
       public Builder setMetadata(
           io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata.Builder builderForValue) {
@@ -4868,6 +5079,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
       public Builder mergeMetadata(io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata value) {
         if (metadataBuilder_ == null) {
@@ -4888,6 +5100,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
       public Builder clearMetadata() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -4899,12 +5112,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
       public io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata.Builder getMetadataBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getMetadataFieldBuilder().getBuilder();
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
       public io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadataOrBuilder getMetadataOrBuilder() {
         if (metadataBuilder_ != null) {
@@ -4915,6 +5130,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               : metadata_;
         }
       }
+
       /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata metadata = 2;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               io.grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata,
@@ -4962,6 +5178,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return byproductsBuilder_.getMessageList();
         }
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -4972,6 +5189,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return byproductsBuilder_.getCount();
         }
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -4982,6 +5200,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return byproductsBuilder_.getMessage(index);
         }
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -4999,6 +5218,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5014,6 +5234,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5030,6 +5251,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5047,6 +5269,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5061,6 +5284,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5076,6 +5300,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5091,6 +5316,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5104,6 +5330,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5117,6 +5344,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5124,6 +5352,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           int index) {
         return getByproductsFieldBuilder().getBuilder(index);
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5135,6 +5364,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return byproductsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5147,6 +5377,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(byproducts_);
         }
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5156,6 +5387,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
             .addBuilder(
                 io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor.getDefaultInstance());
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5166,6 +5398,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
                 index,
                 io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor.getDefaultInstance());
       }
+
       /**
        * <code>repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor byproducts = 3;</code>
        */
@@ -5266,6 +5499,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      * <code>string id = 1;</code>
      *
@@ -5275,19 +5509,24 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     int getVersionCount();
+
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     boolean containsVersion(java.lang.String key);
+
     /** Use {@link #getVersionMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getVersion();
+
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     java.util.Map<java.lang.String, java.lang.String> getVersionMap();
+
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     /* nullable */
     java.lang.String getVersionOrDefault(
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     java.lang.String getVersionOrThrow(java.lang.String key);
 
@@ -5298,18 +5537,21 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      */
     java.util.List<io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor>
         getBuilderDependenciesList();
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
      * </code>
      */
     io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor getBuilderDependencies(int index);
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
      * </code>
      */
     int getBuilderDependenciesCount();
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -5317,6 +5559,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      */
     java.util.List<? extends io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptorOrBuilder>
         getBuilderDependenciesOrBuilderList();
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -5325,12 +5568,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptorOrBuilder
         getBuilderDependenciesOrBuilder(int index);
   }
+
   /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder} */
   public static final class ProvenanceBuilder extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder)
       ProvenanceBuilderOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ProvenanceBuilder.newBuilder() to construct.
     private ProvenanceBuilder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5378,6 +5623,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      * <code>string id = 1;</code>
      *
@@ -5395,6 +5641,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      * <code>string id = 1;</code>
      *
@@ -5439,6 +5686,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public int getVersionCount() {
       return internalGetVersion().getMap().size();
     }
+
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     @java.lang.Override
     public boolean containsVersion(java.lang.String key) {
@@ -5447,17 +5695,20 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return internalGetVersion().getMap().containsKey(key);
     }
+
     /** Use {@link #getVersionMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getVersion() {
       return getVersionMap();
     }
+
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getVersionMap() {
       return internalGetVersion().getMap();
     }
+
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     @java.lang.Override
     public /* nullable */ java.lang.String getVersionOrDefault(
@@ -5470,6 +5721,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.String> map = internalGetVersion().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /** <code>map&lt;string, string&gt; version = 2;</code> */
     @java.lang.Override
     public java.lang.String getVersionOrThrow(java.lang.String key) {
@@ -5488,6 +5740,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private java.util.List<io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor>
         builderDependencies_;
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -5498,6 +5751,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         getBuilderDependenciesList() {
       return builderDependencies_;
     }
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -5509,6 +5763,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         getBuilderDependenciesOrBuilderList() {
       return builderDependencies_;
     }
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -5518,6 +5773,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public int getBuilderDependenciesCount() {
       return builderDependencies_.size();
     }
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -5528,6 +5784,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         int index) {
       return builderDependencies_.get(index);
     }
+
     /**
      * <code>
      * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -5730,6 +5987,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.ProvenanceBuilder} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -6012,6 +6270,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        * <code>string id = 1;</code>
        *
@@ -6028,6 +6287,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string id = 1;</code>
        *
@@ -6044,6 +6304,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string id = 1;</code>
        *
@@ -6059,6 +6320,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string id = 1;</code>
        *
@@ -6070,6 +6332,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string id = 1;</code>
        *
@@ -6114,6 +6377,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public int getVersionCount() {
         return internalGetVersion().getMap().size();
       }
+
       /** <code>map&lt;string, string&gt; version = 2;</code> */
       @java.lang.Override
       public boolean containsVersion(java.lang.String key) {
@@ -6122,17 +6386,20 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return internalGetVersion().getMap().containsKey(key);
       }
+
       /** Use {@link #getVersionMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getVersion() {
         return getVersionMap();
       }
+
       /** <code>map&lt;string, string&gt; version = 2;</code> */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getVersionMap() {
         return internalGetVersion().getMap();
       }
+
       /** <code>map&lt;string, string&gt; version = 2;</code> */
       @java.lang.Override
       public /* nullable */ java.lang.String getVersionOrDefault(
@@ -6145,6 +6412,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         java.util.Map<java.lang.String, java.lang.String> map = internalGetVersion().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /** <code>map&lt;string, string&gt; version = 2;</code> */
       @java.lang.Override
       public java.lang.String getVersionOrThrow(java.lang.String key) {
@@ -6163,6 +6431,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         internalGetMutableVersion().getMutableMap().clear();
         return this;
       }
+
       /** <code>map&lt;string, string&gt; version = 2;</code> */
       public Builder removeVersion(java.lang.String key) {
         if (key == null) {
@@ -6171,12 +6440,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         internalGetMutableVersion().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableVersion() {
         bitField0_ |= 0x00000002;
         return internalGetMutableVersion().getMutableMap();
       }
+
       /** <code>map&lt;string, string&gt; version = 2;</code> */
       public Builder putVersion(java.lang.String key, java.lang.String value) {
         if (key == null) {
@@ -6189,6 +6460,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000002;
         return this;
       }
+
       /** <code>map&lt;string, string&gt; version = 2;</code> */
       public Builder putAllVersion(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableVersion().getMutableMap().putAll(values);
@@ -6227,6 +6499,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return builderDependenciesBuilder_.getMessageList();
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6239,6 +6512,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return builderDependenciesBuilder_.getCount();
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6252,6 +6526,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return builderDependenciesBuilder_.getMessage(index);
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6271,6 +6546,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6288,6 +6564,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6307,6 +6584,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6326,6 +6604,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6342,6 +6621,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6359,6 +6639,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6376,6 +6657,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6391,6 +6673,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6406,6 +6689,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6415,6 +6699,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           getBuilderDependenciesBuilder(int index) {
         return getBuilderDependenciesFieldBuilder().getBuilder(index);
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6428,6 +6713,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return builderDependenciesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6442,6 +6728,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(builderDependencies_);
         }
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6453,6 +6740,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
             .addBuilder(
                 io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor.getDefaultInstance());
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6465,6 +6753,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
                 index,
                 io.grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor.getDefaultInstance());
       }
+
       /**
        * <code>
        * repeated .grafeas.v1.InTotoSlsaProvenanceV1.ResourceDescriptor builder_dependencies = 3;
@@ -6570,6 +6859,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return The invocationId.
      */
     java.lang.String getInvocationId();
+
     /**
      * <code>string invocation_id = 1;</code>
      *
@@ -6583,12 +6873,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return Whether the startedOn field is set.
      */
     boolean hasStartedOn();
+
     /**
      * <code>.google.protobuf.Timestamp started_on = 2;</code>
      *
      * @return The startedOn.
      */
     com.google.protobuf.Timestamp getStartedOn();
+
     /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
     com.google.protobuf.TimestampOrBuilder getStartedOnOrBuilder();
 
@@ -6598,21 +6890,25 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
      * @return Whether the finishedOn field is set.
      */
     boolean hasFinishedOn();
+
     /**
      * <code>.google.protobuf.Timestamp finished_on = 3;</code>
      *
      * @return The finishedOn.
      */
     com.google.protobuf.Timestamp getFinishedOn();
+
     /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
     com.google.protobuf.TimestampOrBuilder getFinishedOnOrBuilder();
   }
+
   /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata} */
   public static final class BuildMetadata extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata)
       BuildMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BuildMetadata.newBuilder() to construct.
     private BuildMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6648,6 +6944,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object invocationId_ = "";
+
     /**
      * <code>string invocation_id = 1;</code>
      *
@@ -6665,6 +6962,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      * <code>string invocation_id = 1;</code>
      *
@@ -6685,6 +6983,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     public static final int STARTED_ON_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp startedOn_;
+
     /**
      * <code>.google.protobuf.Timestamp started_on = 2;</code>
      *
@@ -6694,6 +6993,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasStartedOn() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>.google.protobuf.Timestamp started_on = 2;</code>
      *
@@ -6703,6 +7003,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public com.google.protobuf.Timestamp getStartedOn() {
       return startedOn_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedOn_;
     }
+
     /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartedOnOrBuilder() {
@@ -6711,6 +7012,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
     public static final int FINISHED_ON_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp finishedOn_;
+
     /**
      * <code>.google.protobuf.Timestamp finished_on = 3;</code>
      *
@@ -6720,6 +7022,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasFinishedOn() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>.google.protobuf.Timestamp finished_on = 3;</code>
      *
@@ -6729,6 +7032,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public com.google.protobuf.Timestamp getFinishedOn() {
       return finishedOn_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishedOn_;
     }
+
     /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getFinishedOnOrBuilder() {
@@ -6923,6 +7227,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1.BuildMetadata} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -7151,6 +7456,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object invocationId_ = "";
+
       /**
        * <code>string invocation_id = 1;</code>
        *
@@ -7167,6 +7473,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string invocation_id = 1;</code>
        *
@@ -7183,6 +7490,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string invocation_id = 1;</code>
        *
@@ -7198,6 +7506,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string invocation_id = 1;</code>
        *
@@ -7209,6 +7518,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        * <code>string invocation_id = 1;</code>
        *
@@ -7232,6 +7542,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           startedOnBuilder_;
+
       /**
        * <code>.google.protobuf.Timestamp started_on = 2;</code>
        *
@@ -7240,6 +7551,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public boolean hasStartedOn() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <code>.google.protobuf.Timestamp started_on = 2;</code>
        *
@@ -7254,6 +7566,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return startedOnBuilder_.getMessage();
         }
       }
+
       /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
       public Builder setStartedOn(com.google.protobuf.Timestamp value) {
         if (startedOnBuilder_ == null) {
@@ -7268,6 +7581,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
       public Builder setStartedOn(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (startedOnBuilder_ == null) {
@@ -7279,6 +7593,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
       public Builder mergeStartedOn(com.google.protobuf.Timestamp value) {
         if (startedOnBuilder_ == null) {
@@ -7298,6 +7613,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
       public Builder clearStartedOn() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -7309,12 +7625,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
       public com.google.protobuf.Timestamp.Builder getStartedOnBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getStartedOnFieldBuilder().getBuilder();
       }
+
       /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
       public com.google.protobuf.TimestampOrBuilder getStartedOnOrBuilder() {
         if (startedOnBuilder_ != null) {
@@ -7325,6 +7643,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               : startedOn_;
         }
       }
+
       /** <code>.google.protobuf.Timestamp started_on = 2;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -7349,6 +7668,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           finishedOnBuilder_;
+
       /**
        * <code>.google.protobuf.Timestamp finished_on = 3;</code>
        *
@@ -7357,6 +7677,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       public boolean hasFinishedOn() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <code>.google.protobuf.Timestamp finished_on = 3;</code>
        *
@@ -7371,6 +7692,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
           return finishedOnBuilder_.getMessage();
         }
       }
+
       /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
       public Builder setFinishedOn(com.google.protobuf.Timestamp value) {
         if (finishedOnBuilder_ == null) {
@@ -7385,6 +7707,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
       public Builder setFinishedOn(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (finishedOnBuilder_ == null) {
@@ -7396,6 +7719,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
       public Builder mergeFinishedOn(com.google.protobuf.Timestamp value) {
         if (finishedOnBuilder_ == null) {
@@ -7415,6 +7739,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
       public Builder clearFinishedOn() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -7426,12 +7751,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
       public com.google.protobuf.Timestamp.Builder getFinishedOnBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getFinishedOnFieldBuilder().getBuilder();
       }
+
       /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
       public com.google.protobuf.TimestampOrBuilder getFinishedOnOrBuilder() {
         if (finishedOnBuilder_ != null) {
@@ -7442,6 +7769,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
               : finishedOn_;
         }
       }
+
       /** <code>.google.protobuf.Timestamp finished_on = 3;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -7529,6 +7857,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -7553,6 +7882,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -7582,26 +7912,31 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Subject> subject_;
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public java.util.List<io.grafeas.v1.Subject> getSubjectList() {
     return subject_;
   }
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList() {
     return subject_;
   }
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public int getSubjectCount() {
     return subject_.size();
   }
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.Subject getSubject(int index) {
     return subject_.get(index);
   }
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(int index) {
@@ -7612,6 +7947,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object predicateType_ = "";
+
   /**
    * <code>string predicate_type = 3;</code>
    *
@@ -7629,6 +7965,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    * <code>string predicate_type = 3;</code>
    *
@@ -7649,6 +7986,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
 
   public static final int PREDICATE_FIELD_NUMBER = 4;
   private io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate_;
+
   /**
    * <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code>
    *
@@ -7658,6 +7996,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
   public boolean hasPredicate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code>
    *
@@ -7669,6 +8008,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         ? io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1.getDefaultInstance()
         : predicate_;
   }
+
   /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
   @java.lang.Override
   public io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1OrBuilder getPredicateOrBuilder() {
@@ -7868,6 +8208,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code grafeas.v1.InTotoSlsaProvenanceV1} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -8146,6 +8487,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -8169,6 +8511,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8192,6 +8535,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8214,6 +8558,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8232,6 +8577,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8277,6 +8623,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return subjectBuilder_.getMessageList();
       }
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public int getSubjectCount() {
       if (subjectBuilder_ == null) {
@@ -8285,6 +8632,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return subjectBuilder_.getCount();
       }
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject getSubject(int index) {
       if (subjectBuilder_ == null) {
@@ -8293,6 +8641,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return subjectBuilder_.getMessage(index);
       }
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder setSubject(int index, io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
@@ -8307,6 +8656,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder setSubject(int index, io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
@@ -8318,6 +8668,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
@@ -8332,6 +8683,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(int index, io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
@@ -8346,6 +8698,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
@@ -8357,6 +8710,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(int index, io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
@@ -8368,6 +8722,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addAllSubject(java.lang.Iterable<? extends io.grafeas.v1.Subject> values) {
       if (subjectBuilder_ == null) {
@@ -8379,6 +8734,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder clearSubject() {
       if (subjectBuilder_ == null) {
@@ -8390,6 +8746,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder removeSubject(int index) {
       if (subjectBuilder_ == null) {
@@ -8401,10 +8758,12 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject.Builder getSubjectBuilder(int index) {
       return getSubjectFieldBuilder().getBuilder(index);
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(int index) {
       if (subjectBuilder_ == null) {
@@ -8413,6 +8772,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return subjectBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList() {
       if (subjectBuilder_ != null) {
@@ -8421,14 +8781,17 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(subject_);
       }
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject.Builder addSubjectBuilder() {
       return getSubjectFieldBuilder().addBuilder(io.grafeas.v1.Subject.getDefaultInstance());
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject.Builder addSubjectBuilder(int index) {
       return getSubjectFieldBuilder().addBuilder(index, io.grafeas.v1.Subject.getDefaultInstance());
     }
+
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public java.util.List<io.grafeas.v1.Subject.Builder> getSubjectBuilderList() {
       return getSubjectFieldBuilder().getBuilderList();
@@ -8450,6 +8813,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object predicateType_ = "";
+
     /**
      * <code>string predicate_type = 3;</code>
      *
@@ -8466,6 +8830,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string predicate_type = 3;</code>
      *
@@ -8482,6 +8847,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string predicate_type = 3;</code>
      *
@@ -8497,6 +8863,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>string predicate_type = 3;</code>
      *
@@ -8508,6 +8875,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>string predicate_type = 3;</code>
      *
@@ -8531,6 +8899,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
             io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1.Builder,
             io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1OrBuilder>
         predicateBuilder_;
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code>
      *
@@ -8539,6 +8908,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
     public boolean hasPredicate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code>
      *
@@ -8553,6 +8923,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
         return predicateBuilder_.getMessage();
       }
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
     public Builder setPredicate(io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 value) {
       if (predicateBuilder_ == null) {
@@ -8567,6 +8938,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
     public Builder setPredicate(
         io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1.Builder builderForValue) {
@@ -8579,6 +8951,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
     public Builder mergePredicate(io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 value) {
       if (predicateBuilder_ == null) {
@@ -8599,6 +8972,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
     public Builder clearPredicate() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -8610,12 +8984,14 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
     public io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1.Builder getPredicateBuilder() {
       bitField0_ |= 0x00000008;
       onChanged();
       return getPredicateFieldBuilder().getBuilder();
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
     public io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1OrBuilder getPredicateOrBuilder() {
       if (predicateBuilder_ != null) {
@@ -8626,6 +9002,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
             : predicate_;
       }
     }
+
     /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1,

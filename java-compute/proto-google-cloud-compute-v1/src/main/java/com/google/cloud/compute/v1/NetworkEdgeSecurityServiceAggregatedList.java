@@ -33,6 +33,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEdgeSecurityServiceAggregatedList)
     NetworkEdgeSecurityServiceAggregatedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkEdgeSecurityServiceAggregatedList.newBuilder() to construct.
   private NetworkEdgeSecurityServiceAggregatedList(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -86,6 +87,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -95,6 +97,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public boolean hasEtag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -112,6 +115,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       return s;
     }
   }
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -134,6 +138,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public boolean hasId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
+
   /**
    *
    *
@@ -250,6 +258,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     }
     return internalGetItems().getMap().containsKey(key);
   }
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -258,6 +267,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       getItems() {
     return getItemsMap();
   }
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       getItemsMap() {
     return internalGetItems().getMap();
   }
+
   /**
    *
    *
@@ -300,6 +311,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         map = internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -330,6 +342,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -345,6 +358,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public boolean hasKind() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -368,6 +382,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       return s;
     }
   }
+
   /**
    *
    *
@@ -396,6 +411,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -411,6 +427,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -434,6 +451,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       return s;
     }
   }
+
   /**
    *
    *
@@ -462,6 +480,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -477,6 +496,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -500,6 +520,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       return s;
     }
   }
+
   /**
    *
    *
@@ -529,6 +550,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachables_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -543,6 +565,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public com.google.protobuf.ProtocolStringList getUnreachablesList() {
     return unreachables_;
   }
+
   /**
    *
    *
@@ -557,6 +580,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public int getUnreachablesCount() {
     return unreachables_.size();
   }
+
   /**
    *
    *
@@ -572,6 +596,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public java.lang.String getUnreachables(int index) {
     return unreachables_.get(index);
   }
+
   /**
    *
    *
@@ -590,6 +615,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -605,6 +631,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -620,6 +647,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -907,6 +935,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1256,6 +1285,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     private int bitField0_;
 
     private java.lang.Object etag_ = "";
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1264,6 +1294,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public boolean hasEtag() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1280,6 +1311,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1296,6 +1328,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1311,6 +1344,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1322,6 +1356,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1340,6 +1375,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1354,6 +1390,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public boolean hasId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1376,6 +1413,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1398,6 +1436,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1419,6 +1458,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1476,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1480,7 +1521,8 @@ public final class NetworkEdgeSecurityServiceAggregatedList
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 
@@ -1520,6 +1562,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public int getItemsCount() {
       return internalGetItems().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1538,6 +1581,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       }
       return internalGetItems().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1546,6 +1590,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         getItems() {
       return getItemsMap();
     }
+
     /**
      *
      *
@@ -1563,6 +1608,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         getItemsMap() {
       return internalGetItems().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1589,6 +1635,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
           map = internalGetMutableItems().ensureBuilderMap();
       return map.containsKey(key) ? itemsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1621,6 +1668,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       internalGetMutableItems().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1687,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       internalGetMutableItems().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1647,6 +1696,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       bitField0_ |= 0x00000004;
       return internalGetMutableItems().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1671,6 +1721,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1697,6 +1748,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1781,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1743,6 +1796,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public boolean hasKind() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1765,6 +1819,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1787,6 +1842,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1808,6 +1864,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1825,6 +1882,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1849,6 +1907,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1863,6 +1922,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1885,6 +1945,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1907,6 +1968,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1928,6 +1990,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1945,6 +2008,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1969,6 +2033,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1983,6 +2048,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2005,6 +2071,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2027,6 +2094,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2048,6 +2116,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2065,6 +2134,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2097,6 +2167,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2112,6 +2183,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       unreachables_.makeImmutable();
       return unreachables_;
     }
+
     /**
      *
      *
@@ -2126,6 +2198,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public int getUnreachablesCount() {
       return unreachables_.size();
     }
+
     /**
      *
      *
@@ -2141,6 +2214,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public java.lang.String getUnreachables(int index) {
       return unreachables_.get(index);
     }
+
     /**
      *
      *
@@ -2156,6 +2230,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public com.google.protobuf.ByteString getUnreachablesBytes(int index) {
       return unreachables_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2179,6 +2254,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2201,6 +2277,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2220,6 +2297,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2238,6 +2316,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2268,6 +2347,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -2282,6 +2362,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2302,6 +2383,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2324,6 +2406,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2343,6 +2426,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2370,6 +2454,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       }
       return this;
     }
+
     /**
      *
      *
@@ -2389,6 +2474,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2403,6 +2489,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2421,6 +2508,7 @@ public final class NetworkEdgeSecurityServiceAggregatedList
             : warning_;
       }
     }
+
     /**
      *
      *

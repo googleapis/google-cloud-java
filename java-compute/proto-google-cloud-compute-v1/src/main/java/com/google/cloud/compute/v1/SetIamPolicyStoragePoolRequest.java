@@ -33,6 +33,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyStoragePoolRequest)
     SetIamPolicyStoragePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetIamPolicyStoragePoolRequest.newBuilder() to construct.
   private SetIamPolicyStoragePoolRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
 
   public static final int ZONE_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 382082107;
   private com.google.cloud.compute.v1.ZoneSetPolicyRequest zoneSetPolicyRequestResource_;
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
   public boolean hasZoneSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.ZoneSetPolicyRequest.getDefaultInstance()
         : zoneSetPolicyRequestResource_;
   }
+
   /**
    *
    *
@@ -472,6 +482,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -719,6 +730,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -741,6 +753,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +841,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +952,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1068,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.ZoneSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.ZoneSetPolicyRequestOrBuilder>
         zoneSetPolicyRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
     public boolean hasZoneSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1080,6 +1108,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
         return zoneSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1105,6 +1134,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1157,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1189,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1211,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1229,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
       onChanged();
       return getZoneSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1217,6 +1251,7 @@ public final class SetIamPolicyStoragePoolRequest extends com.google.protobuf.Ge
             : zoneSetPolicyRequestResource_;
       }
     }
+
     /**
      *
      *

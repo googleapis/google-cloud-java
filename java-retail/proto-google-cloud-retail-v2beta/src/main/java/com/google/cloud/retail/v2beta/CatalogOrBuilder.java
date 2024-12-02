@@ -38,6 +38,7 @@ public interface CatalogOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CatalogOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CatalogOrBuilder
    * @return Whether the productLevelConfig field is set.
    */
   boolean hasProductLevelConfig();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CatalogOrBuilder
    * @return The productLevelConfig.
    */
   com.google.cloud.retail.v2beta.ProductLevelConfig getProductLevelConfig();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface CatalogOrBuilder
    * @return Whether the merchantCenterLinkingConfig field is set.
    */
   boolean hasMerchantCenterLinkingConfig();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface CatalogOrBuilder
    * @return The merchantCenterLinkingConfig.
    */
   com.google.cloud.retail.v2beta.MerchantCenterLinkingConfig getMerchantCenterLinkingConfig();
+
   /**
    *
    *

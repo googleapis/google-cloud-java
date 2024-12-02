@@ -33,6 +33,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.RunDataScanResponse)
     RunDataScanResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunDataScanResponse.newBuilder() to construct.
   private RunDataScanResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int JOB_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.DataScanJob job_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
   public boolean hasJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.dataplex.v1.DataScanJob getJob() {
     return job_ == null ? com.google.cloud.dataplex.v1.DataScanJob.getDefaultInstance() : job_;
   }
+
   /**
    *
    *
@@ -272,6 +276,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -475,6 +480,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataplex.v1.DataScanJob.Builder,
             com.google.cloud.dataplex.v1.DataScanJobOrBuilder>
         jobBuilder_;
+
     /**
      *
      *
@@ -489,6 +495,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
     public boolean hasJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -507,6 +514,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
         return jobBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -548,6 +557,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -575,6 +585,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +605,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +620,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -624,6 +637,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
         return job_ == null ? com.google.cloud.dataplex.v1.DataScanJob.getDefaultInstance() : job_;
       }
     }
+
     /**
      *
      *

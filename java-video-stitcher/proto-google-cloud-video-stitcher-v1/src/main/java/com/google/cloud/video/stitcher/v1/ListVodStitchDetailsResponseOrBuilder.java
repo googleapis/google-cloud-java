@@ -34,6 +34,7 @@ public interface ListVodStitchDetailsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodStitchDetail vod_stitch_details = 1;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.VodStitchDetail> getVodStitchDetailsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListVodStitchDetailsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodStitchDetail vod_stitch_details = 1;</code>
    */
   com.google.cloud.video.stitcher.v1.VodStitchDetail getVodStitchDetails(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListVodStitchDetailsResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodStitchDetail vod_stitch_details = 1;</code>
    */
   int getVodStitchDetailsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListVodStitchDetailsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.VodStitchDetailOrBuilder>
       getVodStitchDetailsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListVodStitchDetailsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

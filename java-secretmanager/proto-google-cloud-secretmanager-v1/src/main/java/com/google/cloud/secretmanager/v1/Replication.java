@@ -33,6 +33,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Replication)
     ReplicationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Replication.newBuilder() to construct.
   private Replication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,6 +89,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customerManagedEncryption field is set.
      */
     boolean hasCustomerManagedEncryption();
+
     /**
      *
      *
@@ -110,6 +112,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * @return The customerManagedEncryption.
      */
     com.google.cloud.secretmanager.v1.CustomerManagedEncryption getCustomerManagedEncryption();
+
     /**
      *
      *
@@ -132,6 +135,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
         getCustomerManagedEncryptionOrBuilder();
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Replication.Automatic)
       AutomaticOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Automatic.newBuilder() to construct.
     private Automatic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -179,6 +184,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int CUSTOMER_MANAGED_ENCRYPTION_FIELD_NUMBER = 1;
     private com.google.cloud.secretmanager.v1.CustomerManagedEncryption customerManagedEncryption_;
+
     /**
      *
      *
@@ -204,6 +210,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerManagedEncryption() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -232,6 +239,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
           : customerManagedEncryption_;
     }
+
     /**
      *
      *
@@ -428,6 +436,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -641,6 +650,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
               com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>
           customerManagedEncryptionBuilder_;
+
       /**
        *
        *
@@ -665,6 +675,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCustomerManagedEncryption() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -696,6 +707,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return customerManagedEncryptionBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -729,6 +741,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -759,6 +772,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -799,6 +813,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -828,6 +843,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -853,6 +869,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCustomerManagedEncryptionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -882,6 +899,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
               : customerManagedEncryption_;
         }
       }
+
       /**
        *
        *
@@ -1003,6 +1021,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
         getReplicasList();
+
     /**
      *
      *
@@ -1018,6 +1037,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica getReplicas(int index);
+
     /**
      *
      *
@@ -1033,6 +1053,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getReplicasCount();
+
     /**
      *
      *
@@ -1050,6 +1071,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder>
         getReplicasOrBuilderList();
+
     /**
      *
      *
@@ -1067,6 +1089,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder getReplicasOrBuilder(
         int index);
   }
+
   /**
    *
    *
@@ -1083,6 +1106,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Replication.UserManaged)
       UserManagedOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UserManaged.newBuilder() to construct.
     private UserManaged(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1131,6 +1155,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * @return The location.
        */
       java.lang.String getLocation();
+
       /**
        *
        *
@@ -1167,6 +1192,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the customerManagedEncryption field is set.
        */
       boolean hasCustomerManagedEncryption();
+
       /**
        *
        *
@@ -1189,6 +1215,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * @return The customerManagedEncryption.
        */
       com.google.cloud.secretmanager.v1.CustomerManagedEncryption getCustomerManagedEncryption();
+
       /**
        *
        *
@@ -1211,6 +1238,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
           getCustomerManagedEncryptionOrBuilder();
     }
+
     /**
      *
      *
@@ -1226,6 +1254,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Replication.UserManaged.Replica)
         ReplicaOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Replica.newBuilder() to construct.
       private Replica(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1261,6 +1290,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object location_ = "";
+
       /**
        *
        *
@@ -1285,6 +1315,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1313,6 +1344,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       public static final int CUSTOMER_MANAGED_ENCRYPTION_FIELD_NUMBER = 2;
       private com.google.cloud.secretmanager.v1.CustomerManagedEncryption
           customerManagedEncryption_;
+
       /**
        *
        *
@@ -1338,6 +1370,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCustomerManagedEncryption() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1366,6 +1399,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
             : customerManagedEncryption_;
       }
+
       /**
        *
        *
@@ -1573,6 +1607,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1801,6 +1836,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object location_ = "";
+
         /**
          *
          *
@@ -1824,6 +1860,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1847,6 +1884,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1869,6 +1907,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1887,6 +1926,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1918,6 +1958,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
                 com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>
             customerManagedEncryptionBuilder_;
+
         /**
          *
          *
@@ -1942,6 +1983,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         public boolean hasCustomerManagedEncryption() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -1973,6 +2015,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             return customerManagedEncryptionBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2006,6 +2049,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2036,6 +2080,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2076,6 +2121,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2105,6 +2151,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2130,6 +2177,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getCustomerManagedEncryptionFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2159,6 +2207,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 : customerManagedEncryption_;
           }
         }
+
         /**
          *
          *
@@ -2267,6 +2316,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
         replicas_;
+
     /**
      *
      *
@@ -2286,6 +2336,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         getReplicasList() {
       return replicas_;
     }
+
     /**
      *
      *
@@ -2306,6 +2357,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         getReplicasOrBuilderList() {
       return replicas_;
     }
+
     /**
      *
      *
@@ -2324,6 +2376,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public int getReplicasCount() {
       return replicas_.size();
     }
+
     /**
      *
      *
@@ -2343,6 +2396,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return replicas_.get(index);
     }
+
     /**
      *
      *
@@ -2526,6 +2580,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2802,6 +2857,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return replicasBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2823,6 +2879,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return replicasBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2845,6 +2902,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return replicasBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2873,6 +2931,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2900,6 +2959,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2928,6 +2988,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2956,6 +3017,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2982,6 +3044,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3009,6 +3072,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3036,6 +3100,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3060,6 +3125,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3084,6 +3150,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3102,6 +3169,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           getReplicasBuilder(int index) {
         return getReplicasFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3124,6 +3192,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return replicasBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3147,6 +3216,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(replicas_);
         }
       }
+
       /**
        *
        *
@@ -3168,6 +3238,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3190,6 +3261,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3308,6 +3380,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     private ReplicationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3341,6 +3414,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTOMATIC_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -3357,6 +3431,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutomatic() {
     return replicationCase_ == 1;
   }
+
   /**
    *
    *
@@ -3376,6 +3451,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3395,6 +3471,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_MANAGED_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -3411,6 +3488,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserManaged() {
     return replicationCase_ == 2;
   }
+
   /**
    *
    *
@@ -3430,6 +3508,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3640,6 +3719,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3874,6 +3954,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.Replication.Automatic.Builder,
             com.google.cloud.secretmanager.v1.Replication.AutomaticOrBuilder>
         automaticBuilder_;
+
     /**
      *
      *
@@ -3890,6 +3971,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutomatic() {
       return replicationCase_ == 1;
     }
+
     /**
      *
      *
@@ -3916,6 +3998,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3939,6 +4022,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       replicationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3960,6 +4044,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       replicationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3994,6 +4079,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       replicationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -4020,6 +4106,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4033,6 +4120,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.secretmanager.v1.Replication.Automatic.Builder getAutomaticBuilder() {
       return getAutomaticFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4055,6 +4143,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4095,6 +4184,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder,
             com.google.cloud.secretmanager.v1.Replication.UserManagedOrBuilder>
         userManagedBuilder_;
+
     /**
      *
      *
@@ -4111,6 +4201,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserManaged() {
       return replicationCase_ == 2;
     }
+
     /**
      *
      *
@@ -4137,6 +4228,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4160,6 +4252,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       replicationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4181,6 +4274,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       replicationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4216,6 +4310,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       replicationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4242,6 +4337,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4256,6 +4352,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         getUserManagedBuilder() {
       return getUserManagedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4278,6 +4375,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
       }
     }
+
     /**
      *
      *

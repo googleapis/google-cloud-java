@@ -33,6 +33,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsControlPlane)
     AwsControlPlaneOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AwsControlPlane.newBuilder() to construct.
   private AwsControlPlane(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceType_ = "";
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   public static final int SSH_CONFIG_FIELD_NUMBER = 14;
   private com.google.cloud.gkemulticloud.v1.AwsSshConfig sshConfig_;
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public boolean hasSshConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AwsSshConfig.getDefaultInstance()
         : sshConfig_;
   }
+
   /**
    *
    *
@@ -260,6 +268,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subnetIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -277,6 +286,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getSubnetIdsList() {
     return subnetIds_;
   }
+
   /**
    *
    *
@@ -294,6 +304,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public int getSubnetIdsCount() {
     return subnetIds_.size();
   }
+
   /**
    *
    *
@@ -312,6 +323,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getSubnetIds(int index) {
     return subnetIds_.get(index);
   }
+
   /**
    *
    *
@@ -336,6 +348,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList securityGroupIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -352,6 +365,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getSecurityGroupIdsList() {
     return securityGroupIds_;
   }
+
   /**
    *
    *
@@ -368,6 +382,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public int getSecurityGroupIdsCount() {
     return securityGroupIds_.size();
   }
+
   /**
    *
    *
@@ -385,6 +400,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getSecurityGroupIds(int index) {
     return securityGroupIds_.get(index);
   }
+
   /**
    *
    *
@@ -407,6 +423,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object iamInstanceProfile_ = "";
+
   /**
    *
    *
@@ -431,6 +448,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -458,6 +476,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   public static final int ROOT_VOLUME_FIELD_NUMBER = 8;
   private com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate rootVolume_;
+
   /**
    *
    *
@@ -481,6 +500,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public boolean hasRootVolume() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -506,6 +526,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.getDefaultInstance()
         : rootVolume_;
   }
+
   /**
    *
    *
@@ -532,6 +553,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAIN_VOLUME_FIELD_NUMBER = 9;
   private com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate mainVolume_;
+
   /**
    *
    *
@@ -556,6 +578,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public boolean hasMainVolume() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -582,6 +605,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.getDefaultInstance()
         : mainVolume_;
   }
+
   /**
    *
    *
@@ -609,6 +633,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   public static final int DATABASE_ENCRYPTION_FIELD_NUMBER = 10;
   private com.google.cloud.gkemulticloud.v1.AwsDatabaseEncryption databaseEncryption_;
+
   /**
    *
    *
@@ -626,6 +651,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public boolean hasDatabaseEncryption() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -645,6 +671,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AwsDatabaseEncryption.getDefaultInstance()
         : databaseEncryption_;
   }
+
   /**
    *
    *
@@ -690,6 +717,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public int getTagsCount() {
     return internalGetTags().getMap().size();
   }
+
   /**
    *
    *
@@ -711,12 +739,14 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetTags().getMap().containsKey(key);
   }
+
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTags() {
     return getTagsMap();
   }
+
   /**
    *
    *
@@ -735,6 +765,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
     return internalGetTags().getMap();
   }
+
   /**
    *
    *
@@ -760,6 +791,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -788,6 +820,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   public static final int AWS_SERVICES_AUTHENTICATION_FIELD_NUMBER = 12;
   private com.google.cloud.gkemulticloud.v1.AwsServicesAuthentication awsServicesAuthentication_;
+
   /**
    *
    *
@@ -805,6 +838,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public boolean hasAwsServicesAuthentication() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -825,6 +859,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AwsServicesAuthentication.getDefaultInstance()
         : awsServicesAuthentication_;
   }
+
   /**
    *
    *
@@ -846,6 +881,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROXY_CONFIG_FIELD_NUMBER = 16;
   private com.google.cloud.gkemulticloud.v1.AwsProxyConfig proxyConfig_;
+
   /**
    *
    *
@@ -863,6 +899,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public boolean hasProxyConfig() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -882,6 +919,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AwsProxyConfig.getDefaultInstance()
         : proxyConfig_;
   }
+
   /**
    *
    *
@@ -902,6 +940,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   public static final int CONFIG_ENCRYPTION_FIELD_NUMBER = 17;
   private com.google.cloud.gkemulticloud.v1.AwsConfigEncryption configEncryption_;
+
   /**
    *
    *
@@ -919,6 +958,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public boolean hasConfigEncryption() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -938,6 +978,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.getDefaultInstance()
         : configEncryption_;
   }
+
   /**
    *
    *
@@ -959,6 +1000,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
 
   public static final int INSTANCE_PLACEMENT_FIELD_NUMBER = 18;
   private com.google.cloud.gkemulticloud.v1.AwsInstancePlacement instancePlacement_;
+
   /**
    *
    *
@@ -977,6 +1019,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public boolean hasInstancePlacement() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -997,6 +1040,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.getDefaultInstance()
         : instancePlacement_;
   }
+
   /**
    *
    *
@@ -1358,6 +1402,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1831,6 +1876,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -1858,6 +1904,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1885,6 +1932,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1911,6 +1959,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1933,6 +1982,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1962,6 +2012,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object instanceType_ = "";
+
     /**
      *
      *
@@ -1986,6 +2037,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2010,6 +2062,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2033,6 +2086,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2052,6 +2106,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2083,6 +2138,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AwsSshConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AwsSshConfigOrBuilder>
         sshConfigBuilder_;
+
     /**
      *
      *
@@ -2100,6 +2156,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public boolean hasSshConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2123,6 +2180,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return sshConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2148,6 +2206,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2171,6 +2230,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2201,6 +2261,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2223,6 +2284,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2240,6 +2302,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSshConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2261,6 +2324,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             : sshConfig_;
       }
     }
+
     /**
      *
      *
@@ -2299,6 +2363,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -2317,6 +2382,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       subnetIds_.makeImmutable();
       return subnetIds_;
     }
+
     /**
      *
      *
@@ -2334,6 +2400,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public int getSubnetIdsCount() {
       return subnetIds_.size();
     }
+
     /**
      *
      *
@@ -2352,6 +2419,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getSubnetIds(int index) {
       return subnetIds_.get(index);
     }
+
     /**
      *
      *
@@ -2370,6 +2438,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getSubnetIdsBytes(int index) {
       return subnetIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2396,6 +2465,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2421,6 +2491,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2443,6 +2514,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2464,6 +2536,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2500,6 +2573,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -2518,6 +2592,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       securityGroupIds_.makeImmutable();
       return securityGroupIds_;
     }
+
     /**
      *
      *
@@ -2535,6 +2610,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public int getSecurityGroupIdsCount() {
       return securityGroupIds_.size();
     }
+
     /**
      *
      *
@@ -2553,6 +2629,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getSecurityGroupIds(int index) {
       return securityGroupIds_.get(index);
     }
+
     /**
      *
      *
@@ -2571,6 +2648,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getSecurityGroupIdsBytes(int index) {
       return securityGroupIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2597,6 +2675,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2622,6 +2701,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2644,6 +2724,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2665,6 +2746,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2693,6 +2775,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object iamInstanceProfile_ = "";
+
     /**
      *
      *
@@ -2716,6 +2799,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2739,6 +2823,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2761,6 +2846,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2779,6 +2865,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2809,6 +2896,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.Builder,
             com.google.cloud.gkemulticloud.v1.AwsVolumeTemplateOrBuilder>
         rootVolumeBuilder_;
+
     /**
      *
      *
@@ -2831,6 +2919,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public boolean hasRootVolume() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2859,6 +2948,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return rootVolumeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2889,6 +2979,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2917,6 +3008,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2953,6 +3045,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2980,6 +3073,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3002,6 +3096,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRootVolumeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3028,6 +3123,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             : rootVolume_;
       }
     }
+
     /**
      *
      *
@@ -3068,6 +3164,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.Builder,
             com.google.cloud.gkemulticloud.v1.AwsVolumeTemplateOrBuilder>
         mainVolumeBuilder_;
+
     /**
      *
      *
@@ -3091,6 +3188,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public boolean hasMainVolume() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3120,6 +3218,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return mainVolumeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3151,6 +3250,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3180,6 +3280,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3217,6 +3318,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3245,6 +3347,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3268,6 +3371,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getMainVolumeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3295,6 +3399,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             : mainVolume_;
       }
     }
+
     /**
      *
      *
@@ -3336,6 +3441,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AwsDatabaseEncryption.Builder,
             com.google.cloud.gkemulticloud.v1.AwsDatabaseEncryptionOrBuilder>
         databaseEncryptionBuilder_;
+
     /**
      *
      *
@@ -3352,6 +3458,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public boolean hasDatabaseEncryption() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3374,6 +3481,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return databaseEncryptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3399,6 +3507,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3421,6 +3530,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3452,6 +3562,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3473,6 +3584,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3490,6 +3602,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDatabaseEncryptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3511,6 +3624,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             : databaseEncryption_;
       }
     }
+
     /**
      *
      *
@@ -3564,6 +3678,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public int getTagsCount() {
       return internalGetTags().getMap().size();
     }
+
     /**
      *
      *
@@ -3585,12 +3700,14 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetTags().getMap().containsKey(key);
     }
+
     /** Use {@link #getTagsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTags() {
       return getTagsMap();
     }
+
     /**
      *
      *
@@ -3609,6 +3726,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
       return internalGetTags().getMap();
     }
+
     /**
      *
      *
@@ -3634,6 +3752,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3665,6 +3784,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3686,12 +3806,14 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       internalGetMutableTags().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
       bitField0_ |= 0x00000200;
       return internalGetMutableTags().getMutableMap();
     }
+
     /**
      *
      *
@@ -3717,6 +3839,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -3743,6 +3866,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AwsServicesAuthentication.Builder,
             com.google.cloud.gkemulticloud.v1.AwsServicesAuthenticationOrBuilder>
         awsServicesAuthenticationBuilder_;
+
     /**
      *
      *
@@ -3759,6 +3883,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public boolean hasAwsServicesAuthentication() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3782,6 +3907,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return awsServicesAuthenticationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3807,6 +3933,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3829,6 +3956,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3861,6 +3989,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3882,6 +4011,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3899,6 +4029,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getAwsServicesAuthenticationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3920,6 +4051,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             : awsServicesAuthentication_;
       }
     }
+
     /**
      *
      *
@@ -3954,6 +4086,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AwsProxyConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AwsProxyConfigOrBuilder>
         proxyConfigBuilder_;
+
     /**
      *
      *
@@ -3970,6 +4103,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public boolean hasProxyConfig() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3992,6 +4126,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return proxyConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4016,6 +4151,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4038,6 +4174,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4068,6 +4205,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4089,6 +4227,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4105,6 +4244,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getProxyConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4125,6 +4265,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             : proxyConfig_;
       }
     }
+
     /**
      *
      *
@@ -4159,6 +4300,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.Builder,
             com.google.cloud.gkemulticloud.v1.AwsConfigEncryptionOrBuilder>
         configEncryptionBuilder_;
+
     /**
      *
      *
@@ -4175,6 +4317,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public boolean hasConfigEncryption() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4197,6 +4340,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return configEncryptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4222,6 +4366,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4244,6 +4389,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4275,6 +4421,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4296,6 +4443,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4313,6 +4461,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getConfigEncryptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4334,6 +4483,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             : configEncryption_;
       }
     }
+
     /**
      *
      *
@@ -4368,6 +4518,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Builder,
             com.google.cloud.gkemulticloud.v1.AwsInstancePlacementOrBuilder>
         instancePlacementBuilder_;
+
     /**
      *
      *
@@ -4385,6 +4536,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public boolean hasInstancePlacement() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -4408,6 +4560,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         return instancePlacementBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4434,6 +4587,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4457,6 +4611,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4489,6 +4644,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4511,6 +4667,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4529,6 +4686,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getInstancePlacementFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4551,6 +4709,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
             : instancePlacement_;
       }
     }
+
     /**
      *
      *

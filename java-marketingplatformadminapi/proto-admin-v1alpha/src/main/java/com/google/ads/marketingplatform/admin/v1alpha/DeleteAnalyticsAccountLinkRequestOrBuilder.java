@@ -40,6 +40,7 @@ public interface DeleteAnalyticsAccountLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

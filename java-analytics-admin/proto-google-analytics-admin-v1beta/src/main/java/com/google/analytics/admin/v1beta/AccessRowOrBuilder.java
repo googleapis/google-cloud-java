@@ -35,6 +35,7 @@ public interface AccessRowOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDimensionValue dimension_values = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessDimensionValue> getDimensionValuesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface AccessRowOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDimensionValue dimension_values = 1;</code>
    */
   com.google.analytics.admin.v1beta.AccessDimensionValue getDimensionValues(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface AccessRowOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDimensionValue dimension_values = 1;</code>
    */
   int getDimensionValuesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface AccessRowOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessDimensionValueOrBuilder>
       getDimensionValuesOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface AccessRowOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetricValue metric_values = 2;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessMetricValue> getMetricValuesList();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface AccessRowOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetricValue metric_values = 2;</code>
    */
   com.google.analytics.admin.v1beta.AccessMetricValue getMetricValues(int index);
+
   /**
    *
    *
@@ -115,6 +121,7 @@ public interface AccessRowOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetricValue metric_values = 2;</code>
    */
   int getMetricValuesCount();
+
   /**
    *
    *
@@ -127,6 +134,7 @@ public interface AccessRowOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessMetricValueOrBuilder>
       getMetricValuesOrBuilderList();
+
   /**
    *
    *

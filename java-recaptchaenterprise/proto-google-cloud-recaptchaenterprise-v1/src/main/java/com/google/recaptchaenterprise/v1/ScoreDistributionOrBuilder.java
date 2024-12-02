@@ -36,6 +36,7 @@ public interface ScoreDistributionOrBuilder
    * <code>map&lt;int32, int64&gt; score_buckets = 1;</code>
    */
   int getScoreBucketsCount();
+
   /**
    *
    *
@@ -48,9 +49,11 @@ public interface ScoreDistributionOrBuilder
    * <code>map&lt;int32, int64&gt; score_buckets = 1;</code>
    */
   boolean containsScoreBuckets(int key);
+
   /** Use {@link #getScoreBucketsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.Integer, java.lang.Long> getScoreBuckets();
+
   /**
    *
    *
@@ -63,6 +66,7 @@ public interface ScoreDistributionOrBuilder
    * <code>map&lt;int32, int64&gt; score_buckets = 1;</code>
    */
   java.util.Map<java.lang.Integer, java.lang.Long> getScoreBucketsMap();
+
   /**
    *
    *
@@ -75,6 +79,7 @@ public interface ScoreDistributionOrBuilder
    * <code>map&lt;int32, int64&gt; score_buckets = 1;</code>
    */
   long getScoreBucketsOrDefault(int key, long defaultValue);
+
   /**
    *
    *

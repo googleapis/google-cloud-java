@@ -39,6 +39,7 @@ public interface DeleteTaskRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.appengine.v1.VpcAccessConnector)
     VpcAccessConnectorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VpcAccessConnector.newBuilder() to construct.
   private VpcAccessConnector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,6 +105,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
 
     /** <code>EGRESS_SETTING_UNSPECIFIED = 0;</code> */
     public static final int EGRESS_SETTING_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -114,6 +116,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
      * <code>ALL_TRAFFIC = 1;</code>
      */
     public static final int ALL_TRAFFIC_VALUE = 1;
+
     /**
      *
      *
@@ -212,6 +215,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -236,6 +240,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -263,6 +268,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
 
   public static final int EGRESS_SETTING_FIELD_NUMBER = 2;
   private int egressSetting_ = 0;
+
   /**
    *
    *
@@ -279,6 +285,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
   public int getEgressSettingValue() {
     return egressSetting_;
   }
+
   /**
    *
    *
@@ -472,6 +479,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -668,6 +676,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -691,6 +700,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -736,6 +747,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +766,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +792,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     }
 
     private int egressSetting_ = 0;
+
     /**
      *
      *
@@ -795,6 +809,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     public int getEgressSettingValue() {
       return egressSetting_;
     }
+
     /**
      *
      *
@@ -814,6 +829,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
           ? com.google.appengine.v1.VpcAccessConnector.EgressSetting.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

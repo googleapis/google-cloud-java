@@ -33,6 +33,7 @@ public final class AddGroupMigrationResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.AddGroupMigrationResponse)
     AddGroupMigrationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddGroupMigrationResponse.newBuilder() to construct.
   private AddGroupMigrationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class AddGroupMigrationResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface MembershipFeatureStateOrBuilder
    * @return Whether the configmanagement field is set.
    */
   boolean hasConfigmanagement();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MembershipFeatureStateOrBuilder
    * @return The configmanagement.
    */
   com.google.cloud.gkehub.configmanagement.v1.MembershipState getConfigmanagement();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface MembershipFeatureStateOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface MembershipFeatureStateOrBuilder
    * @return The state.
    */
   com.google.cloud.gkehub.v1.FeatureState getState();
+
   /**
    *
    *

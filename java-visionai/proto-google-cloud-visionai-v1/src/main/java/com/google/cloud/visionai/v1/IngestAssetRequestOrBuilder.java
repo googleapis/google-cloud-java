@@ -38,6 +38,7 @@ public interface IngestAssetRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface IngestAssetRequestOrBuilder
    * @return The config.
    */
   com.google.cloud.visionai.v1.IngestAssetRequest.Config getConfig();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface IngestAssetRequestOrBuilder
    * @return Whether the timeIndexedData field is set.
    */
   boolean hasTimeIndexedData();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface IngestAssetRequestOrBuilder
    * @return The timeIndexedData.
    */
   com.google.cloud.visionai.v1.IngestAssetRequest.TimeIndexedData getTimeIndexedData();
+
   /**
    *
    *

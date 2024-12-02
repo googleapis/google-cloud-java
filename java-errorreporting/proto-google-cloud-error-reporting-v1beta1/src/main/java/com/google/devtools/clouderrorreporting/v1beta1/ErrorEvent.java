@@ -33,6 +33,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ErrorEvent)
     ErrorEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ErrorEvent.newBuilder() to construct.
   private ErrorEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int EVENT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp eventTime_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEventTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVICE_CONTEXT_FIELD_NUMBER = 2;
   private com.google.devtools.clouderrorreporting.v1beta1.ServiceContext serviceContext_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServiceContext() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance()
         : serviceContext_;
   }
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTEXT_FIELD_NUMBER = 5;
   private com.google.devtools.clouderrorreporting.v1beta1.ErrorContext context_;
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContext() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.getDefaultInstance()
         : context_;
   }
+
   /**
    *
    *
@@ -471,6 +483,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -728,6 +741,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventTimeBuilder_;
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -893,6 +914,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
     }
+
     /**
      *
      *
@@ -927,6 +949,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>
         serviceContextBuilder_;
+
     /**
      *
      *
@@ -941,6 +964,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServiceContext() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -961,6 +985,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
         return serviceContextBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -984,6 +1009,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1030,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1081,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1097,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getServiceContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1087,6 +1117,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
             : serviceContext_;
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1145,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -1136,6 +1168,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1158,6 +1191,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1213,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1231,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1261,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.ErrorContextOrBuilder>
         contextBuilder_;
+
     /**
      *
      *
@@ -1239,6 +1276,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContext() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1259,6 +1297,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
         return contextBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1281,6 +1320,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1341,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1372,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1392,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1408,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1384,6 +1428,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
             : context_;
       }
     }
+
     /**
      *
      *

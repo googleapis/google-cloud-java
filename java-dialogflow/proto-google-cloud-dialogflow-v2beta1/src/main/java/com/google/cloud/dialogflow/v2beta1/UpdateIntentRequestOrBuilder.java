@@ -38,6 +38,7 @@ public interface UpdateIntentRequestOrBuilder
    * @return Whether the intent field is set.
    */
   boolean hasIntent();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateIntentRequestOrBuilder
    * @return The intent.
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntent();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UpdateIntentRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface UpdateIntentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface UpdateIntentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface UpdateIntentRequestOrBuilder
    * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
+
   /**
    *
    *

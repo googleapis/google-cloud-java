@@ -39,6 +39,7 @@ public interface UpdateAttributesConfigRequestOrBuilder
    * @return Whether the attributesConfig field is set.
    */
   boolean hasAttributesConfig();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateAttributesConfigRequestOrBuilder
    * @return The attributesConfig.
    */
   com.google.cloud.retail.v2beta.AttributesConfig getAttributesConfig();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface UpdateAttributesConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UpdateAttributesConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

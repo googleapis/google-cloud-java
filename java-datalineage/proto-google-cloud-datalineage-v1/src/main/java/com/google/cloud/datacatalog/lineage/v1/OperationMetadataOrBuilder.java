@@ -38,6 +38,7 @@ public interface OperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface OperationMetadataOrBuilder
    * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface OperationMetadataOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface OperationMetadataOrBuilder
    * @return The resourceUuid.
    */
   java.lang.String getResourceUuid();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface OperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface OperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

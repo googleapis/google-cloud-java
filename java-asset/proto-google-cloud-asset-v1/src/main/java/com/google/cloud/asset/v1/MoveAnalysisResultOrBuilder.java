@@ -35,6 +35,7 @@ public interface MoveAnalysisResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveImpact blockers = 1;</code>
    */
   java.util.List<com.google.cloud.asset.v1.MoveImpact> getBlockersList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface MoveAnalysisResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveImpact blockers = 1;</code>
    */
   com.google.cloud.asset.v1.MoveImpact getBlockers(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface MoveAnalysisResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveImpact blockers = 1;</code>
    */
   int getBlockersCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface MoveAnalysisResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.MoveImpactOrBuilder>
       getBlockersOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface MoveAnalysisResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveImpact warnings = 2;</code>
    */
   java.util.List<com.google.cloud.asset.v1.MoveImpact> getWarningsList();
+
   /**
    *
    *
@@ -105,6 +110,7 @@ public interface MoveAnalysisResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveImpact warnings = 2;</code>
    */
   com.google.cloud.asset.v1.MoveImpact getWarnings(int index);
+
   /**
    *
    *
@@ -117,6 +123,7 @@ public interface MoveAnalysisResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveImpact warnings = 2;</code>
    */
   int getWarningsCount();
+
   /**
    *
    *
@@ -130,6 +137,7 @@ public interface MoveAnalysisResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.MoveImpactOrBuilder>
       getWarningsOrBuilderList();
+
   /**
    *
    *

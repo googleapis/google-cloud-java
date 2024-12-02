@@ -33,6 +33,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.Subscription)
     SubscriptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Subscription.newBuilder() to construct.
   private Subscription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTO_RENEWAL_ENABLED_FIELD_NUMBER = 2;
   private boolean autoRenewalEnabled_ = false;
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -600,6 +609,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +714,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +734,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +749,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -749,6 +766,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -781,6 +799,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -795,6 +814,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -813,6 +833,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -835,6 +856,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +876,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +904,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +924,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +939,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -930,6 +956,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -957,6 +984,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean autoRenewalEnabled_;
+
     /**
      *
      *
@@ -974,6 +1002,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public boolean getAutoRenewalEnabled() {
       return autoRenewalEnabled_;
     }
+
     /**
      *
      *
@@ -995,6 +1024,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

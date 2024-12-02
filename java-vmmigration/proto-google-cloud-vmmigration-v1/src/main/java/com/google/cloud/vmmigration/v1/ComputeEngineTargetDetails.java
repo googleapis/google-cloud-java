@@ -34,6 +34,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.ComputeEngineTargetDetails)
     ComputeEngineTargetDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeEngineTargetDetails.newBuilder() to construct.
   private ComputeEngineTargetDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,6 +96,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmName_ = "";
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -248,6 +255,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineTypeSeries_ = "";
+
   /**
    *
    *
@@ -271,6 +279,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -299,6 +308,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
@@ -322,6 +332,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -351,6 +362,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList networkTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -365,6 +377,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
     return networkTags_;
   }
+
   /**
    *
    *
@@ -379,6 +392,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public int getNetworkTagsCount() {
     return networkTags_.size();
   }
+
   /**
    *
    *
@@ -394,6 +408,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public java.lang.String getNetworkTags(int index) {
     return networkTags_.get(index);
   }
+
   /**
    *
    *
@@ -414,6 +429,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.NetworkInterface> networkInterfaces_;
+
   /**
    *
    *
@@ -428,6 +444,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       getNetworkInterfacesList() {
     return networkInterfaces_;
   }
+
   /**
    *
    *
@@ -442,6 +459,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       getNetworkInterfacesOrBuilderList() {
     return networkInterfaces_;
   }
+
   /**
    *
    *
@@ -455,6 +473,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public int getNetworkInterfacesCount() {
     return networkInterfaces_.size();
   }
+
   /**
    *
    *
@@ -468,6 +487,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public com.google.cloud.vmmigration.v1.NetworkInterface getNetworkInterfaces(int index) {
     return networkInterfaces_.get(index);
   }
+
   /**
    *
    *
@@ -487,6 +507,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -510,6 +531,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -536,6 +558,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   public static final int DISK_TYPE_FIELD_NUMBER = 9;
   private int diskType_ = 0;
+
   /**
    *
    *
@@ -551,6 +574,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public int getDiskTypeValue() {
     return diskType_;
   }
+
   /**
    *
    *
@@ -597,6 +621,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -613,12 +638,14 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -632,6 +659,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -652,6 +680,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -675,6 +704,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   public static final int LICENSE_TYPE_FIELD_NUMBER = 11;
   private int licenseType_ = 0;
+
   /**
    *
    *
@@ -690,6 +720,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public int getLicenseTypeValue() {
     return licenseType_;
   }
+
   /**
    *
    *
@@ -712,6 +743,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   public static final int APPLIED_LICENSE_FIELD_NUMBER = 12;
   private com.google.cloud.vmmigration.v1.AppliedLicense appliedLicense_;
+
   /**
    *
    *
@@ -727,6 +759,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public boolean hasAppliedLicense() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -744,6 +777,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         ? com.google.cloud.vmmigration.v1.AppliedLicense.getDefaultInstance()
         : appliedLicense_;
   }
+
   /**
    *
    *
@@ -762,6 +796,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   public static final int COMPUTE_SCHEDULING_FIELD_NUMBER = 13;
   private com.google.cloud.vmmigration.v1.ComputeScheduling computeScheduling_;
+
   /**
    *
    *
@@ -777,6 +812,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public boolean hasComputeScheduling() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -794,6 +830,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         ? com.google.cloud.vmmigration.v1.ComputeScheduling.getDefaultInstance()
         : computeScheduling_;
   }
+
   /**
    *
    *
@@ -813,6 +850,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   public static final int SECURE_BOOT_FIELD_NUMBER = 14;
   private boolean secureBoot_ = false;
+
   /**
    *
    *
@@ -832,6 +870,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   public static final int BOOT_OPTION_FIELD_NUMBER = 15;
   private int bootOption_ = 0;
+
   /**
    *
    *
@@ -847,6 +886,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public int getBootOptionValue() {
     return bootOption_;
   }
+
   /**
    *
    *
@@ -893,6 +933,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
+
   /**
    *
    *
@@ -909,12 +950,14 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
+
   /**
    *
    *
@@ -928,6 +971,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
+
   /**
    *
    *
@@ -948,6 +992,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -974,6 +1019,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalLicenses_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -988,6 +1034,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getAdditionalLicensesList() {
     return additionalLicenses_;
   }
+
   /**
    *
    *
@@ -1002,6 +1049,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public int getAdditionalLicensesCount() {
     return additionalLicenses_.size();
   }
+
   /**
    *
    *
@@ -1017,6 +1065,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
   public java.lang.String getAdditionalLicenses(int index) {
     return additionalLicenses_.get(index);
   }
+
   /**
    *
    *
@@ -1037,6 +1086,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
+
   /**
    *
    *
@@ -1060,6 +1110,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -1458,6 +1509,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2009,6 +2061,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object vmName_ = "";
+
     /**
      *
      *
@@ -2031,6 +2084,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2053,6 +2107,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2074,6 +2129,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2147,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2115,6 +2172,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -2137,6 +2195,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2159,6 +2218,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2180,6 +2240,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2197,6 +2258,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2221,6 +2283,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -2243,6 +2306,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2265,6 +2329,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2286,6 +2351,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2303,6 +2369,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2327,6 +2394,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object machineTypeSeries_ = "";
+
     /**
      *
      *
@@ -2349,6 +2417,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2371,6 +2440,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2392,6 +2462,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2409,6 +2480,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2433,6 +2505,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -2455,6 +2528,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2477,6 +2551,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2498,6 +2573,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2515,6 +2591,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2547,6 +2624,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2562,6 +2640,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       networkTags_.makeImmutable();
       return networkTags_;
     }
+
     /**
      *
      *
@@ -2576,6 +2655,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public int getNetworkTagsCount() {
       return networkTags_.size();
     }
+
     /**
      *
      *
@@ -2591,6 +2671,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public java.lang.String getNetworkTags(int index) {
       return networkTags_.get(index);
     }
+
     /**
      *
      *
@@ -2606,6 +2687,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
       return networkTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2629,6 +2711,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2651,6 +2734,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2670,6 +2754,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2688,6 +2773,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2747,6 +2833,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return networkInterfacesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2763,6 +2850,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return networkInterfacesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2779,6 +2867,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return networkInterfacesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2802,6 +2891,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2822,6 +2912,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2844,6 +2935,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2867,6 +2959,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2887,6 +2980,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2907,6 +3001,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2927,6 +3022,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2946,6 +3042,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2965,6 +3062,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2978,6 +3076,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         int index) {
       return getNetworkInterfacesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2995,6 +3094,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return networkInterfacesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3012,6 +3112,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(networkInterfaces_);
       }
     }
+
     /**
      *
      *
@@ -3025,6 +3126,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(com.google.cloud.vmmigration.v1.NetworkInterface.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3039,6 +3141,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(index, com.google.cloud.vmmigration.v1.NetworkInterface.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3074,6 +3177,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -3096,6 +3200,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3118,6 +3223,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3139,6 +3245,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3156,6 +3263,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3180,6 +3288,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private int diskType_ = 0;
+
     /**
      *
      *
@@ -3195,6 +3304,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public int getDiskTypeValue() {
       return diskType_;
     }
+
     /**
      *
      *
@@ -3213,6 +3323,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3232,6 +3343,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
           ? com.google.cloud.vmmigration.v1.ComputeEngineDiskType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3253,6 +3365,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3296,6 +3409,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3312,12 +3426,14 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -3331,6 +3447,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -3351,6 +3468,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3377,6 +3495,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3393,12 +3512,14 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3419,6 +3540,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -3435,6 +3557,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private int licenseType_ = 0;
+
     /**
      *
      *
@@ -3450,6 +3573,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public int getLicenseTypeValue() {
       return licenseType_;
     }
+
     /**
      *
      *
@@ -3468,6 +3592,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3487,6 +3612,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
           ? com.google.cloud.vmmigration.v1.ComputeEngineLicenseType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3508,6 +3634,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3532,6 +3659,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
             com.google.cloud.vmmigration.v1.AppliedLicense.Builder,
             com.google.cloud.vmmigration.v1.AppliedLicenseOrBuilder>
         appliedLicenseBuilder_;
+
     /**
      *
      *
@@ -3546,6 +3674,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public boolean hasAppliedLicense() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3566,6 +3695,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return appliedLicenseBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3588,6 +3718,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3608,6 +3739,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3636,6 +3768,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3655,6 +3788,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3669,6 +3803,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return getAppliedLicenseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3687,6 +3822,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
             : appliedLicense_;
       }
     }
+
     /**
      *
      *
@@ -3719,6 +3855,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
             com.google.cloud.vmmigration.v1.ComputeScheduling.Builder,
             com.google.cloud.vmmigration.v1.ComputeSchedulingOrBuilder>
         computeSchedulingBuilder_;
+
     /**
      *
      *
@@ -3733,6 +3870,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public boolean hasComputeScheduling() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -3753,6 +3891,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return computeSchedulingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3775,6 +3914,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3795,6 +3935,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3823,6 +3964,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3842,6 +3984,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3856,6 +3999,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return getComputeSchedulingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3875,6 +4019,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
             : computeScheduling_;
       }
     }
+
     /**
      *
      *
@@ -3902,6 +4047,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private boolean secureBoot_;
+
     /**
      *
      *
@@ -3918,6 +4064,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public boolean getSecureBoot() {
       return secureBoot_;
     }
+
     /**
      *
      *
@@ -3938,6 +4085,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3958,6 +4106,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private int bootOption_ = 0;
+
     /**
      *
      *
@@ -3973,6 +4122,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public int getBootOptionValue() {
       return bootOption_;
     }
+
     /**
      *
      *
@@ -3991,6 +4141,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4010,6 +4161,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
           ? com.google.cloud.vmmigration.v1.ComputeEngineBootOption.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4031,6 +4183,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4075,6 +4228,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -4091,12 +4245,14 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
+
     /**
      *
      *
@@ -4110,6 +4266,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
+
     /**
      *
      *
@@ -4130,6 +4287,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4156,6 +4314,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4172,12 +4331,14 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00008000;
       return internalGetMutableMetadata().getMutableMap();
     }
+
     /**
      *
      *
@@ -4198,6 +4359,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       bitField0_ |= 0x00008000;
       return this;
     }
+
     /**
      *
      *
@@ -4222,6 +4384,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00010000;
     }
+
     /**
      *
      *
@@ -4237,6 +4400,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       additionalLicenses_.makeImmutable();
       return additionalLicenses_;
     }
+
     /**
      *
      *
@@ -4251,6 +4415,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public int getAdditionalLicensesCount() {
       return additionalLicenses_.size();
     }
+
     /**
      *
      *
@@ -4266,6 +4431,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public java.lang.String getAdditionalLicenses(int index) {
       return additionalLicenses_.get(index);
     }
+
     /**
      *
      *
@@ -4281,6 +4447,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getAdditionalLicensesBytes(int index) {
       return additionalLicenses_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4304,6 +4471,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4326,6 +4494,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4345,6 +4514,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4363,6 +4533,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4388,6 +4559,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object hostname_ = "";
+
     /**
      *
      *
@@ -4410,6 +4582,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4432,6 +4605,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4453,6 +4627,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4470,6 +4645,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

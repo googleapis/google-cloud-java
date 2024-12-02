@@ -43,6 +43,7 @@ public interface ConditionOrBuilder
    * @return A list containing the ipSubnetworks.
    */
   java.util.List<java.lang.String> getIpSubnetworksList();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ConditionOrBuilder
    * @return The count of ipSubnetworks.
    */
   int getIpSubnetworksCount();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface ConditionOrBuilder
    * @return The ipSubnetworks at the given index.
    */
   java.lang.String getIpSubnetworks(int index);
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface ConditionOrBuilder
    * @return Whether the devicePolicy field is set.
    */
   boolean hasDevicePolicy();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface ConditionOrBuilder
    * @return The devicePolicy.
    */
   com.google.identity.accesscontextmanager.v1.DevicePolicy getDevicePolicy();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface ConditionOrBuilder
    * @return A list containing the requiredAccessLevels.
    */
   java.util.List<java.lang.String> getRequiredAccessLevelsList();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface ConditionOrBuilder
    * @return The count of requiredAccessLevels.
    */
   int getRequiredAccessLevelsCount();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface ConditionOrBuilder
    * @return The requiredAccessLevels at the given index.
    */
   java.lang.String getRequiredAccessLevels(int index);
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public interface ConditionOrBuilder
    * @return A list containing the members.
    */
   java.util.List<java.lang.String> getMembersList();
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public interface ConditionOrBuilder
    * @return The count of members.
    */
   int getMembersCount();
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public interface ConditionOrBuilder
    * @return The members at the given index.
    */
   java.lang.String getMembers(int index);
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public interface ConditionOrBuilder
    * @return A list containing the regions.
    */
   java.util.List<java.lang.String> getRegionsList();
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public interface ConditionOrBuilder
    * @return The count of regions.
    */
   int getRegionsCount();
+
   /**
    *
    *
@@ -334,6 +347,7 @@ public interface ConditionOrBuilder
    * @return The regions at the given index.
    */
   java.lang.String getRegions(int index);
+
   /**
    *
    *

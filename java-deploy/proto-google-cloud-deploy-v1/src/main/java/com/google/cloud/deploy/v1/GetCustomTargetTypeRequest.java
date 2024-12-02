@@ -33,6 +33,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.GetCustomTargetTypeRequest)
     GetCustomTargetTypeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetCustomTargetTypeRequest.newBuilder() to construct.
   private GetCustomTargetTypeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +283,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -464,6 +468,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -489,6 +494,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -514,6 +520,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -558,6 +566,7 @@ public final class GetCustomTargetTypeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

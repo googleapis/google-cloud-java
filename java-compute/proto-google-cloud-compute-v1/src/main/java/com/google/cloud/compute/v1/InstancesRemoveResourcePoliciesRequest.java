@@ -33,6 +33,7 @@ public final class InstancesRemoveResourcePoliciesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest)
     InstancesRemoveResourcePoliciesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstancesRemoveResourcePoliciesRequest.newBuilder() to construct.
   private InstancesRemoveResourcePoliciesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class InstancesRemoveResourcePoliciesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InstancesRemoveResourcePoliciesRequest
   public com.google.protobuf.ProtocolStringList getResourcePoliciesList() {
     return resourcePolicies_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class InstancesRemoveResourcePoliciesRequest
   public int getResourcePoliciesCount() {
     return resourcePolicies_.size();
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class InstancesRemoveResourcePoliciesRequest
   public java.lang.String getResourcePolicies(int index) {
     return resourcePolicies_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +302,7 @@ public final class InstancesRemoveResourcePoliciesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -502,6 +508,7 @@ public final class InstancesRemoveResourcePoliciesRequest
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -517,6 +524,7 @@ public final class InstancesRemoveResourcePoliciesRequest
       resourcePolicies_.makeImmutable();
       return resourcePolicies_;
     }
+
     /**
      *
      *
@@ -531,6 +539,7 @@ public final class InstancesRemoveResourcePoliciesRequest
     public int getResourcePoliciesCount() {
       return resourcePolicies_.size();
     }
+
     /**
      *
      *
@@ -546,6 +555,7 @@ public final class InstancesRemoveResourcePoliciesRequest
     public java.lang.String getResourcePolicies(int index) {
       return resourcePolicies_.get(index);
     }
+
     /**
      *
      *
@@ -561,6 +571,7 @@ public final class InstancesRemoveResourcePoliciesRequest
     public com.google.protobuf.ByteString getResourcePoliciesBytes(int index) {
       return resourcePolicies_.getByteString(index);
     }
+
     /**
      *
      *
@@ -584,6 +595,7 @@ public final class InstancesRemoveResourcePoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +618,7 @@ public final class InstancesRemoveResourcePoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -625,6 +638,7 @@ public final class InstancesRemoveResourcePoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +657,7 @@ public final class InstancesRemoveResourcePoliciesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

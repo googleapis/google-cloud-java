@@ -34,6 +34,7 @@ public interface HealthChecksScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 448370606;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HealthCheck> getHealthChecksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface HealthChecksScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 448370606;</code>
    */
   com.google.cloud.compute.v1.HealthCheck getHealthChecks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface HealthChecksScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 448370606;</code>
    */
   int getHealthChecksCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface HealthChecksScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HealthCheckOrBuilder>
       getHealthChecksOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface HealthChecksScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface HealthChecksScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

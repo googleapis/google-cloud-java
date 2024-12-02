@@ -38,6 +38,7 @@ public interface ListTableSpecsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ListTableSpecsRequestOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ListTableSpecsRequestOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface ListTableSpecsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface ListTableSpecsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

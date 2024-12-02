@@ -37,6 +37,7 @@ public interface GenerateDownloadUrlResponseOrBuilder
    * @return The downloadUrl.
    */
   java.lang.String getDownloadUrl();
+
   /**
    *
    *

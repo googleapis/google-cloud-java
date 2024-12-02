@@ -36,6 +36,7 @@ public interface InstanceGroupManagerAllInstancesConfigOrBuilder
    * @return Whether the properties field is set.
    */
   boolean hasProperties();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagerAllInstancesConfigOrBuilder
    * @return The properties.
    */
   com.google.cloud.compute.v1.InstancePropertiesPatch getProperties();
+
   /**
    *
    *

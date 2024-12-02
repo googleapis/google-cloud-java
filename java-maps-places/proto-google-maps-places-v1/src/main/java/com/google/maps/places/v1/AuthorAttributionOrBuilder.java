@@ -37,6 +37,7 @@ public interface AuthorAttributionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface AuthorAttributionOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AuthorAttributionOrBuilder
    * @return The photoUri.
    */
   java.lang.String getPhotoUri();
+
   /**
    *
    *

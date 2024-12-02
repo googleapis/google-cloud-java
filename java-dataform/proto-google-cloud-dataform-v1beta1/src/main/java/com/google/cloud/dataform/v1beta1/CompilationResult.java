@@ -33,6 +33,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CompilationResult)
     CompilationResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompilationResult.newBuilder() to construct.
   private CompilationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      * @return The message.
      */
     java.lang.String getMessage();
+
     /**
      *
      *
@@ -108,6 +110,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      * @return The stack.
      */
     java.lang.String getStack();
+
     /**
      *
      *
@@ -134,6 +137,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      * @return The path.
      */
     java.lang.String getPath();
+
     /**
      *
      *
@@ -163,6 +167,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the actionTarget field is set.
      */
     boolean hasActionTarget();
+
     /**
      *
      *
@@ -178,6 +183,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      * @return The actionTarget.
      */
     com.google.cloud.dataform.v1beta1.Target getActionTarget();
+
     /**
      *
      *
@@ -192,6 +198,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.dataform.v1beta1.TargetOrBuilder getActionTargetOrBuilder();
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CompilationResult.CompilationError)
       CompilationErrorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CompilationError.newBuilder() to construct.
     private CompilationError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -243,6 +251,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -266,6 +275,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -294,6 +304,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object stack_ = "";
+
     /**
      *
      *
@@ -317,6 +328,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -345,6 +357,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -369,6 +382,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -396,6 +410,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
     public static final int ACTION_TARGET_FIELD_NUMBER = 4;
     private com.google.cloud.dataform.v1beta1.Target actionTarget_;
+
     /**
      *
      *
@@ -414,6 +429,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasActionTarget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -434,6 +450,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
           : actionTarget_;
     }
+
     /**
      *
      *
@@ -647,6 +664,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -902,6 +920,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object message_ = "";
+
       /**
        *
        *
@@ -924,6 +943,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -946,6 +966,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -967,6 +988,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -984,6 +1006,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1008,6 +1031,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object stack_ = "";
+
       /**
        *
        *
@@ -1030,6 +1054,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1052,6 +1077,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1073,6 +1099,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1090,6 +1117,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1114,6 +1142,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object path_ = "";
+
       /**
        *
        *
@@ -1137,6 +1166,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1160,6 +1190,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1182,6 +1213,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1200,6 +1232,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1230,6 +1263,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
               com.google.cloud.dataform.v1beta1.Target.Builder,
               com.google.cloud.dataform.v1beta1.TargetOrBuilder>
           actionTargetBuilder_;
+
       /**
        *
        *
@@ -1247,6 +1281,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       public boolean hasActionTarget() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -1270,6 +1305,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           return actionTargetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1295,6 +1331,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1318,6 +1355,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1348,6 +1386,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -1370,6 +1409,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1387,6 +1427,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getActionTargetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1408,6 +1449,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
               : actionTarget_;
         }
       }
+
       /**
        *
        *
@@ -1523,6 +1565,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1561,6 +1604,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1584,6 +1628,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1609,6 +1654,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GIT_COMMITISH_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1627,6 +1673,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   public boolean hasGitCommitish() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -1658,6 +1705,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1691,6 +1739,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int WORKSPACE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -1708,6 +1757,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   public boolean hasWorkspace() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -1738,6 +1788,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1770,6 +1821,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RELEASE_CONFIG_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -1789,6 +1841,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   public boolean hasReleaseConfig() {
     return sourceCase_ == 7;
   }
+
   /**
    *
    *
@@ -1821,6 +1874,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1856,6 +1910,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
   public static final int CODE_COMPILATION_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.dataform.v1beta1.CodeCompilationConfig codeCompilationConfig_;
+
   /**
    *
    *
@@ -1874,6 +1929,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   public boolean hasCodeCompilationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1894,6 +1950,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dataform.v1beta1.CodeCompilationConfig.getDefaultInstance()
         : codeCompilationConfig_;
   }
+
   /**
    *
    *
@@ -1918,6 +1975,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resolvedGitCommitSha_ = "";
+
   /**
    *
    *
@@ -1942,6 +2000,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1971,6 +2030,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataformCoreVersion_ = "";
+
   /**
    *
    *
@@ -1994,6 +2054,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -2023,6 +2084,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.CompilationResult.CompilationError>
       compilationErrors_;
+
   /**
    *
    *
@@ -2039,6 +2101,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       getCompilationErrorsList() {
     return compilationErrors_;
   }
+
   /**
    *
    *
@@ -2056,6 +2119,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       getCompilationErrorsOrBuilderList() {
     return compilationErrors_;
   }
+
   /**
    *
    *
@@ -2071,6 +2135,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   public int getCompilationErrorsCount() {
     return compilationErrors_.size();
   }
+
   /**
    *
    *
@@ -2087,6 +2152,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       int index) {
     return compilationErrors_.get(index);
   }
+
   /**
    *
    *
@@ -2356,6 +2422,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2737,6 +2804,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2759,6 +2827,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2781,6 +2850,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2802,6 +2872,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2819,6 +2890,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2861,6 +2933,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasGitCommitish() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -2893,6 +2966,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2925,6 +2999,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2950,6 +3025,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2973,6 +3049,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3018,6 +3095,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasWorkspace() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -3049,6 +3127,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3080,6 +3159,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3104,6 +3184,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3126,6 +3207,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3172,6 +3254,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasReleaseConfig() {
       return sourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -3205,6 +3288,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3238,6 +3322,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3264,6 +3349,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3288,6 +3374,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3322,6 +3409,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataform.v1beta1.CodeCompilationConfig.Builder,
             com.google.cloud.dataform.v1beta1.CodeCompilationConfigOrBuilder>
         codeCompilationConfigBuilder_;
+
     /**
      *
      *
@@ -3339,6 +3427,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasCodeCompilationConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3362,6 +3451,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return codeCompilationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3388,6 +3478,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3411,6 +3502,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3443,6 +3535,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3465,6 +3558,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3483,6 +3577,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCodeCompilationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3505,6 +3600,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
             : codeCompilationConfig_;
       }
     }
+
     /**
      *
      *
@@ -3535,6 +3631,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object resolvedGitCommitSha_ = "";
+
     /**
      *
      *
@@ -3558,6 +3655,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3581,6 +3679,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3603,6 +3702,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3621,6 +3721,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3646,6 +3747,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object dataformCoreVersion_ = "";
+
     /**
      *
      *
@@ -3668,6 +3770,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3690,6 +3793,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3711,6 +3815,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3728,6 +3833,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3789,6 +3895,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return compilationErrorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3807,6 +3914,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return compilationErrorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3826,6 +3934,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return compilationErrorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3851,6 +3960,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3875,6 +3985,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3900,6 +4011,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3925,6 +4037,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3948,6 +4061,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3972,6 +4086,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3996,6 +4111,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4017,6 +4133,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4038,6 +4155,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4053,6 +4171,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         getCompilationErrorsBuilder(int index) {
       return getCompilationErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4072,6 +4191,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return compilationErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4092,6 +4212,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(compilationErrors_);
       }
     }
+
     /**
      *
      *
@@ -4110,6 +4231,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
               com.google.cloud.dataform.v1beta1.CompilationResult.CompilationError
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4129,6 +4251,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
               com.google.cloud.dataform.v1beta1.CompilationResult.CompilationError
                   .getDefaultInstance());
     }
+
     /**
      *
      *

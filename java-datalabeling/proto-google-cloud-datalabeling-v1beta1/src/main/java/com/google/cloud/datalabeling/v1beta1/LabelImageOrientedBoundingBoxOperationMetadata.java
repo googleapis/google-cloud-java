@@ -35,6 +35,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata)
     LabelImageOrientedBoundingBoxOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LabelImageOrientedBoundingBoxOperationMetadata.newBuilder() to construct.
   private LabelImageOrientedBoundingBoxOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
   private int bitField0_;
   public static final int BASIC_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
+
   /**
    *
    *
@@ -292,6 +296,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -516,6 +521,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
+
     /**
      *
      *
@@ -530,6 +536,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -550,6 +557,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
         return basicConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +653,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
             : basicConfig_;
       }
     }
+
     /**
      *
      *

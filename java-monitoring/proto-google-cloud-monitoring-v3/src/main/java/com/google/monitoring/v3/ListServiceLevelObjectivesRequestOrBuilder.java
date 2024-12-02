@@ -42,6 +42,7 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *

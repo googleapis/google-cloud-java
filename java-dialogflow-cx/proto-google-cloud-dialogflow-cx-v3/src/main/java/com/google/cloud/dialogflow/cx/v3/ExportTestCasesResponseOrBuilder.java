@@ -38,6 +38,7 @@ public interface ExportTestCasesResponseOrBuilder
    * @return Whether the gcsUri field is set.
    */
   boolean hasGcsUri();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExportTestCasesResponseOrBuilder
    * @return The gcsUri.
    */
   java.lang.String getGcsUri();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ExportTestCasesResponseOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *

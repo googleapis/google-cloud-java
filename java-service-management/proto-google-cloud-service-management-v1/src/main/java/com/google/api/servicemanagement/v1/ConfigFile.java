@@ -33,6 +33,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.ConfigFile)
     ConfigFileOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigFile.newBuilder() to construct.
   private ConfigFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,6 +151,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * <code>FILE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int FILE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -160,6 +162,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVICE_CONFIG_YAML = 1;</code>
      */
     public static final int SERVICE_CONFIG_YAML_VALUE = 1;
+
     /**
      *
      *
@@ -170,6 +173,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * <code>OPEN_API_JSON = 2;</code>
      */
     public static final int OPEN_API_JSON_VALUE = 2;
+
     /**
      *
      *
@@ -180,6 +184,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * <code>OPEN_API_YAML = 3;</code>
      */
     public static final int OPEN_API_YAML_VALUE = 3;
+
     /**
      *
      *
@@ -196,6 +201,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * <code>FILE_DESCRIPTOR_SET_PROTO = 4;</code>
      */
     public static final int FILE_DESCRIPTOR_SET_PROTO_VALUE = 4;
+
     /**
      *
      *
@@ -304,6 +310,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filePath_ = "";
+
   /**
    *
    *
@@ -327,6 +334,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -353,6 +361,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILE_CONTENTS_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString fileContents_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -371,6 +380,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILE_TYPE_FIELD_NUMBER = 4;
   private int fileType_ = 0;
+
   /**
    *
    *
@@ -386,6 +396,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
   public int getFileTypeValue() {
     return fileType_;
   }
+
   /**
    *
    *
@@ -587,6 +598,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -796,6 +808,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object filePath_ = "";
+
     /**
      *
      *
@@ -818,6 +831,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -840,6 +854,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -861,6 +876,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +894,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString fileContents_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -917,6 +935,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFileContents() {
       return fileContents_;
     }
+
     /**
      *
      *
@@ -938,6 +957,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +977,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int fileType_ = 0;
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     public int getFileTypeValue() {
       return fileType_;
     }
+
     /**
      *
      *
@@ -990,6 +1012,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1032,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
           ? com.google.api.servicemanagement.v1.ConfigFile.FileType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1030,6 +1054,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

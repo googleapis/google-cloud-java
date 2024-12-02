@@ -34,6 +34,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesMetadata)
     AutoMlTablesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlTablesMetadata.newBuilder() to construct.
   private AutoMlTablesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int TRAIN_COST_MILLI_NODE_HOURS_FIELD_NUMBER = 1;
   private long trainCostMilliNodeHours_ = 0L;
+
   /**
    *
    *
@@ -266,6 +268,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -469,6 +472,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private long trainCostMilliNodeHours_;
+
     /**
      *
      *
@@ -486,6 +490,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
     public long getTrainCostMilliNodeHours() {
       return trainCostMilliNodeHours_;
     }
+
     /**
      *
      *
@@ -507,6 +512,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

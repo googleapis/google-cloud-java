@@ -33,6 +33,7 @@ public final class HiveQLDialect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.HiveQLDialect)
     HiveQLDialectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HiveQLDialect.newBuilder() to construct.
   private HiveQLDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class HiveQLDialect extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

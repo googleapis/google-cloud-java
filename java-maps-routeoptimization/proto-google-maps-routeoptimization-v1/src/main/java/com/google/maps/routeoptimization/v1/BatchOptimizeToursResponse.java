@@ -34,6 +34,7 @@ public final class BatchOptimizeToursResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.BatchOptimizeToursResponse)
     BatchOptimizeToursResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchOptimizeToursResponse.newBuilder() to construct.
   private BatchOptimizeToursResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class BatchOptimizeToursResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

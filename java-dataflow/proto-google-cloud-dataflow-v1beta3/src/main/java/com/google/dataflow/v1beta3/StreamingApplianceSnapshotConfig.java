@@ -33,6 +33,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StreamingApplianceSnapshotConfig)
     StreamingApplianceSnapshotConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingApplianceSnapshotConfig.newBuilder() to construct.
   private StreamingApplianceSnapshotConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object snapshotId_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object importStateEndpoint_ = "";
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -336,6 +341,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -538,6 +544,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object snapshotId_ = "";
+
     /**
      *
      *
@@ -560,6 +567,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -620,6 +630,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
     }
 
     private java.lang.Object importStateEndpoint_ = "";
+
     /**
      *
      *
@@ -666,6 +678,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -688,6 +701,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -709,6 +723,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +741,7 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

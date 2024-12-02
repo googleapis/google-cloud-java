@@ -37,6 +37,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.ContextualContent)
     ContextualContentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContextualContent.newBuilder() to construct.
   private ContextualContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,6 +91,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      * @return Whether the reviewJustification field is set.
      */
     boolean hasReviewJustification();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      */
     com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
         getReviewJustification();
+
     /**
      *
      *
@@ -139,6 +142,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      * @return Whether the businessAvailabilityAttributesJustification field is set.
      */
     boolean hasBusinessAvailabilityAttributesJustification();
+
     /**
      *
      *
@@ -157,6 +161,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     com.google.maps.places.v1.ContextualContent.Justification
             .BusinessAvailabilityAttributesJustification
         getBusinessAvailabilityAttributesJustification();
+
     /**
      *
      *
@@ -177,6 +182,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     com.google.maps.places.v1.ContextualContent.Justification.JustificationCase
         getJustificationCase();
   }
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.ContextualContent.Justification)
       JustificationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Justification.newBuilder() to construct.
     private Justification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -237,6 +244,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
        * @return Whether the highlightedText field is set.
        */
       boolean hasHighlightedText();
+
       /**
        * <code>
        * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -246,6 +254,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
        */
       com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText
           getHighlightedText();
+
       /**
        * <code>
        * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -267,6 +276,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
        * @return Whether the review field is set.
        */
       boolean hasReview();
+
       /**
        *
        *
@@ -279,6 +289,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
        * @return The review.
        */
       com.google.maps.places.v1.Review getReview();
+
       /**
        *
        *
@@ -290,6 +301,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
        */
       com.google.maps.places.v1.ReviewOrBuilder getReviewOrBuilder();
     }
+
     /**
      *
      *
@@ -312,6 +324,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.maps.places.v1.ContextualContent.Justification.ReviewJustification)
         ReviewJustificationOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ReviewJustification.newBuilder() to construct.
       private ReviewJustification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -352,6 +365,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
          * @return The text.
          */
         java.lang.String getText();
+
         /**
          * <code>string text = 1;</code>
          *
@@ -374,6 +388,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                 com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
                     .HighlightedText.HighlightedTextRange>
             getHighlightedTextRangesList();
+
         /**
          *
          *
@@ -388,6 +403,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
                 .HighlightedText.HighlightedTextRange
             getHighlightedTextRanges(int index);
+
         /**
          *
          *
@@ -400,6 +416,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
          * </code>
          */
         int getHighlightedTextRangesCount();
+
         /**
          *
          *
@@ -416,6 +433,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                     com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
                         .HighlightedText.HighlightedTextRangeOrBuilder>
             getHighlightedTextRangesOrBuilderList();
+
         /**
          *
          *
@@ -431,6 +449,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                 .HighlightedText.HighlightedTextRangeOrBuilder
             getHighlightedTextRangesOrBuilder(int index);
       }
+
       /**
        *
        *
@@ -449,6 +468,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           // @@protoc_insertion_point(message_implements:google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText)
           HighlightedTextOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use HighlightedText.newBuilder() to construct.
         private HighlightedText(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -501,6 +521,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
            */
           int getEndIndex();
         }
+
         /**
          *
          *
@@ -517,6 +538,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             // @@protoc_insertion_point(message_implements:google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText.HighlightedTextRange)
             HighlightedTextRangeOrBuilder {
           private static final long serialVersionUID = 0L;
+
           // Use HighlightedTextRange.newBuilder() to construct.
           private HighlightedTextRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
             super(builder);
@@ -549,6 +571,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
           public static final int START_INDEX_FIELD_NUMBER = 1;
           private int startIndex_ = 0;
+
           /**
            * <code>int32 start_index = 1;</code>
            *
@@ -561,6 +584,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
           public static final int END_INDEX_FIELD_NUMBER = 2;
           private int endIndex_ = 0;
+
           /**
            * <code>int32 end_index = 2;</code>
            *
@@ -773,6 +797,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             Builder builder = new Builder(parent);
             return builder;
           }
+
           /**
            *
            *
@@ -1001,6 +1026,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             private int bitField0_;
 
             private int startIndex_;
+
             /**
              * <code>int32 start_index = 1;</code>
              *
@@ -1010,6 +1036,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             public int getStartIndex() {
               return startIndex_;
             }
+
             /**
              * <code>int32 start_index = 1;</code>
              *
@@ -1023,6 +1050,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               onChanged();
               return this;
             }
+
             /**
              * <code>int32 start_index = 1;</code>
              *
@@ -1036,6 +1064,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
 
             private int endIndex_;
+
             /**
              * <code>int32 end_index = 2;</code>
              *
@@ -1045,6 +1074,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             public int getEndIndex() {
               return endIndex_;
             }
+
             /**
              * <code>int32 end_index = 2;</code>
              *
@@ -1058,6 +1088,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               onChanged();
               return this;
             }
+
             /**
              * <code>int32 end_index = 2;</code>
              *
@@ -1146,6 +1177,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object text_ = "";
+
         /**
          * <code>string text = 1;</code>
          *
@@ -1163,6 +1195,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             return s;
           }
         }
+
         /**
          * <code>string text = 1;</code>
          *
@@ -1188,6 +1221,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                 com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
                     .HighlightedText.HighlightedTextRange>
             highlightedTextRanges_;
+
         /**
          *
          *
@@ -1206,6 +1240,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             getHighlightedTextRangesList() {
           return highlightedTextRanges_;
         }
+
         /**
          *
          *
@@ -1225,6 +1260,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             getHighlightedTextRangesOrBuilderList() {
           return highlightedTextRanges_;
         }
+
         /**
          *
          *
@@ -1240,6 +1276,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         public int getHighlightedTextRangesCount() {
           return highlightedTextRanges_.size();
         }
+
         /**
          *
          *
@@ -1257,6 +1294,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             getHighlightedTextRanges(int index) {
           return highlightedTextRanges_.get(index);
         }
+
         /**
          *
          *
@@ -1482,6 +1520,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -1771,6 +1810,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           private int bitField0_;
 
           private java.lang.Object text_ = "";
+
           /**
            * <code>string text = 1;</code>
            *
@@ -1787,6 +1827,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               return (java.lang.String) ref;
             }
           }
+
           /**
            * <code>string text = 1;</code>
            *
@@ -1803,6 +1844,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            * <code>string text = 1;</code>
            *
@@ -1818,6 +1860,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             onChanged();
             return this;
           }
+
           /**
            * <code>string text = 1;</code>
            *
@@ -1829,6 +1872,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             onChanged();
             return this;
           }
+
           /**
            * <code>string text = 1;</code>
            *
@@ -1891,6 +1935,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               return highlightedTextRangesBuilder_.getMessageList();
             }
           }
+
           /**
            *
            *
@@ -1909,6 +1954,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               return highlightedTextRangesBuilder_.getCount();
             }
           }
+
           /**
            *
            *
@@ -1929,6 +1975,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               return highlightedTextRangesBuilder_.getMessage(index);
             }
           }
+
           /**
            *
            *
@@ -1957,6 +2004,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -1982,6 +2030,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -2009,6 +2058,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -2037,6 +2087,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -2061,6 +2112,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -2086,6 +2138,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -2113,6 +2166,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -2134,6 +2188,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -2155,6 +2210,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             }
             return this;
           }
+
           /**
            *
            *
@@ -2171,6 +2227,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               getHighlightedTextRangesBuilder(int index) {
             return getHighlightedTextRangesFieldBuilder().getBuilder(index);
           }
+
           /**
            *
            *
@@ -2191,6 +2248,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               return highlightedTextRangesBuilder_.getMessageOrBuilder(index);
             }
           }
+
           /**
            *
            *
@@ -2213,6 +2271,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               return java.util.Collections.unmodifiableList(highlightedTextRanges_);
             }
           }
+
           /**
            *
            *
@@ -2232,6 +2291,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                     com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
                         .HighlightedText.HighlightedTextRange.getDefaultInstance());
           }
+
           /**
            *
            *
@@ -2252,6 +2312,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                     com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
                         .HighlightedText.HighlightedTextRange.getDefaultInstance());
           }
+
           /**
            *
            *
@@ -2373,6 +2434,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       private com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
               .HighlightedText
           highlightedText_;
+
       /**
        * <code>
        * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -2384,6 +2446,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       public boolean hasHighlightedText() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <code>
        * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -2400,6 +2463,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                 .HighlightedText.getDefaultInstance()
             : highlightedText_;
       }
+
       /**
        * <code>
        * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -2417,6 +2481,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
       public static final int REVIEW_FIELD_NUMBER = 2;
       private com.google.maps.places.v1.Review review_;
+
       /**
        *
        *
@@ -2432,6 +2497,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       public boolean hasReview() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2447,6 +2513,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       public com.google.maps.places.v1.Review getReview() {
         return review_ == null ? com.google.maps.places.v1.Review.getDefaultInstance() : review_;
       }
+
       /**
        *
        *
@@ -2651,6 +2718,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2909,6 +2977,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                 com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
                     .HighlightedTextOrBuilder>
             highlightedTextBuilder_;
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -2919,6 +2988,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         public boolean hasHighlightedText() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -2938,6 +3008,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             return highlightedTextBuilder_.getMessage();
           }
         }
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -2959,6 +3030,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -2977,6 +3049,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -3005,6 +3078,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           }
           return this;
         }
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -3020,6 +3094,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -3032,6 +3107,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return getHighlightedTextFieldBuilder().getBuilder();
         }
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -3049,6 +3125,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                 : highlightedText_;
           }
         }
+
         /**
          * <code>
          * .google.maps.places.v1.ContextualContent.Justification.ReviewJustification.HighlightedText highlighted_text = 1;
@@ -3083,6 +3160,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                 com.google.maps.places.v1.Review.Builder,
                 com.google.maps.places.v1.ReviewOrBuilder>
             reviewBuilder_;
+
         /**
          *
          *
@@ -3097,6 +3175,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         public boolean hasReview() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -3117,6 +3196,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
             return reviewBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -3139,6 +3219,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3158,6 +3239,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3185,6 +3267,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           }
           return this;
         }
+
         /**
          *
          *
@@ -3204,6 +3287,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3218,6 +3302,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return getReviewFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -3236,6 +3321,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
                 : review_;
           }
         }
+
         /**
          *
          *
@@ -3375,6 +3461,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
        */
       boolean getDineIn();
     }
+
     /**
      *
      *
@@ -3395,6 +3482,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.maps.places.v1.ContextualContent.Justification.BusinessAvailabilityAttributesJustification)
         BusinessAvailabilityAttributesJustificationOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use BusinessAvailabilityAttributesJustification.newBuilder() to construct.
       private BusinessAvailabilityAttributesJustification(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3428,6 +3516,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
       public static final int TAKEOUT_FIELD_NUMBER = 1;
       private boolean takeout_ = false;
+
       /**
        *
        *
@@ -3446,6 +3535,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
       public static final int DELIVERY_FIELD_NUMBER = 2;
       private boolean delivery_ = false;
+
       /**
        *
        *
@@ -3464,6 +3554,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
       public static final int DINE_IN_FIELD_NUMBER = 3;
       private boolean dineIn_ = false;
+
       /**
        *
        *
@@ -3688,6 +3779,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3933,6 +4025,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         private int bitField0_;
 
         private boolean takeout_;
+
         /**
          *
          *
@@ -3948,6 +4041,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         public boolean getTakeout() {
           return takeout_;
         }
+
         /**
          *
          *
@@ -3967,6 +4061,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3986,6 +4081,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         }
 
         private boolean delivery_;
+
         /**
          *
          *
@@ -4001,6 +4097,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         public boolean getDelivery() {
           return delivery_;
         }
+
         /**
          *
          *
@@ -4020,6 +4117,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4039,6 +4137,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         }
 
         private boolean dineIn_;
+
         /**
          *
          *
@@ -4054,6 +4153,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         public boolean getDineIn() {
           return dineIn_;
         }
+
         /**
          *
          *
@@ -4073,6 +4173,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4184,6 +4285,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       private JustificationCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4217,6 +4319,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int REVIEW_JUSTIFICATION_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -4236,6 +4339,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     public boolean hasReviewJustification() {
       return justificationCase_ == 1;
     }
+
     /**
      *
      *
@@ -4261,6 +4365,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       return com.google.maps.places.v1.ContextualContent.Justification.ReviewJustification
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4286,6 +4391,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int BUSINESS_AVAILABILITY_ATTRIBUTES_JUSTIFICATION_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -4305,6 +4411,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     public boolean hasBusinessAvailabilityAttributesJustification() {
       return justificationCase_ == 2;
     }
+
     /**
      *
      *
@@ -4332,6 +4439,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       return com.google.maps.places.v1.ContextualContent.Justification
           .BusinessAvailabilityAttributesJustification.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4562,6 +4670,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4812,6 +4921,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               com.google.maps.places.v1.ContextualContent.Justification
                   .ReviewJustificationOrBuilder>
           reviewJustificationBuilder_;
+
       /**
        *
        *
@@ -4831,6 +4941,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       public boolean hasReviewJustification() {
         return justificationCase_ == 1;
       }
+
       /**
        *
        *
@@ -4864,6 +4975,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4891,6 +5003,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         justificationCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4916,6 +5029,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         justificationCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4958,6 +5072,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         justificationCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4987,6 +5102,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -5004,6 +5120,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           getReviewJustificationBuilder() {
         return getReviewJustificationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5031,6 +5148,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5082,6 +5200,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               com.google.maps.places.v1.ContextualContent.Justification
                   .BusinessAvailabilityAttributesJustificationOrBuilder>
           businessAvailabilityAttributesJustificationBuilder_;
+
       /**
        *
        *
@@ -5101,6 +5220,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       public boolean hasBusinessAvailabilityAttributesJustification() {
         return justificationCase_ == 2;
       }
+
       /**
        *
        *
@@ -5136,6 +5256,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               .BusinessAvailabilityAttributesJustification.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5165,6 +5286,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         justificationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5191,6 +5313,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         justificationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5235,6 +5358,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         justificationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5264,6 +5388,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -5282,6 +5407,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           getBusinessAvailabilityAttributesJustificationBuilder() {
         return getBusinessAvailabilityAttributesJustificationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5312,6 +5438,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               .BusinessAvailabilityAttributesJustification.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5427,6 +5554,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.Review> reviews_;
+
   /**
    *
    *
@@ -5440,6 +5568,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.maps.places.v1.Review> getReviewsList() {
     return reviews_;
   }
+
   /**
    *
    *
@@ -5454,6 +5583,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       getReviewsOrBuilderList() {
     return reviews_;
   }
+
   /**
    *
    *
@@ -5467,6 +5597,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
   public int getReviewsCount() {
     return reviews_.size();
   }
+
   /**
    *
    *
@@ -5480,6 +5611,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
   public com.google.maps.places.v1.Review getReviews(int index) {
     return reviews_.get(index);
   }
+
   /**
    *
    *
@@ -5498,6 +5630,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.Photo> photos_;
+
   /**
    *
    *
@@ -5512,6 +5645,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.maps.places.v1.Photo> getPhotosList() {
     return photos_;
   }
+
   /**
    *
    *
@@ -5527,6 +5661,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       getPhotosOrBuilderList() {
     return photos_;
   }
+
   /**
    *
    *
@@ -5541,6 +5676,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
   public int getPhotosCount() {
     return photos_.size();
   }
+
   /**
    *
    *
@@ -5555,6 +5691,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
   public com.google.maps.places.v1.Photo getPhotos(int index) {
     return photos_.get(index);
   }
+
   /**
    *
    *
@@ -5574,6 +5711,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.ContextualContent.Justification> justifications_;
+
   /**
    *
    *
@@ -5593,6 +5731,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       getJustificationsList() {
     return justifications_;
   }
+
   /**
    *
    *
@@ -5613,6 +5752,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       getJustificationsOrBuilderList() {
     return justifications_;
   }
+
   /**
    *
    *
@@ -5631,6 +5771,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
   public int getJustificationsCount() {
     return justifications_.size();
   }
+
   /**
    *
    *
@@ -5649,6 +5790,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
   public com.google.maps.places.v1.ContextualContent.Justification getJustifications(int index) {
     return justifications_.get(index);
   }
+
   /**
    *
    *
@@ -5852,6 +5994,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6226,6 +6369,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return reviewsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6242,6 +6386,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return reviewsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6258,6 +6403,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return reviewsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6280,6 +6426,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6299,6 +6446,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6321,6 +6469,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6343,6 +6492,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6362,6 +6512,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6381,6 +6532,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6401,6 +6553,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6420,6 +6573,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6439,6 +6593,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6451,6 +6606,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     public com.google.maps.places.v1.Review.Builder getReviewsBuilder(int index) {
       return getReviewsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6467,6 +6623,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return reviewsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6484,6 +6641,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(reviews_);
       }
     }
+
     /**
      *
      *
@@ -6497,6 +6655,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       return getReviewsFieldBuilder()
           .addBuilder(com.google.maps.places.v1.Review.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6510,6 +6669,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       return getReviewsFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.Review.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6573,6 +6733,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return photosBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6590,6 +6751,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return photosBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6607,6 +6769,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return photosBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6630,6 +6793,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6650,6 +6814,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6673,6 +6838,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6696,6 +6862,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6716,6 +6883,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6736,6 +6904,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6757,6 +6926,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6777,6 +6947,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6797,6 +6968,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6810,6 +6982,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
     public com.google.maps.places.v1.Photo.Builder getPhotosBuilder(int index) {
       return getPhotosFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6827,6 +7000,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return photosBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6845,6 +7019,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(photos_);
       }
     }
+
     /**
      *
      *
@@ -6859,6 +7034,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       return getPhotosFieldBuilder()
           .addBuilder(com.google.maps.places.v1.Photo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6873,6 +7049,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       return getPhotosFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.Photo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6944,6 +7121,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return justificationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6965,6 +7143,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return justificationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6986,6 +7165,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return justificationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7014,6 +7194,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7040,6 +7221,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7068,6 +7250,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7096,6 +7279,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7121,6 +7305,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7147,6 +7332,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7173,6 +7359,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7197,6 +7384,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7221,6 +7409,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -7239,6 +7428,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         getJustificationsBuilder(int index) {
       return getJustificationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -7261,6 +7451,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return justificationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -7284,6 +7475,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(justifications_);
       }
     }
+
     /**
      *
      *
@@ -7304,6 +7496,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.maps.places.v1.ContextualContent.Justification.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7325,6 +7518,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
               index,
               com.google.maps.places.v1.ContextualContent.Justification.getDefaultInstance());
     }
+
     /**
      *
      *

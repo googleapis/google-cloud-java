@@ -49,6 +49,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StratifiedSplit)
     StratifiedSplitOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StratifiedSplit.newBuilder() to construct.
   private StratifiedSplit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
 
   public static final int TRAINING_FRACTION_FIELD_NUMBER = 1;
   private double trainingFraction_ = 0D;
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
 
   public static final int VALIDATION_FRACTION_FIELD_NUMBER = 2;
   private double validationFraction_ = 0D;
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
 
   public static final int TEST_FRACTION_FIELD_NUMBER = 3;
   private double testFraction_ = 0D;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -384,6 +390,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -623,6 +630,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private double trainingFraction_;
+
     /**
      *
      *
@@ -638,6 +646,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     public double getTrainingFraction() {
       return trainingFraction_;
     }
+
     /**
      *
      *
@@ -657,6 +666,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     }
 
     private double validationFraction_;
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     public double getValidationFraction() {
       return validationFraction_;
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     }
 
     private double testFraction_;
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     public double getTestFraction() {
       return testFraction_;
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +888,7 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

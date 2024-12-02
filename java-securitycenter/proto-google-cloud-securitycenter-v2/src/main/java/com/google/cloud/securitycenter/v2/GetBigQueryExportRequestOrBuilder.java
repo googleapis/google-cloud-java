@@ -44,6 +44,7 @@ public interface GetBigQueryExportRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

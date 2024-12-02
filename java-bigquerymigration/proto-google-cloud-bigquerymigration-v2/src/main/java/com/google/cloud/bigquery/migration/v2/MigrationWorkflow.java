@@ -34,6 +34,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.MigrationWorkflow)
     MigrationWorkflowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrationWorkflow.newBuilder() to construct.
   private MigrationWorkflow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,6 +156,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -166,6 +168,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>DRAFT = 1;</code>
      */
     public static final int DRAFT_VALUE = 1;
+
     /**
      *
      *
@@ -176,6 +179,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
+
     /**
      *
      *
@@ -187,6 +191,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <code>PAUSED = 3;</code>
      */
     public static final int PAUSED_VALUE = 3;
+
     /**
      *
      *
@@ -294,6 +299,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -322,6 +328,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -379,6 +387,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -438,6 +447,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   public int getTasksCount() {
     return internalGetTasks().getMap().size();
   }
+
   /**
    *
    *
@@ -456,6 +466,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     }
     return internalGetTasks().getMap().containsKey(key);
   }
+
   /** Use {@link #getTasksMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -463,6 +474,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       getTasks() {
     return getTasksMap();
   }
+
   /**
    *
    *
@@ -479,6 +491,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       getTasksMap() {
     return internalGetTasks().getMap();
   }
+
   /**
    *
    *
@@ -502,6 +515,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         internalGetTasks().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -529,6 +543,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -546,6 +561,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -570,6 +586,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -585,6 +602,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -600,6 +618,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -616,6 +635,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp lastUpdateTime_;
+
   /**
    *
    *
@@ -631,6 +651,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   public boolean hasLastUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -648,6 +669,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateTime_;
   }
+
   /**
    *
    *
@@ -893,6 +915,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1197,6 +1220,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1224,6 +1248,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1251,6 +1276,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1277,6 +1303,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1326,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1328,6 +1356,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1351,6 +1380,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1374,6 +1404,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1396,6 +1427,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1446,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1458,7 +1491,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return TasksDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final TasksConverter tasksConverter = new TasksConverter();
 
@@ -1498,6 +1532,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public int getTasksCount() {
       return internalGetTasks().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1516,6 +1551,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       }
       return internalGetTasks().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getTasksMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1523,6 +1559,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         getTasks() {
       return getTasksMap();
     }
+
     /**
      *
      *
@@ -1539,6 +1576,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         getTasksMap() {
       return internalGetTasks().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1562,6 +1600,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
           map = internalGetMutableTasks().ensureBuilderMap();
       return map.containsKey(key) ? tasksConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1592,6 +1631,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       internalGetMutableTasks().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1610,6 +1650,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       internalGetMutableTasks().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.MigrationTask>
@@ -1617,6 +1658,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000004;
       return internalGetMutableTasks().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1640,6 +1682,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1665,6 +1708,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1693,6 +1737,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1710,6 +1755,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1730,6 +1776,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1751,6 +1798,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.bigquery.migration.v2.MigrationWorkflow.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1774,6 +1822,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1800,6 +1849,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1814,6 +1864,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1834,6 +1885,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1856,6 +1908,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1928,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1902,6 +1956,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1921,6 +1976,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +1991,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1953,6 +2010,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1985,6 +2043,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -1999,6 +2058,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2019,6 +2079,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         return lastUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2041,6 +2102,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2060,6 +2122,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2087,6 +2150,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2106,6 +2170,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2120,6 +2185,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2138,6 +2204,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
             : lastUpdateTime_;
       }
     }
+
     /**
      *
      *

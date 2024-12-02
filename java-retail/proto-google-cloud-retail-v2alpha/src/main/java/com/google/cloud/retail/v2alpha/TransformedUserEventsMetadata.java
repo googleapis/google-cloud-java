@@ -33,6 +33,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.TransformedUserEventsMetadata)
     TransformedUserEventsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransformedUserEventsMetadata.newBuilder() to construct.
   private TransformedUserEventsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
 
   public static final int SOURCE_EVENTS_COUNT_FIELD_NUMBER = 1;
   private long sourceEventsCount_ = 0L;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
 
   public static final int TRANSFORMED_EVENTS_COUNT_FIELD_NUMBER = 2;
   private long transformedEventsCount_ = 0L;
+
   /**
    *
    *
@@ -267,6 +270,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -465,6 +469,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     private int bitField0_;
 
     private long sourceEventsCount_;
+
     /**
      *
      *
@@ -480,6 +485,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     public long getSourceEventsCount() {
       return sourceEventsCount_;
     }
+
     /**
      *
      *
@@ -499,6 +505,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -518,6 +525,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     }
 
     private long transformedEventsCount_;
+
     /**
      *
      *
@@ -534,6 +542,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
     public long getTransformedEventsCount() {
       return transformedEventsCount_;
     }
+
     /**
      *
      *
@@ -554,6 +563,7 @@ public final class TransformedUserEventsMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

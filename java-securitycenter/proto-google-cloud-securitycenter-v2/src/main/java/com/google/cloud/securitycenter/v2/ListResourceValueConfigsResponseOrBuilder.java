@@ -36,6 +36,7 @@ public interface ListResourceValueConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v2.ResourceValueConfig>
       getResourceValueConfigsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListResourceValueConfigsResponseOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v2.ResourceValueConfig getResourceValueConfigs(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListResourceValueConfigsResponseOrBuilder
    * </code>
    */
   int getResourceValueConfigsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListResourceValueConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ResourceValueConfigOrBuilder>
       getResourceValueConfigsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface ListResourceValueConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

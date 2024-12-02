@@ -39,6 +39,7 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

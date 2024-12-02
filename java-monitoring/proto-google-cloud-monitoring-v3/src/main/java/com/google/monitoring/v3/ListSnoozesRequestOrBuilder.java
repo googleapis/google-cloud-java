@@ -42,6 +42,7 @@ public interface ListSnoozesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface ListSnoozesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -138,6 +140,7 @@ public interface ListSnoozesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

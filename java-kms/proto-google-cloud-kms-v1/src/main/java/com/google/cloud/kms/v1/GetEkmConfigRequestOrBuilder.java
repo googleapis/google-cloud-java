@@ -39,6 +39,7 @@ public interface GetEkmConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

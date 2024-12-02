@@ -34,6 +34,7 @@ public interface ListNotebookRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.NotebookRuntime notebook_runtimes = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.NotebookRuntime> getNotebookRuntimesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListNotebookRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.NotebookRuntime notebook_runtimes = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.NotebookRuntime getNotebookRuntimes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListNotebookRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.NotebookRuntime notebook_runtimes = 1;</code>
    */
   int getNotebookRuntimesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListNotebookRuntimesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.NotebookRuntimeOrBuilder>
       getNotebookRuntimesOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListNotebookRuntimesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

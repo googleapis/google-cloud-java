@@ -34,6 +34,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.UpdateEntryRequest)
     UpdateEntryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateEntryRequest.newBuilder() to construct.
   private UpdateEntryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ENTRY_FIELD_NUMBER = 1;
   private com.google.cloud.datacatalog.v1beta1.Entry entry_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasEntry() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.datacatalog.v1beta1.Entry.getDefaultInstance()
         : entry_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -413,6 +420,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +644,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datacatalog.v1beta1.Entry.Builder,
             com.google.cloud.datacatalog.v1beta1.EntryOrBuilder>
         entryBuilder_;
+
     /**
      *
      *
@@ -652,6 +661,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasEntry() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -674,6 +684,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
         return entryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +761,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +783,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEntryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
             : entry_;
       }
     }
+
     /**
      *
      *
@@ -839,6 +856,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -919,6 +938,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -964,6 +984,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1027,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1078,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1121,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1159,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1176,6 +1201,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
+
     /**
      *
      *

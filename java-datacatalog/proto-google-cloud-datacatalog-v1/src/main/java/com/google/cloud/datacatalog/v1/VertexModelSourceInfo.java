@@ -33,6 +33,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.VertexModelSourceInfo)
     VertexModelSourceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VertexModelSourceInfo.newBuilder() to construct.
   private VertexModelSourceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -166,6 +167,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>MODEL_SOURCE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -176,6 +178,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>AUTOML = 1;</code>
      */
     public static final int AUTOML_VALUE = 1;
+
     /**
      *
      *
@@ -186,6 +189,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>CUSTOM = 2;</code>
      */
     public static final int CUSTOM_VALUE = 2;
+
     /**
      *
      *
@@ -196,6 +200,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>BQML = 3;</code>
      */
     public static final int BQML_VALUE = 3;
+
     /**
      *
      *
@@ -206,6 +211,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>MODEL_GARDEN = 4;</code>
      */
     public static final int MODEL_GARDEN_VALUE = 4;
+
     /**
      *
      *
@@ -216,6 +222,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>GENIE = 5;</code>
      */
     public static final int GENIE_VALUE = 5;
+
     /**
      *
      *
@@ -226,6 +233,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>CUSTOM_TEXT_EMBEDDING = 6;</code>
      */
     public static final int CUSTOM_TEXT_EMBEDDING_VALUE = 6;
+
     /**
      *
      *
@@ -336,6 +344,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
   private int sourceType_ = 0;
+
   /**
    *
    *
@@ -352,6 +361,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
   public int getSourceTypeValue() {
     return sourceType_;
   }
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
 
   public static final int COPY_FIELD_NUMBER = 2;
   private boolean copy_ = false;
+
   /**
    *
    *
@@ -569,6 +580,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -764,6 +776,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int sourceType_ = 0;
+
     /**
      *
      *
@@ -780,6 +793,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
     public int getSourceTypeValue() {
       return sourceType_;
     }
+
     /**
      *
      *
@@ -799,6 +813,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +835,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.datacatalog.v1.VertexModelSourceInfo.ModelSourceType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -843,6 +859,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +880,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
     }
 
     private boolean copy_;
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
     public boolean getCopy() {
       return copy_;
     }
+
     /**
      *
      *
@@ -901,6 +920,7 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

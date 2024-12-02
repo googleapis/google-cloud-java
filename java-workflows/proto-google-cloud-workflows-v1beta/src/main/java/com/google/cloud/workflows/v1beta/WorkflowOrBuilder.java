@@ -37,6 +37,7 @@ public interface WorkflowOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface WorkflowOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface WorkflowOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface WorkflowOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public interface WorkflowOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface WorkflowOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public interface WorkflowOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface WorkflowOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface WorkflowOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public interface WorkflowOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface WorkflowOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -294,9 +305,11 @@ public interface WorkflowOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -311,6 +324,7 @@ public interface WorkflowOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public interface WorkflowOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -367,6 +382,7 @@ public interface WorkflowOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -403,6 +419,7 @@ public interface WorkflowOrBuilder
    * @return Whether the sourceContents field is set.
    */
   boolean hasSourceContents();
+
   /**
    *
    *
@@ -415,6 +432,7 @@ public interface WorkflowOrBuilder
    * @return The sourceContents.
    */
   java.lang.String getSourceContents();
+
   /**
    *
    *

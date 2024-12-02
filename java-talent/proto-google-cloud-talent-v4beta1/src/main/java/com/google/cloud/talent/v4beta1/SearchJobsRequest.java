@@ -33,6 +33,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.SearchJobsRequest)
     SearchJobsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchJobsRequest.newBuilder() to construct.
   private SearchJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,6 +132,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>SEARCH_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int SEARCH_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -142,6 +144,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>JOB_SEARCH = 1;</code>
      */
     public static final int JOB_SEARCH_VALUE = 1;
+
     /**
      *
      *
@@ -307,6 +310,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>DIVERSIFICATION_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int DIVERSIFICATION_LEVEL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -319,6 +323,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -515,6 +520,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>KEYWORD_MATCH_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int KEYWORD_MATCH_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -525,6 +531,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>KEYWORD_MATCH_DISABLED = 1;</code>
      */
     public static final int KEYWORD_MATCH_DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -543,6 +550,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>KEYWORD_MATCH_ALL = 2;</code>
      */
     public static final int KEYWORD_MATCH_ALL_VALUE = 2;
+
     /**
      *
      *
@@ -667,6 +675,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for importanceLevel.
      */
     int getImportanceLevelValue();
+
     /**
      *
      *
@@ -721,6 +730,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * @return The rankingExpression.
      */
     java.lang.String getRankingExpression();
+
     /**
      *
      *
@@ -756,6 +766,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getRankingExpressionBytes();
   }
+
   /**
    *
    *
@@ -771,6 +782,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo)
       CustomRankingInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CustomRankingInfo.newBuilder() to construct.
     private CustomRankingInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -909,6 +921,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>IMPORTANCE_LEVEL_UNSPECIFIED = 0;</code>
        */
       public static final int IMPORTANCE_LEVEL_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -921,6 +934,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>NONE = 1;</code>
        */
       public static final int NONE_VALUE = 1;
+
       /**
        *
        *
@@ -933,6 +947,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>LOW = 2;</code>
        */
       public static final int LOW_VALUE = 2;
+
       /**
        *
        *
@@ -945,6 +960,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>MILD = 3;</code>
        */
       public static final int MILD_VALUE = 3;
+
       /**
        *
        *
@@ -957,6 +973,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>MEDIUM = 4;</code>
        */
       public static final int MEDIUM_VALUE = 4;
+
       /**
        *
        *
@@ -969,6 +986,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>HIGH = 5;</code>
        */
       public static final int HIGH_VALUE = 5;
+
       /**
        *
        *
@@ -1080,6 +1098,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
     public static final int IMPORTANCE_LEVEL_FIELD_NUMBER = 1;
     private int importanceLevel_ = 0;
+
     /**
      *
      *
@@ -1101,6 +1120,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public int getImportanceLevelValue() {
       return importanceLevel_;
     }
+
     /**
      *
      *
@@ -1134,6 +1154,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rankingExpression_ = "";
+
     /**
      *
      *
@@ -1179,6 +1200,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -1402,6 +1424,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1610,6 +1633,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int importanceLevel_ = 0;
+
       /**
        *
        *
@@ -1631,6 +1655,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       public int getImportanceLevelValue() {
         return importanceLevel_;
       }
+
       /**
        *
        *
@@ -1655,6 +1680,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1683,6 +1709,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1712,6 +1739,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1737,6 +1765,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object rankingExpression_ = "";
+
       /**
        *
        *
@@ -1781,6 +1810,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1825,6 +1855,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1868,6 +1899,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1907,6 +1939,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2024,6 +2057,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -2053,6 +2087,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -2085,6 +2120,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int SEARCH_MODE_FIELD_NUMBER = 2;
   private int searchMode_ = 0;
+
   /**
    *
    *
@@ -2103,6 +2139,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public int getSearchModeValue() {
     return searchMode_;
   }
+
   /**
    *
    *
@@ -2128,6 +2165,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.talent.v4beta1.RequestMetadata requestMetadata_;
+
   /**
    *
    *
@@ -2147,6 +2185,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2168,6 +2207,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.talent.v4beta1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
+
   /**
    *
    *
@@ -2190,6 +2230,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int JOB_QUERY_FIELD_NUMBER = 4;
   private com.google.cloud.talent.v4beta1.JobQuery jobQuery_;
+
   /**
    *
    *
@@ -2205,6 +2246,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasJobQuery() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2222,6 +2264,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.talent.v4beta1.JobQuery.getDefaultInstance()
         : jobQuery_;
   }
+
   /**
    *
    *
@@ -2240,6 +2283,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int ENABLE_BROADENING_FIELD_NUMBER = 5;
   private boolean enableBroadening_ = false;
+
   /**
    *
    *
@@ -2262,6 +2306,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int REQUIRE_PRECISE_RESULT_SIZE_FIELD_NUMBER = 6;
   private boolean requirePreciseResultSize_ = false;
+
   /**
    *
    *
@@ -2285,6 +2330,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.HistogramQuery> histogramQueries_;
+
   /**
    *
    *
@@ -2410,6 +2456,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.talent.v4beta1.HistogramQuery> getHistogramQueriesList() {
     return histogramQueries_;
   }
+
   /**
    *
    *
@@ -2536,6 +2583,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       getHistogramQueriesOrBuilderList() {
     return histogramQueries_;
   }
+
   /**
    *
    *
@@ -2661,6 +2709,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public int getHistogramQueriesCount() {
     return histogramQueries_.size();
   }
+
   /**
    *
    *
@@ -2786,6 +2835,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.talent.v4beta1.HistogramQuery getHistogramQueries(int index) {
     return histogramQueries_.get(index);
   }
+
   /**
    *
    *
@@ -2915,6 +2965,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int JOB_VIEW_FIELD_NUMBER = 8;
   private int jobView_ = 0;
+
   /**
    *
    *
@@ -2933,6 +2984,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public int getJobViewValue() {
     return jobView_;
   }
+
   /**
    *
    *
@@ -2956,6 +3008,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int OFFSET_FIELD_NUMBER = 9;
   private int offset_ = 0;
+
   /**
    *
    *
@@ -2985,6 +3038,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 10;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -3007,6 +3061,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -3033,6 +3088,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -3064,6 +3120,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -3140,6 +3197,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -3219,6 +3277,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int DIVERSIFICATION_LEVEL_FIELD_NUMBER = 13;
   private int diversificationLevel_ = 0;
+
   /**
    *
    *
@@ -3245,6 +3304,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public int getDiversificationLevelValue() {
     return diversificationLevel_;
   }
+
   /**
    *
    *
@@ -3280,6 +3340,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int CUSTOM_RANKING_INFO_FIELD_NUMBER = 14;
   private com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo customRankingInfo_;
+
   /**
    *
    *
@@ -3298,6 +3359,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasCustomRankingInfo() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3319,6 +3381,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.getDefaultInstance()
         : customRankingInfo_;
   }
+
   /**
    *
    *
@@ -3341,6 +3404,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int DISABLE_KEYWORD_MATCH_FIELD_NUMBER = 16;
   private boolean disableKeywordMatch_ = false;
+
   /**
    *
    *
@@ -3394,6 +3458,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int KEYWORD_MATCH_MODE_FIELD_NUMBER = 18;
   private int keywordMatchMode_ = 0;
+
   /**
    *
    *
@@ -3414,6 +3479,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   public int getKeywordMatchModeValue() {
     return keywordMatchMode_;
   }
+
   /**
    *
    *
@@ -3767,6 +3833,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4232,6 +4299,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -4260,6 +4328,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4288,6 +4357,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4315,6 +4385,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4338,6 +4409,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4368,6 +4440,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int searchMode_ = 0;
+
     /**
      *
      *
@@ -4386,6 +4459,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public int getSearchModeValue() {
       return searchMode_;
     }
+
     /**
      *
      *
@@ -4407,6 +4481,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4429,6 +4504,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4454,6 +4530,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4481,6 +4558,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.talent.v4beta1.RequestMetadata.Builder,
             com.google.cloud.talent.v4beta1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
+
     /**
      *
      *
@@ -4499,6 +4577,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4523,6 +4602,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return requestMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4549,6 +4629,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4573,6 +4654,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4605,6 +4687,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4628,6 +4711,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4646,6 +4730,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4668,6 +4753,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             : requestMetadata_;
       }
     }
+
     /**
      *
      *
@@ -4704,6 +4790,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.talent.v4beta1.JobQuery.Builder,
             com.google.cloud.talent.v4beta1.JobQueryOrBuilder>
         jobQueryBuilder_;
+
     /**
      *
      *
@@ -4718,6 +4805,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasJobQuery() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4738,6 +4826,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return jobQueryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4760,6 +4849,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4779,6 +4869,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4806,6 +4897,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4825,6 +4917,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4839,6 +4932,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getJobQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4857,6 +4951,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             : jobQuery_;
       }
     }
+
     /**
      *
      *
@@ -4884,6 +4979,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean enableBroadening_;
+
     /**
      *
      *
@@ -4903,6 +4999,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public boolean getEnableBroadening() {
       return enableBroadening_;
     }
+
     /**
      *
      *
@@ -4926,6 +5023,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4949,6 +5047,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean requirePreciseResultSize_;
+
     /**
      *
      *
@@ -4967,6 +5066,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public boolean getRequirePreciseResultSize() {
       return requirePreciseResultSize_;
     }
+
     /**
      *
      *
@@ -4989,6 +5089,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5157,6 +5258,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return histogramQueriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5285,6 +5387,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return histogramQueriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5413,6 +5516,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return histogramQueriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5548,6 +5652,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -5680,6 +5785,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -5814,6 +5920,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -5949,6 +6056,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6081,6 +6189,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6213,6 +6322,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6345,6 +6455,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6476,6 +6587,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6607,6 +6719,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6732,6 +6845,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         int index) {
       return getHistogramQueriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6861,6 +6975,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return histogramQueriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6990,6 +7105,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(histogramQueries_);
       }
     }
+
     /**
      *
      *
@@ -7115,6 +7231,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return getHistogramQueriesFieldBuilder()
           .addBuilder(com.google.cloud.talent.v4beta1.HistogramQuery.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7241,6 +7358,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return getHistogramQueriesFieldBuilder()
           .addBuilder(index, com.google.cloud.talent.v4beta1.HistogramQuery.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7388,6 +7506,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int jobView_ = 0;
+
     /**
      *
      *
@@ -7406,6 +7525,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public int getJobViewValue() {
       return jobView_;
     }
+
     /**
      *
      *
@@ -7427,6 +7547,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7447,6 +7568,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           com.google.cloud.talent.v4beta1.JobView.forNumber(jobView_);
       return result == null ? com.google.cloud.talent.v4beta1.JobView.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -7471,6 +7593,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7493,6 +7616,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int offset_;
+
     /**
      *
      *
@@ -7519,6 +7643,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public int getOffset() {
       return offset_;
     }
+
     /**
      *
      *
@@ -7549,6 +7674,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7579,6 +7705,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -7596,6 +7723,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -7617,6 +7745,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7638,6 +7767,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -7663,6 +7793,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7688,6 +7819,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7712,6 +7844,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7732,6 +7865,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7759,6 +7893,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -7834,6 +7969,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7909,6 +8045,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7983,6 +8120,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8053,6 +8191,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8130,6 +8269,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int diversificationLevel_ = 0;
+
     /**
      *
      *
@@ -8156,6 +8296,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public int getDiversificationLevelValue() {
       return diversificationLevel_;
     }
+
     /**
      *
      *
@@ -8185,6 +8326,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8217,6 +8359,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8250,6 +8393,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8285,6 +8429,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.Builder,
             com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfoOrBuilder>
         customRankingInfoBuilder_;
+
     /**
      *
      *
@@ -8302,6 +8447,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasCustomRankingInfo() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -8327,6 +8473,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return customRankingInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8353,6 +8500,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8377,6 +8525,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8410,6 +8559,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -8432,6 +8582,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8450,6 +8601,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCustomRankingInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8473,6 +8625,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             : customRankingInfo_;
       }
     }
+
     /**
      *
      *
@@ -8503,6 +8656,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean disableKeywordMatch_;
+
     /**
      *
      *
@@ -8553,6 +8707,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public boolean getDisableKeywordMatch() {
       return disableKeywordMatch_;
     }
+
     /**
      *
      *
@@ -8607,6 +8762,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8661,6 +8817,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int keywordMatchMode_ = 0;
+
     /**
      *
      *
@@ -8682,6 +8839,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public int getKeywordMatchModeValue() {
       return keywordMatchMode_;
     }
+
     /**
      *
      *
@@ -8706,6 +8864,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8733,6 +8892,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.talent.v4beta1.SearchJobsRequest.KeywordMatchMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8761,6 +8921,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

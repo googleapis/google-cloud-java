@@ -40,6 +40,7 @@ public interface DatasetOrBuilder
    * @return Whether the gcsManagedConfig field is set.
    */
   boolean hasGcsManagedConfig();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface DatasetOrBuilder
    * @return The gcsManagedConfig.
    */
   com.google.cloud.documentai.v1beta3.Dataset.GCSManagedConfig getGcsManagedConfig();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DatasetOrBuilder
    */
   @java.lang.Deprecated
   boolean hasDocumentWarehouseConfig();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface DatasetOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig getDocumentWarehouseConfig();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface DatasetOrBuilder
    * @return Whether the unmanagedDatasetConfig field is set.
    */
   boolean hasUnmanagedDatasetConfig();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface DatasetOrBuilder
    * @return The unmanagedDatasetConfig.
    */
   com.google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfig getUnmanagedDatasetConfig();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface DatasetOrBuilder
    * @return Whether the spannerIndexingConfig field is set.
    */
   boolean hasSpannerIndexingConfig();
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public interface DatasetOrBuilder
    * @return The spannerIndexingConfig.
    */
   com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig getSpannerIndexingConfig();
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public interface DatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public interface DatasetOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

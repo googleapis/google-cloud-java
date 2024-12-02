@@ -77,6 +77,7 @@ public enum PolylineQuality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POLYLINE_QUALITY_UNSPECIFIED = 0;</code>
    */
   public static final int POLYLINE_QUALITY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public enum PolylineQuality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HIGH_QUALITY = 1;</code>
    */
   public static final int HIGH_QUALITY_VALUE = 1;
+
   /**
    *
    *

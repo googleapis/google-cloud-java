@@ -37,6 +37,7 @@ public interface TokenOptionsOrBuilder
    * @return The audience.
    */
   java.lang.String getAudience();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface TokenOptionsOrBuilder
    * @return A list containing the nonce.
    */
   java.util.List<java.lang.String> getNonceList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface TokenOptionsOrBuilder
    * @return The count of nonce.
    */
   int getNonceCount();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface TokenOptionsOrBuilder
    * @return The nonce at the given index.
    */
   java.lang.String getNonce(int index);
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface TokenOptionsOrBuilder
    * @return The enum numeric value on the wire for tokenType.
    */
   int getTokenTypeValue();
+
   /**
    *
    *

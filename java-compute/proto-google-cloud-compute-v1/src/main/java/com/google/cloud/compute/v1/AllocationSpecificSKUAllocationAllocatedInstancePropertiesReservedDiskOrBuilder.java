@@ -36,6 +36,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * @return Whether the diskSizeGb field is set.
    */
   boolean hasDiskSizeGb();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * @return Whether the interface field is set.
    */
   boolean hasInterface();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * @return The interface.
    */
   java.lang.String getInterface();
+
   /**
    *
    *

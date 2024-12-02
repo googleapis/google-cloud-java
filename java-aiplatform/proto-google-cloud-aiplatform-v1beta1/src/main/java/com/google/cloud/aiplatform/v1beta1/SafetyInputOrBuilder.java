@@ -38,6 +38,7 @@ public interface SafetyInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SafetyInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.SafetySpec getMetricSpec();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SafetyInputOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface SafetyInputOrBuilder
    * @return The instance.
    */
   com.google.cloud.aiplatform.v1beta1.SafetyInstance getInstance();
+
   /**
    *
    *

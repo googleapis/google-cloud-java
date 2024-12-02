@@ -264,7 +264,8 @@ public class CompanyName implements ResourceName {
     private Builder(CompanyName companyName) {
       Preconditions.checkArgument(
           Objects.equals(companyName.pathTemplate, PROJECT_TENANT_COMPANY),
-          "toBuilder is only supported when CompanyName has the pattern of projects/{project}/tenants/{tenant}/companies/{company}");
+          "toBuilder is only supported when CompanyName has the pattern of"
+              + " projects/{project}/tenants/{tenant}/companies/{company}");
       this.project = companyName.project;
       this.tenant = companyName.tenant;
       this.company = companyName.company;

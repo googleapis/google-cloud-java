@@ -36,6 +36,7 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return Whether the consumerNetwork field is set.
    */
   boolean hasConsumerNetwork();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return The consumerNetwork.
    */
   java.lang.String getConsumerNetwork();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return Whether the endpoint field is set.
    */
   boolean hasEndpoint();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return Whether the propagatedConnectionCount field is set.
    */
   boolean hasPropagatedConnectionCount();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return Whether the pscConnectionId field is set.
    */
   boolean hasPscConnectionId();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.ReportTask)
     ReportTaskOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportTask.newBuilder() to construct.
   private ReportTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.analytics.data.v1alpha.Dimension> getDimensionsList();
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.analytics.data.v1alpha.Dimension getDimensions(int index);
+
     /**
      *
      *
@@ -104,6 +107,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getDimensionsCount();
+
     /**
      *
      *
@@ -117,6 +121,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.analytics.data.v1alpha.DimensionOrBuilder>
         getDimensionsOrBuilderList();
+
     /**
      *
      *
@@ -142,6 +147,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.analytics.data.v1alpha.Metric> getMetricsList();
+
     /**
      *
      *
@@ -154,6 +160,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.analytics.data.v1alpha.Metric getMetrics(int index);
+
     /**
      *
      *
@@ -166,6 +173,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getMetricsCount();
+
     /**
      *
      *
@@ -179,6 +187,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.analytics.data.v1alpha.MetricOrBuilder>
         getMetricsOrBuilderList();
+
     /**
      *
      *
@@ -208,6 +217,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.analytics.data.v1alpha.DateRange> getDateRangesList();
+
     /**
      *
      *
@@ -224,6 +234,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.analytics.data.v1alpha.DateRange getDateRanges(int index);
+
     /**
      *
      *
@@ -240,6 +251,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getDateRangesCount();
+
     /**
      *
      *
@@ -257,6 +269,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.analytics.data.v1alpha.DateRangeOrBuilder>
         getDateRangesOrBuilderList();
+
     /**
      *
      *
@@ -291,6 +304,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dimensionFilter field is set.
      */
     boolean hasDimensionFilter();
+
     /**
      *
      *
@@ -308,6 +322,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The dimensionFilter.
      */
     com.google.analytics.data.v1alpha.FilterExpression getDimensionFilter();
+
     /**
      *
      *
@@ -340,6 +355,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metricFilter field is set.
      */
     boolean hasMetricFilter();
+
     /**
      *
      *
@@ -356,6 +372,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The metricFilter.
      */
     com.google.analytics.data.v1alpha.FilterExpression getMetricFilter();
+
     /**
      *
      *
@@ -430,6 +447,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the metricAggregations.
      */
     java.util.List<com.google.analytics.data.v1alpha.MetricAggregation> getMetricAggregationsList();
+
     /**
      *
      *
@@ -446,6 +464,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The count of metricAggregations.
      */
     int getMetricAggregationsCount();
+
     /**
      *
      *
@@ -463,6 +482,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The metricAggregations at the given index.
      */
     com.google.analytics.data.v1alpha.MetricAggregation getMetricAggregations(int index);
+
     /**
      *
      *
@@ -479,6 +499,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enum numeric values on the wire for metricAggregations.
      */
     java.util.List<java.lang.Integer> getMetricAggregationsValueList();
+
     /**
      *
      *
@@ -509,6 +530,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.analytics.data.v1alpha.OrderBy> getOrderBysList();
+
     /**
      *
      *
@@ -521,6 +543,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.analytics.data.v1alpha.OrderBy getOrderBys(int index);
+
     /**
      *
      *
@@ -533,6 +556,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getOrderBysCount();
+
     /**
      *
      *
@@ -546,6 +570,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.analytics.data.v1alpha.OrderByOrBuilder>
         getOrderBysOrBuilderList();
+
     /**
      *
      *
@@ -572,6 +597,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The currencyCode.
      */
     java.lang.String getCurrencyCode();
+
     /**
      *
      *
@@ -601,6 +627,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cohortSpec field is set.
      */
     boolean hasCohortSpec();
+
     /**
      *
      *
@@ -616,6 +643,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The cohortSpec.
      */
     com.google.analytics.data.v1alpha.CohortSpec getCohortSpec();
+
     /**
      *
      *
@@ -666,6 +694,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the samplingLevel field is set.
      */
     boolean hasSamplingLevel();
+
     /**
      *
      *
@@ -680,6 +709,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for samplingLevel.
      */
     int getSamplingLevelValue();
+
     /**
      *
      *
@@ -695,6 +725,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.analytics.data.v1alpha.SamplingLevel getSamplingLevel();
   }
+
   /**
    *
    *
@@ -709,6 +740,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.ReportTask.ReportDefinition)
       ReportDefinitionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ReportDefinition.newBuilder() to construct.
     private ReportDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -750,6 +782,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.analytics.data.v1alpha.Dimension> dimensions_;
+
     /**
      *
      *
@@ -765,6 +798,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.analytics.data.v1alpha.Dimension> getDimensionsList() {
       return dimensions_;
     }
+
     /**
      *
      *
@@ -781,6 +815,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         getDimensionsOrBuilderList() {
       return dimensions_;
     }
+
     /**
      *
      *
@@ -796,6 +831,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public int getDimensionsCount() {
       return dimensions_.size();
     }
+
     /**
      *
      *
@@ -811,6 +847,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.Dimension getDimensions(int index) {
       return dimensions_.get(index);
     }
+
     /**
      *
      *
@@ -831,6 +868,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.analytics.data.v1alpha.Metric> metrics_;
+
     /**
      *
      *
@@ -846,6 +884,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.analytics.data.v1alpha.Metric> getMetricsList() {
       return metrics_;
     }
+
     /**
      *
      *
@@ -862,6 +901,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         getMetricsOrBuilderList() {
       return metrics_;
     }
+
     /**
      *
      *
@@ -877,6 +917,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public int getMetricsCount() {
       return metrics_.size();
     }
+
     /**
      *
      *
@@ -892,6 +933,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.Metric getMetrics(int index) {
       return metrics_.get(index);
     }
+
     /**
      *
      *
@@ -912,6 +954,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.analytics.data.v1alpha.DateRange> dateRanges_;
+
     /**
      *
      *
@@ -931,6 +974,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.analytics.data.v1alpha.DateRange> getDateRangesList() {
       return dateRanges_;
     }
+
     /**
      *
      *
@@ -951,6 +995,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         getDateRangesOrBuilderList() {
       return dateRanges_;
     }
+
     /**
      *
      *
@@ -970,6 +1015,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public int getDateRangesCount() {
       return dateRanges_.size();
     }
+
     /**
      *
      *
@@ -989,6 +1035,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.DateRange getDateRanges(int index) {
       return dateRanges_.get(index);
     }
+
     /**
      *
      *
@@ -1011,6 +1058,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DIMENSION_FILTER_FIELD_NUMBER = 5;
     private com.google.analytics.data.v1alpha.FilterExpression dimensionFilter_;
+
     /**
      *
      *
@@ -1031,6 +1079,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDimensionFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1053,6 +1102,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           ? com.google.analytics.data.v1alpha.FilterExpression.getDefaultInstance()
           : dimensionFilter_;
     }
+
     /**
      *
      *
@@ -1077,6 +1127,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int METRIC_FILTER_FIELD_NUMBER = 6;
     private com.google.analytics.data.v1alpha.FilterExpression metricFilter_;
+
     /**
      *
      *
@@ -1096,6 +1147,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetricFilter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1117,6 +1169,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           ? com.google.analytics.data.v1alpha.FilterExpression.getDefaultInstance()
           : metricFilter_;
     }
+
     /**
      *
      *
@@ -1139,6 +1192,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OFFSET_FIELD_NUMBER = 7;
     private long offset_ = 0L;
+
     /**
      *
      *
@@ -1166,6 +1220,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LIMIT_FIELD_NUMBER = 8;
     private long limit_ = 0L;
+
     /**
      *
      *
@@ -1209,6 +1264,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
                     : result;
               }
             };
+
     /**
      *
      *
@@ -1231,6 +1287,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.analytics.data.v1alpha.MetricAggregation>(
           metricAggregations_, metricAggregations_converter_);
     }
+
     /**
      *
      *
@@ -1250,6 +1307,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public int getMetricAggregationsCount() {
       return metricAggregations_.size();
     }
+
     /**
      *
      *
@@ -1270,6 +1328,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.MetricAggregation getMetricAggregations(int index) {
       return metricAggregations_converter_.convert(metricAggregations_.get(index));
     }
+
     /**
      *
      *
@@ -1289,6 +1348,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getMetricAggregationsValueList() {
       return metricAggregations_;
     }
+
     /**
      *
      *
@@ -1316,6 +1376,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.analytics.data.v1alpha.OrderBy> orderBys_;
+
     /**
      *
      *
@@ -1331,6 +1392,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.analytics.data.v1alpha.OrderBy> getOrderBysList() {
       return orderBys_;
     }
+
     /**
      *
      *
@@ -1347,6 +1409,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         getOrderBysOrBuilderList() {
       return orderBys_;
     }
+
     /**
      *
      *
@@ -1362,6 +1425,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public int getOrderBysCount() {
       return orderBys_.size();
     }
+
     /**
      *
      *
@@ -1377,6 +1441,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.OrderBy getOrderBys(int index) {
       return orderBys_.get(index);
     }
+
     /**
      *
      *
@@ -1397,6 +1462,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object currencyCode_ = "";
+
     /**
      *
      *
@@ -1421,6 +1487,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1448,6 +1515,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COHORT_SPEC_FIELD_NUMBER = 12;
     private com.google.analytics.data.v1alpha.CohortSpec cohortSpec_;
+
     /**
      *
      *
@@ -1466,6 +1534,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCohortSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1486,6 +1555,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           ? com.google.analytics.data.v1alpha.CohortSpec.getDefaultInstance()
           : cohortSpec_;
     }
+
     /**
      *
      *
@@ -1507,6 +1577,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int KEEP_EMPTY_ROWS_FIELD_NUMBER = 13;
     private boolean keepEmptyRows_ = false;
+
     /**
      *
      *
@@ -1534,6 +1605,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SAMPLING_LEVEL_FIELD_NUMBER = 14;
     private int samplingLevel_ = 0;
+
     /**
      *
      *
@@ -1551,6 +1623,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSamplingLevel() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1568,6 +1641,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public int getSamplingLevelValue() {
       return samplingLevel_;
     }
+
     /**
      *
      *
@@ -1903,6 +1977,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2521,6 +2596,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dimensionsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2539,6 +2615,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dimensionsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2557,6 +2634,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dimensionsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2581,6 +2659,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2603,6 +2682,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2627,6 +2707,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2651,6 +2732,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2673,6 +2755,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2695,6 +2778,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2717,6 +2801,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2738,6 +2823,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2759,6 +2845,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2773,6 +2860,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.data.v1alpha.Dimension.Builder getDimensionsBuilder(int index) {
         return getDimensionsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2792,6 +2880,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dimensionsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2811,6 +2900,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(dimensions_);
         }
       }
+
       /**
        *
        *
@@ -2826,6 +2916,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return getDimensionsFieldBuilder()
             .addBuilder(com.google.analytics.data.v1alpha.Dimension.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2841,6 +2932,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return getDimensionsFieldBuilder()
             .addBuilder(index, com.google.analytics.data.v1alpha.Dimension.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2908,6 +3000,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return metricsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2926,6 +3019,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return metricsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2944,6 +3038,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return metricsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2968,6 +3063,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2990,6 +3086,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3014,6 +3111,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3038,6 +3136,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3059,6 +3158,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3081,6 +3181,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3103,6 +3204,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3124,6 +3226,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3145,6 +3248,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3159,6 +3263,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.data.v1alpha.Metric.Builder getMetricsBuilder(int index) {
         return getMetricsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3177,6 +3282,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return metricsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3196,6 +3302,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(metrics_);
         }
       }
+
       /**
        *
        *
@@ -3211,6 +3318,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return getMetricsFieldBuilder()
             .addBuilder(com.google.analytics.data.v1alpha.Metric.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3226,6 +3334,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return getMetricsFieldBuilder()
             .addBuilder(index, com.google.analytics.data.v1alpha.Metric.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3298,6 +3407,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dateRangesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3320,6 +3430,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dateRangesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3342,6 +3453,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dateRangesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3370,6 +3482,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3396,6 +3509,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3424,6 +3538,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3452,6 +3567,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3478,6 +3594,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3504,6 +3621,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3530,6 +3648,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3555,6 +3674,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3580,6 +3700,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3598,6 +3719,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.data.v1alpha.DateRange.Builder getDateRangesBuilder(int index) {
         return getDateRangesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3621,6 +3743,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dateRangesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3644,6 +3767,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(dateRanges_);
         }
       }
+
       /**
        *
        *
@@ -3663,6 +3787,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return getDateRangesFieldBuilder()
             .addBuilder(com.google.analytics.data.v1alpha.DateRange.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3682,6 +3807,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return getDateRangesFieldBuilder()
             .addBuilder(index, com.google.analytics.data.v1alpha.DateRange.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3725,6 +3851,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
               com.google.analytics.data.v1alpha.FilterExpression.Builder,
               com.google.analytics.data.v1alpha.FilterExpressionOrBuilder>
           dimensionFilterBuilder_;
+
       /**
        *
        *
@@ -3744,6 +3871,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDimensionFilter() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -3769,6 +3897,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return dimensionFilterBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3796,6 +3925,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3821,6 +3951,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3855,6 +3986,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3879,6 +4011,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3899,6 +4032,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getDimensionFilterFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3923,6 +4057,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
               : dimensionFilter_;
         }
       }
+
       /**
        *
        *
@@ -3960,6 +4095,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
               com.google.analytics.data.v1alpha.FilterExpression.Builder,
               com.google.analytics.data.v1alpha.FilterExpressionOrBuilder>
           metricFilterBuilder_;
+
       /**
        *
        *
@@ -3978,6 +4114,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMetricFilter() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -4002,6 +4139,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return metricFilterBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4028,6 +4166,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4052,6 +4191,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4084,6 +4224,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4107,6 +4248,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4125,6 +4267,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMetricFilterFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4148,6 +4291,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
               : metricFilter_;
         }
       }
+
       /**
        *
        *
@@ -4179,6 +4323,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long offset_;
+
       /**
        *
        *
@@ -4203,6 +4348,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public long getOffset() {
         return offset_;
       }
+
       /**
        *
        *
@@ -4231,6 +4377,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4259,6 +4406,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long limit_;
+
       /**
        *
        *
@@ -4282,6 +4430,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public long getLimit() {
         return limit_;
       }
+
       /**
        *
        *
@@ -4309,6 +4458,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4344,6 +4494,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000080;
         }
       }
+
       /**
        *
        *
@@ -4365,6 +4516,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
             java.lang.Integer, com.google.analytics.data.v1alpha.MetricAggregation>(
             metricAggregations_, metricAggregations_converter_);
       }
+
       /**
        *
        *
@@ -4383,6 +4535,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public int getMetricAggregationsCount() {
         return metricAggregations_.size();
       }
+
       /**
        *
        *
@@ -4402,6 +4555,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.data.v1alpha.MetricAggregation getMetricAggregations(int index) {
         return metricAggregations_converter_.convert(metricAggregations_.get(index));
       }
+
       /**
        *
        *
@@ -4429,6 +4583,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4455,6 +4610,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4481,6 +4637,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4502,6 +4659,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4520,6 +4678,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Integer> getMetricAggregationsValueList() {
         return java.util.Collections.unmodifiableList(metricAggregations_);
       }
+
       /**
        *
        *
@@ -4539,6 +4698,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public int getMetricAggregationsValue(int index) {
         return metricAggregations_.get(index);
       }
+
       /**
        *
        *
@@ -4562,6 +4722,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4584,6 +4745,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4643,6 +4805,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return orderBysBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4661,6 +4824,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return orderBysBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4679,6 +4843,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return orderBysBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4703,6 +4868,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4725,6 +4891,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4749,6 +4916,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4773,6 +4941,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4795,6 +4964,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4817,6 +4987,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4839,6 +5010,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4860,6 +5032,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4881,6 +5054,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4895,6 +5069,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.data.v1alpha.OrderBy.Builder getOrderBysBuilder(int index) {
         return getOrderBysFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -4913,6 +5088,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return orderBysBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -4932,6 +5108,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(orderBys_);
         }
       }
+
       /**
        *
        *
@@ -4947,6 +5124,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return getOrderBysFieldBuilder()
             .addBuilder(com.google.analytics.data.v1alpha.OrderBy.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4962,6 +5140,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return getOrderBysFieldBuilder()
             .addBuilder(index, com.google.analytics.data.v1alpha.OrderBy.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4996,6 +5175,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object currencyCode_ = "";
+
       /**
        *
        *
@@ -5019,6 +5199,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5042,6 +5223,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5064,6 +5246,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5082,6 +5265,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5112,6 +5296,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
               com.google.analytics.data.v1alpha.CohortSpec.Builder,
               com.google.analytics.data.v1alpha.CohortSpecOrBuilder>
           cohortSpecBuilder_;
+
       /**
        *
        *
@@ -5129,6 +5314,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCohortSpec() {
         return ((bitField0_ & 0x00000400) != 0);
       }
+
       /**
        *
        *
@@ -5152,6 +5338,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return cohortSpecBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5177,6 +5364,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5200,6 +5388,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5230,6 +5419,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5252,6 +5442,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5269,6 +5460,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCohortSpecFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5290,6 +5482,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
               : cohortSpec_;
         }
       }
+
       /**
        *
        *
@@ -5320,6 +5513,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean keepEmptyRows_;
+
       /**
        *
        *
@@ -5344,6 +5538,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean getKeepEmptyRows() {
         return keepEmptyRows_;
       }
+
       /**
        *
        *
@@ -5372,6 +5567,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5400,6 +5596,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int samplingLevel_ = 0;
+
       /**
        *
        *
@@ -5417,6 +5614,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSamplingLevel() {
         return ((bitField0_ & 0x00001000) != 0);
       }
+
       /**
        *
        *
@@ -5434,6 +5632,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public int getSamplingLevelValue() {
         return samplingLevel_;
       }
+
       /**
        *
        *
@@ -5454,6 +5653,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5475,6 +5675,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
             ? com.google.analytics.data.v1alpha.SamplingLevel.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -5498,6 +5699,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5604,6 +5806,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     boolean hasState();
+
     /**
      *
      *
@@ -5618,6 +5821,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -5648,6 +5852,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the beginCreatingTime field is set.
      */
     boolean hasBeginCreatingTime();
+
     /**
      *
      *
@@ -5663,6 +5868,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The beginCreatingTime.
      */
     com.google.protobuf.Timestamp getBeginCreatingTime();
+
     /**
      *
      *
@@ -5709,6 +5915,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the taskRowCount field is set.
      */
     boolean hasTaskRowCount();
+
     /**
      *
      *
@@ -5738,6 +5945,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the errorMessage field is set.
      */
     boolean hasErrorMessage();
+
     /**
      *
      *
@@ -5751,6 +5959,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
+
     /**
      *
      *
@@ -5792,6 +6001,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the totalRowCount field is set.
      */
     boolean hasTotalRowCount();
+
     /**
      *
      *
@@ -5820,6 +6030,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      */
     int getTotalRowCount();
   }
+
   /**
    *
    *
@@ -5834,6 +6045,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.ReportTask.ReportMetadata)
       ReportMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ReportMetadata.newBuilder() to construct.
     private ReportMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5929,6 +6141,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -5940,6 +6153,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
        * <code>CREATING = 1;</code>
        */
       public static final int CREATING_VALUE = 1;
+
       /**
        *
        *
@@ -5950,6 +6164,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
        * <code>ACTIVE = 2;</code>
        */
       public static final int ACTIVE_VALUE = 2;
+
       /**
        *
        *
@@ -6051,6 +6266,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -6068,6 +6284,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -6085,6 +6302,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -6109,6 +6327,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BEGIN_CREATING_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp beginCreatingTime_;
+
     /**
      *
      *
@@ -6127,6 +6346,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBeginCreatingTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -6147,6 +6367,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : beginCreatingTime_;
     }
+
     /**
      *
      *
@@ -6168,6 +6389,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CREATION_QUOTA_TOKENS_CHARGED_FIELD_NUMBER = 3;
     private int creationQuotaTokensCharged_ = 0;
+
     /**
      *
      *
@@ -6190,6 +6412,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TASK_ROW_COUNT_FIELD_NUMBER = 4;
     private int taskRowCount_ = 0;
+
     /**
      *
      *
@@ -6208,6 +6431,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaskRowCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -6231,6 +6455,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -6247,6 +6472,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorMessage() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -6271,6 +6497,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -6298,6 +6525,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOTAL_ROW_COUNT_FIELD_NUMBER = 6;
     private int totalRowCount_ = 0;
+
     /**
      *
      *
@@ -6328,6 +6556,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTotalRowCount() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -6591,6 +6820,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6870,6 +7100,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -6887,6 +7118,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasState() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -6904,6 +7136,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -6924,6 +7157,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6945,6 +7179,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
             ? com.google.analytics.data.v1alpha.ReportTask.ReportMetadata.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6969,6 +7204,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6995,6 +7231,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           beginCreatingTimeBuilder_;
+
       /**
        *
        *
@@ -7012,6 +7249,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBeginCreatingTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -7035,6 +7273,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return beginCreatingTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7060,6 +7299,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7082,6 +7322,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7112,6 +7353,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -7134,6 +7376,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7151,6 +7394,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getBeginCreatingTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7172,6 +7416,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
               : beginCreatingTime_;
         }
       }
+
       /**
        *
        *
@@ -7202,6 +7447,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int creationQuotaTokensCharged_;
+
       /**
        *
        *
@@ -7221,6 +7467,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public int getCreationQuotaTokensCharged() {
         return creationQuotaTokensCharged_;
       }
+
       /**
        *
        *
@@ -7244,6 +7491,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7267,6 +7515,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int taskRowCount_;
+
       /**
        *
        *
@@ -7286,6 +7535,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTaskRowCount() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -7305,6 +7555,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public int getTaskRowCount() {
         return taskRowCount_;
       }
+
       /**
        *
        *
@@ -7328,6 +7579,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7351,6 +7603,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object errorMessage_ = "";
+
       /**
        *
        *
@@ -7367,6 +7620,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasErrorMessage() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -7391,6 +7645,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7415,6 +7670,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7438,6 +7694,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7457,6 +7714,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7483,6 +7741,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int totalRowCount_;
+
       /**
        *
        *
@@ -7514,6 +7773,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTotalRowCount() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -7545,6 +7805,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public int getTotalRowCount() {
         return totalRowCount_;
       }
+
       /**
        *
        *
@@ -7580,6 +7841,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7684,6 +7946,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -7710,6 +7973,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -7739,6 +8003,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPORT_DEFINITION_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.ReportTask.ReportDefinition reportDefinition_;
+
   /**
    *
    *
@@ -7759,6 +8024,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReportDefinition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -7781,6 +8047,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.data.v1alpha.ReportTask.ReportDefinition.getDefaultInstance()
         : reportDefinition_;
   }
+
   /**
    *
    *
@@ -7805,6 +8072,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPORT_METADATA_FIELD_NUMBER = 3;
   private com.google.analytics.data.v1alpha.ReportTask.ReportMetadata reportMetadata_;
+
   /**
    *
    *
@@ -7825,6 +8093,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReportMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -7847,6 +8116,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.data.v1alpha.ReportTask.ReportMetadata.getDefaultInstance()
         : reportMetadata_;
   }
+
   /**
    *
    *
@@ -8056,6 +8326,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -8290,6 +8561,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -8315,6 +8587,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8340,6 +8613,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8364,6 +8638,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8384,6 +8659,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8416,6 +8692,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1alpha.ReportTask.ReportDefinition.Builder,
             com.google.analytics.data.v1alpha.ReportTask.ReportDefinitionOrBuilder>
         reportDefinitionBuilder_;
+
     /**
      *
      *
@@ -8435,6 +8712,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReportDefinition() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -8460,6 +8738,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return reportDefinitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8488,6 +8767,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8513,6 +8793,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8548,6 +8829,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8572,6 +8854,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8592,6 +8875,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReportDefinitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8616,6 +8900,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
             : reportDefinition_;
       }
     }
+
     /**
      *
      *
@@ -8653,6 +8938,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1alpha.ReportTask.ReportMetadata.Builder,
             com.google.analytics.data.v1alpha.ReportTask.ReportMetadataOrBuilder>
         reportMetadataBuilder_;
+
     /**
      *
      *
@@ -8672,6 +8958,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReportMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -8697,6 +8984,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         return reportMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8725,6 +9013,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8750,6 +9039,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8785,6 +9075,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8809,6 +9100,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8829,6 +9121,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReportMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8853,6 +9146,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
             : reportMetadata_;
       }
     }
+
     /**
      *
      *

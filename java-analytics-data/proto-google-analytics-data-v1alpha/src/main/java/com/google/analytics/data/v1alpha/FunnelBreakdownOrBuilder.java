@@ -38,6 +38,7 @@ public interface FunnelBreakdownOrBuilder
    * @return Whether the breakdownDimension field is set.
    */
   boolean hasBreakdownDimension();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface FunnelBreakdownOrBuilder
    * @return The breakdownDimension.
    */
   com.google.analytics.data.v1alpha.Dimension getBreakdownDimension();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface FunnelBreakdownOrBuilder
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
+
   /**
    *
    *

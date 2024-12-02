@@ -38,6 +38,7 @@ public interface PatchSnapshotSettingRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PatchSnapshotSettingRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PatchSnapshotSettingRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface PatchSnapshotSettingRequestOrBuilder
    * @return Whether the snapshotSettingsResource field is set.
    */
   boolean hasSnapshotSettingsResource();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface PatchSnapshotSettingRequestOrBuilder
    * @return The snapshotSettingsResource.
    */
   com.google.cloud.compute.v1.SnapshotSettings getSnapshotSettingsResource();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface PatchSnapshotSettingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface PatchSnapshotSettingRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
+
   /**
    *
    *

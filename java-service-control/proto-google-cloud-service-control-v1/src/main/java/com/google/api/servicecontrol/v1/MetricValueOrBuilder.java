@@ -37,6 +37,7 @@ public interface MetricValueOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -50,9 +51,11 @@ public interface MetricValueOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -66,6 +69,7 @@ public interface MetricValueOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -83,6 +87,7 @@ public interface MetricValueOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface MetricValueOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface MetricValueOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface MetricValueOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public interface MetricValueOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -197,6 +206,7 @@ public interface MetricValueOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public interface MetricValueOrBuilder
    * @return Whether the int64Value field is set.
    */
   boolean hasInt64Value();
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public interface MetricValueOrBuilder
    * @return Whether the doubleValue field is set.
    */
   boolean hasDoubleValue();
+
   /**
    *
    *
@@ -272,6 +284,7 @@ public interface MetricValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
+
   /**
    *
    *
@@ -284,6 +297,7 @@ public interface MetricValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
+
   /**
    *
    *
@@ -309,6 +323,7 @@ public interface MetricValueOrBuilder
    * @return Whether the distributionValue field is set.
    */
   boolean hasDistributionValue();
+
   /**
    *
    *
@@ -321,6 +336,7 @@ public interface MetricValueOrBuilder
    * @return The distributionValue.
    */
   com.google.api.servicecontrol.v1.Distribution getDistributionValue();
+
   /**
    *
    *

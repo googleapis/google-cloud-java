@@ -39,6 +39,7 @@ public interface SetAutomatedGa4ConfigurationOptOutRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListAttachmentsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Attachment attachments = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.Attachment> getAttachmentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAttachmentsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Attachment attachments = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.Attachment getAttachments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAttachmentsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Attachment attachments = 1;</code>
    */
   int getAttachmentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAttachmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.AttachmentOrBuilder>
       getAttachmentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListAttachmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

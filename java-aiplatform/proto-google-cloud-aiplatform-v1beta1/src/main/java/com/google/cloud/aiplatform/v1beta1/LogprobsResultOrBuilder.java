@@ -37,6 +37,7 @@ public interface LogprobsResultOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.LogprobsResult.TopCandidates>
       getTopCandidatesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface LogprobsResultOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.LogprobsResult.TopCandidates getTopCandidates(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface LogprobsResultOrBuilder
    * </code>
    */
   int getTopCandidatesCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface LogprobsResultOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.LogprobsResult.TopCandidatesOrBuilder>
       getTopCandidatesOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface LogprobsResultOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.LogprobsResult.Candidate>
       getChosenCandidatesList();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface LogprobsResultOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.LogprobsResult.Candidate getChosenCandidates(int index);
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface LogprobsResultOrBuilder
    * </code>
    */
   int getChosenCandidatesCount();
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public interface LogprobsResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.LogprobsResult.CandidateOrBuilder>
       getChosenCandidatesOrBuilderList();
+
   /**
    *
    *

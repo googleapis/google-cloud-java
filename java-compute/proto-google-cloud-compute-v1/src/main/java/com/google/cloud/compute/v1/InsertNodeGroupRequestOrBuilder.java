@@ -51,6 +51,7 @@ public interface InsertNodeGroupRequestOrBuilder
    * @return Whether the nodeGroupResource field is set.
    */
   boolean hasNodeGroupResource();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface InsertNodeGroupRequestOrBuilder
    * @return The nodeGroupResource.
    */
   com.google.cloud.compute.v1.NodeGroup getNodeGroupResource();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface InsertNodeGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface InsertNodeGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface InsertNodeGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface InsertNodeGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

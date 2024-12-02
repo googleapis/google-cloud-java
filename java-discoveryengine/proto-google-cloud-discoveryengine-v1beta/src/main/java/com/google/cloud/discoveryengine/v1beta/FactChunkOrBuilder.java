@@ -36,6 +36,7 @@ public interface FactChunkOrBuilder
    * @return The chunkText.
    */
   java.lang.String getChunkText();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface FactChunkOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface FactChunkOrBuilder
    * <code>map&lt;string, string&gt; source_metadata = 3;</code>
    */
   int getSourceMetadataCount();
+
   /**
    *
    *
@@ -113,9 +116,11 @@ public interface FactChunkOrBuilder
    * <code>map&lt;string, string&gt; source_metadata = 3;</code>
    */
   boolean containsSourceMetadata(java.lang.String key);
+
   /** Use {@link #getSourceMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSourceMetadata();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface FactChunkOrBuilder
    * <code>map&lt;string, string&gt; source_metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSourceMetadataMap();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface FactChunkOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -216,7 +216,8 @@ public class HttpJsonTextToSpeechStub extends TextToSpeechStub {
   public BidiStreamingCallable<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
       streamingSynthesizeCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingSynthesizeCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingSynthesizeCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override

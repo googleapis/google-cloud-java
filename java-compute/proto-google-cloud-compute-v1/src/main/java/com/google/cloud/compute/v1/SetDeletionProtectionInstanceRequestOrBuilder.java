@@ -36,6 +36,7 @@ public interface SetDeletionProtectionInstanceRequestOrBuilder
    * @return Whether the deletionProtection field is set.
    */
   boolean hasDeletionProtection();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetDeletionProtectionInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SetDeletionProtectionInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SetDeletionProtectionInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface SetDeletionProtectionInstanceRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface SetDeletionProtectionInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

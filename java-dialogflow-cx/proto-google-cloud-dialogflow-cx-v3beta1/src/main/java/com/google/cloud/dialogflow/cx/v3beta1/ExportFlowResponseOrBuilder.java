@@ -38,6 +38,7 @@ public interface ExportFlowResponseOrBuilder
    * @return Whether the flowUri field is set.
    */
   boolean hasFlowUri();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExportFlowResponseOrBuilder
    * @return The flowUri.
    */
   java.lang.String getFlowUri();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ExportFlowResponseOrBuilder
    * @return Whether the flowContent field is set.
    */
   boolean hasFlowContent();
+
   /**
    *
    *

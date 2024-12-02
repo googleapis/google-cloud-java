@@ -36,6 +36,7 @@ public interface SecurityPostureConfigOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SecurityPostureConfigOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SecurityPostureConfigOrBuilder
    * @return Whether the vulnerabilityMode field is set.
    */
   boolean hasVulnerabilityMode();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface SecurityPostureConfigOrBuilder
    * @return The enum numeric value on the wire for vulnerabilityMode.
    */
   int getVulnerabilityModeValue();
+
   /**
    *
    *

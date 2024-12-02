@@ -35,6 +35,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ListDataStoresResponse)
     ListDataStoresResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDataStoresResponse.newBuilder() to construct.
   private ListDataStoresResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1alpha.DataStore> dataStores_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.discoveryengine.v1alpha.DataStore> getDataStoresList() {
     return dataStores_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       getDataStoresOrBuilderList() {
     return dataStores_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
   public int getDataStoresCount() {
     return dataStores_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.discoveryengine.v1alpha.DataStore getDataStores(int index) {
     return dataStores_.get(index);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -371,6 +379,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
         return dataStoresBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -674,6 +684,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
         return dataStoresBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
         return dataStoresBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +773,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +798,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +842,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +885,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +906,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +921,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
         int index) {
       return getDataStoresFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -918,6 +940,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
         return dataStoresBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -936,6 +959,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(dataStores_);
       }
     }
+
     /**
      *
      *
@@ -950,6 +974,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       return getDataStoresFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1alpha.DataStore.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1alpha.DataStore.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -999,6 +1025,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1024,6 +1051,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1077,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1102,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1123,7 @@ public final class ListDataStoresResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

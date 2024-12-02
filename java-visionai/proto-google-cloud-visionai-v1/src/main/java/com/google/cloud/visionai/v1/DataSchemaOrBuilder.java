@@ -38,6 +38,7 @@ public interface DataSchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface DataSchemaOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface DataSchemaOrBuilder
    * @return Whether the schemaDetails field is set.
    */
   boolean hasSchemaDetails();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface DataSchemaOrBuilder
    * @return The schemaDetails.
    */
   com.google.cloud.visionai.v1.DataSchemaDetails getSchemaDetails();
+
   /**
    *
    *

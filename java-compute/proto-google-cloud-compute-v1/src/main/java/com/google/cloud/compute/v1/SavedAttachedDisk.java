@@ -33,6 +33,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SavedAttachedDisk)
     SavedAttachedDiskOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SavedAttachedDisk.newBuilder() to construct.
   private SavedAttachedDisk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,8 +110,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_INTERFACE = 0;</code>
      */
     public static final int UNDEFINED_INTERFACE_VALUE = 0;
+
     /** <code>NVME = 2408800;</code> */
     public static final int NVME_VALUE = 2408800;
+
     /** <code>SCSI = 2539686;</code> */
     public static final int SCSI_VALUE = 2539686;
 
@@ -250,6 +253,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
+
     /**
      *
      *
@@ -260,6 +264,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * <code>READ_ONLY = 91950261;</code>
      */
     public static final int READ_ONLY_VALUE = 91950261;
+
     /**
      *
      *
@@ -391,8 +396,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STORAGE_BYTES_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STORAGE_BYTES_STATUS_VALUE = 0;
+
     /** <code>UPDATING = 494614342;</code> */
     public static final int UPDATING_VALUE = 494614342;
+
     /** <code>UP_TO_DATE = 101306702;</code> */
     public static final int UP_TO_DATE_VALUE = 101306702;
 
@@ -519,8 +526,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
     /** <code>PERSISTENT = 460683927;</code> */
     public static final int PERSISTENT_VALUE = 460683927;
+
     /** <code>SCRATCH = 496778970;</code> */
     public static final int SCRATCH_VALUE = 496778970;
 
@@ -610,6 +619,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
   private boolean autoDelete_ = false;
+
   /**
    *
    *
@@ -625,6 +635,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasAutoDelete() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -643,6 +654,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   public static final int BOOT_FIELD_NUMBER = 3029746;
   private boolean boot_ = false;
+
   /**
    *
    *
@@ -658,6 +670,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasBoot() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -678,6 +691,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deviceName_ = "";
+
   /**
    *
    *
@@ -693,6 +707,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasDeviceName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -716,6 +731,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -742,6 +758,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   public static final int DISK_ENCRYPTION_KEY_FIELD_NUMBER = 271660677;
   private com.google.cloud.compute.v1.CustomerEncryptionKey diskEncryptionKey_;
+
   /**
    *
    *
@@ -758,6 +775,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasDiskEncryptionKey() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -776,6 +794,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
         : diskEncryptionKey_;
   }
+
   /**
    *
    *
@@ -796,6 +815,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
   private long diskSizeGb_ = 0L;
+
   /**
    *
    *
@@ -811,6 +831,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasDiskSizeGb() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -831,6 +852,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diskType_ = "";
+
   /**
    *
    *
@@ -846,6 +868,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasDiskType() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -869,6 +892,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -897,6 +921,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.GuestOsFeature> guestOsFeatures_;
+
   /**
    *
    *
@@ -910,6 +935,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.compute.v1.GuestOsFeature> getGuestOsFeaturesList() {
     return guestOsFeatures_;
   }
+
   /**
    *
    *
@@ -924,6 +950,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       getGuestOsFeaturesOrBuilderList() {
     return guestOsFeatures_;
   }
+
   /**
    *
    *
@@ -937,6 +964,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public int getGuestOsFeaturesCount() {
     return guestOsFeatures_.size();
   }
+
   /**
    *
    *
@@ -950,6 +978,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.compute.v1.GuestOsFeature getGuestOsFeatures(int index) {
     return guestOsFeatures_.get(index);
   }
+
   /**
    *
    *
@@ -967,6 +996,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   public static final int INDEX_FIELD_NUMBER = 100346066;
   private int index_ = 0;
+
   /**
    *
    *
@@ -982,6 +1012,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasIndex() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1002,6 +1033,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interface_ = "";
+
   /**
    *
    *
@@ -1018,6 +1050,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasInterface() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1042,6 +1075,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1071,6 +1105,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -1086,6 +1121,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasKind() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -1109,6 +1145,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1138,6 +1175,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList licenses_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1152,6 +1190,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getLicensesList() {
     return licenses_;
   }
+
   /**
    *
    *
@@ -1166,6 +1205,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public int getLicensesCount() {
     return licenses_.size();
   }
+
   /**
    *
    *
@@ -1181,6 +1221,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public java.lang.String getLicenses(int index) {
     return licenses_.get(index);
   }
+
   /**
    *
    *
@@ -1201,6 +1242,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mode_ = "";
+
   /**
    *
    *
@@ -1217,6 +1259,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasMode() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -1241,6 +1284,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1270,6 +1314,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
+
   /**
    *
    *
@@ -1285,6 +1330,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasSource() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -1308,6 +1354,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1334,6 +1381,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   public static final int STORAGE_BYTES_FIELD_NUMBER = 424631719;
   private long storageBytes_ = 0L;
+
   /**
    *
    *
@@ -1349,6 +1397,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasStorageBytes() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -1369,6 +1418,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storageBytesStatus_ = "";
+
   /**
    *
    *
@@ -1385,6 +1435,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasStorageBytesStatus() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -1409,6 +1460,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1438,6 +1490,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -1454,6 +1507,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public boolean hasType() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -1478,6 +1532,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1881,6 +1936,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2363,6 +2419,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private boolean autoDelete_;
+
     /**
      *
      *
@@ -2378,6 +2435,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasAutoDelete() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2393,6 +2451,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean getAutoDelete() {
       return autoDelete_;
     }
+
     /**
      *
      *
@@ -2412,6 +2471,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2491,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean boot_;
+
     /**
      *
      *
@@ -2446,6 +2507,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasBoot() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2461,6 +2523,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean getBoot() {
       return boot_;
     }
+
     /**
      *
      *
@@ -2480,6 +2543,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2499,6 +2563,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object deviceName_ = "";
+
     /**
      *
      *
@@ -2513,6 +2578,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasDeviceName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2535,6 +2601,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2557,6 +2624,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2578,6 +2646,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2595,6 +2664,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2624,6 +2694,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.CustomerEncryptionKey.Builder,
             com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder>
         diskEncryptionKeyBuilder_;
+
     /**
      *
      *
@@ -2640,6 +2711,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasDiskEncryptionKey() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2662,6 +2734,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return diskEncryptionKeyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2686,6 +2759,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2708,6 +2782,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2738,6 +2813,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2759,6 +2835,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2775,6 +2852,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDiskEncryptionKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2796,6 +2874,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
             : diskEncryptionKey_;
       }
     }
+
     /**
      *
      *
@@ -2825,6 +2904,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private long diskSizeGb_;
+
     /**
      *
      *
@@ -2840,6 +2920,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasDiskSizeGb() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2855,6 +2936,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public long getDiskSizeGb() {
       return diskSizeGb_;
     }
+
     /**
      *
      *
@@ -2874,6 +2956,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2893,6 +2976,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object diskType_ = "";
+
     /**
      *
      *
@@ -2907,6 +2991,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasDiskType() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2929,6 +3014,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2951,6 +3037,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2972,6 +3059,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2989,6 +3077,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3045,6 +3134,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return guestOsFeaturesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3061,6 +3151,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return guestOsFeaturesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3077,6 +3168,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return guestOsFeaturesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3099,6 +3191,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3119,6 +3212,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3141,6 +3235,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3163,6 +3258,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3183,6 +3279,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3203,6 +3300,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3223,6 +3321,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3242,6 +3341,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3261,6 +3361,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3273,6 +3374,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.GuestOsFeature.Builder getGuestOsFeaturesBuilder(int index) {
       return getGuestOsFeaturesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3290,6 +3392,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return guestOsFeaturesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3307,6 +3410,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(guestOsFeatures_);
       }
     }
+
     /**
      *
      *
@@ -3320,6 +3424,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return getGuestOsFeaturesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.GuestOsFeature.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3333,6 +3438,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return getGuestOsFeaturesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.GuestOsFeature.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3368,6 +3474,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private int index_;
+
     /**
      *
      *
@@ -3383,6 +3490,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasIndex() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3398,6 +3506,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public int getIndex() {
       return index_;
     }
+
     /**
      *
      *
@@ -3417,6 +3526,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3436,6 +3546,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object interface_ = "";
+
     /**
      *
      *
@@ -3451,6 +3562,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasInterface() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3474,6 +3586,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3497,6 +3610,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3519,6 +3633,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3537,6 +3652,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3562,6 +3678,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -3576,6 +3693,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasKind() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3598,6 +3716,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3620,6 +3739,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3641,6 +3761,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3658,6 +3779,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3690,6 +3812,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000400;
     }
+
     /**
      *
      *
@@ -3705,6 +3828,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       licenses_.makeImmutable();
       return licenses_;
     }
+
     /**
      *
      *
@@ -3719,6 +3843,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public int getLicensesCount() {
       return licenses_.size();
     }
+
     /**
      *
      *
@@ -3734,6 +3859,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public java.lang.String getLicenses(int index) {
       return licenses_.get(index);
     }
+
     /**
      *
      *
@@ -3749,6 +3875,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getLicensesBytes(int index) {
       return licenses_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3772,6 +3899,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3794,6 +3922,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3813,6 +3942,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3831,6 +3961,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3856,6 +3987,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object mode_ = "";
+
     /**
      *
      *
@@ -3871,6 +4003,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasMode() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3894,6 +4027,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3917,6 +4051,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3939,6 +4074,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3957,6 +4093,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3982,6 +4119,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -3996,6 +4134,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasSource() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4018,6 +4157,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4040,6 +4180,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4061,6 +4202,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4078,6 +4220,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4102,6 +4245,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private long storageBytes_;
+
     /**
      *
      *
@@ -4117,6 +4261,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasStorageBytes() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -4132,6 +4277,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public long getStorageBytes() {
       return storageBytes_;
     }
+
     /**
      *
      *
@@ -4151,6 +4297,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4170,6 +4317,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object storageBytesStatus_ = "";
+
     /**
      *
      *
@@ -4185,6 +4333,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasStorageBytesStatus() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -4208,6 +4357,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4231,6 +4381,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4253,6 +4404,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4271,6 +4423,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4296,6 +4449,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -4311,6 +4465,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public boolean hasType() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -4334,6 +4489,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4357,6 +4513,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4379,6 +4536,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4397,6 +4555,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

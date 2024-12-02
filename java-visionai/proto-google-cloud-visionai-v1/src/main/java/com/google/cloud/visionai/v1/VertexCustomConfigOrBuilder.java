@@ -53,6 +53,7 @@ public interface VertexCustomConfigOrBuilder
    * @return Whether the dedicatedResources field is set.
    */
   boolean hasDedicatedResources();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface VertexCustomConfigOrBuilder
    * @return The dedicatedResources.
    */
   com.google.cloud.visionai.v1.DedicatedResources getDedicatedResources();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface VertexCustomConfigOrBuilder
    * @return The postProcessingCloudFunction.
    */
   java.lang.String getPostProcessingCloudFunction();
+
   /**
    *
    *
@@ -164,6 +167,7 @@ public interface VertexCustomConfigOrBuilder
    * @return Whether the dynamicConfigInputTopic field is set.
    */
   boolean hasDynamicConfigInputTopic();
+
   /**
    *
    *
@@ -190,6 +194,7 @@ public interface VertexCustomConfigOrBuilder
    * @return The dynamicConfigInputTopic.
    */
   java.lang.String getDynamicConfigInputTopic();
+
   /**
    *
    *

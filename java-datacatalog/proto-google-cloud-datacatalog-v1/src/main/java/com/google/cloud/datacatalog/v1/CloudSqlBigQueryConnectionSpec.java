@@ -33,6 +33,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec)
     CloudSqlBigQueryConnectionSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudSqlBigQueryConnectionSpec.newBuilder() to construct.
   private CloudSqlBigQueryConnectionSpec(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -119,6 +120,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
      * <code>DATABASE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATABASE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
      * <code>POSTGRES = 1;</code>
      */
     public static final int POSTGRES_VALUE = 1;
+
     /**
      *
      *
@@ -229,6 +232,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
+
   /**
    *
    *
@@ -252,6 +256,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +285,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
+
   /**
    *
    *
@@ -303,6 +309,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -329,6 +336,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
+
   /**
    *
    *
@@ -344,6 +352,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -549,6 +558,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -764,6 +774,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object instanceId_ = "";
+
     /**
      *
      *
@@ -786,6 +797,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -808,6 +820,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +842,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +860,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +885,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     }
 
     private java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -892,6 +908,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -914,6 +931,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -935,6 +953,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +971,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +996,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -992,6 +1013,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1055,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
           ? com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1055,6 +1079,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    * @return A list containing the podRangeNames.
    */
   java.util.List<java.lang.String> getPodRangeNamesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    * @return The count of podRangeNames.
    */
   int getPodRangeNamesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    * @return The podRangeNames at the given index.
    */
   java.lang.String getPodRangeNames(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.container.v1.RangeInfo> getPodRangeInfoList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    * </code>
    */
   com.google.container.v1.RangeInfo getPodRangeInfo(int index);
+
   /**
    *
    *
@@ -111,6 +116,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    * </code>
    */
   int getPodRangeInfoCount();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    */
   java.util.List<? extends com.google.container.v1.RangeInfoOrBuilder>
       getPodRangeInfoOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.ApiHubResource)
     ApiHubResourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApiHubResource.newBuilder() to construct.
   private ApiHubResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     private ResourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -124,6 +126,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int API_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApi() {
     return resourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apihub.v1.Api.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPERATION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOperation() {
     return resourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apihub.v1.ApiOperation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPLOYMENT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeployment() {
     return resourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apihub.v1.Deployment.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPEC_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpec() {
     return resourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -321,6 +334,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apihub.v1.Spec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -340,6 +354,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFINITION_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -356,6 +371,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefinition() {
     return resourceCase_ == 5;
   }
+
   /**
    *
    *
@@ -375,6 +391,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apihub.v1.Definition.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -394,6 +411,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -410,6 +428,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVersion() {
     return resourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -429,6 +448,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.apihub.v1.Version.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -696,6 +716,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -999,6 +1020,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.Api.Builder,
             com.google.cloud.apihub.v1.ApiOrBuilder>
         apiBuilder_;
+
     /**
      *
      *
@@ -1015,6 +1037,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApi() {
       return resourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -1041,6 +1064,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Api.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1109,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1142,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1169,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1183,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.Api.Builder getApiBuilder() {
       return getApiFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1176,6 +1205,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Api.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1213,6 +1243,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.ApiOperation.Builder,
             com.google.cloud.apihub.v1.ApiOperationOrBuilder>
         operationBuilder_;
+
     /**
      *
      *
@@ -1229,6 +1260,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOperation() {
       return resourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1255,6 +1287,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.ApiOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1311,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1332,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1366,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1393,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1407,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.ApiOperation.Builder getOperationBuilder() {
       return getOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1391,6 +1429,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.ApiOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1430,6 +1469,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.Deployment.Builder,
             com.google.cloud.apihub.v1.DeploymentOrBuilder>
         deploymentBuilder_;
+
     /**
      *
      *
@@ -1446,6 +1486,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeployment() {
       return resourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1472,6 +1513,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Deployment.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1495,6 +1537,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1558,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1592,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1574,6 +1619,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1587,6 +1633,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.Deployment.Builder getDeploymentBuilder() {
       return getDeploymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1608,6 +1655,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Deployment.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1647,6 +1695,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.Spec.Builder,
             com.google.cloud.apihub.v1.SpecOrBuilder>
         specBuilder_;
+
     /**
      *
      *
@@ -1663,6 +1712,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpec() {
       return resourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -1689,6 +1739,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Spec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1712,6 +1763,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1784,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1818,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1845,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1804,6 +1859,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.Spec.Builder getSpecBuilder() {
       return getSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1825,6 +1881,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Spec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1862,6 +1919,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.Definition.Builder,
             com.google.cloud.apihub.v1.DefinitionOrBuilder>
         definitionBuilder_;
+
     /**
      *
      *
@@ -1878,6 +1936,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefinition() {
       return resourceCase_ == 5;
     }
+
     /**
      *
      *
@@ -1904,6 +1963,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Definition.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1927,6 +1987,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +2008,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1980,6 +2042,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2006,6 +2069,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2019,6 +2083,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.Definition.Builder getDefinitionBuilder() {
       return getDefinitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2040,6 +2105,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Definition.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2079,6 +2145,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.Version.Builder,
             com.google.cloud.apihub.v1.VersionOrBuilder>
         versionBuilder_;
+
     /**
      *
      *
@@ -2095,6 +2162,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVersion() {
       return resourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -2121,6 +2189,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Version.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2144,6 +2213,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2164,6 +2234,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2197,6 +2268,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2223,6 +2295,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2236,6 +2309,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.Version.Builder getVersionBuilder() {
       return getVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2257,6 +2331,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.apihub.v1.Version.getDefaultInstance();
       }
     }
+
     /**
      *
      *

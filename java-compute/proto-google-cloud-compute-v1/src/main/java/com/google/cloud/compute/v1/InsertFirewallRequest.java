@@ -33,6 +33,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertFirewallRequest)
     InsertFirewallRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertFirewallRequest.newBuilder() to construct.
   private InsertFirewallRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int FIREWALL_RESOURCE_FIELD_NUMBER = 41425005;
   private com.google.cloud.compute.v1.Firewall firewallResource_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
   public boolean hasFirewallResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.Firewall.getDefaultInstance()
         : firewallResource_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -430,6 +439,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +676,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.Firewall.Builder,
             com.google.cloud.compute.v1.FirewallOrBuilder>
         firewallResourceBuilder_;
+
     /**
      *
      *
@@ -682,6 +693,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
     public boolean hasFirewallResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -704,6 +716,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
         return firewallResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFirewallResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
             : firewallResource_;
       }
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -889,6 +909,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -913,6 +934,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -936,6 +958,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1005,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -995,6 +1020,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1017,6 +1043,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1066,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1088,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1106,7 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

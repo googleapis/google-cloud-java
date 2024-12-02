@@ -38,6 +38,7 @@ public interface UsageResourceAllowanceOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UsageResourceAllowanceOrBuilder
    * @return The spec.
    */
   com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec getSpec();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UsageResourceAllowanceOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UsageResourceAllowanceOrBuilder
    * @return The status.
    */
   com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus getStatus();
+
   /**
    *
    *

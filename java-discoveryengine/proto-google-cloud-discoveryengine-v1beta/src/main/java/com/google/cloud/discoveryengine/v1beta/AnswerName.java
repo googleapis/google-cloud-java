@@ -467,7 +467,8 @@ public class AnswerName implements ResourceName {
     private Builder(AnswerName answerName) {
       Preconditions.checkArgument(
           Objects.equals(answerName.pathTemplate, PROJECT_LOCATION_DATA_STORE_SESSION_ANSWER),
-          "toBuilder is only supported when AnswerName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/sessions/{session}/answers/{answer}");
+          "toBuilder is only supported when AnswerName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/sessions/{session}/answers/{answer}");
       this.project = answerName.project;
       this.location = answerName.location;
       this.dataStore = answerName.dataStore;

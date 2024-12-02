@@ -37,6 +37,7 @@ public interface CropHintOrBuilder
    * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CropHintOrBuilder
    * @return The boundingPoly.
    */
   com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly();
+
   /**
    *
    *

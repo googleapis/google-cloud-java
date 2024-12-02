@@ -34,6 +34,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p2beta1.TemporalAsset)
     TemporalAssetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TemporalAsset.newBuilder() to construct.
   private TemporalAsset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int WINDOW_FIELD_NUMBER = 1;
   private com.google.cloud.asset.v1p2beta1.TimeWindow window_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.asset.v1p2beta1.TimeWindow.getDefaultInstance()
         : window_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETED_FIELD_NUMBER = 2;
   private boolean deleted_ = false;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASSET_FIELD_NUMBER = 3;
   private com.google.cloud.asset.v1p2beta1.Asset asset_;
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAsset() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.asset.v1p2beta1.Asset getAsset() {
     return asset_ == null ? com.google.cloud.asset.v1p2beta1.Asset.getDefaultInstance() : asset_;
   }
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -599,6 +608,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1p2beta1.TimeWindow.Builder,
             com.google.cloud.asset.v1p2beta1.TimeWindowOrBuilder>
         windowBuilder_;
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWindow() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -633,6 +644,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         return windowBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +735,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -752,6 +769,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             : window_;
       }
     }
+
     /**
      *
      *
@@ -779,6 +797,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean deleted_;
+
     /**
      *
      *
@@ -794,6 +813,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public boolean getDeleted() {
       return deleted_;
     }
+
     /**
      *
      *
@@ -813,6 +833,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +858,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1p2beta1.Asset.Builder,
             com.google.cloud.asset.v1p2beta1.AssetOrBuilder>
         assetBuilder_;
+
     /**
      *
      *
@@ -851,6 +873,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAsset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -871,6 +894,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         return assetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -893,6 +917,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +937,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +965,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +985,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +1000,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAssetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -990,6 +1019,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             : asset_;
       }
     }
+
     /**
      *
      *

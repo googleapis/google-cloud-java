@@ -33,6 +33,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DataplexTableSpec)
     DataplexTableSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataplexTableSpec.newBuilder() to construct.
   private DataplexTableSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.DataplexExternalTable> externalTables_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       getExternalTablesList() {
     return externalTables_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       getExternalTablesOrBuilderList() {
     return externalTables_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
   public int getExternalTablesCount() {
     return externalTables_.size();
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.datacatalog.v1.DataplexExternalTable getExternalTables(int index) {
     return externalTables_.get(index);
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
 
   public static final int DATAPLEX_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1.DataplexSpec dataplexSpec_;
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
   public boolean hasDataplexSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datacatalog.v1.DataplexSpec.getDefaultInstance()
         : dataplexSpec_;
   }
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
 
   public static final int USER_MANAGED_FIELD_NUMBER = 3;
   private boolean userManaged_ = false;
+
   /**
    *
    *
@@ -404,6 +414,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -716,6 +727,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         return externalTablesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -735,6 +747,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         return externalTablesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -754,6 +767,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         return externalTablesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +919,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +944,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +967,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1007,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         int index) {
       return getExternalTablesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         return externalTablesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1049,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(externalTables_);
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1067,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       return getExternalTablesFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.DataplexExternalTable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1059,6 +1086,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.datacatalog.v1.DataplexExternalTable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datacatalog.v1.DataplexSpec.Builder,
             com.google.cloud.datacatalog.v1.DataplexSpecOrBuilder>
         dataplexSpecBuilder_;
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasDataplexSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1136,6 +1166,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
         return dataplexSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1158,6 +1189,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1210,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1238,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1258,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1273,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDataplexSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1256,6 +1292,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
             : dataplexSpec_;
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1320,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean userManaged_;
+
     /**
      *
      *
@@ -1298,6 +1336,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     public boolean getUserManaged() {
       return userManaged_;
     }
+
     /**
      *
      *
@@ -1317,6 +1356,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ExportIntentsResponse)
     ExportIntentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportIntentsResponse.newBuilder() to construct.
   private ExportIntentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
     private IntentsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INTENTS_URI_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
   public boolean hasIntentsUri() {
     return intentsCase_ == 1;
   }
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INTENTS_CONTENT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
   public boolean hasIntentsContent() {
     return intentsCase_ == 2;
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.dialogflow.cx.v3beta1.InlineDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -433,6 +441,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -682,6 +691,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
     public boolean hasIntentsUri() {
       return intentsCase_ == 1;
     }
+
     /**
      *
      *
@@ -712,6 +722,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +753,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -765,6 +777,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +799,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +830,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.dialogflow.cx.v3beta1.InlineDestination.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.InlineDestinationOrBuilder>
         intentsContentBuilder_;
+
     /**
      *
      *
@@ -833,6 +848,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
     public boolean hasIntentsContent() {
       return intentsCase_ == 2;
     }
+
     /**
      *
      *
@@ -860,6 +876,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.dialogflow.cx.v3beta1.InlineDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
       intentsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +925,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
       intentsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +962,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
       intentsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +990,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1006,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
         getIntentsContentBuilder() {
       return getIntentsContentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1008,6 +1030,7 @@ public final class ExportIntentsResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.dialogflow.cx.v3beta1.InlineDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *

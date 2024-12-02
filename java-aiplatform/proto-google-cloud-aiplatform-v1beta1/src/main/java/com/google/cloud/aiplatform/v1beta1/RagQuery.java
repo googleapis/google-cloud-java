@@ -33,6 +33,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagQuery)
     RagQueryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagQuery.newBuilder() to construct.
   private RagQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the alpha field is set.
      */
     boolean hasAlpha();
+
     /**
      *
      *
@@ -97,6 +99,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      */
     float getAlpha();
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagQuery.Ranking)
       RankingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Ranking.newBuilder() to construct.
     private Ranking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -142,6 +146,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ALPHA_FIELD_NUMBER = 1;
     private float alpha_ = 0F;
+
     /**
      *
      *
@@ -160,6 +165,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAlpha() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -346,6 +352,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private float alpha_;
+
       /**
        *
        *
@@ -552,6 +560,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAlpha() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -570,6 +579,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       public float getAlpha() {
         return alpha_;
       }
+
       /**
        *
        *
@@ -592,6 +602,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -694,6 +705,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     private QueryCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -725,6 +737,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -739,6 +752,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return queryCase_ == 1;
   }
+
   /**
    *
    *
@@ -766,6 +780,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -796,6 +811,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIMILARITY_TOP_K_FIELD_NUMBER = 2;
   private int similarityTopK_ = 0;
+
   /**
    *
    *
@@ -814,6 +830,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RANKING_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking_;
+
   /**
    *
    *
@@ -831,6 +848,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRanking() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -850,6 +868,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance()
         : ranking_;
   }
+
   /**
    *
    *
@@ -1063,6 +1082,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1329,6 +1349,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return queryCase_ == 1;
     }
+
     /**
      *
      *
@@ -1357,6 +1378,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1385,6 +1407,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1406,6 +1429,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1425,6 +1449,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1474,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int similarityTopK_;
+
     /**
      *
      *
@@ -1464,6 +1490,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     public int getSimilarityTopK() {
       return similarityTopK_;
     }
+
     /**
      *
      *
@@ -1483,6 +1510,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1535,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder,
             com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder>
         rankingBuilder_;
+
     /**
      *
      *
@@ -1523,6 +1552,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRanking() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1545,6 +1575,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         return rankingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1569,6 +1600,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1623,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1621,6 +1654,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1676,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1658,6 +1693,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRankingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1678,6 +1714,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
             : ranking_;
       }
     }
+
     /**
      *
      *

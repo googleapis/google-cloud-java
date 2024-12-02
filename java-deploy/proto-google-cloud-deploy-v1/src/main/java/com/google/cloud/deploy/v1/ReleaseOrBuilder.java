@@ -38,6 +38,7 @@ public interface ReleaseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ReleaseOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ReleaseOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface ReleaseOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -127,9 +131,11 @@ public interface ReleaseOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface ReleaseOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface ReleaseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface ReleaseOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -211,9 +220,11 @@ public interface ReleaseOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public interface ReleaseOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface ReleaseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public interface ReleaseOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -318,6 +332,7 @@ public interface ReleaseOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -344,6 +359,7 @@ public interface ReleaseOrBuilder
    * @return Whether the renderStartTime field is set.
    */
   boolean hasRenderStartTime();
+
   /**
    *
    *
@@ -358,6 +374,7 @@ public interface ReleaseOrBuilder
    * @return The renderStartTime.
    */
   com.google.protobuf.Timestamp getRenderStartTime();
+
   /**
    *
    *
@@ -385,6 +402,7 @@ public interface ReleaseOrBuilder
    * @return Whether the renderEndTime field is set.
    */
   boolean hasRenderEndTime();
+
   /**
    *
    *
@@ -399,6 +417,7 @@ public interface ReleaseOrBuilder
    * @return The renderEndTime.
    */
   com.google.protobuf.Timestamp getRenderEndTime();
+
   /**
    *
    *
@@ -424,6 +443,7 @@ public interface ReleaseOrBuilder
    * @return The skaffoldConfigUri.
    */
   java.lang.String getSkaffoldConfigUri();
+
   /**
    *
    *
@@ -449,6 +469,7 @@ public interface ReleaseOrBuilder
    * @return The skaffoldConfigPath.
    */
   java.lang.String getSkaffoldConfigPath();
+
   /**
    *
    *
@@ -472,6 +493,7 @@ public interface ReleaseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.BuildArtifact> getBuildArtifactsList();
+
   /**
    *
    *
@@ -482,6 +504,7 @@ public interface ReleaseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
    */
   com.google.cloud.deploy.v1.BuildArtifact getBuildArtifacts(int index);
+
   /**
    *
    *
@@ -492,6 +515,7 @@ public interface ReleaseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
    */
   int getBuildArtifactsCount();
+
   /**
    *
    *
@@ -503,6 +527,7 @@ public interface ReleaseOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.BuildArtifactOrBuilder>
       getBuildArtifactsOrBuilderList();
+
   /**
    *
    *
@@ -529,6 +554,7 @@ public interface ReleaseOrBuilder
    * @return Whether the deliveryPipelineSnapshot field is set.
    */
   boolean hasDeliveryPipelineSnapshot();
+
   /**
    *
    *
@@ -544,6 +570,7 @@ public interface ReleaseOrBuilder
    * @return The deliveryPipelineSnapshot.
    */
   com.google.cloud.deploy.v1.DeliveryPipeline getDeliveryPipelineSnapshot();
+
   /**
    *
    *
@@ -570,6 +597,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.Target> getTargetSnapshotsList();
+
   /**
    *
    *
@@ -582,6 +610,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.Target getTargetSnapshots(int index);
+
   /**
    *
    *
@@ -594,6 +623,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   int getTargetSnapshotsCount();
+
   /**
    *
    *
@@ -607,6 +637,7 @@ public interface ReleaseOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.TargetOrBuilder>
       getTargetSnapshotsOrBuilderList();
+
   /**
    *
    *
@@ -633,6 +664,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.CustomTargetType> getCustomTargetTypeSnapshotsList();
+
   /**
    *
    *
@@ -646,6 +678,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.CustomTargetType getCustomTargetTypeSnapshots(int index);
+
   /**
    *
    *
@@ -659,6 +692,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   int getCustomTargetTypeSnapshotsCount();
+
   /**
    *
    *
@@ -673,6 +707,7 @@ public interface ReleaseOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder>
       getCustomTargetTypeSnapshotsOrBuilderList();
+
   /**
    *
    *
@@ -702,6 +737,7 @@ public interface ReleaseOrBuilder
    * @return The enum numeric value on the wire for renderState.
    */
   int getRenderStateValue();
+
   /**
    *
    *
@@ -731,6 +767,7 @@ public interface ReleaseOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -762,6 +799,7 @@ public interface ReleaseOrBuilder
    * @return The skaffoldVersion.
    */
   java.lang.String getSkaffoldVersion();
+
   /**
    *
    *
@@ -792,6 +830,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   int getTargetArtifactsCount();
+
   /**
    *
    *
@@ -805,9 +844,11 @@ public interface ReleaseOrBuilder
    * </code>
    */
   boolean containsTargetArtifacts(java.lang.String key);
+
   /** Use {@link #getTargetArtifactsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact> getTargetArtifacts();
+
   /**
    *
    *
@@ -822,6 +863,7 @@ public interface ReleaseOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact>
       getTargetArtifactsMap();
+
   /**
    *
    *
@@ -839,6 +881,7 @@ public interface ReleaseOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.deploy.v1.TargetArtifact defaultValue);
+
   /**
    *
    *
@@ -866,6 +909,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   int getTargetRendersCount();
+
   /**
    *
    *
@@ -879,10 +923,12 @@ public interface ReleaseOrBuilder
    * </code>
    */
   boolean containsTargetRenders(java.lang.String key);
+
   /** Use {@link #getTargetRendersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.Release.TargetRender>
       getTargetRenders();
+
   /**
    *
    *
@@ -897,6 +943,7 @@ public interface ReleaseOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.Release.TargetRender>
       getTargetRendersMap();
+
   /**
    *
    *
@@ -914,6 +961,7 @@ public interface ReleaseOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.deploy.v1.Release.TargetRender defaultValue);
+
   /**
    *
    *
@@ -942,6 +990,7 @@ public interface ReleaseOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -956,6 +1005,7 @@ public interface ReleaseOrBuilder
    * @return The condition.
    */
   com.google.cloud.deploy.v1.Release.ReleaseCondition getCondition();
+
   /**
    *
    *
@@ -981,6 +1031,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   int getDeployParametersCount();
+
   /**
    *
    *
@@ -993,9 +1044,11 @@ public interface ReleaseOrBuilder
    * </code>
    */
   boolean containsDeployParameters(java.lang.String key);
+
   /** Use {@link #getDeployParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDeployParameters();
+
   /**
    *
    *
@@ -1008,6 +1061,7 @@ public interface ReleaseOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap();
+
   /**
    *
    *
@@ -1024,6 +1078,7 @@ public interface ReleaseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

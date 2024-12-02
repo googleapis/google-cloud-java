@@ -38,6 +38,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.dialogflow.v2.InitializeEncryptionSpecRequest getRequest();
+
   /**
    *
    *

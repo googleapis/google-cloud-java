@@ -36,6 +36,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -67,12 +69,14 @@ public interface CacheInvalidationRuleOrBuilder
    * @return Whether the path field is set.
    */
   boolean hasPath();
+
   /**
    * <code>optional string path = 3433509;</code>
    *
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    * <code>optional string path = 3433509;</code>
    *

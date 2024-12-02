@@ -41,6 +41,7 @@ public interface SignJwtRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface SignJwtRequestOrBuilder
    * @return A list containing the delegates.
    */
   java.util.List<java.lang.String> getDelegatesList();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface SignJwtRequestOrBuilder
    * @return The count of delegates.
    */
   int getDelegatesCount();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface SignJwtRequestOrBuilder
    * @return The delegates at the given index.
    */
   java.lang.String getDelegates(int index);
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public interface SignJwtRequestOrBuilder
    * @return The payload.
    */
   java.lang.String getPayload();
+
   /**
    *
    *

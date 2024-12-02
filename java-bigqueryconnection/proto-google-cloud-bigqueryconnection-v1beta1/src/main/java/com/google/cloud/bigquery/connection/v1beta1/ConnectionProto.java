@@ -48,6 +48,7 @@ public final class ConnectionProto {
      * @return The parent.
      */
     java.lang.String getParent();
+
     /**
      *
      *
@@ -76,6 +77,7 @@ public final class ConnectionProto {
      * @return The connectionId.
      */
     java.lang.String getConnectionId();
+
     /**
      *
      *
@@ -103,6 +105,7 @@ public final class ConnectionProto {
      * @return Whether the connection field is set.
      */
     boolean hasConnection();
+
     /**
      *
      *
@@ -117,6 +120,7 @@ public final class ConnectionProto {
      * @return The connection.
      */
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection getConnection();
+
     /**
      *
      *
@@ -131,6 +135,7 @@ public final class ConnectionProto {
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder
         getConnectionOrBuilder();
   }
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.CreateConnectionRequest)
       CreateConnectionRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CreateConnectionRequest.newBuilder() to construct.
     private CreateConnectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -184,6 +190,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -210,6 +217,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -241,6 +249,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object connectionId_ = "";
+
     /**
      *
      *
@@ -264,6 +273,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -290,6 +300,7 @@ public final class ConnectionProto {
 
     public static final int CONNECTION_FIELD_NUMBER = 3;
     private com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection connection_;
+
     /**
      *
      *
@@ -307,6 +318,7 @@ public final class ConnectionProto {
     public boolean hasConnection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -327,6 +339,7 @@ public final class ConnectionProto {
               .getDefaultInstance()
           : connection_;
     }
+
     /**
      *
      *
@@ -553,6 +566,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -806,6 +820,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
+
       /**
        *
        *
@@ -831,6 +846,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -856,6 +872,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -880,6 +897,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -900,6 +918,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -927,6 +946,7 @@ public final class ConnectionProto {
       }
 
       private java.lang.Object connectionId_ = "";
+
       /**
        *
        *
@@ -949,6 +969,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -971,6 +992,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -992,6 +1014,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1009,6 +1032,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1038,6 +1062,7 @@ public final class ConnectionProto {
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection.Builder,
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder>
           connectionBuilder_;
+
       /**
        *
        *
@@ -1054,6 +1079,7 @@ public final class ConnectionProto {
       public boolean hasConnection() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1078,6 +1104,7 @@ public final class ConnectionProto {
           return connectionBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1103,6 +1130,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1126,6 +1154,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1158,6 +1187,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -1179,6 +1209,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1196,6 +1227,7 @@ public final class ConnectionProto {
         onChanged();
         return getConnectionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1218,6 +1250,7 @@ public final class ConnectionProto {
               : connection_;
         }
       }
+
       /**
        *
        *
@@ -1337,6 +1370,7 @@ public final class ConnectionProto {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -1353,6 +1387,7 @@ public final class ConnectionProto {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -1368,6 +1403,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.GetConnectionRequest)
       GetConnectionRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GetConnectionRequest.newBuilder() to construct.
     private GetConnectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1404,6 +1440,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1430,6 +1467,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1665,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1832,6 +1871,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -1857,6 +1897,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1882,6 +1923,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1906,6 +1948,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1926,6 +1969,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2041,6 +2085,7 @@ public final class ConnectionProto {
      * @return The parent.
      */
     java.lang.String getParent();
+
     /**
      *
      *
@@ -2070,6 +2115,7 @@ public final class ConnectionProto {
      * @return Whether the maxResults field is set.
      */
     boolean hasMaxResults();
+
     /**
      *
      *
@@ -2083,6 +2129,7 @@ public final class ConnectionProto {
      * @return The maxResults.
      */
     com.google.protobuf.UInt32Value getMaxResults();
+
     /**
      *
      *
@@ -2107,6 +2154,7 @@ public final class ConnectionProto {
      * @return The pageToken.
      */
     java.lang.String getPageToken();
+
     /**
      *
      *
@@ -2120,6 +2168,7 @@ public final class ConnectionProto {
      */
     com.google.protobuf.ByteString getPageTokenBytes();
   }
+
   /**
    *
    *
@@ -2135,6 +2184,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.ListConnectionsRequest)
       ListConnectionsRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ListConnectionsRequest.newBuilder() to construct.
     private ListConnectionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2173,6 +2223,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -2199,6 +2250,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -2228,6 +2280,7 @@ public final class ConnectionProto {
 
     public static final int MAX_RESULTS_FIELD_NUMBER = 2;
     private com.google.protobuf.UInt32Value maxResults_;
+
     /**
      *
      *
@@ -2244,6 +2297,7 @@ public final class ConnectionProto {
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2262,6 +2316,7 @@ public final class ConnectionProto {
           ? com.google.protobuf.UInt32Value.getDefaultInstance()
           : maxResults_;
     }
+
     /**
      *
      *
@@ -2283,6 +2338,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -2306,6 +2362,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -2535,6 +2592,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2787,6 +2845,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
+
       /**
        *
        *
@@ -2812,6 +2871,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2837,6 +2897,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2861,6 +2922,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2881,6 +2943,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2913,6 +2976,7 @@ public final class ConnectionProto {
               com.google.protobuf.UInt32Value.Builder,
               com.google.protobuf.UInt32ValueOrBuilder>
           maxResultsBuilder_;
+
       /**
        *
        *
@@ -2929,6 +2993,7 @@ public final class ConnectionProto {
       public boolean hasMaxResults() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2951,6 +3016,7 @@ public final class ConnectionProto {
           return maxResultsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2975,6 +3041,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2996,6 +3063,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3025,6 +3093,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -3046,6 +3115,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3062,6 +3132,7 @@ public final class ConnectionProto {
         onChanged();
         return getMaxResultsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3082,6 +3153,7 @@ public final class ConnectionProto {
               : maxResults_;
         }
       }
+
       /**
        *
        *
@@ -3111,6 +3183,7 @@ public final class ConnectionProto {
       }
 
       private java.lang.Object pageToken_ = "";
+
       /**
        *
        *
@@ -3133,6 +3206,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3155,6 +3229,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3176,6 +3251,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3193,6 +3269,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3303,6 +3380,7 @@ public final class ConnectionProto {
      * @return The nextPageToken.
      */
     java.lang.String getNextPageToken();
+
     /**
      *
      *
@@ -3327,6 +3405,7 @@ public final class ConnectionProto {
      */
     java.util.List<com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>
         getConnectionsList();
+
     /**
      *
      *
@@ -3338,6 +3417,7 @@ public final class ConnectionProto {
      */
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection getConnections(
         int index);
+
     /**
      *
      *
@@ -3348,6 +3428,7 @@ public final class ConnectionProto {
      * <code>repeated .google.cloud.bigquery.connection.v1beta1.Connection connections = 2;</code>
      */
     int getConnectionsCount();
+
     /**
      *
      *
@@ -3361,6 +3442,7 @@ public final class ConnectionProto {
             ? extends
                 com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder>
         getConnectionsOrBuilderList();
+
     /**
      *
      *
@@ -3373,6 +3455,7 @@ public final class ConnectionProto {
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder
         getConnectionsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -3388,6 +3471,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.ListConnectionsResponse)
       ListConnectionsResponseOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ListConnectionsResponse.newBuilder() to construct.
     private ListConnectionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3425,6 +3509,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -3448,6 +3533,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -3477,6 +3563,7 @@ public final class ConnectionProto {
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>
         connections_;
+
     /**
      *
      *
@@ -3491,6 +3578,7 @@ public final class ConnectionProto {
         getConnectionsList() {
       return connections_;
     }
+
     /**
      *
      *
@@ -3507,6 +3595,7 @@ public final class ConnectionProto {
         getConnectionsOrBuilderList() {
       return connections_;
     }
+
     /**
      *
      *
@@ -3520,6 +3609,7 @@ public final class ConnectionProto {
     public int getConnectionsCount() {
       return connections_.size();
     }
+
     /**
      *
      *
@@ -3534,6 +3624,7 @@ public final class ConnectionProto {
         int index) {
       return connections_.get(index);
     }
+
     /**
      *
      *
@@ -3743,6 +3834,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4015,6 +4107,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object nextPageToken_ = "";
+
       /**
        *
        *
@@ -4037,6 +4130,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4059,6 +4153,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4080,6 +4175,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4097,6 +4193,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4157,6 +4254,7 @@ public final class ConnectionProto {
           return connectionsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4173,6 +4271,7 @@ public final class ConnectionProto {
           return connectionsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4190,6 +4289,7 @@ public final class ConnectionProto {
           return connectionsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4214,6 +4314,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4236,6 +4337,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4259,6 +4361,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4283,6 +4386,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4304,6 +4408,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4326,6 +4431,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4348,6 +4454,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4367,6 +4474,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4386,6 +4494,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -4399,6 +4508,7 @@ public final class ConnectionProto {
           getConnectionsBuilder(int index) {
         return getConnectionsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -4416,6 +4526,7 @@ public final class ConnectionProto {
           return connectionsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -4435,6 +4546,7 @@ public final class ConnectionProto {
           return java.util.Collections.unmodifiableList(connections_);
         }
       }
+
       /**
        *
        *
@@ -4451,6 +4563,7 @@ public final class ConnectionProto {
                 com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4468,6 +4581,7 @@ public final class ConnectionProto {
                 com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4594,6 +4708,7 @@ public final class ConnectionProto {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -4624,6 +4739,7 @@ public final class ConnectionProto {
      * @return Whether the connection field is set.
      */
     boolean hasConnection();
+
     /**
      *
      *
@@ -4638,6 +4754,7 @@ public final class ConnectionProto {
      * @return The connection.
      */
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection getConnection();
+
     /**
      *
      *
@@ -4665,6 +4782,7 @@ public final class ConnectionProto {
      * @return Whether the updateMask field is set.
      */
     boolean hasUpdateMask();
+
     /**
      *
      *
@@ -4678,6 +4796,7 @@ public final class ConnectionProto {
      * @return The updateMask.
      */
     com.google.protobuf.FieldMask getUpdateMask();
+
     /**
      *
      *
@@ -4690,6 +4809,7 @@ public final class ConnectionProto {
      */
     com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
   }
+
   /**
    *
    *
@@ -4705,6 +4825,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.UpdateConnectionRequest)
       UpdateConnectionRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UpdateConnectionRequest.newBuilder() to construct.
     private UpdateConnectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4742,6 +4863,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4768,6 +4890,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -4797,6 +4920,7 @@ public final class ConnectionProto {
 
     public static final int CONNECTION_FIELD_NUMBER = 2;
     private com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection connection_;
+
     /**
      *
      *
@@ -4814,6 +4938,7 @@ public final class ConnectionProto {
     public boolean hasConnection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4834,6 +4959,7 @@ public final class ConnectionProto {
               .getDefaultInstance()
           : connection_;
     }
+
     /**
      *
      *
@@ -4856,6 +4982,7 @@ public final class ConnectionProto {
 
     public static final int UPDATE_MASK_FIELD_NUMBER = 3;
     private com.google.protobuf.FieldMask updateMask_;
+
     /**
      *
      *
@@ -4872,6 +4999,7 @@ public final class ConnectionProto {
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4888,6 +5016,7 @@ public final class ConnectionProto {
     public com.google.protobuf.FieldMask getUpdateMask() {
       return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
     }
+
     /**
      *
      *
@@ -5114,6 +5243,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5372,6 +5502,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -5397,6 +5528,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5422,6 +5554,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5446,6 +5579,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5466,6 +5600,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5498,6 +5633,7 @@ public final class ConnectionProto {
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection.Builder,
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder>
           connectionBuilder_;
+
       /**
        *
        *
@@ -5514,6 +5650,7 @@ public final class ConnectionProto {
       public boolean hasConnection() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -5538,6 +5675,7 @@ public final class ConnectionProto {
           return connectionBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5563,6 +5701,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5586,6 +5725,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5618,6 +5758,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -5639,6 +5780,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5656,6 +5798,7 @@ public final class ConnectionProto {
         onChanged();
         return getConnectionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5678,6 +5821,7 @@ public final class ConnectionProto {
               : connection_;
         }
       }
+
       /**
        *
        *
@@ -5712,6 +5856,7 @@ public final class ConnectionProto {
               com.google.protobuf.FieldMask.Builder,
               com.google.protobuf.FieldMaskOrBuilder>
           updateMaskBuilder_;
+
       /**
        *
        *
@@ -5727,6 +5872,7 @@ public final class ConnectionProto {
       public boolean hasUpdateMask() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -5748,6 +5894,7 @@ public final class ConnectionProto {
           return updateMaskBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5771,6 +5918,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5791,6 +5939,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5819,6 +5968,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -5839,6 +5989,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5854,6 +6005,7 @@ public final class ConnectionProto {
         onChanged();
         return getUpdateMaskFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5873,6 +6025,7 @@ public final class ConnectionProto {
               : updateMask_;
         }
       }
+
       /**
        *
        *
@@ -5989,6 +6142,7 @@ public final class ConnectionProto {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -6017,6 +6171,7 @@ public final class ConnectionProto {
      * @return Whether the credential field is set.
      */
     boolean hasCredential();
+
     /**
      *
      *
@@ -6032,6 +6187,7 @@ public final class ConnectionProto {
      */
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential
         getCredential();
+
     /**
      *
      *
@@ -6046,6 +6202,7 @@ public final class ConnectionProto {
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredentialOrBuilder
         getCredentialOrBuilder();
   }
+
   /**
    *
    *
@@ -6063,6 +6220,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.UpdateConnectionCredentialRequest)
       UpdateConnectionCredentialRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UpdateConnectionCredentialRequest.newBuilder() to construct.
     private UpdateConnectionCredentialRequest(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -6101,6 +6259,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -6125,6 +6284,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -6153,6 +6313,7 @@ public final class ConnectionProto {
     public static final int CREDENTIAL_FIELD_NUMBER = 2;
     private com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential
         credential_;
+
     /**
      *
      *
@@ -6170,6 +6331,7 @@ public final class ConnectionProto {
     public boolean hasCredential() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -6191,6 +6353,7 @@ public final class ConnectionProto {
               .getDefaultInstance()
           : credential_;
     }
+
     /**
      *
      *
@@ -6413,6 +6576,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6661,6 +6825,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -6684,6 +6849,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6707,6 +6873,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6729,6 +6896,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6747,6 +6915,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6780,6 +6949,7 @@ public final class ConnectionProto {
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                   .ConnectionCredentialOrBuilder>
           credentialBuilder_;
+
       /**
        *
        *
@@ -6796,6 +6966,7 @@ public final class ConnectionProto {
       public boolean hasCredential() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -6820,6 +6991,7 @@ public final class ConnectionProto {
           return credentialBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6845,6 +7017,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6868,6 +7041,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6900,6 +7074,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -6921,6 +7096,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6939,6 +7115,7 @@ public final class ConnectionProto {
         onChanged();
         return getCredentialFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6962,6 +7139,7 @@ public final class ConnectionProto {
               : credential_;
         }
       }
+
       /**
        *
        *
@@ -7086,6 +7264,7 @@ public final class ConnectionProto {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -7102,6 +7281,7 @@ public final class ConnectionProto {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -7116,6 +7296,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.DeleteConnectionRequest)
       DeleteConnectionRequestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DeleteConnectionRequest.newBuilder() to construct.
     private DeleteConnectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7152,6 +7333,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -7178,6 +7360,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -7388,6 +7571,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7595,6 +7779,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -7620,6 +7805,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7645,6 +7831,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7669,6 +7856,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7689,6 +7877,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7804,6 +7993,7 @@ public final class ConnectionProto {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -7830,6 +8020,7 @@ public final class ConnectionProto {
      * @return The friendlyName.
      */
     java.lang.String getFriendlyName();
+
     /**
      *
      *
@@ -7855,6 +8046,7 @@ public final class ConnectionProto {
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -7880,6 +8072,7 @@ public final class ConnectionProto {
      * @return Whether the cloudSql field is set.
      */
     boolean hasCloudSql();
+
     /**
      *
      *
@@ -7892,6 +8085,7 @@ public final class ConnectionProto {
      * @return The cloudSql.
      */
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties getCloudSql();
+
     /**
      *
      *
@@ -7946,6 +8140,7 @@ public final class ConnectionProto {
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection.PropertiesCase
         getPropertiesCase();
   }
+
   /**
    *
    *
@@ -7961,6 +8156,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.Connection)
       ConnectionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Connection.newBuilder() to construct.
     private Connection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8010,6 +8206,7 @@ public final class ConnectionProto {
       private PropertiesCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -8044,6 +8241,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -8068,6 +8266,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -8097,6 +8296,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object friendlyName_ = "";
+
     /**
      *
      *
@@ -8120,6 +8320,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -8148,6 +8349,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -8171,6 +8373,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -8196,6 +8399,7 @@ public final class ConnectionProto {
     }
 
     public static final int CLOUD_SQL_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -8211,6 +8415,7 @@ public final class ConnectionProto {
     public boolean hasCloudSql() {
       return propertiesCase_ == 4;
     }
+
     /**
      *
      *
@@ -8232,6 +8437,7 @@ public final class ConnectionProto {
       return com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -8254,6 +8460,7 @@ public final class ConnectionProto {
 
     public static final int CREATION_TIME_FIELD_NUMBER = 5;
     private long creationTime_ = 0L;
+
     /**
      *
      *
@@ -8272,6 +8479,7 @@ public final class ConnectionProto {
 
     public static final int LAST_MODIFIED_TIME_FIELD_NUMBER = 6;
     private long lastModifiedTime_ = 0L;
+
     /**
      *
      *
@@ -8290,6 +8498,7 @@ public final class ConnectionProto {
 
     public static final int HAS_CREDENTIAL_FIELD_NUMBER = 7;
     private boolean hasCredential_ = false;
+
     /**
      *
      *
@@ -8543,6 +8752,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -8857,6 +9067,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -8880,6 +9091,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8903,6 +9115,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8925,6 +9138,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8943,6 +9157,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8968,6 +9183,7 @@ public final class ConnectionProto {
       }
 
       private java.lang.Object friendlyName_ = "";
+
       /**
        *
        *
@@ -8990,6 +9206,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -9012,6 +9229,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -9033,6 +9251,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9050,6 +9269,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9074,6 +9294,7 @@ public final class ConnectionProto {
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -9096,6 +9317,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -9118,6 +9340,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -9139,6 +9362,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9156,6 +9380,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9186,6 +9411,7 @@ public final class ConnectionProto {
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                   .CloudSqlPropertiesOrBuilder>
           cloudSqlBuilder_;
+
       /**
        *
        *
@@ -9201,6 +9427,7 @@ public final class ConnectionProto {
       public boolean hasCloudSql() {
         return propertiesCase_ == 4;
       }
+
       /**
        *
        *
@@ -9230,6 +9457,7 @@ public final class ConnectionProto {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9253,6 +9481,7 @@ public final class ConnectionProto {
         propertiesCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -9274,6 +9503,7 @@ public final class ConnectionProto {
         propertiesCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -9312,6 +9542,7 @@ public final class ConnectionProto {
         propertiesCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -9337,6 +9568,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -9350,6 +9582,7 @@ public final class ConnectionProto {
           getCloudSqlBuilder() {
         return getCloudSqlFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9374,6 +9607,7 @@ public final class ConnectionProto {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9415,6 +9649,7 @@ public final class ConnectionProto {
       }
 
       private long creationTime_;
+
       /**
        *
        *
@@ -9430,6 +9665,7 @@ public final class ConnectionProto {
       public long getCreationTime() {
         return creationTime_;
       }
+
       /**
        *
        *
@@ -9449,6 +9685,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9468,6 +9705,7 @@ public final class ConnectionProto {
       }
 
       private long lastModifiedTime_;
+
       /**
        *
        *
@@ -9483,6 +9721,7 @@ public final class ConnectionProto {
       public long getLastModifiedTime() {
         return lastModifiedTime_;
       }
+
       /**
        *
        *
@@ -9502,6 +9741,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9521,6 +9761,7 @@ public final class ConnectionProto {
       }
 
       private boolean hasCredential_;
+
       /**
        *
        *
@@ -9536,6 +9777,7 @@ public final class ConnectionProto {
       public boolean getHasCredential() {
         return hasCredential_;
       }
+
       /**
        *
        *
@@ -9555,6 +9797,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9658,6 +9901,7 @@ public final class ConnectionProto {
      * @return Whether the cloudSql field is set.
      */
     boolean hasCloudSql();
+
     /**
      *
      *
@@ -9670,6 +9914,7 @@ public final class ConnectionProto {
      * @return The cloudSql.
      */
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential getCloudSql();
+
     /**
      *
      *
@@ -9685,6 +9930,7 @@ public final class ConnectionProto {
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential.CredentialCase
         getCredentialCase();
   }
+
   /**
    *
    *
@@ -9699,6 +9945,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.ConnectionCredential)
       ConnectionCredentialOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConnectionCredential.newBuilder() to construct.
     private ConnectionCredential(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9745,6 +9992,7 @@ public final class ConnectionProto {
       private CredentialCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -9776,6 +10024,7 @@ public final class ConnectionProto {
     }
 
     public static final int CLOUD_SQL_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -9791,6 +10040,7 @@ public final class ConnectionProto {
     public boolean hasCloudSql() {
       return credentialCase_ == 1;
     }
+
     /**
      *
      *
@@ -9812,6 +10062,7 @@ public final class ConnectionProto {
       return com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -10022,6 +10273,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10264,6 +10516,7 @@ public final class ConnectionProto {
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                   .CloudSqlCredentialOrBuilder>
           cloudSqlBuilder_;
+
       /**
        *
        *
@@ -10279,6 +10532,7 @@ public final class ConnectionProto {
       public boolean hasCloudSql() {
         return credentialCase_ == 1;
       }
+
       /**
        *
        *
@@ -10308,6 +10562,7 @@ public final class ConnectionProto {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -10331,6 +10586,7 @@ public final class ConnectionProto {
         credentialCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -10352,6 +10608,7 @@ public final class ConnectionProto {
         credentialCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -10390,6 +10647,7 @@ public final class ConnectionProto {
         credentialCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -10415,6 +10673,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -10428,6 +10687,7 @@ public final class ConnectionProto {
           getCloudSqlBuilder() {
         return getCloudSqlFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -10452,6 +10712,7 @@ public final class ConnectionProto {
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -10578,6 +10839,7 @@ public final class ConnectionProto {
      * @return The instanceId.
      */
     java.lang.String getInstanceId();
+
     /**
      *
      *
@@ -10603,6 +10865,7 @@ public final class ConnectionProto {
      * @return The database.
      */
     java.lang.String getDatabase();
+
     /**
      *
      *
@@ -10629,6 +10892,7 @@ public final class ConnectionProto {
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -10658,6 +10922,7 @@ public final class ConnectionProto {
      * @return Whether the credential field is set.
      */
     boolean hasCredential();
+
     /**
      *
      *
@@ -10672,6 +10937,7 @@ public final class ConnectionProto {
      * @return The credential.
      */
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential getCredential();
+
     /**
      *
      *
@@ -10703,6 +10969,7 @@ public final class ConnectionProto {
      * @return The serviceAccountId.
      */
     java.lang.String getServiceAccountId();
+
     /**
      *
      *
@@ -10721,6 +10988,7 @@ public final class ConnectionProto {
      */
     com.google.protobuf.ByteString getServiceAccountIdBytes();
   }
+
   /**
    *
    *
@@ -10735,6 +11003,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.CloudSqlProperties)
       CloudSqlPropertiesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudSqlProperties.newBuilder() to construct.
     private CloudSqlProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10823,6 +11092,7 @@ public final class ConnectionProto {
        * <code>DATABASE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int DATABASE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -10833,6 +11103,7 @@ public final class ConnectionProto {
        * <code>POSTGRES = 1;</code>
        */
       public static final int POSTGRES_VALUE = 1;
+
       /**
        *
        *
@@ -10935,6 +11206,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object instanceId_ = "";
+
     /**
      *
      *
@@ -10958,6 +11230,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -10986,6 +11259,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -11009,6 +11283,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -11035,6 +11310,7 @@ public final class ConnectionProto {
 
     public static final int TYPE_FIELD_NUMBER = 3;
     private int type_ = 0;
+
     /**
      *
      *
@@ -11051,6 +11327,7 @@ public final class ConnectionProto {
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -11080,6 +11357,7 @@ public final class ConnectionProto {
     public static final int CREDENTIAL_FIELD_NUMBER = 4;
     private com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential
         credential_;
+
     /**
      *
      *
@@ -11097,6 +11375,7 @@ public final class ConnectionProto {
     public boolean hasCredential() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -11118,6 +11397,7 @@ public final class ConnectionProto {
               .getDefaultInstance()
           : credential_;
     }
+
     /**
      *
      *
@@ -11142,6 +11422,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceAccountId_ = "";
+
     /**
      *
      *
@@ -11170,6 +11451,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -11415,6 +11697,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11691,6 +11974,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object instanceId_ = "";
+
       /**
        *
        *
@@ -11713,6 +11997,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -11735,6 +12020,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -11756,6 +12042,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11773,6 +12060,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11797,6 +12085,7 @@ public final class ConnectionProto {
       }
 
       private java.lang.Object database_ = "";
+
       /**
        *
        *
@@ -11819,6 +12108,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -11841,6 +12131,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -11862,6 +12153,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11879,6 +12171,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11903,6 +12196,7 @@ public final class ConnectionProto {
       }
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -11919,6 +12213,7 @@ public final class ConnectionProto {
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -11938,6 +12233,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11963,6 +12259,7 @@ public final class ConnectionProto {
                 .DatabaseType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -11988,6 +12285,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12016,6 +12314,7 @@ public final class ConnectionProto {
               com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                   .CloudSqlCredentialOrBuilder>
           credentialBuilder_;
+
       /**
        *
        *
@@ -12032,6 +12331,7 @@ public final class ConnectionProto {
       public boolean hasCredential() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -12056,6 +12356,7 @@ public final class ConnectionProto {
           return credentialBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -12081,6 +12382,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12104,6 +12406,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12136,6 +12439,7 @@ public final class ConnectionProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -12157,6 +12461,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12174,6 +12479,7 @@ public final class ConnectionProto {
         onChanged();
         return getCredentialFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -12197,6 +12503,7 @@ public final class ConnectionProto {
               : credential_;
         }
       }
+
       /**
        *
        *
@@ -12230,6 +12537,7 @@ public final class ConnectionProto {
       }
 
       private java.lang.Object serviceAccountId_ = "";
+
       /**
        *
        *
@@ -12257,6 +12565,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12284,6 +12593,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12310,6 +12620,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12332,6 +12643,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12446,6 +12758,7 @@ public final class ConnectionProto {
      * @return The username.
      */
     java.lang.String getUsername();
+
     /**
      *
      *
@@ -12471,6 +12784,7 @@ public final class ConnectionProto {
      * @return The password.
      */
     java.lang.String getPassword();
+
     /**
      *
      *
@@ -12484,6 +12798,7 @@ public final class ConnectionProto {
      */
     com.google.protobuf.ByteString getPasswordBytes();
   }
+
   /**
    *
    *
@@ -12498,6 +12813,7 @@ public final class ConnectionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1beta1.CloudSqlCredential)
       CloudSqlCredentialOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudSqlCredential.newBuilder() to construct.
     private CloudSqlCredential(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12534,6 +12850,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object username_ = "";
+
     /**
      *
      *
@@ -12557,6 +12874,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -12585,6 +12903,7 @@ public final class ConnectionProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object password_ = "";
+
     /**
      *
      *
@@ -12608,6 +12927,7 @@ public final class ConnectionProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -12810,6 +13130,7 @@ public final class ConnectionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -13028,6 +13349,7 @@ public final class ConnectionProto {
       private int bitField0_;
 
       private java.lang.Object username_ = "";
+
       /**
        *
        *
@@ -13050,6 +13372,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -13072,6 +13395,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -13093,6 +13417,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13110,6 +13435,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13134,6 +13460,7 @@ public final class ConnectionProto {
       }
 
       private java.lang.Object password_ = "";
+
       /**
        *
        *
@@ -13156,6 +13483,7 @@ public final class ConnectionProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -13178,6 +13506,7 @@ public final class ConnectionProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -13199,6 +13528,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13216,6 +13546,7 @@ public final class ConnectionProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -13361,122 +13692,123 @@ public final class ConnectionProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n9google/cloud/bigquery/connection/v1bet"
-          + "a1/connection.proto\022(google.cloud.bigque"
+      "\n"
+          + "9google/cloud/bigquery/connection/v1beta1/connection.proto\022(google.cloud.bigque"
           + "ry.connection.v1beta1\032\034google/api/annota"
           + "tions.proto\032\027google/api/client.proto\032\037go"
           + "ogle/api/field_behavior.proto\032\031google/ap"
           + "i/resource.proto\032\036google/iam/v1/iam_poli"
-          + "cy.proto\032\032google/iam/v1/policy.proto\032\033go"
-          + "ogle/protobuf/empty.proto\032 google/protob"
-          + "uf/field_mask.proto\032\036google/protobuf/wra"
-          + "ppers.proto\"\277\001\n\027CreateConnectionRequest\022"
-          + "9\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googl"
-          + "eapis.com/Location\022\032\n\rconnection_id\030\002 \001("
-          + "\tB\003\340A\001\022M\n\nconnection\030\003 \001(\01324.google.clou"
-          + "d.bigquery.connection.v1beta1.Connection"
-          + "B\003\340A\002\"Z\n\024GetConnectionRequest\022B\n\004name\030\001 "
-          + "\001(\tB4\340A\002\372A.\n,bigqueryconnection.googleap"
-          + "is.com/Connection\"\237\001\n\026ListConnectionsReq"
-          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
-          + "googleapis.com/Location\0226\n\013max_results\030\002"
-          + " \001(\0132\034.google.protobuf.UInt32ValueB\003\340A\002\022"
-          + "\022\n\npage_token\030\003 \001(\t\"}\n\027ListConnectionsRe"
-          + "sponse\022\027\n\017next_page_token\030\001 \001(\t\022I\n\013conne"
-          + "ctions\030\002 \003(\01324.google.cloud.bigquery.con"
-          + "nection.v1beta1.Connection\"\342\001\n\027UpdateCon"
-          + "nectionRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372A.\n,bi"
-          + "gqueryconnection.googleapis.com/Connecti"
-          + "on\022M\n\nconnection\030\002 \001(\01324.google.cloud.bi"
-          + "gquery.connection.v1beta1.ConnectionB\003\340A"
-          + "\002\0224\n\013update_mask\030\003 \001(\0132\032.google.protobuf"
-          + ".FieldMaskB\003\340A\002\"\217\001\n!UpdateConnectionCred"
-          + "entialRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022W\n\ncred"
-          + "ential\030\002 \001(\0132>.google.cloud.bigquery.con"
-          + "nection.v1beta1.ConnectionCredentialB\003\340A"
-          + "\002\"]\n\027DeleteConnectionRequest\022B\n\004name\030\001 \001"
-          + "(\tB4\340A\002\372A.\n,bigqueryconnection.googleapi"
-          + "s.com/Connection\"\366\002\n\nConnection\022\014\n\004name\030"
-          + "\001 \001(\t\022\025\n\rfriendly_name\030\002 \001(\t\022\023\n\013descript"
-          + "ion\030\003 \001(\t\022Q\n\tcloud_sql\030\004 \001(\0132<.google.cl"
-          + "oud.bigquery.connection.v1beta1.CloudSql"
-          + "PropertiesH\000\022\032\n\rcreation_time\030\005 \001(\003B\003\340A\003"
-          + "\022\037\n\022last_modified_time\030\006 \001(\003B\003\340A\003\022\033\n\016has"
-          + "_credential\030\007 \001(\010B\003\340A\003:s\352Ap\n,bigquerycon"
-          + "nection.googleapis.com/Connection\022@proje"
-          + "cts/{project}/locations/{location}/conne"
-          + "ctions/{connection}B\014\n\nproperties\"w\n\024Con"
-          + "nectionCredential\022Q\n\tcloud_sql\030\001 \001(\0132<.g"
-          + "oogle.cloud.bigquery.connection.v1beta1."
-          + "CloudSqlCredentialH\000B\014\n\ncredential\"\324\002\n\022C"
-          + "loudSqlProperties\022\023\n\013instance_id\030\001 \001(\t\022\020"
-          + "\n\010database\030\002 \001(\t\022W\n\004type\030\003 \001(\0162I.google."
-          + "cloud.bigquery.connection.v1beta1.CloudS"
-          + "qlProperties.DatabaseType\022U\n\ncredential\030"
-          + "\004 \001(\0132<.google.cloud.bigquery.connection"
-          + ".v1beta1.CloudSqlCredentialB\003\340A\004\022\037\n\022serv"
-          + "ice_account_id\030\005 \001(\tB\003\340A\003\"F\n\014DatabaseTyp"
-          + "e\022\035\n\031DATABASE_TYPE_UNSPECIFIED\020\000\022\014\n\010POST"
-          + "GRES\020\001\022\t\n\005MYSQL\020\002\"8\n\022CloudSqlCredential\022"
-          + "\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t2\230\020\n\021"
-          + "ConnectionService\022\367\001\n\020CreateConnection\022A"
-          + ".google.cloud.bigquery.connection.v1beta"
-          + "1.CreateConnectionRequest\0324.google.cloud"
-          + ".bigquery.connection.v1beta1.Connection\""
+          + "cy.proto\032\032google/iam/v1/policy.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\036google/protobuf/wrappers.proto\"\277\001\n"
+          + "\027CreateConnectionRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\032\n\r"
+          + "connection_id\030\002 \001(\tB\003\340A\001\022M\n\n"
+          + "connection\030\003 \001(\01324.google.clou"
+          + "d.bigquery.connection.v1beta1.ConnectionB\003\340A\002\"Z\n"
+          + "\024GetConnectionRequest\022B\n"
+          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
+          + ",bigqueryconnection.googleapis.com/Connection\"\237\001\n"
+          + "\026ListConnectionsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\0226\n"
+          + "\013max_results\030\002"
+          + " \001(\0132\034.google.protobuf.UInt32ValueB\003\340A\002\022\022\n\n"
+          + "page_token\030\003 \001(\t\"}\n"
+          + "\027ListConnectionsResponse\022\027\n"
+          + "\017next_page_token\030\001 \001(\t\022I\n"
+          + "\013connections\030\002"
+          + " \003(\01324.google.cloud.bigquery.connection.v1beta1.Connection\"\342\001\n"
+          + "\027UpdateConnectionRequest\022B\n"
+          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
+          + ",bigqueryconnection.googleapis.com/Connection\022M\n\n"
+          + "connection\030\002 \001(\01324.google.cloud.bi"
+          + "gquery.connection.v1beta1.ConnectionB\003\340A\002\0224\n"
+          + "\013update_mask\030\003"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\217\001\n"
+          + "!UpdateConnectionCredentialRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022W\n\n"
+          + "credential\030\002 \001(\0132>.google.cloud.bigquery.con"
+          + "nection.v1beta1.ConnectionCredentialB\003\340A\002\"]\n"
+          + "\027DeleteConnectionRequest\022B\n"
+          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
+          + ",bigqueryconnection.googleapis.com/Connection\"\366\002\n\n"
+          + "Connection\022\014\n"
+          + "\004name\030\001 \001(\t\022\025\n\r"
+          + "friendly_name\030\002 \001(\t\022\023\n"
+          + "\013description\030\003 \001(\t\022Q\n"
+          + "\tcloud_sql\030\004 \001(\0132<.google.cl"
+          + "oud.bigquery.connection.v1beta1.CloudSqlPropertiesH\000\022\032\n\r"
+          + "creation_time\030\005 \001(\003B\003\340A\003\022\037\n"
+          + "\022last_modified_time\030\006 \001(\003B\003\340A\003\022\033\n"
+          + "\016has_credential\030\007 \001(\010B\003\340A\003:s\352Ap\n"
+          + ",bigqueryconnection.googleapis.com/Connection\022@proje"
+          + "cts/{project}/locations/{location}/connections/{connection}B\014\n\n"
+          + "properties\"w\n"
+          + "\024ConnectionCredential\022Q\n"
+          + "\tcloud_sql\030\001 \001(\0132<.g"
+          + "oogle.cloud.bigquery.connection.v1beta1.CloudSqlCredentialH\000B\014\n\n"
+          + "credential\"\324\002\n"
+          + "\022CloudSqlProperties\022\023\n"
+          + "\013instance_id\030\001 \001(\t\022\020\n"
+          + "\010database\030\002 \001(\t\022W\n"
+          + "\004type\030\003 \001(\0162I.google."
+          + "cloud.bigquery.connection.v1beta1.CloudSqlProperties.DatabaseType\022U\n\n"
+          + "credential\030\004"
+          + " \001(\0132<.google.cloud.bigquery.connection.v1beta1.CloudSqlCredentialB\003\340A\004\022\037\n"
+          + "\022service_account_id\030\005 \001(\tB\003\340A\003\"F\n"
+          + "\014DatabaseType\022\035\n"
+          + "\031DATABASE_TYPE_UNSPECIFIED\020\000\022\014\n"
+          + "\010POSTGRES\020\001\022\t\n"
+          + "\005MYSQL\020\002\"8\n"
+          + "\022CloudSqlCredential\022\020\n"
+          + "\010username\030\001 \001(\t\022\020\n"
+          + "\010password\030\002 \001(\t2\230\020\n"
+          + "\021ConnectionService\022\367\001\n"
+          + "\020CreateConnection\022A.google.cloud.bigquery.connection.v1beta"
+          + "1.CreateConnectionRequest\0324.google.cloud.bigquery.connection.v1beta1.Connection\""
           + "j\332A\037parent,connection,connection_id\202\323\344\223\002"
-          + "B\"4/v1beta1/{parent=projects/*/locations"
-          + "/*}/connections:\nconnection\022\312\001\n\rGetConne"
-          + "ction\022>.google.cloud.bigquery.connection"
-          + ".v1beta1.GetConnectionRequest\0324.google.c"
-          + "loud.bigquery.connection.v1beta1.Connect"
-          + "ion\"C\332A\004name\202\323\344\223\0026\0224/v1beta1/{name=proje"
-          + "cts/*/locations/*/connections/*}\022\351\001\n\017Lis"
-          + "tConnections\022@.google.cloud.bigquery.con"
-          + "nection.v1beta1.ListConnectionsRequest\032A"
-          + ".google.cloud.bigquery.connection.v1beta"
+          + "B\"4/v1beta1/{parent=projects/*/locations/*}/connections:\n"
+          + "connection\022\312\001\n\r"
+          + "GetConnection\022>.google.cloud.bigquery.connection"
+          + ".v1beta1.GetConnectionRequest\0324.google.cloud.bigquery.connection.v1beta1.Connect"
+          + "ion\"C\332A\004name\202\323\344\223\0026\0224/v1beta1/{name=projects/*/locations/*/connections/*}\022\351\001\n"
+          + "\017ListConnections\022@.google.cloud.bigquery.con"
+          + "nection.v1beta1.ListConnectionsRequest\032A.google.cloud.bigquery.connection.v1beta"
           + "1.ListConnectionsResponse\"Q\332A\022parent,max"
-          + "_results\202\323\344\223\0026\0224/v1beta1/{parent=project"
-          + "s/*/locations/*}/connections\022\363\001\n\020UpdateC"
-          + "onnection\022A.google.cloud.bigquery.connec"
-          + "tion.v1beta1.UpdateConnectionRequest\0324.g"
-          + "oogle.cloud.bigquery.connection.v1beta1."
+          + "_results\202\323\344\223\0026\0224/v1beta1/{parent=projects/*/locations/*}/connections\022\363\001\n"
+          + "\020UpdateConnection\022A.google.cloud.bigquery.connec"
+          + "tion.v1beta1.UpdateConnectionRequest\0324.google.cloud.bigquery.connection.v1beta1."
           + "Connection\"f\332A\033name,connection,update_ma"
-          + "sk\202\323\344\223\002B24/v1beta1/{name=projects/*/loca"
-          + "tions/*/connections/*}:\nconnection\022\350\001\n\032U"
-          + "pdateConnectionCredential\022K.google.cloud"
-          + ".bigquery.connection.v1beta1.UpdateConne"
-          + "ctionCredentialRequest\032\026.google.protobuf"
+          + "sk\202\323\344\223\002B24/v1beta1/{name=projects/*/locations/*/connections/*}:\n"
+          + "connection\022\350\001\n"
+          + "\032UpdateConnectionCredential\022K.google.cloud"
+          + ".bigquery.connection.v1beta1.UpdateConnectionCredentialRequest\032\026.google.protobuf"
           + ".Empty\"e\332A\017name,credential\202\323\344\223\002M2?/v1bet"
-          + "a1/{name=projects/*/locations/*/connecti"
-          + "ons/*/credential}:\ncredential\022\262\001\n\020Delete"
-          + "Connection\022A.google.cloud.bigquery.conne"
+          + "a1/{name=projects/*/locations/*/connections/*/credential}:\n"
+          + "credential\022\262\001\n"
+          + "\020DeleteConnection\022A.google.cloud.bigquery.conne"
           + "ction.v1beta1.DeleteConnectionRequest\032\026."
           + "google.protobuf.Empty\"C\332A\004name\202\323\344\223\0026*4/v"
-          + "1beta1/{name=projects/*/locations/*/conn"
-          + "ections/*}\022\256\001\n\014GetIamPolicy\022\".google.iam"
-          + ".v1.GetIamPolicyRequest\032\025.google.iam.v1."
+          + "1beta1/{name=projects/*/locations/*/connections/*}\022\256\001\n"
+          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPolicyRequest\032\025.google.iam.v1."
           + "Policy\"c\332A\020resource,options\202\323\344\223\002J\"E/v1be"
-          + "ta1/{resource=projects/*/locations/*/con"
-          + "nections/*}:getIamPolicy:\001*\022\255\001\n\014SetIamPo"
-          + "licy\022\".google.iam.v1.SetIamPolicyRequest"
+          + "ta1/{resource=projects/*/locations/*/connections/*}:getIamPolicy:\001*\022\255\001\n"
+          + "\014SetIamPolicy\022\".google.iam.v1.SetIamPolicyRequest"
           + "\032\025.google.iam.v1.Policy\"b\332A\017resource,pol"
           + "icy\202\323\344\223\002J\"E/v1beta1/{resource=projects/*"
-          + "/locations/*/connections/*}:setIamPolicy"
-          + ":\001*\022\330\001\n\022TestIamPermissions\022(.google.iam."
-          + "v1.TestIamPermissionsRequest\032).google.ia"
+          + "/locations/*/connections/*}:setIamPolicy:\001*\022\330\001\n"
+          + "\022TestIamPermissions\022(.google.iam.v1.TestIamPermissionsRequest\032).google.ia"
           + "m.v1.TestIamPermissionsResponse\"m\332A\024reso"
           + "urce,permissions\202\323\344\223\002P\"K/v1beta1/{resour"
           + "ce=projects/*/locations/*/connections/*}"
           + ":testIamPermissions:\001*\032~\312A!bigqueryconne"
           + "ction.googleapis.com\322AWhttps://www.googl"
-          + "eapis.com/auth/bigquery,https://www.goog"
-          + "leapis.com/auth/cloud-platformB\343\001\n,com.g"
-          + "oogle.cloud.bigquery.connection.v1beta1B"
-          + "\017ConnectionProtoZLcloud.google.com/go/bi"
-          + "gquery/connection/apiv1beta1/connectionp"
+          + "eapis.com/auth/bigquery,https://www.googleapis.com/auth/cloud-platformB\343\001\n"
+          + ",com.google.cloud.bigquery.connection.v1beta1B"
+          + "\017ConnectionProtoZLcloud.google.com/go/bigquery/connection/apiv1beta1/connectionp"
           + "b;connectionpb\252\002(Google.Cloud.BigQuery.C"
-          + "onnection.V1Beta1\312\002(Google\\Cloud\\BigQuer"
-          + "y\\Connection\\V1beta1b\006proto3"
+          + "onnection.V1Beta1\312\002(Google\\Cloud\\BigQuery\\Connection\\V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

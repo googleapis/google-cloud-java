@@ -33,6 +33,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagFileChunkingConfig)
     RagFileChunkingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagFileChunkingConfig.newBuilder() to construct.
   private RagFileChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
 
   public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
   private int chunkSize_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
 
   public static final int CHUNK_OVERLAP_FIELD_NUMBER = 2;
   private int chunkOverlap_ = 0;
+
   /**
    *
    *
@@ -266,6 +269,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -461,6 +465,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int chunkSize_;
+
     /**
      *
      *
@@ -476,6 +481,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     public int getChunkSize() {
       return chunkSize_;
     }
+
     /**
      *
      *
@@ -495,6 +501,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -514,6 +521,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int chunkOverlap_;
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     public int getChunkOverlap() {
       return chunkOverlap_;
     }
+
     /**
      *
      *
@@ -548,6 +557,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

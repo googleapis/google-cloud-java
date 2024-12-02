@@ -39,6 +39,7 @@ public interface TriggerScheduleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessResponse)
     ProcessResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProcessResponse.newBuilder() to construct.
   private ProcessResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.documentai.v1.Document document_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.documentai.v1.Document.getDefaultInstance()
         : document_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int HUMAN_REVIEW_STATUS_FIELD_NUMBER = 3;
   private com.google.cloud.documentai.v1.HumanReviewStatus humanReviewStatus_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
   public boolean hasHumanReviewStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.documentai.v1.HumanReviewStatus.getDefaultInstance()
         : humanReviewStatus_;
   }
+
   /**
    *
    *
@@ -345,6 +352,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -572,6 +580,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.documentai.v1.Document.Builder,
             com.google.cloud.documentai.v1.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -608,6 +618,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +692,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +713,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -733,6 +749,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
             : document_;
       }
     }
+
     /**
      *
      *
@@ -766,6 +783,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.documentai.v1.HumanReviewStatus.Builder,
             com.google.cloud.documentai.v1.HumanReviewStatusOrBuilder>
         humanReviewStatusBuilder_;
+
     /**
      *
      *
@@ -780,6 +798,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
     public boolean hasHumanReviewStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -800,6 +819,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
         return humanReviewStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -822,6 +842,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +863,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +892,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +927,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getHumanReviewStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -922,6 +947,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
             : humanReviewStatus_;
       }
     }
+
     /**
      *
      *

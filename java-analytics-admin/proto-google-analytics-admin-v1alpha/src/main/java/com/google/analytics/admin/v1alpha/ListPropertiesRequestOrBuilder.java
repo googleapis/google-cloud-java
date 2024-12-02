@@ -51,6 +51,7 @@ public interface ListPropertiesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -110,6 +111,7 @@ public interface ListPropertiesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

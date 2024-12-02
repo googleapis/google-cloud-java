@@ -36,6 +36,7 @@ public interface PDOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PDOrBuilder
    * @return The device.
    */
   java.lang.String getDevice();
+
   /**
    *
    *

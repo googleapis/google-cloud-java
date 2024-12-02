@@ -34,6 +34,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest)
     GenerateStatelessSummaryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateStatelessSummaryRequest.newBuilder() to construct.
   private GenerateStatelessSummaryRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -86,6 +87,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      * </code>
      */
     java.util.List<com.google.cloud.dialogflow.v2.Message> getMessagesList();
+
     /**
      *
      *
@@ -102,6 +104,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      * </code>
      */
     com.google.cloud.dialogflow.v2.Message getMessages(int index);
+
     /**
      *
      *
@@ -118,6 +121,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      * </code>
      */
     int getMessagesCount();
+
     /**
      *
      *
@@ -135,6 +139,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      */
     java.util.List<? extends com.google.cloud.dialogflow.v2.MessageOrBuilder>
         getMessagesOrBuilderList();
+
     /**
      *
      *
@@ -167,6 +172,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      * @return The parent.
      */
     java.lang.String getParent();
+
     /**
      *
      *
@@ -183,6 +189,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      */
     com.google.protobuf.ByteString getParentBytes();
   }
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest.MinimalConversation)
       MinimalConversationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MinimalConversation.newBuilder() to construct.
     private MinimalConversation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -236,6 +244,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.v2.Message> messages_;
+
     /**
      *
      *
@@ -255,6 +264,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     public java.util.List<com.google.cloud.dialogflow.v2.Message> getMessagesList() {
       return messages_;
     }
+
     /**
      *
      *
@@ -275,6 +285,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         getMessagesOrBuilderList() {
       return messages_;
     }
+
     /**
      *
      *
@@ -294,6 +305,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     public int getMessagesCount() {
       return messages_.size();
     }
+
     /**
      *
      *
@@ -313,6 +325,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     public com.google.cloud.dialogflow.v2.Message getMessages(int index) {
       return messages_.get(index);
     }
+
     /**
      *
      *
@@ -337,6 +350,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -363,6 +377,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         return s;
       }
     }
+
     /**
      *
      *
@@ -571,6 +586,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -878,6 +894,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
           return messagesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -900,6 +917,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
           return messagesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -922,6 +940,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
           return messagesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -950,6 +969,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -976,6 +996,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1004,6 +1025,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1032,6 +1054,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1057,6 +1080,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1083,6 +1107,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1109,6 +1134,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1134,6 +1160,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1159,6 +1186,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1177,6 +1205,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       public com.google.cloud.dialogflow.v2.Message.Builder getMessagesBuilder(int index) {
         return getMessagesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1199,6 +1228,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
           return messagesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1222,6 +1252,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
           return java.util.Collections.unmodifiableList(messages_);
         }
       }
+
       /**
        *
        *
@@ -1241,6 +1272,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         return getMessagesFieldBuilder()
             .addBuilder(com.google.cloud.dialogflow.v2.Message.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1260,6 +1292,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         return getMessagesFieldBuilder()
             .addBuilder(index, com.google.cloud.dialogflow.v2.Message.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1298,6 +1331,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       }
 
       private java.lang.Object parent_ = "";
+
       /**
        *
        *
@@ -1323,6 +1357,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1348,6 +1383,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1372,6 +1408,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1392,6 +1429,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1491,6 +1529,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
   public static final int STATELESS_CONVERSATION_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest.MinimalConversation
       statelessConversation_;
+
   /**
    *
    *
@@ -1508,6 +1547,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
   public boolean hasStatelessConversation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1529,6 +1569,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
             .getDefaultInstance()
         : statelessConversation_;
   }
+
   /**
    *
    *
@@ -1551,6 +1592,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
 
   public static final int CONVERSATION_PROFILE_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2.ConversationProfile conversationProfile_;
+
   /**
    *
    *
@@ -1571,6 +1613,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
   public boolean hasConversationProfile() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1593,6 +1636,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         ? com.google.cloud.dialogflow.v2.ConversationProfile.getDefaultInstance()
         : conversationProfile_;
   }
+
   /**
    *
    *
@@ -1619,6 +1663,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
+
   /**
    *
    *
@@ -1647,6 +1692,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -1678,6 +1724,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
 
   public static final int MAX_CONTEXT_SIZE_FIELD_NUMBER = 4;
   private int maxContextSize_ = 0;
+
   /**
    *
    *
@@ -1894,6 +1941,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2159,6 +2207,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest
                 .MinimalConversationOrBuilder>
         statelessConversationBuilder_;
+
     /**
      *
      *
@@ -2175,6 +2224,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     public boolean hasStatelessConversation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2199,6 +2249,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         return statelessConversationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2224,6 +2275,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2247,6 +2299,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2279,6 +2332,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2300,6 +2354,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2318,6 +2373,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return getStatelessConversationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2341,6 +2397,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
             : statelessConversation_;
       }
     }
+
     /**
      *
      *
@@ -2379,6 +2436,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2.ConversationProfile.Builder,
             com.google.cloud.dialogflow.v2.ConversationProfileOrBuilder>
         conversationProfileBuilder_;
+
     /**
      *
      *
@@ -2398,6 +2456,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     public boolean hasConversationProfile() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2423,6 +2482,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         return conversationProfileBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2451,6 +2511,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +2537,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2510,6 +2572,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2534,6 +2597,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2554,6 +2618,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return getConversationProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2578,6 +2643,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
             : conversationProfile_;
       }
     }
+
     /**
      *
      *
@@ -2610,6 +2676,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object latestMessage_ = "";
+
     /**
      *
      *
@@ -2637,6 +2704,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2664,6 +2732,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2690,6 +2759,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2712,6 +2782,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2741,6 +2812,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     }
 
     private int maxContextSize_;
+
     /**
      *
      *
@@ -2758,6 +2830,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     public int getMaxContextSize() {
       return maxContextSize_;
     }
+
     /**
      *
      *
@@ -2779,6 +2852,7 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HealthCheckLogConfig)
     HealthCheckLogConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HealthCheckLogConfig.newBuilder() to construct.
   private HealthCheckLogConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_ = false;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -259,6 +262,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -444,6 +448,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enable_;
+
     /**
      *
      *
@@ -459,6 +464,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -474,6 +480,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     public boolean getEnable() {
       return enable_;
     }
+
     /**
      *
      *
@@ -493,6 +500,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -31,6 +31,7 @@ public interface CapacityQuantityIntervalOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    * <code>string type = 1;</code>
    *
@@ -44,6 +45,7 @@ public interface CapacityQuantityIntervalOrBuilder
    * @return Whether the minValue field is set.
    */
   boolean hasMinValue();
+
   /**
    * <code>optional int64 min_value = 2;</code>
    *
@@ -57,6 +59,7 @@ public interface CapacityQuantityIntervalOrBuilder
    * @return Whether the maxValue field is set.
    */
   boolean hasMaxValue();
+
   /**
    * <code>optional int64 max_value = 3;</code>
    *

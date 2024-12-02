@@ -33,6 +33,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.InListFilter)
     InListFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InListFilter.newBuilder() to construct.
   private InListFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CASE_SENSITIVE_FIELD_NUMBER = 2;
   private boolean caseSensitive_ = false;
+
   /**
    *
    *
@@ -324,6 +330,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -535,6 +542,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -551,6 +559,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
       values_.makeImmutable();
       return values_;
     }
+
     /**
      *
      *
@@ -566,6 +575,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -582,6 +592,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
+
     /**
      *
      *
@@ -598,6 +609,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
+
     /**
      *
      *
@@ -622,6 +634,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +658,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +679,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +699,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +726,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean caseSensitive_;
+
     /**
      *
      *
@@ -725,6 +742,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean getCaseSensitive() {
       return caseSensitive_;
     }
+
     /**
      *
      *
@@ -744,6 +762,7 @@ public final class InListFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

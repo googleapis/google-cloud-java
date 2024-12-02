@@ -41,6 +41,7 @@ public interface UpdateApiDeploymentRequestOrBuilder
    * @return Whether the apiDeployment field is set.
    */
   boolean hasApiDeployment();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateApiDeploymentRequestOrBuilder
    * @return The apiDeployment.
    */
   com.google.cloud.apigeeregistry.v1.ApiDeployment getApiDeployment();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface UpdateApiDeploymentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UpdateApiDeploymentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

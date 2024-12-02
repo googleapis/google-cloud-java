@@ -36,6 +36,7 @@ public interface PayloadOrBuilder
    * @return Whether the httpRequest field is set.
    */
   boolean hasHttpRequest();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PayloadOrBuilder
    * @return The httpRequest.
    */
   com.google.cloud.apigeeconnect.v1.HttpRequest getHttpRequest();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface PayloadOrBuilder
    * @return Whether the streamInfo field is set.
    */
   boolean hasStreamInfo();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface PayloadOrBuilder
    * @return The streamInfo.
    */
   com.google.cloud.apigeeconnect.v1.StreamInfo getStreamInfo();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface PayloadOrBuilder
    * @return Whether the action field is set.
    */
   boolean hasAction();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface PayloadOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface SearchHypernymOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SearchHypernymOrBuilder
    * @return The hypernym.
    */
   java.lang.String getHypernym();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SearchHypernymOrBuilder
    * @return A list containing the hyponyms.
    */
   java.util.List<java.lang.String> getHyponymsList();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SearchHypernymOrBuilder
    * @return The count of hyponyms.
    */
   int getHyponymsCount();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface SearchHypernymOrBuilder
    * @return The hyponyms at the given index.
    */
   java.lang.String getHyponyms(int index);
+
   /**
    *
    *

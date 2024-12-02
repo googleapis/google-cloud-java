@@ -36,6 +36,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return The enum numeric value on the wire for minimumImportance.
    */
   int getMinimumImportanceValue();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public interface ListJobMessagesRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

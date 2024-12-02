@@ -38,6 +38,7 @@ public interface SubmitAnswerFeedbackRequestOrBuilder
    * @return The session.
    */
   java.lang.String getSession();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface SubmitAnswerFeedbackRequestOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface SubmitAnswerFeedbackRequestOrBuilder
    * @return Whether the answerFeedback field is set.
    */
   boolean hasAnswerFeedback();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface SubmitAnswerFeedbackRequestOrBuilder
    * @return The answerFeedback.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback getAnswerFeedback();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface SubmitAnswerFeedbackRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface SubmitAnswerFeedbackRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

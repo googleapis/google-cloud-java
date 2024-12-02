@@ -38,6 +38,7 @@ public interface WorkloadStatusOrBuilder
    * @return Whether the siteVersion field is set.
    */
   boolean hasSiteVersion();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface WorkloadStatusOrBuilder
    * @return The siteVersion.
    */
   com.google.cloud.telcoautomation.v1.SiteVersion getSiteVersion();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface WorkloadStatusOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *

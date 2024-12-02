@@ -33,6 +33,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.AdaptiveMtTranslateRequest)
     AdaptiveMtTranslateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdaptiveMtTranslateRequest.newBuilder() to construct.
   private AdaptiveMtTranslateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * @return The sourceSentence.
      */
     java.lang.String getSourceSentence();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * @return The targetSentence.
      */
     java.lang.String getTargetSentence();
+
     /**
      *
      *
@@ -120,6 +123,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getTargetSentenceBytes();
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.AdaptiveMtTranslateRequest.ReferenceSentencePair)
       ReferenceSentencePairOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ReferenceSentencePair.newBuilder() to construct.
     private ReferenceSentencePair(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -171,6 +176,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceSentence_ = "";
+
     /**
      *
      *
@@ -194,6 +200,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -222,6 +229,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object targetSentence_ = "";
+
     /**
      *
      *
@@ -245,6 +253,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -447,6 +456,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -666,6 +676,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object sourceSentence_ = "";
+
       /**
        *
        *
@@ -688,6 +699,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -710,6 +722,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -731,6 +744,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -748,6 +762,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -772,6 +787,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       }
 
       private java.lang.Object targetSentence_ = "";
+
       /**
        *
        *
@@ -794,6 +810,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -816,6 +833,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -837,6 +855,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -854,6 +873,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -964,6 +984,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      */
     java.util.List<com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePair>
         getReferenceSentencePairsList();
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      */
     com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePair
         getReferenceSentencePairs(int index);
+
     /**
      *
      *
@@ -989,6 +1011,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * </code>
      */
     int getReferenceSentencePairsCount();
+
     /**
      *
      *
@@ -1005,6 +1028,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
                 com.google.cloud.translate.v3.AdaptiveMtTranslateRequest
                     .ReferenceSentencePairOrBuilder>
         getReferenceSentencePairsOrBuilderList();
+
     /**
      *
      *
@@ -1019,6 +1043,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePairOrBuilder
         getReferenceSentencePairsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -1034,6 +1059,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.AdaptiveMtTranslateRequest.ReferenceSentencePairList)
       ReferenceSentencePairListOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ReferenceSentencePairList.newBuilder() to construct.
     private ReferenceSentencePairList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1072,6 +1098,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     private java.util.List<
             com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePair>
         referenceSentencePairs_;
+
     /**
      *
      *
@@ -1089,6 +1116,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         getReferenceSentencePairsList() {
       return referenceSentencePairs_;
     }
+
     /**
      *
      *
@@ -1108,6 +1136,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         getReferenceSentencePairsOrBuilderList() {
       return referenceSentencePairs_;
     }
+
     /**
      *
      *
@@ -1123,6 +1152,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public int getReferenceSentencePairsCount() {
       return referenceSentencePairs_.size();
     }
+
     /**
      *
      *
@@ -1139,6 +1169,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         getReferenceSentencePairs(int index) {
       return referenceSentencePairs_.get(index);
     }
+
     /**
      *
      *
@@ -1331,6 +1362,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1629,6 +1661,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return referenceSentencePairsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1647,6 +1680,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return referenceSentencePairsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1666,6 +1700,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return referenceSentencePairsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1692,6 +1727,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1716,6 +1752,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1741,6 +1778,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1767,6 +1805,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1790,6 +1829,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1814,6 +1854,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1840,6 +1881,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1861,6 +1903,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1882,6 +1925,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1897,6 +1941,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           getReferenceSentencePairsBuilder(int index) {
         return getReferenceSentencePairsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1916,6 +1961,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return referenceSentencePairsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1938,6 +1984,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return java.util.Collections.unmodifiableList(referenceSentencePairs_);
         }
       }
+
       /**
        *
        *
@@ -1956,6 +2003,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
                 com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePair
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1975,6 +2023,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
                 com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePair
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2108,6 +2157,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     java.util.List<
             com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePairList>
         getReferenceSentencePairListsList();
+
     /**
      *
      *
@@ -2124,6 +2174,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      */
     com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePairList
         getReferenceSentencePairLists(int index);
+
     /**
      *
      *
@@ -2139,6 +2190,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * </code>
      */
     int getReferenceSentencePairListsCount();
+
     /**
      *
      *
@@ -2158,6 +2210,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
                 com.google.cloud.translate.v3.AdaptiveMtTranslateRequest
                     .ReferenceSentencePairListOrBuilder>
         getReferenceSentencePairListsOrBuilderList();
+
     /**
      *
      *
@@ -2187,6 +2240,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * @return The sourceLanguageCode.
      */
     java.lang.String getSourceLanguageCode();
+
     /**
      *
      *
@@ -2212,6 +2266,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * @return The targetLanguageCode.
      */
     java.lang.String getTargetLanguageCode();
+
     /**
      *
      *
@@ -2225,6 +2280,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getTargetLanguageCodeBytes();
   }
+
   /**
    *
    *
@@ -2240,6 +2296,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig)
       ReferenceSentenceConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ReferenceSentenceConfig.newBuilder() to construct.
     private ReferenceSentenceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2280,6 +2337,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     private java.util.List<
             com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePairList>
         referenceSentencePairLists_;
+
     /**
      *
      *
@@ -2300,6 +2358,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         getReferenceSentencePairListsList() {
       return referenceSentencePairLists_;
     }
+
     /**
      *
      *
@@ -2322,6 +2381,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         getReferenceSentencePairListsOrBuilderList() {
       return referenceSentencePairLists_;
     }
+
     /**
      *
      *
@@ -2340,6 +2400,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public int getReferenceSentencePairListsCount() {
       return referenceSentencePairLists_.size();
     }
+
     /**
      *
      *
@@ -2359,6 +2420,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         getReferenceSentencePairLists(int index) {
       return referenceSentencePairLists_.get(index);
     }
+
     /**
      *
      *
@@ -2384,6 +2446,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceLanguageCode_ = "";
+
     /**
      *
      *
@@ -2407,6 +2470,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -2435,6 +2499,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object targetLanguageCode_ = "";
+
     /**
      *
      *
@@ -2458,6 +2523,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -2675,6 +2741,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3003,6 +3070,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return referenceSentencePairListsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3024,6 +3092,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return referenceSentencePairListsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3046,6 +3115,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return referenceSentencePairListsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3076,6 +3146,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3103,6 +3174,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3132,6 +3204,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3162,6 +3235,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3188,6 +3262,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3215,6 +3290,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3245,6 +3321,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3269,6 +3346,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3293,6 +3371,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3312,6 +3391,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           getReferenceSentencePairListsBuilder(int index) {
         return getReferenceSentencePairListsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3335,6 +3415,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return referenceSentencePairListsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3360,6 +3441,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return java.util.Collections.unmodifiableList(referenceSentencePairLists_);
         }
       }
+
       /**
        *
        *
@@ -3382,6 +3464,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
                 com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePairList
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3405,6 +3488,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
                 com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentencePairList
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3452,6 +3536,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       }
 
       private java.lang.Object sourceLanguageCode_ = "";
+
       /**
        *
        *
@@ -3474,6 +3559,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3496,6 +3582,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3517,6 +3604,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3534,6 +3622,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3558,6 +3647,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       }
 
       private java.lang.Object targetLanguageCode_ = "";
+
       /**
        *
        *
@@ -3580,6 +3670,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3602,6 +3693,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3623,6 +3715,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3640,6 +3733,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3756,6 +3850,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * @return The glossary.
      */
     java.lang.String getGlossary();
+
     /**
      *
      *
@@ -3805,6 +3900,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      */
     boolean getContextualTranslationEnabled();
   }
+
   /**
    *
    *
@@ -3821,6 +3917,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.AdaptiveMtTranslateRequest.GlossaryConfig)
       GlossaryConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GlossaryConfig.newBuilder() to construct.
     private GlossaryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3856,6 +3953,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object glossary_ = "";
+
     /**
      *
      *
@@ -3886,6 +3984,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -3919,6 +4018,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
     public static final int IGNORE_CASE_FIELD_NUMBER = 2;
     private boolean ignoreCase_ = false;
+
     /**
      *
      *
@@ -3938,6 +4038,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
     public static final int CONTEXTUAL_TRANSLATION_ENABLED_FIELD_NUMBER = 4;
     private boolean contextualTranslationEnabled_ = false;
+
     /**
      *
      *
@@ -4140,6 +4241,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4366,6 +4468,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       private int bitField0_;
 
       private java.lang.Object glossary_ = "";
+
       /**
        *
        *
@@ -4395,6 +4498,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4424,6 +4528,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4452,6 +4557,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4476,6 +4582,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4507,6 +4614,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       }
 
       private boolean ignoreCase_;
+
       /**
        *
        *
@@ -4523,6 +4631,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       public boolean getIgnoreCase() {
         return ignoreCase_;
       }
+
       /**
        *
        *
@@ -4543,6 +4652,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4563,6 +4673,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       }
 
       private boolean contextualTranslationEnabled_;
+
       /**
        *
        *
@@ -4580,6 +4691,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       public boolean getContextualTranslationEnabled() {
         return contextualTranslationEnabled_;
       }
+
       /**
        *
        *
@@ -4601,6 +4713,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4694,6 +4807,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -4721,6 +4835,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -4753,6 +4868,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
+
   /**
    *
    *
@@ -4779,6 +4895,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -4811,6 +4928,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList content_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -4825,6 +4943,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getContentList() {
     return content_;
   }
+
   /**
    *
    *
@@ -4839,6 +4958,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
   public int getContentCount() {
     return content_.size();
   }
+
   /**
    *
    *
@@ -4854,6 +4974,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
   public java.lang.String getContent(int index) {
     return content_.get(index);
   }
+
   /**
    *
    *
@@ -4873,6 +4994,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
   public static final int REFERENCE_SENTENCE_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig
       referenceSentenceConfig_;
+
   /**
    *
    *
@@ -4890,6 +5012,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
   public boolean hasReferenceSentenceConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4911,6 +5034,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
             .getDefaultInstance()
         : referenceSentenceConfig_;
   }
+
   /**
    *
    *
@@ -4933,6 +5057,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
 
   public static final int GLOSSARY_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfig glossaryConfig_;
+
   /**
    *
    *
@@ -4952,6 +5077,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
   public boolean hasGlossaryConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4975,6 +5101,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
             .getDefaultInstance()
         : glossaryConfig_;
   }
+
   /**
    *
    *
@@ -5211,6 +5338,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5485,6 +5613,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -5511,6 +5640,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5537,6 +5667,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5562,6 +5693,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5583,6 +5715,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5611,6 +5744,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -5636,6 +5770,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5661,6 +5796,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5685,6 +5821,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5705,6 +5842,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5740,6 +5878,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -5755,6 +5894,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       content_.makeImmutable();
       return content_;
     }
+
     /**
      *
      *
@@ -5769,6 +5909,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public int getContentCount() {
       return content_.size();
     }
+
     /**
      *
      *
@@ -5784,6 +5925,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public java.lang.String getContent(int index) {
       return content_.get(index);
     }
+
     /**
      *
      *
@@ -5799,6 +5941,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getContentBytes(int index) {
       return content_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5822,6 +5965,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5844,6 +5988,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5863,6 +6008,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5881,6 +6027,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5914,6 +6061,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
             com.google.cloud.translate.v3.AdaptiveMtTranslateRequest
                 .ReferenceSentenceConfigOrBuilder>
         referenceSentenceConfigBuilder_;
+
     /**
      *
      *
@@ -5930,6 +6078,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public boolean hasReferenceSentenceConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5954,6 +6103,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return referenceSentenceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5979,6 +6129,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6002,6 +6153,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6034,6 +6186,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -6055,6 +6208,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6072,6 +6226,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return getReferenceSentenceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6094,6 +6249,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
             : referenceSentenceConfig_;
       }
     }
+
     /**
      *
      *
@@ -6132,6 +6288,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
             com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfig.Builder,
             com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfigOrBuilder>
         glossaryConfigBuilder_;
+
     /**
      *
      *
@@ -6150,6 +6307,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public boolean hasGlossaryConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -6176,6 +6334,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         return glossaryConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6203,6 +6362,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6228,6 +6388,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6262,6 +6423,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -6285,6 +6447,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6304,6 +6467,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       onChanged();
       return getGlossaryConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6328,6 +6492,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
             : glossaryConfig_;
       }
     }
+
     /**
      *
      *

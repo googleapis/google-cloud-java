@@ -36,6 +36,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.RecrawlUrisMetadata)
     RecrawlUrisMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecrawlUrisMetadata.newBuilder() to construct.
   private RecrawlUrisMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList invalidUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getInvalidUrisList() {
     return invalidUris_;
   }
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   public int getInvalidUrisCount() {
     return invalidUris_.size();
   }
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   public java.lang.String getInvalidUris(int index) {
     return invalidUris_.get(index);
   }
+
   /**
    *
    *
@@ -236,6 +247,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int VALID_URIS_COUNT_FIELD_NUMBER = 4;
   private int validUrisCount_ = 0;
+
   /**
    *
    *
@@ -254,6 +266,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int SUCCESS_COUNT_FIELD_NUMBER = 5;
   private int successCount_ = 0;
+
   /**
    *
    *
@@ -272,6 +285,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int PENDING_COUNT_FIELD_NUMBER = 6;
   private int pendingCount_ = 0;
+
   /**
    *
    *
@@ -290,6 +304,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int QUOTA_EXCEEDED_COUNT_FIELD_NUMBER = 7;
   private int quotaExceededCount_ = 0;
+
   /**
    *
    *
@@ -538,6 +553,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -837,6 +853,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -851,6 +868,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -871,6 +889,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -893,6 +912,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +932,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +960,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1047,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1109,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1130,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1159,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1180,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1196,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1183,6 +1216,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1219,6 +1253,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1236,6 +1271,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       invalidUris_.makeImmutable();
       return invalidUris_;
     }
+
     /**
      *
      *
@@ -1252,6 +1288,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public int getInvalidUrisCount() {
       return invalidUris_.size();
     }
+
     /**
      *
      *
@@ -1269,6 +1306,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public java.lang.String getInvalidUris(int index) {
       return invalidUris_.get(index);
     }
+
     /**
      *
      *
@@ -1286,6 +1324,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getInvalidUrisBytes(int index) {
       return invalidUris_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1311,6 +1350,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1375,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1397,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1418,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1446,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int validUrisCount_;
+
     /**
      *
      *
@@ -1418,6 +1462,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public int getValidUrisCount() {
       return validUrisCount_;
     }
+
     /**
      *
      *
@@ -1437,6 +1482,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1502,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int successCount_;
+
     /**
      *
      *
@@ -1471,6 +1518,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public int getSuccessCount() {
       return successCount_;
     }
+
     /**
      *
      *
@@ -1490,6 +1538,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1558,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int pendingCount_;
+
     /**
      *
      *
@@ -1524,6 +1574,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public int getPendingCount() {
       return pendingCount_;
     }
+
     /**
      *
      *
@@ -1543,6 +1594,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1562,6 +1614,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int quotaExceededCount_;
+
     /**
      *
      *
@@ -1578,6 +1631,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public int getQuotaExceededCount() {
       return quotaExceededCount_;
     }
+
     /**
      *
      *
@@ -1598,6 +1652,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

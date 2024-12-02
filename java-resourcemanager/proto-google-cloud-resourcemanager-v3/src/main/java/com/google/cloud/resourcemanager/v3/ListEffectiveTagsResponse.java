@@ -33,6 +33,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.ListEffectiveTagsResponse)
     ListEffectiveTagsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListEffectiveTagsResponse.newBuilder() to construct.
   private ListEffectiveTagsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.EffectiveTag> effectiveTags_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.resourcemanager.v3.EffectiveTag> getEffectiveTagsList() {
     return effectiveTags_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       getEffectiveTagsOrBuilderList() {
     return effectiveTags_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
   public int getEffectiveTagsCount() {
     return effectiveTags_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
   public com.google.cloud.resourcemanager.v3.EffectiveTag getEffectiveTags(int index) {
     return effectiveTags_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -378,6 +386,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -660,6 +669,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
         return effectiveTagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
         return effectiveTagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
         return effectiveTagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +771,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +858,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +898,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +912,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
         int index) {
       return getEffectiveTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
         return effectiveTagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(effectiveTags_);
       }
     }
+
     /**
      *
      *
@@ -938,6 +962,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       return getEffectiveTagsFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.EffectiveTag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -952,6 +977,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       return getEffectiveTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.EffectiveTag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -987,6 +1013,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1019,6 +1046,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1079,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1082,6 +1111,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1139,7 @@ public final class ListEffectiveTagsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

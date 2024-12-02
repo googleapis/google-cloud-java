@@ -38,6 +38,7 @@ public interface MembershipStateOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface MembershipStateOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface MembershipStateOrBuilder
    */
   @java.lang.Deprecated
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface MembershipStateOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

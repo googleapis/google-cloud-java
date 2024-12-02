@@ -178,7 +178,8 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCompletionConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateCompletionConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CompletionConfig.class.getName(),
                   Exception.class.getName())));
@@ -220,7 +221,8 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateAttributesConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateAttributesConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AttributesConfig.class.getName(),
                   Exception.class.getName())));
@@ -262,7 +264,8 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RemoveCatalogAttribute, expected %s or %s",
+                  "Unrecognized response type %s for method RemoveCatalogAttribute, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AttributesConfig.class.getName(),
                   Exception.class.getName())));
@@ -284,7 +287,8 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchRemoveCatalogAttributes, expected %s or %s",
+                  "Unrecognized response type %s for method BatchRemoveCatalogAttributes, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchRemoveCatalogAttributesResponse.class.getName(),
                   Exception.class.getName())));
@@ -305,7 +309,8 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ReplaceCatalogAttribute, expected %s or %s",
+                  "Unrecognized response type %s for method ReplaceCatalogAttribute, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AttributesConfig.class.getName(),
                   Exception.class.getName())));

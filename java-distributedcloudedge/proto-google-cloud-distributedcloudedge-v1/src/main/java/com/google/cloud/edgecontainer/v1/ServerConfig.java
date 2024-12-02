@@ -33,6 +33,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.ServerConfig)
     ServerConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServerConfig.newBuilder() to construct.
   private ServerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,6 +111,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   public int getChannelsCount() {
     return internalGetChannels().getMap().size();
   }
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetChannels().getMap().containsKey(key);
   }
+
   /** Use {@link #getChannelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -135,6 +138,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       getChannels() {
     return getChannelsMap();
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       getChannelsMap() {
     return internalGetChannels().getMap();
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         internalGetChannels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgecontainer.v1.Version> versions_;
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.edgecontainer.v1.Version> getVersionsList() {
     return versions_;
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       getVersionsOrBuilderList() {
     return versions_;
   }
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   public int getVersionsCount() {
     return versions_.size();
   }
+
   /**
    *
    *
@@ -263,6 +273,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.edgecontainer.v1.Version getVersions(int index) {
     return versions_.get(index);
   }
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultVersion_ = "";
+
   /**
    *
    *
@@ -306,6 +318,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -519,6 +532,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -823,7 +837,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ChannelsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ChannelsConverter channelsConverter = new ChannelsConverter();
 
@@ -863,6 +878,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     public int getChannelsCount() {
       return internalGetChannels().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetChannels().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getChannelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -888,6 +905,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         getChannels() {
       return getChannelsMap();
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         getChannelsMap() {
       return internalGetChannels().getImmutableMap();
     }
+
     /**
      *
      *
@@ -927,6 +946,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableChannels().ensureBuilderMap();
       return map.containsKey(key) ? channelsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -957,6 +977,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableChannels().clear();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +996,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableChannels().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ChannelConfig>
@@ -982,6 +1004,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableChannels().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1005,6 +1028,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1052,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1114,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         return versionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1133,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         return versionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1152,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         return versionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1149,6 +1177,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1200,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1225,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1272,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1295,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1318,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1340,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1362,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1377,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.edgecontainer.v1.Version.Builder getVersionsBuilder(int index) {
       return getVersionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1358,6 +1396,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         return versionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1377,6 +1416,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(versions_);
       }
     }
+
     /**
      *
      *
@@ -1392,6 +1432,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       return getVersionsFieldBuilder()
           .addBuilder(com.google.cloud.edgecontainer.v1.Version.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1407,6 +1448,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       return getVersionsFieldBuilder()
           .addBuilder(index, com.google.cloud.edgecontainer.v1.Version.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1441,6 +1483,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object defaultVersion_ = "";
+
     /**
      *
      *
@@ -1463,6 +1506,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1485,6 +1529,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1506,6 +1551,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1569,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

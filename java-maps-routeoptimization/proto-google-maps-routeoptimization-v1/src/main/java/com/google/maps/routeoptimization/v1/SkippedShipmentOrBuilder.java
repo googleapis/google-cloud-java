@@ -52,6 +52,7 @@ public interface SkippedShipmentOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SkippedShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
    */
   java.util.List<com.google.maps.routeoptimization.v1.SkippedShipment.Reason> getReasonsList();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface SkippedShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
    */
   com.google.maps.routeoptimization.v1.SkippedShipment.Reason getReasons(int index);
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface SkippedShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
    */
   int getReasonsCount();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface SkippedShipmentOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.SkippedShipment.ReasonOrBuilder>
       getReasonsOrBuilderList();
+
   /**
    *
    *

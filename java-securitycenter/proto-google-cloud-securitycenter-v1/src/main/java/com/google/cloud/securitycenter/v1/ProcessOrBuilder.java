@@ -38,6 +38,7 @@ public interface ProcessOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ProcessOrBuilder
    * @return Whether the binary field is set.
    */
   boolean hasBinary();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ProcessOrBuilder
    * @return The binary.
    */
   com.google.cloud.securitycenter.v1.File getBinary();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ProcessOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.File libraries = 4;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.File> getLibrariesList();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ProcessOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.File libraries = 4;</code>
    */
   com.google.cloud.securitycenter.v1.File getLibraries(int index);
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ProcessOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.File libraries = 4;</code>
    */
   int getLibrariesCount();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ProcessOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.FileOrBuilder>
       getLibrariesOrBuilderList();
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public interface ProcessOrBuilder
    * @return Whether the script field is set.
    */
   boolean hasScript();
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public interface ProcessOrBuilder
    * @return The script.
    */
   com.google.cloud.securitycenter.v1.File getScript();
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public interface ProcessOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
+
   /**
    *
    *
@@ -205,6 +215,7 @@ public interface ProcessOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
+
   /**
    *
    *
@@ -218,6 +229,7 @@ public interface ProcessOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
+
   /**
    *
    *
@@ -255,6 +267,7 @@ public interface ProcessOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.EnvironmentVariable env_variables = 8;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.EnvironmentVariable> getEnvVariablesList();
+
   /**
    *
    *
@@ -265,6 +278,7 @@ public interface ProcessOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.EnvironmentVariable env_variables = 8;</code>
    */
   com.google.cloud.securitycenter.v1.EnvironmentVariable getEnvVariables(int index);
+
   /**
    *
    *
@@ -275,6 +289,7 @@ public interface ProcessOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.EnvironmentVariable env_variables = 8;</code>
    */
   int getEnvVariablesCount();
+
   /**
    *
    *
@@ -286,6 +301,7 @@ public interface ProcessOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.EnvironmentVariableOrBuilder>
       getEnvVariablesOrBuilderList();
+
   /**
    *
    *

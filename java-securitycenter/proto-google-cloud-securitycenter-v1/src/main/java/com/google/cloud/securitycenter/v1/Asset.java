@@ -39,6 +39,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Asset)
     AssetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Asset.newBuilder() to construct.
   private Asset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,6 +102,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceName.
      */
     java.lang.String getResourceName();
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceType.
      */
     java.lang.String getResourceType();
+
     /**
      *
      *
@@ -160,6 +163,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceParent.
      */
     java.lang.String getResourceParent();
+
     /**
      *
      *
@@ -187,6 +191,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceProject.
      */
     java.lang.String getResourceProject();
+
     /**
      *
      *
@@ -213,6 +218,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the resourceOwners.
      */
     java.util.List<java.lang.String> getResourceOwnersList();
+
     /**
      *
      *
@@ -225,6 +231,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The count of resourceOwners.
      */
     int getResourceOwnersCount();
+
     /**
      *
      *
@@ -238,6 +245,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceOwners at the given index.
      */
     java.lang.String getResourceOwners(int index);
+
     /**
      *
      *
@@ -264,6 +272,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceDisplayName.
      */
     java.lang.String getResourceDisplayName();
+
     /**
      *
      *
@@ -289,6 +298,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceParentDisplayName.
      */
     java.lang.String getResourceParentDisplayName();
+
     /**
      *
      *
@@ -314,6 +324,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceProjectDisplayName.
      */
     java.lang.String getResourceProjectDisplayName();
+
     /**
      *
      *
@@ -339,6 +350,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
      */
     java.util.List<com.google.cloud.securitycenter.v1.Folder> getFoldersList();
+
     /**
      *
      *
@@ -351,6 +363,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
      */
     com.google.cloud.securitycenter.v1.Folder getFolders(int index);
+
     /**
      *
      *
@@ -363,6 +376,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
      */
     int getFoldersCount();
+
     /**
      *
      *
@@ -376,6 +390,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.securitycenter.v1.FolderOrBuilder>
         getFoldersOrBuilderList();
+
     /**
      *
      *
@@ -389,6 +404,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -404,6 +420,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Asset.SecurityCenterProperties)
       SecurityCenterPropertiesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SecurityCenterProperties.newBuilder() to construct.
     private SecurityCenterProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -446,6 +463,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceName_ = "";
+
     /**
      *
      *
@@ -471,6 +489,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -501,6 +520,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceType_ = "";
+
     /**
      *
      *
@@ -527,6 +547,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -558,6 +579,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceParent_ = "";
+
     /**
      *
      *
@@ -582,6 +604,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -611,6 +634,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceProject_ = "";
+
     /**
      *
      *
@@ -635,6 +659,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -665,6 +690,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList resourceOwners_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -679,6 +705,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getResourceOwnersList() {
       return resourceOwners_;
     }
+
     /**
      *
      *
@@ -693,6 +720,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getResourceOwnersCount() {
       return resourceOwners_.size();
     }
+
     /**
      *
      *
@@ -708,6 +736,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getResourceOwners(int index) {
       return resourceOwners_.get(index);
     }
+
     /**
      *
      *
@@ -728,6 +757,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceDisplayName_ = "";
+
     /**
      *
      *
@@ -751,6 +781,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -779,6 +810,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceParentDisplayName_ = "";
+
     /**
      *
      *
@@ -802,6 +834,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -830,6 +863,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceProjectDisplayName_ = "";
+
     /**
      *
      *
@@ -853,6 +887,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -881,6 +916,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v1.Folder> folders_;
+
     /**
      *
      *
@@ -896,6 +932,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.securitycenter.v1.Folder> getFoldersList() {
       return folders_;
     }
+
     /**
      *
      *
@@ -912,6 +949,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         getFoldersOrBuilderList() {
       return folders_;
     }
+
     /**
      *
      *
@@ -927,6 +965,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getFoldersCount() {
       return folders_.size();
     }
+
     /**
      *
      *
@@ -942,6 +981,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Folder getFolders(int index) {
       return folders_.get(index);
     }
+
     /**
      *
      *
@@ -1206,6 +1246,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1574,6 +1615,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object resourceName_ = "";
+
       /**
        *
        *
@@ -1598,6 +1640,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1622,6 +1665,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1645,6 +1689,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1664,6 +1709,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1690,6 +1736,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceType_ = "";
+
       /**
        *
        *
@@ -1715,6 +1762,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1740,6 +1788,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1764,6 +1813,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1784,6 +1834,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1811,6 +1862,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceParent_ = "";
+
       /**
        *
        *
@@ -1834,6 +1886,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1857,6 +1910,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1879,6 +1933,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1897,6 +1952,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1922,6 +1978,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceProject_ = "";
+
       /**
        *
        *
@@ -1945,6 +2002,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1968,6 +2026,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1990,6 +2049,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2008,6 +2068,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2041,6 +2102,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000010;
       }
+
       /**
        *
        *
@@ -2056,6 +2118,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         resourceOwners_.makeImmutable();
         return resourceOwners_;
       }
+
       /**
        *
        *
@@ -2070,6 +2133,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public int getResourceOwnersCount() {
         return resourceOwners_.size();
       }
+
       /**
        *
        *
@@ -2085,6 +2149,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getResourceOwners(int index) {
         return resourceOwners_.get(index);
       }
+
       /**
        *
        *
@@ -2100,6 +2165,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getResourceOwnersBytes(int index) {
         return resourceOwners_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2123,6 +2189,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2145,6 +2212,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2164,6 +2232,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2182,6 +2251,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2207,6 +2277,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceDisplayName_ = "";
+
       /**
        *
        *
@@ -2229,6 +2300,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2251,6 +2323,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2272,6 +2345,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2289,6 +2363,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2313,6 +2388,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceParentDisplayName_ = "";
+
       /**
        *
        *
@@ -2335,6 +2411,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2357,6 +2434,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2378,6 +2456,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2395,6 +2474,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2419,6 +2499,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceProjectDisplayName_ = "";
+
       /**
        *
        *
@@ -2441,6 +2522,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2463,6 +2545,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2484,6 +2567,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2501,6 +2585,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2558,6 +2643,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return foldersBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2576,6 +2662,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return foldersBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2594,6 +2681,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return foldersBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2618,6 +2706,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2640,6 +2729,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2664,6 +2754,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2688,6 +2779,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2709,6 +2801,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2731,6 +2824,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2753,6 +2847,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2774,6 +2869,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2795,6 +2891,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2809,6 +2906,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Folder.Builder getFoldersBuilder(int index) {
         return getFoldersFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2827,6 +2925,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return foldersBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2846,6 +2945,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(folders_);
         }
       }
+
       /**
        *
        *
@@ -2861,6 +2961,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return getFoldersFieldBuilder()
             .addBuilder(com.google.cloud.securitycenter.v1.Folder.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2876,6 +2977,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return getFoldersFieldBuilder()
             .addBuilder(index, com.google.cloud.securitycenter.v1.Folder.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2995,6 +3097,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The policyBlob.
      */
     java.lang.String getPolicyBlob();
+
     /**
      *
      *
@@ -3010,6 +3113,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPolicyBlobBytes();
   }
+
   /**
    *
    *
@@ -3027,6 +3131,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Asset.IamPolicy)
       IamPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IamPolicy.newBuilder() to construct.
     private IamPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3061,6 +3166,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object policyBlob_ = "";
+
     /**
      *
      *
@@ -3086,6 +3192,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3272,6 +3379,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3462,6 +3570,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object policyBlob_ = "";
+
       /**
        *
        *
@@ -3486,6 +3595,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3510,6 +3620,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3533,6 +3644,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3552,6 +3664,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3646,6 +3759,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -3672,6 +3786,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3702,6 +3817,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public static final int SECURITY_CENTER_PROPERTIES_FIELD_NUMBER = 2;
   private com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties
       securityCenterProperties_;
+
   /**
    *
    *
@@ -3720,6 +3836,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecurityCenterProperties() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3741,6 +3858,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties.getDefaultInstance()
         : securityCenterProperties_;
   }
+
   /**
    *
    *
@@ -3792,6 +3910,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public int getResourcePropertiesCount() {
     return internalGetResourceProperties().getMap().size();
   }
+
   /**
    *
    *
@@ -3809,12 +3928,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetResourceProperties().getMap().containsKey(key);
   }
+
   /** Use {@link #getResourcePropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourceProperties() {
     return getResourcePropertiesMap();
   }
+
   /**
    *
    *
@@ -3829,6 +3950,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourcePropertiesMap() {
     return internalGetResourceProperties().getMap();
   }
+
   /**
    *
    *
@@ -3851,6 +3973,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         internalGetResourceProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -3876,6 +3999,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SECURITY_MARKS_FIELD_NUMBER = 8;
   private com.google.cloud.securitycenter.v1.SecurityMarks securityMarks_;
+
   /**
    *
    *
@@ -3892,6 +4016,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecurityMarks() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3910,6 +4035,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v1.SecurityMarks.getDefaultInstance()
         : securityMarks_;
   }
+
   /**
    *
    *
@@ -3929,6 +4055,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -3944,6 +4071,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3959,6 +4087,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -3975,6 +4104,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -3990,6 +4120,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -4005,6 +4136,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -4021,6 +4153,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IAM_POLICY_FIELD_NUMBER = 11;
   private com.google.cloud.securitycenter.v1.Asset.IamPolicy iamPolicy_;
+
   /**
    *
    *
@@ -4039,6 +4172,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIamPolicy() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -4059,6 +4193,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v1.Asset.IamPolicy.getDefaultInstance()
         : iamPolicy_;
   }
+
   /**
    *
    *
@@ -4082,6 +4217,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object canonicalName_ = "";
+
   /**
    *
    *
@@ -4109,6 +4245,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -4398,6 +4535,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4755,6 +4893,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4780,6 +4919,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4805,6 +4945,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4829,6 +4970,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4849,6 +4991,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4882,6 +5025,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties.Builder,
             com.google.cloud.securitycenter.v1.Asset.SecurityCenterPropertiesOrBuilder>
         securityCenterPropertiesBuilder_;
+
     /**
      *
      *
@@ -4899,6 +5043,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecurityCenterProperties() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4923,6 +5068,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return securityCenterPropertiesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4949,6 +5095,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4972,6 +5119,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5005,6 +5153,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5027,6 +5176,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5045,6 +5195,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSecurityCenterPropertiesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5067,6 +5218,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : securityCenterProperties_;
       }
     }
+
     /**
      *
      *
@@ -5112,7 +5264,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ResourcePropertiesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ResourcePropertiesConverter resourcePropertiesConverter =
         new ResourcePropertiesConverter();
@@ -5154,6 +5307,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getResourcePropertiesCount() {
       return internalGetResourceProperties().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -5171,12 +5325,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetResourceProperties().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getResourcePropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourceProperties() {
       return getResourcePropertiesMap();
     }
+
     /**
      *
      *
@@ -5191,6 +5347,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourcePropertiesMap() {
       return internalGetResourceProperties().getImmutableMap();
     }
+
     /**
      *
      *
@@ -5213,6 +5370,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableResourceProperties().ensureBuilderMap();
       return map.containsKey(key) ? resourcePropertiesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -5241,6 +5399,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableResourceProperties().clear();
       return this;
     }
+
     /**
      *
      *
@@ -5258,6 +5417,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableResourceProperties().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value>
@@ -5265,6 +5425,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableResourceProperties().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -5286,6 +5447,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -5307,6 +5469,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -5339,6 +5502,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.SecurityMarks.Builder,
             com.google.cloud.securitycenter.v1.SecurityMarksOrBuilder>
         securityMarksBuilder_;
+
     /**
      *
      *
@@ -5354,6 +5518,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecurityMarks() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5375,6 +5540,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return securityMarksBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5398,6 +5564,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5419,6 +5586,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5448,6 +5616,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5468,6 +5637,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5483,6 +5653,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSecurityMarksFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5502,6 +5673,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : securityMarks_;
       }
     }
+
     /**
      *
      *
@@ -5535,6 +5707,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -5549,6 +5722,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -5569,6 +5743,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5591,6 +5766,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5610,6 +5786,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5637,6 +5814,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5656,6 +5834,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5670,6 +5849,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5688,6 +5868,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -5720,6 +5901,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -5734,6 +5916,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5754,6 +5937,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5776,6 +5960,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5795,6 +5980,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5822,6 +6008,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5841,6 +6028,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5855,6 +6043,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5873,6 +6062,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -5905,6 +6095,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.Asset.IamPolicy.Builder,
             com.google.cloud.securitycenter.v1.Asset.IamPolicyOrBuilder>
         iamPolicyBuilder_;
+
     /**
      *
      *
@@ -5922,6 +6113,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIamPolicy() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -5945,6 +6137,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return iamPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5970,6 +6163,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5993,6 +6187,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6024,6 +6219,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6046,6 +6242,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6063,6 +6260,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIamPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6084,6 +6282,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : iamPolicy_;
       }
     }
+
     /**
      *
      *
@@ -6114,6 +6313,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object canonicalName_ = "";
+
     /**
      *
      *
@@ -6140,6 +6340,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6166,6 +6367,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6191,6 +6393,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6212,6 +6415,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface GetBreakpointRequestOrBuilder
    * @return The debuggeeId.
    */
   java.lang.String getDebuggeeId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetBreakpointRequestOrBuilder
    * @return The breakpointId.
    */
   java.lang.String getBreakpointId();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface GetBreakpointRequestOrBuilder
    * @return The clientVersion.
    */
   java.lang.String getClientVersion();
+
   /**
    *
    *

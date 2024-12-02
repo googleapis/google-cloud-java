@@ -38,6 +38,7 @@ public interface ModerateTextRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ModerateTextRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.language.v1.Document getDocument();
+
   /**
    *
    *

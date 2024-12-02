@@ -40,6 +40,7 @@ public interface GcsDestinationOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface GcsDestinationOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

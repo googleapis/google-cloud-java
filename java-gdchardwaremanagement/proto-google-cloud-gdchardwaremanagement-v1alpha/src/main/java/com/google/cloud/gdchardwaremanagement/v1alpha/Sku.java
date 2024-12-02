@@ -33,6 +33,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Sku)
     SkuOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Sku.newBuilder() to construct.
   private Sku(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * <code>RACK = 1;</code>
      */
     public static final int RACK_VALUE = 1;
+
     /**
      *
      *
@@ -232,6 +235,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -256,6 +260,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -285,6 +290,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -308,6 +314,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -334,6 +341,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -350,6 +358,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -366,6 +375,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -383,6 +393,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -399,6 +410,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -415,6 +427,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -432,6 +445,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfig config_;
+
   /**
    *
    *
@@ -449,6 +463,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -468,6 +483,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfig.getDefaultInstance()
         : config_;
   }
+
   /**
    *
    *
@@ -490,6 +506,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance> instances_;
+
   /**
    *
    *
@@ -507,6 +524,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -525,6 +543,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       getInstancesOrBuilderList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -541,6 +560,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -557,6 +577,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -579,6 +600,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -602,6 +624,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -630,6 +653,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
+
   /**
    *
    *
@@ -655,6 +679,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -683,6 +708,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_ACTIVE_FIELD_NUMBER = 10;
   private boolean isActive_ = false;
+
   /**
    *
    *
@@ -702,6 +728,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 11;
   private int type_ = 0;
+
   /**
    *
    *
@@ -719,6 +746,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -743,6 +771,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VCPU_COUNT_FIELD_NUMBER = 12;
   private int vcpuCount_ = 0;
+
   /**
    *
    *
@@ -1027,6 +1056,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1425,6 +1455,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1448,6 +1479,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1471,6 +1503,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1493,6 +1526,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1545,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +1571,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1558,6 +1594,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1580,6 +1617,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1601,6 +1639,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +1657,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +1687,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1663,6 +1704,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1685,6 +1727,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1709,6 +1752,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1730,6 +1774,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1759,6 +1804,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1826,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1843,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1816,6 +1864,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1850,6 +1899,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1866,6 +1916,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1888,6 +1939,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1912,6 +1964,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1933,6 +1986,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1962,6 +2016,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2038,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2055,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2019,6 +2076,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2053,6 +2111,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfig.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -2069,6 +2128,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2091,6 +2151,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2115,6 +2176,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2137,6 +2199,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2167,6 +2230,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +2252,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2204,6 +2269,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2224,6 +2290,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : config_;
       }
     }
+
     /**
      *
      *
@@ -2290,6 +2357,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2309,6 +2377,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2328,6 +2397,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2354,6 +2424,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2378,6 +2449,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2403,6 +2475,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2429,6 +2502,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2452,6 +2526,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +2551,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2500,6 +2576,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2522,6 +2599,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2544,6 +2622,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2560,6 +2639,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2580,6 +2660,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2601,6 +2682,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
+
     /**
      *
      *
@@ -2619,6 +2701,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2638,6 +2721,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2673,6 +2757,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2695,6 +2780,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2717,6 +2803,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2738,6 +2825,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2755,6 +2843,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2779,6 +2868,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object revisionId_ = "";
+
     /**
      *
      *
@@ -2803,6 +2893,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2827,6 +2918,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2850,6 +2942,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2869,6 +2962,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2895,6 +2989,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isActive_;
+
     /**
      *
      *
@@ -2911,6 +3006,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsActive() {
       return isActive_;
     }
+
     /**
      *
      *
@@ -2931,6 +3027,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2951,6 +3048,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -2968,6 +3066,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -2988,6 +3087,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3009,6 +3109,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3032,6 +3133,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3053,6 +3155,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int vcpuCount_;
+
     /**
      *
      *
@@ -3068,6 +3171,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public int getVcpuCount() {
       return vcpuCount_;
     }
+
     /**
      *
      *
@@ -3087,6 +3191,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

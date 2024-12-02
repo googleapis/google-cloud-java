@@ -49,6 +49,7 @@ public interface StatusMessageOrBuilder
    * @return The enum numeric value on the wire for refersTo.
    */
   int getRefersToValue();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface StatusMessageOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface StatusMessageOrBuilder
    * @return The description.
    */
   com.google.devtools.clouddebugger.v2.FormatMessage getDescription();
+
   /**
    *
    *

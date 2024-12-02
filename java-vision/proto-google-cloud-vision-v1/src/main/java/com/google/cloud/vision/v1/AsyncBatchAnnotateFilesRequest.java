@@ -34,6 +34,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest)
     AsyncBatchAnnotateFilesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AsyncBatchAnnotateFilesRequest.newBuilder() to construct.
   private AsyncBatchAnnotateFilesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,6 +83,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileRequest> requests_;
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   public java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileRequest> getRequestsList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       getRequestsOrBuilderList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   public int getRequestsCount() {
     return requests_.size();
   }
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   public com.google.cloud.vision.v1.AsyncAnnotateFileRequest getRequests(int index) {
     return requests_.get(index);
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -280,12 +289,14 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -304,6 +315,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -543,6 +556,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -865,6 +879,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         return requestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -883,6 +898,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         return requestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -901,6 +917,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         return requestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -926,6 +943,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +966,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +991,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1017,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1040,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1063,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1086,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1108,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1130,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1146,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1139,6 +1166,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1158,6 +1186,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1202,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       return getRequestsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.AsyncAnnotateFileRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1190,6 +1220,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
           .addBuilder(
               index, com.google.cloud.vision.v1.AsyncAnnotateFileRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1224,6 +1255,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1257,6 +1289,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1323,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1356,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1385,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1445,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1430,12 +1467,14 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1454,6 +1493,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1479,6 +1519,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1510,6 +1551,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1531,12 +1573,14 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1562,6 +1606,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *

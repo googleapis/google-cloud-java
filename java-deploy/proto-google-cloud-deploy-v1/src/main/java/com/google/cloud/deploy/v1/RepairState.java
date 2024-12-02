@@ -112,6 +112,7 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPAIR_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int REPAIR_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -122,6 +123,7 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPAIR_STATE_SUCCEEDED = 1;</code>
    */
   public static final int REPAIR_STATE_SUCCEEDED_VALUE = 1;
+
   /**
    *
    *
@@ -132,6 +134,7 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPAIR_STATE_CANCELLED = 2;</code>
    */
   public static final int REPAIR_STATE_CANCELLED_VALUE = 2;
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPAIR_STATE_FAILED = 3;</code>
    */
   public static final int REPAIR_STATE_FAILED_VALUE = 3;
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPAIR_STATE_IN_PROGRESS = 4;</code>
    */
   public static final int REPAIR_STATE_IN_PROGRESS_VALUE = 4;
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPAIR_STATE_PENDING = 5;</code>
    */
   public static final int REPAIR_STATE_PENDING_VALUE = 5;
+
   /**
    *
    *

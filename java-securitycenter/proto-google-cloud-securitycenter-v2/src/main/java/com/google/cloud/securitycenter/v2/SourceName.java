@@ -280,7 +280,8 @@ public class SourceName implements ResourceName {
     private Builder(SourceName sourceName) {
       Preconditions.checkArgument(
           Objects.equals(sourceName.pathTemplate, ORGANIZATION_SOURCE),
-          "toBuilder is only supported when SourceName has the pattern of organizations/{organization}/sources/{source}");
+          "toBuilder is only supported when SourceName has the pattern of"
+              + " organizations/{organization}/sources/{source}");
       this.organization = sourceName.organization;
       this.source = sourceName.source;
     }

@@ -39,6 +39,7 @@ public interface CreateApiRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateApiRequestOrBuilder
    * @return The apiId.
    */
   java.lang.String getApiId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateApiRequestOrBuilder
    * @return Whether the api field is set.
    */
   boolean hasApi();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateApiRequestOrBuilder
    * @return The api.
    */
   com.google.cloud.apigateway.v1.Api getApi();
+
   /**
    *
    *

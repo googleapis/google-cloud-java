@@ -40,6 +40,7 @@ public interface ImportProductSetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ImportProductSetsRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface ImportProductSetsRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig getInputConfig();
+
   /**
    *
    *

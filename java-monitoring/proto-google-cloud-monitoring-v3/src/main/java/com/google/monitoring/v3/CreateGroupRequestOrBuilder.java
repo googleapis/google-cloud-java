@@ -42,6 +42,7 @@ public interface CreateGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateGroupRequestOrBuilder
    * @return Whether the group field is set.
    */
   boolean hasGroup();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateGroupRequestOrBuilder
    * @return The group.
    */
   com.google.monitoring.v3.Group getGroup();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RawPredictRequest)
     RawPredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RawPredictRequest.newBuilder() to construct.
   private RawPredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int HTTP_BODY_FIELD_NUMBER = 2;
   private com.google.api.HttpBody httpBody_;
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasHttpBody() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
   public com.google.api.HttpBody getHttpBody() {
     return httpBody_ == null ? com.google.api.HttpBody.getDefaultInstance() : httpBody_;
   }
+
   /**
    *
    *
@@ -386,6 +392,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -600,6 +607,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -626,6 +634,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -652,6 +661,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -677,6 +687,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
             com.google.api.HttpBody.Builder,
             com.google.api.HttpBodyOrBuilder>
         httpBodyBuilder_;
+
     /**
      *
      *
@@ -759,6 +772,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasHttpBody() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
         return httpBodyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -827,6 +842,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +876,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +918,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +952,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +981,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getHttpBodyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -992,6 +1012,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
         return httpBody_ == null ? com.google.api.HttpBody.getDefaultInstance() : httpBody_;
       }
     }
+
     /**
      *
      *

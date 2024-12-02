@@ -33,6 +33,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.ListLiveAdTagDetailsResponse)
     ListLiveAdTagDetailsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListLiveAdTagDetailsResponse.newBuilder() to construct.
   private ListLiveAdTagDetailsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.LiveAdTagDetail> liveAdTagDetails_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       getLiveAdTagDetailsList() {
     return liveAdTagDetails_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       getLiveAdTagDetailsOrBuilderList() {
     return liveAdTagDetails_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
   public int getLiveAdTagDetailsCount() {
     return liveAdTagDetails_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
   public com.google.cloud.video.stitcher.v1.LiveAdTagDetail getLiveAdTagDetails(int index) {
     return liveAdTagDetails_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
         return liveAdTagDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
         return liveAdTagDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
         return liveAdTagDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +829,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +893,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +908,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
         int index) {
       return getLiveAdTagDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -905,6 +927,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
         return liveAdTagDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(liveAdTagDetails_);
       }
     }
+
     /**
      *
      *
@@ -937,6 +961,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       return getLiveAdTagDetailsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.LiveAdTagDetail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -953,6 +978,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.video.stitcher.v1.LiveAdTagDetail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -989,6 +1015,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1011,6 +1038,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1061,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1083,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1101,7 @@ public final class ListLiveAdTagDetailsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

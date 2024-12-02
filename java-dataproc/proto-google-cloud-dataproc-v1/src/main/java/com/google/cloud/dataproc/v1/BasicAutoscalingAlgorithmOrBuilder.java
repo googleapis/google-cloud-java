@@ -38,6 +38,7 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * @return Whether the yarnConfig field is set.
    */
   boolean hasYarnConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * @return The yarnConfig.
    */
   com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig getYarnConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * @return Whether the cooldownPeriod field is set.
    */
   boolean hasCooldownPeriod();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * @return The cooldownPeriod.
    */
   com.google.protobuf.Duration getCooldownPeriod();
+
   /**
    *
    *

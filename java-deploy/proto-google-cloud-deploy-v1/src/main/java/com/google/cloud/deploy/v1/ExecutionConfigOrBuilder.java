@@ -39,6 +39,7 @@ public interface ExecutionConfigOrBuilder
    */
   java.util.List<com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage>
       getUsagesList();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ExecutionConfigOrBuilder
    * @return The count of usages.
    */
   int getUsagesCount();
+
   /**
    *
    *
@@ -68,6 +70,7 @@ public interface ExecutionConfigOrBuilder
    * @return The usages at the given index.
    */
   com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage getUsages(int index);
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface ExecutionConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for usages.
    */
   java.util.List<java.lang.Integer> getUsagesValueList();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface ExecutionConfigOrBuilder
    * @return Whether the defaultPool field is set.
    */
   boolean hasDefaultPool();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface ExecutionConfigOrBuilder
    * @return The defaultPool.
    */
   com.google.cloud.deploy.v1.DefaultPool getDefaultPool();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface ExecutionConfigOrBuilder
    * @return Whether the privatePool field is set.
    */
   boolean hasPrivatePool();
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public interface ExecutionConfigOrBuilder
    * @return The privatePool.
    */
   com.google.cloud.deploy.v1.PrivatePool getPrivatePool();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface ExecutionConfigOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface ExecutionConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public interface ExecutionConfigOrBuilder
    * @return The artifactStorage.
    */
   java.lang.String getArtifactStorage();
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public interface ExecutionConfigOrBuilder
    * @return Whether the executionTimeout field is set.
    */
   boolean hasExecutionTimeout();
+
   /**
    *
    *
@@ -307,6 +319,7 @@ public interface ExecutionConfigOrBuilder
    * @return The executionTimeout.
    */
   com.google.protobuf.Duration getExecutionTimeout();
+
   /**
    *
    *

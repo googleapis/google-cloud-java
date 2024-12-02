@@ -34,6 +34,7 @@ public interface PacketMirroringsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.PacketMirroring packet_mirrorings = 154615079;</code>
    */
   java.util.List<com.google.cloud.compute.v1.PacketMirroring> getPacketMirroringsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface PacketMirroringsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.PacketMirroring packet_mirrorings = 154615079;</code>
    */
   com.google.cloud.compute.v1.PacketMirroring getPacketMirrorings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface PacketMirroringsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.PacketMirroring packet_mirrorings = 154615079;</code>
    */
   int getPacketMirroringsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface PacketMirroringsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.PacketMirroringOrBuilder>
       getPacketMirroringsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface PacketMirroringsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface PacketMirroringsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

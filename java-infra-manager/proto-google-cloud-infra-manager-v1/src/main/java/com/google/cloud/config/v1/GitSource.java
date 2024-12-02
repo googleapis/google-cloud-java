@@ -33,6 +33,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.GitSource)
     GitSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GitSource.newBuilder() to construct.
   private GitSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object repo_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRepo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object directory_ = "";
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDirectory() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ref_ = "";
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRef() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -460,6 +470,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -677,6 +688,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object repo_ = "";
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRepo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object directory_ = "";
+
     /**
      *
      *
@@ -818,6 +836,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDirectory() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +884,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -886,6 +907,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +952,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ref_ = "";
+
     /**
      *
      *
@@ -943,6 +967,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRef() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -987,6 +1013,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1035,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

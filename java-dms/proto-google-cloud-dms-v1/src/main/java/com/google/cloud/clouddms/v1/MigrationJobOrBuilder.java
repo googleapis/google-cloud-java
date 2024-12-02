@@ -37,6 +37,7 @@ public interface MigrationJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface MigrationJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface MigrationJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface MigrationJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -167,9 +173,11 @@ public interface MigrationJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface MigrationJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -202,6 +211,7 @@ public interface MigrationJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public interface MigrationJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public interface MigrationJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -281,6 +293,7 @@ public interface MigrationJobOrBuilder
    * @return The enum numeric value on the wire for phase.
    */
   int getPhaseValue();
+
   /**
    *
    *
@@ -310,6 +323,7 @@ public interface MigrationJobOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -339,6 +353,7 @@ public interface MigrationJobOrBuilder
    * @return The dumpPath.
    */
   java.lang.String getDumpPath();
+
   /**
    *
    *
@@ -367,6 +382,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the dumpFlags field is set.
    */
   boolean hasDumpFlags();
+
   /**
    *
    *
@@ -380,6 +396,7 @@ public interface MigrationJobOrBuilder
    * @return The dumpFlags.
    */
   com.google.cloud.clouddms.v1.MigrationJob.DumpFlags getDumpFlags();
+
   /**
    *
    *
@@ -404,6 +421,7 @@ public interface MigrationJobOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -429,6 +447,7 @@ public interface MigrationJobOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
+
   /**
    *
    *
@@ -455,6 +474,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the reverseSshConnectivity field is set.
    */
   boolean hasReverseSshConnectivity();
+
   /**
    *
    *
@@ -468,6 +488,7 @@ public interface MigrationJobOrBuilder
    * @return The reverseSshConnectivity.
    */
   com.google.cloud.clouddms.v1.ReverseSshConnectivity getReverseSshConnectivity();
+
   /**
    *
    *
@@ -492,6 +513,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the vpcPeeringConnectivity field is set.
    */
   boolean hasVpcPeeringConnectivity();
+
   /**
    *
    *
@@ -504,6 +526,7 @@ public interface MigrationJobOrBuilder
    * @return The vpcPeeringConnectivity.
    */
   com.google.cloud.clouddms.v1.VpcPeeringConnectivity getVpcPeeringConnectivity();
+
   /**
    *
    *
@@ -527,6 +550,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the staticIpConnectivity field is set.
    */
   boolean hasStaticIpConnectivity();
+
   /**
    *
    *
@@ -539,6 +563,7 @@ public interface MigrationJobOrBuilder
    * @return The staticIpConnectivity.
    */
   com.google.cloud.clouddms.v1.StaticIpConnectivity getStaticIpConnectivity();
+
   /**
    *
    *
@@ -565,6 +590,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -580,6 +606,7 @@ public interface MigrationJobOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -606,6 +633,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -618,6 +646,7 @@ public interface MigrationJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -641,6 +670,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the sourceDatabase field is set.
    */
   boolean hasSourceDatabase();
+
   /**
    *
    *
@@ -653,6 +683,7 @@ public interface MigrationJobOrBuilder
    * @return The sourceDatabase.
    */
   com.google.cloud.clouddms.v1.DatabaseType getSourceDatabase();
+
   /**
    *
    *
@@ -676,6 +707,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the destinationDatabase field is set.
    */
   boolean hasDestinationDatabase();
+
   /**
    *
    *
@@ -688,6 +720,7 @@ public interface MigrationJobOrBuilder
    * @return The destinationDatabase.
    */
   com.google.cloud.clouddms.v1.DatabaseType getDestinationDatabase();
+
   /**
    *
    *
@@ -713,6 +746,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -727,6 +761,7 @@ public interface MigrationJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -752,6 +787,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the conversionWorkspace field is set.
    */
   boolean hasConversionWorkspace();
+
   /**
    *
    *
@@ -764,6 +800,7 @@ public interface MigrationJobOrBuilder
    * @return The conversionWorkspace.
    */
   com.google.cloud.clouddms.v1.ConversionWorkspaceInfo getConversionWorkspace();
+
   /**
    *
    *
@@ -791,6 +828,7 @@ public interface MigrationJobOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -830,6 +868,7 @@ public interface MigrationJobOrBuilder
    * @return The cmekKeyName.
    */
   java.lang.String getCmekKeyName();
+
   /**
    *
    *
@@ -868,6 +907,7 @@ public interface MigrationJobOrBuilder
    * @return Whether the performanceConfig field is set.
    */
   boolean hasPerformanceConfig();
+
   /**
    *
    *
@@ -883,6 +923,7 @@ public interface MigrationJobOrBuilder
    * @return The performanceConfig.
    */
   com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getPerformanceConfig();
+
   /**
    *
    *

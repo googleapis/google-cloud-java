@@ -33,6 +33,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SourceInstanceParams)
     SourceInstanceParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SourceInstanceParams.newBuilder() to construct.
   private SourceInstanceParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.DiskInstantiationConfig> diskConfigs_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.compute.v1.DiskInstantiationConfig> getDiskConfigsList() {
     return diskConfigs_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       getDiskConfigsOrBuilderList() {
     return diskConfigs_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
   public int getDiskConfigsCount() {
     return diskConfigs_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.DiskInstantiationConfig getDiskConfigs(int index) {
     return diskConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -302,6 +308,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +575,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
         return diskConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -585,6 +593,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
         return diskConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
         return diskConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -647,6 +658,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +729,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +751,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +794,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +815,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +830,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
         int index) {
       return getDiskConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -829,6 +849,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
         return diskConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -847,6 +868,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(diskConfigs_);
       }
     }
+
     /**
      *
      *
@@ -861,6 +883,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
       return getDiskConfigsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.DiskInstantiationConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -877,6 +900,7 @@ public final class SourceInstanceParams extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.compute.v1.DiskInstantiationConfig.getDefaultInstance());
     }
+
     /**
      *
      *

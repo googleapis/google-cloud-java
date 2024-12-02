@@ -36,6 +36,7 @@ public interface UrlMapListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UrlMapListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface UrlMapListOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMap items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.UrlMap> getItemsList();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface UrlMapListOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMap items = 100526016;</code>
    */
   com.google.cloud.compute.v1.UrlMap getItems(int index);
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface UrlMapListOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMap items = 100526016;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface UrlMapListOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMap items = 100526016;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.UrlMapOrBuilder> getItemsOrBuilderList();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface UrlMapListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -136,6 +143,7 @@ public interface UrlMapListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -161,6 +169,7 @@ public interface UrlMapListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -173,6 +182,7 @@ public interface UrlMapListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -198,6 +208,7 @@ public interface UrlMapListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -210,6 +221,7 @@ public interface UrlMapListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -235,6 +247,7 @@ public interface UrlMapListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -247,6 +260,7 @@ public interface UrlMapListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

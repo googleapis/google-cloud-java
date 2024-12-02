@@ -33,6 +33,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.InsertCssProductInputRequest)
     InsertCssProductInputRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertCssProductInputRequest.newBuilder() to construct.
   private InsertCssProductInputRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
 
   public static final int CSS_PRODUCT_INPUT_FIELD_NUMBER = 2;
   private com.google.shopping.css.v1.CssProductInput cssProductInput_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
   public boolean hasCssProductInput() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
         ? com.google.shopping.css.v1.CssProductInput.getDefaultInstance()
         : cssProductInput_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
 
   public static final int FEED_ID_FIELD_NUMBER = 3;
   private long feedId_ = 0L;
+
   /**
    *
    *
@@ -382,6 +389,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -609,6 +617,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -634,6 +643,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +715,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
             com.google.shopping.css.v1.CssProductInput.Builder,
             com.google.shopping.css.v1.CssProductInputOrBuilder>
         cssProductInputBuilder_;
+
     /**
      *
      *
@@ -751,6 +765,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
     public boolean hasCssProductInput() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
         return cssProductInputBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +867,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +906,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return getCssProductInputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
             : cssProductInput_;
       }
     }
+
     /**
      *
      *
@@ -935,6 +957,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
     }
 
     private long feedId_;
+
     /**
      *
      *
@@ -954,6 +977,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
     public long getFeedId() {
       return feedId_;
     }
+
     /**
      *
      *
@@ -977,6 +1001,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

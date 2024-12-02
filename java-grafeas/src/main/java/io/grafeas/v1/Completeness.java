@@ -35,6 +35,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Completeness)
     CompletenessOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Completeness.newBuilder() to construct.
   private Completeness(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ARGUMENTS_FIELD_NUMBER = 1;
   private boolean arguments_ = false;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
   private boolean environment_ = false;
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MATERIALS_FIELD_NUMBER = 3;
   private boolean materials_ = false;
+
   /**
    *
    *
@@ -293,6 +297,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -497,6 +502,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean arguments_;
+
     /**
      *
      *
@@ -513,6 +519,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     public boolean getArguments() {
       return arguments_;
     }
+
     /**
      *
      *
@@ -533,6 +540,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean environment_;
+
     /**
      *
      *
@@ -569,6 +578,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnvironment() {
       return environment_;
     }
+
     /**
      *
      *
@@ -589,6 +599,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -609,6 +620,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean materials_;
+
     /**
      *
      *
@@ -625,6 +637,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     public boolean getMaterials() {
       return materials_;
     }
+
     /**
      *
      *
@@ -645,6 +658,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

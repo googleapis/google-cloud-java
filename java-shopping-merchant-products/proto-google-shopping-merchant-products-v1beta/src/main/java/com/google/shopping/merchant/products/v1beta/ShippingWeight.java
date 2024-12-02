@@ -33,6 +33,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.ShippingWeight)
     ShippingWeightOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ShippingWeight.newBuilder() to construct.
   private ShippingWeight(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private double value_ = 0D;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unit_ = "";
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +309,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -502,6 +507,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double value_;
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
     public double getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -558,6 +566,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object unit_ = "";
+
     /**
      *
      *
@@ -580,6 +589,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +634,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +652,7 @@ public final class ShippingWeight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

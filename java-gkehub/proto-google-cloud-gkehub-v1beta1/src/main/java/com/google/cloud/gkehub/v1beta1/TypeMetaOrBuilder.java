@@ -36,6 +36,7 @@ public interface TypeMetaOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TypeMetaOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
+
   /**
    *
    *

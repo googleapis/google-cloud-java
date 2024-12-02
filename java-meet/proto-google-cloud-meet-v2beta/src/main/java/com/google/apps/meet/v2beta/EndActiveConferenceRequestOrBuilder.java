@@ -38,6 +38,7 @@ public interface EndActiveConferenceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

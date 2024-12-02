@@ -33,6 +33,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.container.v1.ResourceUsageExportConfig)
     ResourceUsageExportConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceUsageExportConfig.newBuilder() to construct.
   private ResourceUsageExportConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      * @return The datasetId.
      */
     java.lang.String getDatasetId();
+
     /**
      *
      *
@@ -91,6 +93,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getDatasetIdBytes();
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.container.v1.ResourceUsageExportConfig.BigQueryDestination)
       BigQueryDestinationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BigQueryDestination.newBuilder() to construct.
     private BigQueryDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -139,6 +143,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object datasetId_ = "";
+
     /**
      *
      *
@@ -162,6 +167,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -348,6 +354,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -545,6 +552,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object datasetId_ = "";
+
       /**
        *
        *
@@ -567,6 +575,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -589,6 +598,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -610,6 +620,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -627,6 +638,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -738,6 +750,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      */
     boolean getEnabled();
   }
+
   /**
    *
    *
@@ -752,6 +765,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.container.v1.ResourceUsageExportConfig.ConsumptionMeteringConfig)
       ConsumptionMeteringConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConsumptionMeteringConfig.newBuilder() to construct.
     private ConsumptionMeteringConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -783,6 +797,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
 
     public static final int ENABLED_FIELD_NUMBER = 1;
     private boolean enabled_ = false;
+
     /**
      *
      *
@@ -969,6 +984,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1166,6 +1182,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private boolean enabled_;
+
       /**
        *
        *
@@ -1183,6 +1200,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       public boolean getEnabled() {
         return enabled_;
       }
+
       /**
        *
        *
@@ -1204,6 +1222,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1296,6 +1315,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
   public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 1;
   private com.google.container.v1.ResourceUsageExportConfig.BigQueryDestination
       bigqueryDestination_;
+
   /**
    *
    *
@@ -1313,6 +1333,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
   public boolean hasBigqueryDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1333,6 +1354,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         ? com.google.container.v1.ResourceUsageExportConfig.BigQueryDestination.getDefaultInstance()
         : bigqueryDestination_;
   }
+
   /**
    *
    *
@@ -1354,6 +1376,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
 
   public static final int ENABLE_NETWORK_EGRESS_METERING_FIELD_NUMBER = 2;
   private boolean enableNetworkEgressMetering_ = false;
+
   /**
    *
    *
@@ -1374,6 +1397,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
   public static final int CONSUMPTION_METERING_CONFIG_FIELD_NUMBER = 3;
   private com.google.container.v1.ResourceUsageExportConfig.ConsumptionMeteringConfig
       consumptionMeteringConfig_;
+
   /**
    *
    *
@@ -1391,6 +1415,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
   public boolean hasConsumptionMeteringConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1412,6 +1437,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
             .getDefaultInstance()
         : consumptionMeteringConfig_;
   }
+
   /**
    *
    *
@@ -1623,6 +1649,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1867,6 +1894,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
             com.google.container.v1.ResourceUsageExportConfig.BigQueryDestination.Builder,
             com.google.container.v1.ResourceUsageExportConfig.BigQueryDestinationOrBuilder>
         bigqueryDestinationBuilder_;
+
     /**
      *
      *
@@ -1883,6 +1911,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     public boolean hasBigqueryDestination() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1907,6 +1936,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         return bigqueryDestinationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1932,6 +1962,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1955,6 +1986,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1987,6 +2019,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2008,6 +2041,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2025,6 +2059,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return getBigqueryDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2047,6 +2082,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
             : bigqueryDestination_;
       }
     }
+
     /**
      *
      *
@@ -2076,6 +2112,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     }
 
     private boolean enableNetworkEgressMetering_;
+
     /**
      *
      *
@@ -2092,6 +2129,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     public boolean getEnableNetworkEgressMetering() {
       return enableNetworkEgressMetering_;
     }
+
     /**
      *
      *
@@ -2112,6 +2150,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2138,6 +2177,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
             com.google.container.v1.ResourceUsageExportConfig.ConsumptionMeteringConfig.Builder,
             com.google.container.v1.ResourceUsageExportConfig.ConsumptionMeteringConfigOrBuilder>
         consumptionMeteringConfigBuilder_;
+
     /**
      *
      *
@@ -2154,6 +2194,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     public boolean hasConsumptionMeteringConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2178,6 +2219,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         return consumptionMeteringConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2203,6 +2245,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2226,6 +2269,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2258,6 +2302,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2279,6 +2324,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2296,6 +2342,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       onChanged();
       return getConsumptionMeteringConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2318,6 +2365,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
             : consumptionMeteringConfig_;
       }
     }
+
     /**
      *
      *

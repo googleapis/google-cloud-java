@@ -36,6 +36,7 @@ public interface SubmitBuildResponseOrBuilder
    * @return Whether the buildOperation field is set.
    */
   boolean hasBuildOperation();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SubmitBuildResponseOrBuilder
    * @return The buildOperation.
    */
   com.google.longrunning.Operation getBuildOperation();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface SubmitBuildResponseOrBuilder
    * @return The baseImageUri.
    */
   java.lang.String getBaseImageUri();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface SubmitBuildResponseOrBuilder
    * @return The baseImageWarning.
    */
   java.lang.String getBaseImageWarning();
+
   /**
    *
    *

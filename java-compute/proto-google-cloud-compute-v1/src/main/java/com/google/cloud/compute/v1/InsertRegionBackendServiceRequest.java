@@ -33,6 +33,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionBackendServiceRequest)
     InsertRegionBackendServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertRegionBackendServiceRequest.newBuilder() to construct.
   private InsertRegionBackendServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
   private int bitField0_;
   public static final int BACKEND_SERVICE_RESOURCE_FIELD_NUMBER = 347586723;
   private com.google.cloud.compute.v1.BackendService backendServiceResource_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
   public boolean hasBackendServiceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.BackendService.getDefaultInstance()
         : backendServiceResource_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -498,6 +509,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -754,6 +766,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
             com.google.cloud.compute.v1.BackendService.Builder,
             com.google.cloud.compute.v1.BackendServiceOrBuilder>
         backendServiceResourceBuilder_;
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
     public boolean hasBackendServiceResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -792,6 +806,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
         return backendServiceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -816,6 +831,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +854,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +885,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +924,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return getBackendServiceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -926,6 +946,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
             : backendServiceResource_;
       }
     }
+
     /**
      *
      *
@@ -955,6 +976,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -979,6 +1001,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1026,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1050,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1070,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1097,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1095,6 +1122,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1147,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1171,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1191,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1218,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1201,6 +1233,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1223,6 +1256,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1279,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1266,6 +1301,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1319,7 @@ public final class InsertRegionBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return Whether the protoAnyConfig field is set.
    */
   boolean hasProtoAnyConfig();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return The protoAnyConfig.
    */
   com.google.cloud.visionai.v1.DataSchemaDetails.ProtoAnyConfig getProtoAnyConfig();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return Whether the listConfig field is set.
    */
   boolean hasListConfig();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return The listConfig.
    */
   com.google.cloud.visionai.v1.DataSchemaDetails.ListConfig getListConfig();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return Whether the customizedStructConfig field is set.
    */
   boolean hasCustomizedStructConfig();
+
   /**
    *
    *
@@ -160,6 +167,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return The customizedStructConfig.
    */
   com.google.cloud.visionai.v1.DataSchemaDetails.CustomizedStructConfig getCustomizedStructConfig();
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return Whether the granularity field is set.
    */
   boolean hasGranularity();
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return The enum numeric value on the wire for granularity.
    */
   int getGranularityValue();
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return Whether the searchStrategy field is set.
    */
   boolean hasSearchStrategy();
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public interface DataSchemaDetailsOrBuilder
    * @return The searchStrategy.
    */
   com.google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy getSearchStrategy();
+
   /**
    *
    *

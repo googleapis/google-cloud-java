@@ -40,6 +40,7 @@ public interface CreateAnnotationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateAnnotationRequestOrBuilder
    * @return Whether the annotation field is set.
    */
   boolean hasAnnotation();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateAnnotationRequestOrBuilder
    * @return The annotation.
    */
   com.google.cloud.visionai.v1.Annotation getAnnotation();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateAnnotationRequestOrBuilder
    * @return Whether the annotationId field is set.
    */
   boolean hasAnnotationId();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface CreateAnnotationRequestOrBuilder
    * @return The annotationId.
    */
   java.lang.String getAnnotationId();
+
   /**
    *
    *

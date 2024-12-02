@@ -40,6 +40,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return Whether the deidentifyConfig field is set.
    */
   boolean hasDeidentifyConfig();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface DeidentifyTemplateOrBuilder
    * @return The deidentifyConfig.
    */
   com.google.privacy.dlp.v2.DeidentifyConfig getDeidentifyConfig();
+
   /**
    *
    *

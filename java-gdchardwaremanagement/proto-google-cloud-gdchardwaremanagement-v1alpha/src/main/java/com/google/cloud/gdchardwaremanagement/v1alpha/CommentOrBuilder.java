@@ -38,6 +38,7 @@ public interface CommentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CommentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CommentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface CommentOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -115,9 +119,11 @@ public interface CommentOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface CommentOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -146,6 +153,7 @@ public interface CommentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public interface CommentOrBuilder
    * @return The author.
    */
   java.lang.String getAuthor();
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface CommentOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public interface CommentOrBuilder
    * @return Whether the customerViewedTime field is set.
    */
   boolean hasCustomerViewedTime();
+
   /**
    *
    *
@@ -243,6 +254,7 @@ public interface CommentOrBuilder
    * @return The customerViewedTime.
    */
   com.google.protobuf.Timestamp getCustomerViewedTime();
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public interface CommentOrBuilder
    * @return The enum numeric value on the wire for authorEntity.
    */
   int getAuthorEntityValue();
+
   /**
    *
    *

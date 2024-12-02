@@ -36,6 +36,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.CreateSecurityHealthAnalyticsCustomModuleRequest)
     CreateSecurityHealthAnalyticsCustomModuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSecurityHealthAnalyticsCustomModuleRequest.newBuilder() to construct.
   private CreateSecurityHealthAnalyticsCustomModuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
   public static final int SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE_FIELD_NUMBER = 2;
   private com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
       securityHealthAnalyticsCustomModule_;
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
   public boolean hasSecurityHealthAnalyticsCustomModule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
             .getDefaultInstance()
         : securityHealthAnalyticsCustomModule_;
   }
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -438,6 +445,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -698,6 +706,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -727,6 +736,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -756,6 +766,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +795,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +820,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +860,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
             com.google.cloud.securitycentermanagement.v1
                 .SecurityHealthAnalyticsCustomModuleOrBuilder>
         securityHealthAnalyticsCustomModuleBuilder_;
+
     /**
      *
      *
@@ -863,6 +877,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
     public boolean hasSecurityHealthAnalyticsCustomModule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -887,6 +902,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
         return securityHealthAnalyticsCustomModuleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -912,6 +928,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +952,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +985,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1007,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1025,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return getSecurityHealthAnalyticsCustomModuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1027,6 +1048,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
             : securityHealthAnalyticsCustomModule_;
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1082,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1087,6 +1110,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1118,6 +1142,7 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

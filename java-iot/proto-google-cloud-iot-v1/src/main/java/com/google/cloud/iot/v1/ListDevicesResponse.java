@@ -33,6 +33,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDevicesResponse)
     ListDevicesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDevicesResponse.newBuilder() to construct.
   private ListDevicesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iot.v1.Device> devices_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.iot.v1.Device> getDevicesList() {
     return devices_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       getDevicesOrBuilderList() {
     return devices_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
   public int getDevicesCount() {
     return devices_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.iot.v1.Device getDevices(int index) {
     return devices_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -631,6 +640,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
         return devicesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
         return devicesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
         return devicesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +783,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +803,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +844,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +864,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +877,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.iot.v1.Device.Builder getDevicesBuilder(int index) {
       return getDevicesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -872,6 +894,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
         return devicesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(devices_);
       }
     }
+
     /**
      *
      *
@@ -902,6 +926,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       return getDevicesFieldBuilder()
           .addBuilder(com.google.cloud.iot.v1.Device.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -915,6 +940,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       return getDevicesFieldBuilder()
           .addBuilder(index, com.google.cloud.iot.v1.Device.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -946,6 +972,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -969,6 +996,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1020,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1043,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1062,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface DataSourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface DataSourceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface DataSourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -112,9 +115,11 @@ public interface DataSourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface DataSourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface DataSourceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public interface DataSourceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface DataSourceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface DataSourceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public interface DataSourceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public interface DataSourceOrBuilder
    * @return Whether the backupCount field is set.
    */
   boolean hasBackupCount();
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public interface DataSourceOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
+
   /**
    *
    *
@@ -286,6 +299,7 @@ public interface DataSourceOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -312,6 +326,7 @@ public interface DataSourceOrBuilder
    * @return Whether the totalStoredBytes field is set.
    */
   boolean hasTotalStoredBytes();
+
   /**
    *
    *
@@ -339,6 +354,7 @@ public interface DataSourceOrBuilder
    * @return The enum numeric value on the wire for configState.
    */
   int getConfigStateValue();
+
   /**
    *
    *
@@ -368,6 +384,7 @@ public interface DataSourceOrBuilder
    * @return Whether the backupConfigInfo field is set.
    */
   boolean hasBackupConfigInfo();
+
   /**
    *
    *
@@ -382,6 +399,7 @@ public interface DataSourceOrBuilder
    * @return The backupConfigInfo.
    */
   com.google.cloud.backupdr.v1.BackupConfigInfo getBackupConfigInfo();
+
   /**
    *
    *
@@ -410,6 +428,7 @@ public interface DataSourceOrBuilder
    * @return Whether the dataSourceGcpResource field is set.
    */
   boolean hasDataSourceGcpResource();
+
   /**
    *
    *
@@ -425,6 +444,7 @@ public interface DataSourceOrBuilder
    * @return The dataSourceGcpResource.
    */
   com.google.cloud.backupdr.v1.DataSourceGcpResource getDataSourceGcpResource();
+
   /**
    *
    *
@@ -453,6 +473,7 @@ public interface DataSourceOrBuilder
    * @return Whether the dataSourceBackupApplianceApplication field is set.
    */
   boolean hasDataSourceBackupApplianceApplication();
+
   /**
    *
    *
@@ -468,6 +489,7 @@ public interface DataSourceOrBuilder
    */
   com.google.cloud.backupdr.v1.DataSourceBackupApplianceApplication
       getDataSourceBackupApplianceApplication();
+
   /**
    *
    *

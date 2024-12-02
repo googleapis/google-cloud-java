@@ -72,6 +72,7 @@ public enum FlexResourceSchedulingGoal implements com.google.protobuf.ProtocolMe
    * <code>FLEXRS_UNSPECIFIED = 0;</code>
    */
   public static final int FLEXRS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum FlexResourceSchedulingGoal implements com.google.protobuf.ProtocolMe
    * <code>FLEXRS_SPEED_OPTIMIZED = 1;</code>
    */
   public static final int FLEXRS_SPEED_OPTIMIZED_VALUE = 1;
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface GcipSettingsOrBuilder
    * @return A list containing the tenantIds.
    */
   java.util.List<java.lang.String> getTenantIdsList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface GcipSettingsOrBuilder
    * @return The count of tenantIds.
    */
   int getTenantIdsCount();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface GcipSettingsOrBuilder
    * @return The tenantIds at the given index.
    */
   java.lang.String getTenantIds(int index);
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface GcipSettingsOrBuilder
    * @return Whether the loginPageUri field is set.
    */
   boolean hasLoginPageUri();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface GcipSettingsOrBuilder
    * @return The loginPageUri.
    */
   com.google.protobuf.StringValue getLoginPageUri();
+
   /**
    *
    *

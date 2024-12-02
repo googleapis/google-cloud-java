@@ -35,6 +35,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1.KubernetesResource)
     KubernetesResourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use KubernetesResource.newBuilder() to construct.
   private KubernetesResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object membershipCrManifest_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.v1.ResourceManifest> membershipResources_;
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.gkehub.v1.ResourceManifest> getMembershipResourcesList() {
     return membershipResources_;
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       getMembershipResourcesOrBuilderList() {
     return membershipResources_;
   }
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
   public int getMembershipResourcesCount() {
     return membershipResources_.size();
   }
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.gkehub.v1.ResourceManifest getMembershipResources(int index) {
     return membershipResources_.get(index);
   }
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.v1.ResourceManifest> connectResources_;
+
   /**
    *
    *
@@ -273,6 +282,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.gkehub.v1.ResourceManifest> getConnectResourcesList() {
     return connectResources_;
   }
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       getConnectResourcesOrBuilderList() {
     return connectResources_;
   }
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
   public int getConnectResourcesCount() {
     return connectResources_.size();
   }
+
   /**
    *
    *
@@ -337,6 +349,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.gkehub.v1.ResourceManifest getConnectResources(int index) {
     return connectResources_.get(index);
   }
+
   /**
    *
    *
@@ -362,6 +375,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
 
   public static final int RESOURCE_OPTIONS_FIELD_NUMBER = 4;
   private com.google.cloud.gkehub.v1.ResourceOptions resourceOptions_;
+
   /**
    *
    *
@@ -379,6 +393,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
   public boolean hasResourceOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -398,6 +413,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.gkehub.v1.ResourceOptions.getDefaultInstance()
         : resourceOptions_;
   }
+
   /**
    *
    *
@@ -612,6 +628,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -945,6 +962,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object membershipCrManifest_ = "";
+
     /**
      *
      *
@@ -973,6 +991,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1020,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1048,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1072,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1146,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return membershipResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1149,6 +1172,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return membershipResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1174,6 +1198,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return membershipResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1206,6 +1231,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1261,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1293,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1326,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1356,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1386,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1416,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1445,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1474,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1497,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         int index) {
       return getMembershipResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1489,6 +1524,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return membershipResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1515,6 +1551,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(membershipResources_);
       }
     }
+
     /**
      *
      *
@@ -1537,6 +1574,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       return getMembershipResourcesFieldBuilder()
           .addBuilder(com.google.cloud.gkehub.v1.ResourceManifest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1560,6 +1598,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       return getMembershipResourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.gkehub.v1.ResourceManifest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1644,6 +1683,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return connectResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1668,6 +1708,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return connectResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1692,6 +1733,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return connectResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1723,6 +1765,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1751,6 +1794,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1825,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1812,6 +1857,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1886,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1868,6 +1915,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1896,6 +1944,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1972,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1950,6 +2000,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1971,6 +2022,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         int index) {
       return getConnectResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1996,6 +2048,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return connectResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2021,6 +2074,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(connectResources_);
       }
     }
+
     /**
      *
      *
@@ -2042,6 +2096,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       return getConnectResourcesFieldBuilder()
           .addBuilder(com.google.cloud.gkehub.v1.ResourceManifest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2064,6 +2119,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       return getConnectResourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.gkehub.v1.ResourceManifest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2112,6 +2168,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gkehub.v1.ResourceOptions.Builder,
             com.google.cloud.gkehub.v1.ResourceOptionsOrBuilder>
         resourceOptionsBuilder_;
+
     /**
      *
      *
@@ -2128,6 +2185,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     public boolean hasResourceOptions() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2150,6 +2208,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         return resourceOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2174,6 +2233,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2196,6 +2256,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2226,6 +2287,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2247,6 +2309,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2263,6 +2326,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getResourceOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2283,6 +2347,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
             : resourceOptions_;
       }
     }
+
     /**
      *
      *

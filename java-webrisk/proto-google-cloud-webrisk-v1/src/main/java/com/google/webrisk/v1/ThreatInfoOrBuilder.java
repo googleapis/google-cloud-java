@@ -36,6 +36,7 @@ public interface ThreatInfoOrBuilder
    * @return The enum numeric value on the wire for abuseType.
    */
   int getAbuseTypeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ThreatInfoOrBuilder
    * @return Whether the threatConfidence field is set.
    */
   boolean hasThreatConfidence();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ThreatInfoOrBuilder
    * @return The threatConfidence.
    */
   com.google.webrisk.v1.ThreatInfo.Confidence getThreatConfidence();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ThreatInfoOrBuilder
    * @return Whether the threatJustification field is set.
    */
   boolean hasThreatJustification();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ThreatInfoOrBuilder
    * @return The threatJustification.
    */
   com.google.webrisk.v1.ThreatInfo.ThreatJustification getThreatJustification();
+
   /**
    *
    *

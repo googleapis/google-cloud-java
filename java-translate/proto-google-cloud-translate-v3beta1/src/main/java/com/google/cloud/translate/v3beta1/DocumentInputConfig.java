@@ -33,6 +33,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.DocumentInputConfig)
     DocumentInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentInputConfig.newBuilder() to construct.
   private DocumentInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
   public boolean hasContent() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.translate.v3beta1.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -469,6 +478,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -722,6 +732,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     public boolean hasContent() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -739,6 +750,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -760,6 +772,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +798,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.translate.v3beta1.GcsSource.Builder,
             com.google.cloud.translate.v3beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -827,6 +842,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
         return com.google.cloud.translate.v3beta1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -850,6 +866,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +888,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +963,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.translate.v3beta1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -964,6 +985,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
         return com.google.cloud.translate.v3beta1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -999,6 +1021,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -1030,6 +1053,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1085,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1091,6 +1116,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1143,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

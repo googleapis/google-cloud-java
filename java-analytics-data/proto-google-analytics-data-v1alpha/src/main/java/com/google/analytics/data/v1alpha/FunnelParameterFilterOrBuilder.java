@@ -42,6 +42,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return Whether the eventParameterName field is set.
    */
   boolean hasEventParameterName();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return The eventParameterName.
    */
   java.lang.String getEventParameterName();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return Whether the itemParameterName field is set.
    */
   boolean hasItemParameterName();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return The itemParameterName.
    */
   java.lang.String getItemParameterName();
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return Whether the stringFilter field is set.
    */
   boolean hasStringFilter();
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return The stringFilter.
    */
   com.google.analytics.data.v1alpha.StringFilter getStringFilter();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return Whether the inListFilter field is set.
    */
   boolean hasInListFilter();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return The inListFilter.
    */
   com.google.analytics.data.v1alpha.InListFilter getInListFilter();
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return Whether the numericFilter field is set.
    */
   boolean hasNumericFilter();
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return The numericFilter.
    */
   com.google.analytics.data.v1alpha.NumericFilter getNumericFilter();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return Whether the betweenFilter field is set.
    */
   boolean hasBetweenFilter();
+
   /**
    *
    *
@@ -278,6 +289,7 @@ public interface FunnelParameterFilterOrBuilder
    * @return The betweenFilter.
    */
   com.google.analytics.data.v1alpha.BetweenFilter getBetweenFilter();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DeniedOrBuilder
    * @return Whether the iPProtocol field is set.
    */
   boolean hasIPProtocol();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DeniedOrBuilder
    * @return The iPProtocol.
    */
   java.lang.String getIPProtocol();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DeniedOrBuilder
    * @return A list containing the ports.
    */
   java.util.List<java.lang.String> getPortsList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface DeniedOrBuilder
    * @return The count of ports.
    */
   int getPortsCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface DeniedOrBuilder
    * @return The ports at the given index.
    */
   java.lang.String getPorts(int index);
+
   /**
    *
    *

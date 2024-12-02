@@ -36,6 +36,7 @@ public interface OcrConfigOrBuilder
    * @return Whether the hints field is set.
    */
   boolean hasHints();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OcrConfigOrBuilder
    * @return The hints.
    */
   com.google.cloud.documentai.v1beta3.OcrConfig.Hints getHints();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface OcrConfigOrBuilder
    * @return A list containing the advancedOcrOptions.
    */
   java.util.List<java.lang.String> getAdvancedOcrOptionsList();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface OcrConfigOrBuilder
    * @return The count of advancedOcrOptions.
    */
   int getAdvancedOcrOptionsCount();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface OcrConfigOrBuilder
    * @return The advancedOcrOptions at the given index.
    */
   java.lang.String getAdvancedOcrOptions(int index);
+
   /**
    *
    *
@@ -221,6 +226,7 @@ public interface OcrConfigOrBuilder
    * @return Whether the premiumFeatures field is set.
    */
   boolean hasPremiumFeatures();
+
   /**
    *
    *
@@ -233,6 +239,7 @@ public interface OcrConfigOrBuilder
    * @return The premiumFeatures.
    */
   com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures getPremiumFeatures();
+
   /**
    *
    *

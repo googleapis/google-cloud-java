@@ -34,6 +34,7 @@ public interface ListGiVersionsResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.GiVersion gi_versions = 1;</code>
    */
   java.util.List<com.google.cloud.oracledatabase.v1.GiVersion> getGiVersionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListGiVersionsResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.GiVersion gi_versions = 1;</code>
    */
   com.google.cloud.oracledatabase.v1.GiVersion getGiVersions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListGiVersionsResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.GiVersion gi_versions = 1;</code>
    */
   int getGiVersionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListGiVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.GiVersionOrBuilder>
       getGiVersionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListGiVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

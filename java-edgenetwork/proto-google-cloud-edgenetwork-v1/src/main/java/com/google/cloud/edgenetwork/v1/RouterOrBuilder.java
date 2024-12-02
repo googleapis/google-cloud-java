@@ -36,6 +36,7 @@ public interface RouterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RouterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface RouterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface RouterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface RouterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface RouterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -145,9 +151,11 @@ public interface RouterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface RouterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -172,6 +181,7 @@ public interface RouterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -196,6 +206,7 @@ public interface RouterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface RouterOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -253,6 +265,7 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router.Interface interface = 7;</code>
    */
   java.util.List<com.google.cloud.edgenetwork.v1.Router.Interface> getInterfaceList();
+
   /**
    *
    *
@@ -263,6 +276,7 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router.Interface interface = 7;</code>
    */
   com.google.cloud.edgenetwork.v1.Router.Interface getInterface(int index);
+
   /**
    *
    *
@@ -273,6 +287,7 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router.Interface interface = 7;</code>
    */
   int getInterfaceCount();
+
   /**
    *
    *
@@ -284,6 +299,7 @@ public interface RouterOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgenetwork.v1.Router.InterfaceOrBuilder>
       getInterfaceOrBuilderList();
+
   /**
    *
    *
@@ -305,6 +321,7 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router.BgpPeer bgp_peer = 8;</code>
    */
   java.util.List<com.google.cloud.edgenetwork.v1.Router.BgpPeer> getBgpPeerList();
+
   /**
    *
    *
@@ -315,6 +332,7 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router.BgpPeer bgp_peer = 8;</code>
    */
   com.google.cloud.edgenetwork.v1.Router.BgpPeer getBgpPeer(int index);
+
   /**
    *
    *
@@ -325,6 +343,7 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.Router.BgpPeer bgp_peer = 8;</code>
    */
   int getBgpPeerCount();
+
   /**
    *
    *
@@ -336,6 +355,7 @@ public interface RouterOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgenetwork.v1.Router.BgpPeerOrBuilder>
       getBgpPeerOrBuilderList();
+
   /**
    *
    *
@@ -359,6 +379,7 @@ public interface RouterOrBuilder
    * @return Whether the bgp field is set.
    */
   boolean hasBgp();
+
   /**
    *
    *
@@ -371,6 +392,7 @@ public interface RouterOrBuilder
    * @return The bgp.
    */
   com.google.cloud.edgenetwork.v1.Router.Bgp getBgp();
+
   /**
    *
    *
@@ -396,6 +418,7 @@ public interface RouterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -425,6 +448,7 @@ public interface RouterOrBuilder
    * @return A list containing the routeAdvertisements.
    */
   java.util.List<java.lang.String> getRouteAdvertisementsList();
+
   /**
    *
    *
@@ -439,6 +463,7 @@ public interface RouterOrBuilder
    * @return The count of routeAdvertisements.
    */
   int getRouteAdvertisementsCount();
+
   /**
    *
    *
@@ -454,6 +479,7 @@ public interface RouterOrBuilder
    * @return The routeAdvertisements at the given index.
    */
   java.lang.String getRouteAdvertisements(int index);
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    * @return Whether the tensorboardExperiment field is set.
    */
   boolean hasTensorboardExperiment();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    * @return The tensorboardExperiment.
    */
   com.google.cloud.aiplatform.v1.TensorboardExperiment getTensorboardExperiment();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    * @return The tensorboardExperimentId.
    */
   java.lang.String getTensorboardExperimentId();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface UpdateTableSpecRequestOrBuilder
    * @return Whether the tableSpec field is set.
    */
   boolean hasTableSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateTableSpecRequestOrBuilder
    * @return The tableSpec.
    */
   com.google.cloud.automl.v1beta1.TableSpec getTableSpec();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateTableSpecRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateTableSpecRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

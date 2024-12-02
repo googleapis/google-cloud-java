@@ -36,6 +36,7 @@ public interface RetrieveContextsResponseOrBuilder
    * @return Whether the contexts field is set.
    */
   boolean hasContexts();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RetrieveContextsResponseOrBuilder
    * @return The contexts.
    */
   com.google.cloud.aiplatform.v1beta1.RagContexts getContexts();
+
   /**
    *
    *

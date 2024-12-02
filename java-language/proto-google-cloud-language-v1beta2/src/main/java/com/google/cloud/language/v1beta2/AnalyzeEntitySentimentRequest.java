@@ -33,6 +33,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest)
     AnalyzeEntitySentimentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeEntitySentimentRequest.newBuilder() to construct.
   private AnalyzeEntitySentimentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v1beta2.Document document_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
         ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
         : document_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
 
   public static final int ENCODING_TYPE_FIELD_NUMBER = 2;
   private int encodingType_ = 0;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
   public int getEncodingTypeValue() {
     return encodingType_;
   }
+
   /**
    *
    *
@@ -329,6 +335,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -549,6 +556,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
             com.google.cloud.language.v1beta2.Document.Builder,
             com.google.cloud.language.v1beta2.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -565,6 +573,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +673,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +712,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
             : document_;
       }
     }
+
     /**
      *
      *
@@ -747,6 +763,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
     }
 
     private int encodingType_ = 0;
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
     public int getEncodingTypeValue() {
       return encodingType_;
     }
+
     /**
      *
      *
@@ -780,6 +798,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
           com.google.cloud.language.v1beta2.EncodingType.forNumber(encodingType_);
       return result == null ? com.google.cloud.language.v1beta2.EncodingType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -818,6 +838,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

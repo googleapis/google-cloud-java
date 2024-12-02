@@ -37,6 +37,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The returnPolicyId.
    */
   java.lang.String getReturnPolicyId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return A list containing the countries.
    */
   java.util.List<java.lang.String> getCountriesList();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The count of countries.
    */
   int getCountriesCount();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The countries at the given index.
    */
   java.lang.String getCountries(int index);
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The policy.
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy getPolicy();
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return Whether the restockingFee field is set.
    */
   boolean hasRestockingFee();
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The restockingFee.
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee getRestockingFee();
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public interface OnlineReturnPolicyOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod>
       getReturnMethodsList();
+
   /**
    *
    *
@@ -282,6 +293,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The count of returnMethods.
    */
   int getReturnMethodsCount();
+
   /**
    *
    *
@@ -299,6 +311,7 @@ public interface OnlineReturnPolicyOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod getReturnMethods(
       int index);
+
   /**
    *
    *
@@ -314,6 +327,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return A list containing the enum numeric values on the wire for returnMethods.
    */
   java.util.List<java.lang.Integer> getReturnMethodsValueList();
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public interface OnlineReturnPolicyOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition>
       getItemConditionsList();
+
   /**
    *
    *
@@ -362,6 +377,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The count of itemConditions.
    */
   int getItemConditionsCount();
+
   /**
    *
    *
@@ -379,6 +395,7 @@ public interface OnlineReturnPolicyOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition getItemConditions(
       int index);
+
   /**
    *
    *
@@ -394,6 +411,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return A list containing the enum numeric values on the wire for itemConditions.
    */
   java.util.List<java.lang.Integer> getItemConditionsValueList();
+
   /**
    *
    *
@@ -426,6 +444,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return Whether the returnShippingFee field is set.
    */
   boolean hasReturnShippingFee();
+
   /**
    *
    *
@@ -442,6 +461,7 @@ public interface OnlineReturnPolicyOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee
       getReturnShippingFee();
+
   /**
    *
    *
@@ -470,6 +490,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The returnPolicyUri.
    */
   java.lang.String getReturnPolicyUri();
+
   /**
    *
    *
@@ -497,6 +518,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return Whether the acceptDefectiveOnly field is set.
    */
   boolean hasAcceptDefectiveOnly();
+
   /**
    *
    *
@@ -524,6 +546,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return Whether the processRefundDays field is set.
    */
   boolean hasProcessRefundDays();
+
   /**
    *
    *
@@ -551,6 +574,7 @@ public interface OnlineReturnPolicyOrBuilder
    * @return Whether the acceptExchange field is set.
    */
   boolean hasAcceptExchange();
+
   /**
    *
    *

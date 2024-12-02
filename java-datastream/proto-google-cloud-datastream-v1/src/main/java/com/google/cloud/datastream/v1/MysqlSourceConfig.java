@@ -33,6 +33,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.MysqlSourceConfig)
     MysqlSourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MysqlSourceConfig.newBuilder() to construct.
   private MysqlSourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int INCLUDE_OBJECTS_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1.MysqlRdbms includeObjects_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasIncludeObjects() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datastream.v1.MysqlRdbms.getDefaultInstance()
         : includeObjects_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int EXCLUDE_OBJECTS_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1.MysqlRdbms excludeObjects_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasExcludeObjects() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datastream.v1.MysqlRdbms.getDefaultInstance()
         : excludeObjects_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int MAX_CONCURRENT_CDC_TASKS_FIELD_NUMBER = 3;
   private int maxConcurrentCdcTasks_ = 0;
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER = 4;
   private int maxConcurrentBackfillTasks_ = 0;
+
   /**
    *
    *
@@ -398,6 +407,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +658,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.MysqlRdbms.Builder,
             com.google.cloud.datastream.v1.MysqlRdbmsOrBuilder>
         includeObjectsBuilder_;
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasIncludeObjects() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         return includeObjectsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +738,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +766,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +801,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getIncludeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -802,6 +820,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             : includeObjects_;
       }
     }
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.MysqlRdbms.Builder,
             com.google.cloud.datastream.v1.MysqlRdbmsOrBuilder>
         excludeObjectsBuilder_;
+
     /**
      *
      *
@@ -848,6 +868,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasExcludeObjects() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -868,6 +889,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         return excludeObjectsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +933,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +961,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +981,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +996,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getExcludeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -988,6 +1015,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             : excludeObjects_;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1043,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int maxConcurrentCdcTasks_;
+
     /**
      *
      *
@@ -1031,6 +1060,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     public int getMaxConcurrentCdcTasks() {
       return maxConcurrentCdcTasks_;
     }
+
     /**
      *
      *
@@ -1051,6 +1081,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1102,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int maxConcurrentBackfillTasks_;
+
     /**
      *
      *
@@ -1088,6 +1120,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     public int getMaxConcurrentBackfillTasks() {
       return maxConcurrentBackfillTasks_;
     }
+
     /**
      *
      *
@@ -1109,6 +1142,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

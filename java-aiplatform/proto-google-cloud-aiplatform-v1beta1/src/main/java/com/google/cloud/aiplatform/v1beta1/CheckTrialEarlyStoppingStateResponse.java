@@ -35,6 +35,7 @@ public final class CheckTrialEarlyStoppingStateResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse)
     CheckTrialEarlyStoppingStateResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckTrialEarlyStoppingStateResponse.newBuilder() to construct.
   private CheckTrialEarlyStoppingStateResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class CheckTrialEarlyStoppingStateResponse
 
   public static final int SHOULD_STOP_FIELD_NUMBER = 1;
   private boolean shouldStop_ = false;
+
   /**
    *
    *
@@ -244,6 +246,7 @@ public final class CheckTrialEarlyStoppingStateResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -437,6 +440,7 @@ public final class CheckTrialEarlyStoppingStateResponse
     private int bitField0_;
 
     private boolean shouldStop_;
+
     /**
      *
      *
@@ -452,6 +456,7 @@ public final class CheckTrialEarlyStoppingStateResponse
     public boolean getShouldStop() {
       return shouldStop_;
     }
+
     /**
      *
      *
@@ -471,6 +476,7 @@ public final class CheckTrialEarlyStoppingStateResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

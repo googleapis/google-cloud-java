@@ -51,6 +51,7 @@ public interface DeleteMembershipRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

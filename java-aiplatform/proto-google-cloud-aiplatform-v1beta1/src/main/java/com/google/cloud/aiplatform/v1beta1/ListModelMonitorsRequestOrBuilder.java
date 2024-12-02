@@ -39,6 +39,7 @@ public interface ListModelMonitorsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ListModelMonitorsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface ListModelMonitorsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface ListModelMonitorsRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface ListModelMonitorsRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
+
   /**
    *
    *

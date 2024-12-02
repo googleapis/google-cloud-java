@@ -39,6 +39,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface SubscriptionOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface SubscriptionOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface SubscriptionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface SubscriptionOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface SubscriptionOrBuilder
    * @return The targetResource.
    */
   java.lang.String getTargetResource();
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public interface SubscriptionOrBuilder
    * @return A list containing the eventTypes.
    */
   java.util.List<java.lang.String> getEventTypesList();
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public interface SubscriptionOrBuilder
    * @return The count of eventTypes.
    */
   int getEventTypesCount();
+
   /**
    *
    *
@@ -293,6 +302,7 @@ public interface SubscriptionOrBuilder
    * @return The eventTypes at the given index.
    */
   java.lang.String getEventTypes(int index);
+
   /**
    *
    *
@@ -337,6 +347,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the payloadOptions field is set.
    */
   boolean hasPayloadOptions();
+
   /**
    *
    *
@@ -352,6 +363,7 @@ public interface SubscriptionOrBuilder
    * @return The payloadOptions.
    */
   com.google.apps.events.subscriptions.v1.PayloadOptions getPayloadOptions();
+
   /**
    *
    *
@@ -381,6 +393,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the notificationEndpoint field is set.
    */
   boolean hasNotificationEndpoint();
+
   /**
    *
    *
@@ -396,6 +409,7 @@ public interface SubscriptionOrBuilder
    * @return The notificationEndpoint.
    */
   com.google.apps.events.subscriptions.v1.NotificationEndpoint getNotificationEndpoint();
+
   /**
    *
    *
@@ -427,6 +441,7 @@ public interface SubscriptionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -462,6 +477,7 @@ public interface SubscriptionOrBuilder
    * @return The enum numeric value on the wire for suspensionReason.
    */
   int getSuspensionReasonValue();
+
   /**
    *
    *
@@ -502,6 +518,7 @@ public interface SubscriptionOrBuilder
    * @return The authority.
    */
   java.lang.String getAuthority();
+
   /**
    *
    *
@@ -537,6 +554,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -550,6 +568,7 @@ public interface SubscriptionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -575,6 +594,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -588,6 +608,7 @@ public interface SubscriptionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -628,6 +649,7 @@ public interface SubscriptionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

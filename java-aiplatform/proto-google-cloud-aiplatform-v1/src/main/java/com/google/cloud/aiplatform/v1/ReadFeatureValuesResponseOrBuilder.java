@@ -36,6 +36,7 @@ public interface ReadFeatureValuesResponseOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReadFeatureValuesResponseOrBuilder
    * @return The header.
    */
   com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header getHeader();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ReadFeatureValuesResponseOrBuilder
    * @return Whether the entityView field is set.
    */
   boolean hasEntityView();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ReadFeatureValuesResponseOrBuilder
    * @return The entityView.
    */
   com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView getEntityView();
+
   /**
    *
    *

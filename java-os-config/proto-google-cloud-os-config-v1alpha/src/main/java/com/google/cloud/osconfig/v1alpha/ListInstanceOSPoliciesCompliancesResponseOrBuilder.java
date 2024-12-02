@@ -38,6 +38,7 @@ public interface ListInstanceOSPoliciesCompliancesResponseOrBuilder
    */
   java.util.List<com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance>
       getInstanceOsPoliciesCompliancesList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface ListInstanceOSPoliciesCompliancesResponseOrBuilder
    */
   com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance getInstanceOsPoliciesCompliances(
       int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface ListInstanceOSPoliciesCompliancesResponseOrBuilder
    * </code>
    */
   int getInstanceOsPoliciesCompliancesCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface ListInstanceOSPoliciesCompliancesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesComplianceOrBuilder>
       getInstanceOsPoliciesCompliancesOrBuilderList();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface ListInstanceOSPoliciesCompliancesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

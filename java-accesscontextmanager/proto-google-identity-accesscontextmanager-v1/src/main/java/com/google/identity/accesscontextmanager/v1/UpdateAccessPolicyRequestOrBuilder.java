@@ -38,6 +38,7 @@ public interface UpdateAccessPolicyRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateAccessPolicyRequestOrBuilder
    * @return The policy.
    */
   com.google.identity.accesscontextmanager.v1.AccessPolicy getPolicy();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateAccessPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateAccessPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

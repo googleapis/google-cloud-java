@@ -37,6 +37,7 @@ public interface EntitlementEventOrBuilder
    * @return The entitlement.
    */
   java.lang.String getEntitlement();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface EntitlementEventOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface StringStatsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.automl.v1beta1.StringStats.UnigramStats> getTopUnigramStatsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StringStatsOrBuilder
    * </code>
    */
   com.google.cloud.automl.v1beta1.StringStats.UnigramStats getTopUnigramStats(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface StringStatsOrBuilder
    * </code>
    */
   int getTopUnigramStatsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface StringStatsOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.StringStats.UnigramStatsOrBuilder>
       getTopUnigramStatsOrBuilderList();
+
   /**
    *
    *

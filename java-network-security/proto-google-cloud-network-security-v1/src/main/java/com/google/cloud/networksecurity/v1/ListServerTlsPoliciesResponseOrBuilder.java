@@ -34,6 +34,7 @@ public interface ListServerTlsPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.networksecurity.v1.ServerTlsPolicy server_tls_policies = 1;</code>
    */
   java.util.List<com.google.cloud.networksecurity.v1.ServerTlsPolicy> getServerTlsPoliciesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListServerTlsPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.networksecurity.v1.ServerTlsPolicy server_tls_policies = 1;</code>
    */
   com.google.cloud.networksecurity.v1.ServerTlsPolicy getServerTlsPolicies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListServerTlsPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.networksecurity.v1.ServerTlsPolicy server_tls_policies = 1;</code>
    */
   int getServerTlsPoliciesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListServerTlsPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networksecurity.v1.ServerTlsPolicyOrBuilder>
       getServerTlsPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListServerTlsPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

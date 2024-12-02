@@ -38,6 +38,7 @@ public interface DeleteConnectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface DeleteConnectionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -133,6 +135,7 @@ public interface DeleteConnectionRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

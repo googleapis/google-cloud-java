@@ -39,6 +39,7 @@ public interface CreateToolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateToolRequestOrBuilder
    * @return Whether the tool field is set.
    */
   boolean hasTool();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateToolRequestOrBuilder
    * @return The tool.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool getTool();
+
   /**
    *
    *

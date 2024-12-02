@@ -36,6 +36,7 @@ public interface AttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface AttachmentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface AttachmentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface AttachmentOrBuilder
    * @return Whether the creator field is set.
    */
   boolean hasCreator();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface AttachmentOrBuilder
    * @return The creator.
    */
   com.google.cloud.support.v2.Actor getCreator();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface AttachmentOrBuilder
    * @return The filename.
    */
   java.lang.String getFilename();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface AttachmentOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

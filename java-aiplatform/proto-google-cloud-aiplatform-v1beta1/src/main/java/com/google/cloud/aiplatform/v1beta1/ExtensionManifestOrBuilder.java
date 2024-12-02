@@ -37,6 +37,7 @@ public interface ExtensionManifestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ExtensionManifestOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface ExtensionManifestOrBuilder
    * @return Whether the apiSpec field is set.
    */
   boolean hasApiSpec();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ExtensionManifestOrBuilder
    * @return The apiSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ExtensionManifest.ApiSpec getApiSpec();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface ExtensionManifestOrBuilder
    * @return Whether the authConfig field is set.
    */
   boolean hasAuthConfig();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface ExtensionManifestOrBuilder
    * @return The authConfig.
    */
   com.google.cloud.aiplatform.v1beta1.AuthConfig getAuthConfig();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public interface PreservedStateOrBuilder
    * </code>
    */
   int getDisksCount();
+
   /**
    *
    *
@@ -46,10 +47,12 @@ public interface PreservedStateOrBuilder
    * </code>
    */
   boolean containsDisks(java.lang.String key);
+
   /** Use {@link #getDisksMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk>
       getDisks();
+
   /**
    *
    *
@@ -62,6 +65,7 @@ public interface PreservedStateOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk>
       getDisksMap();
+
   /**
    *
    *
@@ -77,6 +81,7 @@ public interface PreservedStateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.PreservedStatePreservedDisk defaultValue);
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface PreservedStateOrBuilder
    * </code>
    */
   int getExternalIPsCount();
+
   /**
    *
    *
@@ -113,10 +119,12 @@ public interface PreservedStateOrBuilder
    * </code>
    */
   boolean containsExternalIPs(java.lang.String key);
+
   /** Use {@link #getExternalIPsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
       getExternalIPs();
+
   /**
    *
    *
@@ -130,6 +138,7 @@ public interface PreservedStateOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
       getExternalIPsMap();
+
   /**
    *
    *
@@ -146,6 +155,7 @@ public interface PreservedStateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp defaultValue);
+
   /**
    *
    *
@@ -172,6 +182,7 @@ public interface PreservedStateOrBuilder
    * </code>
    */
   int getInternalIPsCount();
+
   /**
    *
    *
@@ -184,10 +195,12 @@ public interface PreservedStateOrBuilder
    * </code>
    */
   boolean containsInternalIPs(java.lang.String key);
+
   /** Use {@link #getInternalIPsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
       getInternalIPs();
+
   /**
    *
    *
@@ -201,6 +214,7 @@ public interface PreservedStateOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
       getInternalIPsMap();
+
   /**
    *
    *
@@ -217,6 +231,7 @@ public interface PreservedStateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp defaultValue);
+
   /**
    *
    *
@@ -241,6 +256,7 @@ public interface PreservedStateOrBuilder
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -251,9 +267,11 @@ public interface PreservedStateOrBuilder
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -264,6 +282,7 @@ public interface PreservedStateOrBuilder
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -278,6 +297,7 @@ public interface PreservedStateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

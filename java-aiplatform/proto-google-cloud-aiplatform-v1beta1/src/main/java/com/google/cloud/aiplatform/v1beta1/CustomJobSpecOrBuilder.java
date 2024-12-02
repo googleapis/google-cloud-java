@@ -44,6 +44,7 @@ public interface CustomJobSpecOrBuilder
    * @return The persistentResourceId.
    */
   java.lang.String getPersistentResourceId();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface CustomJobSpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec> getWorkerPoolSpecsList();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CustomJobSpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec getWorkerPoolSpecs(int index);
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface CustomJobSpecOrBuilder
    * </code>
    */
   int getWorkerPoolSpecsCount();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface CustomJobSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.WorkerPoolSpecOrBuilder>
       getWorkerPoolSpecsOrBuilderList();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface CustomJobSpecOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface CustomJobSpecOrBuilder
    * @return The scheduling.
    */
   com.google.cloud.aiplatform.v1beta1.Scheduling getScheduling();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface CustomJobSpecOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface CustomJobSpecOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -278,6 +287,7 @@ public interface CustomJobSpecOrBuilder
    * @return A list containing the reservedIpRanges.
    */
   java.util.List<java.lang.String> getReservedIpRangesList();
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public interface CustomJobSpecOrBuilder
    * @return The count of reservedIpRanges.
    */
   int getReservedIpRangesCount();
+
   /**
    *
    *
@@ -317,6 +328,7 @@ public interface CustomJobSpecOrBuilder
    * @return The reservedIpRanges at the given index.
    */
   java.lang.String getReservedIpRanges(int index);
+
   /**
    *
    *
@@ -352,6 +364,7 @@ public interface CustomJobSpecOrBuilder
    * @return Whether the pscInterfaceConfig field is set.
    */
   boolean hasPscInterfaceConfig();
+
   /**
    *
    *
@@ -366,6 +379,7 @@ public interface CustomJobSpecOrBuilder
    * @return The pscInterfaceConfig.
    */
   com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig getPscInterfaceConfig();
+
   /**
    *
    *
@@ -411,6 +425,7 @@ public interface CustomJobSpecOrBuilder
    * @return Whether the baseOutputDirectory field is set.
    */
   boolean hasBaseOutputDirectory();
+
   /**
    *
    *
@@ -443,6 +458,7 @@ public interface CustomJobSpecOrBuilder
    * @return The baseOutputDirectory.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getBaseOutputDirectory();
+
   /**
    *
    *
@@ -489,6 +505,7 @@ public interface CustomJobSpecOrBuilder
    * @return The protectedArtifactLocationId.
    */
   java.lang.String getProtectedArtifactLocationId();
+
   /**
    *
    *
@@ -522,6 +539,7 @@ public interface CustomJobSpecOrBuilder
    * @return The tensorboard.
    */
   java.lang.String getTensorboard();
+
   /**
    *
    *
@@ -601,6 +619,7 @@ public interface CustomJobSpecOrBuilder
    * @return The experiment.
    */
   java.lang.String getExperiment();
+
   /**
    *
    *
@@ -634,6 +653,7 @@ public interface CustomJobSpecOrBuilder
    * @return The experimentRun.
    */
   java.lang.String getExperimentRun();
+
   /**
    *
    *
@@ -677,6 +697,7 @@ public interface CustomJobSpecOrBuilder
    * @return A list containing the models.
    */
   java.util.List<java.lang.String> getModelsList();
+
   /**
    *
    *
@@ -703,6 +724,7 @@ public interface CustomJobSpecOrBuilder
    * @return The count of models.
    */
   int getModelsCount();
+
   /**
    *
    *
@@ -730,6 +752,7 @@ public interface CustomJobSpecOrBuilder
    * @return The models at the given index.
    */
   java.lang.String getModels(int index);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return Whether the enableNestedVirtualization field is set.
    */
   boolean hasEnableNestedVirtualization();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return Whether the threadsPerCore field is set.
    */
   boolean hasThreadsPerCore();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return Whether the visibleCoreCount field is set.
    */
   boolean hasVisibleCoreCount();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return Whether the enableUefiNetworking field is set.
    */
   boolean hasEnableUefiNetworking();
+
   /**
    *
    *

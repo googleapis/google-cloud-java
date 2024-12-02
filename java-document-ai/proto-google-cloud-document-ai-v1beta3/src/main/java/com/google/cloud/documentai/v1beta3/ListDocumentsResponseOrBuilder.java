@@ -34,6 +34,7 @@ public interface ListDocumentsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.DocumentMetadata document_metadata = 1;</code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.DocumentMetadata> getDocumentMetadataList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDocumentsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.DocumentMetadata document_metadata = 1;</code>
    */
   com.google.cloud.documentai.v1beta3.DocumentMetadata getDocumentMetadata(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDocumentsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.DocumentMetadata document_metadata = 1;</code>
    */
   int getDocumentMetadataCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDocumentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.DocumentMetadataOrBuilder>
       getDocumentMetadataOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListDocumentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

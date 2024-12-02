@@ -33,6 +33,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.GetTaskRequest)
     GetTaskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetTaskRequest.newBuilder() to construct.
   private GetTaskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader header_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.getDefaultInstance()
         : header_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +360,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -572,6 +579,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.Builder,
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeaderOrBuilder>
         headerBuilder_;
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
         return headerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -747,6 +762,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
             : header_;
       }
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

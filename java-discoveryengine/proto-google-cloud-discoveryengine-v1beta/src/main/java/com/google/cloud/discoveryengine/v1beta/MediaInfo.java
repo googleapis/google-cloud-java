@@ -33,6 +33,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.MediaInfo)
     MediaInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MediaInfo.newBuilder() to construct.
   private MediaInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MEDIA_PROGRESS_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration mediaProgressDuration_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMediaProgressDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : mediaProgressDuration_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEDIA_PROGRESS_PERCENTAGE_FIELD_NUMBER = 2;
   private float mediaProgressPercentage_ = 0F;
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMediaProgressPercentage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -351,6 +357,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -572,6 +579,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         mediaProgressDurationBuilder_;
+
     /**
      *
      *
@@ -590,6 +598,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMediaProgressDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
         return mediaProgressDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMediaProgressDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
             : mediaProgressDuration_;
       }
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float mediaProgressPercentage_;
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMediaProgressPercentage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     public float getMediaProgressPercentage() {
       return mediaProgressPercentage_;
     }
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface ProductDetailOrBuilder
    * @return The sectionName.
    */
   java.lang.String getSectionName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ProductDetailOrBuilder
    * @return The attributeName.
    */
   java.lang.String getAttributeName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ProductDetailOrBuilder
    * @return The attributeValue.
    */
   java.lang.String getAttributeValue();
+
   /**
    *
    *

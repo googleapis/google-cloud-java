@@ -40,6 +40,7 @@ public interface DecryptRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -117,6 +118,7 @@ public interface DecryptRequestOrBuilder
    * @return Whether the ciphertextCrc32c field is set.
    */
   boolean hasCiphertextCrc32C();
+
   /**
    *
    *
@@ -149,6 +151,7 @@ public interface DecryptRequestOrBuilder
    * @return The ciphertextCrc32c.
    */
   com.google.protobuf.Int64Value getCiphertextCrc32C();
+
   /**
    *
    *
@@ -212,6 +215,7 @@ public interface DecryptRequestOrBuilder
    * @return Whether the additionalAuthenticatedDataCrc32c field is set.
    */
   boolean hasAdditionalAuthenticatedDataCrc32C();
+
   /**
    *
    *
@@ -244,6 +248,7 @@ public interface DecryptRequestOrBuilder
    * @return The additionalAuthenticatedDataCrc32c.
    */
   com.google.protobuf.Int64Value getAdditionalAuthenticatedDataCrc32C();
+
   /**
    *
    *

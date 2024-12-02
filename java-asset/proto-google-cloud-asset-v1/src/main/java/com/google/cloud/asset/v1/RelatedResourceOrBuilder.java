@@ -36,6 +36,7 @@ public interface RelatedResourceOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RelatedResourceOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
+
   /**
    *
    *

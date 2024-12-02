@@ -35,6 +35,7 @@ public final class VideoClassificationPredictionParams
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.params.VideoClassificationPredictionParams)
     VideoClassificationPredictionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoClassificationPredictionParams.newBuilder() to construct.
   private VideoClassificationPredictionParams(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class VideoClassificationPredictionParams
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
   private float confidenceThreshold_ = 0F;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class VideoClassificationPredictionParams
 
   public static final int MAX_PREDICTIONS_FIELD_NUMBER = 2;
   private int maxPredictions_ = 0;
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class VideoClassificationPredictionParams
 
   public static final int SEGMENT_CLASSIFICATION_FIELD_NUMBER = 3;
   private boolean segmentClassification_ = false;
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class VideoClassificationPredictionParams
 
   public static final int SHOT_CLASSIFICATION_FIELD_NUMBER = 4;
   private boolean shotClassification_ = false;
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class VideoClassificationPredictionParams
 
   public static final int ONE_SEC_INTERVAL_CLASSIFICATION_FIELD_NUMBER = 5;
   private boolean oneSecIntervalClassification_ = false;
+
   /**
    *
    *
@@ -398,6 +404,7 @@ public final class VideoClassificationPredictionParams
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -658,6 +665,7 @@ public final class VideoClassificationPredictionParams
     private int bitField0_;
 
     private float confidenceThreshold_;
+
     /**
      *
      *
@@ -674,6 +682,7 @@ public final class VideoClassificationPredictionParams
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
+
     /**
      *
      *
@@ -694,6 +703,7 @@ public final class VideoClassificationPredictionParams
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class VideoClassificationPredictionParams
     }
 
     private int maxPredictions_;
+
     /**
      *
      *
@@ -731,6 +742,7 @@ public final class VideoClassificationPredictionParams
     public int getMaxPredictions() {
       return maxPredictions_;
     }
+
     /**
      *
      *
@@ -752,6 +764,7 @@ public final class VideoClassificationPredictionParams
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +786,7 @@ public final class VideoClassificationPredictionParams
     }
 
     private boolean segmentClassification_;
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class VideoClassificationPredictionParams
     public boolean getSegmentClassification() {
       return segmentClassification_;
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class VideoClassificationPredictionParams
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class VideoClassificationPredictionParams
     }
 
     private boolean shotClassification_;
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class VideoClassificationPredictionParams
     public boolean getShotClassification() {
       return shotClassification_;
     }
+
     /**
      *
      *
@@ -885,6 +903,7 @@ public final class VideoClassificationPredictionParams
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +931,7 @@ public final class VideoClassificationPredictionParams
     }
 
     private boolean oneSecIntervalClassification_;
+
     /**
      *
      *
@@ -932,6 +952,7 @@ public final class VideoClassificationPredictionParams
     public boolean getOneSecIntervalClassification() {
       return oneSecIntervalClassification_;
     }
+
     /**
      *
      *
@@ -956,6 +977,7 @@ public final class VideoClassificationPredictionParams
       onChanged();
       return this;
     }
+
     /**
      *
      *

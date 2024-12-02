@@ -34,6 +34,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse)
     ImportFlowResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportFlowResponse.newBuilder() to construct.
   private ImportFlowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object flow_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -279,6 +282,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -464,6 +468,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object flow_ = "";
+
     /**
      *
      *
@@ -488,6 +493,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -512,6 +518,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -535,6 +542,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -554,6 +562,7 @@ public final class ImportFlowResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

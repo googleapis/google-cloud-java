@@ -45,6 +45,7 @@ public interface GeocodeOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface GeocodeOrBuilder
    * @return The location.
    */
   com.google.type.LatLng getLocation();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface GeocodeOrBuilder
    * @return Whether the plusCode field is set.
    */
   boolean hasPlusCode();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface GeocodeOrBuilder
    * @return The plusCode.
    */
   com.google.maps.addressvalidation.v1.PlusCode getPlusCode();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface GeocodeOrBuilder
    * @return Whether the bounds field is set.
    */
   boolean hasBounds();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface GeocodeOrBuilder
    * @return The bounds.
    */
   com.google.geo.type.Viewport getBounds();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface GeocodeOrBuilder
    * @return The placeId.
    */
   java.lang.String getPlaceId();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface GeocodeOrBuilder
    * @return A list containing the placeTypes.
    */
   java.util.List<java.lang.String> getPlaceTypesList();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface GeocodeOrBuilder
    * @return The count of placeTypes.
    */
   int getPlaceTypesCount();
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public interface GeocodeOrBuilder
    * @return The placeTypes at the given index.
    */
   java.lang.String getPlaceTypes(int index);
+
   /**
    *
    *

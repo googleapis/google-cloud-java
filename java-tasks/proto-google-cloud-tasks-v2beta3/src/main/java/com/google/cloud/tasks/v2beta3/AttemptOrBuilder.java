@@ -38,6 +38,7 @@ public interface AttemptOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AttemptOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface AttemptOrBuilder
    * @return Whether the dispatchTime field is set.
    */
   boolean hasDispatchTime();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface AttemptOrBuilder
    * @return The dispatchTime.
    */
   com.google.protobuf.Timestamp getDispatchTime();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface AttemptOrBuilder
    * @return Whether the responseTime field is set.
    */
   boolean hasResponseTime();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface AttemptOrBuilder
    * @return The responseTime.
    */
   com.google.protobuf.Timestamp getResponseTime();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface AttemptOrBuilder
    * @return Whether the responseStatus field is set.
    */
   boolean hasResponseStatus();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface AttemptOrBuilder
    * @return The responseStatus.
    */
   com.google.rpc.Status getResponseStatus();
+
   /**
    *
    *

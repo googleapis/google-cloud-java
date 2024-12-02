@@ -37,6 +37,7 @@ public interface SourceProvenanceOrBuilder
    * @return Whether the resolvedStorageSource field is set.
    */
   boolean hasResolvedStorageSource();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SourceProvenanceOrBuilder
    * @return The resolvedStorageSource.
    */
   com.google.cloud.functions.v2alpha.StorageSource getResolvedStorageSource();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SourceProvenanceOrBuilder
    * @return Whether the resolvedRepoSource field is set.
    */
   boolean hasResolvedRepoSource();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface SourceProvenanceOrBuilder
    * @return The resolvedRepoSource.
    */
   com.google.cloud.functions.v2alpha.RepoSource getResolvedRepoSource();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface SourceProvenanceOrBuilder
    * @return The gitUri.
    */
   java.lang.String getGitUri();
+
   /**
    *
    *

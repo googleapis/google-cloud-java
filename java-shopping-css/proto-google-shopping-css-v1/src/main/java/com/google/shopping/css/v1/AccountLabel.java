@@ -33,6 +33,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.AccountLabel)
     AccountLabelOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccountLabel.newBuilder() to construct.
   private AccountLabel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
      * <code>LABEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LABEL_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
      * <code>MANUAL = 1;</code>
      */
     public static final int MANUAL_VALUE = 1;
+
     /**
      *
      *
@@ -228,6 +231,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -252,6 +256,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -279,6 +284,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LABEL_ID_FIELD_NUMBER = 2;
   private long labelId_ = 0L;
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCOUNT_ID_FIELD_NUMBER = 3;
   private long accountId_ = 0L;
+
   /**
    *
    *
@@ -317,6 +324,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -332,6 +340,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDisplayName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -355,6 +364,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -383,6 +393,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -398,6 +409,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -421,6 +433,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -447,6 +460,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LABEL_TYPE_FIELD_NUMBER = 6;
   private int labelType_ = 0;
+
   /**
    *
    *
@@ -464,6 +478,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
   public int getLabelTypeValue() {
     return labelType_;
   }
+
   /**
    *
    *
@@ -699,6 +714,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -955,6 +971,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -978,6 +995,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1019,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1042,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1061,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1087,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long labelId_;
+
     /**
      *
      *
@@ -1081,6 +1103,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     public long getLabelId() {
       return labelId_;
     }
+
     /**
      *
      *
@@ -1100,6 +1123,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1143,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long accountId_;
+
     /**
      *
      *
@@ -1134,6 +1159,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     public long getAccountId() {
       return accountId_;
     }
+
     /**
      *
      *
@@ -1153,6 +1179,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1199,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1186,6 +1214,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDisplayName() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1208,6 +1237,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1230,6 +1260,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1251,6 +1282,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1300,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1325,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1306,6 +1340,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1328,6 +1363,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1350,6 +1386,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1371,6 +1408,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1426,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1451,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int labelType_ = 0;
+
     /**
      *
      *
@@ -1429,6 +1469,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
     public int getLabelTypeValue() {
       return labelType_;
     }
+
     /**
      *
      *
@@ -1449,6 +1490,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1512,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.css.v1.AccountLabel.LabelType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1493,6 +1536,7 @@ public final class AccountLabel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

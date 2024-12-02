@@ -33,6 +33,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StageSummary)
     StageSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StageSummary.newBuilder() to construct.
   private StageSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stageId_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROGRESS_FIELD_NUMBER = 5;
   private com.google.dataflow.v1beta3.ProgressTimeseries progress_;
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProgress() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -289,6 +302,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.ProgressTimeseries.getDefaultInstance()
         : progress_;
   }
+
   /**
    *
    *
@@ -310,6 +324,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.MetricUpdate> metrics_;
+
   /**
    *
    *
@@ -323,6 +338,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.MetricUpdate> getMetricsList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -337,6 +353,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       getMetricsOrBuilderList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -350,6 +367,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public int getMetricsCount() {
     return metrics_.size();
   }
+
   /**
    *
    *
@@ -363,6 +381,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.MetricUpdate getMetrics(int index) {
     return metrics_.get(index);
   }
+
   /**
    *
    *
@@ -597,6 +616,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -921,6 +941,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object stageId_ = "";
+
     /**
      *
      *
@@ -943,6 +964,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -965,6 +987,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1052,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1042,6 +1068,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1060,6 +1087,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1105,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
           com.google.dataflow.v1beta3.ExecutionState.forNumber(state_);
       return result == null ? com.google.dataflow.v1beta3.ExecutionState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1098,6 +1127,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1152,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1136,6 +1167,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1154,6 +1186,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1209,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1229,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1222,6 +1257,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1277,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1292,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1271,6 +1309,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1342,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1320,6 +1360,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1341,6 +1382,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1366,6 +1408,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1431,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1418,6 +1462,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1485,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1503,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1476,6 +1523,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1559,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.ProgressTimeseries.Builder,
             com.google.dataflow.v1beta3.ProgressTimeseriesOrBuilder>
         progressBuilder_;
+
     /**
      *
      *
@@ -1526,6 +1575,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProgress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1547,6 +1597,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return progressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1570,6 +1621,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1643,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1672,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1693,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1709,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1673,6 +1729,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             : progress_;
       }
     }
+
     /**
      *
      *
@@ -1732,6 +1789,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1748,6 +1806,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1764,6 +1823,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1786,6 +1846,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1806,6 +1867,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1828,6 +1890,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +1913,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1933,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1889,6 +1954,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1909,6 +1975,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1928,6 +1995,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +2015,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1959,6 +2028,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.MetricUpdate.Builder getMetricsBuilder(int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1975,6 +2045,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1992,6 +2063,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
+
     /**
      *
      *
@@ -2005,6 +2077,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       return getMetricsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.MetricUpdate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2018,6 +2091,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       return getMetricsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.MetricUpdate.getDefaultInstance());
     }
+
     /**
      *
      *

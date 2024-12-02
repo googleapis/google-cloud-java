@@ -41,6 +41,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The enum numeric value on the wire for enablementState.
    */
   int getEnablementStateValue();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The lastEditor.
    */
   java.lang.String getLastEditor();
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The ancestorModule.
    */
   java.lang.String getAncestorModule();
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return Whether the customConfig field is set.
    */
   boolean hasCustomConfig();
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The customConfig.
    */
   com.google.cloud.securitycentermanagement.v1.CustomConfig getCustomConfig();
+
   /**
    *
    *

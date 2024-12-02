@@ -38,6 +38,7 @@ public interface GenericPlatformDetailsOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

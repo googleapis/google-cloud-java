@@ -35,6 +35,7 @@ public final class DeleteAdminQuotaPolicyMetadata extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.DeleteAdminQuotaPolicyMetadata)
     DeleteAdminQuotaPolicyMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteAdminQuotaPolicyMetadata.newBuilder() to construct.
   private DeleteAdminQuotaPolicyMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class DeleteAdminQuotaPolicyMetadata extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

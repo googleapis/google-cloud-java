@@ -35,6 +35,7 @@ public final class TimeSeriesForecastingPredictionResult
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TimeSeriesForecastingPredictionResult)
     TimeSeriesForecastingPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TimeSeriesForecastingPredictionResult.newBuilder() to construct.
   private TimeSeriesForecastingPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class TimeSeriesForecastingPredictionResult
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private float value_ = 0F;
+
   /**
    *
    *
@@ -274,6 +276,7 @@ public final class TimeSeriesForecastingPredictionResult
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -489,6 +492,7 @@ public final class TimeSeriesForecastingPredictionResult
     private int bitField0_;
 
     private float value_;
+
     /**
      *
      *
@@ -504,6 +508,7 @@ public final class TimeSeriesForecastingPredictionResult
     public float getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -523,6 +528,7 @@ public final class TimeSeriesForecastingPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *

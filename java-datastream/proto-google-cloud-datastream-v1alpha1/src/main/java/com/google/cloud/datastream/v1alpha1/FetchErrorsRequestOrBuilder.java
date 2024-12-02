@@ -36,6 +36,7 @@ public interface FetchErrorsRequestOrBuilder
    * @return The stream.
    */
   java.lang.String getStream();
+
   /**
    *
    *

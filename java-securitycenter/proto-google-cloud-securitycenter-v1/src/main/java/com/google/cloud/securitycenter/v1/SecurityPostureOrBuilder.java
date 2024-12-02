@@ -36,6 +36,7 @@ public interface SecurityPostureOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SecurityPostureOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface SecurityPostureOrBuilder
    * @return The postureDeploymentResource.
    */
   java.lang.String getPostureDeploymentResource();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface SecurityPostureOrBuilder
    * @return The postureDeployment.
    */
   java.lang.String getPostureDeployment();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface SecurityPostureOrBuilder
    * @return The changedPolicy.
    */
   java.lang.String getChangedPolicy();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface SecurityPostureOrBuilder
    * @return The policySet.
    */
   java.lang.String getPolicySet();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface SecurityPostureOrBuilder
    * @return The policy.
    */
   java.lang.String getPolicy();
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public interface SecurityPostureOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v1.SecurityPosture.PolicyDriftDetails>
       getPolicyDriftDetailsList();
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public interface SecurityPostureOrBuilder
    */
   com.google.cloud.securitycenter.v1.SecurityPosture.PolicyDriftDetails getPolicyDriftDetails(
       int index);
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public interface SecurityPostureOrBuilder
    * </code>
    */
   int getPolicyDriftDetailsCount();
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface SecurityPostureOrBuilder
   java.util.List<
           ? extends com.google.cloud.securitycenter.v1.SecurityPosture.PolicyDriftDetailsOrBuilder>
       getPolicyDriftDetailsOrBuilderList();
+
   /**
    *
    *

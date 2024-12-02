@@ -39,6 +39,7 @@ public interface CreateFunctionRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateFunctionRequestOrBuilder
    * @return Whether the function field is set.
    */
   boolean hasFunction();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateFunctionRequestOrBuilder
    * @return The function.
    */
   com.google.cloud.functions.v1.CloudFunction getFunction();
+
   /**
    *
    *

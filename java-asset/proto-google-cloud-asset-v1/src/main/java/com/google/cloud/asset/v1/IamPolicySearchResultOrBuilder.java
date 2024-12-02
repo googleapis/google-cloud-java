@@ -45,6 +45,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -163,6 +166,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return A list containing the folders.
    */
   java.util.List<java.lang.String> getFoldersList();
+
   /**
    *
    *
@@ -183,6 +187,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return The count of folders.
    */
   int getFoldersCount();
+
   /**
    *
    *
@@ -204,6 +209,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return The folders at the given index.
    */
   java.lang.String getFolders(int index);
+
   /**
    *
    *
@@ -246,6 +252,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return The organization.
    */
   java.lang.String getOrganization();
+
   /**
    *
    *
@@ -292,6 +299,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -317,6 +325,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
+
   /**
    *
    *
@@ -354,6 +363,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return Whether the explanation field is set.
    */
   boolean hasExplanation();
+
   /**
    *
    *
@@ -367,6 +377,7 @@ public interface IamPolicySearchResultOrBuilder
    * @return The explanation.
    */
   com.google.cloud.asset.v1.IamPolicySearchResult.Explanation getExplanation();
+
   /**
    *
    *

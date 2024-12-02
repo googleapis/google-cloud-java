@@ -40,6 +40,7 @@ public interface CreateMetadataStoreRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateMetadataStoreRequestOrBuilder
    * @return Whether the metadataStore field is set.
    */
   boolean hasMetadataStore();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateMetadataStoreRequestOrBuilder
    * @return The metadataStore.
    */
   com.google.cloud.aiplatform.v1.MetadataStore getMetadataStore();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface CreateMetadataStoreRequestOrBuilder
    * @return The metadataStoreId.
    */
   java.lang.String getMetadataStoreId();
+
   /**
    *
    *

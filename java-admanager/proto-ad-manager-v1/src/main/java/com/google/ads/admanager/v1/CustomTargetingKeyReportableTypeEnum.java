@@ -35,6 +35,7 @@ public final class CustomTargetingKeyReportableTypeEnum
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum)
     CustomTargetingKeyReportableTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomTargetingKeyReportableTypeEnum.newBuilder() to construct.
   private CustomTargetingKeyReportableTypeEnum(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -128,6 +129,7 @@ public final class CustomTargetingKeyReportableTypeEnum
      * <code>CUSTOM_TARGETING_KEY_REPORTABLE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_TARGETING_KEY_REPORTABLE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class CustomTargetingKeyReportableTypeEnum
      * <code>OFF = 1;</code>
      */
     public static final int OFF_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class CustomTargetingKeyReportableTypeEnum
      * <code>ON = 2;</code>
      */
     public static final int ON_VALUE = 2;
+
     /**
      *
      *
@@ -400,6 +404,7 @@ public final class CustomTargetingKeyReportableTypeEnum
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AnnotationCustomizedStruct)
     AnnotationCustomizedStructOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotationCustomizedStruct.newBuilder() to construct.
   private AnnotationCustomizedStruct(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
   public int getElementsCount() {
     return internalGetElements().getMap().size();
   }
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
     }
     return internalGetElements().getMap().containsKey(key);
   }
+
   /** Use {@link #getElementsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -129,6 +132,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
       getElements() {
     return getElementsMap();
   }
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
       getElementsMap() {
     return internalGetElements().getMap();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
         internalGetElements().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -355,6 +361,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -585,7 +592,8 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
           defaultEntry() {
         return ElementsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ElementsConverter elementsConverter = new ElementsConverter();
 
@@ -625,6 +633,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
     public int getElementsCount() {
       return internalGetElements().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -641,6 +650,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
       }
       return internalGetElements().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getElementsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -648,6 +658,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
         getElements() {
       return getElementsMap();
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
         getElementsMap() {
       return internalGetElements().getImmutableMap();
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
           internalGetMutableElements().ensureBuilderMap();
       return map.containsKey(key) ? elementsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
       internalGetMutableElements().clear();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
       internalGetMutableElements().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.visionai.v1.AnnotationValue>
@@ -733,6 +748,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
       bitField0_ |= 0x00000001;
       return internalGetMutableElements().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +792,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

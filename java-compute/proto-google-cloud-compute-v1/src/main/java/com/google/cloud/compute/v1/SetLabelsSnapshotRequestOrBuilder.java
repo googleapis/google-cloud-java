@@ -38,6 +38,7 @@ public interface SetLabelsSnapshotRequestOrBuilder
    * @return Whether the globalSetLabelsRequestResource field is set.
    */
   boolean hasGlobalSetLabelsRequestResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SetLabelsSnapshotRequestOrBuilder
    * @return The globalSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.GlobalSetLabelsRequest getGlobalSetLabelsRequestResource();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface SetLabelsSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface SetLabelsSnapshotRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *

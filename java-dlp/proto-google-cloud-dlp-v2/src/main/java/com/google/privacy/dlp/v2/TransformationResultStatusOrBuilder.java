@@ -37,6 +37,7 @@ public interface TransformationResultStatusOrBuilder
    * @return The enum numeric value on the wire for resultStatusType.
    */
   int getResultStatusTypeValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TransformationResultStatusOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface TransformationResultStatusOrBuilder
    * @return The details.
    */
   com.google.rpc.Status getDetails();
+
   /**
    *
    *

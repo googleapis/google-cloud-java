@@ -36,6 +36,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    * @return Whether the namespace field is set.
    */
   boolean hasNamespace();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    * @return Whether the serviceDirectoryRegion field is set.
    */
   boolean hasServiceDirectoryRegion();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    * @return The serviceDirectoryRegion.
    */
   java.lang.String getServiceDirectoryRegion();
+
   /**
    *
    *

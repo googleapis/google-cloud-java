@@ -35,6 +35,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.Workload)
     WorkloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Workload.newBuilder() to construct.
   private Workload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -163,6 +164,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTNER_UNSPECIFIED = 0;</code>
      */
     public static final int PARTNER_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -173,6 +175,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTNER_LOCAL_CONTROLS_BY_S3NS = 1;</code>
      */
     public static final int PARTNER_LOCAL_CONTROLS_BY_S3NS_VALUE = 1;
+
     /**
      *
      *
@@ -183,6 +186,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTNER_SOVEREIGN_CONTROLS_BY_T_SYSTEMS = 2;</code>
      */
     public static final int PARTNER_SOVEREIGN_CONTROLS_BY_T_SYSTEMS_VALUE = 2;
+
     /**
      *
      *
@@ -193,6 +197,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTNER_SOVEREIGN_CONTROLS_BY_SIA_MINSAIT = 3;</code>
      */
     public static final int PARTNER_SOVEREIGN_CONTROLS_BY_SIA_MINSAIT_VALUE = 3;
+
     /**
      *
      *
@@ -203,6 +208,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTNER_SOVEREIGN_CONTROLS_BY_PSN = 4;</code>
      */
     public static final int PARTNER_SOVEREIGN_CONTROLS_BY_PSN_VALUE = 4;
+
     /**
      *
      *
@@ -213,6 +219,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTNER_SOVEREIGN_CONTROLS_BY_CNTXT = 6;</code>
      */
     public static final int PARTNER_SOVEREIGN_CONTROLS_BY_CNTXT_VALUE = 6;
+
     /**
      *
      *
@@ -323,6 +330,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -347,6 +355,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -374,6 +383,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FOLDER_ID_FIELD_NUMBER = 2;
   private long folderId_ = 0L;
+
   /**
    *
    *
@@ -392,6 +402,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -408,6 +419,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -424,6 +436,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -443,6 +456,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object folder_ = "";
+
   /**
    *
    *
@@ -466,6 +480,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -492,6 +507,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WORKLOAD_ONBOARDING_STATE_FIELD_NUMBER = 5;
   private com.google.cloud.cloudcontrolspartner.v1.WorkloadOnboardingState workloadOnboardingState_;
+
   /**
    *
    *
@@ -509,6 +525,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWorkloadOnboardingState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -529,6 +546,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.cloudcontrolspartner.v1.WorkloadOnboardingState.getDefaultInstance()
         : workloadOnboardingState_;
   }
+
   /**
    *
    *
@@ -550,6 +568,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_ONBOARDED_FIELD_NUMBER = 6;
   private boolean isOnboarded_ = false;
+
   /**
    *
    *
@@ -570,6 +589,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyManagementProjectId_ = "";
+
   /**
    *
    *
@@ -593,6 +613,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -621,6 +642,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -644,6 +666,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -670,6 +693,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARTNER_FIELD_NUMBER = 9;
   private int partner_ = 0;
+
   /**
    *
    *
@@ -685,6 +709,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public int getPartnerValue() {
     return partner_;
   }
+
   /**
    *
    *
@@ -951,6 +976,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1273,6 +1299,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1296,6 +1323,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1319,6 +1347,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1370,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1389,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1415,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long folderId_;
+
     /**
      *
      *
@@ -1399,6 +1431,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public long getFolderId() {
       return folderId_;
     }
+
     /**
      *
      *
@@ -1418,6 +1451,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1442,6 +1476,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1458,6 +1493,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1480,6 +1516,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1504,6 +1541,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1525,6 +1563,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1593,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1615,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1632,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1611,6 +1653,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1640,6 +1683,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object folder_ = "";
+
     /**
      *
      *
@@ -1662,6 +1706,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1684,6 +1729,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1705,6 +1751,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1769,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1800,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.cloudcontrolspartner.v1.WorkloadOnboardingState.Builder,
             com.google.cloud.cloudcontrolspartner.v1.WorkloadOnboardingStateOrBuilder>
         workloadOnboardingStateBuilder_;
+
     /**
      *
      *
@@ -1768,6 +1817,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkloadOnboardingState() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1791,6 +1841,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return workloadOnboardingStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1816,6 +1867,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1838,6 +1890,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1870,6 +1923,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1945,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1908,6 +1963,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWorkloadOnboardingStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1929,6 +1985,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             : workloadOnboardingState_;
       }
     }
+
     /**
      *
      *
@@ -1958,6 +2015,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isOnboarded_;
+
     /**
      *
      *
@@ -1973,6 +2031,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsOnboarded() {
       return isOnboarded_;
     }
+
     /**
      *
      *
@@ -1992,6 +2051,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2011,6 +2071,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keyManagementProjectId_ = "";
+
     /**
      *
      *
@@ -2033,6 +2094,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2055,6 +2117,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2076,6 +2139,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2093,6 +2157,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2117,6 +2182,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -2139,6 +2205,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2161,6 +2228,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2182,6 +2250,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2199,6 +2268,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2223,6 +2293,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int partner_ = 0;
+
     /**
      *
      *
@@ -2238,6 +2309,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getPartnerValue() {
       return partner_;
     }
+
     /**
      *
      *
@@ -2256,6 +2328,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2275,6 +2348,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.cloudcontrolspartner.v1.Workload.Partner.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2296,6 +2370,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

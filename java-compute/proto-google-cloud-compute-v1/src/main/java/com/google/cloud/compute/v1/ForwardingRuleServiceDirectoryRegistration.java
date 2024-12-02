@@ -34,6 +34,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration)
     ForwardingRuleServiceDirectoryRegistrationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ForwardingRuleServiceDirectoryRegistration.newBuilder() to construct.
   private ForwardingRuleServiceDirectoryRegistration(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object namespace_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
   public boolean hasNamespace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
   public boolean hasService() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceDirectoryRegion_ = "";
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
   public boolean hasServiceDirectoryRegion() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       return s;
     }
   }
+
   /**
    *
    *
@@ -462,6 +472,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -689,6 +700,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
     private int bitField0_;
 
     private java.lang.Object namespace_ = "";
+
     /**
      *
      *
@@ -703,6 +715,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
     public boolean hasNamespace() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -725,6 +738,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
     }
 
     private java.lang.Object service_ = "";
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
     public boolean hasService() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +909,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +927,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +952,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
     }
 
     private java.lang.Object serviceDirectoryRegion_ = "";
+
     /**
      *
      *
@@ -943,6 +967,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
     public boolean hasServiceDirectoryRegion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -987,6 +1013,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1035,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
       onChanged();
       return this;
     }
+
     /**
      *
      *

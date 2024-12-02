@@ -33,6 +33,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomFieldOption)
     CustomFieldOptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomFieldOption.newBuilder() to construct.
   private CustomFieldOption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
 
   public static final int CUSTOM_FIELD_OPTION_ID_FIELD_NUMBER = 1;
   private long customFieldOptionId_ = 0L;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +308,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -500,6 +505,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private long customFieldOptionId_;
+
     /**
      *
      *
@@ -515,6 +521,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
     public long getCustomFieldOptionId() {
       return customFieldOptionId_;
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -601,6 +611,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +655,7 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

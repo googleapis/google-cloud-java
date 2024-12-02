@@ -33,6 +33,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1beta.WorkloadOnboardingState)
     WorkloadOnboardingStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkloadOnboardingState.newBuilder() to construct.
   private WorkloadOnboardingState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.cloudcontrolspartner.v1beta.WorkloadOnboardingStep>
       onboardingSteps_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       getOnboardingStepsList() {
     return onboardingSteps_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       getOnboardingStepsOrBuilderList() {
     return onboardingSteps_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
   public int getOnboardingStepsCount() {
     return onboardingSteps_.size();
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       int index) {
     return onboardingSteps_.get(index);
   }
+
   /**
    *
    *
@@ -312,6 +318,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -588,6 +595,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
         return onboardingStepsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -606,6 +614,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
         return onboardingStepsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
         return onboardingStepsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +811,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
         getOnboardingStepsBuilder(int index) {
       return getOnboardingStepsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -871,6 +891,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
         return onboardingStepsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -891,6 +912,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(onboardingSteps_);
       }
     }
+
     /**
      *
      *
@@ -909,6 +931,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
               com.google.cloud.cloudcontrolspartner.v1beta.WorkloadOnboardingStep
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class WorkloadOnboardingState extends com.google.protobuf.Generated
               com.google.cloud.cloudcontrolspartner.v1beta.WorkloadOnboardingStep
                   .getDefaultInstance());
     }
+
     /**
      *
      *

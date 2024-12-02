@@ -39,6 +39,7 @@ public interface ListCompaniesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ListCompaniesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface ListCompaniesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface ListCompaniesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

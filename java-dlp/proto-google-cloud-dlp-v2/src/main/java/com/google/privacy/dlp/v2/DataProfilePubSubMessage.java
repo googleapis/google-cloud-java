@@ -35,6 +35,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfilePubSubMessage)
     DataProfilePubSubMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataProfilePubSubMessage.newBuilder() to construct.
   private DataProfilePubSubMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int PROFILE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.TableDataProfile profile_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
   public boolean hasProfile() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
         ? com.google.privacy.dlp.v2.TableDataProfile.getDefaultInstance()
         : profile_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
 
   public static final int FILE_STORE_PROFILE_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.FileStoreDataProfile fileStoreProfile_;
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
   public boolean hasFileStoreProfile() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
         ? com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance()
         : fileStoreProfile_;
   }
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
 
   public static final int EVENT_FIELD_NUMBER = 2;
   private int event_ = 0;
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
   public int getEventValue() {
     return event_;
   }
+
   /**
    *
    *
@@ -406,6 +415,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -645,6 +655,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.TableDataProfile.Builder,
             com.google.privacy.dlp.v2.TableDataProfileOrBuilder>
         profileBuilder_;
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     public boolean hasProfile() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
         return profileBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return getProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
             : profile_;
       }
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.FileStoreDataProfile.Builder,
             com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>
         fileStoreProfileBuilder_;
+
     /**
      *
      *
@@ -864,6 +884,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     public boolean hasFileStoreProfile() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -886,6 +907,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
         return fileStoreProfileBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -910,6 +932,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +986,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1008,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1025,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return getFileStoreProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1019,6 +1046,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
             : fileStoreProfile_;
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1076,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     }
 
     private int event_ = 0;
+
     /**
      *
      *
@@ -1063,6 +1092,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     public int getEventValue() {
       return event_;
     }
+
     /**
      *
      *
@@ -1081,6 +1111,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1131,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
           ? com.google.privacy.dlp.v2.DataProfileAction.EventType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1121,6 +1153,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

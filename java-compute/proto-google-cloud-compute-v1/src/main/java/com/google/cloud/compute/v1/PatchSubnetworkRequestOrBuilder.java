@@ -36,6 +36,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * @return Whether the drainTimeoutSeconds field is set.
    */
   boolean hasDrainTimeoutSeconds();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * @return Whether the subnetworkResource field is set.
    */
   boolean hasSubnetworkResource();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * @return The subnetworkResource.
    */
   com.google.cloud.compute.v1.Subnetwork getSubnetworkResource();
+
   /**
    *
    *

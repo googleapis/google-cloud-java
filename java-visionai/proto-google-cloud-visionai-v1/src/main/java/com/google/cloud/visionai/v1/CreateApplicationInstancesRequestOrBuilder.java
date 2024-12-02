@@ -40,6 +40,7 @@ public interface CreateApplicationInstancesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateApplicationInstancesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.visionai.v1.ApplicationInstance> getApplicationInstancesList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateApplicationInstancesRequestOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.ApplicationInstance getApplicationInstances(int index);
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface CreateApplicationInstancesRequestOrBuilder
    * </code>
    */
   int getApplicationInstancesCount();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface CreateApplicationInstancesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ApplicationInstanceOrBuilder>
       getApplicationInstancesOrBuilderList();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface CreateApplicationInstancesRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

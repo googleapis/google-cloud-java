@@ -34,6 +34,7 @@ public interface ListCloudVmClustersResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.CloudVmCluster cloud_vm_clusters = 1;</code>
    */
   java.util.List<com.google.cloud.oracledatabase.v1.CloudVmCluster> getCloudVmClustersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCloudVmClustersResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.CloudVmCluster cloud_vm_clusters = 1;</code>
    */
   com.google.cloud.oracledatabase.v1.CloudVmCluster getCloudVmClusters(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCloudVmClustersResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.CloudVmCluster cloud_vm_clusters = 1;</code>
    */
   int getCloudVmClustersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCloudVmClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.CloudVmClusterOrBuilder>
       getCloudVmClustersOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListCloudVmClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface RenewLeaseRequestOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RenewLeaseRequestOrBuilder
    * @return The series.
    */
   java.lang.String getSeries();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RenewLeaseRequestOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface RenewLeaseRequestOrBuilder
    * @return Whether the term field is set.
    */
   boolean hasTerm();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface RenewLeaseRequestOrBuilder
    * @return The term.
    */
   com.google.protobuf.Duration getTerm();
+
   /**
    *
    *

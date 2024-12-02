@@ -34,6 +34,7 @@ public final class StartWithEncryptionKeyInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StartWithEncryptionKeyInstanceRequest)
     StartWithEncryptionKeyInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StartWithEncryptionKeyInstanceRequest.newBuilder() to construct.
   private StartWithEncryptionKeyInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class StartWithEncryptionKeyInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       441712511;
   private com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest
       instancesStartWithEncryptionKeyRequestResource_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class StartWithEncryptionKeyInstanceRequest
   public boolean hasInstancesStartWithEncryptionKeyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         ? com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest.getDefaultInstance()
         : instancesStartWithEncryptionKeyRequestResource_;
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class StartWithEncryptionKeyInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class StartWithEncryptionKeyInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class StartWithEncryptionKeyInstanceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public final class StartWithEncryptionKeyInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -330,6 +342,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -567,6 +580,7 @@ public final class StartWithEncryptionKeyInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -837,6 +851,7 @@ public final class StartWithEncryptionKeyInstanceRequest
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -859,6 +874,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class StartWithEncryptionKeyInstanceRequest
             com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest.Builder,
             com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequestOrBuilder>
         instancesStartWithEncryptionKeyRequestResourceBuilder_;
+
     /**
      *
      *
@@ -965,6 +985,7 @@ public final class StartWithEncryptionKeyInstanceRequest
     public boolean hasInstancesStartWithEncryptionKeyRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -989,6 +1010,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return instancesStartWithEncryptionKeyRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1036,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1093,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1115,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1133,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return getInstancesStartWithEncryptionKeyRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1129,6 +1156,7 @@ public final class StartWithEncryptionKeyInstanceRequest
             : instancesStartWithEncryptionKeyRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1188,7 @@ public final class StartWithEncryptionKeyInstanceRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1184,6 +1213,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1208,6 +1238,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1231,6 +1262,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1282,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1309,7 @@ public final class StartWithEncryptionKeyInstanceRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1290,6 +1324,7 @@ public final class StartWithEncryptionKeyInstanceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1312,6 +1347,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1334,6 +1370,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1355,6 +1392,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1410,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1396,6 +1435,7 @@ public final class StartWithEncryptionKeyInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1420,6 +1460,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1444,6 +1485,7 @@ public final class StartWithEncryptionKeyInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1467,6 +1509,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1529,7 @@ public final class StartWithEncryptionKeyInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

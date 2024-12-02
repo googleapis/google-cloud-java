@@ -33,6 +33,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.AudioFormat)
     AudioFormatOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AudioFormat.newBuilder() to construct.
   private AudioFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object codec_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANNEL_COUNT_FIELD_NUMBER = 2;
   private int channelCount_ = 0;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList channelLayout_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getChannelLayoutList() {
     return channelLayout_;
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
   public int getChannelLayoutCount() {
     return channelLayout_.size();
   }
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getChannelLayout(int index) {
     return channelLayout_.get(index);
   }
+
   /**
    *
    *
@@ -381,6 +389,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -600,6 +609,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object codec_ = "";
+
     /**
      *
      *
@@ -622,6 +632,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int channelCount_;
+
     /**
      *
      *
@@ -721,6 +736,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     public int getChannelCount() {
       return channelCount_;
     }
+
     /**
      *
      *
@@ -740,6 +756,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +784,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -782,6 +800,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       channelLayout_.makeImmutable();
       return channelLayout_;
     }
+
     /**
      *
      *
@@ -796,6 +815,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     public int getChannelLayoutCount() {
       return channelLayout_.size();
     }
+
     /**
      *
      *
@@ -811,6 +831,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getChannelLayout(int index) {
       return channelLayout_.get(index);
     }
+
     /**
      *
      *
@@ -826,6 +847,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getChannelLayoutBytes(int index) {
       return channelLayout_.getByteString(index);
     }
+
     /**
      *
      *
@@ -849,6 +871,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +894,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +914,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +933,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface ListChangelogsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface ListChangelogsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -144,6 +146,7 @@ public interface ListChangelogsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface NameMappingKeyOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface NameMappingKeyOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface NameMappingKeyOrBuilder
    * @return The schema.
    */
   java.lang.String getSchema();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface NameMappingKeyOrBuilder
    * @return The relation.
    */
   java.lang.String getRelation();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface NameMappingKeyOrBuilder
    * @return The attribute.
    */
   java.lang.String getAttribute();
+
   /**
    *
    *

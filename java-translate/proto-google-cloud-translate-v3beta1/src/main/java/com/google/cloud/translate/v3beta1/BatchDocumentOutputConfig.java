@@ -33,6 +33,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.BatchDocumentOutputConfig)
     BatchDocumentOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDocumentOutputConfig.newBuilder() to construct.
   private BatchDocumentOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -167,6 +170,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
+
   /**
    *
    *
@@ -229,6 +233,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
     }
     return com.google.cloud.translate.v3beta1.GcsDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -465,6 +470,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +693,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
             com.google.cloud.translate.v3beta1.GcsDestination.Builder,
             com.google.cloud.translate.v3beta1.GcsDestinationOrBuilder>
         gcsDestinationBuilder_;
+
     /**
      *
      *
@@ -746,6 +753,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
+
     /**
      *
      *
@@ -815,6 +823,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
         return com.google.cloud.translate.v3beta1.GcsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -881,6 +890,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
       destinationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +955,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
       destinationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1033,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
       destinationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1103,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1160,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
     public com.google.cloud.translate.v3beta1.GcsDestination.Builder getGcsDestinationBuilder() {
       return getGcsDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1211,6 +1225,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
         return com.google.cloud.translate.v3beta1.GcsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *

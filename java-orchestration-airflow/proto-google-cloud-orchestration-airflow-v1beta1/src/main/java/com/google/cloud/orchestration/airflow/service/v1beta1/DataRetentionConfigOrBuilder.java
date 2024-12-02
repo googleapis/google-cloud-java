@@ -60,6 +60,7 @@ public interface DataRetentionConfigOrBuilder
    * @return Whether the taskLogsRetentionConfig field is set.
    */
   boolean hasTaskLogsRetentionConfig();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface DataRetentionConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.TaskLogsRetentionConfig
       getTaskLogsRetentionConfig();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface DataRetentionConfigOrBuilder
    * @return Whether the airflowMetadataRetentionConfig field is set.
    */
   boolean hasAirflowMetadataRetentionConfig();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface DataRetentionConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.AirflowMetadataRetentionPolicyConfig
       getAirflowMetadataRetentionConfig();
+
   /**
    *
    *

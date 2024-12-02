@@ -39,6 +39,7 @@ public interface DateRangeOrBuilder
    * @return The startDate.
    */
   java.lang.String getStartDate();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface DateRangeOrBuilder
    * @return The endDate.
    */
   java.lang.String getEndDate();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface DateRangeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

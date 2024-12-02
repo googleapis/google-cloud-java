@@ -40,6 +40,7 @@ public interface DeleteContextRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface DeleteContextRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

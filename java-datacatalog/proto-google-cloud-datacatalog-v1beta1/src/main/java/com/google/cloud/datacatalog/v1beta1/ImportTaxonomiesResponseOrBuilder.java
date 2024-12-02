@@ -34,6 +34,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy> getTaxonomiesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
   com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
   int getTaxonomiesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder>
       getTaxonomiesOrBuilderList();
+
   /**
    *
    *

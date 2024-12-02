@@ -33,6 +33,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SearchIndexEndpointResponse)
     SearchIndexEndpointResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchIndexEndpointResponse.newBuilder() to construct.
   private SearchIndexEndpointResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.SearchResultItem> searchResultItems_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.visionai.v1.SearchResultItem> getSearchResultItemsList() {
     return searchResultItems_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       getSearchResultItemsOrBuilderList() {
     return searchResultItems_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
   public int getSearchResultItemsCount() {
     return searchResultItems_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
   public com.google.cloud.visionai.v1.SearchResultItem getSearchResultItems(int index) {
     return searchResultItems_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +369,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +649,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
         return searchResultItemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
         return searchResultItemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
         return searchResultItemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +751,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
         int index) {
       return getSearchResultItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -888,6 +910,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
         return searchResultItemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(searchResultItems_);
       }
     }
+
     /**
      *
      *
@@ -918,6 +942,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       return getSearchResultItemsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.SearchResultItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -932,6 +957,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       return getSearchResultItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.SearchResultItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -967,6 +993,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -990,6 +1017,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1041,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1064,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1083,7 @@ public final class SearchIndexEndpointResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

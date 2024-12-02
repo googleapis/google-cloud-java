@@ -40,6 +40,7 @@ public interface ListProjectBillingInfoRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface ListProjectBillingInfoRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

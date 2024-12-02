@@ -36,6 +36,7 @@ public interface VmCreationConfigOrBuilder
    * @return The vmMachineType.
    */
   java.lang.String getVmMachineType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VmCreationConfigOrBuilder
    * @return The vmZone.
    */
   java.lang.String getVmZone();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface VmCreationConfigOrBuilder
    * @return The subnet.
    */
   java.lang.String getSubnet();
+
   /**
    *
    *

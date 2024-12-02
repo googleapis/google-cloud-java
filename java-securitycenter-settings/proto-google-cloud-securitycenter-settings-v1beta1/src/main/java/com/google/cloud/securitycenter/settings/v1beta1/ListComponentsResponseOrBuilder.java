@@ -36,6 +36,7 @@ public interface ListComponentsResponseOrBuilder
    * @return A list containing the components.
    */
   java.util.List<java.lang.String> getComponentsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListComponentsResponseOrBuilder
    * @return The count of components.
    */
   int getComponentsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListComponentsResponseOrBuilder
    * @return The components at the given index.
    */
   java.lang.String getComponents(int index);
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ListComponentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

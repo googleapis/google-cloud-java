@@ -40,6 +40,7 @@ public interface GetSpecialistPoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

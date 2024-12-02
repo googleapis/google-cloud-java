@@ -38,6 +38,7 @@ public interface AssetListOrBuilder
    * @return A list containing the assetIds.
    */
   java.util.List<java.lang.String> getAssetIdsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AssetListOrBuilder
    * @return The count of assetIds.
    */
   int getAssetIdsCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface AssetListOrBuilder
    * @return The assetIds at the given index.
    */
   java.lang.String getAssetIds(int index);
+
   /**
    *
    *

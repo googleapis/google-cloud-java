@@ -36,6 +36,7 @@ public interface CloudSpannerPropertiesOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -136,6 +137,7 @@ public interface CloudSpannerPropertiesOrBuilder
    * @return The databaseRole.
    */
   java.lang.String getDatabaseRole();
+
   /**
    *
    *

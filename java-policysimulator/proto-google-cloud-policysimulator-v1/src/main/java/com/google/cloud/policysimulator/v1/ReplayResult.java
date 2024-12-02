@@ -33,6 +33,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.policysimulator.v1.ReplayResult)
     ReplayResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReplayResult.newBuilder() to construct.
   private ReplayResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     private ResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIFF_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiff() {
     return resultCase_ == 5;
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.policysimulator.v1.ReplayDiff.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasError() {
     return resultCase_ == 6;
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.rpc.Status.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -277,6 +286,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -312,6 +322,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -336,6 +347,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -363,6 +375,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCESS_TUPLE_FIELD_NUMBER = 3;
   private com.google.cloud.policysimulator.v1.AccessTuple accessTuple_;
+
   /**
    *
    *
@@ -380,6 +393,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessTuple() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -399,6 +413,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.policysimulator.v1.AccessTuple.getDefaultInstance()
         : accessTuple_;
   }
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_SEEN_DATE_FIELD_NUMBER = 4;
   private com.google.type.Date lastSeenDate_;
+
   /**
    *
    *
@@ -434,6 +450,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastSeenDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -449,6 +466,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getLastSeenDate() {
     return lastSeenDate_ == null ? com.google.type.Date.getDefaultInstance() : lastSeenDate_;
   }
+
   /**
    *
    *
@@ -698,6 +716,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1013,6 +1032,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.policysimulator.v1.ReplayDiff.Builder,
             com.google.cloud.policysimulator.v1.ReplayDiffOrBuilder>
         diffBuilder_;
+
     /**
      *
      *
@@ -1034,6 +1054,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiff() {
       return resultCase_ == 5;
     }
+
     /**
      *
      *
@@ -1065,6 +1086,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.policysimulator.v1.ReplayDiff.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1115,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1141,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1180,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1212,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1231,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.policysimulator.v1.ReplayDiff.Builder getDiffBuilder() {
       return getDiffFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1231,6 +1258,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.policysimulator.v1.ReplayDiff.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1273,6 +1301,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -1291,6 +1320,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasError() {
       return resultCase_ == 6;
     }
+
     /**
      *
      *
@@ -1319,6 +1349,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1375,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1398,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1399,6 +1432,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1427,6 +1461,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1442,6 +1477,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.rpc.Status.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1465,6 +1501,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1498,6 +1535,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1527,6 +1565,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1595,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1584,6 +1624,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1608,6 +1649,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1681,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1662,6 +1705,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1685,6 +1729,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1707,6 +1752,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1771,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1755,6 +1802,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.policysimulator.v1.AccessTuple.Builder,
             com.google.cloud.policysimulator.v1.AccessTupleOrBuilder>
         accessTupleBuilder_;
+
     /**
      *
      *
@@ -1771,6 +1819,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessTuple() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1793,6 +1842,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return accessTupleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1817,6 +1867,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1890,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1921,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1890,6 +1943,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1906,6 +1960,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccessTupleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1926,6 +1981,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
             : accessTuple_;
       }
     }
+
     /**
      *
      *
@@ -1958,6 +2014,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         lastSeenDateBuilder_;
+
     /**
      *
      *
@@ -1972,6 +2029,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastSeenDate() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1990,6 +2048,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return lastSeenDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2012,6 +2071,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2031,6 +2091,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2058,6 +2119,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2077,6 +2139,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2154,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastSeenDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2107,6 +2171,7 @@ public final class ReplayResult extends com.google.protobuf.GeneratedMessageV3
         return lastSeenDate_ == null ? com.google.type.Date.getDefaultInstance() : lastSeenDate_;
       }
     }
+
     /**
      *
      *

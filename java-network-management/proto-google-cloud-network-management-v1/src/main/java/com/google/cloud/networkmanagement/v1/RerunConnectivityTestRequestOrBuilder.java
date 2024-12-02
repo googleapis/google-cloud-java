@@ -39,6 +39,7 @@ public interface RerunConnectivityTestRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

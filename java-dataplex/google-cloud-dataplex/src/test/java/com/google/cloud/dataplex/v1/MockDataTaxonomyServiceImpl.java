@@ -179,7 +179,8 @@ public class MockDataTaxonomyServiceImpl extends DataTaxonomyServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDataAttributeBinding, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDataAttributeBinding, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -200,7 +201,8 @@ public class MockDataTaxonomyServiceImpl extends DataTaxonomyServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDataAttributeBinding, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDataAttributeBinding, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -221,7 +223,8 @@ public class MockDataTaxonomyServiceImpl extends DataTaxonomyServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDataAttributeBinding, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDataAttributeBinding, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -243,7 +246,8 @@ public class MockDataTaxonomyServiceImpl extends DataTaxonomyServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDataAttributeBindings, expected %s or %s",
+                  "Unrecognized response type %s for method ListDataAttributeBindings, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDataAttributeBindingsResponse.class.getName(),
                   Exception.class.getName())));
@@ -265,7 +269,8 @@ public class MockDataTaxonomyServiceImpl extends DataTaxonomyServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDataAttributeBinding, expected %s or %s",
+                  "Unrecognized response type %s for method GetDataAttributeBinding, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataAttributeBinding.class.getName(),
                   Exception.class.getName())));

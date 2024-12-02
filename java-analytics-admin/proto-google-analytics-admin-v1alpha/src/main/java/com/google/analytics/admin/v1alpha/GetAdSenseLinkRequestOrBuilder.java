@@ -40,6 +40,7 @@ public interface GetAdSenseLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

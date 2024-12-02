@@ -40,6 +40,7 @@ public interface ImportCompletionDataRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ImportCompletionDataRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface ImportCompletionDataRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.retail.v2alpha.CompletionDataInputConfig getInputConfig();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface ImportCompletionDataRequestOrBuilder
    * @return The notificationPubsubTopic.
    */
   java.lang.String getNotificationPubsubTopic();
+
   /**
    *
    *

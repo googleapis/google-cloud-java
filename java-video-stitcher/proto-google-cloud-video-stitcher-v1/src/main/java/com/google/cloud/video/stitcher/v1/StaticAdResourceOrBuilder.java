@@ -36,6 +36,7 @@ public interface StaticAdResourceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StaticAdResourceOrBuilder
    * @return The creativeType.
    */
   java.lang.String getCreativeType();
+
   /**
    *
    *

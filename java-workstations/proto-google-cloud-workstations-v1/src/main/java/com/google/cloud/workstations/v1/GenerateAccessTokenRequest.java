@@ -33,6 +33,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.GenerateAccessTokenRequest)
     GenerateAccessTokenRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateAccessTokenRequest.newBuilder() to construct.
   private GenerateAccessTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     private ExpirationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public boolean hasExpireTime() {
     return expirationCase_ == 2;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   }
 
   public static final int TTL_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public boolean hasTtl() {
     return expirationCase_ == 3;
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workstation_ = "";
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -485,6 +495,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -736,6 +747,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -754,6 +766,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public boolean hasExpireTime() {
       return expirationCase_ == 2;
     }
+
     /**
      *
      *
@@ -782,6 +795,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -807,6 +821,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       expirationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +844,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       expirationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       expirationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +908,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +924,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -968,6 +988,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         ttlBuilder_;
+
     /**
      *
      *
@@ -985,6 +1006,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public boolean hasTtl() {
       return expirationCase_ == 3;
     }
+
     /**
      *
      *
@@ -1012,6 +1034,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1059,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       expirationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1081,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       expirationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1115,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       expirationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1143,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1158,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public com.google.protobuf.Duration.Builder getTtlBuilder() {
       return getTtlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1153,6 +1181,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1187,6 +1216,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object workstation_ = "";
+
     /**
      *
      *
@@ -1212,6 +1242,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1237,6 +1268,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1293,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1314,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

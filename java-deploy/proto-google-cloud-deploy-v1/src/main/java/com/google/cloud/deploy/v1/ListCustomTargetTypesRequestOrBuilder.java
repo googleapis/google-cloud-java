@@ -39,6 +39,7 @@ public interface ListCustomTargetTypesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ListCustomTargetTypesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -117,6 +119,7 @@ public interface ListCustomTargetTypesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface ListCustomTargetTypesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

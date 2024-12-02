@@ -36,6 +36,7 @@ public interface GetTargetGrpcProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetTargetGrpcProxyRequestOrBuilder
    * @return The targetGrpcProxy.
    */
   java.lang.String getTargetGrpcProxy();
+
   /**
    *
    *

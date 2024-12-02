@@ -33,6 +33,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.Voice)
     VoiceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Voice.newBuilder() to construct.
   private Voice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList languageCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
     return languageCodes_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   public int getLanguageCodesCount() {
     return languageCodes_.size();
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLanguageCodes(int index) {
     return languageCodes_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SSML_GENDER_FIELD_NUMBER = 3;
   private int ssmlGender_ = 0;
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   public int getSsmlGenderValue() {
     return ssmlGender_;
   }
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NATURAL_SAMPLE_RATE_HERTZ_FIELD_NUMBER = 4;
   private int naturalSampleRateHertz_ = 0;
+
   /**
    *
    *
@@ -437,6 +447,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -676,6 +687,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       languageCodes_.makeImmutable();
       return languageCodes_;
     }
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     public int getLanguageCodesCount() {
       return languageCodes_.size();
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
     }
+
     /**
      *
      *
@@ -743,6 +758,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
       return languageCodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -768,6 +784,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +831,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +966,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int ssmlGender_ = 0;
+
     /**
      *
      *
@@ -981,6 +1007,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     public int getSsmlGenderValue() {
       return ssmlGender_;
     }
+
     /**
      *
      *
@@ -999,6 +1026,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1046,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.texttospeech.v1.SsmlVoiceGender.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1039,6 +1068,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1088,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int naturalSampleRateHertz_;
+
     /**
      *
      *
@@ -1073,6 +1104,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     public int getNaturalSampleRateHertz() {
       return naturalSampleRateHertz_;
     }
+
     /**
      *
      *
@@ -1092,6 +1124,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

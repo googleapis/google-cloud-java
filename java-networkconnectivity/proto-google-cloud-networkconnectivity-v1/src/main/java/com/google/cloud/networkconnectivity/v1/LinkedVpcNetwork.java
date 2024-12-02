@@ -33,6 +33,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.LinkedVpcNetwork)
     LinkedVpcNetworkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LinkedVpcNetwork.newBuilder() to construct.
   private LinkedVpcNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludeExportRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getExcludeExportRangesList() {
     return excludeExportRanges_;
   }
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
   public int getExcludeExportRangesCount() {
     return excludeExportRanges_.size();
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
   public java.lang.String getExcludeExportRanges(int index) {
     return excludeExportRanges_.get(index);
   }
+
   /**
    *
    *
@@ -363,6 +370,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -569,6 +577,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +706,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -709,6 +723,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       excludeExportRanges_.makeImmutable();
       return excludeExportRanges_;
     }
+
     /**
      *
      *
@@ -724,6 +739,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     public int getExcludeExportRangesCount() {
       return excludeExportRanges_.size();
     }
+
     /**
      *
      *
@@ -740,6 +756,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     public java.lang.String getExcludeExportRanges(int index) {
       return excludeExportRanges_.get(index);
     }
+
     /**
      *
      *
@@ -756,6 +773,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getExcludeExportRangesBytes(int index) {
       return excludeExportRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -780,6 +798,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +822,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +843,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +863,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

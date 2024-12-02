@@ -37,6 +37,7 @@ public interface CompleteQueryResponseOrBuilder
    */
   java.util.List<com.google.cloud.talent.v4.CompleteQueryResponse.CompletionResult>
       getCompletionResultsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface CompleteQueryResponseOrBuilder
    * </code>
    */
   com.google.cloud.talent.v4.CompleteQueryResponse.CompletionResult getCompletionResults(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface CompleteQueryResponseOrBuilder
    * </code>
    */
   int getCompletionResultsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface CompleteQueryResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.talent.v4.CompleteQueryResponse.CompletionResultOrBuilder>
       getCompletionResultsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface CompleteQueryResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface CompleteQueryResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.talent.v4.ResponseMetadata getMetadata();
+
   /**
    *
    *

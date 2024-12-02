@@ -33,6 +33,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AdvanceRolloutRequest)
     AdvanceRolloutRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdvanceRolloutRequest.newBuilder() to construct.
   private AdvanceRolloutRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phaseId_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList overrideDeployPolicy_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getOverrideDeployPolicyList() {
     return overrideDeployPolicy_;
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
   public int getOverrideDeployPolicyCount() {
     return overrideDeployPolicy_.size();
   }
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
   public java.lang.String getOverrideDeployPolicy(int index) {
     return overrideDeployPolicy_.get(index);
   }
+
   /**
    *
    *
@@ -434,6 +443,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -655,6 +665,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -705,6 +717,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object phaseId_ = "";
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -841,6 +859,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -908,6 +929,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       overrideDeployPolicy_.makeImmutable();
       return overrideDeployPolicy_;
     }
+
     /**
      *
      *
@@ -925,6 +947,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
     public int getOverrideDeployPolicyCount() {
       return overrideDeployPolicy_.size();
     }
+
     /**
      *
      *
@@ -943,6 +966,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
     public java.lang.String getOverrideDeployPolicy(int index) {
       return overrideDeployPolicy_.get(index);
     }
+
     /**
      *
      *
@@ -961,6 +985,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index) {
       return overrideDeployPolicy_.getByteString(index);
     }
+
     /**
      *
      *
@@ -987,6 +1012,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1038,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1083,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

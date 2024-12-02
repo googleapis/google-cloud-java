@@ -40,6 +40,7 @@ public interface DeleteDashboardRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

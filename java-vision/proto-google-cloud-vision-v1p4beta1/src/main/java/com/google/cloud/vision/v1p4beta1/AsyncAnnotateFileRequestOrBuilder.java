@@ -36,6 +36,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.vision.v1p4beta1.InputConfig getInputConfig();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Feature features = 2;</code>
    */
   java.util.List<com.google.cloud.vision.v1p4beta1.Feature> getFeaturesList();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Feature features = 2;</code>
    */
   com.google.cloud.vision.v1p4beta1.Feature getFeatures(int index);
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Feature features = 2;</code>
    */
   int getFeaturesCount();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p4beta1.FeatureOrBuilder>
       getFeaturesOrBuilderList();
+
   /**
    *
    *
@@ -123,6 +129,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * @return Whether the imageContext field is set.
    */
   boolean hasImageContext();
+
   /**
    *
    *
@@ -135,6 +142,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * @return The imageContext.
    */
   com.google.cloud.vision.v1p4beta1.ImageContext getImageContext();
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -170,6 +179,7 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig();
+
   /**
    *
    *

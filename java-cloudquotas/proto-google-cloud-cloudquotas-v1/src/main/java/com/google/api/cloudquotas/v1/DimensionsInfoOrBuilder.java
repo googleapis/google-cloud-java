@@ -41,6 +41,7 @@ public interface DimensionsInfoOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 1;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -58,9 +59,11 @@ public interface DimensionsInfoOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 1;</code>
    */
   boolean containsDimensions(java.lang.String key);
+
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDimensions();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface DimensionsInfoOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDimensionsMap();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface DimensionsInfoOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface DimensionsInfoOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface DimensionsInfoOrBuilder
    * @return The details.
    */
   com.google.api.cloudquotas.v1.QuotaDetails getDetails();
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public interface DimensionsInfoOrBuilder
    * @return A list containing the applicableLocations.
    */
   java.util.List<java.lang.String> getApplicableLocationsList();
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public interface DimensionsInfoOrBuilder
    * @return The count of applicableLocations.
    */
   int getApplicableLocationsCount();
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public interface DimensionsInfoOrBuilder
    * @return The applicableLocations at the given index.
    */
   java.lang.String getApplicableLocations(int index);
+
   /**
    *
    *

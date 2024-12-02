@@ -33,6 +33,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SchedulingNodeAffinity)
     SchedulingNodeAffinityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SchedulingNodeAffinity.newBuilder() to construct.
   private SchedulingNodeAffinity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_OPERATOR = 0;</code>
      */
     public static final int UNDEFINED_OPERATOR_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      * <code>IN = 2341;</code>
      */
     public static final int IN_VALUE = 2341;
+
     /**
      *
      *
@@ -140,6 +143,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      * <code>NOT_IN = 161144369;</code>
      */
     public static final int NOT_IN_VALUE = 161144369;
+
     /** <code>OPERATOR_UNSPECIFIED = 128892924;</code> */
     public static final int OPERATOR_UNSPECIFIED_VALUE = 128892924;
 
@@ -235,6 +239,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -250,6 +255,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
   public boolean hasKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -273,6 +279,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -301,6 +308,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operator_ = "";
+
   /**
    *
    *
@@ -317,6 +325,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
   public boolean hasOperator() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -341,6 +350,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -371,6 +381,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -385,6 +396,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
+
   /**
    *
    *
@@ -399,6 +411,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
   public int getValuesCount() {
     return values_.size();
   }
+
   /**
    *
    *
@@ -414,6 +427,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
+
   /**
    *
    *
@@ -624,6 +638,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -849,6 +864,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     public boolean hasKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -907,6 +925,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -928,6 +947,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +965,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object operator_ = "";
+
     /**
      *
      *
@@ -984,6 +1006,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     public boolean hasOperator() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1007,6 +1030,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1054,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1077,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1096,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1130,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1118,6 +1146,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       values_.makeImmutable();
       return values_;
     }
+
     /**
      *
      *
@@ -1132,6 +1161,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -1147,6 +1177,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
+
     /**
      *
      *
@@ -1162,6 +1193,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1185,6 +1217,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1240,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1260,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1279,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

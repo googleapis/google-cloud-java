@@ -40,6 +40,7 @@ public interface DeployJobRunOrBuilder
    * @return The build.
    */
   java.lang.String getBuild();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface DeployJobRunOrBuilder
    * @return The enum numeric value on the wire for failureCause.
    */
   int getFailureCauseValue();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface DeployJobRunOrBuilder
    * @return The failureMessage.
    */
   java.lang.String getFailureMessage();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface DeployJobRunOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface DeployJobRunOrBuilder
    * @return The metadata.
    */
   com.google.cloud.deploy.v1.DeployJobRunMetadata getMetadata();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface DeployJobRunOrBuilder
    * @return Whether the artifact field is set.
    */
   boolean hasArtifact();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface DeployJobRunOrBuilder
    * @return The artifact.
    */
   com.google.cloud.deploy.v1.DeployArtifact getArtifact();
+
   /**
    *
    *

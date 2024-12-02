@@ -36,6 +36,7 @@ public interface SynonymEntityOrBuilder
    * @return The sourceEntity.
    */
   java.lang.String getSourceEntity();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface SynonymEntityOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface SynonymEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface SynonymEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
+
   /**
    *
    *

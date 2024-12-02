@@ -33,6 +33,7 @@ public final class UndeployIndexResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UndeployIndexResponse)
     UndeployIndexResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UndeployIndexResponse.newBuilder() to construct.
   private UndeployIndexResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class UndeployIndexResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

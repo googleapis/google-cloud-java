@@ -37,6 +37,7 @@ public interface ManagedGroupConfigOrBuilder
    * @return The instanceTemplateName.
    */
   java.lang.String getInstanceTemplateName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ManagedGroupConfigOrBuilder
    * @return The instanceGroupManagerName.
    */
   java.lang.String getInstanceGroupManagerName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ManagedGroupConfigOrBuilder
    * @return The instanceGroupManagerUri.
    */
   java.lang.String getInstanceGroupManagerUri();
+
   /**
    *
    *

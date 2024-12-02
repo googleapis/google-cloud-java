@@ -34,6 +34,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallPolicy)
     FirewallPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FirewallPolicy.newBuilder() to construct.
   private FirewallPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object condition_ = "";
+
   /**
    *
    *
@@ -268,6 +276,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +313,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.FirewallAction> actions_;
+
   /**
    *
    *
@@ -324,6 +334,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.recaptchaenterprise.v1.FirewallAction> getActionsList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -345,6 +356,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       getActionsOrBuilderList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -365,6 +377,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getActionsCount() {
     return actions_.size();
   }
+
   /**
    *
    *
@@ -385,6 +398,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.recaptchaenterprise.v1.FirewallAction getActions(int index) {
     return actions_.get(index);
   }
+
   /**
    *
    *
@@ -603,6 +617,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -895,6 +910,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -918,6 +934,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -941,6 +958,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -963,6 +981,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1000,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1026,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1030,6 +1051,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1076,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1100,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1120,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1147,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -1147,6 +1173,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1199,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1224,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1245,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1273,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object condition_ = "";
+
     /**
      *
      *
@@ -1273,6 +1304,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1335,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1332,6 +1365,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1391,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1463,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1451,6 +1487,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1474,6 +1511,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1503,6 +1541,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1569,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1599,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1588,6 +1629,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1615,6 +1657,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1685,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1669,6 +1713,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1695,6 +1740,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1721,6 +1767,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1787,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.FirewallAction.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1764,6 +1812,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1788,6 +1837,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(actions_);
       }
     }
+
     /**
      *
      *
@@ -1808,6 +1858,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return getActionsFieldBuilder()
           .addBuilder(com.google.recaptchaenterprise.v1.FirewallAction.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1828,6 +1879,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return getActionsFieldBuilder()
           .addBuilder(index, com.google.recaptchaenterprise.v1.FirewallAction.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.Filter)
     FilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Filter.newBuilder() to construct.
   private Filter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LOCATION_FILTER_FIELD_NUMBER = 1;
   private com.google.maps.areainsights.v1.LocationFilter locationFilter_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocationFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.areainsights.v1.LocationFilter.getDefaultInstance()
         : locationFilter_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FILTER_FIELD_NUMBER = 2;
   private com.google.maps.areainsights.v1.TypeFilter typeFilter_;
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTypeFilter() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.areainsights.v1.TypeFilter.getDefaultInstance()
         : typeFilter_;
   }
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.maps.areainsights.v1.OperatingStatus>(
         operatingStatus_, operatingStatus_converter_);
   }
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getOperatingStatusCount() {
     return operatingStatus_.size();
   }
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.areainsights.v1.OperatingStatus getOperatingStatus(int index) {
     return operatingStatus_converter_.convert(operatingStatus_.get(index));
   }
+
   /**
    *
    *
@@ -277,6 +288,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getOperatingStatusValueList() {
     return operatingStatus_;
   }
+
   /**
    *
    *
@@ -318,6 +330,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -339,6 +352,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.maps.areainsights.v1.PriceLevel>(
         priceLevels_, priceLevels_converter_);
   }
+
   /**
    *
    *
@@ -358,6 +372,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getPriceLevelsCount() {
     return priceLevels_.size();
   }
+
   /**
    *
    *
@@ -378,6 +393,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.areainsights.v1.PriceLevel getPriceLevels(int index) {
     return priceLevels_converter_.convert(priceLevels_.get(index));
   }
+
   /**
    *
    *
@@ -397,6 +413,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getPriceLevelsValueList() {
     return priceLevels_;
   }
+
   /**
    *
    *
@@ -422,6 +439,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RATING_FILTER_FIELD_NUMBER = 5;
   private com.google.maps.areainsights.v1.RatingFilter ratingFilter_;
+
   /**
    *
    *
@@ -441,6 +459,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRatingFilter() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -462,6 +481,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.areainsights.v1.RatingFilter.getDefaultInstance()
         : ratingFilter_;
   }
+
   /**
    *
    *
@@ -723,6 +743,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1041,6 +1062,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.areainsights.v1.LocationFilter.Builder,
             com.google.maps.areainsights.v1.LocationFilterOrBuilder>
         locationFilterBuilder_;
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocationFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1081,6 +1104,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         return locationFilterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1130,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1154,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1186,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1209,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1227,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocationFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1220,6 +1249,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             : locationFilter_;
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1285,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.areainsights.v1.TypeFilter.Builder,
             com.google.maps.areainsights.v1.TypeFilterOrBuilder>
         typeFilterBuilder_;
+
     /**
      *
      *
@@ -1271,6 +1302,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTypeFilter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1293,6 +1325,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         return typeFilterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1317,6 +1350,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1339,6 +1373,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1403,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1425,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1405,6 +1442,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTypeFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1425,6 +1463,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             : typeFilter_;
       }
     }
+
     /**
      *
      *
@@ -1461,6 +1500,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
       }
     }
+
     /**
      *
      *
@@ -1482,6 +1522,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.maps.areainsights.v1.OperatingStatus>(
           operatingStatus_, operatingStatus_converter_);
     }
+
     /**
      *
      *
@@ -1500,6 +1541,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getOperatingStatusCount() {
       return operatingStatus_.size();
     }
+
     /**
      *
      *
@@ -1519,6 +1561,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.areainsights.v1.OperatingStatus getOperatingStatus(int index) {
       return operatingStatus_converter_.convert(operatingStatus_.get(index));
     }
+
     /**
      *
      *
@@ -1546,6 +1589,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1615,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1641,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1617,6 +1663,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1635,6 +1682,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getOperatingStatusValueList() {
       return java.util.Collections.unmodifiableList(operatingStatus_);
     }
+
     /**
      *
      *
@@ -1654,6 +1702,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getOperatingStatusValue(int index) {
       return operatingStatus_.get(index);
     }
+
     /**
      *
      *
@@ -1677,6 +1726,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1699,6 +1749,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1783,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
       }
     }
+
     /**
      *
      *
@@ -1752,6 +1804,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.maps.areainsights.v1.PriceLevel>(
           priceLevels_, priceLevels_converter_);
     }
+
     /**
      *
      *
@@ -1770,6 +1823,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getPriceLevelsCount() {
       return priceLevels_.size();
     }
+
     /**
      *
      *
@@ -1789,6 +1843,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.areainsights.v1.PriceLevel getPriceLevels(int index) {
       return priceLevels_converter_.convert(priceLevels_.get(index));
     }
+
     /**
      *
      *
@@ -1815,6 +1870,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1896,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1922,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1886,6 +1944,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1904,6 +1963,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getPriceLevelsValueList() {
       return java.util.Collections.unmodifiableList(priceLevels_);
     }
+
     /**
      *
      *
@@ -1923,6 +1983,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getPriceLevelsValue(int index) {
       return priceLevels_.get(index);
     }
+
     /**
      *
      *
@@ -1946,6 +2007,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1968,6 +2030,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2062,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.areainsights.v1.RatingFilter.Builder,
             com.google.maps.areainsights.v1.RatingFilterOrBuilder>
         ratingFilterBuilder_;
+
     /**
      *
      *
@@ -2017,6 +2081,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRatingFilter() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2041,6 +2106,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         return ratingFilterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2067,6 +2133,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2158,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2122,6 +2190,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2145,6 +2214,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2233,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRatingFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2185,6 +2256,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             : ratingFilter_;
       }
     }
+
     /**
      *
      *

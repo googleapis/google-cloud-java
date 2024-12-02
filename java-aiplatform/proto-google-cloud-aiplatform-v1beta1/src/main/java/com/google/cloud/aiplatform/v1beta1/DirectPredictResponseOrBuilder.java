@@ -34,6 +34,7 @@ public interface DirectPredictResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor outputs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Tensor> getOutputsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface DirectPredictResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor outputs = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Tensor getOutputs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface DirectPredictResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor outputs = 1;</code>
    */
   int getOutputsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface DirectPredictResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TensorOrBuilder>
       getOutputsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface DirectPredictResponseOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface DirectPredictResponseOrBuilder
    * @return The parameters.
    */
   com.google.cloud.aiplatform.v1beta1.Tensor getParameters();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface GetMigrationSubtaskRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface GetMigrationSubtaskRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface GetMigrationSubtaskRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
+
   /**
    *
    *

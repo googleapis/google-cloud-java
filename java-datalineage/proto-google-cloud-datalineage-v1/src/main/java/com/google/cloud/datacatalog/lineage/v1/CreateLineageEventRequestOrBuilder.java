@@ -38,6 +38,7 @@ public interface CreateLineageEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateLineageEventRequestOrBuilder
    * @return Whether the lineageEvent field is set.
    */
   boolean hasLineageEvent();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateLineageEventRequestOrBuilder
    * @return The lineageEvent.
    */
   com.google.cloud.datacatalog.lineage.v1.LineageEvent getLineageEvent();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateLineageEventRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

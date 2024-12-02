@@ -85,6 +85,7 @@ public enum ResourceVisibility implements com.google.protobuf.ProtocolMessageEnu
    * <code>RESOURCE_VISIBILITY_UNSPECIFIED = 0;</code>
    */
   public static final int RESOURCE_VISIBILITY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public enum ResourceVisibility implements com.google.protobuf.ProtocolMessageEnu
    * <code>RESOURCE_VISIBILITY_PUBLIC = 10;</code>
    */
   public static final int RESOURCE_VISIBILITY_PUBLIC_VALUE = 10;
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public enum ResourceVisibility implements com.google.protobuf.ProtocolMessageEnu
    * <code>RESOURCE_VISIBILITY_INCONCLUSIVE = 15;</code>
    */
   public static final int RESOURCE_VISIBILITY_INCONCLUSIVE_VALUE = 15;
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.CreateWorkstationRequest)
     CreateWorkstationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateWorkstationRequest.newBuilder() to construct.
   private CreateWorkstationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workstationId_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
 
   public static final int WORKSTATION_FIELD_NUMBER = 3;
   private com.google.cloud.workstations.v1beta.Workstation workstation_;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
   public boolean hasWorkstation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
         ? com.google.cloud.workstations.v1beta.Workstation.getDefaultInstance()
         : workstation_;
   }
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -438,6 +447,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -683,6 +693,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -754,6 +767,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +787,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object workstationId_ = "";
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -843,6 +860,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +882,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +900,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +930,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
             com.google.cloud.workstations.v1beta.Workstation.Builder,
             com.google.cloud.workstations.v1beta.WorkstationOrBuilder>
         workstationBuilder_;
+
     /**
      *
      *
@@ -926,6 +947,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
     public boolean hasWorkstation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -948,6 +970,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
         return workstationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1018,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1049,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1088,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return getWorkstationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1081,6 +1109,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
             : workstation_;
       }
     }
+
     /**
      *
      *
@@ -1110,6 +1139,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1126,6 +1156,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1146,6 +1177,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

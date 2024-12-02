@@ -37,6 +37,7 @@ public interface MatchIntentResponseOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MatchIntentResponseOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface MatchIntentResponseOrBuilder
    * @return Whether the triggerIntent field is set.
    */
   boolean hasTriggerIntent();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface MatchIntentResponseOrBuilder
    * @return The triggerIntent.
    */
   java.lang.String getTriggerIntent();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface MatchIntentResponseOrBuilder
    * @return Whether the transcript field is set.
    */
   boolean hasTranscript();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface MatchIntentResponseOrBuilder
    * @return The transcript.
    */
   java.lang.String getTranscript();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface MatchIntentResponseOrBuilder
    * @return Whether the triggerEvent field is set.
    */
   boolean hasTriggerEvent();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface MatchIntentResponseOrBuilder
    * @return The triggerEvent.
    */
   java.lang.String getTriggerEvent();
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public interface MatchIntentResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Match matches = 4;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Match> getMatchesList();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface MatchIntentResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Match matches = 4;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Match getMatches(int index);
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface MatchIntentResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Match matches = 4;</code>
    */
   int getMatchesCount();
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public interface MatchIntentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.MatchOrBuilder>
       getMatchesOrBuilderList();
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public interface MatchIntentResponseOrBuilder
    * @return Whether the currentPage field is set.
    */
   boolean hasCurrentPage();
+
   /**
    *
    *
@@ -278,6 +291,7 @@ public interface MatchIntentResponseOrBuilder
    * @return The currentPage.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Page getCurrentPage();
+
   /**
    *
    *

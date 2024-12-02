@@ -175,7 +175,8 @@ public class MockCloudControlsPartnerCoreImpl extends CloudControlsPartnerCoreIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetPartnerPermissions, expected %s or %s",
+                  "Unrecognized response type %s for method GetPartnerPermissions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PartnerPermissions.class.getName(),
                   Exception.class.getName())));
@@ -197,7 +198,8 @@ public class MockCloudControlsPartnerCoreImpl extends CloudControlsPartnerCoreIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAccessApprovalRequests, expected %s or %s",
+                  "Unrecognized response type %s for method ListAccessApprovalRequests, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAccessApprovalRequestsResponse.class.getName(),
                   Exception.class.getName())));

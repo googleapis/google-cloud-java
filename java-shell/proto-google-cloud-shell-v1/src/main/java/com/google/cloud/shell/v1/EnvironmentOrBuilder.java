@@ -40,6 +40,7 @@ public interface EnvironmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface EnvironmentOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface EnvironmentOrBuilder
    * @return The dockerImage.
    */
   java.lang.String getDockerImage();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface EnvironmentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface EnvironmentOrBuilder
    * @return The webHost.
    */
   java.lang.String getWebHost();
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public interface EnvironmentOrBuilder
    * @return The sshUsername.
    */
   java.lang.String getSshUsername();
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public interface EnvironmentOrBuilder
    * @return The sshHost.
    */
   java.lang.String getSshHost();
+
   /**
    *
    *
@@ -255,6 +262,7 @@ public interface EnvironmentOrBuilder
    * @return A list containing the publicKeys.
    */
   java.util.List<java.lang.String> getPublicKeysList();
+
   /**
    *
    *
@@ -271,6 +279,7 @@ public interface EnvironmentOrBuilder
    * @return The count of publicKeys.
    */
   int getPublicKeysCount();
+
   /**
    *
    *
@@ -288,6 +297,7 @@ public interface EnvironmentOrBuilder
    * @return The publicKeys at the given index.
    */
   java.lang.String getPublicKeys(int index);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the imageClassificationAnnotation field is set.
    */
   boolean hasImageClassificationAnnotation();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface AnnotationValueOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation
       getImageClassificationAnnotation();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the imageBoundingPolyAnnotation field is set.
    */
   boolean hasImageBoundingPolyAnnotation();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface AnnotationValueOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation
       getImageBoundingPolyAnnotation();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the imagePolylineAnnotation field is set.
    */
   boolean hasImagePolylineAnnotation();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface AnnotationValueOrBuilder
    * @return The imagePolylineAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation getImagePolylineAnnotation();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the imageSegmentationAnnotation field is set.
    */
   boolean hasImageSegmentationAnnotation();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface AnnotationValueOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation
       getImageSegmentationAnnotation();
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the textClassificationAnnotation field is set.
    */
   boolean hasTextClassificationAnnotation();
+
   /**
    *
    *
@@ -233,6 +242,7 @@ public interface AnnotationValueOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation
       getTextClassificationAnnotation();
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the textEntityExtractionAnnotation field is set.
    */
   boolean hasTextEntityExtractionAnnotation();
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public interface AnnotationValueOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
       getTextEntityExtractionAnnotation();
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the videoClassificationAnnotation field is set.
    */
   boolean hasVideoClassificationAnnotation();
+
   /**
    *
    *
@@ -319,6 +332,7 @@ public interface AnnotationValueOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation
       getVideoClassificationAnnotation();
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the videoObjectTrackingAnnotation field is set.
    */
   boolean hasVideoObjectTrackingAnnotation();
+
   /**
    *
    *
@@ -362,6 +377,7 @@ public interface AnnotationValueOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation
       getVideoObjectTrackingAnnotation();
+
   /**
    *
    *
@@ -389,6 +405,7 @@ public interface AnnotationValueOrBuilder
    * @return Whether the videoEventAnnotation field is set.
    */
   boolean hasVideoEventAnnotation();
+
   /**
    *
    *
@@ -402,6 +419,7 @@ public interface AnnotationValueOrBuilder
    * @return The videoEventAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation getVideoEventAnnotation();
+
   /**
    *
    *

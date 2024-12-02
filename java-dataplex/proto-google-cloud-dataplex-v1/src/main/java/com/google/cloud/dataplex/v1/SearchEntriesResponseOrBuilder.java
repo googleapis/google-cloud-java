@@ -34,6 +34,7 @@ public interface SearchEntriesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.SearchEntriesResult results = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.SearchEntriesResult> getResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchEntriesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.SearchEntriesResult results = 1;</code>
    */
   com.google.cloud.dataplex.v1.SearchEntriesResult getResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchEntriesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.SearchEntriesResult results = 1;</code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchEntriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.SearchEntriesResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface SearchEntriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface SearchEntriesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface SearchEntriesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface SearchEntriesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

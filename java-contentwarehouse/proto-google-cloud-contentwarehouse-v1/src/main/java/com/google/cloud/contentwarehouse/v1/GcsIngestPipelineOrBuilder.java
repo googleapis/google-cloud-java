@@ -38,6 +38,7 @@ public interface GcsIngestPipelineOrBuilder
    * @return The inputPath.
    */
   java.lang.String getInputPath();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface GcsIngestPipelineOrBuilder
    * @return The schemaName.
    */
   java.lang.String getSchemaName();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface GcsIngestPipelineOrBuilder
    * @return The processorType.
    */
   java.lang.String getProcessorType();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface GcsIngestPipelineOrBuilder
    * @return Whether the pipelineConfig field is set.
    */
   boolean hasPipelineConfig();
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public interface GcsIngestPipelineOrBuilder
    * @return The pipelineConfig.
    */
   com.google.cloud.contentwarehouse.v1.IngestPipelineConfig getPipelineConfig();
+
   /**
    *
    *

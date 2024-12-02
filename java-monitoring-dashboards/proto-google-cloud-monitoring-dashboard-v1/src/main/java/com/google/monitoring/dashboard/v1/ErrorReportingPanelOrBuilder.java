@@ -41,6 +41,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return A list containing the projectNames.
    */
   java.util.List<java.lang.String> getProjectNamesList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return The count of projectNames.
    */
   int getProjectNamesCount();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return The projectNames at the given index.
    */
   java.lang.String getProjectNames(int index);
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return A list containing the services.
    */
   java.util.List<java.lang.String> getServicesList();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return The count of services.
    */
   int getServicesCount();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return The services at the given index.
    */
   java.lang.String getServices(int index);
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return A list containing the versions.
    */
   java.util.List<java.lang.String> getVersionsList();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return The count of versions.
    */
   int getVersionsCount();
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public interface ErrorReportingPanelOrBuilder
    * @return The versions at the given index.
    */
   java.lang.String getVersions(int index);
+
   /**
    *
    *

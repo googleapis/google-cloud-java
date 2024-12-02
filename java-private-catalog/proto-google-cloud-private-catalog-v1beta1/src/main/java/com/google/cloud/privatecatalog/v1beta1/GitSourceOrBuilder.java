@@ -36,6 +36,7 @@ public interface GitSourceOrBuilder
    * @return The repo.
    */
   java.lang.String getRepo();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface GitSourceOrBuilder
    * @return The dir.
    */
   java.lang.String getDir();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface GitSourceOrBuilder
    * @return Whether the commit field is set.
    */
   boolean hasCommit();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface GitSourceOrBuilder
    * @return The commit.
    */
   java.lang.String getCommit();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface GitSourceOrBuilder
    * @return Whether the branch field is set.
    */
   boolean hasBranch();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface GitSourceOrBuilder
    * @return The branch.
    */
   java.lang.String getBranch();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface GitSourceOrBuilder
    * @return Whether the tag field is set.
    */
   boolean hasTag();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface GitSourceOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
+
   /**
    *
    *

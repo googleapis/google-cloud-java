@@ -39,6 +39,7 @@ public interface CreateGrantRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateGrantRequestOrBuilder
    * @return Whether the grant field is set.
    */
   boolean hasGrant();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateGrantRequestOrBuilder
    * @return The grant.
    */
   com.google.cloud.privilegedaccessmanager.v1.Grant getGrant();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface CreateGrantRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

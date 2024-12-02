@@ -39,6 +39,7 @@ public interface DeleteEventCreateRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

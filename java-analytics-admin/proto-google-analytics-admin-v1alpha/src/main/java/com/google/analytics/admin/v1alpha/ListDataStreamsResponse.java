@@ -33,6 +33,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ListDataStreamsResponse)
     ListDataStreamsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDataStreamsResponse.newBuilder() to construct.
   private ListDataStreamsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.DataStream> dataStreams_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.analytics.admin.v1alpha.DataStream> getDataStreamsList() {
     return dataStreams_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       getDataStreamsOrBuilderList() {
     return dataStreams_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
   public int getDataStreamsCount() {
     return dataStreams_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
   public com.google.analytics.admin.v1alpha.DataStream getDataStreams(int index) {
     return dataStreams_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
         return dataStreamsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
         return dataStreamsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
         return dataStreamsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +872,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
     public com.google.analytics.admin.v1alpha.DataStream.Builder getDataStreamsBuilder(int index) {
       return getDataStreamsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -881,6 +903,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
         return dataStreamsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -898,6 +921,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(dataStreams_);
       }
     }
+
     /**
      *
      *
@@ -911,6 +935,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       return getDataStreamsFieldBuilder()
           .addBuilder(com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -924,6 +949,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       return getDataStreamsFieldBuilder()
           .addBuilder(index, com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -956,6 +982,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -979,6 +1006,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1030,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1053,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1072,7 @@ public final class ListDataStreamsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

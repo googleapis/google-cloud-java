@@ -33,6 +33,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListBigQueryExportsResponse)
     ListBigQueryExportsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListBigQueryExportsResponse.newBuilder() to construct.
   private ListBigQueryExportsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.BigQueryExport> bigQueryExports_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       getBigQueryExportsList() {
     return bigQueryExports_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       getBigQueryExportsOrBuilderList() {
     return bigQueryExports_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
   public int getBigQueryExportsCount() {
     return bigQueryExports_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
   public com.google.cloud.securitycenter.v1.BigQueryExport getBigQueryExports(int index) {
     return bigQueryExports_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +369,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
         return bigQueryExportsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -660,6 +670,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
         return bigQueryExportsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
         return bigQueryExportsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +755,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +800,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +821,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +896,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
         int index) {
       return getBigQueryExportsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -892,6 +914,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
         return bigQueryExportsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -909,6 +932,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(bigQueryExports_);
       }
     }
+
     /**
      *
      *
@@ -922,6 +946,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       return getBigQueryExportsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v1.BigQueryExport.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -937,6 +962,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.securitycenter.v1.BigQueryExport.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -972,6 +998,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -995,6 +1022,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1046,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1069,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1088,7 @@ public final class ListBigQueryExportsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

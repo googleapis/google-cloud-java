@@ -33,6 +33,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ConversionEvent)
     ConversionEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversionEvent.newBuilder() to construct.
   private ConversionEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      * <code>CONVERSION_COUNTING_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int CONVERSION_COUNTING_METHOD_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      * <code>ONCE_PER_EVENT = 1;</code>
      */
     public static final int ONCE_PER_EVENT_VALUE = 1;
+
     /**
      *
      *
@@ -248,6 +251,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      * @return Whether the value field is set.
      */
     boolean hasValue();
+
     /**
      *
      *
@@ -277,6 +281,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      * @return Whether the currencyCode field is set.
      */
     boolean hasCurrencyCode();
+
     /**
      *
      *
@@ -292,6 +297,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      * @return The currencyCode.
      */
     java.lang.String getCurrencyCode();
+
     /**
      *
      *
@@ -308,6 +314,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getCurrencyCodeBytes();
   }
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValue)
       DefaultConversionValueOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DefaultConversionValue.newBuilder() to construct.
     private DefaultConversionValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -357,6 +365,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int VALUE_FIELD_NUMBER = 1;
     private double value_ = 0D;
+
     /**
      *
      *
@@ -373,6 +382,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     public boolean hasValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -394,6 +404,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object currencyCode_ = "";
+
     /**
      *
      *
@@ -412,6 +423,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     public boolean hasCurrencyCode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -438,6 +450,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -872,6 +886,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private double value_;
+
       /**
        *
        *
@@ -888,6 +903,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       public boolean hasValue() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -904,6 +920,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       public double getValue() {
         return value_;
       }
+
       /**
        *
        *
@@ -924,6 +941,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -944,6 +962,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object currencyCode_ = "";
+
       /**
        *
        *
@@ -961,6 +980,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       public boolean hasCurrencyCode() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -986,6 +1006,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1011,6 +1032,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1035,6 +1057,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1055,6 +1078,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1154,6 +1178,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1178,6 +1203,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1207,6 +1233,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventName_ = "";
+
   /**
    *
    *
@@ -1231,6 +1258,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1258,6 +1286,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1274,6 +1303,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1290,6 +1320,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1307,6 +1338,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
 
   public static final int DELETABLE_FIELD_NUMBER = 4;
   private boolean deletable_ = false;
+
   /**
    *
    *
@@ -1326,6 +1358,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
 
   public static final int CUSTOM_FIELD_NUMBER = 5;
   private boolean custom_ = false;
+
   /**
    *
    *
@@ -1349,6 +1382,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
 
   public static final int COUNTING_METHOD_FIELD_NUMBER = 6;
   private int countingMethod_ = 0;
+
   /**
    *
    *
@@ -1368,6 +1402,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
   public int getCountingMethodValue() {
     return countingMethod_;
   }
+
   /**
    *
    *
@@ -1397,6 +1432,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
   public static final int DEFAULT_CONVERSION_VALUE_FIELD_NUMBER = 7;
   private com.google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValue
       defaultConversionValue_;
+
   /**
    *
    *
@@ -1414,6 +1450,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
   public boolean hasDefaultConversionValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1435,6 +1472,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance()
         : defaultConversionValue_;
   }
+
   /**
    *
    *
@@ -1685,6 +1723,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1975,6 +2014,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1998,6 +2038,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2021,6 +2062,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2043,6 +2085,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2061,6 +2104,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2086,6 +2130,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object eventName_ = "";
+
     /**
      *
      *
@@ -2109,6 +2154,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2132,6 +2178,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2154,6 +2201,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2172,6 +2220,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2202,6 +2251,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2218,6 +2268,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2240,6 +2291,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2264,6 +2316,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2285,6 +2338,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2314,6 +2368,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2335,6 +2390,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2351,6 +2407,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2371,6 +2428,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2400,6 +2458,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean deletable_;
+
     /**
      *
      *
@@ -2416,6 +2475,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     public boolean getDeletable() {
       return deletable_;
     }
+
     /**
      *
      *
@@ -2436,6 +2496,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2456,6 +2517,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean custom_;
+
     /**
      *
      *
@@ -2476,6 +2538,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     public boolean getCustom() {
       return custom_;
     }
+
     /**
      *
      *
@@ -2500,6 +2563,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2524,6 +2588,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     }
 
     private int countingMethod_ = 0;
+
     /**
      *
      *
@@ -2543,6 +2608,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     public int getCountingMethodValue() {
       return countingMethod_;
     }
+
     /**
      *
      *
@@ -2565,6 +2631,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2590,6 +2657,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
           ? com.google.analytics.admin.v1alpha.ConversionEvent.ConversionCountingMethod.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2616,6 +2684,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2645,6 +2714,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
             com.google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValue.Builder,
             com.google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValueOrBuilder>
         defaultConversionValueBuilder_;
+
     /**
      *
      *
@@ -2661,6 +2731,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     public boolean hasDefaultConversionValue() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2685,6 +2756,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         return defaultConversionValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2710,6 +2782,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2733,6 +2806,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2765,6 +2839,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2786,6 +2861,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2803,6 +2879,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDefaultConversionValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2825,6 +2902,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
             : defaultConversionValue_;
       }
     }
+
     /**
      *
      *

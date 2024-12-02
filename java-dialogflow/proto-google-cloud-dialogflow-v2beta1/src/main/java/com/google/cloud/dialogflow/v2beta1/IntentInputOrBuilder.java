@@ -38,6 +38,7 @@ public interface IntentInputOrBuilder
    * @return The intent.
    */
   java.lang.String getIntent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface IntentInputOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

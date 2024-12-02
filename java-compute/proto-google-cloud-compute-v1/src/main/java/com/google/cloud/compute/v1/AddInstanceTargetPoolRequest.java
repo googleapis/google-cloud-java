@@ -33,6 +33,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddInstanceTargetPoolRequest)
     AddInstanceTargetPoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddInstanceTargetPoolRequest.newBuilder() to construct.
   private AddInstanceTargetPoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetPool_ = "";
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
   public static final int TARGET_POOLS_ADD_INSTANCE_REQUEST_RESOURCE_FIELD_NUMBER = 428796404;
   private com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest
       targetPoolsAddInstanceRequestResource_;
+
   /**
    *
    *
@@ -314,6 +325,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
   public boolean hasTargetPoolsAddInstanceRequestResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.getDefaultInstance()
         : targetPoolsAddInstanceRequestResource_;
   }
+
   /**
    *
    *
@@ -563,6 +576,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -828,6 +842,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -852,6 +867,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -876,6 +892,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -899,6 +916,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +936,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +963,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -968,6 +988,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1013,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1037,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1057,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1084,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1074,6 +1099,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1145,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1139,6 +1167,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1185,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1210,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object targetPool_ = "";
+
     /**
      *
      *
@@ -1202,6 +1233,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1278,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1296,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1327,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.Builder,
             com.google.cloud.compute.v1.TargetPoolsAddInstanceRequestOrBuilder>
         targetPoolsAddInstanceRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1308,6 +1344,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     public boolean hasTargetPoolsAddInstanceRequestResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1331,6 +1368,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         return targetPoolsAddInstanceRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1356,6 +1394,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1417,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1449,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1430,6 +1471,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1489,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       onChanged();
       return getTargetPoolsAddInstanceRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1468,6 +1511,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
             : targetPoolsAddInstanceRequestResource_;
       }
     }
+
     /**
      *
      *

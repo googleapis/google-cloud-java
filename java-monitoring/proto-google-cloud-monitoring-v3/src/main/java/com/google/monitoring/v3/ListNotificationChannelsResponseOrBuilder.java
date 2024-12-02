@@ -34,6 +34,7 @@ public interface ListNotificationChannelsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.NotificationChannel notification_channels = 3;</code>
    */
   java.util.List<com.google.monitoring.v3.NotificationChannel> getNotificationChannelsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListNotificationChannelsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.NotificationChannel notification_channels = 3;</code>
    */
   com.google.monitoring.v3.NotificationChannel getNotificationChannels(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListNotificationChannelsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.NotificationChannel notification_channels = 3;</code>
    */
   int getNotificationChannelsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListNotificationChannelsResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.NotificationChannelOrBuilder>
       getNotificationChannelsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListNotificationChannelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

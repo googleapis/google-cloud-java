@@ -33,6 +33,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.chat.v1.RichLinkMetadata)
     RichLinkMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RichLinkMetadata.newBuilder() to construct.
   private RichLinkMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
      * <code>RICH_LINK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RICH_LINK_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
      * <code>DRIVE_FILE = 1;</code>
      */
     public static final int DRIVE_FILE_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     private DataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -274,6 +278,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -297,6 +302,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -323,6 +329,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int RICH_LINK_TYPE_FIELD_NUMBER = 2;
   private int richLinkType_ = 0;
+
   /**
    *
    *
@@ -338,6 +345,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
   public int getRichLinkTypeValue() {
     return richLinkType_;
   }
+
   /**
    *
    *
@@ -357,6 +365,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DRIVE_LINK_DATA_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -372,6 +381,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
   public boolean hasDriveLinkData() {
     return dataCase_ == 3;
   }
+
   /**
    *
    *
@@ -390,6 +400,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     }
     return com.google.chat.v1.DriveLinkData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -408,6 +419,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CHAT_SPACE_LINK_DATA_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -423,6 +435,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
   public boolean hasChatSpaceLinkData() {
     return dataCase_ == 4;
   }
+
   /**
    *
    *
@@ -441,6 +454,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     }
     return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -667,6 +681,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -925,6 +940,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -947,6 +963,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -969,6 +986,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1008,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1026,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1051,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private int richLinkType_ = 0;
+
     /**
      *
      *
@@ -1046,6 +1067,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     public int getRichLinkTypeValue() {
       return richLinkType_;
     }
+
     /**
      *
      *
@@ -1064,6 +1086,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1106,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
           ? com.google.chat.v1.RichLinkMetadata.RichLinkType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1104,6 +1128,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1152,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
             com.google.chat.v1.DriveLinkData.Builder,
             com.google.chat.v1.DriveLinkDataOrBuilder>
         driveLinkDataBuilder_;
+
     /**
      *
      *
@@ -1142,6 +1168,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     public boolean hasDriveLinkData() {
       return dataCase_ == 3;
     }
+
     /**
      *
      *
@@ -1167,6 +1194,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
         return com.google.chat.v1.DriveLinkData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1217,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1237,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1268,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       dataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1294,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1307,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.chat.v1.DriveLinkData.Builder getDriveLinkDataBuilder() {
       return getDriveLinkDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1295,6 +1328,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
         return com.google.chat.v1.DriveLinkData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1365,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
             com.google.chat.v1.ChatSpaceLinkData.Builder,
             com.google.chat.v1.ChatSpaceLinkDataOrBuilder>
         chatSpaceLinkDataBuilder_;
+
     /**
      *
      *
@@ -1346,6 +1381,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     public boolean hasChatSpaceLinkData() {
       return dataCase_ == 4;
     }
+
     /**
      *
      *
@@ -1371,6 +1407,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
         return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1430,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       dataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1451,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       dataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1444,6 +1483,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       dataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1509,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1481,6 +1522,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.chat.v1.ChatSpaceLinkData.Builder getChatSpaceLinkDataBuilder() {
       return getChatSpaceLinkDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1501,6 +1543,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
         return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
       }
     }
+
     /**
      *
      *

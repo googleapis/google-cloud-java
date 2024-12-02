@@ -37,6 +37,7 @@ public interface CompanyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface CompanyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface CompanyOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface CompanyOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public interface CompanyOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface CompanyOrBuilder
    * @return The fax.
    */
   java.lang.String getFax();
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public interface CompanyOrBuilder
    * @return The phone.
    */
   java.lang.String getPhone();
+
   /**
    *
    *
@@ -252,6 +259,7 @@ public interface CompanyOrBuilder
    * @return The externalId.
    */
   java.lang.String getExternalId();
+
   /**
    *
    *
@@ -281,6 +289,7 @@ public interface CompanyOrBuilder
    * @return The comment.
    */
   java.lang.String getComment();
+
   /**
    *
    *
@@ -313,6 +322,7 @@ public interface CompanyOrBuilder
    * @return The enum numeric value on the wire for creditStatus.
    */
   int getCreditStatusValue();
+
   /**
    *
    *
@@ -343,6 +353,7 @@ public interface CompanyOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList();
+
   /**
    *
    *
@@ -355,6 +366,7 @@ public interface CompanyOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index);
+
   /**
    *
    *
@@ -367,6 +379,7 @@ public interface CompanyOrBuilder
    * </code>
    */
   int getAppliedLabelsCount();
+
   /**
    *
    *
@@ -380,6 +393,7 @@ public interface CompanyOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
       getAppliedLabelsOrBuilderList();
+
   /**
    *
    *
@@ -408,6 +422,7 @@ public interface CompanyOrBuilder
    * @return Whether the primaryContact field is set.
    */
   boolean hasPrimaryContact();
+
   /**
    *
    *
@@ -423,6 +438,7 @@ public interface CompanyOrBuilder
    * @return The primaryContact.
    */
   java.lang.String getPrimaryContact();
+
   /**
    *
    *
@@ -454,6 +470,7 @@ public interface CompanyOrBuilder
    * @return A list containing the appliedTeams.
    */
   java.util.List<java.lang.String> getAppliedTeamsList();
+
   /**
    *
    *
@@ -469,6 +486,7 @@ public interface CompanyOrBuilder
    * @return The count of appliedTeams.
    */
   int getAppliedTeamsCount();
+
   /**
    *
    *
@@ -485,6 +503,7 @@ public interface CompanyOrBuilder
    * @return The appliedTeams at the given index.
    */
   java.lang.String getAppliedTeams(int index);
+
   /**
    *
    *
@@ -515,6 +534,7 @@ public interface CompanyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -528,6 +548,7 @@ public interface CompanyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

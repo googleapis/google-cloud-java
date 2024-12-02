@@ -35,6 +35,7 @@ public final class VisualTrafficReportPolylineRendering
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.VisualTrafficReportPolylineRendering)
     VisualTrafficReportPolylineRenderingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VisualTrafficReportPolylineRendering.newBuilder() to construct.
   private VisualTrafficReportPolylineRendering(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -85,6 +86,7 @@ public final class VisualTrafficReportPolylineRendering
      * @return The enum numeric value on the wire for style.
      */
     int getStyleValue();
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class VisualTrafficReportPolylineRendering
      */
     int getLengthMeters();
   }
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class VisualTrafficReportPolylineRendering
       // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch)
       RoadStretchOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RoadStretch.newBuilder() to construct.
     private RoadStretch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -227,6 +231,7 @@ public final class VisualTrafficReportPolylineRendering
        * <code>STYLE_UNSPECIFIED = 0;</code>
        */
       public static final int STYLE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -237,6 +242,7 @@ public final class VisualTrafficReportPolylineRendering
        * <code>SLOWER_TRAFFIC = 1;</code>
        */
       public static final int SLOWER_TRAFFIC_VALUE = 1;
+
       /**
        *
        *
@@ -336,6 +342,7 @@ public final class VisualTrafficReportPolylineRendering
 
     public static final int STYLE_FIELD_NUMBER = 1;
     private int style_ = 0;
+
     /**
      *
      *
@@ -353,6 +360,7 @@ public final class VisualTrafficReportPolylineRendering
     public int getStyleValue() {
       return style_;
     }
+
     /**
      *
      *
@@ -380,6 +388,7 @@ public final class VisualTrafficReportPolylineRendering
 
     public static final int OFFSET_METERS_FIELD_NUMBER = 2;
     private int offsetMeters_ = 0;
+
     /**
      *
      *
@@ -399,6 +408,7 @@ public final class VisualTrafficReportPolylineRendering
 
     public static final int LENGTH_METERS_FIELD_NUMBER = 3;
     private int lengthMeters_ = 0;
+
     /**
      *
      *
@@ -608,6 +618,7 @@ public final class VisualTrafficReportPolylineRendering
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -835,6 +846,7 @@ public final class VisualTrafficReportPolylineRendering
       private int bitField0_;
 
       private int style_ = 0;
+
       /**
        *
        *
@@ -852,6 +864,7 @@ public final class VisualTrafficReportPolylineRendering
       public int getStyleValue() {
         return style_;
       }
+
       /**
        *
        *
@@ -872,6 +885,7 @@ public final class VisualTrafficReportPolylineRendering
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -897,6 +911,7 @@ public final class VisualTrafficReportPolylineRendering
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -922,6 +937,7 @@ public final class VisualTrafficReportPolylineRendering
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -943,6 +959,7 @@ public final class VisualTrafficReportPolylineRendering
       }
 
       private int offsetMeters_;
+
       /**
        *
        *
@@ -959,6 +976,7 @@ public final class VisualTrafficReportPolylineRendering
       public int getOffsetMeters() {
         return offsetMeters_;
       }
+
       /**
        *
        *
@@ -979,6 +997,7 @@ public final class VisualTrafficReportPolylineRendering
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -999,6 +1018,7 @@ public final class VisualTrafficReportPolylineRendering
       }
 
       private int lengthMeters_;
+
       /**
        *
        *
@@ -1014,6 +1034,7 @@ public final class VisualTrafficReportPolylineRendering
       public int getLengthMeters() {
         return lengthMeters_;
       }
+
       /**
        *
        *
@@ -1033,6 +1054,7 @@ public final class VisualTrafficReportPolylineRendering
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1126,6 +1148,7 @@ public final class VisualTrafficReportPolylineRendering
   private java.util.List<
           com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch>
       roadStretch_;
+
   /**
    *
    *
@@ -1148,6 +1171,7 @@ public final class VisualTrafficReportPolylineRendering
       getRoadStretchList() {
     return roadStretch_;
   }
+
   /**
    *
    *
@@ -1172,6 +1196,7 @@ public final class VisualTrafficReportPolylineRendering
       getRoadStretchOrBuilderList() {
     return roadStretch_;
   }
+
   /**
    *
    *
@@ -1192,6 +1217,7 @@ public final class VisualTrafficReportPolylineRendering
   public int getRoadStretchCount() {
     return roadStretch_.size();
   }
+
   /**
    *
    *
@@ -1213,6 +1239,7 @@ public final class VisualTrafficReportPolylineRendering
       getRoadStretch(int index) {
     return roadStretch_.get(index);
   }
+
   /**
    *
    *
@@ -1398,6 +1425,7 @@ public final class VisualTrafficReportPolylineRendering
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1683,6 +1711,7 @@ public final class VisualTrafficReportPolylineRendering
         return roadStretchBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1706,6 +1735,7 @@ public final class VisualTrafficReportPolylineRendering
         return roadStretchBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1730,6 +1760,7 @@ public final class VisualTrafficReportPolylineRendering
         return roadStretchBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1761,6 +1792,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1822,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -1820,6 +1853,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1885,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -1879,6 +1914,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -1908,6 +1944,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -1938,6 +1975,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -1964,6 +2002,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -1990,6 +2029,7 @@ public final class VisualTrafficReportPolylineRendering
       }
       return this;
     }
+
     /**
      *
      *
@@ -2010,6 +2050,7 @@ public final class VisualTrafficReportPolylineRendering
         getRoadStretchBuilder(int index) {
       return getRoadStretchFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2034,6 +2075,7 @@ public final class VisualTrafficReportPolylineRendering
         return roadStretchBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2061,6 +2103,7 @@ public final class VisualTrafficReportPolylineRendering
         return java.util.Collections.unmodifiableList(roadStretch_);
       }
     }
+
     /**
      *
      *
@@ -2084,6 +2127,7 @@ public final class VisualTrafficReportPolylineRendering
               com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2108,6 +2152,7 @@ public final class VisualTrafficReportPolylineRendering
               com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch
                   .getDefaultInstance());
     }
+
     /**
      *
      *

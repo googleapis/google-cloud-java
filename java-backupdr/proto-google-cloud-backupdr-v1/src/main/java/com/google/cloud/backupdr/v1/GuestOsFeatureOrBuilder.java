@@ -36,6 +36,7 @@ public interface GuestOsFeatureOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GuestOsFeatureOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

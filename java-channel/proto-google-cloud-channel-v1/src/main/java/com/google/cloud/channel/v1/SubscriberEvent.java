@@ -34,6 +34,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.SubscriberEvent)
     SubscriberEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubscriberEvent.newBuilder() to construct.
   private SubscriberEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     private EventCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CUSTOMER_EVENT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
   public boolean hasCustomerEvent() {
     return eventCase_ == 1;
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.channel.v1.CustomerEvent.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ENTITLEMENT_EVENT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
   public boolean hasEntitlementEvent() {
     return eventCase_ == 2;
   }
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.channel.v1.EntitlementEvent.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -402,6 +410,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -638,6 +647,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.CustomerEvent.Builder,
             com.google.cloud.channel.v1.CustomerEventOrBuilder>
         customerEventBuilder_;
+
     /**
      *
      *
@@ -653,6 +663,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     public boolean hasCustomerEvent() {
       return eventCase_ == 1;
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.channel.v1.CustomerEvent.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       eventCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       eventCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       eventCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.CustomerEvent.Builder getCustomerEventBuilder() {
       return getCustomerEventFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.channel.v1.CustomerEvent.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.EntitlementEvent.Builder,
             com.google.cloud.channel.v1.EntitlementEventOrBuilder>
         entitlementEventBuilder_;
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     public boolean hasEntitlementEvent() {
       return eventCase_ == 2;
     }
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.channel.v1.EntitlementEvent.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -909,6 +930,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       eventCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +951,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       eventCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +984,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       eventCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1010,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1023,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.EntitlementEvent.Builder getEntitlementEventBuilder() {
       return getEntitlementEventFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1018,6 +1044,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.channel.v1.EntitlementEvent.getDefaultInstance();
       }
     }
+
     /**
      *
      *

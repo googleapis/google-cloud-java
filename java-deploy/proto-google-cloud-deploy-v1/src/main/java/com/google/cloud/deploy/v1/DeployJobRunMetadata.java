@@ -34,6 +34,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeployJobRunMetadata)
     DeployJobRunMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeployJobRunMetadata.newBuilder() to construct.
   private DeployJobRunMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int CLOUD_RUN_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.CloudRunMetadata cloudRun_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasCloudRun() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.deploy.v1.CloudRunMetadata.getDefaultInstance()
         : cloudRun_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int CUSTOM_TARGET_FIELD_NUMBER = 2;
   private com.google.cloud.deploy.v1.CustomTargetDeployMetadata customTarget_;
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasCustomTarget() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.deploy.v1.CustomTargetDeployMetadata.getDefaultInstance()
         : customTarget_;
   }
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int CUSTOM_FIELD_NUMBER = 3;
   private com.google.cloud.deploy.v1.CustomMetadata custom_;
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasCustom() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
         : custom_;
   }
+
   /**
    *
    *
@@ -426,6 +436,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -669,6 +680,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
             com.google.cloud.deploy.v1.CloudRunMetadata.Builder,
             com.google.cloud.deploy.v1.CloudRunMetadataOrBuilder>
         cloudRunBuilder_;
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasCloudRun() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         return cloudRunBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCloudRunFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
             : cloudRun_;
       }
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
             com.google.cloud.deploy.v1.CustomTargetDeployMetadata.Builder,
             com.google.cloud.deploy.v1.CustomTargetDeployMetadataOrBuilder>
         customTargetBuilder_;
+
     /**
      *
      *
@@ -898,6 +919,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasCustomTarget() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -920,6 +942,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         return customTargetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -944,6 +967,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +990,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1021,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1043,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCustomTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1082,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
             : customTarget_;
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1117,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
             com.google.cloud.deploy.v1.CustomMetadata.Builder,
             com.google.cloud.deploy.v1.CustomMetadataOrBuilder>
         customBuilder_;
+
     /**
      *
      *
@@ -1104,6 +1134,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasCustom() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1126,6 +1157,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         return customBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1182,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1204,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1234,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1256,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1273,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCustomFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1257,6 +1294,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
             : custom_;
       }
     }
+
     /**
      *
      *

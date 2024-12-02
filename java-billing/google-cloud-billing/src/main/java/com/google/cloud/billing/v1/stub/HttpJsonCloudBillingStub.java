@@ -472,8 +472,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request
-                                          .toBuilder()
+                                      request.toBuilder()
                                           .clearDestinationParent()
                                           .clearName()
                                           .build(),

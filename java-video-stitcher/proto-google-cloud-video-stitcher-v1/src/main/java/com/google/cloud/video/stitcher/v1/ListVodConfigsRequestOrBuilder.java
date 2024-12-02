@@ -39,6 +39,7 @@ public interface ListVodConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface ListVodConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface ListVodConfigsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface ListVodConfigsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface DbNodeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DbNodeOrBuilder
    * @return Whether the properties field is set.
    */
   boolean hasProperties();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DbNodeOrBuilder
    * @return The properties.
    */
   com.google.cloud.oracledatabase.v1.DbNodeProperties getProperties();
+
   /**
    *
    *

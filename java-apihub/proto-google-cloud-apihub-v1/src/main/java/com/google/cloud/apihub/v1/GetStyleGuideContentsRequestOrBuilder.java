@@ -41,6 +41,7 @@ public interface GetStyleGuideContentsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

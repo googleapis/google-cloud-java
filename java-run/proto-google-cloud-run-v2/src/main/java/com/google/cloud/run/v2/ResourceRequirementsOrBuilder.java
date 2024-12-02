@@ -41,6 +41,7 @@ public interface ResourceRequirementsOrBuilder
    * <code>map&lt;string, string&gt; limits = 1;</code>
    */
   int getLimitsCount();
+
   /**
    *
    *
@@ -58,9 +59,11 @@ public interface ResourceRequirementsOrBuilder
    * <code>map&lt;string, string&gt; limits = 1;</code>
    */
   boolean containsLimits(java.lang.String key);
+
   /** Use {@link #getLimitsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLimits();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface ResourceRequirementsOrBuilder
    * <code>map&lt;string, string&gt; limits = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLimitsMap();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ResourceRequirementsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

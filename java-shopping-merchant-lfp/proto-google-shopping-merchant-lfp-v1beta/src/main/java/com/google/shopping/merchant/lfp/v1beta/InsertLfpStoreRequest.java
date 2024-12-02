@@ -33,6 +33,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.lfp.v1beta.InsertLfpStoreRequest)
     InsertLfpStoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertLfpStoreRequest.newBuilder() to construct.
   private InsertLfpStoreRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
 
   public static final int LFP_STORE_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.lfp.v1beta.LfpStore lfpStore_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
   public boolean hasLfpStore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
         ? com.google.shopping.merchant.lfp.v1beta.LfpStore.getDefaultInstance()
         : lfpStore_;
   }
+
   /**
    *
    *
@@ -351,6 +357,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +574,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -617,6 +626,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
             com.google.shopping.merchant.lfp.v1beta.LfpStore.Builder,
             com.google.shopping.merchant.lfp.v1beta.LfpStoreOrBuilder>
         lfpStoreBuilder_;
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
     public boolean hasLfpStore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
         return lfpStoreBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +793,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getLfpStoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class InsertLfpStoreRequest extends com.google.protobuf.GeneratedMe
             : lfpStore_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface GetStoragePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

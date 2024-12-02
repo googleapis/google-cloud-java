@@ -37,6 +37,7 @@ public interface DataSourceGcpResourceOrBuilder
    * @return The gcpResourcename.
    */
   java.lang.String getGcpResourcename();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DataSourceGcpResourceOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface DataSourceGcpResourceOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface DataSourceGcpResourceOrBuilder
    * @return Whether the computeInstanceDatasourceProperties field is set.
    */
   boolean hasComputeInstanceDatasourceProperties();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface DataSourceGcpResourceOrBuilder
    */
   com.google.cloud.backupdr.v1.ComputeInstanceDataSourceProperties
       getComputeInstanceDatasourceProperties();
+
   /**
    *
    *

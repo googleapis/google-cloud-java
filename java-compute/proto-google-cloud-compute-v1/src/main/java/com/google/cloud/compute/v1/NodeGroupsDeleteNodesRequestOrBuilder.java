@@ -36,6 +36,7 @@ public interface NodeGroupsDeleteNodesRequestOrBuilder
    * @return A list containing the nodes.
    */
   java.util.List<java.lang.String> getNodesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NodeGroupsDeleteNodesRequestOrBuilder
    * @return The count of nodes.
    */
   int getNodesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface NodeGroupsDeleteNodesRequestOrBuilder
    * @return The nodes at the given index.
    */
   java.lang.String getNodes(int index);
+
   /**
    *
    *

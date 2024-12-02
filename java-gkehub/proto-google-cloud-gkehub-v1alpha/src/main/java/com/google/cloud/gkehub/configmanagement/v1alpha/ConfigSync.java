@@ -33,6 +33,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1alpha.ConfigSync)
     ConfigSyncOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigSync.newBuilder() to construct.
   private ConfigSync(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GIT_FIELD_NUMBER = 7;
   private com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig git_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig.getDefaultInstance()
         : git_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceFormat_ = "";
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +347,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.GitConfigOrBuilder>
         gitBuilder_;
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGit() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return gitBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -635,6 +646,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGitFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
             : git_;
       }
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceFormat_ = "";
+
     /**
      *
      *
@@ -765,6 +782,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -788,6 +806,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +829,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +848,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

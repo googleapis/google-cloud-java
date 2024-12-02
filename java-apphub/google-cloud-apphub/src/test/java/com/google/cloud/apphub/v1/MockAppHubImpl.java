@@ -74,7 +74,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method LookupServiceProjectAttachment, expected %s or %s",
+                  "Unrecognized response type %s for method LookupServiceProjectAttachment,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   LookupServiceProjectAttachmentResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,7 +97,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListServiceProjectAttachments, expected %s or %s",
+                  "Unrecognized response type %s for method ListServiceProjectAttachments, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListServiceProjectAttachmentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -117,7 +119,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceProjectAttachment, expected %s or %s",
+                  "Unrecognized response type %s for method CreateServiceProjectAttachment,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -139,7 +142,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetServiceProjectAttachment, expected %s or %s",
+                  "Unrecognized response type %s for method GetServiceProjectAttachment, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceProjectAttachment.class.getName(),
                   Exception.class.getName())));
@@ -160,7 +164,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServiceProjectAttachment, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteServiceProjectAttachment,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -182,7 +187,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DetachServiceProjectAttachment, expected %s or %s",
+                  "Unrecognized response type %s for method DetachServiceProjectAttachment,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DetachServiceProjectAttachmentResponse.class.getName(),
                   Exception.class.getName())));
@@ -204,7 +210,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDiscoveredServices, expected %s or %s",
+                  "Unrecognized response type %s for method ListDiscoveredServices, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDiscoveredServicesResponse.class.getName(),
                   Exception.class.getName())));
@@ -225,7 +232,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDiscoveredService, expected %s or %s",
+                  "Unrecognized response type %s for method GetDiscoveredService, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DiscoveredService.class.getName(),
                   Exception.class.getName())));
@@ -247,7 +255,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method LookupDiscoveredService, expected %s or %s",
+                  "Unrecognized response type %s for method LookupDiscoveredService, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   LookupDiscoveredServiceResponse.class.getName(),
                   Exception.class.getName())));
@@ -373,7 +382,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDiscoveredWorkloads, expected %s or %s",
+                  "Unrecognized response type %s for method ListDiscoveredWorkloads, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDiscoveredWorkloadsResponse.class.getName(),
                   Exception.class.getName())));
@@ -394,7 +404,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDiscoveredWorkload, expected %s or %s",
+                  "Unrecognized response type %s for method GetDiscoveredWorkload, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DiscoveredWorkload.class.getName(),
                   Exception.class.getName())));
@@ -416,7 +427,8 @@ public class MockAppHubImpl extends AppHubImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method LookupDiscoveredWorkload, expected %s or %s",
+                  "Unrecognized response type %s for method LookupDiscoveredWorkload, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   LookupDiscoveredWorkloadResponse.class.getName(),
                   Exception.class.getName())));

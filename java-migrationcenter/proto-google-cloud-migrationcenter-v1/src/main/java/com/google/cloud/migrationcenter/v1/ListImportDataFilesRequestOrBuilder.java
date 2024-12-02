@@ -38,6 +38,7 @@ public interface ListImportDataFilesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface ListImportDataFilesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface ListImportDataFilesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public interface ListImportDataFilesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ShipmentModelOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment shipments = 1;</code>
    */
   java.util.List<com.google.maps.routeoptimization.v1.Shipment> getShipmentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ShipmentModelOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment shipments = 1;</code>
    */
   com.google.maps.routeoptimization.v1.Shipment getShipments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ShipmentModelOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment shipments = 1;</code>
    */
   int getShipmentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.ShipmentOrBuilder>
       getShipmentsOrBuilderList();
+
   /**
    *
    *
@@ -86,6 +90,7 @@ public interface ShipmentModelOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Vehicle vehicles = 2;</code>
    */
   java.util.List<com.google.maps.routeoptimization.v1.Vehicle> getVehiclesList();
+
   /**
    *
    *
@@ -96,6 +101,7 @@ public interface ShipmentModelOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Vehicle vehicles = 2;</code>
    */
   com.google.maps.routeoptimization.v1.Vehicle getVehicles(int index);
+
   /**
    *
    *
@@ -106,6 +112,7 @@ public interface ShipmentModelOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Vehicle vehicles = 2;</code>
    */
   int getVehiclesCount();
+
   /**
    *
    *
@@ -117,6 +124,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.VehicleOrBuilder>
       getVehiclesOrBuilderList();
+
   /**
    *
    *
@@ -145,6 +153,7 @@ public interface ShipmentModelOrBuilder
    * @return Whether the maxActiveVehicles field is set.
    */
   boolean hasMaxActiveVehicles();
+
   /**
    *
    *
@@ -185,6 +194,7 @@ public interface ShipmentModelOrBuilder
    * @return Whether the globalStartTime field is set.
    */
   boolean hasGlobalStartTime();
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface ShipmentModelOrBuilder
    * @return The globalStartTime.
    */
   com.google.protobuf.Timestamp getGlobalStartTime();
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public interface ShipmentModelOrBuilder
    * @return Whether the globalEndTime field is set.
    */
   boolean hasGlobalEndTime();
+
   /**
    *
    *
@@ -254,6 +266,7 @@ public interface ShipmentModelOrBuilder
    * @return The globalEndTime.
    */
   com.google.protobuf.Timestamp getGlobalEndTime();
+
   /**
    *
    *
@@ -383,6 +396,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix>
       getDurationDistanceMatricesList();
+
   /**
    *
    *
@@ -482,6 +496,7 @@ public interface ShipmentModelOrBuilder
    */
   com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix
       getDurationDistanceMatrices(int index);
+
   /**
    *
    *
@@ -580,6 +595,7 @@ public interface ShipmentModelOrBuilder
    * </code>
    */
   int getDurationDistanceMatricesCount();
+
   /**
    *
    *
@@ -681,6 +697,7 @@ public interface ShipmentModelOrBuilder
           ? extends
               com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrixOrBuilder>
       getDurationDistanceMatricesOrBuilderList();
+
   /**
    *
    *
@@ -806,6 +823,7 @@ public interface ShipmentModelOrBuilder
    * @return A list containing the durationDistanceMatrixSrcTags.
    */
   java.util.List<java.lang.String> getDurationDistanceMatrixSrcTagsList();
+
   /**
    *
    *
@@ -831,6 +849,7 @@ public interface ShipmentModelOrBuilder
    * @return The count of durationDistanceMatrixSrcTags.
    */
   int getDurationDistanceMatrixSrcTagsCount();
+
   /**
    *
    *
@@ -857,6 +876,7 @@ public interface ShipmentModelOrBuilder
    * @return The durationDistanceMatrixSrcTags at the given index.
    */
   java.lang.String getDurationDistanceMatrixSrcTags(int index);
+
   /**
    *
    *
@@ -911,6 +931,7 @@ public interface ShipmentModelOrBuilder
    * @return A list containing the durationDistanceMatrixDstTags.
    */
   java.util.List<java.lang.String> getDurationDistanceMatrixDstTagsList();
+
   /**
    *
    *
@@ -938,6 +959,7 @@ public interface ShipmentModelOrBuilder
    * @return The count of durationDistanceMatrixDstTags.
    */
   int getDurationDistanceMatrixDstTagsCount();
+
   /**
    *
    *
@@ -966,6 +988,7 @@ public interface ShipmentModelOrBuilder
    * @return The durationDistanceMatrixDstTags at the given index.
    */
   java.lang.String getDurationDistanceMatrixDstTags(int index);
+
   /**
    *
    *
@@ -1008,6 +1031,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.TransitionAttributes>
       getTransitionAttributesList();
+
   /**
    *
    *
@@ -1020,6 +1044,7 @@ public interface ShipmentModelOrBuilder
    * </code>
    */
   com.google.maps.routeoptimization.v1.TransitionAttributes getTransitionAttributes(int index);
+
   /**
    *
    *
@@ -1032,6 +1057,7 @@ public interface ShipmentModelOrBuilder
    * </code>
    */
   int getTransitionAttributesCount();
+
   /**
    *
    *
@@ -1045,6 +1071,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.TransitionAttributesOrBuilder>
       getTransitionAttributesOrBuilderList();
+
   /**
    *
    *
@@ -1072,6 +1099,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibility>
       getShipmentTypeIncompatibilitiesList();
+
   /**
    *
    *
@@ -1085,6 +1113,7 @@ public interface ShipmentModelOrBuilder
    */
   com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibility getShipmentTypeIncompatibilities(
       int index);
+
   /**
    *
    *
@@ -1097,6 +1126,7 @@ public interface ShipmentModelOrBuilder
    * </code>
    */
   int getShipmentTypeIncompatibilitiesCount();
+
   /**
    *
    *
@@ -1111,6 +1141,7 @@ public interface ShipmentModelOrBuilder
   java.util.List<
           ? extends com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibilityOrBuilder>
       getShipmentTypeIncompatibilitiesOrBuilderList();
+
   /**
    *
    *
@@ -1138,6 +1169,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.ShipmentTypeRequirement>
       getShipmentTypeRequirementsList();
+
   /**
    *
    *
@@ -1151,6 +1183,7 @@ public interface ShipmentModelOrBuilder
    */
   com.google.maps.routeoptimization.v1.ShipmentTypeRequirement getShipmentTypeRequirements(
       int index);
+
   /**
    *
    *
@@ -1163,6 +1196,7 @@ public interface ShipmentModelOrBuilder
    * </code>
    */
   int getShipmentTypeRequirementsCount();
+
   /**
    *
    *
@@ -1176,6 +1210,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.ShipmentTypeRequirementOrBuilder>
       getShipmentTypeRequirementsOrBuilderList();
+
   /**
    *
    *
@@ -1203,6 +1238,7 @@ public interface ShipmentModelOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRule>
       getPrecedenceRulesList();
+
   /**
    *
    *
@@ -1215,6 +1251,7 @@ public interface ShipmentModelOrBuilder
    * </code>
    */
   com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRule getPrecedenceRules(int index);
+
   /**
    *
    *
@@ -1227,6 +1264,7 @@ public interface ShipmentModelOrBuilder
    * </code>
    */
   int getPrecedenceRulesCount();
+
   /**
    *
    *
@@ -1241,6 +1279,7 @@ public interface ShipmentModelOrBuilder
   java.util.List<
           ? extends com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRuleOrBuilder>
       getPrecedenceRulesOrBuilderList();
+
   /**
    *
    *

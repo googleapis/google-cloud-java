@@ -40,6 +40,7 @@ public interface RenameTableRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface RenameTableRequestOrBuilder
    * @return The newName.
    */
   java.lang.String getNewName();
+
   /**
    *
    *

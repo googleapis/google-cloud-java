@@ -40,6 +40,7 @@ public interface CreateCertificateTemplateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateCertificateTemplateRequestOrBuilder
    * @return The certificateTemplateId.
    */
   java.lang.String getCertificateTemplateId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateCertificateTemplateRequestOrBuilder
    * @return Whether the certificateTemplate field is set.
    */
   boolean hasCertificateTemplate();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateCertificateTemplateRequestOrBuilder
    * @return The certificateTemplate.
    */
   com.google.cloud.security.privateca.v1.CertificateTemplate getCertificateTemplate();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface CreateCertificateTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

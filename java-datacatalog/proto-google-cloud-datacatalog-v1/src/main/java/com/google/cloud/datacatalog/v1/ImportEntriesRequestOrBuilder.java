@@ -38,6 +38,7 @@ public interface ImportEntriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ImportEntriesRequestOrBuilder
    * @return Whether the gcsBucketPath field is set.
    */
   boolean hasGcsBucketPath();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ImportEntriesRequestOrBuilder
    * @return The gcsBucketPath.
    */
   java.lang.String getGcsBucketPath();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface ImportEntriesRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *

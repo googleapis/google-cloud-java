@@ -34,6 +34,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader)
     BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceCdnPolicyBypassCacheOnRequestHeader.newBuilder() to construct.
   private BackendServiceCdnPolicyBypassCacheOnRequestHeader(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headerName_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
   public boolean hasHeaderName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +309,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -504,6 +509,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
     private int bitField0_;
 
     private java.lang.Object headerName_ = "";
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
     public boolean hasHeaderName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -540,6 +547,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -562,6 +570,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -600,6 +610,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
       onChanged();
       return this;
     }
+
     /**
      *
      *

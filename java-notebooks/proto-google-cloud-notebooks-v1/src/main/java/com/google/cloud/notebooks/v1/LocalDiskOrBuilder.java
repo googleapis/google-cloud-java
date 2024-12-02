@@ -72,6 +72,7 @@ public interface LocalDiskOrBuilder
    * @return The deviceName.
    */
   java.lang.String getDeviceName();
+
   /**
    *
    *
@@ -108,6 +109,7 @@ public interface LocalDiskOrBuilder
    */
   java.util.List<com.google.cloud.notebooks.v1.LocalDisk.RuntimeGuestOsFeature>
       getGuestOsFeaturesList();
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public interface LocalDiskOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v1.LocalDisk.RuntimeGuestOsFeature getGuestOsFeatures(int index);
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface LocalDiskOrBuilder
    * </code>
    */
   int getGuestOsFeaturesCount();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface LocalDiskOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v1.LocalDisk.RuntimeGuestOsFeatureOrBuilder>
       getGuestOsFeaturesOrBuilderList();
+
   /**
    *
    *
@@ -201,6 +206,7 @@ public interface LocalDiskOrBuilder
    * @return Whether the initializeParams field is set.
    */
   boolean hasInitializeParams();
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public interface LocalDiskOrBuilder
    * @return The initializeParams.
    */
   com.google.cloud.notebooks.v1.LocalDiskInitializeParams getInitializeParams();
+
   /**
    *
    *
@@ -258,6 +265,7 @@ public interface LocalDiskOrBuilder
    * @return The interface.
    */
   java.lang.String getInterface();
+
   /**
    *
    *
@@ -291,6 +299,7 @@ public interface LocalDiskOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -316,6 +325,7 @@ public interface LocalDiskOrBuilder
    * @return A list containing the licenses.
    */
   java.util.List<java.lang.String> getLicensesList();
+
   /**
    *
    *
@@ -328,6 +338,7 @@ public interface LocalDiskOrBuilder
    * @return The count of licenses.
    */
   int getLicensesCount();
+
   /**
    *
    *
@@ -341,6 +352,7 @@ public interface LocalDiskOrBuilder
    * @return The licenses at the given index.
    */
   java.lang.String getLicenses(int index);
+
   /**
    *
    *
@@ -372,6 +384,7 @@ public interface LocalDiskOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
+
   /**
    *
    *
@@ -403,6 +416,7 @@ public interface LocalDiskOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -434,6 +448,7 @@ public interface LocalDiskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

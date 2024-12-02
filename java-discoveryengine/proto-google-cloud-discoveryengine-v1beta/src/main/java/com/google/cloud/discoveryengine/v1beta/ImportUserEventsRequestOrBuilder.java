@@ -38,6 +38,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The inlineSource.
    */
   com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource getInlineSource();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.discoveryengine.v1beta.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The bigquerySource.
    */
   com.google.cloud.discoveryengine.v1beta.BigQuerySource getBigquerySource();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return Whether the errorConfig field is set.
    */
   boolean hasErrorConfig();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The errorConfig.
    */
   com.google.cloud.discoveryengine.v1beta.ImportErrorConfig getErrorConfig();
+
   /**
    *
    *

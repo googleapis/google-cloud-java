@@ -37,6 +37,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return Whether the stopDetails field is set.
    */
   boolean hasStopDetails();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return The stopDetails.
    */
   com.google.maps.routing.v2.RouteLegStepTransitDetails.TransitStopDetails getStopDetails();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return Whether the localizedValues field is set.
    */
   boolean hasLocalizedValues();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    */
   com.google.maps.routing.v2.RouteLegStepTransitDetails.TransitDetailsLocalizedValues
       getLocalizedValues();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return The headsign.
    */
   java.lang.String getHeadsign();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return Whether the headway field is set.
    */
   boolean hasHeadway();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return The headway.
    */
   com.google.protobuf.Duration getHeadway();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return Whether the transitLine field is set.
    */
   boolean hasTransitLine();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return The transitLine.
    */
   com.google.maps.routing.v2.TransitLine getTransitLine();
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * @return The tripShortText.
    */
   java.lang.String getTripShortText();
+
   /**
    *
    *

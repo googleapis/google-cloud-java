@@ -72,6 +72,7 @@ public enum DataFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int DATA_FORMAT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum DataFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JSON = 1;</code>
    */
   public static final int JSON_VALUE = 1;
+
   /**
    *
    *

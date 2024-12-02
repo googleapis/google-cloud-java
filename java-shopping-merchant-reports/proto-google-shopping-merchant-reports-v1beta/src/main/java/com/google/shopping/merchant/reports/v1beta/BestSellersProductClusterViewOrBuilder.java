@@ -43,6 +43,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the reportDate field is set.
    */
   boolean hasReportDate();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The reportDate.
    */
   com.google.type.Date getReportDate();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the reportGranularity field is set.
    */
   boolean hasReportGranularity();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The enum numeric value on the wire for reportGranularity.
    */
   int getReportGranularityValue();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the reportCountryCode field is set.
    */
   boolean hasReportCountryCode();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The reportCountryCode.
    */
   java.lang.String getReportCountryCode();
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the reportCategoryId field is set.
    */
   boolean hasReportCategoryId();
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the brand field is set.
    */
   boolean hasBrand();
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The brand.
    */
   java.lang.String getBrand();
+
   /**
    *
    *
@@ -310,6 +321,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the categoryL1 field is set.
    */
   boolean hasCategoryL1();
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The categoryL1.
    */
   java.lang.String getCategoryL1();
+
   /**
    *
    *
@@ -353,6 +366,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the categoryL2 field is set.
    */
   boolean hasCategoryL2();
+
   /**
    *
    *
@@ -367,6 +381,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The categoryL2.
    */
   java.lang.String getCategoryL2();
+
   /**
    *
    *
@@ -396,6 +411,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the categoryL3 field is set.
    */
   boolean hasCategoryL3();
+
   /**
    *
    *
@@ -410,6 +426,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The categoryL3.
    */
   java.lang.String getCategoryL3();
+
   /**
    *
    *
@@ -439,6 +456,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the categoryL4 field is set.
    */
   boolean hasCategoryL4();
+
   /**
    *
    *
@@ -453,6 +471,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The categoryL4.
    */
   java.lang.String getCategoryL4();
+
   /**
    *
    *
@@ -482,6 +501,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the categoryL5 field is set.
    */
   boolean hasCategoryL5();
+
   /**
    *
    *
@@ -496,6 +516,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The categoryL5.
    */
   java.lang.String getCategoryL5();
+
   /**
    *
    *
@@ -523,6 +544,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return A list containing the variantGtins.
    */
   java.util.List<java.lang.String> getVariantGtinsList();
+
   /**
    *
    *
@@ -535,6 +557,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The count of variantGtins.
    */
   int getVariantGtinsCount();
+
   /**
    *
    *
@@ -548,6 +571,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The variantGtins at the given index.
    */
   java.lang.String getVariantGtins(int index);
+
   /**
    *
    *
@@ -580,6 +604,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the inventoryStatus field is set.
    */
   boolean hasInventoryStatus();
+
   /**
    *
    *
@@ -598,6 +623,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The enum numeric value on the wire for inventoryStatus.
    */
   int getInventoryStatusValue();
+
   /**
    *
    *
@@ -637,6 +663,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the brandInventoryStatus field is set.
    */
   boolean hasBrandInventoryStatus();
+
   /**
    *
    *
@@ -656,6 +683,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The enum numeric value on the wire for brandInventoryStatus.
    */
   int getBrandInventoryStatusValue();
+
   /**
    *
    *
@@ -690,6 +718,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the rank field is set.
    */
   boolean hasRank();
+
   /**
    *
    *
@@ -716,6 +745,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the previousRank field is set.
    */
   boolean hasPreviousRank();
+
   /**
    *
    *
@@ -744,6 +774,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the relativeDemand field is set.
    */
   boolean hasRelativeDemand();
+
   /**
    *
    *
@@ -759,6 +790,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The enum numeric value on the wire for relativeDemand.
    */
   int getRelativeDemandValue();
+
   /**
    *
    *
@@ -791,6 +823,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the previousRelativeDemand field is set.
    */
   boolean hasPreviousRelativeDemand();
+
   /**
    *
    *
@@ -807,6 +840,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The enum numeric value on the wire for previousRelativeDemand.
    */
   int getPreviousRelativeDemandValue();
+
   /**
    *
    *
@@ -839,6 +873,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return Whether the relativeDemandChange field is set.
    */
   boolean hasRelativeDemandChange();
+
   /**
    *
    *
@@ -853,6 +888,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The enum numeric value on the wire for relativeDemandChange.
    */
   int getRelativeDemandChangeValue();
+
   /**
    *
    *

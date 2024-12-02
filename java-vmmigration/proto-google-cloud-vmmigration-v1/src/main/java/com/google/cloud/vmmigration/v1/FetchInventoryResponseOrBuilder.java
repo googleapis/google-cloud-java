@@ -36,6 +36,7 @@ public interface FetchInventoryResponseOrBuilder
    * @return Whether the vmwareVms field is set.
    */
   boolean hasVmwareVms();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FetchInventoryResponseOrBuilder
    * @return The vmwareVms.
    */
   com.google.cloud.vmmigration.v1.VmwareVmsDetails getVmwareVms();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface FetchInventoryResponseOrBuilder
    * @return Whether the awsVms field is set.
    */
   boolean hasAwsVms();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface FetchInventoryResponseOrBuilder
    * @return The awsVms.
    */
   com.google.cloud.vmmigration.v1.AwsVmsDetails getAwsVms();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface FetchInventoryResponseOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface FetchInventoryResponseOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

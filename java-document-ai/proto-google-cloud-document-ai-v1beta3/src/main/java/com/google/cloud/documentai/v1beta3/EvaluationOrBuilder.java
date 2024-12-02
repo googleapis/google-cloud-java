@@ -38,6 +38,7 @@ public interface EvaluationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface EvaluationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface EvaluationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface EvaluationOrBuilder
    * @return Whether the documentCounters field is set.
    */
   boolean hasDocumentCounters();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface EvaluationOrBuilder
    * @return The documentCounters.
    */
   com.google.cloud.documentai.v1beta3.Evaluation.Counters getDocumentCounters();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface EvaluationOrBuilder
    * @return Whether the allEntitiesMetrics field is set.
    */
   boolean hasAllEntitiesMetrics();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface EvaluationOrBuilder
    * @return The allEntitiesMetrics.
    */
   com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics getAllEntitiesMetrics();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface EvaluationOrBuilder
    * </code>
    */
   int getEntityMetricsCount();
+
   /**
    *
    *
@@ -189,11 +197,13 @@ public interface EvaluationOrBuilder
    * </code>
    */
   boolean containsEntityMetrics(java.lang.String key);
+
   /** Use {@link #getEntityMetricsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics>
       getEntityMetrics();
+
   /**
    *
    *
@@ -208,6 +218,7 @@ public interface EvaluationOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics>
       getEntityMetricsMap();
+
   /**
    *
    *
@@ -224,6 +235,7 @@ public interface EvaluationOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics defaultValue);
+
   /**
    *
    *
@@ -250,6 +262,7 @@ public interface EvaluationOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -275,6 +288,7 @@ public interface EvaluationOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
+
   /**
    *
    *

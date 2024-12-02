@@ -33,6 +33,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.ResourceSearchResult)
     ResourceSearchResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceSearchResult.newBuilder() to construct.
   private ResourceSearchResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,6 +105,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -136,6 +138,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +176,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assetType_ = "";
+
   /**
    *
    *
@@ -200,6 +204,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +237,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -263,6 +269,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +307,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList folders_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -322,6 +330,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getFoldersList() {
     return folders_;
   }
+
   /**
    *
    *
@@ -344,6 +353,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getFoldersCount() {
     return folders_.size();
   }
+
   /**
    *
    *
@@ -367,6 +377,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getFolders(int index) {
     return folders_.get(index);
   }
+
   /**
    *
    *
@@ -395,6 +406,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object organization_ = "";
+
   /**
    *
    *
@@ -426,6 +438,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -462,6 +475,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -491,6 +505,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -525,6 +540,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -555,6 +571,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -590,6 +607,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -620,6 +638,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -677,6 +696,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -705,12 +725,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -736,6 +758,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -768,6 +791,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -806,6 +830,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList networkTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -830,6 +855,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
     return networkTags_;
   }
+
   /**
    *
    *
@@ -854,6 +880,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getNetworkTagsCount() {
     return networkTags_.size();
   }
+
   /**
    *
    *
@@ -879,6 +906,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getNetworkTags(int index) {
     return networkTags_.get(index);
   }
+
   /**
    *
    *
@@ -909,6 +937,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKey_ = "";
+
   /**
    *
    *
@@ -951,6 +980,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -999,6 +1029,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList kmsKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1023,6 +1054,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getKmsKeysList() {
     return kmsKeys_;
   }
+
   /**
    *
    *
@@ -1047,6 +1079,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getKmsKeysCount() {
     return kmsKeys_.size();
   }
+
   /**
    *
    *
@@ -1072,6 +1105,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getKmsKeys(int index) {
     return kmsKeys_.get(index);
   }
+
   /**
    *
    *
@@ -1100,6 +1134,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   public static final int CREATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1125,6 +1160,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1150,6 +1186,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1176,6 +1213,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1202,6 +1240,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1228,6 +1267,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1257,6 +1297,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -1299,6 +1340,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1344,6 +1386,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   public static final int ADDITIONAL_ATTRIBUTES_FIELD_NUMBER = 9;
   private com.google.protobuf.Struct additionalAttributes_;
+
   /**
    *
    *
@@ -1377,6 +1420,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public boolean hasAdditionalAttributes() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1412,6 +1456,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Struct.getDefaultInstance()
         : additionalAttributes_;
   }
+
   /**
    *
    *
@@ -1450,6 +1495,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentFullResourceName_ = "";
+
   /**
    *
    *
@@ -1479,6 +1525,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1513,6 +1560,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.VersionedResource> versionedResources_;
+
   /**
    *
    *
@@ -1532,6 +1580,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.asset.v1.VersionedResource> getVersionedResourcesList() {
     return versionedResources_;
   }
+
   /**
    *
    *
@@ -1552,6 +1601,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getVersionedResourcesOrBuilderList() {
     return versionedResources_;
   }
+
   /**
    *
    *
@@ -1571,6 +1621,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getVersionedResourcesCount() {
     return versionedResources_.size();
   }
+
   /**
    *
    *
@@ -1590,6 +1641,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.VersionedResource getVersionedResources(int index) {
     return versionedResources_.get(index);
   }
+
   /**
    *
    *
@@ -1615,6 +1667,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.AttachedResource> attachedResources_;
+
   /**
    *
    *
@@ -1634,6 +1687,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.asset.v1.AttachedResource> getAttachedResourcesList() {
     return attachedResources_;
   }
+
   /**
    *
    *
@@ -1654,6 +1708,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getAttachedResourcesOrBuilderList() {
     return attachedResources_;
   }
+
   /**
    *
    *
@@ -1673,6 +1728,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getAttachedResourcesCount() {
     return attachedResources_.size();
   }
+
   /**
    *
    *
@@ -1692,6 +1748,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.AttachedResource getAttachedResources(int index) {
     return attachedResources_.get(index);
   }
+
   /**
    *
    *
@@ -1745,6 +1802,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getRelationshipsCount() {
     return internalGetRelationships().getMap().size();
   }
+
   /**
    *
    *
@@ -1766,6 +1824,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     return internalGetRelationships().getMap().containsKey(key);
   }
+
   /** Use {@link #getRelationshipsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1773,6 +1832,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getRelationships() {
     return getRelationshipsMap();
   }
+
   /**
    *
    *
@@ -1792,6 +1852,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getRelationshipsMap() {
     return internalGetRelationships().getMap();
   }
+
   /**
    *
    *
@@ -1818,6 +1879,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         internalGetRelationships().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1850,6 +1912,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tagKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1879,6 +1942,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getTagKeysList() {
     return tagKeys_;
   }
+
   /**
    *
    *
@@ -1908,6 +1972,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getTagKeysCount() {
     return tagKeys_.size();
   }
+
   /**
    *
    *
@@ -1938,6 +2003,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getTagKeys(int index) {
     return tagKeys_.get(index);
   }
+
   /**
    *
    *
@@ -1974,6 +2040,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tagValues_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2005,6 +2072,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getTagValuesList() {
     return tagValues_;
   }
+
   /**
    *
    *
@@ -2036,6 +2104,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getTagValuesCount() {
     return tagValues_.size();
   }
+
   /**
    *
    *
@@ -2068,6 +2137,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getTagValues(int index) {
     return tagValues_.get(index);
   }
+
   /**
    *
    *
@@ -2106,6 +2176,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tagValueIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2133,6 +2204,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getTagValueIdsList() {
     return tagValueIds_;
   }
+
   /**
    *
    *
@@ -2160,6 +2232,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getTagValueIdsCount() {
     return tagValueIds_.size();
   }
+
   /**
    *
    *
@@ -2188,6 +2261,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getTagValueIds(int index) {
     return tagValueIds_.get(index);
   }
+
   /**
    *
    *
@@ -2221,6 +2295,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.Tag> tags_;
+
   /**
    *
    *
@@ -2250,6 +2325,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.asset.v1.Tag> getTagsList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -2279,6 +2355,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<? extends com.google.cloud.asset.v1.TagOrBuilder> getTagsOrBuilderList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -2308,6 +2385,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getTagsCount() {
     return tags_.size();
   }
+
   /**
    *
    *
@@ -2337,6 +2415,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.Tag getTags(int index) {
     return tags_.get(index);
   }
+
   /**
    *
    *
@@ -2371,6 +2450,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> effectiveTags_;
+
   /**
    *
    *
@@ -2400,6 +2480,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList() {
     return effectiveTags_;
   }
+
   /**
    *
    *
@@ -2430,6 +2511,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getEffectiveTagsOrBuilderList() {
     return effectiveTags_;
   }
+
   /**
    *
    *
@@ -2459,6 +2541,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getEffectiveTagsCount() {
     return effectiveTags_.size();
   }
+
   /**
    *
    *
@@ -2488,6 +2571,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index) {
     return effectiveTags_.get(index);
   }
+
   /**
    *
    *
@@ -2523,6 +2607,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentAssetType_ = "";
+
   /**
    *
    *
@@ -2553,6 +2638,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -2612,6 +2698,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getSccSecurityMarksCount() {
     return internalGetSccSecurityMarks().getMap().size();
   }
+
   /**
    *
    *
@@ -2636,12 +2723,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     return internalGetSccSecurityMarks().getMap().containsKey(key);
   }
+
   /** Use {@link #getSccSecurityMarksMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks() {
     return getSccSecurityMarksMap();
   }
+
   /**
    *
    *
@@ -2663,6 +2752,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap() {
     return internalGetSccSecurityMarks().getMap();
   }
+
   /**
    *
    *
@@ -2691,6 +2781,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetSccSecurityMarks().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -3206,6 +3297,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4063,6 +4155,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4094,6 +4187,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4125,6 +4219,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4155,6 +4250,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4181,6 +4277,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4214,6 +4311,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object assetType_ = "";
+
     /**
      *
      *
@@ -4240,6 +4338,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4266,6 +4365,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4291,6 +4391,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4312,6 +4413,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4340,6 +4442,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -4370,6 +4473,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4400,6 +4504,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4429,6 +4534,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4454,6 +4560,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4494,6 +4601,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -4517,6 +4625,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       folders_.makeImmutable();
       return folders_;
     }
+
     /**
      *
      *
@@ -4539,6 +4648,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getFoldersCount() {
       return folders_.size();
     }
+
     /**
      *
      *
@@ -4562,6 +4672,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getFolders(int index) {
       return folders_.get(index);
     }
+
     /**
      *
      *
@@ -4585,6 +4696,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getFoldersBytes(int index) {
       return folders_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4616,6 +4728,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4646,6 +4759,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4673,6 +4787,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4699,6 +4814,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4732,6 +4848,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object organization_ = "";
+
     /**
      *
      *
@@ -4762,6 +4879,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4792,6 +4910,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4821,6 +4940,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4846,6 +4966,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4878,6 +4999,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -4906,6 +5028,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4934,6 +5057,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4961,6 +5085,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4984,6 +5109,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5014,6 +5140,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -5043,6 +5170,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5072,6 +5200,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5100,6 +5229,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5124,6 +5254,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5155,6 +5286,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -5184,6 +5316,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5213,6 +5346,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5241,6 +5375,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5265,6 +5400,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5320,6 +5456,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -5348,12 +5485,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -5379,6 +5518,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -5411,6 +5551,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -5449,6 +5590,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -5477,12 +5619,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -5515,6 +5659,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000100;
       return this;
     }
+
     /**
      *
      *
@@ -5551,6 +5696,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000200;
     }
+
     /**
      *
      *
@@ -5576,6 +5722,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       networkTags_.makeImmutable();
       return networkTags_;
     }
+
     /**
      *
      *
@@ -5600,6 +5747,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getNetworkTagsCount() {
       return networkTags_.size();
     }
+
     /**
      *
      *
@@ -5625,6 +5773,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getNetworkTags(int index) {
       return networkTags_.get(index);
     }
+
     /**
      *
      *
@@ -5650,6 +5799,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
       return networkTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5683,6 +5833,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5715,6 +5866,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5744,6 +5896,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5772,6 +5925,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5807,6 +5961,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object kmsKey_ = "";
+
     /**
      *
      *
@@ -5848,6 +6003,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5889,6 +6045,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5929,6 +6086,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5965,6 +6123,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6016,6 +6175,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -6041,6 +6201,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       kmsKeys_.makeImmutable();
       return kmsKeys_;
     }
+
     /**
      *
      *
@@ -6065,6 +6226,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getKmsKeysCount() {
       return kmsKeys_.size();
     }
+
     /**
      *
      *
@@ -6090,6 +6252,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getKmsKeys(int index) {
       return kmsKeys_.get(index);
     }
+
     /**
      *
      *
@@ -6115,6 +6278,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getKmsKeysBytes(int index) {
       return kmsKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6148,6 +6312,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6180,6 +6345,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6209,6 +6375,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6237,6 +6404,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6277,6 +6445,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -6301,6 +6470,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -6331,6 +6501,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6363,6 +6534,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6392,6 +6564,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6429,6 +6602,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6458,6 +6632,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6482,6 +6657,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6510,6 +6686,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -6552,6 +6729,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -6577,6 +6755,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -6608,6 +6787,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6641,6 +6821,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6671,6 +6852,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6709,6 +6891,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6739,6 +6922,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6764,6 +6948,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6793,6 +6978,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -6831,6 +7017,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -6872,6 +7059,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6913,6 +7101,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6953,6 +7142,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6989,6 +7179,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7037,6 +7228,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         additionalAttributesBuilder_;
+
     /**
      *
      *
@@ -7069,6 +7261,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public boolean hasAdditionalAttributes() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -7107,6 +7300,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return additionalAttributesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7147,6 +7341,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7184,6 +7379,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7229,6 +7425,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7266,6 +7463,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7298,6 +7496,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAdditionalAttributesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7334,6 +7533,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             : additionalAttributes_;
       }
     }
+
     /**
      *
      *
@@ -7379,6 +7579,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object parentFullResourceName_ = "";
+
     /**
      *
      *
@@ -7407,6 +7608,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7435,6 +7637,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7462,6 +7665,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7485,6 +7689,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7554,6 +7759,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return versionedResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7576,6 +7782,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return versionedResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7598,6 +7805,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return versionedResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7627,6 +7835,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7653,6 +7862,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7681,6 +7891,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7710,6 +7921,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7736,6 +7948,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7762,6 +7975,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7788,6 +8002,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7813,6 +8028,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7838,6 +8054,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7857,6 +8074,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         int index) {
       return getVersionedResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -7880,6 +8098,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return versionedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -7903,6 +8122,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(versionedResources_);
       }
     }
+
     /**
      *
      *
@@ -7922,6 +8142,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getVersionedResourcesFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.VersionedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7942,6 +8163,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getVersionedResourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.VersionedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8021,6 +8243,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return attachedResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -8043,6 +8266,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return attachedResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -8065,6 +8289,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return attachedResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -8094,6 +8319,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8120,6 +8346,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8148,6 +8375,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8177,6 +8405,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8203,6 +8432,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8229,6 +8459,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8255,6 +8486,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8280,6 +8512,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8305,6 +8538,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8324,6 +8558,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         int index) {
       return getAttachedResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8347,6 +8582,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return attachedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8370,6 +8606,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(attachedResources_);
       }
     }
+
     /**
      *
      *
@@ -8389,6 +8626,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getAttachedResourcesFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.AttachedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8409,6 +8647,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getAttachedResourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.AttachedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8469,7 +8708,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return RelationshipsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final RelationshipsConverter relationshipsConverter =
         new RelationshipsConverter();
@@ -8510,6 +8750,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getRelationshipsCount() {
       return internalGetRelationships().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -8531,6 +8772,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return internalGetRelationships().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getRelationshipsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -8538,6 +8780,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         getRelationships() {
       return getRelationshipsMap();
     }
+
     /**
      *
      *
@@ -8557,6 +8800,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         getRelationshipsMap() {
       return internalGetRelationships().getImmutableMap();
     }
+
     /**
      *
      *
@@ -8583,6 +8827,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           internalGetMutableRelationships().ensureBuilderMap();
       return map.containsKey(key) ? relationshipsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -8616,6 +8861,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableRelationships().clear();
       return this;
     }
+
     /**
      *
      *
@@ -8637,6 +8883,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableRelationships().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
@@ -8644,6 +8891,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00080000;
       return internalGetMutableRelationships().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -8670,6 +8918,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00080000;
       return this;
     }
+
     /**
      *
      *
@@ -8696,6 +8945,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00080000;
       return this;
     }
+
     /**
      *
      *
@@ -8735,6 +8985,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00100000;
     }
+
     /**
      *
      *
@@ -8765,6 +9016,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       tagKeys_.makeImmutable();
       return tagKeys_;
     }
+
     /**
      *
      *
@@ -8794,6 +9046,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getTagKeysCount() {
       return tagKeys_.size();
     }
+
     /**
      *
      *
@@ -8824,6 +9077,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getTagKeys(int index) {
       return tagKeys_.get(index);
     }
+
     /**
      *
      *
@@ -8854,6 +9108,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getTagKeysBytes(int index) {
       return tagKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -8892,6 +9147,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8929,6 +9185,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8963,6 +9220,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8996,6 +9254,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9044,6 +9303,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00200000;
     }
+
     /**
      *
      *
@@ -9076,6 +9336,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       tagValues_.makeImmutable();
       return tagValues_;
     }
+
     /**
      *
      *
@@ -9107,6 +9368,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getTagValuesCount() {
       return tagValues_.size();
     }
+
     /**
      *
      *
@@ -9139,6 +9401,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getTagValues(int index) {
       return tagValues_.get(index);
     }
+
     /**
      *
      *
@@ -9171,6 +9434,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getTagValuesBytes(int index) {
       return tagValues_.getByteString(index);
     }
+
     /**
      *
      *
@@ -9211,6 +9475,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9250,6 +9515,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9286,6 +9552,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9321,6 +9588,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9371,6 +9639,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00400000;
     }
+
     /**
      *
      *
@@ -9399,6 +9668,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       tagValueIds_.makeImmutable();
       return tagValueIds_;
     }
+
     /**
      *
      *
@@ -9426,6 +9696,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getTagValueIdsCount() {
       return tagValueIds_.size();
     }
+
     /**
      *
      *
@@ -9454,6 +9725,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getTagValueIds(int index) {
       return tagValueIds_.get(index);
     }
+
     /**
      *
      *
@@ -9482,6 +9754,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getTagValueIdsBytes(int index) {
       return tagValueIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -9518,6 +9791,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9553,6 +9827,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9585,6 +9860,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9616,6 +9892,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9700,6 +9977,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -9732,6 +10010,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -9764,6 +10043,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -9802,6 +10082,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9837,6 +10118,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9875,6 +10157,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9913,6 +10196,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9948,6 +10232,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9983,6 +10268,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10018,6 +10304,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10053,6 +10340,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10088,6 +10376,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10116,6 +10405,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.asset.v1.Tag.Builder getTagsBuilder(int index) {
       return getTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10148,6 +10438,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10180,6 +10471,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(tags_);
       }
     }
+
     /**
      *
      *
@@ -10208,6 +10500,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.asset.v1.Tag.Builder addTagsBuilder() {
       return getTagsFieldBuilder().addBuilder(com.google.cloud.asset.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10237,6 +10530,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10332,6 +10626,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return effectiveTagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -10364,6 +10659,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return effectiveTagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -10396,6 +10692,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return effectiveTagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -10435,6 +10732,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10471,6 +10769,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10509,6 +10808,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10548,6 +10848,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10584,6 +10885,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10620,6 +10922,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10656,6 +10959,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10691,6 +10995,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10726,6 +11031,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10755,6 +11061,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         int index) {
       return getEffectiveTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10788,6 +11095,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return effectiveTagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10821,6 +11129,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(effectiveTags_);
       }
     }
+
     /**
      *
      *
@@ -10850,6 +11159,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getEffectiveTagsFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10880,6 +11190,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getEffectiveTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10931,6 +11242,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object parentAssetType_ = "";
+
     /**
      *
      *
@@ -10960,6 +11272,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10989,6 +11302,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11017,6 +11331,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11041,6 +11356,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11100,6 +11416,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getSccSecurityMarksCount() {
       return internalGetSccSecurityMarks().getMap().size();
     }
+
     /**
      *
      *
@@ -11124,12 +11441,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return internalGetSccSecurityMarks().getMap().containsKey(key);
     }
+
     /** Use {@link #getSccSecurityMarksMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks() {
       return getSccSecurityMarksMap();
     }
+
     /**
      *
      *
@@ -11151,6 +11470,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap() {
       return internalGetSccSecurityMarks().getMap();
     }
+
     /**
      *
      *
@@ -11180,6 +11500,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           internalGetSccSecurityMarks().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -11215,6 +11536,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableSccSecurityMarks().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -11239,12 +11561,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableSccSecurityMarks().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSccSecurityMarks() {
       bitField0_ |= 0x04000000;
       return internalGetMutableSccSecurityMarks().getMutableMap();
     }
+
     /**
      *
      *
@@ -11273,6 +11597,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x04000000;
       return this;
     }
+
     /**
      *
      *

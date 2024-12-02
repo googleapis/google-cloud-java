@@ -33,6 +33,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListStoredInfoTypesResponse)
     ListStoredInfoTypesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListStoredInfoTypesResponse.newBuilder() to construct.
   private ListStoredInfoTypesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.StoredInfoType> storedInfoTypes_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.privacy.dlp.v2.StoredInfoType> getStoredInfoTypesList() {
     return storedInfoTypes_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       getStoredInfoTypesOrBuilderList() {
     return storedInfoTypes_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
   public int getStoredInfoTypesCount() {
     return storedInfoTypes_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
   public com.google.privacy.dlp.v2.StoredInfoType getStoredInfoTypes(int index) {
     return storedInfoTypes_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         return storedInfoTypesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         return storedInfoTypesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         return storedInfoTypesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +872,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.StoredInfoType.Builder getStoredInfoTypesBuilder(int index) {
       return getStoredInfoTypesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -881,6 +903,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         return storedInfoTypesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -898,6 +921,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(storedInfoTypes_);
       }
     }
+
     /**
      *
      *
@@ -911,6 +935,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       return getStoredInfoTypesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.StoredInfoType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -924,6 +949,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       return getStoredInfoTypesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.StoredInfoType.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -959,6 +985,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -982,6 +1009,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1033,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1056,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1075,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

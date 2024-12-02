@@ -35,6 +35,7 @@ public interface GetJSONWebKeysResponseOrBuilder
    * <code>repeated .google.container.v1beta1.Jwk keys = 1;</code>
    */
   java.util.List<com.google.container.v1beta1.Jwk> getKeysList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface GetJSONWebKeysResponseOrBuilder
    * <code>repeated .google.container.v1beta1.Jwk keys = 1;</code>
    */
   com.google.container.v1beta1.Jwk getKeys(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface GetJSONWebKeysResponseOrBuilder
    * <code>repeated .google.container.v1beta1.Jwk keys = 1;</code>
    */
   int getKeysCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface GetJSONWebKeysResponseOrBuilder
    * <code>repeated .google.container.v1beta1.Jwk keys = 1;</code>
    */
   java.util.List<? extends com.google.container.v1beta1.JwkOrBuilder> getKeysOrBuilderList();
+
   /**
    *
    *

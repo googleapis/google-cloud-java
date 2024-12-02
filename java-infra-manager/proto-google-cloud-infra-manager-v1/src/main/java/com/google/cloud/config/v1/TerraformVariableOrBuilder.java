@@ -36,6 +36,7 @@ public interface TerraformVariableOrBuilder
    * @return Whether the inputValue field is set.
    */
   boolean hasInputValue();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TerraformVariableOrBuilder
    * @return The inputValue.
    */
   com.google.protobuf.Value getInputValue();
+
   /**
    *
    *

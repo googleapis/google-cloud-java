@@ -33,6 +33,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p7beta1.PartitionSpec)
     PartitionSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PartitionSpec.newBuilder() to construct.
   private PartitionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTITION_KEY_UNSPECIFIED = 0;</code>
      */
     public static final int PARTITION_KEY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -141,6 +143,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>READ_TIME = 1;</code>
      */
     public static final int READ_TIME_VALUE = 1;
+
     /**
      *
      *
@@ -240,6 +243,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARTITION_KEY_FIELD_NUMBER = 1;
   private int partitionKey_ = 0;
+
   /**
    *
    *
@@ -255,6 +259,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
   public int getPartitionKeyValue() {
     return partitionKey_;
   }
+
   /**
    *
    *
@@ -438,6 +443,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -619,6 +625,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int partitionKey_ = 0;
+
     /**
      *
      *
@@ -634,6 +641,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
     public int getPartitionKeyValue() {
       return partitionKey_;
     }
+
     /**
      *
      *
@@ -652,6 +660,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -671,6 +680,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.asset.v1p7beta1.PartitionSpec.PartitionKey.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -693,6 +703,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

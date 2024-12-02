@@ -36,6 +36,7 @@ public interface DbServerPropertiesOrBuilder
    * @return The ocid.
    */
   java.lang.String getOcid();
+
   /**
    *
    *
@@ -154,6 +155,7 @@ public interface DbServerPropertiesOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -181,6 +183,7 @@ public interface DbServerPropertiesOrBuilder
    * @return A list containing the dbNodeIds.
    */
   java.util.List<java.lang.String> getDbNodeIdsList();
+
   /**
    *
    *
@@ -193,6 +196,7 @@ public interface DbServerPropertiesOrBuilder
    * @return The count of dbNodeIds.
    */
   int getDbNodeIdsCount();
+
   /**
    *
    *
@@ -206,6 +210,7 @@ public interface DbServerPropertiesOrBuilder
    * @return The dbNodeIds at the given index.
    */
   java.lang.String getDbNodeIds(int index);
+
   /**
    *
    *

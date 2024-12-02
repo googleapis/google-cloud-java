@@ -39,6 +39,7 @@ public interface GetServerTlsPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

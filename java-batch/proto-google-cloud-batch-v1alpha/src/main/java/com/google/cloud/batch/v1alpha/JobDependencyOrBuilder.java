@@ -38,6 +38,7 @@ public interface JobDependencyOrBuilder
    * <code>map&lt;string, .google.cloud.batch.v1alpha.JobDependency.Type&gt; items = 1;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -52,9 +53,11 @@ public interface JobDependencyOrBuilder
    * <code>map&lt;string, .google.cloud.batch.v1alpha.JobDependency.Type&gt; items = 1;</code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.batch.v1alpha.JobDependency.Type> getItems();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface JobDependencyOrBuilder
    * <code>map&lt;string, .google.cloud.batch.v1alpha.JobDependency.Type&gt; items = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.batch.v1alpha.JobDependency.Type> getItemsMap();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface JobDependencyOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.batch.v1alpha.JobDependency.Type defaultValue);
+
   /**
    *
    *
@@ -101,9 +106,11 @@ public interface JobDependencyOrBuilder
    * <code>map&lt;string, .google.cloud.batch.v1alpha.JobDependency.Type&gt; items = 1;</code>
    */
   com.google.cloud.batch.v1alpha.JobDependency.Type getItemsOrThrow(java.lang.String key);
+
   /** Use {@link #getItemsValueMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getItemsValue();
+
   /**
    *
    *
@@ -118,6 +125,7 @@ public interface JobDependencyOrBuilder
    * <code>map&lt;string, .google.cloud.batch.v1alpha.JobDependency.Type&gt; items = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getItemsValueMap();
+
   /**
    *
    *
@@ -132,6 +140,7 @@ public interface JobDependencyOrBuilder
    * <code>map&lt;string, .google.cloud.batch.v1alpha.JobDependency.Type&gt; items = 1;</code>
    */
   int getItemsValueOrDefault(java.lang.String key, int defaultValue);
+
   /**
    *
    *

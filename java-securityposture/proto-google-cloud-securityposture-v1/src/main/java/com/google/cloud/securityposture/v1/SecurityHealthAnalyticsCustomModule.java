@@ -34,6 +34,7 @@ public final class SecurityHealthAnalyticsCustomModule
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.SecurityHealthAnalyticsCustomModule)
     SecurityHealthAnalyticsCustomModuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityHealthAnalyticsCustomModule.newBuilder() to construct.
   private SecurityHealthAnalyticsCustomModule(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class SecurityHealthAnalyticsCustomModule
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class SecurityHealthAnalyticsCustomModule
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   public static final int CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.securityposture.v1.CustomConfig config_;
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class SecurityHealthAnalyticsCustomModule
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class SecurityHealthAnalyticsCustomModule
         ? com.google.cloud.securityposture.v1.CustomConfig.getDefaultInstance()
         : config_;
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   public static final int MODULE_ENABLEMENT_STATE_FIELD_NUMBER = 4;
   private int moduleEnablementState_ = 0;
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class SecurityHealthAnalyticsCustomModule
   public int getModuleEnablementStateValue() {
     return moduleEnablementState_;
   }
+
   /**
    *
    *
@@ -478,6 +488,7 @@ public final class SecurityHealthAnalyticsCustomModule
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -729,6 +740,7 @@ public final class SecurityHealthAnalyticsCustomModule
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -755,6 +767,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -781,6 +794,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -806,6 +820,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +842,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +871,7 @@ public final class SecurityHealthAnalyticsCustomModule
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -881,6 +898,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -907,6 +925,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -932,6 +951,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1007,7 @@ public final class SecurityHealthAnalyticsCustomModule
             com.google.cloud.securityposture.v1.CustomConfig.Builder,
             com.google.cloud.securityposture.v1.CustomConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -1002,6 +1024,7 @@ public final class SecurityHealthAnalyticsCustomModule
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1024,6 +1047,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1095,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1125,7 @@ public final class SecurityHealthAnalyticsCustomModule
       }
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1147,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1164,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1156,6 +1185,7 @@ public final class SecurityHealthAnalyticsCustomModule
             : config_;
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1215,7 @@ public final class SecurityHealthAnalyticsCustomModule
     }
 
     private int moduleEnablementState_ = 0;
+
     /**
      *
      *
@@ -1201,6 +1232,7 @@ public final class SecurityHealthAnalyticsCustomModule
     public int getModuleEnablementStateValue() {
       return moduleEnablementState_;
     }
+
     /**
      *
      *
@@ -1220,6 +1252,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1273,7 @@ public final class SecurityHealthAnalyticsCustomModule
           ? com.google.cloud.securityposture.v1.EnablementState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1263,6 +1297,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *

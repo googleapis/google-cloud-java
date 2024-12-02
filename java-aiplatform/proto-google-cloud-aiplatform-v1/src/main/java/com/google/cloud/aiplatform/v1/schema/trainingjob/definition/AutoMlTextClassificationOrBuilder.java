@@ -38,6 +38,7 @@ public interface AutoMlTextClassificationOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface AutoMlTextClassificationOrBuilder
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTextClassificationInputs
       getInputs();
+
   /**
    *
    *

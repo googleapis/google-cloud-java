@@ -38,6 +38,7 @@ public interface BudgetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface BudgetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface BudgetOrBuilder
    * @return Whether the budgetFilter field is set.
    */
   boolean hasBudgetFilter();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface BudgetOrBuilder
    * @return The budgetFilter.
    */
   com.google.cloud.billing.budgets.v1beta1.Filter getBudgetFilter();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface BudgetOrBuilder
    * @return Whether the amount field is set.
    */
   boolean hasAmount();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface BudgetOrBuilder
    * @return The amount.
    */
   com.google.cloud.billing.budgets.v1beta1.BudgetAmount getAmount();
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface BudgetOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.billing.budgets.v1beta1.ThresholdRule> getThresholdRulesList();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface BudgetOrBuilder
    * </code>
    */
   com.google.cloud.billing.budgets.v1beta1.ThresholdRule getThresholdRules(int index);
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public interface BudgetOrBuilder
    * </code>
    */
   int getThresholdRulesCount();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface BudgetOrBuilder
    */
   java.util.List<? extends com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder>
       getThresholdRulesOrBuilderList();
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public interface BudgetOrBuilder
    * @return Whether the allUpdatesRule field is set.
    */
   boolean hasAllUpdatesRule();
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public interface BudgetOrBuilder
    * @return The allUpdatesRule.
    */
   com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule getAllUpdatesRule();
+
   /**
    *
    *
@@ -314,6 +326,7 @@ public interface BudgetOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

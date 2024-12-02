@@ -36,6 +36,7 @@ public interface AwsEc2PlatformDetailsOrBuilder
    * @return The machineTypeLabel.
    */
   java.lang.String getMachineTypeLabel();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AwsEc2PlatformDetailsOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

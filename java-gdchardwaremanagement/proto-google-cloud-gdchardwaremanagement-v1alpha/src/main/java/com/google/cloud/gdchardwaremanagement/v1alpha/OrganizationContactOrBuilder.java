@@ -36,6 +36,7 @@ public interface OrganizationContactOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OrganizationContactOrBuilder
    * @return The address.
    */
   com.google.type.PostalAddress getAddress();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface OrganizationContactOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface OrganizationContactOrBuilder
    * @return The phone.
    */
   java.lang.String getPhone();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface OrganizationContactOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Contact> getContactsList();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface OrganizationContactOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Contact getContacts(int index);
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface OrganizationContactOrBuilder
    * </code>
    */
   int getContactsCount();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface OrganizationContactOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.ContactOrBuilder>
       getContactsOrBuilderList();
+
   /**
    *
    *

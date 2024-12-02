@@ -52,6 +52,7 @@ public interface SearchOrganizationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public interface SearchOrganizationsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *

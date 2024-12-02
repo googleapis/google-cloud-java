@@ -36,6 +36,7 @@ public interface ValidateUrlMapRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ValidateUrlMapRequestOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ValidateUrlMapRequestOrBuilder
    * @return Whether the urlMapsValidateRequestResource field is set.
    */
   boolean hasUrlMapsValidateRequestResource();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ValidateUrlMapRequestOrBuilder
    * @return The urlMapsValidateRequestResource.
    */
   com.google.cloud.compute.v1.UrlMapsValidateRequest getUrlMapsValidateRequestResource();
+
   /**
    *
    *

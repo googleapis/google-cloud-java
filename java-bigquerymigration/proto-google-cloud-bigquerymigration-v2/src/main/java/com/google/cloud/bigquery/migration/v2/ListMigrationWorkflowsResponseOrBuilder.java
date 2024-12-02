@@ -36,6 +36,7 @@ public interface ListMigrationWorkflowsResponseOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.MigrationWorkflow>
       getMigrationWorkflowsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListMigrationWorkflowsResponseOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2.MigrationWorkflow getMigrationWorkflows(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListMigrationWorkflowsResponseOrBuilder
    * </code>
    */
   int getMigrationWorkflowsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListMigrationWorkflowsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.MigrationWorkflowOrBuilder>
       getMigrationWorkflowsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface ListMigrationWorkflowsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

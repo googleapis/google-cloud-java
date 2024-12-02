@@ -37,6 +37,7 @@ public interface SamplingStrategyOrBuilder
    * @return Whether the randomSampleConfig field is set.
    */
   boolean hasRandomSampleConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SamplingStrategyOrBuilder
    * @return The randomSampleConfig.
    */
   com.google.cloud.aiplatform.v1.SamplingStrategy.RandomSampleConfig getRandomSampleConfig();
+
   /**
    *
    *

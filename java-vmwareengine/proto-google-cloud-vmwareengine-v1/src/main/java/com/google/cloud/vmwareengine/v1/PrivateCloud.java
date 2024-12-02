@@ -35,6 +35,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.PrivateCloud)
     PrivateCloudOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrivateCloud.newBuilder() to construct.
   private PrivateCloud(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -164,6 +165,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -174,6 +176,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -184,6 +187,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
+
     /**
      *
      *
@@ -194,6 +198,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -204,6 +209,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 5;</code>
      */
     public static final int FAILED_VALUE = 5;
+
     /**
      *
      *
@@ -215,6 +221,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 6;</code>
      */
     public static final int DELETED_VALUE = 6;
+
     /**
      *
      *
@@ -375,6 +382,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>STANDARD = 0;</code>
      */
     public static final int STANDARD_VALUE = 0;
+
     /**
      *
      *
@@ -388,6 +396,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>TIME_LIMITED = 1;</code>
      */
     public static final int TIME_LIMITED_VALUE = 1;
+
     /**
      *
      *
@@ -508,6 +517,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return The clusterId.
      */
     java.lang.String getClusterId();
+
     /**
      *
      *
@@ -542,6 +552,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getNodeTypeConfigsCount();
+
     /**
      *
      *
@@ -555,10 +566,12 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     boolean containsNodeTypeConfigs(java.lang.String key);
+
     /** Use {@link #getNodeTypeConfigsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
         getNodeTypeConfigs();
+
     /**
      *
      *
@@ -573,6 +586,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.Map<java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
         getNodeTypeConfigsMap();
+
     /**
      *
      *
@@ -590,6 +604,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         com.google.cloud.vmwareengine.v1.NodeTypeConfig defaultValue);
+
     /**
      *
      *
@@ -619,6 +634,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stretchedClusterConfig field is set.
      */
     boolean hasStretchedClusterConfig();
+
     /**
      *
      *
@@ -634,6 +650,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return The stretchedClusterConfig.
      */
     com.google.cloud.vmwareengine.v1.StretchedClusterConfig getStretchedClusterConfig();
+
     /**
      *
      *
@@ -649,6 +666,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder
         getStretchedClusterConfigOrBuilder();
   }
+
   /**
    *
    *
@@ -663,6 +681,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster)
       ManagementClusterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ManagementCluster.newBuilder() to construct.
     private ManagementCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -710,6 +729,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clusterId_ = "";
+
     /**
      *
      *
@@ -741,6 +761,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -808,6 +829,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public int getNodeTypeConfigsCount() {
       return internalGetNodeTypeConfigs().getMap().size();
     }
+
     /**
      *
      *
@@ -827,6 +849,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetNodeTypeConfigs().getMap().containsKey(key);
     }
+
     /** Use {@link #getNodeTypeConfigsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -834,6 +857,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         getNodeTypeConfigs() {
       return getNodeTypeConfigsMap();
     }
+
     /**
      *
      *
@@ -851,6 +875,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         getNodeTypeConfigsMap() {
       return internalGetNodeTypeConfigs().getMap();
     }
+
     /**
      *
      *
@@ -876,6 +901,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           internalGetNodeTypeConfigs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -904,6 +930,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STRETCHED_CLUSTER_CONFIG_FIELD_NUMBER = 8;
     private com.google.cloud.vmwareengine.v1.StretchedClusterConfig stretchedClusterConfig_;
+
     /**
      *
      *
@@ -922,6 +949,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStretchedClusterConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -942,6 +970,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vmwareengine.v1.StretchedClusterConfig.getDefaultInstance()
           : stretchedClusterConfig_;
     }
+
     /**
      *
      *
@@ -1159,6 +1188,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1427,6 +1457,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object clusterId_ = "";
+
       /**
        *
        *
@@ -1457,6 +1488,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1487,6 +1519,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1516,6 +1549,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1541,6 +1575,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1592,7 +1627,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return NodeTypeConfigsDefaultEntryHolder.defaultEntry;
         }
-      };
+      }
+      ;
 
       private static final NodeTypeConfigsConverter nodeTypeConfigsConverter =
           new NodeTypeConfigsConverter();
@@ -1633,6 +1669,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       public int getNodeTypeConfigsCount() {
         return internalGetNodeTypeConfigs().ensureBuilderMap().size();
       }
+
       /**
        *
        *
@@ -1652,6 +1689,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetNodeTypeConfigs().ensureBuilderMap().containsKey(key);
       }
+
       /** Use {@link #getNodeTypeConfigsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -1659,6 +1697,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           getNodeTypeConfigs() {
         return getNodeTypeConfigsMap();
       }
+
       /**
        *
        *
@@ -1676,6 +1715,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           getNodeTypeConfigsMap() {
         return internalGetNodeTypeConfigs().getImmutableMap();
       }
+
       /**
        *
        *
@@ -1701,6 +1741,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             map = internalGetMutableNodeTypeConfigs().ensureBuilderMap();
         return map.containsKey(key) ? nodeTypeConfigsConverter.build(map.get(key)) : defaultValue;
       }
+
       /**
        *
        *
@@ -1732,6 +1773,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableNodeTypeConfigs().clear();
         return this;
       }
+
       /**
        *
        *
@@ -1751,6 +1793,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableNodeTypeConfigs().ensureBuilderMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
@@ -1758,6 +1801,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return internalGetMutableNodeTypeConfigs().ensureMessageMap();
       }
+
       /**
        *
        *
@@ -1782,6 +1826,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return this;
       }
+
       /**
        *
        *
@@ -1806,6 +1851,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return this;
       }
+
       /**
        *
        *
@@ -1840,6 +1886,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.vmwareengine.v1.StretchedClusterConfig.Builder,
               com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder>
           stretchedClusterConfigBuilder_;
+
       /**
        *
        *
@@ -1857,6 +1904,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStretchedClusterConfig() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1880,6 +1928,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           return stretchedClusterConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1906,6 +1955,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1929,6 +1979,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1961,6 +2012,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1983,6 +2035,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2001,6 +2054,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStretchedClusterConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2023,6 +2077,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
               : stretchedClusterConfig_;
         }
       }
+
       /**
        *
        *
@@ -2124,6 +2179,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2151,6 +2207,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2181,6 +2238,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -2197,6 +2255,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2213,6 +2272,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -2230,6 +2290,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -2246,6 +2307,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2262,6 +2324,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -2279,6 +2342,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp deleteTime_;
+
   /**
    *
    *
@@ -2295,6 +2359,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2311,6 +2376,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
+
   /**
    *
    *
@@ -2328,6 +2394,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -2344,6 +2411,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -2360,6 +2428,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -2377,6 +2446,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
+
   /**
    *
    *
@@ -2395,6 +2465,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -2420,6 +2491,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.vmwareengine.v1.NetworkConfig networkConfig_;
+
   /**
    *
    *
@@ -2437,6 +2509,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetworkConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -2456,6 +2529,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vmwareengine.v1.NetworkConfig.getDefaultInstance()
         : networkConfig_;
   }
+
   /**
    *
    *
@@ -2476,6 +2550,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MANAGEMENT_CLUSTER_FIELD_NUMBER = 10;
   private com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster managementCluster_;
+
   /**
    *
    *
@@ -2498,6 +2573,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasManagementCluster() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -2522,6 +2598,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster.getDefaultInstance()
         : managementCluster_;
   }
+
   /**
    *
    *
@@ -2550,6 +2627,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -2573,6 +2651,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2599,6 +2678,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HCX_FIELD_NUMBER = 17;
   private com.google.cloud.vmwareengine.v1.Hcx hcx_;
+
   /**
    *
    *
@@ -2615,6 +2695,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHcx() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -2631,6 +2712,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vmwareengine.v1.Hcx getHcx() {
     return hcx_ == null ? com.google.cloud.vmwareengine.v1.Hcx.getDefaultInstance() : hcx_;
   }
+
   /**
    *
    *
@@ -2648,6 +2730,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NSX_FIELD_NUMBER = 18;
   private com.google.cloud.vmwareengine.v1.Nsx nsx_;
+
   /**
    *
    *
@@ -2664,6 +2747,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNsx() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -2680,6 +2764,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vmwareengine.v1.Nsx getNsx() {
     return nsx_ == null ? com.google.cloud.vmwareengine.v1.Nsx.getDefaultInstance() : nsx_;
   }
+
   /**
    *
    *
@@ -2697,6 +2782,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VCENTER_FIELD_NUMBER = 19;
   private com.google.cloud.vmwareengine.v1.Vcenter vcenter_;
+
   /**
    *
    *
@@ -2714,6 +2800,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVcenter() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -2733,6 +2820,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vmwareengine.v1.Vcenter.getDefaultInstance()
         : vcenter_;
   }
+
   /**
    *
    *
@@ -2755,6 +2843,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -2778,6 +2867,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2804,6 +2894,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 22;
   private int type_ = 0;
+
   /**
    *
    *
@@ -2821,6 +2912,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -3166,6 +3258,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3593,6 +3686,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3619,6 +3713,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3645,6 +3740,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3670,6 +3766,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3691,6 +3788,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3724,6 +3822,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3740,6 +3839,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3762,6 +3862,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3786,6 +3887,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3807,6 +3909,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3836,6 +3939,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3857,6 +3961,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3873,6 +3978,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3893,6 +3999,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3927,6 +4034,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3943,6 +4051,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3965,6 +4074,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3989,6 +4099,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4010,6 +4121,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4039,6 +4151,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4060,6 +4173,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4076,6 +4190,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4096,6 +4211,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -4130,6 +4246,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
+
     /**
      *
      *
@@ -4146,6 +4263,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4168,6 +4286,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return deleteTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4192,6 +4311,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4213,6 +4333,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4242,6 +4363,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4263,6 +4385,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4279,6 +4402,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4299,6 +4423,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             : deleteTime_;
       }
     }
+
     /**
      *
      *
@@ -4333,6 +4458,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -4349,6 +4475,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -4371,6 +4498,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4395,6 +4523,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4416,6 +4545,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4445,6 +4575,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4466,6 +4597,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4482,6 +4614,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4502,6 +4635,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             : expireTime_;
       }
     }
+
     /**
      *
      *
@@ -4531,6 +4665,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -4549,6 +4684,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -4570,6 +4706,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4592,6 +4729,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vmwareengine.v1.PrivateCloud.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4616,6 +4754,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4643,6 +4782,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmwareengine.v1.NetworkConfig.Builder,
             com.google.cloud.vmwareengine.v1.NetworkConfigOrBuilder>
         networkConfigBuilder_;
+
     /**
      *
      *
@@ -4659,6 +4799,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetworkConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4681,6 +4822,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return networkConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4705,6 +4847,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4727,6 +4870,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4757,6 +4901,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4778,6 +4923,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4794,6 +4940,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4814,6 +4961,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             : networkConfig_;
       }
     }
+
     /**
      *
      *
@@ -4848,6 +4996,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster.Builder,
             com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementClusterOrBuilder>
         managementClusterBuilder_;
+
     /**
      *
      *
@@ -4869,6 +5018,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasManagementCluster() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4896,6 +5046,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return managementClusterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4926,6 +5077,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4953,6 +5105,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4990,6 +5143,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5016,6 +5170,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5038,6 +5193,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getManagementClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5064,6 +5220,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             : managementCluster_;
       }
     }
+
     /**
      *
      *
@@ -5098,6 +5255,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -5120,6 +5278,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5142,6 +5301,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5163,6 +5323,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5180,6 +5341,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5209,6 +5371,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmwareengine.v1.Hcx.Builder,
             com.google.cloud.vmwareengine.v1.HcxOrBuilder>
         hcxBuilder_;
+
     /**
      *
      *
@@ -5225,6 +5388,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHcx() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -5245,6 +5409,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return hcxBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5269,6 +5434,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5290,6 +5456,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5319,6 +5486,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5340,6 +5508,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5356,6 +5525,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHcxFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5374,6 +5544,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return hcx_ == null ? com.google.cloud.vmwareengine.v1.Hcx.getDefaultInstance() : hcx_;
       }
     }
+
     /**
      *
      *
@@ -5408,6 +5579,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmwareengine.v1.Nsx.Builder,
             com.google.cloud.vmwareengine.v1.NsxOrBuilder>
         nsxBuilder_;
+
     /**
      *
      *
@@ -5424,6 +5596,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNsx() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -5444,6 +5617,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return nsxBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5468,6 +5642,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5489,6 +5664,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5518,6 +5694,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5539,6 +5716,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5555,6 +5733,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNsxFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5573,6 +5752,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return nsx_ == null ? com.google.cloud.vmwareengine.v1.Nsx.getDefaultInstance() : nsx_;
       }
     }
+
     /**
      *
      *
@@ -5607,6 +5787,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmwareengine.v1.Vcenter.Builder,
             com.google.cloud.vmwareengine.v1.VcenterOrBuilder>
         vcenterBuilder_;
+
     /**
      *
      *
@@ -5623,6 +5804,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVcenter() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -5645,6 +5827,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return vcenterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5669,6 +5852,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5690,6 +5874,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5719,6 +5904,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5740,6 +5926,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5756,6 +5943,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVcenterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5776,6 +5964,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             : vcenter_;
       }
     }
+
     /**
      *
      *
@@ -5805,6 +5994,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -5827,6 +6017,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5849,6 +6040,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5870,6 +6062,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5887,6 +6080,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5911,6 +6105,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -5928,6 +6123,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -5948,6 +6144,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5969,6 +6166,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vmwareengine.v1.PrivateCloud.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5992,6 +6190,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

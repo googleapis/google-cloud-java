@@ -33,6 +33,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse)
     ListWorkloadsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListWorkloadsResponse.newBuilder() to construct.
   private ListWorkloadsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload> workloads_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload> getWorkloadsList() {
     return workloads_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       getWorkloadsOrBuilderList() {
     return workloads_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
   public int getWorkloadsCount() {
     return workloads_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.assuredworkloads.v1beta1.Workload getWorkloads(int index) {
     return workloads_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +649,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return workloadsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return workloadsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return workloadsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +751,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getWorkloadsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -888,6 +910,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return workloadsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(workloads_);
       }
     }
+
     /**
      *
      *
@@ -918,6 +942,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       return getWorkloadsFieldBuilder()
           .addBuilder(com.google.cloud.assuredworkloads.v1beta1.Workload.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -933,6 +958,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.assuredworkloads.v1beta1.Workload.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -965,6 +991,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -987,6 +1014,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1037,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1059,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1077,7 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

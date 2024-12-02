@@ -34,6 +34,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.LocationsMetadata)
     LocationsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationsMetadata.newBuilder() to construct.
   private LocationsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int LANGUAGES_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v2.LanguageMetadata languages_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasLanguages() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.speech.v2.LanguageMetadata.getDefaultInstance()
         : languages_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int ACCESS_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.speech.v2.AccessMetadata accessMetadata_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasAccessMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.speech.v2.AccessMetadata.getDefaultInstance()
         : accessMetadata_;
   }
+
   /**
    *
    *
@@ -344,6 +351,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +575,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.LanguageMetadata.Builder,
             com.google.cloud.speech.v2.LanguageMetadataOrBuilder>
         languagesBuilder_;
+
     /**
      *
      *
@@ -582,6 +591,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasLanguages() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -603,6 +613,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
         return languagesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -626,6 +637,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -647,6 +659,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLanguagesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -729,6 +745,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
             : languages_;
       }
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.AccessMetadata.Builder,
             com.google.cloud.speech.v2.AccessMetadataOrBuilder>
         accessMetadataBuilder_;
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasAccessMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -796,6 +815,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
         return accessMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -818,6 +838,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +859,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +887,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +907,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +922,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getAccessMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -916,6 +941,7 @@ public final class LocationsMetadata extends com.google.protobuf.GeneratedMessag
             : accessMetadata_;
       }
     }
+
     /**
      *
      *

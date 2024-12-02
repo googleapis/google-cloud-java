@@ -39,6 +39,7 @@ public interface DeleteSlateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

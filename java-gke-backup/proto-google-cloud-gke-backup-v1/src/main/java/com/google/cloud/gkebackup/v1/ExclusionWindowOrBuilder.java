@@ -37,6 +37,7 @@ public interface ExclusionWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ExclusionWindowOrBuilder
    * @return The startTime.
    */
   com.google.type.TimeOfDay getStartTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ExclusionWindowOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ExclusionWindowOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface ExclusionWindowOrBuilder
    * @return Whether the singleOccurrenceDate field is set.
    */
   boolean hasSingleOccurrenceDate();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface ExclusionWindowOrBuilder
    * @return The singleOccurrenceDate.
    */
   com.google.type.Date getSingleOccurrenceDate();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface ExclusionWindowOrBuilder
    * @return Whether the daily field is set.
    */
   boolean hasDaily();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface ExclusionWindowOrBuilder
    * @return Whether the daysOfWeek field is set.
    */
   boolean hasDaysOfWeek();
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public interface ExclusionWindowOrBuilder
    * @return The daysOfWeek.
    */
   com.google.cloud.gkebackup.v1.ExclusionWindow.DayOfWeekList getDaysOfWeek();
+
   /**
    *
    *

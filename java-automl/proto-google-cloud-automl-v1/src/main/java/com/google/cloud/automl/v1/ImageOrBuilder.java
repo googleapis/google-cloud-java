@@ -38,6 +38,7 @@ public interface ImageOrBuilder
    * @return Whether the imageBytes field is set.
    */
   boolean hasImageBytes();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ImageOrBuilder
    * @return The thumbnailUri.
    */
   java.lang.String getThumbnailUri();
+
   /**
    *
    *

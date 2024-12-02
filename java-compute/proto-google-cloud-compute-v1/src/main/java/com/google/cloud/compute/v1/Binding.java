@@ -33,6 +33,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Binding)
     BindingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Binding.newBuilder() to construct.
   private Binding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bindingId_ = "";
+
   /**
    * <code>optional string binding_id = 441088277;</code>
    *
@@ -79,6 +81,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBindingId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional string binding_id = 441088277;</code>
    *
@@ -96,6 +99,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    * <code>optional string binding_id = 441088277;</code>
    *
@@ -116,6 +120,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONDITION_FIELD_NUMBER = 212430107;
   private com.google.cloud.compute.v1.Expr condition_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.Expr getCondition() {
     return condition_ == null ? com.google.cloud.compute.v1.Expr.getDefaultInstance() : condition_;
   }
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList members_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMembersList() {
     return members_;
   }
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   public int getMembersCount() {
     return members_.size();
   }
+
   /**
    *
    *
@@ -208,6 +218,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMembers(int index) {
     return members_.get(index);
   }
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object role_ = "";
+
   /**
    *
    *
@@ -243,6 +255,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRole() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -266,6 +279,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -496,6 +510,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -746,6 +761,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object bindingId_ = "";
+
     /**
      * <code>optional string binding_id = 441088277;</code>
      *
@@ -754,6 +770,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBindingId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional string binding_id = 441088277;</code>
      *
@@ -770,6 +787,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>optional string binding_id = 441088277;</code>
      *
@@ -786,6 +804,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>optional string binding_id = 441088277;</code>
      *
@@ -801,6 +820,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string binding_id = 441088277;</code>
      *
@@ -812,6 +832,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string binding_id = 441088277;</code>
      *
@@ -835,6 +856,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Expr.Builder,
             com.google.cloud.compute.v1.ExprOrBuilder>
         conditionBuilder_;
+
     /**
      *
      *
@@ -849,6 +871,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -869,6 +892,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         return conditionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -891,6 +915,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +935,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +963,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +983,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +998,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -988,6 +1017,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
             : condition_;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1053,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1038,6 +1069,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       members_.makeImmutable();
       return members_;
     }
+
     /**
      *
      *
@@ -1052,6 +1084,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     public int getMembersCount() {
       return members_.size();
     }
+
     /**
      *
      *
@@ -1067,6 +1100,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMembers(int index) {
       return members_.get(index);
     }
+
     /**
      *
      *
@@ -1082,6 +1116,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMembersBytes(int index) {
       return members_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1105,6 +1140,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1163,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1183,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1202,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1228,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object role_ = "";
+
     /**
      *
      *
@@ -1203,6 +1243,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRole() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1225,6 +1266,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1289,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1268,6 +1311,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1329,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

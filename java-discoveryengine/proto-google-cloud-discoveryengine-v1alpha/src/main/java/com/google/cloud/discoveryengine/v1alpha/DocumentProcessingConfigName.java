@@ -301,7 +301,8 @@ public class DocumentProcessingConfigName implements ResourceName {
     private Builder(DocumentProcessingConfigName documentProcessingConfigName) {
       Preconditions.checkArgument(
           Objects.equals(documentProcessingConfigName.pathTemplate, PROJECT_LOCATION_DATA_STORE),
-          "toBuilder is only supported when DocumentProcessingConfigName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/documentProcessingConfig");
+          "toBuilder is only supported when DocumentProcessingConfigName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/documentProcessingConfig");
       this.project = documentProcessingConfigName.project;
       this.location = documentProcessingConfigName.location;
       this.dataStore = documentProcessingConfigName.dataStore;

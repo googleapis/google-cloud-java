@@ -33,6 +33,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpointGroupPscData)
     NetworkEndpointGroupPscDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkEndpointGroupPscData.newBuilder() to construct.
   private NetworkEndpointGroupPscData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,6 +150,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * <code>UNDEFINED_PSC_CONNECTION_STATUS = 0;</code>
      */
     public static final int UNDEFINED_PSC_CONNECTION_STATUS_VALUE = 0;
+
     /**
      *
      *
@@ -159,6 +161,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * <code>ACCEPTED = 246714279;</code>
      */
     public static final int ACCEPTED_VALUE = 246714279;
+
     /**
      *
      *
@@ -169,6 +172,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * <code>CLOSED = 380163436;</code>
      */
     public static final int CLOSED_VALUE = 380163436;
+
     /**
      *
      *
@@ -179,6 +183,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * <code>NEEDS_ATTENTION = 344491452;</code>
      */
     public static final int NEEDS_ATTENTION_VALUE = 344491452;
+
     /**
      *
      *
@@ -189,6 +194,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * <code>PENDING = 35394935;</code>
      */
     public static final int PENDING_VALUE = 35394935;
+
     /**
      *
      *
@@ -199,6 +205,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * <code>REJECTED = 174130302;</code>
      */
     public static final int REJECTED_VALUE = 174130302;
+
     /** <code>STATUS_UNSPECIFIED = 42133066;</code> */
     public static final int STATUS_UNSPECIFIED_VALUE = 42133066;
 
@@ -303,6 +310,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object consumerPscAddress_ = "";
+
   /**
    *
    *
@@ -318,6 +326,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
   public boolean hasConsumerPscAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -341,6 +350,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -367,6 +377,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
 
   public static final int PRODUCER_PORT_FIELD_NUMBER = 410021134;
   private int producerPort_ = 0;
+
   /**
    *
    *
@@ -382,6 +393,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
   public boolean hasProducerPort() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -400,6 +412,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
 
   public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 292082397;
   private long pscConnectionId_ = 0L;
+
   /**
    *
    *
@@ -415,6 +428,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
   public boolean hasPscConnectionId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -435,6 +449,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pscConnectionStatus_ = "";
+
   /**
    *
    *
@@ -451,6 +466,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
   public boolean hasPscConnectionStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -475,6 +491,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -709,6 +726,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -940,6 +958,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object consumerPscAddress_ = "";
+
     /**
      *
      *
@@ -954,6 +973,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     public boolean hasConsumerPscAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -976,6 +996,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1019,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1019,6 +1041,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1059,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1084,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     }
 
     private int producerPort_;
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     public boolean hasProducerPort() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     public int getProducerPort() {
       return producerPort_;
     }
+
     /**
      *
      *
@@ -1109,6 +1136,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1156,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     }
 
     private long pscConnectionId_;
+
     /**
      *
      *
@@ -1143,6 +1172,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     public boolean hasPscConnectionId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1158,6 +1188,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     public long getPscConnectionId() {
       return pscConnectionId_;
     }
+
     /**
      *
      *
@@ -1177,6 +1208,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1228,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     }
 
     private java.lang.Object pscConnectionStatus_ = "";
+
     /**
      *
      *
@@ -1211,6 +1244,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     public boolean hasPscConnectionStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1234,6 +1268,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1257,6 +1292,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1279,6 +1315,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1334,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

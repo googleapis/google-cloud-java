@@ -42,6 +42,7 @@ public interface DeleteServiceAccountRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

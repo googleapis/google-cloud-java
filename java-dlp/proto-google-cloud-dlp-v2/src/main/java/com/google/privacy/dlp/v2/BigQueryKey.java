@@ -33,6 +33,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BigQueryKey)
     BigQueryKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryKey.newBuilder() to construct.
   private BigQueryKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TABLE_REFERENCE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.BigQueryTable tableReference_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTableReference() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
         ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
         : tableReference_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROW_NUMBER_FIELD_NUMBER = 2;
   private long rowNumber_ = 0L;
+
   /**
    *
    *
@@ -305,6 +310,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -521,6 +527,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.BigQueryTable.Builder,
             com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
         tableReferenceBuilder_;
+
     /**
      *
      *
@@ -535,6 +542,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTableReference() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -555,6 +563,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
         return tableReferenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +655,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +670,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTableReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -675,6 +689,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
             : tableReference_;
       }
     }
+
     /**
      *
      *
@@ -702,6 +717,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long rowNumber_;
+
     /**
      *
      *
@@ -721,6 +737,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
     public long getRowNumber() {
       return rowNumber_;
     }
+
     /**
      *
      *
@@ -744,6 +761,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

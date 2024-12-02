@@ -39,6 +39,7 @@ public interface CreateContentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateContentRequestOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateContentRequestOrBuilder
    * @return The content.
    */
   com.google.cloud.dataplex.v1.Content getContent();
+
   /**
    *
    *

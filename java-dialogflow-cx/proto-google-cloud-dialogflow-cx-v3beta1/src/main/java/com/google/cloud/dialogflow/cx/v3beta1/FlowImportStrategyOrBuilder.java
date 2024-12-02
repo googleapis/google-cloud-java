@@ -42,6 +42,7 @@ public interface FlowImportStrategyOrBuilder
    * @return The enum numeric value on the wire for globalImportStrategy.
    */
   int getGlobalImportStrategyValue();
+
   /**
    *
    *

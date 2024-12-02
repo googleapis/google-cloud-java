@@ -37,6 +37,7 @@ public interface InTotoStatementOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -52,12 +53,16 @@ public interface InTotoStatementOrBuilder
 
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   java.util.List<io.grafeas.v1.Subject> getSubjectList();
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   io.grafeas.v1.Subject getSubject(int index);
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   int getSubjectCount();
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList();
+
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(int index);
 
@@ -73,6 +78,7 @@ public interface InTotoStatementOrBuilder
    * @return The predicateType.
    */
   java.lang.String getPredicateType();
+
   /**
    *
    *
@@ -92,12 +98,14 @@ public interface InTotoStatementOrBuilder
    * @return Whether the provenance field is set.
    */
   boolean hasProvenance();
+
   /**
    * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
    *
    * @return The provenance.
    */
   io.grafeas.v1.InTotoProvenance getProvenance();
+
   /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
   io.grafeas.v1.InTotoProvenanceOrBuilder getProvenanceOrBuilder();
 
@@ -107,12 +115,14 @@ public interface InTotoStatementOrBuilder
    * @return Whether the slsaProvenance field is set.
    */
   boolean hasSlsaProvenance();
+
   /**
    * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
    *
    * @return The slsaProvenance.
    */
   io.grafeas.v1.SlsaProvenance getSlsaProvenance();
+
   /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
   io.grafeas.v1.SlsaProvenanceOrBuilder getSlsaProvenanceOrBuilder();
 
@@ -122,12 +132,14 @@ public interface InTotoStatementOrBuilder
    * @return Whether the slsaProvenanceZeroTwo field is set.
    */
   boolean hasSlsaProvenanceZeroTwo();
+
   /**
    * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
    *
    * @return The slsaProvenanceZeroTwo.
    */
   io.grafeas.v1.SlsaProvenanceZeroTwo getSlsaProvenanceZeroTwo();
+
   /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
   io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder();
 

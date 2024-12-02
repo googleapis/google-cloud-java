@@ -39,6 +39,7 @@ public interface RevertVolumeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface RevertVolumeRequestOrBuilder
    * @return The snapshotId.
    */
   java.lang.String getSnapshotId();
+
   /**
    *
    *

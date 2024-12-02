@@ -34,6 +34,7 @@ public interface ListValuedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.ValuedResource valued_resources = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.ValuedResource> getValuedResourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListValuedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.ValuedResource valued_resources = 1;</code>
    */
   com.google.cloud.securitycenter.v1.ValuedResource getValuedResources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListValuedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.ValuedResource valued_resources = 1;</code>
    */
   int getValuedResourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListValuedResourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.ValuedResourceOrBuilder>
       getValuedResourcesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListValuedResourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.Review)
     ReviewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Review.newBuilder() to construct.
   private Review(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object relativePublishTimeDescription_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEXT_FIELD_NUMBER = 9;
   private com.google.type.LocalizedText text_;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LocalizedText getText() {
     return text_ == null ? com.google.type.LocalizedText.getDefaultInstance() : text_;
   }
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ORIGINAL_TEXT_FIELD_NUMBER = 12;
   private com.google.type.LocalizedText originalText_;
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOriginalText() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.LocalizedText.getDefaultInstance()
         : originalText_;
   }
+
   /**
    *
    *
@@ -270,6 +281,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RATING_FIELD_NUMBER = 7;
   private double rating_ = 0D;
+
   /**
    *
    *
@@ -288,6 +300,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTHOR_ATTRIBUTION_FIELD_NUMBER = 13;
   private com.google.maps.places.v1.AuthorAttribution authorAttribution_;
+
   /**
    *
    *
@@ -303,6 +316,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuthorAttribution() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -320,6 +334,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.places.v1.AuthorAttribution.getDefaultInstance()
         : authorAttribution_;
   }
+
   /**
    *
    *
@@ -338,6 +353,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PUBLISH_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp publishTime_;
+
   /**
    *
    *
@@ -353,6 +369,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublishTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -368,6 +385,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getPublishTime() {
     return publishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : publishTime_;
   }
+
   /**
    *
    *
@@ -620,6 +638,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -922,6 +941,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -946,6 +966,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -970,6 +991,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1015,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1035,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1062,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object relativePublishTimeDescription_ = "";
+
     /**
      *
      *
@@ -1061,6 +1086,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1110,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1133,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1183,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
             com.google.type.LocalizedText.Builder,
             com.google.type.LocalizedTextOrBuilder>
         textBuilder_;
+
     /**
      *
      *
@@ -1168,6 +1198,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1186,6 +1217,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return textBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1208,6 +1240,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1260,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1288,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1308,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1323,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1303,6 +1340,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return text_ == null ? com.google.type.LocalizedText.getDefaultInstance() : text_;
       }
     }
+
     /**
      *
      *
@@ -1335,6 +1373,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
             com.google.type.LocalizedText.Builder,
             com.google.type.LocalizedTextOrBuilder>
         originalTextBuilder_;
+
     /**
      *
      *
@@ -1349,6 +1388,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOriginalText() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1369,6 +1409,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return originalTextBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1432,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1452,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1480,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1500,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1515,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOriginalTextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1488,6 +1534,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
             : originalText_;
       }
     }
+
     /**
      *
      *
@@ -1515,6 +1562,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double rating_;
+
     /**
      *
      *
@@ -1530,6 +1578,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     public double getRating() {
       return rating_;
     }
+
     /**
      *
      *
@@ -1549,6 +1598,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1573,6 +1623,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.places.v1.AuthorAttribution.Builder,
             com.google.maps.places.v1.AuthorAttributionOrBuilder>
         authorAttributionBuilder_;
+
     /**
      *
      *
@@ -1587,6 +1638,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuthorAttribution() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1607,6 +1659,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return authorAttributionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1629,6 +1682,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1649,6 +1703,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1677,6 +1732,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +1752,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1767,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAuthorAttributionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1728,6 +1786,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
             : authorAttribution_;
       }
     }
+
     /**
      *
      *
@@ -1760,6 +1819,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         publishTimeBuilder_;
+
     /**
      *
      *
@@ -1774,6 +1834,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublishTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1794,6 +1855,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         return publishTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1816,6 +1878,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1835,6 +1898,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1862,6 +1926,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1946,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1895,6 +1961,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPublishTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1913,6 +1980,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
             : publishTime_;
       }
     }
+
     /**
      *
      *

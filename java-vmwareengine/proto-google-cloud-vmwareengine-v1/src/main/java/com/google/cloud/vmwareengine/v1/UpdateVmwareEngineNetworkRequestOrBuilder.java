@@ -38,6 +38,7 @@ public interface UpdateVmwareEngineNetworkRequestOrBuilder
    * @return Whether the vmwareEngineNetwork field is set.
    */
   boolean hasVmwareEngineNetwork();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateVmwareEngineNetworkRequestOrBuilder
    * @return The vmwareEngineNetwork.
    */
   com.google.cloud.vmwareengine.v1.VmwareEngineNetwork getVmwareEngineNetwork();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateVmwareEngineNetworkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UpdateVmwareEngineNetworkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface UpdateVmwareEngineNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface DeployPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DeployPolicyOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeployPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface DeployPolicyOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -155,9 +159,11 @@ public interface DeployPolicyOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface DeployPolicyOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface DeployPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public interface DeployPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -281,9 +290,11 @@ public interface DeployPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -304,6 +315,7 @@ public interface DeployPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -328,6 +340,7 @@ public interface DeployPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -362,6 +375,7 @@ public interface DeployPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -375,6 +389,7 @@ public interface DeployPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -400,6 +415,7 @@ public interface DeployPolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -413,6 +429,7 @@ public interface DeployPolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -454,6 +471,7 @@ public interface DeployPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.DeployPolicyResourceSelector> getSelectorsList();
+
   /**
    *
    *
@@ -469,6 +487,7 @@ public interface DeployPolicyOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.DeployPolicyResourceSelector getSelectors(int index);
+
   /**
    *
    *
@@ -484,6 +503,7 @@ public interface DeployPolicyOrBuilder
    * </code>
    */
   int getSelectorsCount();
+
   /**
    *
    *
@@ -500,6 +520,7 @@ public interface DeployPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.DeployPolicyResourceSelectorOrBuilder>
       getSelectorsOrBuilderList();
+
   /**
    *
    *
@@ -528,6 +549,7 @@ public interface DeployPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.PolicyRule> getRulesList();
+
   /**
    *
    *
@@ -540,6 +562,7 @@ public interface DeployPolicyOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.PolicyRule getRules(int index);
+
   /**
    *
    *
@@ -552,6 +575,7 @@ public interface DeployPolicyOrBuilder
    * </code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -564,6 +588,7 @@ public interface DeployPolicyOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.PolicyRuleOrBuilder> getRulesOrBuilderList();
+
   /**
    *
    *
@@ -592,6 +617,7 @@ public interface DeployPolicyOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

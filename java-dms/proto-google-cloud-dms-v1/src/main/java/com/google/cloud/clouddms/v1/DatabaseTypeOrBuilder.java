@@ -36,6 +36,7 @@ public interface DatabaseTypeOrBuilder
    * @return The enum numeric value on the wire for provider.
    */
   int getProviderValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DatabaseTypeOrBuilder
    * @return The enum numeric value on the wire for engine.
    */
   int getEngineValue();
+
   /**
    *
    *

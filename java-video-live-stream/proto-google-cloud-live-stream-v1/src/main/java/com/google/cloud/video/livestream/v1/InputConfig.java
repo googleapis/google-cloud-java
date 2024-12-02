@@ -33,6 +33,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.InputConfig)
     InputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InputConfig.newBuilder() to construct.
   private InputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,6 +125,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INPUT_SWITCH_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int INPUT_SWITCH_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILOVER_PREFER_PRIMARY = 1;</code>
      */
     public static final int FAILOVER_PREFER_PRIMARY_VALUE = 1;
+
     /**
      *
      *
@@ -240,6 +243,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INPUT_SWITCH_MODE_FIELD_NUMBER = 1;
   private int inputSwitchMode_ = 0;
+
   /**
    *
    *
@@ -256,6 +260,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public int getInputSwitchModeValue() {
     return inputSwitchMode_;
   }
+
   /**
    *
    *
@@ -443,6 +448,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +631,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int inputSwitchMode_ = 0;
+
     /**
      *
      *
@@ -641,6 +648,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public int getInputSwitchModeValue() {
       return inputSwitchMode_;
     }
+
     /**
      *
      *
@@ -660,6 +668,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +690,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.livestream.v1.InputConfig.InputSwitchMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -704,6 +714,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

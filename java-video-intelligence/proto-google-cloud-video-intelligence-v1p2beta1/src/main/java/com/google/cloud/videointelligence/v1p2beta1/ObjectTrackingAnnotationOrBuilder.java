@@ -37,6 +37,7 @@ public interface ObjectTrackingAnnotationOrBuilder
    * @return Whether the segment field is set.
    */
   boolean hasSegment();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ObjectTrackingAnnotationOrBuilder
    * @return The segment.
    */
   com.google.cloud.videointelligence.v1p2beta1.VideoSegment getSegment();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ObjectTrackingAnnotationOrBuilder
    * @return Whether the trackId field is set.
    */
   boolean hasTrackId();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface ObjectTrackingAnnotationOrBuilder
    * @return Whether the entity field is set.
    */
   boolean hasEntity();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ObjectTrackingAnnotationOrBuilder
    * @return The entity.
    */
   com.google.cloud.videointelligence.v1p2beta1.Entity getEntity();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface ObjectTrackingAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame frames = 2;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame> getFramesList();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface ObjectTrackingAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame frames = 2;</code>
    */
   com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame getFrames(int index);
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface ObjectTrackingAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame frames = 2;</code>
    */
   int getFramesCount();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface ObjectTrackingAnnotationOrBuilder
   java.util.List<
           ? extends com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrameOrBuilder>
       getFramesOrBuilderList();
+
   /**
    *
    *

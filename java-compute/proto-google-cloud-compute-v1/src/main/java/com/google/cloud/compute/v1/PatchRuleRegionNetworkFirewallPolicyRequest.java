@@ -34,6 +34,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchRuleRegionNetworkFirewallPolicyRequest)
     PatchRuleRegionNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchRuleRegionNetworkFirewallPolicyRequest.newBuilder() to construct.
   private PatchRuleRegionNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
 
   public static final int FIREWALL_POLICY_RULE_RESOURCE_FIELD_NUMBER = 250523523;
   private com.google.cloud.compute.v1.FirewallPolicyRule firewallPolicyRuleResource_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
   public boolean hasFirewallPolicyRuleResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         ? com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance()
         : firewallPolicyRuleResource_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -294,6 +305,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -339,6 +352,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -610,6 +625,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -897,6 +913,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
+
     /**
      *
      *
@@ -919,6 +936,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -941,6 +959,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -962,6 +981,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +999,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1029,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
             com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
             com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
         firewallPolicyRuleResourceBuilder_;
+
     /**
      *
      *
@@ -1024,6 +1046,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     public boolean hasFirewallPolicyRuleResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1046,6 +1069,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return firewallPolicyRuleResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1095,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1118,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1150,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1172,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1190,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return getFirewallPolicyRuleResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1183,6 +1212,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
             : firewallPolicyRuleResource_;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1242,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     }
 
     private int priority_;
+
     /**
      *
      *
@@ -1227,6 +1258,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1242,6 +1274,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     public int getPriority() {
       return priority_;
     }
+
     /**
      *
      *
@@ -1261,6 +1294,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1314,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1304,6 +1339,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1328,6 +1364,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1351,6 +1388,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1408,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1396,6 +1435,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1420,6 +1460,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1444,6 +1485,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1467,6 +1509,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1529,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1512,6 +1556,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1526,6 +1571,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1548,6 +1594,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1570,6 +1617,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1591,6 +1639,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1608,6 +1657,7 @@ public final class PatchRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -50,6 +50,7 @@ public interface PrivateServiceConnectConfigOrBuilder
    * @return A list containing the projectAllowlist.
    */
   java.util.List<java.lang.String> getProjectAllowlistList();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PrivateServiceConnectConfigOrBuilder
    * @return The count of projectAllowlist.
    */
   int getProjectAllowlistCount();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PrivateServiceConnectConfigOrBuilder
    * @return The projectAllowlist at the given index.
    */
   java.lang.String getProjectAllowlist(int index);
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface PrivateServiceConnectConfigOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
+
   /**
    *
    *

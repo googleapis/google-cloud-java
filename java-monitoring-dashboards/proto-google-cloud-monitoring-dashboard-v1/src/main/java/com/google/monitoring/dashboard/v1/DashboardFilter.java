@@ -33,6 +33,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.DashboardFilter)
     DashboardFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DashboardFilter.newBuilder() to construct.
   private DashboardFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -148,6 +149,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * <code>FILTER_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int FILTER_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -158,6 +160,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * <code>RESOURCE_LABEL = 1;</code>
      */
     public static final int RESOURCE_LABEL_VALUE = 1;
+
     /**
      *
      *
@@ -168,6 +171,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * <code>METRIC_LABEL = 2;</code>
      */
     public static final int METRIC_LABEL_VALUE = 2;
+
     /**
      *
      *
@@ -178,6 +182,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * <code>USER_METADATA_LABEL = 3;</code>
      */
     public static final int USER_METADATA_LABEL_VALUE = 3;
+
     /**
      *
      *
@@ -188,6 +193,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * <code>SYSTEM_METADATA_LABEL = 4;</code>
      */
     public static final int SYSTEM_METADATA_LABEL_VALUE = 4;
+
     /**
      *
      *
@@ -306,6 +312,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     private DefaultValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -340,6 +347,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object labelKey_ = "";
+
   /**
    *
    *
@@ -363,6 +371,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -391,6 +400,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object templateVariable_ = "";
+
   /**
    *
    *
@@ -416,6 +426,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -443,6 +454,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -457,6 +469,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
   public boolean hasStringValue() {
     return defaultValueCase_ == 4;
   }
+
   /**
    *
    *
@@ -484,6 +497,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -514,6 +528,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
 
   public static final int FILTER_TYPE_FIELD_NUMBER = 5;
   private int filterType_ = 0;
+
   /**
    *
    *
@@ -529,6 +544,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
   public int getFilterTypeValue() {
     return filterType_;
   }
+
   /**
    *
    *
@@ -752,6 +768,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1006,6 +1023,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object labelKey_ = "";
+
     /**
      *
      *
@@ -1028,6 +1046,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1069,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1091,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1109,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1134,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object templateVariable_ = "";
+
     /**
      *
      *
@@ -1136,6 +1159,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1184,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1208,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1228,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1269,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     public boolean hasStringValue() {
       return defaultValueCase_ == 4;
     }
+
     /**
      *
      *
@@ -1270,6 +1298,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1298,6 +1327,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1319,6 +1349,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1369,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1394,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     }
 
     private int filterType_ = 0;
+
     /**
      *
      *
@@ -1377,6 +1410,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     public int getFilterTypeValue() {
       return filterType_;
     }
+
     /**
      *
      *
@@ -1395,6 +1429,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1449,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
           ? com.google.monitoring.dashboard.v1.DashboardFilter.FilterType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1436,6 +1472,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

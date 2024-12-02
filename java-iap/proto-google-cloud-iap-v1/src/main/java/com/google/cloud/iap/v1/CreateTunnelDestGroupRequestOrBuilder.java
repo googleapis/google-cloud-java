@@ -40,6 +40,7 @@ public interface CreateTunnelDestGroupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateTunnelDestGroupRequestOrBuilder
    * @return Whether the tunnelDestGroup field is set.
    */
   boolean hasTunnelDestGroup();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateTunnelDestGroupRequestOrBuilder
    * @return The tunnelDestGroup.
    */
   com.google.cloud.iap.v1.TunnelDestGroup getTunnelDestGroup();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateTunnelDestGroupRequestOrBuilder
    * @return The tunnelDestGroupId.
    */
   java.lang.String getTunnelDestGroupId();
+
   /**
    *
    *

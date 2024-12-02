@@ -36,6 +36,7 @@ public interface HttpRequestContextOrBuilder
    * @return The method.
    */
   java.lang.String getMethod();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface HttpRequestContextOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface HttpRequestContextOrBuilder
    * @return The userAgent.
    */
   java.lang.String getUserAgent();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface HttpRequestContextOrBuilder
    * @return The referrer.
    */
   java.lang.String getReferrer();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface HttpRequestContextOrBuilder
    * @return The remoteIp.
    */
   java.lang.String getRemoteIp();
+
   /**
    *
    *

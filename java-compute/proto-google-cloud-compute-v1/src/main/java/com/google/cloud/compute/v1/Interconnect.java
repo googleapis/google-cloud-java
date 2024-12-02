@@ -33,6 +33,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Interconnect)
     InterconnectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Interconnect.newBuilder() to construct.
   private Interconnect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -277,6 +278,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_INTERCONNECT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_INTERCONNECT_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -287,6 +289,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>DEDICATED = 258411983;</code>
      */
     public static final int DEDICATED_VALUE = 258411983;
+
     /**
      *
      *
@@ -297,6 +300,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>IT_PRIVATE = 335677007;</code>
      */
     public static final int IT_PRIVATE_VALUE = 335677007;
+
     /**
      *
      *
@@ -448,6 +452,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_LINK_TYPE = 0;</code>
      */
     public static final int UNDEFINED_LINK_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>LINK_TYPE_ETHERNET_100G_LR = 337672551;</code>
      */
     public static final int LINK_TYPE_ETHERNET_100G_LR_VALUE = 337672551;
+
     /**
      *
      *
@@ -605,6 +611,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_OPERATIONAL_STATUS = 0;</code>
      */
     public static final int UNDEFINED_OPERATIONAL_STATUS_VALUE = 0;
+
     /**
      *
      *
@@ -615,6 +622,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>OS_ACTIVE = 55721409;</code>
      */
     public static final int OS_ACTIVE_VALUE = 55721409;
+
     /**
      *
      *
@@ -883,6 +891,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -893,6 +902,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 314733318;</code>
      */
     public static final int ACTIVE_VALUE = 314733318;
+
     /**
      *
      *
@@ -990,6 +1000,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ADMIN_ENABLED_FIELD_NUMBER = 445675089;
   private boolean adminEnabled_ = false;
+
   /**
    *
    *
@@ -1005,6 +1016,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdminEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1026,6 +1038,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList availableFeatures_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1041,6 +1054,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAvailableFeaturesList() {
     return availableFeatures_;
   }
+
   /**
    *
    *
@@ -1056,6 +1070,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public int getAvailableFeaturesCount() {
     return availableFeatures_.size();
   }
+
   /**
    *
    *
@@ -1072,6 +1087,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAvailableFeatures(int index) {
     return availableFeatures_.get(index);
   }
+
   /**
    *
    *
@@ -1093,6 +1109,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectCircuitInfo> circuitInfos_;
+
   /**
    *
    *
@@ -1107,6 +1124,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.InterconnectCircuitInfo> getCircuitInfosList() {
     return circuitInfos_;
   }
+
   /**
    *
    *
@@ -1122,6 +1140,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       getCircuitInfosOrBuilderList() {
     return circuitInfos_;
   }
+
   /**
    *
    *
@@ -1136,6 +1155,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public int getCircuitInfosCount() {
     return circuitInfos_.size();
   }
+
   /**
    *
    *
@@ -1150,6 +1170,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.InterconnectCircuitInfo getCircuitInfos(int index) {
     return circuitInfos_.get(index);
   }
+
   /**
    *
    *
@@ -1170,6 +1191,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -1185,6 +1207,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1208,6 +1231,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1236,6 +1260,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customerName_ = "";
+
   /**
    *
    *
@@ -1251,6 +1276,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomerName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1274,6 +1300,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1302,6 +1329,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1317,6 +1345,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1340,6 +1369,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1369,6 +1399,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectOutageNotification>
       expectedOutages_;
+
   /**
    *
    *
@@ -1385,6 +1416,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       getExpectedOutagesList() {
     return expectedOutages_;
   }
+
   /**
    *
    *
@@ -1402,6 +1434,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       getExpectedOutagesOrBuilderList() {
     return expectedOutages_;
   }
+
   /**
    *
    *
@@ -1417,6 +1450,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public int getExpectedOutagesCount() {
     return expectedOutages_.size();
   }
+
   /**
    *
    *
@@ -1432,6 +1466,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.InterconnectOutageNotification getExpectedOutages(int index) {
     return expectedOutages_.get(index);
   }
+
   /**
    *
    *
@@ -1453,6 +1488,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object googleIpAddress_ = "";
+
   /**
    *
    *
@@ -1468,6 +1504,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleIpAddress() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1491,6 +1528,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1519,6 +1557,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object googleReferenceId_ = "";
+
   /**
    *
    *
@@ -1534,6 +1573,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleReferenceId() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1557,6 +1597,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1583,6 +1624,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -1598,6 +1640,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1619,6 +1662,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList interconnectAttachments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1633,6 +1677,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getInterconnectAttachmentsList() {
     return interconnectAttachments_;
   }
+
   /**
    *
    *
@@ -1647,6 +1692,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public int getInterconnectAttachmentsCount() {
     return interconnectAttachments_.size();
   }
+
   /**
    *
    *
@@ -1662,6 +1708,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getInterconnectAttachments(int index) {
     return interconnectAttachments_.get(index);
   }
+
   /**
    *
    *
@@ -1682,6 +1729,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnectType_ = "";
+
   /**
    *
    *
@@ -1698,6 +1746,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInterconnectType() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1722,6 +1771,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1751,6 +1801,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -1766,6 +1817,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -1789,6 +1841,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1817,6 +1870,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object labelFingerprint_ = "";
+
   /**
    *
    *
@@ -1832,6 +1886,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLabelFingerprint() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -1855,6 +1910,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1905,6 +1961,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -1921,12 +1978,14 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -1940,6 +1999,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -1960,6 +2020,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1985,6 +2046,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object linkType_ = "";
+
   /**
    *
    *
@@ -2001,6 +2063,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLinkType() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -2025,6 +2088,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2054,6 +2118,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -2069,6 +2134,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -2092,6 +2158,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2118,6 +2185,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MACSEC_FIELD_NUMBER = 528867490;
   private com.google.cloud.compute.v1.InterconnectMacsec macsec_;
+
   /**
    *
    *
@@ -2133,6 +2201,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMacsec() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -2150,6 +2219,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.InterconnectMacsec.getDefaultInstance()
         : macsec_;
   }
+
   /**
    *
    *
@@ -2168,6 +2238,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MACSEC_ENABLED_FIELD_NUMBER = 194203812;
   private boolean macsecEnabled_ = false;
+
   /**
    *
    *
@@ -2183,6 +2254,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMacsecEnabled() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -2203,6 +2275,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2218,6 +2291,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00004000) != 0);
   }
+
   /**
    *
    *
@@ -2241,6 +2315,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2269,6 +2344,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nocContactEmail_ = "";
+
   /**
    *
    *
@@ -2284,6 +2360,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNocContactEmail() {
     return ((bitField0_ & 0x00008000) != 0);
   }
+
   /**
    *
    *
@@ -2307,6 +2384,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2335,6 +2413,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operationalStatus_ = "";
+
   /**
    *
    *
@@ -2351,6 +2430,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOperationalStatus() {
     return ((bitField0_ & 0x00010000) != 0);
   }
+
   /**
    *
    *
@@ -2375,6 +2455,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2404,6 +2485,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peerIpAddress_ = "";
+
   /**
    *
    *
@@ -2419,6 +2501,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPeerIpAddress() {
     return ((bitField0_ & 0x00020000) != 0);
   }
+
   /**
    *
    *
@@ -2442,6 +2525,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2468,6 +2552,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROVISIONED_LINK_COUNT_FIELD_NUMBER = 410888565;
   private int provisionedLinkCount_ = 0;
+
   /**
    *
    *
@@ -2483,6 +2568,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProvisionedLinkCount() {
     return ((bitField0_ & 0x00040000) != 0);
   }
+
   /**
    *
    *
@@ -2503,6 +2589,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object remoteLocation_ = "";
+
   /**
    *
    *
@@ -2518,6 +2605,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemoteLocation() {
     return ((bitField0_ & 0x00080000) != 0);
   }
+
   /**
    *
    *
@@ -2541,6 +2629,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2570,6 +2659,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList requestedFeatures_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2585,6 +2675,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRequestedFeaturesList() {
     return requestedFeatures_;
   }
+
   /**
    *
    *
@@ -2600,6 +2691,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public int getRequestedFeaturesCount() {
     return requestedFeatures_.size();
   }
+
   /**
    *
    *
@@ -2616,6 +2708,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRequestedFeatures(int index) {
     return requestedFeatures_.get(index);
   }
+
   /**
    *
    *
@@ -2635,6 +2728,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUESTED_LINK_COUNT_FIELD_NUMBER = 45051387;
   private int requestedLinkCount_ = 0;
+
   /**
    *
    *
@@ -2650,6 +2744,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequestedLinkCount() {
     return ((bitField0_ & 0x00100000) != 0);
   }
+
   /**
    *
    *
@@ -2668,6 +2763,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
   private boolean satisfiesPzs_ = false;
+
   /**
    *
    *
@@ -2683,6 +2779,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSatisfiesPzs() {
     return ((bitField0_ & 0x00200000) != 0);
   }
+
   /**
    *
    *
@@ -2703,6 +2800,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -2718,6 +2816,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00400000) != 0);
   }
+
   /**
    *
    *
@@ -2741,6 +2840,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2769,6 +2869,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -2785,6 +2886,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasState() {
     return ((bitField0_ & 0x00800000) != 0);
   }
+
   /**
    *
    *
@@ -2809,6 +2911,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3419,6 +3522,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4199,6 +4303,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean adminEnabled_;
+
     /**
      *
      *
@@ -4214,6 +4319,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdminEnabled() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4229,6 +4335,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean getAdminEnabled() {
       return adminEnabled_;
     }
+
     /**
      *
      *
@@ -4248,6 +4355,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4275,6 +4383,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -4291,6 +4400,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       availableFeatures_.makeImmutable();
       return availableFeatures_;
     }
+
     /**
      *
      *
@@ -4306,6 +4416,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public int getAvailableFeaturesCount() {
       return availableFeatures_.size();
     }
+
     /**
      *
      *
@@ -4322,6 +4433,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAvailableFeatures(int index) {
       return availableFeatures_.get(index);
     }
+
     /**
      *
      *
@@ -4338,6 +4450,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAvailableFeaturesBytes(int index) {
       return availableFeatures_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4362,6 +4475,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4385,6 +4499,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4405,6 +4520,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4424,6 +4540,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4485,6 +4602,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return circuitInfosBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4502,6 +4620,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return circuitInfosBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4519,6 +4638,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return circuitInfosBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4543,6 +4663,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4564,6 +4685,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4587,6 +4709,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4611,6 +4734,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4632,6 +4756,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4653,6 +4778,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4674,6 +4800,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4694,6 +4821,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4714,6 +4842,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4728,6 +4857,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getCircuitInfosFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4746,6 +4876,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return circuitInfosBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4764,6 +4895,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(circuitInfos_);
       }
     }
+
     /**
      *
      *
@@ -4778,6 +4910,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return getCircuitInfosFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InterconnectCircuitInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4794,6 +4927,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.compute.v1.InterconnectCircuitInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4827,6 +4961,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -4841,6 +4976,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4863,6 +4999,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4885,6 +5022,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4906,6 +5044,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4923,6 +5062,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4947,6 +5087,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customerName_ = "";
+
     /**
      *
      *
@@ -4961,6 +5102,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -4983,6 +5125,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5005,6 +5148,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5026,6 +5170,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5043,6 +5188,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5067,6 +5213,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -5081,6 +5228,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5103,6 +5251,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5125,6 +5274,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5146,6 +5296,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5163,6 +5314,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5223,6 +5375,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return expectedOutagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5241,6 +5394,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return expectedOutagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5260,6 +5414,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return expectedOutagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5285,6 +5440,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5308,6 +5464,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5333,6 +5490,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5358,6 +5516,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5380,6 +5539,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5403,6 +5563,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5426,6 +5587,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5447,6 +5609,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5468,6 +5631,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5483,6 +5647,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         getExpectedOutagesBuilder(int index) {
       return getExpectedOutagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5502,6 +5667,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return expectedOutagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5522,6 +5688,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(expectedOutages_);
       }
     }
+
     /**
      *
      *
@@ -5539,6 +5706,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.compute.v1.InterconnectOutageNotification.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5557,6 +5725,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.compute.v1.InterconnectOutageNotification.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5594,6 +5763,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object googleIpAddress_ = "";
+
     /**
      *
      *
@@ -5608,6 +5778,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleIpAddress() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -5630,6 +5801,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5652,6 +5824,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5673,6 +5846,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5690,6 +5864,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5714,6 +5889,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object googleReferenceId_ = "";
+
     /**
      *
      *
@@ -5728,6 +5904,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleReferenceId() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -5750,6 +5927,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5772,6 +5950,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5793,6 +5972,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5810,6 +5990,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5834,6 +6015,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
+
     /**
      *
      *
@@ -5849,6 +6031,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -5864,6 +6047,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -5883,6 +6067,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5911,6 +6096,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000400;
     }
+
     /**
      *
      *
@@ -5926,6 +6112,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       interconnectAttachments_.makeImmutable();
       return interconnectAttachments_;
     }
+
     /**
      *
      *
@@ -5940,6 +6127,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public int getInterconnectAttachmentsCount() {
       return interconnectAttachments_.size();
     }
+
     /**
      *
      *
@@ -5955,6 +6143,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getInterconnectAttachments(int index) {
       return interconnectAttachments_.get(index);
     }
+
     /**
      *
      *
@@ -5970,6 +6159,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getInterconnectAttachmentsBytes(int index) {
       return interconnectAttachments_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5993,6 +6183,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6015,6 +6206,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6034,6 +6226,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6052,6 +6245,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6077,6 +6271,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object interconnectType_ = "";
+
     /**
      *
      *
@@ -6092,6 +6287,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInterconnectType() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -6115,6 +6311,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6138,6 +6335,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6160,6 +6358,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6178,6 +6377,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6203,6 +6403,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -6217,6 +6418,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -6239,6 +6441,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6261,6 +6464,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6282,6 +6486,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6299,6 +6504,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6323,6 +6529,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object labelFingerprint_ = "";
+
     /**
      *
      *
@@ -6337,6 +6544,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLabelFingerprint() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -6359,6 +6567,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6381,6 +6590,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6402,6 +6612,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6419,6 +6630,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6467,6 +6679,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -6483,12 +6696,14 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -6502,6 +6717,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -6522,6 +6738,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -6548,6 +6765,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -6564,12 +6782,14 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00004000;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -6590,6 +6810,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00004000;
       return this;
     }
+
     /**
      *
      *
@@ -6606,6 +6827,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object linkType_ = "";
+
     /**
      *
      *
@@ -6621,6 +6843,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLinkType() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -6644,6 +6867,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6667,6 +6891,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6689,6 +6914,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6707,6 +6933,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6732,6 +6959,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -6746,6 +6974,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocation() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -6768,6 +6997,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6790,6 +7020,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6811,6 +7042,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6828,6 +7060,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6857,6 +7090,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.InterconnectMacsec.Builder,
             com.google.cloud.compute.v1.InterconnectMacsecOrBuilder>
         macsecBuilder_;
+
     /**
      *
      *
@@ -6871,6 +7105,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMacsec() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -6891,6 +7126,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return macsecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6913,6 +7149,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6933,6 +7170,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6960,6 +7198,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6979,6 +7218,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6993,6 +7233,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMacsecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7011,6 +7252,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             : macsec_;
       }
     }
+
     /**
      *
      *
@@ -7038,6 +7280,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean macsecEnabled_;
+
     /**
      *
      *
@@ -7053,6 +7296,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMacsecEnabled() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -7068,6 +7312,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean getMacsecEnabled() {
       return macsecEnabled_;
     }
+
     /**
      *
      *
@@ -7087,6 +7332,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7106,6 +7352,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -7120,6 +7367,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -7142,6 +7390,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7164,6 +7413,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7185,6 +7435,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7202,6 +7453,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7226,6 +7478,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nocContactEmail_ = "";
+
     /**
      *
      *
@@ -7240,6 +7493,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNocContactEmail() {
       return ((bitField0_ & 0x00100000) != 0);
     }
+
     /**
      *
      *
@@ -7262,6 +7516,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7284,6 +7539,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7305,6 +7561,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7322,6 +7579,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7346,6 +7604,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object operationalStatus_ = "";
+
     /**
      *
      *
@@ -7361,6 +7620,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOperationalStatus() {
       return ((bitField0_ & 0x00200000) != 0);
     }
+
     /**
      *
      *
@@ -7384,6 +7644,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7407,6 +7668,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7429,6 +7691,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7447,6 +7710,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7472,6 +7736,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object peerIpAddress_ = "";
+
     /**
      *
      *
@@ -7486,6 +7751,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPeerIpAddress() {
       return ((bitField0_ & 0x00400000) != 0);
     }
+
     /**
      *
      *
@@ -7508,6 +7774,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7530,6 +7797,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7551,6 +7819,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7568,6 +7837,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7592,6 +7862,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int provisionedLinkCount_;
+
     /**
      *
      *
@@ -7607,6 +7878,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProvisionedLinkCount() {
       return ((bitField0_ & 0x00800000) != 0);
     }
+
     /**
      *
      *
@@ -7622,6 +7894,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public int getProvisionedLinkCount() {
       return provisionedLinkCount_;
     }
+
     /**
      *
      *
@@ -7641,6 +7914,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7660,6 +7934,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object remoteLocation_ = "";
+
     /**
      *
      *
@@ -7674,6 +7949,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemoteLocation() {
       return ((bitField0_ & 0x01000000) != 0);
     }
+
     /**
      *
      *
@@ -7696,6 +7972,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7718,6 +7995,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7739,6 +8017,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7756,6 +8035,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7788,6 +8068,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x02000000;
     }
+
     /**
      *
      *
@@ -7804,6 +8085,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       requestedFeatures_.makeImmutable();
       return requestedFeatures_;
     }
+
     /**
      *
      *
@@ -7819,6 +8101,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public int getRequestedFeaturesCount() {
       return requestedFeatures_.size();
     }
+
     /**
      *
      *
@@ -7835,6 +8118,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRequestedFeatures(int index) {
       return requestedFeatures_.get(index);
     }
+
     /**
      *
      *
@@ -7851,6 +8135,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRequestedFeaturesBytes(int index) {
       return requestedFeatures_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7875,6 +8160,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7898,6 +8184,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7918,6 +8205,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7937,6 +8225,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7963,6 +8252,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int requestedLinkCount_;
+
     /**
      *
      *
@@ -7978,6 +8268,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequestedLinkCount() {
       return ((bitField0_ & 0x04000000) != 0);
     }
+
     /**
      *
      *
@@ -7993,6 +8284,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public int getRequestedLinkCount() {
       return requestedLinkCount_;
     }
+
     /**
      *
      *
@@ -8012,6 +8304,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8031,6 +8324,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzs_;
+
     /**
      *
      *
@@ -8046,6 +8340,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSatisfiesPzs() {
       return ((bitField0_ & 0x08000000) != 0);
     }
+
     /**
      *
      *
@@ -8061,6 +8356,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
+
     /**
      *
      *
@@ -8080,6 +8376,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8099,6 +8396,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -8113,6 +8411,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x10000000) != 0);
     }
+
     /**
      *
      *
@@ -8135,6 +8434,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8157,6 +8457,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8178,6 +8479,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8195,6 +8497,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8219,6 +8522,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -8234,6 +8538,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasState() {
       return ((bitField0_ & 0x20000000) != 0);
     }
+
     /**
      *
      *
@@ -8257,6 +8562,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8280,6 +8586,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8302,6 +8609,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8320,6 +8628,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

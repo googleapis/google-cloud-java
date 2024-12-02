@@ -34,6 +34,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.FinancedPurchaseSavings)
     FinancedPurchaseSavingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FinancedPurchaseSavings.newBuilder() to construct.
   private FinancedPurchaseSavings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int ANNUAL_LOAN_PAYMENT_FIELD_NUMBER = 1;
   private com.google.type.Money annualLoanPayment_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
   public boolean hasAnnualLoanPayment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
         ? com.google.type.Money.getDefaultInstance()
         : annualLoanPayment_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
 
   public static final int REBATE_VALUE_FIELD_NUMBER = 2;
   private com.google.type.Money rebateValue_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
   public boolean hasRebateValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
   public com.google.type.Money getRebateValue() {
     return rebateValue_ == null ? com.google.type.Money.getDefaultInstance() : rebateValue_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
 
   public static final int LOAN_INTEREST_RATE_FIELD_NUMBER = 3;
   private float loanInterestRate_ = 0F;
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
 
   public static final int SAVINGS_FIELD_NUMBER = 4;
   private com.google.maps.solar.v1.SavingsOverTime savings_;
+
   /**
    *
    *
@@ -197,6 +206,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
   public boolean hasSavings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
         ? com.google.maps.solar.v1.SavingsOverTime.getDefaultInstance()
         : savings_;
   }
+
   /**
    *
    *
@@ -432,6 +443,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -690,6 +702,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         annualLoanPaymentBuilder_;
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     public boolean hasAnnualLoanPayment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -724,6 +738,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
         return annualLoanPaymentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -746,6 +761,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +781,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +829,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +844,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return getAnnualLoanPaymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -843,6 +863,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
             : annualLoanPayment_;
       }
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         rebateValueBuilder_;
+
     /**
      *
      *
@@ -886,6 +908,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     public boolean hasRebateValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
         return rebateValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -928,6 +952,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +973,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +1002,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1023,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1039,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return getRebateValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1028,6 +1057,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
         return rebateValue_ == null ? com.google.type.Money.getDefaultInstance() : rebateValue_;
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1084,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     }
 
     private float loanInterestRate_;
+
     /**
      *
      *
@@ -1069,6 +1100,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     public float getLoanInterestRate() {
       return loanInterestRate_;
     }
+
     /**
      *
      *
@@ -1088,6 +1120,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1145,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
             com.google.maps.solar.v1.SavingsOverTime.Builder,
             com.google.maps.solar.v1.SavingsOverTimeOrBuilder>
         savingsBuilder_;
+
     /**
      *
      *
@@ -1126,6 +1160,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
     public boolean hasSavings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1146,6 +1181,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
         return savingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1204,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1224,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1252,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1272,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1287,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
       onChanged();
       return getSavingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1265,6 +1306,7 @@ public final class FinancedPurchaseSavings extends com.google.protobuf.Generated
             : savings_;
       }
     }
+
     /**
      *
      *

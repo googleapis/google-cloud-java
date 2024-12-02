@@ -38,6 +38,7 @@ public interface TimedPromoteReleaseRuleOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface TimedPromoteReleaseRuleOrBuilder
    * @return The destinationTargetId.
    */
   java.lang.String getDestinationTargetId();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface TimedPromoteReleaseRuleOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface TimedPromoteReleaseRuleOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface TimedPromoteReleaseRuleOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface TimedPromoteReleaseRuleOrBuilder
    * @return The condition.
    */
   com.google.cloud.deploy.v1.AutomationRuleCondition getCondition();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface TimedPromoteReleaseRuleOrBuilder
    * @return The destinationPhase.
    */
   java.lang.String getDestinationPhase();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface CreateAnalysisRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface CreateAnalysisRuleRequestOrBuilder
    * @return Whether the analysisRule field is set.
    */
   boolean hasAnalysisRule();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateAnalysisRuleRequestOrBuilder
    * @return The analysisRule.
    */
   com.google.cloud.contactcenterinsights.v1.AnalysisRule getAnalysisRule();
+
   /**
    *
    *

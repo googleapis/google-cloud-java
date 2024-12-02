@@ -42,6 +42,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.SolarPotential)
     SolarPotentialOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SolarPotential.newBuilder() to construct.
   private SolarPotential(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MAX_ARRAY_PANELS_COUNT_FIELD_NUMBER = 1;
   private int maxArrayPanelsCount_ = 0;
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PANEL_CAPACITY_WATTS_FIELD_NUMBER = 9;
   private float panelCapacityWatts_ = 0F;
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PANEL_HEIGHT_METERS_FIELD_NUMBER = 10;
   private float panelHeightMeters_ = 0F;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PANEL_WIDTH_METERS_FIELD_NUMBER = 11;
   private float panelWidthMeters_ = 0F;
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PANEL_LIFETIME_YEARS_FIELD_NUMBER = 12;
   private int panelLifetimeYears_ = 0;
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_ARRAY_AREA_METERS2_FIELD_NUMBER = 2;
   private float maxArrayAreaMeters2_ = 0F;
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_SUNSHINE_HOURS_PER_YEAR_FIELD_NUMBER = 3;
   private float maxSunshineHoursPerYear_ = 0F;
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CARBON_OFFSET_FACTOR_KG_PER_MWH_FIELD_NUMBER = 4;
   private float carbonOffsetFactorKgPerMwh_ = 0F;
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WHOLE_ROOF_STATS_FIELD_NUMBER = 5;
   private com.google.maps.solar.v1.SizeAndSunshineStats wholeRoofStats_;
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWholeRoofStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.solar.v1.SizeAndSunshineStats.getDefaultInstance()
         : wholeRoofStats_;
   }
+
   /**
    *
    *
@@ -290,6 +302,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BUILDING_STATS_FIELD_NUMBER = 13;
   private com.google.maps.solar.v1.SizeAndSunshineStats buildingStats_;
+
   /**
    *
    *
@@ -314,6 +327,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBuildingStats() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -340,6 +354,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.solar.v1.SizeAndSunshineStats.getDefaultInstance()
         : buildingStats_;
   }
+
   /**
    *
    *
@@ -370,6 +385,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.solar.v1.RoofSegmentSizeAndSunshineStats>
       roofSegmentStats_;
+
   /**
    *
    *
@@ -385,6 +401,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       getRoofSegmentStatsList() {
     return roofSegmentStats_;
   }
+
   /**
    *
    *
@@ -400,6 +417,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       getRoofSegmentStatsOrBuilderList() {
     return roofSegmentStats_;
   }
+
   /**
    *
    *
@@ -414,6 +432,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public int getRoofSegmentStatsCount() {
     return roofSegmentStats_.size();
   }
+
   /**
    *
    *
@@ -428,6 +447,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.solar.v1.RoofSegmentSizeAndSunshineStats getRoofSegmentStats(int index) {
     return roofSegmentStats_.get(index);
   }
+
   /**
    *
    *
@@ -448,6 +468,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.solar.v1.SolarPanel> solarPanels_;
+
   /**
    *
    *
@@ -464,6 +485,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.solar.v1.SolarPanel> getSolarPanelsList() {
     return solarPanels_;
   }
+
   /**
    *
    *
@@ -481,6 +503,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       getSolarPanelsOrBuilderList() {
     return solarPanels_;
   }
+
   /**
    *
    *
@@ -497,6 +520,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public int getSolarPanelsCount() {
     return solarPanels_.size();
   }
+
   /**
    *
    *
@@ -513,6 +537,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.solar.v1.SolarPanel getSolarPanels(int index) {
     return solarPanels_.get(index);
   }
+
   /**
    *
    *
@@ -534,6 +559,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.solar.v1.SolarPanelConfig> solarPanelConfigs_;
+
   /**
    *
    *
@@ -554,6 +580,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.solar.v1.SolarPanelConfig> getSolarPanelConfigsList() {
     return solarPanelConfigs_;
   }
+
   /**
    *
    *
@@ -575,6 +602,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       getSolarPanelConfigsOrBuilderList() {
     return solarPanelConfigs_;
   }
+
   /**
    *
    *
@@ -595,6 +623,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public int getSolarPanelConfigsCount() {
     return solarPanelConfigs_.size();
   }
+
   /**
    *
    *
@@ -615,6 +644,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.solar.v1.SolarPanelConfig getSolarPanelConfigs(int index) {
     return solarPanelConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -641,6 +671,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.solar.v1.FinancialAnalysis> financialAnalyses_;
+
   /**
    *
    *
@@ -660,6 +691,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.solar.v1.FinancialAnalysis> getFinancialAnalysesList() {
     return financialAnalyses_;
   }
+
   /**
    *
    *
@@ -680,6 +712,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       getFinancialAnalysesOrBuilderList() {
     return financialAnalyses_;
   }
+
   /**
    *
    *
@@ -699,6 +732,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public int getFinancialAnalysesCount() {
     return financialAnalyses_.size();
   }
+
   /**
    *
    *
@@ -718,6 +752,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.solar.v1.FinancialAnalysis getFinancialAnalyses(int index) {
     return financialAnalyses_.get(index);
   }
+
   /**
    *
    *
@@ -1041,6 +1076,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1605,6 +1641,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int maxArrayPanelsCount_;
+
     /**
      *
      *
@@ -1621,6 +1658,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public int getMaxArrayPanelsCount() {
       return maxArrayPanelsCount_;
     }
+
     /**
      *
      *
@@ -1641,6 +1679,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1700,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float panelCapacityWatts_;
+
     /**
      *
      *
@@ -1676,6 +1716,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public float getPanelCapacityWatts() {
       return panelCapacityWatts_;
     }
+
     /**
      *
      *
@@ -1695,6 +1736,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1756,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float panelHeightMeters_;
+
     /**
      *
      *
@@ -1730,6 +1773,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public float getPanelHeightMeters() {
       return panelHeightMeters_;
     }
+
     /**
      *
      *
@@ -1750,6 +1794,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1770,6 +1815,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float panelWidthMeters_;
+
     /**
      *
      *
@@ -1786,6 +1832,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public float getPanelWidthMeters() {
       return panelWidthMeters_;
     }
+
     /**
      *
      *
@@ -1806,6 +1853,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1826,6 +1874,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int panelLifetimeYears_;
+
     /**
      *
      *
@@ -1842,6 +1891,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public int getPanelLifetimeYears() {
       return panelLifetimeYears_;
     }
+
     /**
      *
      *
@@ -1862,6 +1912,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1882,6 +1933,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float maxArrayAreaMeters2_;
+
     /**
      *
      *
@@ -1897,6 +1949,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public float getMaxArrayAreaMeters2() {
       return maxArrayAreaMeters2_;
     }
+
     /**
      *
      *
@@ -1916,6 +1969,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +1989,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float maxSunshineHoursPerYear_;
+
     /**
      *
      *
@@ -1953,6 +2008,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public float getMaxSunshineHoursPerYear() {
       return maxSunshineHoursPerYear_;
     }
+
     /**
      *
      *
@@ -1975,6 +2031,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1997,6 +2054,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float carbonOffsetFactorKgPerMwh_;
+
     /**
      *
      *
@@ -2014,6 +2072,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public float getCarbonOffsetFactorKgPerMwh() {
       return carbonOffsetFactorKgPerMwh_;
     }
+
     /**
      *
      *
@@ -2035,6 +2094,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2061,6 +2121,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.solar.v1.SizeAndSunshineStats.Builder,
             com.google.maps.solar.v1.SizeAndSunshineStatsOrBuilder>
         wholeRoofStatsBuilder_;
+
     /**
      *
      *
@@ -2078,6 +2139,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWholeRoofStats() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2101,6 +2163,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return wholeRoofStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2126,6 +2189,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2149,6 +2213,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2180,6 +2245,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2202,6 +2268,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2219,6 +2286,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWholeRoofStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2240,6 +2308,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
             : wholeRoofStats_;
       }
     }
+
     /**
      *
      *
@@ -2275,6 +2344,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.solar.v1.SizeAndSunshineStats.Builder,
             com.google.maps.solar.v1.SizeAndSunshineStatsOrBuilder>
         buildingStatsBuilder_;
+
     /**
      *
      *
@@ -2298,6 +2368,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuildingStats() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2327,6 +2398,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return buildingStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2358,6 +2430,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2387,6 +2460,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2424,6 +2498,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2452,6 +2527,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2475,6 +2551,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBuildingStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2502,6 +2579,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
             : buildingStats_;
       }
     }
+
     /**
      *
      *
@@ -2573,6 +2651,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return roofSegmentStatsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2590,6 +2669,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return roofSegmentStatsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2607,6 +2687,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return roofSegmentStatsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2631,6 +2712,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2653,6 +2735,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2677,6 +2760,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2701,6 +2785,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2722,6 +2807,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2744,6 +2830,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2766,6 +2853,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2786,6 +2874,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2806,6 +2895,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2820,6 +2910,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         getRoofSegmentStatsBuilder(int index) {
       return getRoofSegmentStatsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2838,6 +2929,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return roofSegmentStatsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2857,6 +2949,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(roofSegmentStats_);
       }
     }
+
     /**
      *
      *
@@ -2873,6 +2966,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.maps.solar.v1.RoofSegmentSizeAndSunshineStats.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2889,6 +2983,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.maps.solar.v1.RoofSegmentSizeAndSunshineStats.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2959,6 +3054,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return solarPanelsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2978,6 +3074,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return solarPanelsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2997,6 +3094,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return solarPanelsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3022,6 +3120,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3045,6 +3144,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3070,6 +3170,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3095,6 +3196,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3117,6 +3219,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3140,6 +3243,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3163,6 +3267,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3185,6 +3290,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3207,6 +3313,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3329,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.solar.v1.SolarPanel.Builder getSolarPanelsBuilder(int index) {
       return getSolarPanelsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3241,6 +3349,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return solarPanelsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3261,6 +3370,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(solarPanels_);
       }
     }
+
     /**
      *
      *
@@ -3277,6 +3387,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       return getSolarPanelsFieldBuilder()
           .addBuilder(com.google.maps.solar.v1.SolarPanel.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3293,6 +3404,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       return getSolarPanelsFieldBuilder()
           .addBuilder(index, com.google.maps.solar.v1.SolarPanel.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3366,6 +3478,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return solarPanelConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3389,6 +3502,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return solarPanelConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3412,6 +3526,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return solarPanelConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3442,6 +3557,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3469,6 +3585,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3498,6 +3615,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3528,6 +3646,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3555,6 +3674,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3582,6 +3702,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3609,6 +3730,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3635,6 +3757,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3661,6 +3784,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3681,6 +3805,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSolarPanelConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3705,6 +3830,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return solarPanelConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3729,6 +3855,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(solarPanelConfigs_);
       }
     }
+
     /**
      *
      *
@@ -3749,6 +3876,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       return getSolarPanelConfigsFieldBuilder()
           .addBuilder(com.google.maps.solar.v1.SolarPanelConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3770,6 +3898,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       return getSolarPanelConfigsFieldBuilder()
           .addBuilder(index, com.google.maps.solar.v1.SolarPanelConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3850,6 +3979,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return financialAnalysesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3872,6 +4002,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return financialAnalysesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3894,6 +4025,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return financialAnalysesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3923,6 +4055,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3949,6 +4082,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3977,6 +4111,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4006,6 +4141,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4032,6 +4168,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4058,6 +4195,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4084,6 +4222,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4109,6 +4248,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4134,6 +4274,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4153,6 +4294,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getFinancialAnalysesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4176,6 +4318,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return financialAnalysesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4199,6 +4342,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(financialAnalyses_);
       }
     }
+
     /**
      *
      *
@@ -4218,6 +4362,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       return getFinancialAnalysesFieldBuilder()
           .addBuilder(com.google.maps.solar.v1.FinancialAnalysis.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4238,6 +4383,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessageV3
       return getFinancialAnalysesFieldBuilder()
           .addBuilder(index, com.google.maps.solar.v1.FinancialAnalysis.getDefaultInstance());
     }
+
     /**
      *
      *

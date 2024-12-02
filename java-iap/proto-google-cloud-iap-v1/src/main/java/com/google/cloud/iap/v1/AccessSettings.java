@@ -33,6 +33,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.AccessSettings)
     AccessSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccessSettings.newBuilder() to construct.
   private AccessSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GCIP_SETTINGS_FIELD_NUMBER = 1;
   private com.google.cloud.iap.v1.GcipSettings gcipSettings_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcipSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.GcipSettings.getDefaultInstance()
         : gcipSettings_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CORS_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.iap.v1.CorsSettings corsSettings_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCorsSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.CorsSettings.getDefaultInstance()
         : corsSettings_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OAUTH_SETTINGS_FIELD_NUMBER = 3;
   private com.google.cloud.iap.v1.OAuthSettings oauthSettings_;
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOauthSettings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.OAuthSettings.getDefaultInstance()
         : oauthSettings_;
   }
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REAUTH_SETTINGS_FIELD_NUMBER = 6;
   private com.google.cloud.iap.v1.ReauthSettings reauthSettings_;
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReauthSettings() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -246,6 +258,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.ReauthSettings.getDefaultInstance()
         : reauthSettings_;
   }
+
   /**
    *
    *
@@ -264,6 +277,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALLOWED_DOMAINS_SETTINGS_FIELD_NUMBER = 7;
   private com.google.cloud.iap.v1.AllowedDomainsSettings allowedDomainsSettings_;
+
   /**
    *
    *
@@ -279,6 +293,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAllowedDomainsSettings() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -296,6 +311,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.AllowedDomainsSettings.getDefaultInstance()
         : allowedDomainsSettings_;
   }
+
   /**
    *
    *
@@ -533,6 +549,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -819,6 +836,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.GcipSettings.Builder,
             com.google.cloud.iap.v1.GcipSettingsOrBuilder>
         gcipSettingsBuilder_;
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcipSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return gcipSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +915,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +943,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGcipSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -972,6 +997,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : gcipSettings_;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1030,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.CorsSettings.Builder,
             com.google.cloud.iap.v1.CorsSettingsOrBuilder>
         corsSettingsBuilder_;
+
     /**
      *
      *
@@ -1018,6 +1045,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCorsSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1038,6 +1066,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return corsSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1089,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1109,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1137,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1157,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1172,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCorsSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1157,6 +1191,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : corsSettings_;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1224,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.OAuthSettings.Builder,
             com.google.cloud.iap.v1.OAuthSettingsOrBuilder>
         oauthSettingsBuilder_;
+
     /**
      *
      *
@@ -1203,6 +1239,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOauthSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1223,6 +1260,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return oauthSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1283,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1303,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1331,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1351,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1366,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOauthSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1342,6 +1385,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : oauthSettings_;
       }
     }
+
     /**
      *
      *
@@ -1374,6 +1418,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.ReauthSettings.Builder,
             com.google.cloud.iap.v1.ReauthSettingsOrBuilder>
         reauthSettingsBuilder_;
+
     /**
      *
      *
@@ -1388,6 +1433,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReauthSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1408,6 +1454,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return reauthSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1430,6 +1477,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1498,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1477,6 +1526,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1546,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1510,6 +1561,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReauthSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1528,6 +1580,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : reauthSettings_;
       }
     }
+
     /**
      *
      *
@@ -1560,6 +1613,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.AllowedDomainsSettings.Builder,
             com.google.cloud.iap.v1.AllowedDomainsSettingsOrBuilder>
         allowedDomainsSettingsBuilder_;
+
     /**
      *
      *
@@ -1574,6 +1628,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAllowedDomainsSettings() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1594,6 +1649,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return allowedDomainsSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1616,6 +1672,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1636,6 +1693,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1665,6 +1723,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1743,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1699,6 +1759,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAllowedDomainsSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1718,6 +1779,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : allowedDomainsSettings_;
       }
     }
+
     /**
      *
      *

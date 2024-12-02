@@ -33,6 +33,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.CreateRoleRequest)
     CreateRoleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateRoleRequest.newBuilder() to construct.
   private CreateRoleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -164,6 +167,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object roleId_ = "";
+
   /**
    *
    *
@@ -191,6 +195,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -221,6 +226,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int ROLE_FIELD_NUMBER = 3;
   private com.google.iam.admin.v1.Role role_;
+
   /**
    *
    *
@@ -236,6 +242,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRole() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -251,6 +258,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
   public com.google.iam.admin.v1.Role getRole() {
     return role_ == null ? com.google.iam.admin.v1.Role.getDefaultInstance() : role_;
   }
+
   /**
    *
    *
@@ -447,6 +455,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -674,6 +683,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -718,6 +728,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -762,6 +773,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -805,6 +817,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +857,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +904,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object roleId_ = "";
+
     /**
      *
      *
@@ -916,6 +931,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -942,6 +958,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -967,6 +984,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1006,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1040,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
             com.google.iam.admin.v1.Role.Builder,
             com.google.iam.admin.v1.RoleOrBuilder>
         roleBuilder_;
+
     /**
      *
      *
@@ -1035,6 +1055,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRole() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1053,6 +1074,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
         return roleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1097,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1117,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1145,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1165,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1180,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRoleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1170,6 +1197,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
         return role_ == null ? com.google.iam.admin.v1.Role.getDefaultInstance() : role_;
       }
     }
+
     /**
      *
      *

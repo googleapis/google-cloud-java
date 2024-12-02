@@ -33,6 +33,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.Block)
     BlockOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Block.newBuilder() to construct.
   private Block(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -146,6 +147,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -156,6 +158,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * <code>TEXT = 1;</code>
      */
     public static final int TEXT_VALUE = 1;
+
     /**
      *
      *
@@ -166,6 +169,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * <code>TABLE = 2;</code>
      */
     public static final int TABLE_VALUE = 2;
+
     /**
      *
      *
@@ -176,6 +180,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * <code>PICTURE = 3;</code>
      */
     public static final int PICTURE_VALUE = 3;
+
     /**
      *
      *
@@ -186,6 +191,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * <code>RULER = 4;</code>
      */
     public static final int RULER_VALUE = 4;
+
     /**
      *
      *
@@ -289,6 +295,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.TextAnnotation.TextProperty property_;
+
   /**
    *
    *
@@ -304,6 +311,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProperty() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -321,6 +329,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1.TextAnnotation.TextProperty.getDefaultInstance()
         : property_;
   }
+
   /**
    *
    *
@@ -339,6 +348,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1.BoundingPoly boundingBox_;
+
   /**
    *
    *
@@ -373,6 +383,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoundingBox() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -409,6 +420,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
         : boundingBox_;
   }
+
   /**
    *
    *
@@ -448,6 +460,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.Paragraph> paragraphs_;
+
   /**
    *
    *
@@ -461,6 +474,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vision.v1.Paragraph> getParagraphsList() {
     return paragraphs_;
   }
+
   /**
    *
    *
@@ -475,6 +489,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       getParagraphsOrBuilderList() {
     return paragraphs_;
   }
+
   /**
    *
    *
@@ -488,6 +503,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   public int getParagraphsCount() {
     return paragraphs_.size();
   }
+
   /**
    *
    *
@@ -501,6 +517,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1.Paragraph getParagraphs(int index) {
     return paragraphs_.get(index);
   }
+
   /**
    *
    *
@@ -517,6 +534,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BLOCK_TYPE_FIELD_NUMBER = 4;
   private int blockType_ = 0;
+
   /**
    *
    *
@@ -532,6 +550,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   public int getBlockTypeValue() {
     return blockType_;
   }
+
   /**
    *
    *
@@ -552,6 +571,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 5;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -774,6 +794,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1082,6 +1103,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.TextAnnotation.TextProperty.Builder,
             com.google.cloud.vision.v1.TextAnnotation.TextPropertyOrBuilder>
         propertyBuilder_;
+
     /**
      *
      *
@@ -1096,6 +1118,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProperty() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1116,6 +1139,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         return propertyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1162,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1183,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1212,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1232,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1247,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1237,6 +1266,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             : property_;
       }
     }
+
     /**
      *
      *
@@ -1269,6 +1299,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.BoundingPoly.Builder,
             com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         boundingBoxBuilder_;
+
     /**
      *
      *
@@ -1302,6 +1333,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoundingBox() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1341,6 +1373,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         return boundingBoxBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1382,6 +1415,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1454,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1501,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1540,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1537,6 +1574,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1574,6 +1612,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             : boundingBox_;
       }
     }
+
     /**
      *
      *
@@ -1651,6 +1690,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         return paragraphsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1667,6 +1707,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         return paragraphsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1683,6 +1724,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         return paragraphsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1705,6 +1747,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1768,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1791,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1814,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1834,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1808,6 +1855,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1828,6 +1876,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1847,6 +1896,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1866,6 +1916,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1878,6 +1929,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.Paragraph.Builder getParagraphsBuilder(int index) {
       return getParagraphsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1894,6 +1946,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         return paragraphsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1911,6 +1964,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(paragraphs_);
       }
     }
+
     /**
      *
      *
@@ -1924,6 +1978,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       return getParagraphsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.Paragraph.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1937,6 +1992,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       return getParagraphsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.Paragraph.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1968,6 +2024,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int blockType_ = 0;
+
     /**
      *
      *
@@ -1983,6 +2040,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public int getBlockTypeValue() {
       return blockType_;
     }
+
     /**
      *
      *
@@ -2001,6 +2059,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2018,6 +2077,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1.Block.BlockType.forNumber(blockType_);
       return result == null ? com.google.cloud.vision.v1.Block.BlockType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2039,6 +2099,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2058,6 +2119,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -2073,6 +2135,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -2092,6 +2155,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

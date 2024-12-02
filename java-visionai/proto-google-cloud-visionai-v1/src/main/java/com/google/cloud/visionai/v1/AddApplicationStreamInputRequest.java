@@ -33,6 +33,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AddApplicationStreamInputRequest)
     AddApplicationStreamInputRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddApplicationStreamInputRequest.newBuilder() to construct.
   private AddApplicationStreamInputRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.ApplicationStreamInput>
       applicationStreamInputs_;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       getApplicationStreamInputsList() {
     return applicationStreamInputs_;
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       getApplicationStreamInputsOrBuilderList() {
     return applicationStreamInputs_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
   public int getApplicationStreamInputsCount() {
     return applicationStreamInputs_.size();
   }
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
   public com.google.cloud.visionai.v1.ApplicationStreamInput getApplicationStreamInputs(int index) {
     return applicationStreamInputs_.get(index);
   }
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -467,6 +477,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -732,6 +743,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -758,6 +770,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +797,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -809,6 +823,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +845,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +911,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return applicationStreamInputsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -914,6 +931,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return applicationStreamInputsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -934,6 +952,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return applicationStreamInputsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -960,6 +979,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1003,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1030,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1057,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1081,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1105,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1152,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1175,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1192,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         getApplicationStreamInputsBuilder(int index) {
       return getApplicationStreamInputsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1184,6 +1213,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return applicationStreamInputsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1204,6 +1234,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(applicationStreamInputs_);
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1252,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       return getApplicationStreamInputsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.ApplicationStreamInput.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1239,6 +1271,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
           .addBuilder(
               index, com.google.cloud.visionai.v1.ApplicationStreamInput.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1277,6 +1310,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1311,6 +1345,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1345,6 +1380,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1378,6 +1414,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1407,6 +1444,7 @@ public final class AddApplicationStreamInputRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

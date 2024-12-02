@@ -42,6 +42,7 @@ public interface FunnelNextActionOrBuilder
    * @return Whether the nextActionDimension field is set.
    */
   boolean hasNextActionDimension();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface FunnelNextActionOrBuilder
    * @return The nextActionDimension.
    */
   com.google.analytics.data.v1alpha.Dimension getNextActionDimension();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface FunnelNextActionOrBuilder
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
+
   /**
    *
    *

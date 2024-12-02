@@ -36,6 +36,7 @@ public interface BetweenFilterOrBuilder
    * @return Whether the fromValue field is set.
    */
   boolean hasFromValue();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BetweenFilterOrBuilder
    * @return The fromValue.
    */
   com.google.analytics.data.v1alpha.NumericValue getFromValue();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface BetweenFilterOrBuilder
    * @return Whether the toValue field is set.
    */
   boolean hasToValue();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface BetweenFilterOrBuilder
    * @return The toValue.
    */
   com.google.analytics.data.v1alpha.NumericValue getToValue();
+
   /**
    *
    *

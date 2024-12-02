@@ -37,6 +37,7 @@ public interface FirewallPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface FirewallPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface FirewallPolicyOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface FirewallPolicyOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.FirewallAction> getActionsList();
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.FirewallAction getActions(int index);
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   int getActionsCount();
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public interface FirewallPolicyOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.FirewallActionOrBuilder>
       getActionsOrBuilderList();
+
   /**
    *
    *

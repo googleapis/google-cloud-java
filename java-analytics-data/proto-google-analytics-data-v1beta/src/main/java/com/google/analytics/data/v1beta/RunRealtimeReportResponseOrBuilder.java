@@ -35,6 +35,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionHeader dimension_headers = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.DimensionHeader> getDimensionHeadersList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionHeader dimension_headers = 1;</code>
    */
   com.google.analytics.data.v1beta.DimensionHeader getDimensionHeaders(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionHeader dimension_headers = 1;</code>
    */
   int getDimensionHeadersCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface RunRealtimeReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionHeaderOrBuilder>
       getDimensionHeadersOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricHeader metric_headers = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.MetricHeader> getMetricHeadersList();
+
   /**
    *
    *
@@ -103,6 +108,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricHeader metric_headers = 2;</code>
    */
   com.google.analytics.data.v1beta.MetricHeader getMetricHeaders(int index);
+
   /**
    *
    *
@@ -114,6 +120,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricHeader metric_headers = 2;</code>
    */
   int getMetricHeadersCount();
+
   /**
    *
    *
@@ -126,6 +133,7 @@ public interface RunRealtimeReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MetricHeaderOrBuilder>
       getMetricHeadersOrBuilderList();
+
   /**
    *
    *
@@ -148,6 +156,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row rows = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Row> getRowsList();
+
   /**
    *
    *
@@ -158,6 +167,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row rows = 3;</code>
    */
   com.google.analytics.data.v1beta.Row getRows(int index);
+
   /**
    *
    *
@@ -168,6 +178,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row rows = 3;</code>
    */
   int getRowsCount();
+
   /**
    *
    *
@@ -178,6 +189,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row rows = 3;</code>
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RowOrBuilder> getRowsOrBuilderList();
+
   /**
    *
    *
@@ -199,6 +211,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row totals = 4;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Row> getTotalsList();
+
   /**
    *
    *
@@ -209,6 +222,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row totals = 4;</code>
    */
   com.google.analytics.data.v1beta.Row getTotals(int index);
+
   /**
    *
    *
@@ -219,6 +233,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row totals = 4;</code>
    */
   int getTotalsCount();
+
   /**
    *
    *
@@ -229,6 +244,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row totals = 4;</code>
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RowOrBuilder> getTotalsOrBuilderList();
+
   /**
    *
    *
@@ -250,6 +266,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row maximums = 5;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Row> getMaximumsList();
+
   /**
    *
    *
@@ -260,6 +277,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row maximums = 5;</code>
    */
   com.google.analytics.data.v1beta.Row getMaximums(int index);
+
   /**
    *
    *
@@ -270,6 +288,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row maximums = 5;</code>
    */
   int getMaximumsCount();
+
   /**
    *
    *
@@ -281,6 +300,7 @@ public interface RunRealtimeReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RowOrBuilder>
       getMaximumsOrBuilderList();
+
   /**
    *
    *
@@ -302,6 +322,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row minimums = 6;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Row> getMinimumsList();
+
   /**
    *
    *
@@ -312,6 +333,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row minimums = 6;</code>
    */
   com.google.analytics.data.v1beta.Row getMinimums(int index);
+
   /**
    *
    *
@@ -322,6 +344,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row minimums = 6;</code>
    */
   int getMinimumsCount();
+
   /**
    *
    *
@@ -333,6 +356,7 @@ public interface RunRealtimeReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RowOrBuilder>
       getMinimumsOrBuilderList();
+
   /**
    *
    *
@@ -373,6 +397,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * @return Whether the propertyQuota field is set.
    */
   boolean hasPropertyQuota();
+
   /**
    *
    *
@@ -385,6 +410,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * @return The propertyQuota.
    */
   com.google.analytics.data.v1beta.PropertyQuota getPropertyQuota();
+
   /**
    *
    *
@@ -410,6 +436,7 @@ public interface RunRealtimeReportResponseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *

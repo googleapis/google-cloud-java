@@ -34,6 +34,7 @@ public final class ReportTaskMetadata extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.ReportTaskMetadata)
     ReportTaskMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportTaskMetadata.newBuilder() to construct.
   private ReportTaskMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class ReportTaskMetadata extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

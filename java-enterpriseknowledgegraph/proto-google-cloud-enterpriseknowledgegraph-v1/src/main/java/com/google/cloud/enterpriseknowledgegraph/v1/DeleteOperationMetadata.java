@@ -33,6 +33,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.DeleteOperationMetadata)
     DeleteOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteOperationMetadata.newBuilder() to construct.
   private DeleteOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int COMMON_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata commonMetadata_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
   public boolean hasCommonMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
         ? com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata.getDefaultInstance()
         : commonMetadata_;
   }
+
   /**
    *
    *
@@ -282,6 +286,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -493,6 +498,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
             com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata.Builder,
             com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadataOrBuilder>
         commonMetadataBuilder_;
+
     /**
      *
      *
@@ -508,6 +514,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
     public boolean hasCommonMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -531,6 +538,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
         return commonMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -555,6 +563,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +618,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +656,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -665,6 +678,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
             : commonMetadata_;
       }
     }
+
     /**
      *
      *

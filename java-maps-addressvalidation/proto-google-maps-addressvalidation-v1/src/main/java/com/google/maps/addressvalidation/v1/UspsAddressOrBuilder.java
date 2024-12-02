@@ -36,6 +36,7 @@ public interface UspsAddressOrBuilder
    * @return The firstAddressLine.
    */
   java.lang.String getFirstAddressLine();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UspsAddressOrBuilder
    * @return The firm.
    */
   java.lang.String getFirm();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface UspsAddressOrBuilder
    * @return The secondAddressLine.
    */
   java.lang.String getSecondAddressLine();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface UspsAddressOrBuilder
    * @return The urbanization.
    */
   java.lang.String getUrbanization();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface UspsAddressOrBuilder
    * @return The cityStateZipAddressLine.
    */
   java.lang.String getCityStateZipAddressLine();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface UspsAddressOrBuilder
    * @return The city.
    */
   java.lang.String getCity();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface UspsAddressOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public interface UspsAddressOrBuilder
    * @return The zipCode.
    */
   java.lang.String getZipCode();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface UspsAddressOrBuilder
    * @return The zipCodeExtension.
    */
   java.lang.String getZipCodeExtension();
+
   /**
    *
    *

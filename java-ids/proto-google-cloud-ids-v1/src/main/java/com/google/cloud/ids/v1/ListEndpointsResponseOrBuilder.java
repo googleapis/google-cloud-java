@@ -34,6 +34,7 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.ids.v1.Endpoint endpoints = 1;</code>
    */
   java.util.List<com.google.cloud.ids.v1.Endpoint> getEndpointsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.ids.v1.Endpoint endpoints = 1;</code>
    */
   com.google.cloud.ids.v1.Endpoint getEndpoints(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.ids.v1.Endpoint endpoints = 1;</code>
    */
   int getEndpointsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.ids.v1.Endpoint endpoints = 1;</code>
    */
   java.util.List<? extends com.google.cloud.ids.v1.EndpointOrBuilder> getEndpointsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListEndpointsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ListEndpointsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface ListEndpointsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public interface ListEndpointsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

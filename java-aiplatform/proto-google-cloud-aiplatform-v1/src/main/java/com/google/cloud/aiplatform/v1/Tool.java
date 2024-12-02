@@ -39,6 +39,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Tool)
     ToolOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Tool.newBuilder() to construct.
   private Tool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.FunctionDeclaration> functionDeclarations_;
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       getFunctionDeclarationsList() {
     return functionDeclarations_;
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       getFunctionDeclarationsOrBuilderList() {
     return functionDeclarations_;
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public int getFunctionDeclarationsCount() {
     return functionDeclarations_.size();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.FunctionDeclaration getFunctionDeclarations(int index) {
     return functionDeclarations_.get(index);
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RETRIEVAL_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.Retrieval retrieval_;
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetrieval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.Retrieval.getDefaultInstance()
         : retrieval_;
   }
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.GoogleSearchRetrieval googleSearchRetrieval_;
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleSearchRetrieval() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.GoogleSearchRetrieval.getDefaultInstance()
         : googleSearchRetrieval_;
   }
+
   /**
    *
    *
@@ -502,6 +514,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -832,6 +845,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return functionDeclarationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -857,6 +871,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return functionDeclarationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -882,6 +897,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return functionDeclarationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -914,6 +930,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +960,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +993,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1026,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1056,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1086,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1116,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1145,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1174,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1197,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         getFunctionDeclarationsBuilder(int index) {
       return getFunctionDeclarationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1198,6 +1224,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return functionDeclarationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1251,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(functionDeclarations_);
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1275,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       return getFunctionDeclarationsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.FunctionDeclaration.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1271,6 +1300,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.FunctionDeclaration.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1320,6 +1350,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.Retrieval.Builder,
             com.google.cloud.aiplatform.v1.RetrievalOrBuilder>
         retrievalBuilder_;
+
     /**
      *
      *
@@ -1339,6 +1370,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetrieval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1364,6 +1396,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return retrievalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1424,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1415,6 +1449,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1482,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1507,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1527,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRetrievalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1513,6 +1551,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             : retrieval_;
       }
     }
+
     /**
      *
      *
@@ -1550,6 +1589,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.GoogleSearchRetrieval.Builder,
             com.google.cloud.aiplatform.v1.GoogleSearchRetrievalOrBuilder>
         googleSearchRetrievalBuilder_;
+
     /**
      *
      *
@@ -1567,6 +1607,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleSearchRetrieval() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1590,6 +1631,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return googleSearchRetrievalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1616,6 +1658,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1682,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1671,6 +1715,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1693,6 +1738,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1757,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGoogleSearchRetrievalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1733,6 +1780,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             : googleSearchRetrieval_;
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface GetRegionSslCertificateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetRegionSslCertificateRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetRegionSslCertificateRequestOrBuilder
    * @return The sslCertificate.
    */
   java.lang.String getSslCertificate();
+
   /**
    *
    *

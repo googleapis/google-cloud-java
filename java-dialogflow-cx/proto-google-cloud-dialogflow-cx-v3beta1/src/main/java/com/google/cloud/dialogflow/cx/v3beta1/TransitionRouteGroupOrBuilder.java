@@ -42,6 +42,7 @@ public interface TransitionRouteGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface TransitionRouteGroupOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface TransitionRouteGroupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute> getTransitionRoutesList();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface TransitionRouteGroupOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute getTransitionRoutes(int index);
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface TransitionRouteGroupOrBuilder
    * </code>
    */
   int getTransitionRoutesCount();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface TransitionRouteGroupOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteOrBuilder>
       getTransitionRoutesOrBuilderList();
+
   /**
    *
    *

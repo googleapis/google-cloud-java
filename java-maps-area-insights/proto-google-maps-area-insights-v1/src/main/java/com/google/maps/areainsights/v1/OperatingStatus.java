@@ -82,6 +82,7 @@ public enum OperatingStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATING_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int OPERATING_STATUS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum OperatingStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATING_STATUS_OPERATIONAL = 1;</code>
    */
   public static final int OPERATING_STATUS_OPERATIONAL_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum OperatingStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATING_STATUS_PERMANENTLY_CLOSED = 3;</code>
    */
   public static final int OPERATING_STATUS_PERMANENTLY_CLOSED_VALUE = 3;
+
   /**
    *
    *

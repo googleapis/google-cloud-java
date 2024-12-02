@@ -36,6 +36,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -83,9 +86,11 @@ public interface InstanceGroupAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.InstanceGroupsScopedList> getItems();
+
   /**
    *
    *
@@ -98,6 +103,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.InstanceGroupsScopedList>
       getItemsMap();
+
   /**
    *
    *
@@ -113,6 +119,7 @@ public interface InstanceGroupAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.InstanceGroupsScopedList defaultValue);
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -149,6 +157,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -186,6 +196,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -211,6 +222,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -223,6 +235,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -248,6 +261,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -260,6 +274,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -273,6 +288,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -299,6 +315,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -311,6 +328,7 @@ public interface InstanceGroupAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

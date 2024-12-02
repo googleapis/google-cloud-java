@@ -39,6 +39,7 @@ public interface LfpStoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface LfpStoreOrBuilder
    * @return The storeCode.
    */
   java.lang.String getStoreCode();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface LfpStoreOrBuilder
    * @return The storeAddress.
    */
   java.lang.String getStoreAddress();
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public interface LfpStoreOrBuilder
    * @return Whether the storeName field is set.
    */
   boolean hasStoreName();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface LfpStoreOrBuilder
    * @return The storeName.
    */
   java.lang.String getStoreName();
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public interface LfpStoreOrBuilder
    * @return Whether the phoneNumber field is set.
    */
   boolean hasPhoneNumber();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface LfpStoreOrBuilder
    * @return The phoneNumber.
    */
   java.lang.String getPhoneNumber();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface LfpStoreOrBuilder
    * @return Whether the websiteUri field is set.
    */
   boolean hasWebsiteUri();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface LfpStoreOrBuilder
    * @return The websiteUri.
    */
   java.lang.String getWebsiteUri();
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public interface LfpStoreOrBuilder
    * @return A list containing the gcidCategory.
    */
   java.util.List<java.lang.String> getGcidCategoryList();
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public interface LfpStoreOrBuilder
    * @return The count of gcidCategory.
    */
   int getGcidCategoryCount();
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public interface LfpStoreOrBuilder
    * @return The gcidCategory at the given index.
    */
   java.lang.String getGcidCategory(int index);
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public interface LfpStoreOrBuilder
    * @return Whether the placeId field is set.
    */
   boolean hasPlaceId();
+
   /**
    *
    *
@@ -326,6 +339,7 @@ public interface LfpStoreOrBuilder
    * @return The placeId.
    */
   java.lang.String getPlaceId();
+
   /**
    *
    *
@@ -358,6 +372,7 @@ public interface LfpStoreOrBuilder
    * @return The enum numeric value on the wire for matchingState.
    */
   int getMatchingStateValue();
+
   /**
    *
    *
@@ -407,6 +422,7 @@ public interface LfpStoreOrBuilder
    * @return Whether the matchingStateHint field is set.
    */
   boolean hasMatchingStateHint();
+
   /**
    *
    *
@@ -438,6 +454,7 @@ public interface LfpStoreOrBuilder
    * @return The matchingStateHint.
    */
   java.lang.String getMatchingStateHint();
+
   /**
    *
    *

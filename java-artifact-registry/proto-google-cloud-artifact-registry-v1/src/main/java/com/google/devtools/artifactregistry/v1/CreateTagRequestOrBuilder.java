@@ -36,6 +36,7 @@ public interface CreateTagRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CreateTagRequestOrBuilder
    * @return The tagId.
    */
   java.lang.String getTagId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface CreateTagRequestOrBuilder
    * @return Whether the tag field is set.
    */
   boolean hasTag();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface CreateTagRequestOrBuilder
    * @return The tag.
    */
   com.google.devtools.artifactregistry.v1.Tag getTag();
+
   /**
    *
    *

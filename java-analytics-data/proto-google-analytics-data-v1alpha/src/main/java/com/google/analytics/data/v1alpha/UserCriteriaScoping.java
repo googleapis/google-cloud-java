@@ -86,6 +86,7 @@ public enum UserCriteriaScoping implements com.google.protobuf.ProtocolMessageEn
    * <code>USER_CRITERIA_SCOPING_UNSPECIFIED = 0;</code>
    */
   public static final int USER_CRITERIA_SCOPING_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -97,6 +98,7 @@ public enum UserCriteriaScoping implements com.google.protobuf.ProtocolMessageEn
    * <code>USER_CRITERIA_WITHIN_SAME_EVENT = 1;</code>
    */
   public static final int USER_CRITERIA_WITHIN_SAME_EVENT_VALUE = 1;
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public enum UserCriteriaScoping implements com.google.protobuf.ProtocolMessageEn
    * <code>USER_CRITERIA_WITHIN_SAME_SESSION = 2;</code>
    */
   public static final int USER_CRITERIA_WITHIN_SAME_SESSION_VALUE = 2;
+
   /**
    *
    *

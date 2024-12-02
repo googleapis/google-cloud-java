@@ -39,6 +39,7 @@ public interface KubernetesClusterConfigOrBuilder
    * @return The kubernetesNamespace.
    */
   java.lang.String getKubernetesNamespace();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface KubernetesClusterConfigOrBuilder
    * @return Whether the gkeClusterConfig field is set.
    */
   boolean hasGkeClusterConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface KubernetesClusterConfigOrBuilder
    * @return The gkeClusterConfig.
    */
   com.google.cloud.dataproc.v1.GkeClusterConfig getGkeClusterConfig();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface KubernetesClusterConfigOrBuilder
    * @return Whether the kubernetesSoftwareConfig field is set.
    */
   boolean hasKubernetesSoftwareConfig();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface KubernetesClusterConfigOrBuilder
    * @return The kubernetesSoftwareConfig.
    */
   com.google.cloud.dataproc.v1.KubernetesSoftwareConfig getKubernetesSoftwareConfig();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertInstanceTemplateRequest)
     InsertInstanceTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertInstanceTemplateRequest.newBuilder() to construct.
   private InsertInstanceTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int INSTANCE_TEMPLATE_RESOURCE_FIELD_NUMBER = 10679561;
   private com.google.cloud.compute.v1.InstanceTemplate instanceTemplateResource_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
   public boolean hasInstanceTemplateResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.InstanceTemplate.getDefaultInstance()
         : instanceTemplateResource_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -433,6 +442,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -671,6 +681,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.InstanceTemplate.Builder,
             com.google.cloud.compute.v1.InstanceTemplateOrBuilder>
         instanceTemplateResourceBuilder_;
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     public boolean hasInstanceTemplateResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         return instanceTemplateResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +801,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +841,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return getInstanceTemplateResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
             : instanceTemplateResource_;
       }
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1026,6 +1052,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1075,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1097,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1115,7 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

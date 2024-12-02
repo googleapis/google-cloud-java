@@ -34,6 +34,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Metadata)
     MetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Metadata.newBuilder() to construct.
   private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object buildInvocationId_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BUILD_STARTED_ON_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp buildStartedOn_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBuildStartedOn() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : buildStartedOn_;
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BUILD_FINISHED_ON_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp buildFinishedOn_;
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBuildFinishedOn() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : buildFinishedOn_;
   }
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPLETENESS_FIELD_NUMBER = 4;
   private io.grafeas.v1.Completeness completeness_;
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCompleteness() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.Completeness getCompleteness() {
     return completeness_ == null ? io.grafeas.v1.Completeness.getDefaultInstance() : completeness_;
   }
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPRODUCIBLE_FIELD_NUMBER = 5;
   private boolean reproducible_ = false;
+
   /**
    *
    *
@@ -494,6 +507,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -756,6 +770,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object buildInvocationId_ = "";
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +896,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         buildStartedOnBuilder_;
+
     /**
      *
      *
@@ -891,6 +911,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuildStartedOn() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -911,6 +932,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return buildStartedOnBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -933,6 +955,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +975,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1003,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1023,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1038,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBuildStartedOnFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1030,6 +1057,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             : buildStartedOn_;
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1090,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         buildFinishedOnBuilder_;
+
     /**
      *
      *
@@ -1076,6 +1105,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuildFinishedOn() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1096,6 +1126,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return buildFinishedOnBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1149,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1169,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1197,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1217,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1232,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBuildFinishedOnFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1215,6 +1251,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             : buildFinishedOn_;
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1284,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.Completeness.Builder,
             io.grafeas.v1.CompletenessOrBuilder>
         completenessBuilder_;
+
     /**
      *
      *
@@ -1262,6 +1300,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompleteness() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1283,6 +1322,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return completenessBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1346,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1367,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1396,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1417,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1433,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCompletenessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1408,6 +1453,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             : completeness_;
       }
     }
+
     /**
      *
      *
@@ -1436,6 +1482,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean reproducible_;
+
     /**
      *
      *
@@ -1452,6 +1499,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public boolean getReproducible() {
       return reproducible_;
     }
+
     /**
      *
      *
@@ -1472,6 +1520,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

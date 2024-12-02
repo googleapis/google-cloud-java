@@ -36,6 +36,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * @return Whether the hasStatefulConfig field is set.
    */
   boolean hasHasStatefulConfig();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * @return Whether the perInstanceConfigs field is set.
    */
   boolean hasPerInstanceConfigs();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
       getPerInstanceConfigs();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateHttpRouteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateHttpRouteRequestOrBuilder
    * @return The httpRouteId.
    */
   java.lang.String getHttpRouteId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateHttpRouteRequestOrBuilder
    * @return Whether the httpRoute field is set.
    */
   boolean hasHttpRoute();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateHttpRouteRequestOrBuilder
    * @return The httpRoute.
    */
   com.google.cloud.networkservices.v1.HttpRoute getHttpRoute();
+
   /**
    *
    *

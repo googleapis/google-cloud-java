@@ -40,6 +40,7 @@ public interface DeleteEnvironmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

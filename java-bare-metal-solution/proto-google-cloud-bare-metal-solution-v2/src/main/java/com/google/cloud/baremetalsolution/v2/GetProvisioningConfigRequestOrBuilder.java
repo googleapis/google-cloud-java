@@ -38,6 +38,7 @@ public interface GetProvisioningConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

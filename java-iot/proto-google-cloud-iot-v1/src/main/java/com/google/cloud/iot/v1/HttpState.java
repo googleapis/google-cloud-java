@@ -75,6 +75,7 @@ public enum HttpState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HTTP_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int HTTP_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum HttpState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HTTP_ENABLED = 1;</code>
    */
   public static final int HTTP_ENABLED_VALUE = 1;
+
   /**
    *
    *

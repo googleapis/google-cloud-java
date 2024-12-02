@@ -44,6 +44,7 @@ public interface ListSampleQueriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public interface ListSampleQueriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

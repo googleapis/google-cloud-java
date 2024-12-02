@@ -74,6 +74,7 @@ public enum RunMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RUN_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int RUN_MODE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum RunMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LIVE = 1;</code>
    */
   public static final int LIVE_VALUE = 1;
+
   /**
    *
    *

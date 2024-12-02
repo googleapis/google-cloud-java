@@ -33,6 +33,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDeviceConfigVersionsResponse)
     ListDeviceConfigVersionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDeviceConfigVersionsResponse.newBuilder() to construct.
   private ListDeviceConfigVersionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iot.v1.DeviceConfig> deviceConfigs_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
   public java.util.List<com.google.cloud.iot.v1.DeviceConfig> getDeviceConfigsList() {
     return deviceConfigs_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       getDeviceConfigsOrBuilderList() {
     return deviceConfigs_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
   public int getDeviceConfigsCount() {
     return deviceConfigs_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
   public com.google.cloud.iot.v1.DeviceConfig getDeviceConfigs(int index) {
     return deviceConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -302,6 +308,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -565,6 +572,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
         return deviceConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
         return deviceConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
         return deviceConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -622,6 +632,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +678,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +723,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +745,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +788,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +809,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +823,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
     public com.google.cloud.iot.v1.DeviceConfig.Builder getDeviceConfigsBuilder(int index) {
       return getDeviceConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -821,6 +841,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
         return deviceConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -839,6 +860,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(deviceConfigs_);
       }
     }
+
     /**
      *
      *
@@ -853,6 +875,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       return getDeviceConfigsFieldBuilder()
           .addBuilder(com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -867,6 +890,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       return getDeviceConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance());
     }
+
     /**
      *
      *

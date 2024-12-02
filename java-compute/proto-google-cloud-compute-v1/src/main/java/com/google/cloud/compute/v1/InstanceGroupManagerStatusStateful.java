@@ -32,6 +32,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerStatusStateful)
     InstanceGroupManagerStatusStatefulOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerStatusStateful.newBuilder() to construct.
   private InstanceGroupManagerStatusStateful(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -64,6 +65,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
   private int bitField0_;
   public static final int HAS_STATEFUL_CONFIG_FIELD_NUMBER = 110474224;
   private boolean hasStatefulConfig_ = false;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
   public boolean hasHasStatefulConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
   public static final int PER_INSTANCE_CONFIGS_FIELD_NUMBER = 526265001;
   private com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
       perInstanceConfigs_;
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
   public boolean hasPerInstanceConfigs() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
             .getDefaultInstance()
         : perInstanceConfigs_;
   }
+
   /**
    *
    *
@@ -337,6 +343,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     private int bitField0_;
 
     private boolean hasStatefulConfig_;
+
     /**
      *
      *
@@ -570,6 +578,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     public boolean hasHasStatefulConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     public boolean getHasStatefulConfig() {
       return hasStatefulConfig_;
     }
+
     /**
      *
      *
@@ -604,6 +614,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
             com.google.cloud.compute.v1
                 .InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder>
         perInstanceConfigsBuilder_;
+
     /**
      *
      *
@@ -647,6 +659,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     public boolean hasPerInstanceConfigs() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
         return perInstanceConfigsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +734,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +807,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       onChanged();
       return getPerInstanceConfigsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -811,6 +830,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
             : perInstanceConfigs_;
       }
     }
+
     /**
      *
      *

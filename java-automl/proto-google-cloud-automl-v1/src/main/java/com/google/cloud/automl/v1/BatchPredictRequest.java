@@ -33,6 +33,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.BatchPredictRequest)
     BatchPredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchPredictRequest.newBuilder() to construct.
   private BatchPredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.automl.v1.BatchPredictInputConfig inputConfig_;
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.automl.v1.BatchPredictInputConfig.getDefaultInstance()
         : inputConfig_;
   }
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.automl.v1.BatchPredictOutputConfig outputConfig_;
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.automl.v1.BatchPredictOutputConfig.getDefaultInstance()
         : outputConfig_;
   }
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   public int getParamsCount() {
     return internalGetParams().getMap().size();
   }
+
   /**
    *
    *
@@ -370,12 +380,14 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     }
     return internalGetParams().getMap().containsKey(key);
   }
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
   }
+
   /**
    *
    *
@@ -471,6 +483,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
+
   /**
    *
    *
@@ -573,6 +586,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -880,6 +894,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1154,6 +1169,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1178,6 +1194,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1202,6 +1219,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1243,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1263,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1295,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.automl.v1.BatchPredictInputConfig.Builder,
             com.google.cloud.automl.v1.BatchPredictInputConfigOrBuilder>
         inputConfigBuilder_;
+
     /**
      *
      *
@@ -1291,6 +1312,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1313,6 +1335,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         return inputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1337,6 +1360,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1383,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1414,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1436,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1426,6 +1453,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1446,6 +1474,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             : inputConfig_;
       }
     }
+
     /**
      *
      *
@@ -1480,6 +1509,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.automl.v1.BatchPredictOutputConfig.Builder,
             com.google.cloud.automl.v1.BatchPredictOutputConfigOrBuilder>
         outputConfigBuilder_;
+
     /**
      *
      *
@@ -1497,6 +1527,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1520,6 +1551,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         return outputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1545,6 +1577,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1568,6 +1601,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1633,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1621,6 +1656,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1674,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1659,6 +1696,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             : outputConfig_;
       }
     }
+
     /**
      *
      *
@@ -1713,6 +1751,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     public int getParamsCount() {
       return internalGetParams().getMap().size();
     }
+
     /**
      *
      *
@@ -1811,12 +1850,14 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       }
       return internalGetParams().getMap().containsKey(key);
     }
+
     /** Use {@link #getParamsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
     }
+
     /**
      *
      *
@@ -1912,6 +1953,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
+
     /**
      *
      *
@@ -2014,6 +2056,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2122,6 +2165,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2220,12 +2264,14 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       internalGetMutableParams().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
       bitField0_ |= 0x00000008;
       return internalGetMutableParams().getMutableMap();
     }
+
     /**
      *
      *
@@ -2328,6 +2374,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *

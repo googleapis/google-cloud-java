@@ -33,6 +33,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.SearchAds360Link)
     SearchAds360LinkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchAds360Link.newBuilder() to construct.
   private SearchAds360Link(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object advertiserId_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
 
   public static final int CAMPAIGN_DATA_SHARING_ENABLED_FIELD_NUMBER = 3;
   private com.google.protobuf.BoolValue campaignDataSharingEnabled_;
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
   public boolean hasCampaignDataSharingEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : campaignDataSharingEnabled_;
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
 
   public static final int COST_DATA_SHARING_ENABLED_FIELD_NUMBER = 4;
   private com.google.protobuf.BoolValue costDataSharingEnabled_;
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
   public boolean hasCostDataSharingEnabled() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -287,6 +297,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : costDataSharingEnabled_;
   }
+
   /**
    *
    *
@@ -313,6 +324,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object advertiserDisplayName_ = "";
+
   /**
    *
    *
@@ -337,6 +349,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -364,6 +377,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
 
   public static final int ADS_PERSONALIZATION_ENABLED_FIELD_NUMBER = 6;
   private com.google.protobuf.BoolValue adsPersonalizationEnabled_;
+
   /**
    *
    *
@@ -380,6 +394,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
   public boolean hasAdsPersonalizationEnabled() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -398,6 +413,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : adsPersonalizationEnabled_;
   }
+
   /**
    *
    *
@@ -417,6 +433,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
 
   public static final int SITE_STATS_SHARING_ENABLED_FIELD_NUMBER = 7;
   private com.google.protobuf.BoolValue siteStatsSharingEnabled_;
+
   /**
    *
    *
@@ -433,6 +450,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
   public boolean hasSiteStatsSharingEnabled() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -451,6 +469,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : siteStatsSharingEnabled_;
   }
+
   /**
    *
    *
@@ -709,6 +728,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1025,6 +1045,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1050,6 +1071,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1097,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1099,6 +1122,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1143,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1171,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object advertiserId_ = "";
+
     /**
      *
      *
@@ -1169,6 +1195,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1219,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1242,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1261,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1292,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         campaignDataSharingEnabledBuilder_;
+
     /**
      *
      *
@@ -1281,6 +1312,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     public boolean hasCampaignDataSharingEnabled() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1306,6 +1338,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return campaignDataSharingEnabledBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1333,6 +1366,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1392,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1425,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1450,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1433,6 +1470,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCampaignDataSharingEnabledFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1456,6 +1494,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
             : campaignDataSharingEnabled_;
       }
     }
+
     /**
      *
      *
@@ -1493,6 +1532,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         costDataSharingEnabledBuilder_;
+
     /**
      *
      *
@@ -1513,6 +1553,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     public boolean hasCostDataSharingEnabled() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1539,6 +1580,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return costDataSharingEnabledBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1567,6 +1609,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1593,6 +1636,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1626,6 +1670,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1696,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1671,6 +1717,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCostDataSharingEnabledFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1695,6 +1742,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
             : costDataSharingEnabled_;
       }
     }
+
     /**
      *
      *
@@ -1728,6 +1776,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object advertiserDisplayName_ = "";
+
     /**
      *
      *
@@ -1751,6 +1800,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1774,6 +1824,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1796,6 +1847,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1814,6 +1866,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1844,6 +1897,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         adsPersonalizationEnabledBuilder_;
+
     /**
      *
      *
@@ -1859,6 +1913,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     public boolean hasAdsPersonalizationEnabled() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1880,6 +1935,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return adsPersonalizationEnabledBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1903,6 +1959,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1981,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1952,6 +2010,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1972,6 +2031,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1987,6 +2047,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAdsPersonalizationEnabledFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2006,6 +2067,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
             : adsPersonalizationEnabled_;
       }
     }
+
     /**
      *
      *
@@ -2039,6 +2101,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         siteStatsSharingEnabledBuilder_;
+
     /**
      *
      *
@@ -2054,6 +2117,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     public boolean hasSiteStatsSharingEnabled() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2075,6 +2139,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
         return siteStatsSharingEnabledBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2098,6 +2163,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2119,6 +2185,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2147,6 +2214,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2167,6 +2235,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2182,6 +2251,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSiteStatsSharingEnabledFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2201,6 +2271,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
             : siteStatsSharingEnabled_;
       }
     }
+
     /**
      *
      *

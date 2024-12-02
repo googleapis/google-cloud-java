@@ -36,6 +36,7 @@ public interface ProductOrBuilder
    * @return The productName.
    */
   java.lang.String getProductName();
+
   /**
    *
    *

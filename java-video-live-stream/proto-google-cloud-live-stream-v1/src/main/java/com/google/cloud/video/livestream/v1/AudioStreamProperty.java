@@ -33,6 +33,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.AudioStreamProperty)
     AudioStreamPropertyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AudioStreamProperty.newBuilder() to construct.
   private AudioStreamProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int INDEX_FIELD_NUMBER = 1;
   private int index_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
 
   public static final int AUDIO_FORMAT_FIELD_NUMBER = 2;
   private com.google.cloud.video.livestream.v1.AudioFormat audioFormat_;
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
   public boolean hasAudioFormat() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.video.livestream.v1.AudioFormat.getDefaultInstance()
         : audioFormat_;
   }
+
   /**
    *
    *
@@ -304,6 +309,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -516,6 +522,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int index_;
+
     /**
      *
      *
@@ -531,6 +538,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     public int getIndex() {
       return index_;
     }
+
     /**
      *
      *
@@ -550,6 +558,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -574,6 +583,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
             com.google.cloud.video.livestream.v1.AudioFormat.Builder,
             com.google.cloud.video.livestream.v1.AudioFormatOrBuilder>
         audioFormatBuilder_;
+
     /**
      *
      *
@@ -588,6 +598,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     public boolean hasAudioFormat() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -608,6 +619,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
         return audioFormatBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -630,6 +642,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +663,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +692,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +712,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +727,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAudioFormatFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -729,6 +746,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
             : audioFormat_;
       }
     }
+
     /**
      *
      *

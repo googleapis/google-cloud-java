@@ -34,6 +34,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateFeatureOnlineStoreRequest)
     CreateFeatureOnlineStoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateFeatureOnlineStoreRequest.newBuilder() to construct.
   private CreateFeatureOnlineStoreRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
 
   public static final int FEATURE_ONLINE_STORE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.FeatureOnlineStore featureOnlineStore_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
   public boolean hasFeatureOnlineStore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1.FeatureOnlineStore.getDefaultInstance()
         : featureOnlineStore_;
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureOnlineStoreId_ = "";
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -429,6 +437,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -665,6 +674,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -691,6 +701,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +754,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +810,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1.FeatureOnlineStore.Builder,
             com.google.cloud.aiplatform.v1.FeatureOnlineStoreOrBuilder>
         featureOnlineStoreBuilder_;
+
     /**
      *
      *
@@ -812,6 +827,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
     public boolean hasFeatureOnlineStore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
         return featureOnlineStoreBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +930,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +952,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +970,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return getFeatureOnlineStoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -970,6 +992,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
             : featureOnlineStore_;
       }
     }
+
     /**
      *
      *
@@ -999,6 +1022,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object featureOnlineStoreId_ = "";
+
     /**
      *
      *
@@ -1027,6 +1051,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1082,6 +1108,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1132,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

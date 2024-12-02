@@ -36,6 +36,7 @@ public interface ReadTensorboardTimeSeriesDataResponseOrBuilder
    * @return Whether the timeSeriesData field is set.
    */
   boolean hasTimeSeriesData();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReadTensorboardTimeSeriesDataResponseOrBuilder
    * @return The timeSeriesData.
    */
   com.google.cloud.aiplatform.v1.TimeSeriesData getTimeSeriesData();
+
   /**
    *
    *

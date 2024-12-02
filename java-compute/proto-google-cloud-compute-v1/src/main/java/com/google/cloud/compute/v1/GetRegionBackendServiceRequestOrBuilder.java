@@ -36,6 +36,7 @@ public interface GetRegionBackendServiceRequestOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetRegionBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetRegionBackendServiceRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

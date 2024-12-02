@@ -40,6 +40,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface ListViolationsRequestOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface ListViolationsRequestOrBuilder
    * @return The interval.
    */
   com.google.type.Interval getInterval();
+
   /**
    *
    *

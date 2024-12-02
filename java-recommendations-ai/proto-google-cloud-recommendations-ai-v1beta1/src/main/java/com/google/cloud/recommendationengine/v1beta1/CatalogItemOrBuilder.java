@@ -41,6 +41,7 @@ public interface CatalogItemOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface CatalogItemOrBuilder
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy>
       getCategoryHierarchiesList();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface CatalogItemOrBuilder
    */
   com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy
       getCategoryHierarchies(int index);
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface CatalogItemOrBuilder
    * </code>
    */
   int getCategoryHierarchiesCount();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface CatalogItemOrBuilder
           ? extends
               com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchyOrBuilder>
       getCategoryHierarchiesOrBuilderList();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface CatalogItemOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public interface CatalogItemOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -253,6 +260,7 @@ public interface CatalogItemOrBuilder
    * @return Whether the itemAttributes field is set.
    */
   boolean hasItemAttributes();
+
   /**
    *
    *
@@ -271,6 +279,7 @@ public interface CatalogItemOrBuilder
    * @return The itemAttributes.
    */
   com.google.cloud.recommendationengine.v1beta1.FeatureMap getItemAttributes();
+
   /**
    *
    *
@@ -304,6 +313,7 @@ public interface CatalogItemOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -337,6 +347,7 @@ public interface CatalogItemOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -353,6 +364,7 @@ public interface CatalogItemOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -370,6 +382,7 @@ public interface CatalogItemOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -404,6 +417,7 @@ public interface CatalogItemOrBuilder
    * @return The itemGroupId.
    */
   java.lang.String getItemGroupId();
+
   /**
    *
    *
@@ -435,6 +449,7 @@ public interface CatalogItemOrBuilder
    * @return Whether the productMetadata field is set.
    */
   boolean hasProductMetadata();
+
   /**
    *
    *
@@ -449,6 +464,7 @@ public interface CatalogItemOrBuilder
    * @return The productMetadata.
    */
   com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem getProductMetadata();
+
   /**
    *
    *

@@ -452,7 +452,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTagTemplateField, expected %s or %s",
+                  "Unrecognized response type %s for method CreateTagTemplateField, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TagTemplateField.class.getName(),
                   Exception.class.getName())));
@@ -473,7 +474,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateTagTemplateField, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateTagTemplateField, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TagTemplateField.class.getName(),
                   Exception.class.getName())));
@@ -494,7 +496,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RenameTagTemplateField, expected %s or %s",
+                  "Unrecognized response type %s for method RenameTagTemplateField, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TagTemplateField.class.getName(),
                   Exception.class.getName())));
@@ -516,7 +519,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RenameTagTemplateFieldEnumValue, expected %s or %s",
+                  "Unrecognized response type %s for method RenameTagTemplateFieldEnumValue,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TagTemplateField.class.getName(),
                   Exception.class.getName())));
@@ -537,7 +541,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteTagTemplateField, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteTagTemplateField, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

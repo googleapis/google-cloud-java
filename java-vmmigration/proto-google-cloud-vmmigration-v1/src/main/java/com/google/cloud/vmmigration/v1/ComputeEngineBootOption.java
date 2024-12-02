@@ -72,6 +72,7 @@ public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessa
    * <code>COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED = 0;</code>
    */
   public static final int COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessa
    * <code>COMPUTE_ENGINE_BOOT_OPTION_EFI = 1;</code>
    */
   public static final int COMPUTE_ENGINE_BOOT_OPTION_EFI_VALUE = 1;
+
   /**
    *
    *

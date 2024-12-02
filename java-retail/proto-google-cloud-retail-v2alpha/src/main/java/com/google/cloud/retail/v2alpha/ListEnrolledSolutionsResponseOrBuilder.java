@@ -36,6 +36,7 @@ public interface ListEnrolledSolutionsResponseOrBuilder
    * @return A list containing the enrolledSolutions.
    */
   java.util.List<com.google.cloud.retail.v2alpha.SolutionType> getEnrolledSolutionsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListEnrolledSolutionsResponseOrBuilder
    * @return The count of enrolledSolutions.
    */
   int getEnrolledSolutionsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListEnrolledSolutionsResponseOrBuilder
    * @return The enrolledSolutions at the given index.
    */
   com.google.cloud.retail.v2alpha.SolutionType getEnrolledSolutions(int index);
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListEnrolledSolutionsResponseOrBuilder
    * @return A list containing the enum numeric values on the wire for enrolledSolutions.
    */
   java.util.List<java.lang.Integer> getEnrolledSolutionsValueList();
+
   /**
    *
    *

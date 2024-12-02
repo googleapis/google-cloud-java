@@ -40,6 +40,7 @@ public interface NetworkConfigOrBuilder
    * @return The networkAttachment.
    */
   java.lang.String getNetworkAttachment();
+
   /**
    *
    *

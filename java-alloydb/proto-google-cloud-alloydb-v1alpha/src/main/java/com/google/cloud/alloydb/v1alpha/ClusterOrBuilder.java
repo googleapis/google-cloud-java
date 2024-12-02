@@ -38,6 +38,7 @@ public interface ClusterOrBuilder
    * @return Whether the backupSource field is set.
    */
   boolean hasBackupSource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ClusterOrBuilder
    * @return The backupSource.
    */
   com.google.cloud.alloydb.v1alpha.BackupSource getBackupSource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ClusterOrBuilder
    * @return Whether the migrationSource field is set.
    */
   boolean hasMigrationSource();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface ClusterOrBuilder
    * @return The migrationSource.
    */
   com.google.cloud.alloydb.v1alpha.MigrationSource getMigrationSource();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface ClusterOrBuilder
    * @return Whether the cloudsqlBackupRunSource field is set.
    */
   boolean hasCloudsqlBackupRunSource();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface ClusterOrBuilder
    * @return The cloudsqlBackupRunSource.
    */
   com.google.cloud.alloydb.v1alpha.CloudSQLBackupRunSource getCloudsqlBackupRunSource();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface ClusterOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public interface ClusterOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public interface ClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface ClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public interface ClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -299,6 +311,7 @@ public interface ClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public interface ClusterOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -337,6 +351,7 @@ public interface ClusterOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -359,6 +374,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -369,9 +385,11 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -382,6 +400,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -396,6 +415,7 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -421,6 +441,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -453,6 +474,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for clusterType.
    */
   int getClusterTypeValue();
+
   /**
    *
    *
@@ -488,6 +510,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for databaseVersion.
    */
   int getDatabaseVersionValue();
+
   /**
    *
    *
@@ -514,6 +537,7 @@ public interface ClusterOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
+
   /**
    * <code>
    * .google.cloud.alloydb.v1alpha.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
@@ -522,6 +546,7 @@ public interface ClusterOrBuilder
    * @return The networkConfig.
    */
   com.google.cloud.alloydb.v1alpha.Cluster.NetworkConfig getNetworkConfig();
+
   /**
    * <code>
    * .google.cloud.alloydb.v1alpha.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
@@ -550,6 +575,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -584,6 +610,7 @@ public interface ClusterOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -609,6 +636,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; annotations = 12;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -621,9 +649,11 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; annotations = 12;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -636,6 +666,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; annotations = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -652,6 +683,7 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -697,6 +729,7 @@ public interface ClusterOrBuilder
    * @return Whether the initialUser field is set.
    */
   boolean hasInitialUser();
+
   /**
    *
    *
@@ -712,6 +745,7 @@ public interface ClusterOrBuilder
    * @return The initialUser.
    */
   com.google.cloud.alloydb.v1alpha.UserPassword getInitialUser();
+
   /**
    *
    *
@@ -744,6 +778,7 @@ public interface ClusterOrBuilder
    * @return Whether the automatedBackupPolicy field is set.
    */
   boolean hasAutomatedBackupPolicy();
+
   /**
    *
    *
@@ -762,6 +797,7 @@ public interface ClusterOrBuilder
    * @return The automatedBackupPolicy.
    */
   com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy getAutomatedBackupPolicy();
+
   /**
    *
    *
@@ -795,6 +831,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   boolean hasSslConfig();
+
   /**
    *
    *
@@ -810,6 +847,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.alloydb.v1alpha.SslConfig getSslConfig();
+
   /**
    *
    *
@@ -840,6 +878,7 @@ public interface ClusterOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -858,6 +897,7 @@ public interface ClusterOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.alloydb.v1alpha.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *
@@ -889,6 +929,7 @@ public interface ClusterOrBuilder
    * @return Whether the encryptionInfo field is set.
    */
   boolean hasEncryptionInfo();
+
   /**
    *
    *
@@ -903,6 +944,7 @@ public interface ClusterOrBuilder
    * @return The encryptionInfo.
    */
   com.google.cloud.alloydb.v1alpha.EncryptionInfo getEncryptionInfo();
+
   /**
    *
    *
@@ -930,6 +972,7 @@ public interface ClusterOrBuilder
    * @return Whether the continuousBackupConfig field is set.
    */
   boolean hasContinuousBackupConfig();
+
   /**
    *
    *
@@ -944,6 +987,7 @@ public interface ClusterOrBuilder
    * @return The continuousBackupConfig.
    */
   com.google.cloud.alloydb.v1alpha.ContinuousBackupConfig getContinuousBackupConfig();
+
   /**
    *
    *
@@ -972,6 +1016,7 @@ public interface ClusterOrBuilder
    * @return Whether the continuousBackupInfo field is set.
    */
   boolean hasContinuousBackupInfo();
+
   /**
    *
    *
@@ -986,6 +1031,7 @@ public interface ClusterOrBuilder
    * @return The continuousBackupInfo.
    */
   com.google.cloud.alloydb.v1alpha.ContinuousBackupInfo getContinuousBackupInfo();
+
   /**
    *
    *
@@ -1011,6 +1057,7 @@ public interface ClusterOrBuilder
    * @return Whether the secondaryConfig field is set.
    */
   boolean hasSecondaryConfig();
+
   /**
    *
    *
@@ -1023,6 +1070,7 @@ public interface ClusterOrBuilder
    * @return The secondaryConfig.
    */
   com.google.cloud.alloydb.v1alpha.Cluster.SecondaryConfig getSecondaryConfig();
+
   /**
    *
    *
@@ -1048,6 +1096,7 @@ public interface ClusterOrBuilder
    * @return Whether the primaryConfig field is set.
    */
   boolean hasPrimaryConfig();
+
   /**
    *
    *
@@ -1062,6 +1111,7 @@ public interface ClusterOrBuilder
    * @return The primaryConfig.
    */
   com.google.cloud.alloydb.v1alpha.Cluster.PrimaryConfig getPrimaryConfig();
+
   /**
    *
    *
@@ -1116,6 +1166,7 @@ public interface ClusterOrBuilder
    * @return Whether the pscConfig field is set.
    */
   boolean hasPscConfig();
+
   /**
    *
    *
@@ -1131,6 +1182,7 @@ public interface ClusterOrBuilder
    * @return The pscConfig.
    */
   com.google.cloud.alloydb.v1alpha.Cluster.PscConfig getPscConfig();
+
   /**
    *
    *
@@ -1160,6 +1212,7 @@ public interface ClusterOrBuilder
    * @return Whether the maintenanceUpdatePolicy field is set.
    */
   boolean hasMaintenanceUpdatePolicy();
+
   /**
    *
    *
@@ -1175,6 +1228,7 @@ public interface ClusterOrBuilder
    * @return The maintenanceUpdatePolicy.
    */
   com.google.cloud.alloydb.v1alpha.MaintenanceUpdatePolicy getMaintenanceUpdatePolicy();
+
   /**
    *
    *
@@ -1205,6 +1259,7 @@ public interface ClusterOrBuilder
    * @return Whether the maintenanceSchedule field is set.
    */
   boolean hasMaintenanceSchedule();
+
   /**
    *
    *
@@ -1220,6 +1275,7 @@ public interface ClusterOrBuilder
    * @return The maintenanceSchedule.
    */
   com.google.cloud.alloydb.v1alpha.MaintenanceSchedule getMaintenanceSchedule();
+
   /**
    *
    *
@@ -1249,6 +1305,7 @@ public interface ClusterOrBuilder
    * @return Whether the geminiConfig field is set.
    */
   boolean hasGeminiConfig();
+
   /**
    *
    *
@@ -1264,6 +1321,7 @@ public interface ClusterOrBuilder
    * @return The geminiConfig.
    */
   com.google.cloud.alloydb.v1alpha.GeminiClusterConfig getGeminiConfig();
+
   /**
    *
    *
@@ -1292,6 +1350,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for subscriptionType.
    */
   int getSubscriptionTypeValue();
+
   /**
    *
    *
@@ -1321,6 +1380,7 @@ public interface ClusterOrBuilder
    * @return Whether the trialMetadata field is set.
    */
   boolean hasTrialMetadata();
+
   /**
    *
    *
@@ -1335,6 +1395,7 @@ public interface ClusterOrBuilder
    * @return The trialMetadata.
    */
   com.google.cloud.alloydb.v1alpha.Cluster.TrialMetadata getTrialMetadata();
+
   /**
    *
    *
@@ -1365,6 +1426,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -1382,9 +1444,11 @@ public interface ClusterOrBuilder
    * </code>
    */
   boolean containsTags(java.lang.String key);
+
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
+
   /**
    *
    *
@@ -1402,6 +1466,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
   /**
    *
    *
@@ -1423,6 +1488,7 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

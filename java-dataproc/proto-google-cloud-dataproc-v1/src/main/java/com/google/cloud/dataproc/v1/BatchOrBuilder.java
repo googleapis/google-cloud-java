@@ -36,6 +36,7 @@ public interface BatchOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface BatchOrBuilder
    * @return The uuid.
    */
   java.lang.String getUuid();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface BatchOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface BatchOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface BatchOrBuilder
    * @return Whether the pysparkBatch field is set.
    */
   boolean hasPysparkBatch();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface BatchOrBuilder
    * @return The pysparkBatch.
    */
   com.google.cloud.dataproc.v1.PySparkBatch getPysparkBatch();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface BatchOrBuilder
    * @return Whether the sparkBatch field is set.
    */
   boolean hasSparkBatch();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface BatchOrBuilder
    * @return The sparkBatch.
    */
   com.google.cloud.dataproc.v1.SparkBatch getSparkBatch();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface BatchOrBuilder
    * @return Whether the sparkRBatch field is set.
    */
   boolean hasSparkRBatch();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface BatchOrBuilder
    * @return The sparkRBatch.
    */
   com.google.cloud.dataproc.v1.SparkRBatch getSparkRBatch();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface BatchOrBuilder
    * @return Whether the sparkSqlBatch field is set.
    */
   boolean hasSparkSqlBatch();
+
   /**
    *
    *
@@ -265,6 +276,7 @@ public interface BatchOrBuilder
    * @return The sparkSqlBatch.
    */
   com.google.cloud.dataproc.v1.SparkSqlBatch getSparkSqlBatch();
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public interface BatchOrBuilder
    * @return Whether the runtimeInfo field is set.
    */
   boolean hasRuntimeInfo();
+
   /**
    *
    *
@@ -306,6 +319,7 @@ public interface BatchOrBuilder
    * @return The runtimeInfo.
    */
   com.google.cloud.dataproc.v1.RuntimeInfo getRuntimeInfo();
+
   /**
    *
    *
@@ -333,6 +347,7 @@ public interface BatchOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -361,6 +376,7 @@ public interface BatchOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
+
   /**
    *
    *
@@ -388,6 +404,7 @@ public interface BatchOrBuilder
    * @return Whether the stateTime field is set.
    */
   boolean hasStateTime();
+
   /**
    *
    *
@@ -401,6 +418,7 @@ public interface BatchOrBuilder
    * @return The stateTime.
    */
   com.google.protobuf.Timestamp getStateTime();
+
   /**
    *
    *
@@ -425,6 +443,7 @@ public interface BatchOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
+
   /**
    *
    *
@@ -454,6 +473,7 @@ public interface BatchOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -470,9 +490,11 @@ public interface BatchOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -489,6 +511,7 @@ public interface BatchOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -509,6 +532,7 @@ public interface BatchOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -540,6 +564,7 @@ public interface BatchOrBuilder
    * @return Whether the runtimeConfig field is set.
    */
   boolean hasRuntimeConfig();
+
   /**
    *
    *
@@ -554,6 +579,7 @@ public interface BatchOrBuilder
    * @return The runtimeConfig.
    */
   com.google.cloud.dataproc.v1.RuntimeConfig getRuntimeConfig();
+
   /**
    *
    *
@@ -581,6 +607,7 @@ public interface BatchOrBuilder
    * @return Whether the environmentConfig field is set.
    */
   boolean hasEnvironmentConfig();
+
   /**
    *
    *
@@ -595,6 +622,7 @@ public interface BatchOrBuilder
    * @return The environmentConfig.
    */
   com.google.cloud.dataproc.v1.EnvironmentConfig getEnvironmentConfig();
+
   /**
    *
    *
@@ -620,6 +648,7 @@ public interface BatchOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
+
   /**
    *
    *
@@ -645,6 +674,7 @@ public interface BatchOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.Batch.StateHistory> getStateHistoryList();
+
   /**
    *
    *
@@ -657,6 +687,7 @@ public interface BatchOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.Batch.StateHistory getStateHistory(int index);
+
   /**
    *
    *
@@ -669,6 +700,7 @@ public interface BatchOrBuilder
    * </code>
    */
   int getStateHistoryCount();
+
   /**
    *
    *
@@ -682,6 +714,7 @@ public interface BatchOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.Batch.StateHistoryOrBuilder>
       getStateHistoryOrBuilderList();
+
   /**
    *
    *

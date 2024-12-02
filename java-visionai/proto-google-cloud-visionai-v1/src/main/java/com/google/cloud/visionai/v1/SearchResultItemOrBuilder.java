@@ -38,6 +38,7 @@ public interface SearchResultItemOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SearchResultItemOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.visionai.v1.Partition.TemporalPartition> getSegmentsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SearchResultItemOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.visionai.v1.Partition.TemporalPartition getSegments(int index);
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface SearchResultItemOrBuilder
    */
   @java.lang.Deprecated
   int getSegmentsCount();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface SearchResultItemOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder>
       getSegmentsOrBuilderList();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface SearchResultItemOrBuilder
    * @return Whether the segment field is set.
    */
   boolean hasSegment();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface SearchResultItemOrBuilder
    * @return The segment.
    */
   com.google.cloud.visionai.v1.Partition.TemporalPartition getSegment();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface SearchResultItemOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Annotation requested_annotations = 3;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Annotation> getRequestedAnnotationsList();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface SearchResultItemOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Annotation requested_annotations = 3;</code>
    */
   com.google.cloud.visionai.v1.Annotation getRequestedAnnotations(int index);
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface SearchResultItemOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Annotation requested_annotations = 3;</code>
    */
   int getRequestedAnnotationsCount();
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public interface SearchResultItemOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.AnnotationOrBuilder>
       getRequestedAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -251,6 +262,7 @@ public interface SearchResultItemOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.AnnotationMatchingResult>
       getAnnotationMatchingResultsList();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface SearchResultItemOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.AnnotationMatchingResult getAnnotationMatchingResults(int index);
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public interface SearchResultItemOrBuilder
    * </code>
    */
   int getAnnotationMatchingResultsCount();
+
   /**
    *
    *
@@ -294,6 +308,7 @@ public interface SearchResultItemOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.AnnotationMatchingResultOrBuilder>
       getAnnotationMatchingResultsOrBuilderList();
+
   /**
    *
    *

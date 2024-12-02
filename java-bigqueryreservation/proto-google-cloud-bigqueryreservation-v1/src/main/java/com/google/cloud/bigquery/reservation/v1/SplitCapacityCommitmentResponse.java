@@ -34,6 +34,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse)
     SplitCapacityCommitmentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SplitCapacityCommitmentResponse.newBuilder() to construct.
   private SplitCapacityCommitmentResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
   private int bitField0_;
   public static final int FIRST_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.reservation.v1.CapacityCommitment first_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
   public boolean hasFirst() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
         ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
         : first_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
 
   public static final int SECOND_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.reservation.v1.CapacityCommitment second_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
   public boolean hasSecond() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
         ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
         : second_;
   }
+
   /**
    *
    *
@@ -345,6 +352,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -578,6 +586,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment.Builder,
             com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder>
         firstBuilder_;
+
     /**
      *
      *
@@ -592,6 +601,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
     public boolean hasFirst() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
         return firstBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +716,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       onChanged();
       return getFirstFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -735,6 +751,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
             : first_;
       }
     }
+
     /**
      *
      *
@@ -767,6 +784,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment.Builder,
             com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder>
         secondBuilder_;
+
     /**
      *
      *
@@ -781,6 +799,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
     public boolean hasSecond() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -801,6 +820,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
         return secondBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -823,6 +843,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +864,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +894,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +914,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +929,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       onChanged();
       return getSecondFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -924,6 +949,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
             : second_;
       }
     }
+
     /**
      *
      *

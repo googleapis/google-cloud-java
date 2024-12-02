@@ -38,6 +38,7 @@ public interface PlaceInsightOrBuilder
    * @return The place.
    */
   java.lang.String getPlace();
+
   /**
    *
    *

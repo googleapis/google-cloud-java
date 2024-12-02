@@ -34,6 +34,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.prediction.ClassificationPredictionResult)
     ClassificationPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClassificationPredictionResult.newBuilder() to construct.
   private ClassificationPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList ids_ = emptyLongList();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   public java.util.List<java.lang.Long> getIdsList() {
     return ids_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   public int getIdsCount() {
     return ids_.size();
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList displayNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getDisplayNamesList() {
     return displayNames_;
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   public int getDisplayNamesCount() {
     return displayNames_.size();
   }
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   public java.lang.String getDisplayNames(int index) {
     return displayNames_.get(index);
   }
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList confidences_ = emptyFloatList();
+
   /**
    *
    *
@@ -210,6 +219,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   public java.util.List<java.lang.Float> getConfidencesList() {
     return confidences_;
   }
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   public int getConfidencesCount() {
     return confidences_.size();
   }
+
   /**
    *
    *
@@ -480,6 +491,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -772,6 +784,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -787,6 +800,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       ids_.makeImmutable();
       return ids_;
     }
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     public int getIdsCount() {
       return ids_.size();
     }
+
     /**
      *
      *
@@ -816,6 +831,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     public long getIds(int index) {
       return ids_.getLong(index);
     }
+
     /**
      *
      *
@@ -837,6 +853,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -919,6 +939,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       displayNames_.makeImmutable();
       return displayNames_;
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     public int getDisplayNamesCount() {
       return displayNames_.size();
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     public java.lang.String getDisplayNames(int index) {
       return displayNames_.get(index);
     }
+
     /**
      *
      *
@@ -966,6 +989,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getDisplayNamesBytes(int index) {
       return displayNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1059,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1079,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1120,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       confidences_.makeImmutable();
       return confidences_;
     }
+
     /**
      *
      *
@@ -1123,6 +1153,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     public int getConfidencesCount() {
       return confidences_.size();
     }
+
     /**
      *
      *
@@ -1139,6 +1170,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     public float getConfidences(int index) {
       return confidences_.getFloat(index);
     }
+
     /**
      *
      *
@@ -1161,6 +1193,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1215,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1236,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

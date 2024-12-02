@@ -38,6 +38,7 @@ public interface MoveFileRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface MoveFileRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface MoveFileRequestOrBuilder
    * @return The newPath.
    */
   java.lang.String getNewPath();
+
   /**
    *
    *

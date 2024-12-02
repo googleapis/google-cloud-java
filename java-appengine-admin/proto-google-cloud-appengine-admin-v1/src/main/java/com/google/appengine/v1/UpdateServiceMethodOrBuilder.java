@@ -36,6 +36,7 @@ public interface UpdateServiceMethodOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateServiceMethodOrBuilder
    * @return The request.
    */
   com.google.appengine.v1.UpdateServiceRequest getRequest();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterStatusNatStatus)
     RouterStatusNatStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouterStatusNatStatus.newBuilder() to construct.
   private RouterStatusNatStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList autoAllocatedNatIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getAutoAllocatedNatIpsList() {
     return autoAllocatedNatIps_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public int getAutoAllocatedNatIpsCount() {
     return autoAllocatedNatIps_.size();
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public java.lang.String getAutoAllocatedNatIps(int index) {
     return autoAllocatedNatIps_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList drainAutoAllocatedNatIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getDrainAutoAllocatedNatIpsList() {
     return drainAutoAllocatedNatIps_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public int getDrainAutoAllocatedNatIpsCount() {
     return drainAutoAllocatedNatIps_.size();
   }
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public java.lang.String getDrainAutoAllocatedNatIps(int index) {
     return drainAutoAllocatedNatIps_.get(index);
   }
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList drainUserAllocatedNatIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -217,6 +227,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getDrainUserAllocatedNatIpsList() {
     return drainUserAllocatedNatIps_;
   }
+
   /**
    *
    *
@@ -231,6 +242,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public int getDrainUserAllocatedNatIpsCount() {
     return drainUserAllocatedNatIps_.size();
   }
+
   /**
    *
    *
@@ -246,6 +258,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public java.lang.String getDrainUserAllocatedNatIps(int index) {
     return drainUserAllocatedNatIps_.get(index);
   }
+
   /**
    *
    *
@@ -264,6 +277,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
 
   public static final int MIN_EXTRA_NAT_IPS_NEEDED_FIELD_NUMBER = 365786338;
   private int minExtraNatIpsNeeded_ = 0;
+
   /**
    *
    *
@@ -279,6 +293,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public boolean hasMinExtraNatIpsNeeded() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -299,6 +314,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -314,6 +330,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public boolean hasName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -337,6 +354,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -363,6 +381,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
 
   public static final int NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER = 512367468;
   private int numVmEndpointsWithNatMappings_ = 0;
+
   /**
    *
    *
@@ -378,6 +397,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public boolean hasNumVmEndpointsWithNatMappings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -399,6 +419,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
       ruleStatus_;
+
   /**
    *
    *
@@ -415,6 +436,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       getRuleStatusList() {
     return ruleStatus_;
   }
+
   /**
    *
    *
@@ -432,6 +454,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       getRuleStatusOrBuilderList() {
     return ruleStatus_;
   }
+
   /**
    *
    *
@@ -447,6 +470,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public int getRuleStatusCount() {
     return ruleStatus_.size();
   }
+
   /**
    *
    *
@@ -462,6 +486,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus getRuleStatus(int index) {
     return ruleStatus_.get(index);
   }
+
   /**
    *
    *
@@ -484,6 +509,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList userAllocatedNatIpResources_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -498,6 +524,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getUserAllocatedNatIpResourcesList() {
     return userAllocatedNatIpResources_;
   }
+
   /**
    *
    *
@@ -512,6 +539,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public int getUserAllocatedNatIpResourcesCount() {
     return userAllocatedNatIpResources_.size();
   }
+
   /**
    *
    *
@@ -527,6 +555,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public java.lang.String getUserAllocatedNatIpResources(int index) {
     return userAllocatedNatIpResources_.get(index);
   }
+
   /**
    *
    *
@@ -548,6 +577,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList userAllocatedNatIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -562,6 +592,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getUserAllocatedNatIpsList() {
     return userAllocatedNatIps_;
   }
+
   /**
    *
    *
@@ -576,6 +607,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public int getUserAllocatedNatIpsCount() {
     return userAllocatedNatIps_.size();
   }
+
   /**
    *
    *
@@ -591,6 +623,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public java.lang.String getUserAllocatedNatIps(int index) {
     return userAllocatedNatIps_.get(index);
   }
+
   /**
    *
    *
@@ -904,6 +937,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1299,6 +1333,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1314,6 +1349,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       autoAllocatedNatIps_.makeImmutable();
       return autoAllocatedNatIps_;
     }
+
     /**
      *
      *
@@ -1328,6 +1364,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public int getAutoAllocatedNatIpsCount() {
       return autoAllocatedNatIps_.size();
     }
+
     /**
      *
      *
@@ -1343,6 +1380,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public java.lang.String getAutoAllocatedNatIps(int index) {
       return autoAllocatedNatIps_.get(index);
     }
+
     /**
      *
      *
@@ -1358,6 +1396,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getAutoAllocatedNatIpsBytes(int index) {
       return autoAllocatedNatIps_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1381,6 +1420,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1443,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1463,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1482,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1474,6 +1517,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1489,6 +1533,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       drainAutoAllocatedNatIps_.makeImmutable();
       return drainAutoAllocatedNatIps_;
     }
+
     /**
      *
      *
@@ -1503,6 +1548,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public int getDrainAutoAllocatedNatIpsCount() {
       return drainAutoAllocatedNatIps_.size();
     }
+
     /**
      *
      *
@@ -1518,6 +1564,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public java.lang.String getDrainAutoAllocatedNatIps(int index) {
       return drainAutoAllocatedNatIps_.get(index);
     }
+
     /**
      *
      *
@@ -1533,6 +1580,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getDrainAutoAllocatedNatIpsBytes(int index) {
       return drainAutoAllocatedNatIps_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1556,6 +1604,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1627,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1647,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1615,6 +1666,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1649,6 +1701,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1664,6 +1717,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       drainUserAllocatedNatIps_.makeImmutable();
       return drainUserAllocatedNatIps_;
     }
+
     /**
      *
      *
@@ -1678,6 +1732,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public int getDrainUserAllocatedNatIpsCount() {
       return drainUserAllocatedNatIps_.size();
     }
+
     /**
      *
      *
@@ -1693,6 +1748,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public java.lang.String getDrainUserAllocatedNatIps(int index) {
       return drainUserAllocatedNatIps_.get(index);
     }
+
     /**
      *
      *
@@ -1708,6 +1764,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getDrainUserAllocatedNatIpsBytes(int index) {
       return drainUserAllocatedNatIps_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1731,6 +1788,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1753,6 +1811,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1831,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1850,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1876,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     }
 
     private int minExtraNatIpsNeeded_;
+
     /**
      *
      *
@@ -1830,6 +1892,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public boolean hasMinExtraNatIpsNeeded() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1845,6 +1908,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public int getMinExtraNatIpsNeeded() {
       return minExtraNatIpsNeeded_;
     }
+
     /**
      *
      *
@@ -1864,6 +1928,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1948,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1897,6 +1963,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public boolean hasName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1919,6 +1986,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1941,6 +2009,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1962,6 +2031,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1979,6 +2049,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2003,6 +2074,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     }
 
     private int numVmEndpointsWithNatMappings_;
+
     /**
      *
      *
@@ -2018,6 +2090,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public boolean hasNumVmEndpointsWithNatMappings() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2033,6 +2106,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public int getNumVmEndpointsWithNatMappings() {
       return numVmEndpointsWithNatMappings_;
     }
+
     /**
      *
      *
@@ -2052,6 +2126,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2107,6 +2182,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         return ruleStatusBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2125,6 +2201,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         return ruleStatusBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2143,6 +2220,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         return ruleStatusBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2168,6 +2246,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2191,6 +2270,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2216,6 +2296,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2241,6 +2322,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2263,6 +2345,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2286,6 +2369,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2309,6 +2393,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2330,6 +2415,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2351,6 +2437,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2366,6 +2453,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         getRuleStatusBuilder(int index) {
       return getRuleStatusFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2385,6 +2473,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         return ruleStatusBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2405,6 +2494,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(ruleStatus_);
       }
     }
+
     /**
      *
      *
@@ -2422,6 +2512,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2440,6 +2531,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
               index,
               com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2483,6 +2575,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2498,6 +2591,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       userAllocatedNatIpResources_.makeImmutable();
       return userAllocatedNatIpResources_;
     }
+
     /**
      *
      *
@@ -2512,6 +2606,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public int getUserAllocatedNatIpResourcesCount() {
       return userAllocatedNatIpResources_.size();
     }
+
     /**
      *
      *
@@ -2527,6 +2622,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public java.lang.String getUserAllocatedNatIpResources(int index) {
       return userAllocatedNatIpResources_.get(index);
     }
+
     /**
      *
      *
@@ -2542,6 +2638,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getUserAllocatedNatIpResourcesBytes(int index) {
       return userAllocatedNatIpResources_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2565,6 +2662,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2587,6 +2685,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2606,6 +2705,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2624,6 +2724,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2657,6 +2758,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -2672,6 +2774,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       userAllocatedNatIps_.makeImmutable();
       return userAllocatedNatIps_;
     }
+
     /**
      *
      *
@@ -2686,6 +2789,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public int getUserAllocatedNatIpsCount() {
       return userAllocatedNatIps_.size();
     }
+
     /**
      *
      *
@@ -2701,6 +2805,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public java.lang.String getUserAllocatedNatIps(int index) {
       return userAllocatedNatIps_.get(index);
     }
+
     /**
      *
      *
@@ -2716,6 +2821,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getUserAllocatedNatIpsBytes(int index) {
       return userAllocatedNatIps_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2739,6 +2845,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2761,6 +2868,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2780,6 +2888,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2798,6 +2907,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

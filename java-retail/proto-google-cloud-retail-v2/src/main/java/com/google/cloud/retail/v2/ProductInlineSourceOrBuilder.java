@@ -38,6 +38,7 @@ public interface ProductInlineSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.retail.v2.Product> getProductsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ProductInlineSourceOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2.Product getProducts(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface ProductInlineSourceOrBuilder
    * </code>
    */
   int getProductsCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface ProductInlineSourceOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.retail.v2.ProductOrBuilder> getProductsOrBuilderList();
+
   /**
    *
    *

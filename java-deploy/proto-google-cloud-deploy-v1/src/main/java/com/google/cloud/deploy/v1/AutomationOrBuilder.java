@@ -37,6 +37,7 @@ public interface AutomationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AutomationOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface AutomationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface AutomationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface AutomationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface AutomationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface AutomationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public interface AutomationOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -231,9 +239,11 @@ public interface AutomationOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface AutomationOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public interface AutomationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -340,6 +352,7 @@ public interface AutomationOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -360,9 +373,11 @@ public interface AutomationOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -383,6 +398,7 @@ public interface AutomationOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -407,6 +423,7 @@ public interface AutomationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -443,6 +460,7 @@ public interface AutomationOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -485,6 +503,7 @@ public interface AutomationOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -513,6 +532,7 @@ public interface AutomationOrBuilder
    * @return Whether the selector field is set.
    */
   boolean hasSelector();
+
   /**
    *
    *
@@ -527,6 +547,7 @@ public interface AutomationOrBuilder
    * @return The selector.
    */
   com.google.cloud.deploy.v1.AutomationResourceSelector getSelector();
+
   /**
    *
    *
@@ -555,6 +576,7 @@ public interface AutomationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.AutomationRule> getRulesList();
+
   /**
    *
    *
@@ -570,6 +592,7 @@ public interface AutomationOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.AutomationRule getRules(int index);
+
   /**
    *
    *
@@ -585,6 +608,7 @@ public interface AutomationOrBuilder
    * </code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -601,6 +625,7 @@ public interface AutomationOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.AutomationRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *

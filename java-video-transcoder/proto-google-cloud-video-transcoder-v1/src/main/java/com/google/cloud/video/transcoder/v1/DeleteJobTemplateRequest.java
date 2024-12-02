@@ -33,6 +33,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.DeleteJobTemplateRequest)
     DeleteJobTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteJobTemplateRequest.newBuilder() to construct.
   private DeleteJobTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 2;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -308,6 +312,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -508,6 +513,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -533,6 +539,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -558,6 +565,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -645,6 +656,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

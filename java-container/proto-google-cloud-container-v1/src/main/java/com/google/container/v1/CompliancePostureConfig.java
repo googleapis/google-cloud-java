@@ -34,6 +34,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.container.v1.CompliancePostureConfig)
     CompliancePostureConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompliancePostureConfig.newBuilder() to construct.
   private CompliancePostureConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -239,6 +242,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
      * @return Whether the standard field is set.
      */
     boolean hasStandard();
+
     /**
      *
      *
@@ -251,6 +255,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
      * @return The standard.
      */
     java.lang.String getStandard();
+
     /**
      *
      *
@@ -264,6 +269,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getStandardBytes();
   }
+
   /**
    *
    *
@@ -278,6 +284,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.container.v1.CompliancePostureConfig.ComplianceStandard)
       ComplianceStandardOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ComplianceStandard.newBuilder() to construct.
     private ComplianceStandard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -313,6 +320,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object standard_ = "";
+
     /**
      *
      *
@@ -328,6 +336,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
     public boolean hasStandard() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -351,6 +360,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -542,6 +552,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -739,6 +750,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object standard_ = "";
+
       /**
        *
        *
@@ -753,6 +765,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       public boolean hasStandard() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -775,6 +788,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -797,6 +811,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -818,6 +833,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -835,6 +851,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -928,6 +945,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -943,6 +961,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
   public boolean hasMode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -958,6 +977,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -983,6 +1003,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.CompliancePostureConfig.ComplianceStandard>
       complianceStandards_;
+
   /**
    *
    *
@@ -999,6 +1020,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       getComplianceStandardsList() {
     return complianceStandards_;
   }
+
   /**
    *
    *
@@ -1016,6 +1038,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       getComplianceStandardsOrBuilderList() {
     return complianceStandards_;
   }
+
   /**
    *
    *
@@ -1031,6 +1054,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
   public int getComplianceStandardsCount() {
     return complianceStandards_.size();
   }
+
   /**
    *
    *
@@ -1047,6 +1071,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       int index) {
     return complianceStandards_.get(index);
   }
+
   /**
    *
    *
@@ -1240,6 +1265,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1488,6 +1514,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -1503,6 +1530,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
     public boolean hasMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1518,6 +1546,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -1536,6 +1565,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1555,6 +1585,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
           ? com.google.container.v1.CompliancePostureConfig.Mode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1576,6 +1607,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1632,6 +1664,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         return complianceStandardsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1650,6 +1683,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         return complianceStandardsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1669,6 +1703,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         return complianceStandardsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1694,6 +1729,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1718,6 +1754,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1743,6 +1780,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1768,6 +1806,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1830,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1855,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1880,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1902,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1924,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1896,6 +1940,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         getComplianceStandardsBuilder(int index) {
       return getComplianceStandardsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1915,6 +1960,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         return complianceStandardsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1935,6 +1981,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(complianceStandards_);
       }
     }
+
     /**
      *
      *
@@ -1953,6 +2000,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
               com.google.container.v1.CompliancePostureConfig.ComplianceStandard
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1972,6 +2020,7 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
               com.google.container.v1.CompliancePostureConfig.ComplianceStandard
                   .getDefaultInstance());
     }
+
     /**
      *
      *

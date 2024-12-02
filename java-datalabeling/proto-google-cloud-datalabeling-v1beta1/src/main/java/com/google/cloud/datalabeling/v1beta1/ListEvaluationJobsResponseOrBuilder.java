@@ -34,6 +34,7 @@ public interface ListEvaluationJobsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.EvaluationJob> getEvaluationJobsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEvaluationJobsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_jobs = 1;</code>
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJob getEvaluationJobs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEvaluationJobsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_jobs = 1;</code>
    */
   int getEvaluationJobsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEvaluationJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder>
       getEvaluationJobsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListEvaluationJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

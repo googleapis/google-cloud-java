@@ -43,6 +43,7 @@ public interface ComponentSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ComponentSettingsOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface ComponentSettingsOrBuilder
    * @return The projectServiceAccount.
    */
   java.lang.String getProjectServiceAccount();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface ComponentSettingsOrBuilder
    * </code>
    */
   int getDetectorSettingsCount();
+
   /**
    *
    *
@@ -147,12 +151,14 @@ public interface ComponentSettingsOrBuilder
    * </code>
    */
   boolean containsDetectorSettings(java.lang.String key);
+
   /** Use {@link #getDetectorSettingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings>
       getDetectorSettings();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface ComponentSettingsOrBuilder
           java.lang.String,
           com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings>
       getDetectorSettingsMap();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface ComponentSettingsOrBuilder
           /* nullable */
           com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
               defaultValue);
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public interface ComponentSettingsOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public interface ComponentSettingsOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public interface ComponentSettingsOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -289,6 +300,7 @@ public interface ComponentSettingsOrBuilder
    * @return Whether the containerThreatDetectionSettings field is set.
    */
   boolean hasContainerThreatDetectionSettings();
+
   /**
    *
    *
@@ -305,6 +317,7 @@ public interface ComponentSettingsOrBuilder
    */
   com.google.cloud.securitycenter.settings.v1beta1.ContainerThreatDetectionSettings
       getContainerThreatDetectionSettings();
+
   /**
    *
    *
@@ -335,6 +348,7 @@ public interface ComponentSettingsOrBuilder
    * @return Whether the eventThreatDetectionSettings field is set.
    */
   boolean hasEventThreatDetectionSettings();
+
   /**
    *
    *
@@ -351,6 +365,7 @@ public interface ComponentSettingsOrBuilder
    */
   com.google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettings
       getEventThreatDetectionSettings();
+
   /**
    *
    *
@@ -381,6 +396,7 @@ public interface ComponentSettingsOrBuilder
    * @return Whether the securityHealthAnalyticsSettings field is set.
    */
   boolean hasSecurityHealthAnalyticsSettings();
+
   /**
    *
    *
@@ -397,6 +413,7 @@ public interface ComponentSettingsOrBuilder
    */
   com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
       getSecurityHealthAnalyticsSettings();
+
   /**
    *
    *
@@ -427,6 +444,7 @@ public interface ComponentSettingsOrBuilder
    * @return Whether the webSecurityScannerSettings field is set.
    */
   boolean hasWebSecurityScannerSettings();
+
   /**
    *
    *
@@ -443,6 +461,7 @@ public interface ComponentSettingsOrBuilder
    */
   com.google.cloud.securitycenter.settings.v1beta1.WebSecurityScanner
       getWebSecurityScannerSettings();
+
   /**
    *
    *

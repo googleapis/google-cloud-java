@@ -33,6 +33,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AdvanceRolloutOperation)
     AdvanceRolloutOperationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdvanceRolloutOperation.newBuilder() to construct.
   private AdvanceRolloutOperation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourcePhase_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
 
   public static final int WAIT_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration wait_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
   public boolean hasWait() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
   public com.google.protobuf.Duration getWait() {
     return wait_ == null ? com.google.protobuf.Duration.getDefaultInstance() : wait_;
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rollout_ = "";
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationPhase_ = "";
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -456,6 +466,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -699,6 +710,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object sourcePhase_ = "";
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -743,6 +756,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         waitBuilder_;
+
     /**
      *
      *
@@ -824,6 +841,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
     public boolean hasWait() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
         return waitBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +903,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +931,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +951,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +966,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return getWaitFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -959,6 +983,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
         return wait_ == null ? com.google.protobuf.Duration.getDefaultInstance() : wait_;
       }
     }
+
     /**
      *
      *
@@ -986,6 +1011,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
     }
 
     private java.lang.Object rollout_ = "";
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1057,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1079,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1097,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1122,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
     }
 
     private java.lang.Object destinationPhase_ = "";
+
     /**
      *
      *
@@ -1114,6 +1145,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1168,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1157,6 +1190,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1208,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

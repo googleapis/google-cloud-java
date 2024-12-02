@@ -25,6 +25,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ClusterInfo)
     ClusterInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClusterInfo.newBuilder() to construct.
   private ClusterInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -55,6 +56,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAMS_COUNT_FIELD_NUMBER = 1;
   private int streamsCount_ = 0;
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROCESSES_COUNT_FIELD_NUMBER = 2;
   private int processesCount_ = 0;
+
   /**
    *
    *
@@ -256,6 +259,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.visionai.v1.ClusterInfo} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -442,6 +446,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int streamsCount_;
+
     /**
      *
      *
@@ -457,6 +462,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
     public int getStreamsCount() {
       return streamsCount_;
     }
+
     /**
      *
      *
@@ -476,6 +482,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -495,6 +502,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int processesCount_;
+
     /**
      *
      *
@@ -510,6 +518,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
     public int getProcessesCount() {
       return processesCount_;
     }
+
     /**
      *
      *
@@ -529,6 +538,7 @@ public final class ClusterInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

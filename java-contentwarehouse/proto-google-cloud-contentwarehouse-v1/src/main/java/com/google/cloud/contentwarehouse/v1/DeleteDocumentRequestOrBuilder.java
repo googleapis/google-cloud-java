@@ -42,6 +42,7 @@ public interface DeleteDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface DeleteDocumentRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface DeleteDocumentRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.contentwarehouse.v1.RequestMetadata getRequestMetadata();
+
   /**
    *
    *

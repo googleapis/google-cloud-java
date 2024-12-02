@@ -62,6 +62,7 @@ public enum MediaType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MEDIA_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int MEDIA_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface UpdateSecretRequestOrBuilder
    * @return Whether the secret field is set.
    */
   boolean hasSecret();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateSecretRequestOrBuilder
    * @return The secret.
    */
   com.google.cloud.secretmanager.v1beta2.Secret getSecret();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UpdateSecretRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface UpdateSecretRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

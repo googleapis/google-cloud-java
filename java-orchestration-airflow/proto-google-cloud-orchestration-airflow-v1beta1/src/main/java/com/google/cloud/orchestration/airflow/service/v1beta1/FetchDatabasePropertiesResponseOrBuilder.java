@@ -36,6 +36,7 @@ public interface FetchDatabasePropertiesResponseOrBuilder
    * @return The primaryGceZone.
    */
   java.lang.String getPrimaryGceZone();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface FetchDatabasePropertiesResponseOrBuilder
    * @return The secondaryGceZone.
    */
   java.lang.String getSecondaryGceZone();
+
   /**
    *
    *

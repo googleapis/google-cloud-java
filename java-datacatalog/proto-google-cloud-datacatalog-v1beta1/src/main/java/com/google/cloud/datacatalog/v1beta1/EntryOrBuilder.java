@@ -44,6 +44,7 @@ public interface EntryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface EntryOrBuilder
    * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface EntryOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public interface EntryOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public interface EntryOrBuilder
    * @return Whether the userSpecifiedType field is set.
    */
   boolean hasUserSpecifiedType();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface EntryOrBuilder
    * @return The userSpecifiedType.
    */
   java.lang.String getUserSpecifiedType();
+
   /**
    *
    *
@@ -231,6 +237,7 @@ public interface EntryOrBuilder
    * @return Whether the integratedSystem field is set.
    */
   boolean hasIntegratedSystem();
+
   /**
    *
    *
@@ -246,6 +253,7 @@ public interface EntryOrBuilder
    * @return The enum numeric value on the wire for integratedSystem.
    */
   int getIntegratedSystemValue();
+
   /**
    *
    *
@@ -278,6 +286,7 @@ public interface EntryOrBuilder
    * @return Whether the userSpecifiedSystem field is set.
    */
   boolean hasUserSpecifiedSystem();
+
   /**
    *
    *
@@ -294,6 +303,7 @@ public interface EntryOrBuilder
    * @return The userSpecifiedSystem.
    */
   java.lang.String getUserSpecifiedSystem();
+
   /**
    *
    *
@@ -324,6 +334,7 @@ public interface EntryOrBuilder
    * @return Whether the gcsFilesetSpec field is set.
    */
   boolean hasGcsFilesetSpec();
+
   /**
    *
    *
@@ -337,6 +348,7 @@ public interface EntryOrBuilder
    * @return The gcsFilesetSpec.
    */
   com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec getGcsFilesetSpec();
+
   /**
    *
    *
@@ -362,6 +374,7 @@ public interface EntryOrBuilder
    * @return Whether the bigqueryTableSpec field is set.
    */
   boolean hasBigqueryTableSpec();
+
   /**
    *
    *
@@ -375,6 +388,7 @@ public interface EntryOrBuilder
    * @return The bigqueryTableSpec.
    */
   com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec getBigqueryTableSpec();
+
   /**
    *
    *
@@ -403,6 +417,7 @@ public interface EntryOrBuilder
    * @return Whether the bigqueryDateShardedSpec field is set.
    */
   boolean hasBigqueryDateShardedSpec();
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public interface EntryOrBuilder
    * @return The bigqueryDateShardedSpec.
    */
   com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec getBigqueryDateShardedSpec();
+
   /**
    *
    *
@@ -449,6 +465,7 @@ public interface EntryOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -477,6 +494,7 @@ public interface EntryOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -503,6 +521,7 @@ public interface EntryOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
+
   /**
    *
    *
@@ -515,6 +534,7 @@ public interface EntryOrBuilder
    * @return The schema.
    */
   com.google.cloud.datacatalog.v1beta1.Schema getSchema();
+
   /**
    *
    *
@@ -543,6 +563,7 @@ public interface EntryOrBuilder
    * @return Whether the sourceSystemTimestamps field is set.
    */
   boolean hasSourceSystemTimestamps();
+
   /**
    *
    *
@@ -560,6 +581,7 @@ public interface EntryOrBuilder
    * @return The sourceSystemTimestamps.
    */
   com.google.cloud.datacatalog.v1beta1.SystemTimestamps getSourceSystemTimestamps();
+
   /**
    *
    *
@@ -591,6 +613,7 @@ public interface EntryOrBuilder
    * @return Whether the usageSignal field is set.
    */
   boolean hasUsageSignal();
+
   /**
    *
    *
@@ -605,6 +628,7 @@ public interface EntryOrBuilder
    * @return The usageSignal.
    */
   com.google.cloud.datacatalog.v1beta1.UsageSignal getUsageSignal();
+
   /**
    *
    *

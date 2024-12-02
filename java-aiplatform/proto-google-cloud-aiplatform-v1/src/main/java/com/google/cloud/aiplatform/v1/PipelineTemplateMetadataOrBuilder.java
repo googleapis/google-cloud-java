@@ -42,6 +42,7 @@ public interface PipelineTemplateMetadataOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

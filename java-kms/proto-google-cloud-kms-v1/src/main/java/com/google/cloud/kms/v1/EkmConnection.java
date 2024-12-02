@@ -40,6 +40,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.EkmConnection)
     EkmConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EkmConnection.newBuilder() to construct.
   private EkmConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -153,6 +154,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * <code>KEY_MANAGEMENT_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int KEY_MANAGEMENT_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -175,6 +177,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * <code>MANUAL = 1;</code>
      */
     public static final int MANUAL_VALUE = 1;
+
     /**
      *
      *
@@ -305,6 +308,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * @return The serviceDirectoryService.
      */
     java.lang.String getServiceDirectoryService();
+
     /**
      *
      *
@@ -339,6 +343,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * @return The endpointFilter.
      */
     java.lang.String getEndpointFilter();
+
     /**
      *
      *
@@ -369,6 +374,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * @return The hostname.
      */
     java.lang.String getHostname();
+
     /**
      *
      *
@@ -396,6 +402,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.cloud.kms.v1.Certificate> getServerCertificatesList();
+
     /**
      *
      *
@@ -410,6 +417,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.kms.v1.Certificate getServerCertificates(int index);
+
     /**
      *
      *
@@ -424,6 +432,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getServerCertificatesCount();
+
     /**
      *
      *
@@ -439,6 +448,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.kms.v1.CertificateOrBuilder>
         getServerCertificatesOrBuilderList();
+
     /**
      *
      *
@@ -454,6 +464,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.kms.v1.CertificateOrBuilder getServerCertificatesOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -470,6 +481,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.EkmConnection.ServiceResolver)
       ServiceResolverOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ServiceResolver.newBuilder() to construct.
     private ServiceResolver(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -507,6 +519,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceDirectoryService_ = "";
+
     /**
      *
      *
@@ -534,6 +547,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -566,6 +580,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object endpointFilter_ = "";
+
     /**
      *
      *
@@ -594,6 +609,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -627,6 +643,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object hostname_ = "";
+
     /**
      *
      *
@@ -650,6 +667,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -678,6 +696,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.kms.v1.Certificate> serverCertificates_;
+
     /**
      *
      *
@@ -695,6 +714,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.kms.v1.Certificate> getServerCertificatesList() {
       return serverCertificates_;
     }
+
     /**
      *
      *
@@ -713,6 +733,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         getServerCertificatesOrBuilderList() {
       return serverCertificates_;
     }
+
     /**
      *
      *
@@ -730,6 +751,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     public int getServerCertificatesCount() {
       return serverCertificates_.size();
     }
+
     /**
      *
      *
@@ -747,6 +769,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.kms.v1.Certificate getServerCertificates(int index) {
       return serverCertificates_.get(index);
     }
+
     /**
      *
      *
@@ -957,6 +980,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1237,6 +1261,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object serviceDirectoryService_ = "";
+
       /**
        *
        *
@@ -1263,6 +1288,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1289,6 +1315,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1314,6 +1341,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1335,6 +1363,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1363,6 +1392,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object endpointFilter_ = "";
+
       /**
        *
        *
@@ -1390,6 +1420,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1417,6 +1448,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1443,6 +1475,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1465,6 +1498,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1494,6 +1528,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object hostname_ = "";
+
       /**
        *
        *
@@ -1516,6 +1551,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1538,6 +1574,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1559,6 +1596,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1576,6 +1614,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1636,6 +1675,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return serverCertificatesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1656,6 +1696,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return serverCertificatesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1676,6 +1717,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return serverCertificatesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1702,6 +1744,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1726,6 +1769,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1752,6 +1796,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1778,6 +1823,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1802,6 +1848,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1826,6 +1873,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1850,6 +1898,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1873,6 +1922,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1896,6 +1946,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1912,6 +1963,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.kms.v1.Certificate.Builder getServerCertificatesBuilder(int index) {
         return getServerCertificatesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1933,6 +1985,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return serverCertificatesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1954,6 +2007,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(serverCertificates_);
         }
       }
+
       /**
        *
        *
@@ -1971,6 +2025,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return getServerCertificatesFieldBuilder()
             .addBuilder(com.google.cloud.kms.v1.Certificate.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1988,6 +2043,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return getServerCertificatesFieldBuilder()
             .addBuilder(index, com.google.cloud.kms.v1.Certificate.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2095,6 +2151,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2120,6 +2177,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2148,6 +2206,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -2165,6 +2224,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2182,6 +2242,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -2202,6 +2263,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.kms.v1.EkmConnection.ServiceResolver> serviceResolvers_;
+
   /**
    *
    *
@@ -2223,6 +2285,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       getServiceResolversList() {
     return serviceResolvers_;
   }
+
   /**
    *
    *
@@ -2244,6 +2307,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       getServiceResolversOrBuilderList() {
     return serviceResolvers_;
   }
+
   /**
    *
    *
@@ -2264,6 +2328,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   public int getServiceResolversCount() {
     return serviceResolvers_.size();
   }
+
   /**
    *
    *
@@ -2284,6 +2349,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.kms.v1.EkmConnection.ServiceResolver getServiceResolvers(int index) {
     return serviceResolvers_.get(index);
   }
+
   /**
    *
    *
@@ -2310,6 +2376,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -2334,6 +2401,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2361,6 +2429,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KEY_MANAGEMENT_MODE_FIELD_NUMBER = 6;
   private int keyManagementMode_ = 0;
+
   /**
    *
    *
@@ -2380,6 +2449,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   public int getKeyManagementModeValue() {
     return keyManagementMode_;
   }
+
   /**
    *
    *
@@ -2408,6 +2478,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cryptoSpacePath_ = "";
+
   /**
    *
    *
@@ -2435,6 +2506,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2676,6 +2748,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3000,6 +3073,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3024,6 +3098,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3048,6 +3123,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3071,6 +3147,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3090,6 +3167,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3121,6 +3199,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3138,6 +3217,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3161,6 +3241,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3186,6 +3267,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3208,6 +3290,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3238,6 +3321,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3260,6 +3344,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3277,6 +3362,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3298,6 +3384,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3369,6 +3456,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return serviceResolversBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3392,6 +3480,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return serviceResolversBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3415,6 +3504,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return serviceResolversBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3445,6 +3535,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3472,6 +3563,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3502,6 +3594,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3532,6 +3625,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3559,6 +3653,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3586,6 +3681,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3614,6 +3710,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3640,6 +3737,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3666,6 +3764,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3686,6 +3785,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getServiceResolversFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3710,6 +3810,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return serviceResolversBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3734,6 +3835,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(serviceResolvers_);
       }
     }
+
     /**
      *
      *
@@ -3755,6 +3857,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       return getServiceResolversFieldBuilder()
           .addBuilder(com.google.cloud.kms.v1.EkmConnection.ServiceResolver.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3777,6 +3880,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.kms.v1.EkmConnection.ServiceResolver.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3819,6 +3923,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -3842,6 +3947,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3865,6 +3971,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3887,6 +3994,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3905,6 +4013,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3930,6 +4039,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int keyManagementMode_ = 0;
+
     /**
      *
      *
@@ -3949,6 +4059,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     public int getKeyManagementModeValue() {
       return keyManagementMode_;
     }
+
     /**
      *
      *
@@ -3971,6 +4082,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3994,6 +4106,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4020,6 +4133,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4043,6 +4157,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cryptoSpacePath_ = "";
+
     /**
      *
      *
@@ -4069,6 +4184,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4095,6 +4211,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4120,6 +4237,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4141,6 +4259,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

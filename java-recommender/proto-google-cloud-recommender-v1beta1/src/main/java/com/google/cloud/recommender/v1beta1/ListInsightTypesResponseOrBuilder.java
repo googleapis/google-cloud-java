@@ -34,6 +34,7 @@ public interface ListInsightTypesResponseOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.InsightType insight_types = 1;</code>
    */
   java.util.List<com.google.cloud.recommender.v1beta1.InsightType> getInsightTypesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListInsightTypesResponseOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.InsightType insight_types = 1;</code>
    */
   com.google.cloud.recommender.v1beta1.InsightType getInsightTypes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListInsightTypesResponseOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.InsightType insight_types = 1;</code>
    */
   int getInsightTypesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListInsightTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommender.v1beta1.InsightTypeOrBuilder>
       getInsightTypesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListInsightTypesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

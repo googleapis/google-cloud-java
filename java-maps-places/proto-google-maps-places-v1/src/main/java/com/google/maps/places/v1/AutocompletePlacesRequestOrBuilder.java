@@ -36,6 +36,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The input.
    */
   java.lang.String getInput();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return Whether the locationBias field is set.
    */
   boolean hasLocationBias();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The locationBias.
    */
   com.google.maps.places.v1.AutocompletePlacesRequest.LocationBias getLocationBias();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return Whether the locationRestriction field is set.
    */
   boolean hasLocationRestriction();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The locationRestriction.
    */
   com.google.maps.places.v1.AutocompletePlacesRequest.LocationRestriction getLocationRestriction();
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return A list containing the includedPrimaryTypes.
    */
   java.util.List<java.lang.String> getIncludedPrimaryTypesList();
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The count of includedPrimaryTypes.
    */
   int getIncludedPrimaryTypesCount();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The includedPrimaryTypes at the given index.
    */
   java.lang.String getIncludedPrimaryTypes(int index);
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return A list containing the includedRegionCodes.
    */
   java.util.List<java.lang.String> getIncludedRegionCodesList();
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The count of includedRegionCodes.
    */
   int getIncludedRegionCodesCount();
+
   /**
    *
    *
@@ -287,6 +297,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The includedRegionCodes at the given index.
    */
   java.lang.String getIncludedRegionCodes(int index);
+
   /**
    *
    *
@@ -320,6 +331,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -351,6 +363,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -381,6 +394,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return Whether the origin field is set.
    */
   boolean hasOrigin();
+
   /**
    *
    *
@@ -395,6 +409,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The origin.
    */
   com.google.type.LatLng getOrigin();
+
   /**
    *
    *
@@ -476,6 +491,7 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The sessionToken.
    */
   java.lang.String getSessionToken();
+
   /**
    *
    *

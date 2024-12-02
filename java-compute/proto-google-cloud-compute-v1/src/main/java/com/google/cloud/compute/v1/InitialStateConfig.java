@@ -33,6 +33,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InitialStateConfig)
     InitialStateConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InitialStateConfig.newBuilder() to construct.
   private InitialStateConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FileContentBuffer> dbs_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.compute.v1.FileContentBuffer> getDbsList() {
     return dbs_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       getDbsOrBuilderList() {
     return dbs_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public int getDbsCount() {
     return dbs_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.compute.v1.FileContentBuffer getDbs(int index) {
     return dbs_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FileContentBuffer> dbxs_;
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.compute.v1.FileContentBuffer> getDbxsList() {
     return dbxs_;
   }
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       getDbxsOrBuilderList() {
     return dbxs_;
   }
+
   /**
    *
    *
@@ -181,6 +190,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public int getDbxsCount() {
     return dbxs_.size();
   }
+
   /**
    *
    *
@@ -194,6 +204,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.compute.v1.FileContentBuffer getDbxs(int index) {
     return dbxs_.get(index);
   }
+
   /**
    *
    *
@@ -212,6 +223,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FileContentBuffer> keks_;
+
   /**
    *
    *
@@ -225,6 +237,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.compute.v1.FileContentBuffer> getKeksList() {
     return keks_;
   }
+
   /**
    *
    *
@@ -239,6 +252,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       getKeksOrBuilderList() {
     return keks_;
   }
+
   /**
    *
    *
@@ -252,6 +266,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public int getKeksCount() {
     return keks_.size();
   }
+
   /**
    *
    *
@@ -265,6 +280,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.compute.v1.FileContentBuffer getKeks(int index) {
     return keks_.get(index);
   }
+
   /**
    *
    *
@@ -281,6 +297,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int PK_FIELD_NUMBER = 3579;
   private com.google.cloud.compute.v1.FileContentBuffer pk_;
+
   /**
    *
    *
@@ -296,6 +313,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasPk() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -311,6 +329,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.compute.v1.FileContentBuffer getPk() {
     return pk_ == null ? com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance() : pk_;
   }
+
   /**
    *
    *
@@ -522,6 +541,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -925,6 +945,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return dbsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -941,6 +962,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return dbsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return dbsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1023,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1046,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1069,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1089,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1110,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1131,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1151,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1171,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1184,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.FileContentBuffer.Builder getDbsBuilder(int index) {
       return getDbsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1168,6 +1201,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return dbsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1219,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(dbs_);
       }
     }
+
     /**
      *
      *
@@ -1198,6 +1233,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       return getDbsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1211,6 +1247,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       return getDbsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1274,6 +1311,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return dbxsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1328,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return dbxsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1345,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return dbxsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1328,6 +1368,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1389,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1412,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1435,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1411,6 +1455,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1476,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1451,6 +1497,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1517,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1537,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1550,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.FileContentBuffer.Builder getDbxsBuilder(int index) {
       return getDbxsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1517,6 +1567,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return dbxsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1534,6 +1585,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(dbxs_);
       }
     }
+
     /**
      *
      *
@@ -1547,6 +1599,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       return getDbxsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1560,6 +1613,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       return getDbxsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1623,6 +1677,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return keksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1639,6 +1694,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return keksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1655,6 +1711,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return keksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1677,6 +1734,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1697,6 +1755,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1719,6 +1778,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1741,6 +1801,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1760,6 +1821,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1842,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1800,6 +1863,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1819,6 +1883,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1838,6 +1903,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +1916,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.FileContentBuffer.Builder getKeksBuilder(int index) {
       return getKeksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1866,6 +1933,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return keksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1883,6 +1951,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(keks_);
       }
     }
+
     /**
      *
      *
@@ -1896,6 +1965,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       return getKeksFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1909,6 +1979,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       return getKeksFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1946,6 +2017,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.FileContentBuffer.Builder,
             com.google.cloud.compute.v1.FileContentBufferOrBuilder>
         pkBuilder_;
+
     /**
      *
      *
@@ -1960,6 +2032,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasPk() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1980,6 +2053,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         return pkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2002,6 +2076,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2096,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2048,6 +2124,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2067,6 +2144,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2081,6 +2159,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2099,6 +2178,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
             : pk_;
       }
     }
+
     /**
      *
      *

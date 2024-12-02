@@ -37,6 +37,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.Link)
     LinkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Link.newBuilder() to construct.
   private Link(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.lineage.v1.EntityReference source_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance()
         : source_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_FIELD_NUMBER = 3;
   private com.google.cloud.datacatalog.lineage.v1.EntityReference target_;
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTarget() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance()
         : target_;
   }
+
   /**
    *
    *
@@ -227,6 +236,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -257,6 +268,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -288,6 +301,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -303,6 +317,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -532,6 +547,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -805,6 +821,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +952,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder,
             com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder>
         sourceBuilder_;
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -965,6 +988,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         return sourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -987,6 +1011,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1032,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1081,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1096,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1086,6 +1115,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
             : source_;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1148,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder,
             com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder>
         targetBuilder_;
+
     /**
      *
      *
@@ -1132,6 +1163,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTarget() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1152,6 +1184,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         return targetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1174,6 +1207,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1228,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1222,6 +1257,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1277,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1292,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1273,6 +1311,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
             : target_;
       }
     }
+
     /**
      *
      *
@@ -1305,6 +1344,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1319,6 +1359,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1337,6 +1378,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1359,6 +1401,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1421,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1405,6 +1449,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1469,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1484,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1454,6 +1501,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1486,6 +1534,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1500,6 +1549,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1518,6 +1568,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1540,6 +1591,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1611,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1586,6 +1639,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1659,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1674,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1635,6 +1691,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *

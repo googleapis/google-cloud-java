@@ -41,6 +41,7 @@ public interface GcpCredentialsOrBuilder
    * @return A list containing the idTokens.
    */
   java.util.List<com.google.protobuf.ByteString> getIdTokensList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface GcpCredentialsOrBuilder
    * @return The count of idTokens.
    */
   int getIdTokensCount();
+
   /**
    *
    *

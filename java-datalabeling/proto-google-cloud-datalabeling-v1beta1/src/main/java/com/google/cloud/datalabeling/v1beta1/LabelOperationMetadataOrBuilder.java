@@ -38,6 +38,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the imageClassificationDetails field is set.
    */
   boolean hasImageClassificationDetails();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
       getImageClassificationDetails();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the imageBoundingBoxDetails field is set.
    */
   boolean hasImageBoundingBoxDetails();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
       getImageBoundingBoxDetails();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the imageBoundingPolyDetails field is set.
    */
   boolean hasImageBoundingPolyDetails();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
       getImageBoundingPolyDetails();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the imageOrientedBoundingBoxDetails field is set.
    */
   boolean hasImageOrientedBoundingBoxDetails();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
       getImageOrientedBoundingBoxDetails();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the imagePolylineDetails field is set.
    */
   boolean hasImagePolylineDetails();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
       getImagePolylineDetails();
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the imageSegmentationDetails field is set.
    */
   boolean hasImageSegmentationDetails();
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
       getImageSegmentationDetails();
+
   /**
    *
    *
@@ -296,6 +308,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the videoClassificationDetails field is set.
    */
   boolean hasVideoClassificationDetails();
+
   /**
    *
    *
@@ -311,6 +324,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
       getVideoClassificationDetails();
+
   /**
    *
    *
@@ -339,6 +353,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the videoObjectDetectionDetails field is set.
    */
   boolean hasVideoObjectDetectionDetails();
+
   /**
    *
    *
@@ -354,6 +369,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
       getVideoObjectDetectionDetails();
+
   /**
    *
    *
@@ -382,6 +398,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the videoObjectTrackingDetails field is set.
    */
   boolean hasVideoObjectTrackingDetails();
+
   /**
    *
    *
@@ -397,6 +414,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
       getVideoObjectTrackingDetails();
+
   /**
    *
    *
@@ -425,6 +443,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the videoEventDetails field is set.
    */
   boolean hasVideoEventDetails();
+
   /**
    *
    *
@@ -439,6 +458,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return The videoEventDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata getVideoEventDetails();
+
   /**
    *
    *
@@ -467,6 +487,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the textClassificationDetails field is set.
    */
   boolean hasTextClassificationDetails();
+
   /**
    *
    *
@@ -482,6 +503,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
       getTextClassificationDetails();
+
   /**
    *
    *
@@ -510,6 +532,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the textEntityExtractionDetails field is set.
    */
   boolean hasTextEntityExtractionDetails();
+
   /**
    *
    *
@@ -525,6 +548,7 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
       getTextEntityExtractionDetails();
+
   /**
    *
    *
@@ -564,6 +588,7 @@ public interface LabelOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialFailuresList();
+
   /**
    *
    *
@@ -576,6 +601,7 @@ public interface LabelOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   com.google.rpc.Status getPartialFailures(int index);
+
   /**
    *
    *
@@ -588,6 +614,7 @@ public interface LabelOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   int getPartialFailuresCount();
+
   /**
    *
    *
@@ -600,6 +627,7 @@ public interface LabelOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
+
   /**
    *
    *
@@ -625,6 +653,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -637,6 +666,7 @@ public interface LabelOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

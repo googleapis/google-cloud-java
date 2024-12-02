@@ -303,7 +303,8 @@ public class SettingName implements ResourceName {
     private Builder(SettingName settingName) {
       Preconditions.checkArgument(
           Objects.equals(settingName.pathTemplate, PROJECT_NUMBER_SETTING_NAME),
-          "toBuilder is only supported when SettingName has the pattern of projects/{project_number}/settings/{setting_name}");
+          "toBuilder is only supported when SettingName has the pattern of"
+              + " projects/{project_number}/settings/{setting_name}");
       this.projectNumber = settingName.projectNumber;
       this.settingName = settingName.settingName;
     }

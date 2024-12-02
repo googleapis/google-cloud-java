@@ -43,6 +43,7 @@ public interface RunReportRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Dimension> getDimensionsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   com.google.analytics.data.v1beta.Dimension getDimensions(int index);
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface RunReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Metric> getMetricsList();
+
   /**
    *
    *
@@ -135,6 +141,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   com.google.analytics.data.v1beta.Metric getMetrics(int index);
+
   /**
    *
    *
@@ -145,6 +152,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface RunReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MetricOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -181,6 +190,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DateRange date_ranges = 4;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.DateRange> getDateRangesList();
+
   /**
    *
    *
@@ -195,6 +205,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DateRange date_ranges = 4;</code>
    */
   com.google.analytics.data.v1beta.DateRange getDateRanges(int index);
+
   /**
    *
    *
@@ -209,6 +220,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DateRange date_ranges = 4;</code>
    */
   int getDateRangesCount();
+
   /**
    *
    *
@@ -224,6 +236,7 @@ public interface RunReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DateRangeOrBuilder>
       getDateRangesOrBuilderList();
+
   /**
    *
    *
@@ -254,6 +267,7 @@ public interface RunReportRequestOrBuilder
    * @return Whether the dimensionFilter field is set.
    */
   boolean hasDimensionFilter();
+
   /**
    *
    *
@@ -269,6 +283,7 @@ public interface RunReportRequestOrBuilder
    * @return The dimensionFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getDimensionFilter();
+
   /**
    *
    *
@@ -296,6 +311,7 @@ public interface RunReportRequestOrBuilder
    * @return Whether the metricFilter field is set.
    */
   boolean hasMetricFilter();
+
   /**
    *
    *
@@ -309,6 +325,7 @@ public interface RunReportRequestOrBuilder
    * @return The metricFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getMetricFilter();
+
   /**
    *
    *
@@ -379,6 +396,7 @@ public interface RunReportRequestOrBuilder
    * @return A list containing the metricAggregations.
    */
   java.util.List<com.google.analytics.data.v1beta.MetricAggregation> getMetricAggregationsList();
+
   /**
    *
    *
@@ -392,6 +410,7 @@ public interface RunReportRequestOrBuilder
    * @return The count of metricAggregations.
    */
   int getMetricAggregationsCount();
+
   /**
    *
    *
@@ -406,6 +425,7 @@ public interface RunReportRequestOrBuilder
    * @return The metricAggregations at the given index.
    */
   com.google.analytics.data.v1beta.MetricAggregation getMetricAggregations(int index);
+
   /**
    *
    *
@@ -419,6 +439,7 @@ public interface RunReportRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for metricAggregations.
    */
   java.util.List<java.lang.Integer> getMetricAggregationsValueList();
+
   /**
    *
    *
@@ -444,6 +465,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 10;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.OrderBy> getOrderBysList();
+
   /**
    *
    *
@@ -454,6 +476,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 10;</code>
    */
   com.google.analytics.data.v1beta.OrderBy getOrderBys(int index);
+
   /**
    *
    *
@@ -464,6 +487,7 @@ public interface RunReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 10;</code>
    */
   int getOrderBysCount();
+
   /**
    *
    *
@@ -475,6 +499,7 @@ public interface RunReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.OrderByOrBuilder>
       getOrderBysOrBuilderList();
+
   /**
    *
    *
@@ -499,6 +524,7 @@ public interface RunReportRequestOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
+
   /**
    *
    *
@@ -526,6 +552,7 @@ public interface RunReportRequestOrBuilder
    * @return Whether the cohortSpec field is set.
    */
   boolean hasCohortSpec();
+
   /**
    *
    *
@@ -539,6 +566,7 @@ public interface RunReportRequestOrBuilder
    * @return The cohortSpec.
    */
   com.google.analytics.data.v1beta.CohortSpec getCohortSpec();
+
   /**
    *
    *
@@ -601,6 +629,7 @@ public interface RunReportRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.data.v1beta.Comparison> getComparisonsList();
+
   /**
    *
    *
@@ -615,6 +644,7 @@ public interface RunReportRequestOrBuilder
    * </code>
    */
   com.google.analytics.data.v1beta.Comparison getComparisons(int index);
+
   /**
    *
    *
@@ -629,6 +659,7 @@ public interface RunReportRequestOrBuilder
    * </code>
    */
   int getComparisonsCount();
+
   /**
    *
    *
@@ -644,6 +675,7 @@ public interface RunReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.ComparisonOrBuilder>
       getComparisonsOrBuilderList();
+
   /**
    *
    *

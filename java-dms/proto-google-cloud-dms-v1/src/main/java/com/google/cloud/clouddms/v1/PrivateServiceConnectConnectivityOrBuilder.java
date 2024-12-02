@@ -38,6 +38,7 @@ public interface PrivateServiceConnectConnectivityOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
+
   /**
    *
    *

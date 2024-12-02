@@ -39,6 +39,7 @@ public interface GetShippingSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

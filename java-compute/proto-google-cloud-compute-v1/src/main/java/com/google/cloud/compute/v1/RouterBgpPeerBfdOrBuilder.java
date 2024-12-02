@@ -36,6 +36,7 @@ public interface RouterBgpPeerBfdOrBuilder
    * @return Whether the minReceiveInterval field is set.
    */
   boolean hasMinReceiveInterval();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RouterBgpPeerBfdOrBuilder
    * @return Whether the minTransmitInterval field is set.
    */
   boolean hasMinTransmitInterval();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RouterBgpPeerBfdOrBuilder
    * @return Whether the multiplier field is set.
    */
   boolean hasMultiplier();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface RouterBgpPeerBfdOrBuilder
    * @return Whether the sessionInitializationMode field is set.
    */
   boolean hasSessionInitializationMode();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface RouterBgpPeerBfdOrBuilder
    * @return The sessionInitializationMode.
    */
   java.lang.String getSessionInitializationMode();
+
   /**
    *
    *

@@ -92,6 +92,7 @@ public enum EntityNameTransformation implements com.google.protobuf.ProtocolMess
    * <code>ENTITY_NAME_TRANSFORMATION_UNSPECIFIED = 0;</code>
    */
   public static final int ENTITY_NAME_TRANSFORMATION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum EntityNameTransformation implements com.google.protobuf.ProtocolMess
    * <code>ENTITY_NAME_TRANSFORMATION_NO_TRANSFORMATION = 1;</code>
    */
   public static final int ENTITY_NAME_TRANSFORMATION_NO_TRANSFORMATION_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum EntityNameTransformation implements com.google.protobuf.ProtocolMess
    * <code>ENTITY_NAME_TRANSFORMATION_LOWER_CASE = 2;</code>
    */
   public static final int ENTITY_NAME_TRANSFORMATION_LOWER_CASE_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum EntityNameTransformation implements com.google.protobuf.ProtocolMess
    * <code>ENTITY_NAME_TRANSFORMATION_UPPER_CASE = 3;</code>
    */
   public static final int ENTITY_NAME_TRANSFORMATION_UPPER_CASE_VALUE = 3;
+
   /**
    *
    *

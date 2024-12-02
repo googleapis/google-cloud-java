@@ -35,6 +35,7 @@ public final class RedactConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RedactConfig)
     RedactConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RedactConfig.newBuilder() to construct.
   private RedactConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class RedactConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

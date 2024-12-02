@@ -38,6 +38,7 @@ public interface UpdateBusinessIdentityRequestOrBuilder
    * @return Whether the businessIdentity field is set.
    */
   boolean hasBusinessIdentity();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateBusinessIdentityRequestOrBuilder
    * @return The businessIdentity.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessIdentity getBusinessIdentity();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateBusinessIdentityRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface UpdateBusinessIdentityRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface BusinessContextOrBuilder
    * @return Whether the entryOverview field is set.
    */
   boolean hasEntryOverview();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BusinessContextOrBuilder
    * @return The entryOverview.
    */
   com.google.cloud.datacatalog.v1.EntryOverview getEntryOverview();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface BusinessContextOrBuilder
    * @return Whether the contacts field is set.
    */
   boolean hasContacts();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface BusinessContextOrBuilder
    * @return The contacts.
    */
   com.google.cloud.datacatalog.v1.Contacts getContacts();
+
   /**
    *
    *

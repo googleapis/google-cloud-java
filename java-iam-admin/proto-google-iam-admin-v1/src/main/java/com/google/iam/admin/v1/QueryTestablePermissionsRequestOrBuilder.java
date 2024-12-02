@@ -41,6 +41,7 @@ public interface QueryTestablePermissionsRequestOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface QueryTestablePermissionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

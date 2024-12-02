@@ -43,6 +43,7 @@ public interface RunAccessReportRequestOrBuilder
    * @return The entity.
    */
   java.lang.String getEntity();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDimension dimensions = 2;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessDimension> getDimensionsList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDimension dimensions = 2;</code>
    */
   com.google.analytics.admin.v1beta.AccessDimension getDimensions(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDimension dimensions = 2;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface RunAccessReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessDimensionOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetric metrics = 3;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessMetric> getMetricsList();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetric metrics = 3;</code>
    */
   com.google.analytics.admin.v1beta.AccessMetric getMetrics(int index);
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetric metrics = 3;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -165,6 +173,7 @@ public interface RunAccessReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessMetricOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDateRange date_ranges = 4;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessDateRange> getDateRangesList();
+
   /**
    *
    *
@@ -205,6 +215,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDateRange date_ranges = 4;</code>
    */
   com.google.analytics.admin.v1beta.AccessDateRange getDateRanges(int index);
+
   /**
    *
    *
@@ -219,6 +230,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessDateRange date_ranges = 4;</code>
    */
   int getDateRangesCount();
+
   /**
    *
    *
@@ -234,6 +246,7 @@ public interface RunAccessReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessDateRangeOrBuilder>
       getDateRangesOrBuilderList();
+
   /**
    *
    *
@@ -265,6 +278,7 @@ public interface RunAccessReportRequestOrBuilder
    * @return Whether the dimensionFilter field is set.
    */
   boolean hasDimensionFilter();
+
   /**
    *
    *
@@ -281,6 +295,7 @@ public interface RunAccessReportRequestOrBuilder
    * @return The dimensionFilter.
    */
   com.google.analytics.admin.v1beta.AccessFilterExpression getDimensionFilter();
+
   /**
    *
    *
@@ -311,6 +326,7 @@ public interface RunAccessReportRequestOrBuilder
    * @return Whether the metricFilter field is set.
    */
   boolean hasMetricFilter();
+
   /**
    *
    *
@@ -326,6 +342,7 @@ public interface RunAccessReportRequestOrBuilder
    * @return The metricFilter.
    */
   com.google.analytics.admin.v1beta.AccessFilterExpression getMetricFilter();
+
   /**
    *
    *
@@ -400,6 +417,7 @@ public interface RunAccessReportRequestOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -429,6 +447,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessOrderBy order_bys = 10;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessOrderBy> getOrderBysList();
+
   /**
    *
    *
@@ -439,6 +458,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessOrderBy order_bys = 10;</code>
    */
   com.google.analytics.admin.v1beta.AccessOrderBy getOrderBys(int index);
+
   /**
    *
    *
@@ -449,6 +469,7 @@ public interface RunAccessReportRequestOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessOrderBy order_bys = 10;</code>
    */
   int getOrderBysCount();
+
   /**
    *
    *
@@ -460,6 +481,7 @@ public interface RunAccessReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessOrderByOrBuilder>
       getOrderBysOrBuilderList();
+
   /**
    *
    *

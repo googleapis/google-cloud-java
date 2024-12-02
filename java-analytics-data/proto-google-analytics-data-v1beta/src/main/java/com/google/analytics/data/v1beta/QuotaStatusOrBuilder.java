@@ -36,6 +36,7 @@ public interface QuotaStatusOrBuilder
    * @return Whether the consumed field is set.
    */
   boolean hasConsumed();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface QuotaStatusOrBuilder
    * @return Whether the remaining field is set.
    */
   boolean hasRemaining();
+
   /**
    *
    *

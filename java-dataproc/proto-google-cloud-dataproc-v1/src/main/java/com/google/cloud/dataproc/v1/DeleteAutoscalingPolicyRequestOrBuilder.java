@@ -47,6 +47,7 @@ public interface DeleteAutoscalingPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

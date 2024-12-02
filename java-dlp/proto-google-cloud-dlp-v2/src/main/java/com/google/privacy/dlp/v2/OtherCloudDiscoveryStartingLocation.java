@@ -34,6 +34,7 @@ public final class OtherCloudDiscoveryStartingLocation
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation)
     OtherCloudDiscoveryStartingLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OtherCloudDiscoveryStartingLocation.newBuilder() to construct.
   private OtherCloudDiscoveryStartingLocation(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -83,6 +84,7 @@ public final class OtherCloudDiscoveryStartingLocation
      * @return Whether the accountId field is set.
      */
     boolean hasAccountId();
+
     /**
      *
      *
@@ -98,6 +100,7 @@ public final class OtherCloudDiscoveryStartingLocation
      * @return The accountId.
      */
     java.lang.String getAccountId();
+
     /**
      *
      *
@@ -127,6 +130,7 @@ public final class OtherCloudDiscoveryStartingLocation
      * @return Whether the allAssetInventoryAssets field is set.
      */
     boolean hasAllAssetInventoryAssets();
+
     /**
      *
      *
@@ -145,6 +149,7 @@ public final class OtherCloudDiscoveryStartingLocation
             .ScopeCase
         getScopeCase();
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class OtherCloudDiscoveryStartingLocation
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.AwsDiscoveryStartingLocation)
       AwsDiscoveryStartingLocationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AwsDiscoveryStartingLocation.newBuilder() to construct.
     private AwsDiscoveryStartingLocation(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -209,6 +215,7 @@ public final class OtherCloudDiscoveryStartingLocation
       private ScopeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -242,6 +249,7 @@ public final class OtherCloudDiscoveryStartingLocation
     }
 
     public static final int ACCOUNT_ID_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -259,6 +267,7 @@ public final class OtherCloudDiscoveryStartingLocation
     public boolean hasAccountId() {
       return scopeCase_ == 2;
     }
+
     /**
      *
      *
@@ -289,6 +298,7 @@ public final class OtherCloudDiscoveryStartingLocation
         return s;
       }
     }
+
     /**
      *
      *
@@ -321,6 +331,7 @@ public final class OtherCloudDiscoveryStartingLocation
     }
 
     public static final int ALL_ASSET_INVENTORY_ASSETS_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -337,6 +348,7 @@ public final class OtherCloudDiscoveryStartingLocation
     public boolean hasAllAssetInventoryAssets() {
       return scopeCase_ == 3;
     }
+
     /**
      *
      *
@@ -572,6 +584,7 @@ public final class OtherCloudDiscoveryStartingLocation
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -842,6 +855,7 @@ public final class OtherCloudDiscoveryStartingLocation
       public boolean hasAccountId() {
         return scopeCase_ == 2;
       }
+
       /**
        *
        *
@@ -873,6 +887,7 @@ public final class OtherCloudDiscoveryStartingLocation
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -904,6 +919,7 @@ public final class OtherCloudDiscoveryStartingLocation
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -928,6 +944,7 @@ public final class OtherCloudDiscoveryStartingLocation
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -950,6 +967,7 @@ public final class OtherCloudDiscoveryStartingLocation
         }
         return this;
       }
+
       /**
        *
        *
@@ -991,6 +1009,7 @@ public final class OtherCloudDiscoveryStartingLocation
       public boolean hasAllAssetInventoryAssets() {
         return scopeCase_ == 3;
       }
+
       /**
        *
        *
@@ -1009,6 +1028,7 @@ public final class OtherCloudDiscoveryStartingLocation
         }
         return false;
       }
+
       /**
        *
        *
@@ -1029,6 +1049,7 @@ public final class OtherCloudDiscoveryStartingLocation
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1138,6 +1159,7 @@ public final class OtherCloudDiscoveryStartingLocation
     private LocationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1169,6 +1191,7 @@ public final class OtherCloudDiscoveryStartingLocation
   }
 
   public static final int AWS_LOCATION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1186,6 +1209,7 @@ public final class OtherCloudDiscoveryStartingLocation
   public boolean hasAwsLocation() {
     return locationCase_ == 1;
   }
+
   /**
    *
    *
@@ -1210,6 +1234,7 @@ public final class OtherCloudDiscoveryStartingLocation
     return com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation
         .AwsDiscoveryStartingLocation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1416,6 +1441,7 @@ public final class OtherCloudDiscoveryStartingLocation
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1641,6 +1667,7 @@ public final class OtherCloudDiscoveryStartingLocation
             com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation
                 .AwsDiscoveryStartingLocationOrBuilder>
         awsLocationBuilder_;
+
     /**
      *
      *
@@ -1658,6 +1685,7 @@ public final class OtherCloudDiscoveryStartingLocation
     public boolean hasAwsLocation() {
       return locationCase_ == 1;
     }
+
     /**
      *
      *
@@ -1691,6 +1719,7 @@ public final class OtherCloudDiscoveryStartingLocation
             .AwsDiscoveryStartingLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1717,6 +1746,7 @@ public final class OtherCloudDiscoveryStartingLocation
       locationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1741,6 +1771,7 @@ public final class OtherCloudDiscoveryStartingLocation
       locationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1782,6 +1813,7 @@ public final class OtherCloudDiscoveryStartingLocation
       locationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1809,6 +1841,7 @@ public final class OtherCloudDiscoveryStartingLocation
       }
       return this;
     }
+
     /**
      *
      *
@@ -1825,6 +1858,7 @@ public final class OtherCloudDiscoveryStartingLocation
         getAwsLocationBuilder() {
       return getAwsLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1852,6 +1886,7 @@ public final class OtherCloudDiscoveryStartingLocation
             .AwsDiscoveryStartingLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *

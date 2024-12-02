@@ -36,6 +36,7 @@ public interface MetricxResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *

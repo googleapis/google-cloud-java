@@ -36,6 +36,7 @@ public interface PlanOrBuilder
    * @return The enum numeric value on the wire for paymentPlan.
    */
   int getPaymentPlanValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PlanOrBuilder
    * @return The enum numeric value on the wire for paymentType.
    */
   int getPaymentTypeValue();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface PlanOrBuilder
    * @return Whether the paymentCycle field is set.
    */
   boolean hasPaymentCycle();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface PlanOrBuilder
    * @return The paymentCycle.
    */
   com.google.cloud.channel.v1.Period getPaymentCycle();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface PlanOrBuilder
    * @return Whether the trialPeriod field is set.
    */
   boolean hasTrialPeriod();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface PlanOrBuilder
    * @return The trialPeriod.
    */
   com.google.cloud.channel.v1.Period getTrialPeriod();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface PlanOrBuilder
    * @return The billingAccount.
    */
   java.lang.String getBillingAccount();
+
   /**
    *
    *

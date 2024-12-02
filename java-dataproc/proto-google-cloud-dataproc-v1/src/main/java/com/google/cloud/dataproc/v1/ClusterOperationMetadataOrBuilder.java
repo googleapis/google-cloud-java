@@ -36,6 +36,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The status.
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatus();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ClusterOperationMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.ClusterOperationStatus> getStatusHistoryList();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ClusterOperationMetadataOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatusHistory(int index);
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface ClusterOperationMetadataOrBuilder
    * </code>
    */
   int getStatusHistoryCount();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface ClusterOperationMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder>
       getStatusHistoryOrBuilderList();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The operationType.
    */
   java.lang.String getOperationType();
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public interface ClusterOperationMetadataOrBuilder
    * </code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -249,9 +260,11 @@ public interface ClusterOperationMetadataOrBuilder
    * </code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -263,6 +276,7 @@ public interface ClusterOperationMetadataOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -278,6 +292,7 @@ public interface ClusterOperationMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -302,6 +317,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return A list containing the warnings.
    */
   java.util.List<java.lang.String> getWarningsList();
+
   /**
    *
    *
@@ -314,6 +330,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The count of warnings.
    */
   int getWarningsCount();
+
   /**
    *
    *
@@ -327,6 +344,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The warnings at the given index.
    */
   java.lang.String getWarnings(int index);
+
   /**
    *
    *
@@ -354,6 +372,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return A list containing the childOperationIds.
    */
   java.util.List<java.lang.String> getChildOperationIdsList();
+
   /**
    *
    *
@@ -367,6 +386,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The count of childOperationIds.
    */
   int getChildOperationIdsCount();
+
   /**
    *
    *
@@ -381,6 +401,7 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The childOperationIds at the given index.
    */
   java.lang.String getChildOperationIds(int index);
+
   /**
    *
    *

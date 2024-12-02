@@ -36,6 +36,7 @@ public interface VpnGatewayStatusOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection> getVpnConnectionsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface VpnGatewayStatusOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection getVpnConnections(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface VpnGatewayStatusOrBuilder
    * </code>
    */
   int getVpnConnectionsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface VpnGatewayStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.VpnGatewayStatusVpnConnectionOrBuilder>
       getVpnConnectionsOrBuilderList();
+
   /**
    *
    *

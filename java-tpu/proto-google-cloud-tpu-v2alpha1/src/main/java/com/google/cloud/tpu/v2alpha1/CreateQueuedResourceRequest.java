@@ -34,6 +34,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.CreateQueuedResourceRequest)
     CreateQueuedResourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateQueuedResourceRequest.newBuilder() to construct.
   private CreateQueuedResourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queuedResourceId_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
 
   public static final int QUEUED_RESOURCE_FIELD_NUMBER = 3;
   private com.google.cloud.tpu.v2alpha1.QueuedResource queuedResource_;
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
   public boolean hasQueuedResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
         ? com.google.cloud.tpu.v2alpha1.QueuedResource.getDefaultInstance()
         : queuedResource_;
   }
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -474,6 +484,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -719,6 +730,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -743,6 +755,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -767,6 +780,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object queuedResourceId_ = "";
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +941,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
             com.google.cloud.tpu.v2alpha1.QueuedResource.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceOrBuilder>
         queuedResourceBuilder_;
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
     public boolean hasQueuedResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -989,6 +1012,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
         return queuedResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1060,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1091,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1113,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return getQueuedResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1122,6 +1151,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
             : queuedResource_;
       }
     }
+
     /**
      *
      *
@@ -1151,6 +1181,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1173,6 +1204,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1249,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1267,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface DeployPolicyNotificationEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeployPolicyNotificationEventOrBuilder
    * @return The deployPolicy.
    */
   java.lang.String getDeployPolicy();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface DeployPolicyNotificationEventOrBuilder
    * @return The deployPolicyUid.
    */
   java.lang.String getDeployPolicyUid();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface DeployPolicyNotificationEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

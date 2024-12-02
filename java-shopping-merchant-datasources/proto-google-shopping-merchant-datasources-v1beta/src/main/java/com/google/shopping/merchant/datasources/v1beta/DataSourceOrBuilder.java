@@ -40,6 +40,7 @@ public interface DataSourceOrBuilder
    * @return Whether the primaryProductDataSource field is set.
    */
   boolean hasPrimaryProductDataSource();
+
   /**
    *
    *
@@ -57,6 +58,7 @@ public interface DataSourceOrBuilder
    */
   com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
       getPrimaryProductDataSource();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface DataSourceOrBuilder
    * @return Whether the supplementalProductDataSource field is set.
    */
   boolean hasSupplementalProductDataSource();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface DataSourceOrBuilder
    */
   com.google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource
       getSupplementalProductDataSource();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface DataSourceOrBuilder
    * @return Whether the localInventoryDataSource field is set.
    */
   boolean hasLocalInventoryDataSource();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface DataSourceOrBuilder
    */
   com.google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource
       getLocalInventoryDataSource();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface DataSourceOrBuilder
    * @return Whether the regionalInventoryDataSource field is set.
    */
   boolean hasRegionalInventoryDataSource();
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public interface DataSourceOrBuilder
    */
   com.google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource
       getRegionalInventoryDataSource();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface DataSourceOrBuilder
    * @return Whether the promotionDataSource field is set.
    */
   boolean hasPromotionDataSource();
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public interface DataSourceOrBuilder
    * @return The promotionDataSource.
    */
   com.google.shopping.merchant.datasources.v1beta.PromotionDataSource getPromotionDataSource();
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public interface DataSourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -322,6 +333,7 @@ public interface DataSourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -351,6 +363,7 @@ public interface DataSourceOrBuilder
    * @return The enum numeric value on the wire for input.
    */
   int getInputValue();
+
   /**
    *
    *
@@ -382,6 +395,7 @@ public interface DataSourceOrBuilder
    * @return Whether the fileInput field is set.
    */
   boolean hasFileInput();
+
   /**
    *
    *
@@ -396,6 +410,7 @@ public interface DataSourceOrBuilder
    * @return The fileInput.
    */
   com.google.shopping.merchant.datasources.v1beta.FileInput getFileInput();
+
   /**
    *
    *

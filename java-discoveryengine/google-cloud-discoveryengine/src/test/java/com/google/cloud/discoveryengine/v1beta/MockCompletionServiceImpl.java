@@ -95,7 +95,8 @@ public class MockCompletionServiceImpl extends CompletionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AdvancedCompleteQuery, expected %s or %s",
+                  "Unrecognized response type %s for method AdvancedCompleteQuery, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AdvancedCompleteQueryResponse.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +117,8 @@ public class MockCompletionServiceImpl extends CompletionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportSuggestionDenyListEntries, expected %s or %s",
+                  "Unrecognized response type %s for method ImportSuggestionDenyListEntries,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +139,8 @@ public class MockCompletionServiceImpl extends CompletionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PurgeSuggestionDenyListEntries, expected %s or %s",
+                  "Unrecognized response type %s for method PurgeSuggestionDenyListEntries,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +161,8 @@ public class MockCompletionServiceImpl extends CompletionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportCompletionSuggestions, expected %s or %s",
+                  "Unrecognized response type %s for method ImportCompletionSuggestions, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -179,7 +183,8 @@ public class MockCompletionServiceImpl extends CompletionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PurgeCompletionSuggestions, expected %s or %s",
+                  "Unrecognized response type %s for method PurgeCompletionSuggestions, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

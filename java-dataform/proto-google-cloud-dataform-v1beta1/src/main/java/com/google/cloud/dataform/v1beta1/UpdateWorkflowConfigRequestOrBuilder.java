@@ -38,6 +38,7 @@ public interface UpdateWorkflowConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateWorkflowConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateWorkflowConfigRequestOrBuilder
    * @return Whether the workflowConfig field is set.
    */
   boolean hasWorkflowConfig();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateWorkflowConfigRequestOrBuilder
    * @return The workflowConfig.
    */
   com.google.cloud.dataform.v1beta1.WorkflowConfig getWorkflowConfig();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface LookupServiceProjectAttachmentResponseOrBuilder
    * @return Whether the serviceProjectAttachment field is set.
    */
   boolean hasServiceProjectAttachment();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LookupServiceProjectAttachmentResponseOrBuilder
    * @return The serviceProjectAttachment.
    */
   com.google.cloud.apphub.v1.ServiceProjectAttachment getServiceProjectAttachment();
+
   /**
    *
    *

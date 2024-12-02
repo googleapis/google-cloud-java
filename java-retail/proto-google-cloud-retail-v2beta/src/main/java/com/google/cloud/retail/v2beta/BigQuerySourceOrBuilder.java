@@ -39,6 +39,7 @@ public interface BigQuerySourceOrBuilder
    * @return Whether the partitionDate field is set.
    */
   boolean hasPartitionDate();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface BigQuerySourceOrBuilder
    * @return The partitionDate.
    */
   com.google.type.Date getPartitionDate();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface BigQuerySourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface BigQuerySourceOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface BigQuerySourceOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface BigQuerySourceOrBuilder
    * @return The gcsStagingDir.
    */
   java.lang.String getGcsStagingDir();
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public interface BigQuerySourceOrBuilder
    * @return The dataSchema.
    */
   java.lang.String getDataSchema();
+
   /**
    *
    *

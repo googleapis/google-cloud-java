@@ -33,6 +33,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.StartRuntimeRequest)
     StartRuntimeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StartRuntimeRequest.newBuilder() to construct.
   private StartRuntimeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -336,6 +341,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -535,6 +541,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -558,6 +565,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -581,6 +589,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +631,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -690,6 +703,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +743,7 @@ public final class StartRuntimeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Version versions = 1;</code>
    */
   java.util.List<com.google.cloud.apihub.v1.Version> getVersionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Version versions = 1;</code>
    */
   com.google.cloud.apihub.v1.Version getVersions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Version versions = 1;</code>
    */
   int getVersionsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Version versions = 1;</code>
    */
   java.util.List<? extends com.google.cloud.apihub.v1.VersionOrBuilder> getVersionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

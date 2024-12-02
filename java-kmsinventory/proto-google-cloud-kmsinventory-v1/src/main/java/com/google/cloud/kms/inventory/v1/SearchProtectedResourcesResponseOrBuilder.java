@@ -34,6 +34,7 @@ public interface SearchProtectedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.kms.inventory.v1.ProtectedResource protected_resources = 1;</code>
    */
   java.util.List<com.google.cloud.kms.inventory.v1.ProtectedResource> getProtectedResourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchProtectedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.kms.inventory.v1.ProtectedResource protected_resources = 1;</code>
    */
   com.google.cloud.kms.inventory.v1.ProtectedResource getProtectedResources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchProtectedResourcesResponseOrBuilder
    * <code>repeated .google.cloud.kms.inventory.v1.ProtectedResource protected_resources = 1;</code>
    */
   int getProtectedResourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchProtectedResourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.kms.inventory.v1.ProtectedResourceOrBuilder>
       getProtectedResourcesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface SearchProtectedResourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

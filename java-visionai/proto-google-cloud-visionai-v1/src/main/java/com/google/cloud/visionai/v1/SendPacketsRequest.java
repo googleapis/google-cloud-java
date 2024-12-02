@@ -33,6 +33,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SendPacketsRequest)
     SendPacketsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SendPacketsRequest.newBuilder() to construct.
   private SendPacketsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     private RequestCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PACKET_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasPacket() {
     return requestCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.visionai.v1.Packet.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int METADATA_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasMetadata() {
     return requestCase_ == 2;
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.visionai.v1.RequestMetadata.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -401,6 +409,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.Packet.Builder,
             com.google.cloud.visionai.v1.PacketOrBuilder>
         packetBuilder_;
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasPacket() {
       return requestCase_ == 1;
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.visionai.v1.Packet.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
       requestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
       requestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
       requestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.visionai.v1.Packet.Builder getPacketBuilder() {
       return getPacketFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.visionai.v1.Packet.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.RequestMetadata.Builder,
             com.google.cloud.visionai.v1.RequestMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasMetadata() {
       return requestCase_ == 2;
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.visionai.v1.RequestMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -904,6 +925,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
       requestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +946,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
       requestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +979,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
       requestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1005,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1018,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.visionai.v1.RequestMetadata.Builder getMetadataBuilder() {
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1013,6 +1039,7 @@ public final class SendPacketsRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.visionai.v1.RequestMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *

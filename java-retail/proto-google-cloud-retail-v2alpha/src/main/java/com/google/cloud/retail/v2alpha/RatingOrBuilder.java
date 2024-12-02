@@ -75,6 +75,7 @@ public interface RatingOrBuilder
    * @return A list containing the ratingHistogram.
    */
   java.util.List<java.lang.Integer> getRatingHistogramList();
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public interface RatingOrBuilder
    * @return The count of ratingHistogram.
    */
   int getRatingHistogramCount();
+
   /**
    *
    *

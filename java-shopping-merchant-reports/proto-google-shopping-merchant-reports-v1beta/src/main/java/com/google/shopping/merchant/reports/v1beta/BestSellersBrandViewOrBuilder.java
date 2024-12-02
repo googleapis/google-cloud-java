@@ -43,6 +43,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the reportDate field is set.
    */
   boolean hasReportDate();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return The reportDate.
    */
   com.google.type.Date getReportDate();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the reportGranularity field is set.
    */
   boolean hasReportGranularity();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return The enum numeric value on the wire for reportGranularity.
    */
   int getReportGranularityValue();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the reportCountryCode field is set.
    */
   boolean hasReportCountryCode();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return The reportCountryCode.
    */
   java.lang.String getReportCountryCode();
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the reportCategoryId field is set.
    */
   boolean hasReportCategoryId();
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the brand field is set.
    */
   boolean hasBrand();
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return The brand.
    */
   java.lang.String getBrand();
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the rank field is set.
    */
   boolean hasRank();
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the previousRank field is set.
    */
   boolean hasPreviousRank();
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the relativeDemand field is set.
    */
   boolean hasRelativeDemand();
+
   /**
    *
    *
@@ -341,6 +353,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return The enum numeric value on the wire for relativeDemand.
    */
   int getRelativeDemandValue();
+
   /**
    *
    *
@@ -372,6 +385,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the previousRelativeDemand field is set.
    */
   boolean hasPreviousRelativeDemand();
+
   /**
    *
    *
@@ -387,6 +401,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return The enum numeric value on the wire for previousRelativeDemand.
    */
   int getPreviousRelativeDemandValue();
+
   /**
    *
    *
@@ -418,6 +433,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return Whether the relativeDemandChange field is set.
    */
   boolean hasRelativeDemandChange();
+
   /**
    *
    *
@@ -432,6 +448,7 @@ public interface BestSellersBrandViewOrBuilder
    * @return The enum numeric value on the wire for relativeDemandChange.
    */
   int getRelativeDemandChangeValue();
+
   /**
    *
    *

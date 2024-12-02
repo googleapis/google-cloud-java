@@ -33,6 +33,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchRegionUrlMapRequest)
     PatchRegionUrlMapRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchRegionUrlMapRequest.newBuilder() to construct.
   private PatchRegionUrlMapRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object urlMap_ = "";
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
 
   public static final int URL_MAP_RESOURCE_FIELD_NUMBER = 168675425;
   private com.google.cloud.compute.v1.UrlMap urlMapResource_;
+
   /**
    *
    *
@@ -313,6 +324,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
   public boolean hasUrlMapResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -332,6 +344,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.UrlMap.getDefaultInstance()
         : urlMapResource_;
   }
+
   /**
    *
    *
@@ -556,6 +569,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -816,6 +830,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -840,6 +855,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +880,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -887,6 +904,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +924,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +951,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -956,6 +976,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -980,6 +1001,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1025,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1062,6 +1087,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1084,6 +1110,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1133,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1127,6 +1155,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1173,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1198,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object urlMap_ = "";
+
     /**
      *
      *
@@ -1190,6 +1221,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1244,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1266,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1284,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1314,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.UrlMap.Builder,
             com.google.cloud.compute.v1.UrlMapOrBuilder>
         urlMapResourceBuilder_;
+
     /**
      *
      *
@@ -1295,6 +1331,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     public boolean hasUrlMapResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1317,6 +1354,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return urlMapResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1379,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1401,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1391,6 +1431,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1453,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1470,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       onChanged();
       return getUrlMapResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1448,6 +1491,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
             : urlMapResource_;
       }
     }
+
     /**
      *
      *

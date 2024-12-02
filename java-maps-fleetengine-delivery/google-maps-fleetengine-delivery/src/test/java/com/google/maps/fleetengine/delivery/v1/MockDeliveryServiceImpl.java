@@ -72,7 +72,8 @@ public class MockDeliveryServiceImpl extends DeliveryServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDeliveryVehicle, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDeliveryVehicle, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeliveryVehicle.class.getName(),
                   Exception.class.getName())));
@@ -114,7 +115,8 @@ public class MockDeliveryServiceImpl extends DeliveryServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDeliveryVehicle, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDeliveryVehicle, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeliveryVehicle.class.getName(),
                   Exception.class.getName())));
@@ -259,7 +261,8 @@ public class MockDeliveryServiceImpl extends DeliveryServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDeliveryVehicles, expected %s or %s",
+                  "Unrecognized response type %s for method ListDeliveryVehicles, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDeliveryVehiclesResponse.class.getName(),
                   Exception.class.getName())));

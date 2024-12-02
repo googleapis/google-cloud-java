@@ -38,6 +38,7 @@ public interface GetResourceAllowanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

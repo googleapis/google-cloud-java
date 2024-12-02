@@ -33,6 +33,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SslConfig)
     SslConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SslConfig.newBuilder() to construct.
   private SslConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SSL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SSL_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVER_ONLY = 1;</code>
      */
     public static final int SERVER_ONLY_VALUE = 1;
+
     /**
      *
      *
@@ -227,6 +230,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -245,6 +249,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -270,6 +275,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientKey_ = "";
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -325,6 +332,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientCertificate_ = "";
+
   /**
    *
    *
@@ -350,6 +358,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +389,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object caCertificate_ = "";
+
   /**
    *
    *
@@ -407,6 +417,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -620,6 +631,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -846,6 +858,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -864,6 +877,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -885,6 +899,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +920,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.clouddms.v1.SslConfig.SslType.forNumber(type_);
       return result == null ? com.google.cloud.clouddms.v1.SslConfig.SslType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -929,6 +945,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +968,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientKey_ = "";
+
     /**
      *
      *
@@ -975,6 +993,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -999,6 +1018,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1042,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1062,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1089,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientCertificate_ = "";
+
     /**
      *
      *
@@ -1091,6 +1114,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1139,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1163,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1183,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1210,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object caCertificate_ = "";
+
     /**
      *
      *
@@ -1209,6 +1237,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1235,6 +1264,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1260,6 +1290,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1312,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

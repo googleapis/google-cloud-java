@@ -37,6 +37,7 @@ public interface ListSubpropertyEventFiltersResponseOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
       getSubpropertyEventFiltersList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListSubpropertyEventFiltersResponseOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilter getSubpropertyEventFilters(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListSubpropertyEventFiltersResponseOrBuilder
    * </code>
    */
   int getSubpropertyEventFiltersCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListSubpropertyEventFiltersResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.SubpropertyEventFilterOrBuilder>
       getSubpropertyEventFiltersOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListSubpropertyEventFiltersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

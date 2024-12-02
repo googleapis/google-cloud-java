@@ -33,6 +33,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.RecognitionOutputConfig)
     RecognitionOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecognitionOutputConfig.newBuilder() to construct.
   private RecognitionOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     private OutputCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
   }
 
   public static final int GCS_OUTPUT_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
   public boolean hasGcsOutputConfig() {
     return outputCase_ == 1;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     }
     return com.google.cloud.speech.v2.GcsOutputConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
   }
 
   public static final int INLINE_RESPONSE_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
   public boolean hasInlineResponseConfig() {
     return outputCase_ == 2;
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     }
     return com.google.cloud.speech.v2.InlineOutputConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
 
   public static final int OUTPUT_FORMAT_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.speech.v2.OutputFormatConfig outputFormatConfig_;
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
   public boolean hasOutputFormatConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
         ? com.google.cloud.speech.v2.OutputFormatConfig.getDefaultInstance()
         : outputFormatConfig_;
   }
+
   /**
    *
    *
@@ -490,6 +501,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -759,6 +771,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
             com.google.cloud.speech.v2.GcsOutputConfig.Builder,
             com.google.cloud.speech.v2.GcsOutputConfigOrBuilder>
         gcsOutputConfigBuilder_;
+
     /**
      *
      *
@@ -775,6 +788,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     public boolean hasGcsOutputConfig() {
       return outputCase_ == 1;
     }
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
         return com.google.cloud.speech.v2.GcsOutputConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -824,6 +839,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       outputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +861,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       outputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +895,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       outputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +936,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     public com.google.cloud.speech.v2.GcsOutputConfig.Builder getGcsOutputConfigBuilder() {
       return getGcsOutputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -938,6 +958,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
         return com.google.cloud.speech.v2.GcsOutputConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
             com.google.cloud.speech.v2.InlineOutputConfig.Builder,
             com.google.cloud.speech.v2.InlineOutputConfigOrBuilder>
         inlineResponseConfigBuilder_;
+
     /**
      *
      *
@@ -996,6 +1018,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     public boolean hasInlineResponseConfig() {
       return outputCase_ == 2;
     }
+
     /**
      *
      *
@@ -1025,6 +1048,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
         return com.google.cloud.speech.v2.InlineOutputConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1075,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       outputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       outputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1137,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       outputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1167,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1184,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     public com.google.cloud.speech.v2.InlineOutputConfig.Builder getInlineResponseConfigBuilder() {
       return getInlineResponseConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1181,6 +1210,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
         return com.google.cloud.speech.v2.InlineOutputConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1254,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
             com.google.cloud.speech.v2.OutputFormatConfig.Builder,
             com.google.cloud.speech.v2.OutputFormatConfigOrBuilder>
         outputFormatConfigBuilder_;
+
     /**
      *
      *
@@ -1241,6 +1272,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     public boolean hasOutputFormatConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1264,6 +1296,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
         return outputFormatConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1289,6 +1322,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1346,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1378,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1401,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1382,6 +1419,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return getOutputFormatConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1403,6 +1441,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
             : outputFormatConfig_;
       }
     }
+
     /**
      *
      *

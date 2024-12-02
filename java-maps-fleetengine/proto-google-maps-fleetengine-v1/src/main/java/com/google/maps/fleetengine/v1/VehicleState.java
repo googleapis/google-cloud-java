@@ -73,6 +73,7 @@ public enum VehicleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_VEHICLE_STATE = 0;</code>
    */
   public static final int UNKNOWN_VEHICLE_STATE_VALUE = 0;
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public enum VehicleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OFFLINE = 1;</code>
    */
   public static final int OFFLINE_VALUE = 1;
+
   /**
    *
    *

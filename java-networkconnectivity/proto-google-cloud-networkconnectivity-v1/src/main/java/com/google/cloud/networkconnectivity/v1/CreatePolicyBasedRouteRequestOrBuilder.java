@@ -38,6 +38,7 @@ public interface CreatePolicyBasedRouteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreatePolicyBasedRouteRequestOrBuilder
    * @return The policyBasedRouteId.
    */
   java.lang.String getPolicyBasedRouteId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreatePolicyBasedRouteRequestOrBuilder
    * @return Whether the policyBasedRoute field is set.
    */
   boolean hasPolicyBasedRoute();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreatePolicyBasedRouteRequestOrBuilder
    * @return The policyBasedRoute.
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute getPolicyBasedRoute();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface CreatePolicyBasedRouteRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

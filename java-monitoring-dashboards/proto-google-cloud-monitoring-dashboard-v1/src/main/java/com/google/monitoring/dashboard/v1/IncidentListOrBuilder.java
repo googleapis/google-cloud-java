@@ -39,6 +39,7 @@ public interface IncidentListOrBuilder
    * </code>
    */
   java.util.List<com.google.api.MonitoredResource> getMonitoredResourcesList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface IncidentListOrBuilder
    * </code>
    */
   com.google.api.MonitoredResource getMonitoredResources(int index);
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface IncidentListOrBuilder
    * </code>
    */
   int getMonitoredResourcesCount();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface IncidentListOrBuilder
    */
   java.util.List<? extends com.google.api.MonitoredResourceOrBuilder>
       getMonitoredResourcesOrBuilderList();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface IncidentListOrBuilder
    * @return A list containing the policyNames.
    */
   java.util.List<java.lang.String> getPolicyNamesList();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface IncidentListOrBuilder
    * @return The count of policyNames.
    */
   int getPolicyNamesCount();
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface IncidentListOrBuilder
    * @return The policyNames at the given index.
    */
   java.lang.String getPolicyNames(int index);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ImageSegmentationAnnotationOrBuilder
    * </code>
    */
   int getAnnotationColorsCount();
+
   /**
    *
    *
@@ -52,10 +53,12 @@ public interface ImageSegmentationAnnotationOrBuilder
    * </code>
    */
   boolean containsAnnotationColors(java.lang.String key);
+
   /** Use {@link #getAnnotationColorsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
       getAnnotationColors();
+
   /**
    *
    *
@@ -71,6 +74,7 @@ public interface ImageSegmentationAnnotationOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
       getAnnotationColorsMap();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ImageSegmentationAnnotationOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue);
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ImageSegmentationAnnotationOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

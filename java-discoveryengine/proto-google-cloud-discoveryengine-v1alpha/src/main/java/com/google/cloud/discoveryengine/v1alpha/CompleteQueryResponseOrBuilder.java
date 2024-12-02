@@ -38,6 +38,7 @@ public interface CompleteQueryResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.CompleteQueryResponse.QuerySuggestion>
       getQuerySuggestionsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CompleteQueryResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.CompleteQueryResponse.QuerySuggestion
       getQuerySuggestions(int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface CompleteQueryResponseOrBuilder
    * </code>
    */
   int getQuerySuggestionsCount();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface CompleteQueryResponseOrBuilder
               com.google.cloud.discoveryengine.v1alpha.CompleteQueryResponse
                   .QuerySuggestionOrBuilder>
       getQuerySuggestionsOrBuilderList();
+
   /**
    *
    *

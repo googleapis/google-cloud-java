@@ -36,6 +36,7 @@ public interface RequestMirrorPolicyOrBuilder
    * @return Whether the backendService field is set.
    */
   boolean hasBackendService();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RequestMirrorPolicyOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
+
   /**
    *
    *

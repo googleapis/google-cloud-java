@@ -36,6 +36,7 @@ public interface CsvOrBuilder
    * @return A list containing the headers.
    */
   java.util.List<java.lang.String> getHeadersList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CsvOrBuilder
    * @return The count of headers.
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface CsvOrBuilder
    * @return The headers at the given index.
    */
   java.lang.String getHeaders(int index);
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface CsvOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Csv.CsvRow data_rows = 2;</code>
    */
   java.util.List<com.google.cloud.advisorynotifications.v1.Csv.CsvRow> getDataRowsList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface CsvOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Csv.CsvRow data_rows = 2;</code>
    */
   com.google.cloud.advisorynotifications.v1.Csv.CsvRow getDataRows(int index);
+
   /**
    *
    *
@@ -108,6 +113,7 @@ public interface CsvOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Csv.CsvRow data_rows = 2;</code>
    */
   int getDataRowsCount();
+
   /**
    *
    *
@@ -120,6 +126,7 @@ public interface CsvOrBuilder
    */
   java.util.List<? extends com.google.cloud.advisorynotifications.v1.Csv.CsvRowOrBuilder>
       getDataRowsOrBuilderList();
+
   /**
    *
    *

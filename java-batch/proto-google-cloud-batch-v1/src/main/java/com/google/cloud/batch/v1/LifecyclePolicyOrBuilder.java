@@ -40,6 +40,7 @@ public interface LifecyclePolicyOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface LifecyclePolicyOrBuilder
    * @return Whether the actionCondition field is set.
    */
   boolean hasActionCondition();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface LifecyclePolicyOrBuilder
    * @return The actionCondition.
    */
   com.google.cloud.batch.v1.LifecyclePolicy.ActionCondition getActionCondition();
+
   /**
    *
    *

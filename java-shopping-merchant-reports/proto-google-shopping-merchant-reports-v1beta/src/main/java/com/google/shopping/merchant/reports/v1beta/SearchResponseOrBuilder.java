@@ -34,6 +34,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.shopping.merchant.reports.v1beta.ReportRow results = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.reports.v1beta.ReportRow> getResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.shopping.merchant.reports.v1beta.ReportRow results = 1;</code>
    */
   com.google.shopping.merchant.reports.v1beta.ReportRow getResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.shopping.merchant.reports.v1beta.ReportRow results = 1;</code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.reports.v1beta.ReportRowOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface SearchResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

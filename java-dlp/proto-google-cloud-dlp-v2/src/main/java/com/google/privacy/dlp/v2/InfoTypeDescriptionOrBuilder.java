@@ -36,6 +36,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return A list containing the supportedBy.
    */
   java.util.List<com.google.privacy.dlp.v2.InfoTypeSupportedBy> getSupportedByList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return The count of supportedBy.
    */
   int getSupportedByCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return The supportedBy at the given index.
    */
   com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index);
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return A list containing the enum numeric values on the wire for supportedBy.
    */
   java.util.List<java.lang.Integer> getSupportedByValueList();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface InfoTypeDescriptionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.VersionDescription versions = 9;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.VersionDescription> getVersionsList();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface InfoTypeDescriptionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.VersionDescription versions = 9;</code>
    */
   com.google.privacy.dlp.v2.VersionDescription getVersions(int index);
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public interface InfoTypeDescriptionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.VersionDescription versions = 9;</code>
    */
   int getVersionsCount();
+
   /**
    *
    *
@@ -205,6 +215,7 @@ public interface InfoTypeDescriptionOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.VersionDescriptionOrBuilder>
       getVersionsOrBuilderList();
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface InfoTypeDescriptionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> getCategoriesList();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface InfoTypeDescriptionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
    */
   com.google.privacy.dlp.v2.InfoTypeCategory getCategories(int index);
+
   /**
    *
    *
@@ -246,6 +259,7 @@ public interface InfoTypeDescriptionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
    */
   int getCategoriesCount();
+
   /**
    *
    *
@@ -257,6 +271,7 @@ public interface InfoTypeDescriptionOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>
       getCategoriesOrBuilderList();
+
   /**
    *
    *
@@ -280,6 +295,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return Whether the sensitivityScore field is set.
    */
   boolean hasSensitivityScore();
+
   /**
    *
    *
@@ -292,6 +308,7 @@ public interface InfoTypeDescriptionOrBuilder
    * @return The sensitivityScore.
    */
   com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+
   /**
    *
    *

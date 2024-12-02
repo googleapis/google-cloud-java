@@ -40,6 +40,7 @@ public interface GetPersistentResourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

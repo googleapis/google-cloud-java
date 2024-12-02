@@ -42,6 +42,7 @@ public interface GetDnsForwardingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

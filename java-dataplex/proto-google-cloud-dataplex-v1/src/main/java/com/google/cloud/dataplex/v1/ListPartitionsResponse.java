@@ -33,6 +33,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ListPartitionsResponse)
     ListPartitionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPartitionsResponse.newBuilder() to construct.
   private ListPartitionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.Partition> partitions_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.dataplex.v1.Partition> getPartitionsList() {
     return partitions_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       getPartitionsOrBuilderList() {
     return partitions_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
   public int getPartitionsCount() {
     return partitions_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.dataplex.v1.Partition getPartitions(int index) {
     return partitions_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +643,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
         return partitionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
         return partitionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
         return partitionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +829,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.dataplex.v1.Partition.Builder getPartitionsBuilder(int index) {
       return getPartitionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -877,6 +899,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
         return partitionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -894,6 +917,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(partitions_);
       }
     }
+
     /**
      *
      *
@@ -907,6 +931,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       return getPartitionsFieldBuilder()
           .addBuilder(com.google.cloud.dataplex.v1.Partition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -920,6 +945,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       return getPartitionsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataplex.v1.Partition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -952,6 +978,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -975,6 +1002,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1026,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1049,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1068,7 @@ public final class ListPartitionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

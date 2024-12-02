@@ -38,6 +38,7 @@ public interface UpdateAnswerRecordRequestOrBuilder
    * @return Whether the answerRecord field is set.
    */
   boolean hasAnswerRecord();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateAnswerRecordRequestOrBuilder
    * @return The answerRecord.
    */
   com.google.cloud.dialogflow.v2beta1.AnswerRecord getAnswerRecord();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateAnswerRecordRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateAnswerRecordRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

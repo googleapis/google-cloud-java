@@ -35,6 +35,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.MachinePreferences)
     MachinePreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MachinePreferences.newBuilder() to construct.
   private MachinePreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.MachineSeries> allowedMachineSeries_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       getAllowedMachineSeriesList() {
     return allowedMachineSeries_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       getAllowedMachineSeriesOrBuilderList() {
     return allowedMachineSeries_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
   public int getAllowedMachineSeriesCount() {
     return allowedMachineSeries_.size();
   }
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.migrationcenter.v1.MachineSeries getAllowedMachineSeries(int index) {
     return allowedMachineSeries_.get(index);
   }
+
   /**
    *
    *
@@ -311,6 +317,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +587,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
         return allowedMachineSeriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
         return allowedMachineSeriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
         return allowedMachineSeriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +726,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +855,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
         int index) {
       return getAllowedMachineSeriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
         return allowedMachineSeriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(allowedMachineSeries_);
       }
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
       return getAllowedMachineSeriesFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.MachineSeries.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -907,6 +930,7 @@ public final class MachinePreferences extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.migrationcenter.v1.MachineSeries.getDefaultInstance());
     }
+
     /**
      *
      *

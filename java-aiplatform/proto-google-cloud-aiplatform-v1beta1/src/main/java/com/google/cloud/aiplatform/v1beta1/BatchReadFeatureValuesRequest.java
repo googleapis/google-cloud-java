@@ -34,6 +34,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest)
     BatchReadFeatureValuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchReadFeatureValuesRequest.newBuilder() to construct.
   private BatchReadFeatureValuesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * @return The fieldName.
      */
     java.lang.String getFieldName();
+
     /**
      *
      *
@@ -100,6 +102,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      */
     com.google.protobuf.ByteString getFieldNameBytes();
   }
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)
       PassThroughFieldOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PassThroughField.newBuilder() to construct.
     private PassThroughField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -151,6 +155,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fieldName_ = "";
+
     /**
      *
      *
@@ -176,6 +181,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return s;
       }
     }
+
     /**
      *
      *
@@ -372,6 +378,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -579,6 +586,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       private int bitField0_;
 
       private java.lang.Object fieldName_ = "";
+
       /**
        *
        *
@@ -603,6 +611,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -627,6 +636,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -650,6 +660,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -669,6 +680,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -783,6 +795,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * @return The entityTypeId.
      */
     java.lang.String getEntityTypeId();
+
     /**
      *
      *
@@ -814,6 +827,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * @return Whether the featureSelector field is set.
      */
     boolean hasFeatureSelector();
+
     /**
      *
      *
@@ -829,6 +843,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * @return The featureSelector.
      */
     com.google.cloud.aiplatform.v1beta1.FeatureSelector getFeatureSelector();
+
     /**
      *
      *
@@ -854,6 +869,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * </code>
      */
     java.util.List<com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting> getSettingsList();
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting getSettings(int index);
+
     /**
      *
      *
@@ -876,6 +893,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * </code>
      */
     int getSettingsCount();
+
     /**
      *
      *
@@ -888,6 +906,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1beta1.DestinationFeatureSettingOrBuilder>
         getSettingsOrBuilderList();
+
     /**
      *
      *
@@ -901,6 +920,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     com.google.cloud.aiplatform.v1beta1.DestinationFeatureSettingOrBuilder getSettingsOrBuilder(
         int index);
   }
+
   /**
    *
    *
@@ -917,6 +937,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec)
       EntityTypeSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EntityTypeSpec.newBuilder() to construct.
     private EntityTypeSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -955,6 +976,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entityTypeId_ = "";
+
     /**
      *
      *
@@ -981,6 +1003,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return s;
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1033,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
     public static final int FEATURE_SELECTOR_FIELD_NUMBER = 2;
     private com.google.cloud.aiplatform.v1beta1.FeatureSelector featureSelector_;
+
     /**
      *
      *
@@ -1028,6 +1052,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public boolean hasFeatureSelector() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1048,6 +1073,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           ? com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()
           : featureSelector_;
     }
+
     /**
      *
      *
@@ -1072,6 +1098,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting> settings_;
+
     /**
      *
      *
@@ -1087,6 +1114,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         getSettingsList() {
       return settings_;
     }
+
     /**
      *
      *
@@ -1103,6 +1131,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         getSettingsOrBuilderList() {
       return settings_;
     }
+
     /**
      *
      *
@@ -1117,6 +1146,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public int getSettingsCount() {
       return settings_.size();
     }
+
     /**
      *
      *
@@ -1131,6 +1161,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting getSettings(int index) {
       return settings_.get(index);
     }
+
     /**
      *
      *
@@ -1342,6 +1373,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1641,6 +1673,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       private int bitField0_;
 
       private java.lang.Object entityTypeId_ = "";
+
       /**
        *
        *
@@ -1666,6 +1699,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1691,6 +1725,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1715,6 +1750,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1735,6 +1771,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1767,6 +1804,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder,
               com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder>
           featureSelectorBuilder_;
+
       /**
        *
        *
@@ -1784,6 +1822,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       public boolean hasFeatureSelector() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1807,6 +1846,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return featureSelectorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1832,6 +1872,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1855,6 +1896,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1887,6 +1929,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -1909,6 +1952,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1927,6 +1971,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         onChanged();
         return getFeatureSelectorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1949,6 +1994,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
               : featureSelector_;
         }
       }
+
       /**
        *
        *
@@ -2014,6 +2060,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return settingsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2031,6 +2078,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return settingsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2048,6 +2096,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return settingsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2072,6 +2121,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2094,6 +2144,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2118,6 +2169,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2142,6 +2194,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2163,6 +2216,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2185,6 +2239,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2208,6 +2263,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2228,6 +2284,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2248,6 +2305,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2262,6 +2320,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           getSettingsBuilder(int index) {
         return getSettingsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2280,6 +2339,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return settingsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2299,6 +2359,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           return java.util.Collections.unmodifiableList(settings_);
         }
       }
+
       /**
        *
        *
@@ -2315,6 +2376,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
             .addBuilder(
                 com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2332,6 +2394,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
                 index,
                 com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2451,6 +2514,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     private ReadOptionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2484,6 +2548,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   }
 
   public static final int CSV_READ_INSTANCES_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -2522,6 +2587,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   public boolean hasCsvReadInstances() {
     return readOptionCase_ == 3;
   }
+
   /**
    *
    *
@@ -2563,6 +2629,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     }
     return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2604,6 +2671,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   }
 
   public static final int BIGQUERY_READ_INSTANCES_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -2619,6 +2687,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   public boolean hasBigqueryReadInstances() {
     return readOptionCase_ == 5;
   }
+
   /**
    *
    *
@@ -2637,6 +2706,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     }
     return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2659,6 +2729,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featurestore_ = "";
+
   /**
    *
    *
@@ -2686,6 +2757,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -2716,6 +2788,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
   public static final int DESTINATION_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.FeatureValueDestination destination_;
+
   /**
    *
    *
@@ -2733,6 +2806,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   public boolean hasDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2752,6 +2826,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         ? com.google.cloud.aiplatform.v1beta1.FeatureValueDestination.getDefaultInstance()
         : destination_;
   }
+
   /**
    *
    *
@@ -2777,6 +2852,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   private java.util.List<
           com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField>
       passThroughFields_;
+
   /**
    *
    *
@@ -2800,6 +2876,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       getPassThroughFieldsList() {
     return passThroughFields_;
   }
+
   /**
    *
    *
@@ -2825,6 +2902,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       getPassThroughFieldsOrBuilderList() {
     return passThroughFields_;
   }
+
   /**
    *
    *
@@ -2846,6 +2924,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   public int getPassThroughFieldsCount() {
     return passThroughFields_.size();
   }
+
   /**
    *
    *
@@ -2868,6 +2947,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       getPassThroughFields(int index) {
     return passThroughFields_.get(index);
   }
+
   /**
    *
    *
@@ -2897,6 +2977,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   private java.util.List<
           com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec>
       entityTypeSpecs_;
+
   /**
    *
    *
@@ -2915,6 +2996,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       getEntityTypeSpecsList() {
     return entityTypeSpecs_;
   }
+
   /**
    *
    *
@@ -2935,6 +3017,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       getEntityTypeSpecsOrBuilderList() {
     return entityTypeSpecs_;
   }
+
   /**
    *
    *
@@ -2951,6 +3034,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   public int getEntityTypeSpecsCount() {
     return entityTypeSpecs_.size();
   }
+
   /**
    *
    *
@@ -2968,6 +3052,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       getEntityTypeSpecs(int index) {
     return entityTypeSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -2988,6 +3073,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
   public static final int START_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -3006,6 +3092,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3024,6 +3111,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -3292,6 +3380,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3724,6 +3813,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1beta1.CsvSource.Builder,
             com.google.cloud.aiplatform.v1beta1.CsvSourceOrBuilder>
         csvReadInstancesBuilder_;
+
     /**
      *
      *
@@ -3762,6 +3852,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public boolean hasCsvReadInstances() {
       return readOptionCase_ == 3;
     }
+
     /**
      *
      *
@@ -3810,6 +3901,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3855,6 +3947,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       readOptionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3898,6 +3991,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       readOptionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3953,6 +4047,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       readOptionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4001,6 +4096,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4036,6 +4132,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public com.google.cloud.aiplatform.v1beta1.CsvSource.Builder getCsvReadInstancesBuilder() {
       return getCsvReadInstancesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4079,6 +4176,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4140,6 +4238,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder,
             com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder>
         bigqueryReadInstancesBuilder_;
+
     /**
      *
      *
@@ -4155,6 +4254,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public boolean hasBigqueryReadInstances() {
       return readOptionCase_ == 5;
     }
+
     /**
      *
      *
@@ -4180,6 +4280,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4203,6 +4304,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       readOptionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4223,6 +4325,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       readOptionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4257,6 +4360,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       readOptionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4282,6 +4386,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4295,6 +4400,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         getBigqueryReadInstancesBuilder() {
       return getBigqueryReadInstancesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4316,6 +4422,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4350,6 +4457,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object featurestore_ = "";
+
     /**
      *
      *
@@ -4376,6 +4484,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4402,6 +4511,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4427,6 +4537,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4448,6 +4559,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4481,6 +4593,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1beta1.FeatureValueDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureValueDestinationOrBuilder>
         destinationBuilder_;
+
     /**
      *
      *
@@ -4497,6 +4610,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public boolean hasDestination() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4519,6 +4633,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return destinationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4544,6 +4659,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4566,6 +4682,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4598,6 +4715,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4619,6 +4737,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4636,6 +4755,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return getDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4657,6 +4777,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
             : destination_;
       }
     }
+
     /**
      *
      *
@@ -4733,6 +4854,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return passThroughFieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4757,6 +4879,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return passThroughFieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4782,6 +4905,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return passThroughFieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4814,6 +4938,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4844,6 +4969,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4875,6 +5001,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4907,6 +5034,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4936,6 +5064,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4966,6 +5095,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -4998,6 +5128,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5025,6 +5156,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5052,6 +5184,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5074,6 +5207,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         getPassThroughFieldsBuilder(int index) {
       return getPassThroughFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5100,6 +5234,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return passThroughFieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5128,6 +5263,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(passThroughFields_);
       }
     }
+
     /**
      *
      *
@@ -5153,6 +5289,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5179,6 +5316,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5270,6 +5408,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return entityTypeSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5289,6 +5428,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return entityTypeSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5309,6 +5449,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return entityTypeSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5336,6 +5477,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5361,6 +5503,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5387,6 +5530,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5414,6 +5558,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5438,6 +5583,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5463,6 +5609,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5490,6 +5637,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5512,6 +5660,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5534,6 +5683,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5550,6 +5700,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         getEntityTypeSpecsBuilder(int index) {
       return getEntityTypeSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5570,6 +5721,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return entityTypeSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5593,6 +5745,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(entityTypeSpecs_);
       }
     }
+
     /**
      *
      *
@@ -5612,6 +5765,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5632,6 +5786,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5681,6 +5836,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -5698,6 +5854,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -5719,6 +5876,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5744,6 +5902,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5766,6 +5925,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5796,6 +5956,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5818,6 +5979,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5835,6 +5997,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5854,6 +6017,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *

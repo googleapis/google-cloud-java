@@ -32,6 +32,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ExchangedPeeringRoute)
     ExchangedPeeringRouteOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExchangedPeeringRoute.newBuilder() to construct.
   private ExchangedPeeringRoute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * <code>DYNAMIC_PEERING_ROUTE = 469794858;</code>
      */
     public static final int DYNAMIC_PEERING_ROUTE_VALUE = 469794858;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * <code>STATIC_PEERING_ROUTE = 473407545;</code>
      */
     public static final int STATIC_PEERING_ROUTE_VALUE = 473407545;
+
     /**
      *
      *
@@ -250,6 +254,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destRange_ = "";
+
   /**
    *
    *
@@ -265,6 +270,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   public boolean hasDestRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -288,6 +294,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -314,6 +321,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
 
   public static final int IMPORTED_FIELD_NUMBER = 114502404;
   private boolean imported_ = false;
+
   /**
    *
    *
@@ -329,6 +337,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   public boolean hasImported() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -349,6 +358,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextHopRegion_ = "";
+
   /**
    *
    *
@@ -364,6 +374,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   public boolean hasNextHopRegion() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -387,6 +398,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -413,6 +425,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
+
   /**
    *
    *
@@ -428,6 +441,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -448,6 +462,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -464,6 +479,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
   public boolean hasType() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -488,6 +504,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -733,6 +750,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -979,6 +997,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object destRange_ = "";
+
     /**
      *
      *
@@ -993,6 +1012,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     public boolean hasDestRange() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1015,6 +1035,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1058,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1098,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1123,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     }
 
     private boolean imported_;
+
     /**
      *
      *
@@ -1114,6 +1139,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     public boolean hasImported() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1129,6 +1155,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     public boolean getImported() {
       return imported_;
     }
+
     /**
      *
      *
@@ -1148,6 +1175,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1195,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextHopRegion_ = "";
+
     /**
      *
      *
@@ -1181,6 +1210,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     public boolean hasNextHopRegion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1203,6 +1233,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1256,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1278,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1296,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1321,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     }
 
     private int priority_;
+
     /**
      *
      *
@@ -1302,6 +1337,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1317,6 +1353,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     public int getPriority() {
       return priority_;
     }
+
     /**
      *
      *
@@ -1336,6 +1373,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1393,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -1370,6 +1409,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     public boolean hasType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1393,6 +1433,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1416,6 +1457,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1480,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1499,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

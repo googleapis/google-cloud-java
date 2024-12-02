@@ -33,6 +33,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpointGroupCloudFunction)
     NetworkEndpointGroupCloudFunctionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkEndpointGroupCloudFunction.newBuilder() to construct.
   private NetworkEndpointGroupCloudFunction(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object function_ = "";
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
   public boolean hasFunction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object urlMask_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
   public boolean hasUrlMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -377,6 +384,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -583,6 +591,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object function_ = "";
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     public boolean hasFunction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +692,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +717,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     }
 
     private java.lang.Object urlMask_ = "";
+
     /**
      *
      *
@@ -717,6 +732,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     public boolean hasUrlMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -739,6 +755,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +800,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +818,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

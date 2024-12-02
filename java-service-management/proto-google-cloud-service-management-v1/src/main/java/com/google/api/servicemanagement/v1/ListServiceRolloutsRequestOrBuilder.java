@@ -38,6 +38,7 @@ public interface ListServiceRolloutsRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ListServiceRolloutsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface ListServiceRolloutsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

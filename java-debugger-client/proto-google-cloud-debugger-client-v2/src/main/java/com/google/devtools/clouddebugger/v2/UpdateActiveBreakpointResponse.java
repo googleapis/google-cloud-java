@@ -34,6 +34,7 @@ public final class UpdateActiveBreakpointResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse)
     UpdateActiveBreakpointResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateActiveBreakpointResponse.newBuilder() to construct.
   private UpdateActiveBreakpointResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class UpdateActiveBreakpointResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

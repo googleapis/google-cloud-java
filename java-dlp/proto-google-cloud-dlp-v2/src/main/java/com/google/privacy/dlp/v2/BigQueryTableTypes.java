@@ -33,6 +33,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BigQueryTableTypes)
     BigQueryTableTypesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryTableTypes.newBuilder() to construct.
   private BigQueryTableTypes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.privacy.dlp.v2.BigQueryTableType>(types_, types_converter_);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
   public int getTypesCount() {
     return types_.size();
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
   public com.google.privacy.dlp.v2.BigQueryTableType getTypes(int index) {
     return types_converter_.convert(types_.get(index));
   }
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getTypesValueList() {
     return types_;
   }
+
   /**
    *
    *
@@ -337,6 +343,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -552,6 +559,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -567,6 +575,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.privacy.dlp.v2.BigQueryTableType>(types_, types_converter_);
     }
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
     public int getTypesCount() {
       return types_.size();
     }
+
     /**
      *
      *
@@ -596,6 +606,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
     public com.google.privacy.dlp.v2.BigQueryTableType getTypes(int index) {
       return types_converter_.convert(types_.get(index));
     }
+
     /**
      *
      *
@@ -618,6 +629,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +673,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +691,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +706,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getTypesValueList() {
       return java.util.Collections.unmodifiableList(types_);
     }
+
     /**
      *
      *
@@ -706,6 +722,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
     public int getTypesValue(int index) {
       return types_.get(index);
     }
+
     /**
      *
      *
@@ -725,6 +742,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +761,7 @@ public final class BigQueryTableTypes extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

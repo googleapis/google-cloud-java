@@ -33,6 +33,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.memcache.v1.WeeklyMaintenanceWindow)
     WeeklyMaintenanceWindowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WeeklyMaintenanceWindow.newBuilder() to construct.
   private WeeklyMaintenanceWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int DAY_FIELD_NUMBER = 1;
   private int day_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
   public int getDayValue() {
     return day_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.type.TimeOfDay startTime_;
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
   public com.google.type.TimeOfDay getStartTime() {
     return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
 
   public static final int DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration duration_;
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
+
   /**
    *
    *
@@ -377,6 +386,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -607,6 +617,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int day_ = 0;
+
     /**
      *
      *
@@ -622,6 +633,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
     public int getDayValue() {
       return day_;
     }
+
     /**
      *
      *
@@ -640,6 +652,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(day_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -677,6 +691,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +716,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -715,6 +731,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -733,6 +750,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -755,6 +773,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +793,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +821,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +841,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +856,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -850,6 +873,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
         return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -882,6 +906,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         durationBuilder_;
+
     /**
      *
      *
@@ -897,6 +922,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -916,6 +942,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
         return durationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -939,6 +966,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +987,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1016,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1037,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1053,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1039,6 +1071,7 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
       }
     }
+
     /**
      *
      *

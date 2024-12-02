@@ -39,6 +39,7 @@ public interface CharacterMaskConfigOrBuilder
    * @return The maskingCharacter.
    */
   java.lang.String getMaskingCharacter();
+
   /**
    *
    *
@@ -114,6 +115,7 @@ public interface CharacterMaskConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.CharsToIgnore> getCharactersToIgnoreList();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface CharacterMaskConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
   com.google.privacy.dlp.v2.CharsToIgnore getCharactersToIgnore(int index);
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public interface CharacterMaskConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
   int getCharactersToIgnoreCount();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface CharacterMaskConfigOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.CharsToIgnoreOrBuilder>
       getCharactersToIgnoreOrBuilderList();
+
   /**
    *
    *

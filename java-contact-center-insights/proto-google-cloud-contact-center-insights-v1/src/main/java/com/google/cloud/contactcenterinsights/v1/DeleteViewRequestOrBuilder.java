@@ -38,6 +38,7 @@ public interface DeleteViewRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

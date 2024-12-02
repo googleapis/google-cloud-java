@@ -33,6 +33,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.UpdateJobRequest)
     UpdateJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateJobRequest.newBuilder() to construct.
   private UpdateJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int JOB_FIELD_NUMBER = 3;
   private com.google.dataflow.v1beta3.Job job_;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
   public com.google.dataflow.v1beta3.Job getJob() {
     return job_ == null ? com.google.dataflow.v1beta3.Job.getDefaultInstance() : job_;
   }
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -463,6 +473,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -705,6 +716,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -727,6 +739,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object jobId_ = "";
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -876,6 +895,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +913,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
             com.google.dataflow.v1beta3.Job.Builder,
             com.google.dataflow.v1beta3.JobOrBuilder>
         jobBuilder_;
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasJob() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -956,6 +979,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return jobBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -979,6 +1003,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1024,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1074,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1090,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1079,6 +1108,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return job_ == null ? com.google.dataflow.v1beta3.Job.getDefaultInstance() : job_;
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1137,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -1131,6 +1162,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1155,6 +1187,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1178,6 +1211,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1231,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

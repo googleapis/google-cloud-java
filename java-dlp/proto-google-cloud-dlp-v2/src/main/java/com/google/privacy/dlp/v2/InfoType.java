@@ -33,6 +33,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoType)
     InfoTypeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InfoType.newBuilder() to construct.
   private InfoType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SENSITIVITY_SCORE_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.SensitivityScore sensitivityScore_;
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSensitivityScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
         ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
         : sensitivityScore_;
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +649,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -668,6 +678,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +790,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -798,6 +813,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +836,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.SensitivityScore.Builder,
             com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
         sensitivityScoreBuilder_;
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSensitivityScore() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
         return sensitivityScoreBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -946,6 +968,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1041,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1057,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSensitivityScoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1050,6 +1077,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
             : sensitivityScore_;
       }
     }
+
     /**
      *
      *

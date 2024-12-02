@@ -33,6 +33,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TokensInfo)
     TokensInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TokensInfo.newBuilder() to construct.
   private TokensInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString> tokens_ =
       emptyList(com.google.protobuf.ByteString.class);
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.ByteString> getTokensList() {
     return tokens_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
   public int getTokensCount() {
     return tokens_.size();
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList tokenIds_ = emptyLongList();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Long> getTokenIdsList() {
     return tokenIds_;
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
   public int getTokenIdsCount() {
     return tokenIds_.size();
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object role_ = "";
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -418,6 +427,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +676,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       tokens_.makeImmutable();
       return tokens_;
     }
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     public int getTokensCount() {
       return tokens_.size();
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTokens(int index) {
       return tokens_.get(index);
     }
+
     /**
      *
      *
@@ -733,6 +747,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       tokenIds_.makeImmutable();
       return tokenIds_;
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     public int getTokenIdsCount() {
       return tokenIds_.size();
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     public long getTokenIds(int index) {
       return tokenIds_.getLong(index);
     }
+
     /**
      *
      *
@@ -866,6 +887,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +908,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +948,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object role_ = "";
+
     /**
      *
      *
@@ -946,6 +971,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +994,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1016,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1034,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

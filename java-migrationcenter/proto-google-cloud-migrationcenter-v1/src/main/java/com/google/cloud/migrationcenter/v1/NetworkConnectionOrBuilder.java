@@ -36,6 +36,7 @@ public interface NetworkConnectionOrBuilder
    * @return The protocol.
    */
   java.lang.String getProtocol();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NetworkConnectionOrBuilder
    * @return The localIpAddress.
    */
   java.lang.String getLocalIpAddress();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface NetworkConnectionOrBuilder
    * @return The remoteIpAddress.
    */
   java.lang.String getRemoteIpAddress();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface NetworkConnectionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public interface NetworkConnectionOrBuilder
    * @return The processName.
    */
   java.lang.String getProcessName();
+
   /**
    *
    *

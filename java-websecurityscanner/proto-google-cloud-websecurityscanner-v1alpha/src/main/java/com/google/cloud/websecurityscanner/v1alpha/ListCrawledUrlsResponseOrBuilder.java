@@ -34,6 +34,7 @@ public interface ListCrawledUrlsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.CrawledUrl crawled_urls = 1;</code>
    */
   java.util.List<com.google.cloud.websecurityscanner.v1alpha.CrawledUrl> getCrawledUrlsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCrawledUrlsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.CrawledUrl crawled_urls = 1;</code>
    */
   com.google.cloud.websecurityscanner.v1alpha.CrawledUrl getCrawledUrls(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCrawledUrlsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.CrawledUrl crawled_urls = 1;</code>
    */
   int getCrawledUrlsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCrawledUrlsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.CrawledUrlOrBuilder>
       getCrawledUrlsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListCrawledUrlsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

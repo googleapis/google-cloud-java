@@ -39,6 +39,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.MultiEntityRename)
     MultiEntityRenameOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MultiEntityRename.newBuilder() to construct.
   private MultiEntityRename(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object newNamePattern_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
 
   public static final int SOURCE_NAME_TRANSFORMATION_FIELD_NUMBER = 2;
   private int sourceNameTransformation_ = 0;
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
   public int getSourceNameTransformationValue() {
     return sourceNameTransformation_;
   }
+
   /**
    *
    *
@@ -350,6 +355,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -552,6 +558,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object newNamePattern_ = "";
+
     /**
      *
      *
@@ -579,6 +586,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -606,6 +614,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -632,6 +641,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
     }
 
     private int sourceNameTransformation_ = 0;
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
     public int getSourceNameTransformationValue() {
       return sourceNameTransformation_;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.clouddms.v1.EntityNameTransformation.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class MultiEntityRename extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

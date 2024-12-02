@@ -40,6 +40,7 @@ public interface SubnetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SubnetOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface SubnetOrBuilder
    * @return The gatewayIp.
    */
   java.lang.String getGatewayIp();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface SubnetOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface SubnetOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

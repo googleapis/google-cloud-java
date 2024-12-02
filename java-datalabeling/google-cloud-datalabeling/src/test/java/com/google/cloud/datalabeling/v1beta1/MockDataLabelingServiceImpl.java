@@ -259,7 +259,8 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAnnotatedDatasets, expected %s or %s",
+                  "Unrecognized response type %s for method ListAnnotatedDatasets, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAnnotatedDatasetsResponse.class.getName(),
                   Exception.class.getName())));
@@ -280,7 +281,8 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAnnotatedDataset, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteAnnotatedDataset, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -402,7 +404,8 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAnnotationSpecSet, expected %s or %s",
+                  "Unrecognized response type %s for method CreateAnnotationSpecSet, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AnnotationSpecSet.class.getName(),
                   Exception.class.getName())));
@@ -423,7 +426,8 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAnnotationSpecSet, expected %s or %s",
+                  "Unrecognized response type %s for method GetAnnotationSpecSet, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AnnotationSpecSet.class.getName(),
                   Exception.class.getName())));
@@ -445,7 +449,8 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAnnotationSpecSets, expected %s or %s",
+                  "Unrecognized response type %s for method ListAnnotationSpecSets, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAnnotationSpecSetsResponse.class.getName(),
                   Exception.class.getName())));
@@ -466,7 +471,8 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAnnotationSpecSet, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteAnnotationSpecSet, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -615,7 +621,8 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchExampleComparisons, expected %s or %s",
+                  "Unrecognized response type %s for method SearchExampleComparisons, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchExampleComparisonsResponse.class.getName(),
                   Exception.class.getName())));

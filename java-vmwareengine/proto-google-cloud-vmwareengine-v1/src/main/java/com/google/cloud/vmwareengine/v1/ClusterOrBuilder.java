@@ -40,6 +40,7 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface ClusterOrBuilder
    * @return Whether the autoscalingSettings field is set.
    */
   boolean hasAutoscalingSettings();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface ClusterOrBuilder
    * @return The autoscalingSettings.
    */
   com.google.cloud.vmwareengine.v1.AutoscalingSettings getAutoscalingSettings();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface ClusterOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getNodeTypeConfigsCount();
+
   /**
    *
    *
@@ -269,10 +279,12 @@ public interface ClusterOrBuilder
    * </code>
    */
   boolean containsNodeTypeConfigs(java.lang.String key);
+
   /** Use {@link #getNodeTypeConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
       getNodeTypeConfigs();
+
   /**
    *
    *
@@ -287,6 +299,7 @@ public interface ClusterOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
       getNodeTypeConfigsMap();
+
   /**
    *
    *
@@ -304,6 +317,7 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.vmwareengine.v1.NodeTypeConfig defaultValue);
+
   /**
    *
    *
@@ -333,6 +347,7 @@ public interface ClusterOrBuilder
    * @return Whether the stretchedClusterConfig field is set.
    */
   boolean hasStretchedClusterConfig();
+
   /**
    *
    *
@@ -348,6 +363,7 @@ public interface ClusterOrBuilder
    * @return The stretchedClusterConfig.
    */
   com.google.cloud.vmwareengine.v1.StretchedClusterConfig getStretchedClusterConfig();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.RatingFilter)
     RatingFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RatingFilter.newBuilder() to construct.
   private RatingFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MIN_RATING_FIELD_NUMBER = 5;
   private float minRating_ = 0F;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinRating() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_RATING_FIELD_NUMBER = 6;
   private float maxRating_ = 0F;
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxRating() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -312,6 +317,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -510,6 +516,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float minRating_;
+
     /**
      *
      *
@@ -526,6 +533,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinRating() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -542,6 +550,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
     public float getMinRating() {
       return minRating_;
     }
+
     /**
      *
      *
@@ -562,6 +571,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +592,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float maxRating_;
+
     /**
      *
      *
@@ -598,6 +609,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxRating() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -614,6 +626,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
     public float getMaxRating() {
       return maxRating_;
     }
+
     /**
      *
      *
@@ -634,6 +647,7 @@ public final class RatingFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

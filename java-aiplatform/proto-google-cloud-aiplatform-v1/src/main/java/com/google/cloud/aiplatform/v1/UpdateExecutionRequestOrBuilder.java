@@ -41,6 +41,7 @@ public interface UpdateExecutionRequestOrBuilder
    * @return Whether the execution field is set.
    */
   boolean hasExecution();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateExecutionRequestOrBuilder
    * @return The execution.
    */
   com.google.cloud.aiplatform.v1.Execution getExecution();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateExecutionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateExecutionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

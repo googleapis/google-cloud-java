@@ -75,7 +75,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListOrchestrationClusters, expected %s or %s",
+                  "Unrecognized response type %s for method ListOrchestrationClusters, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListOrchestrationClustersResponse.class.getName(),
                   Exception.class.getName())));
@@ -97,7 +98,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOrchestrationCluster, expected %s or %s",
+                  "Unrecognized response type %s for method GetOrchestrationCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrchestrationCluster.class.getName(),
                   Exception.class.getName())));
@@ -118,7 +120,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateOrchestrationCluster, expected %s or %s",
+                  "Unrecognized response type %s for method CreateOrchestrationCluster, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -139,7 +142,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteOrchestrationCluster, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteOrchestrationCluster, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -412,7 +416,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListBlueprintRevisions, expected %s or %s",
+                  "Unrecognized response type %s for method ListBlueprintRevisions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListBlueprintRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -434,7 +439,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchBlueprintRevisions, expected %s or %s",
+                  "Unrecognized response type %s for method SearchBlueprintRevisions, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchBlueprintRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -456,7 +462,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchDeploymentRevisions, expected %s or %s",
+                  "Unrecognized response type %s for method SearchDeploymentRevisions, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchDeploymentRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -478,7 +485,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DiscardBlueprintChanges, expected %s or %s",
+                  "Unrecognized response type %s for method DiscardBlueprintChanges, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DiscardBlueprintChangesResponse.class.getName(),
                   Exception.class.getName())));
@@ -500,7 +508,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPublicBlueprints, expected %s or %s",
+                  "Unrecognized response type %s for method ListPublicBlueprints, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPublicBlueprintsResponse.class.getName(),
                   Exception.class.getName())));
@@ -648,7 +657,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDeploymentRevisions, expected %s or %s",
+                  "Unrecognized response type %s for method ListDeploymentRevisions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDeploymentRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -670,7 +680,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DiscardDeploymentChanges, expected %s or %s",
+                  "Unrecognized response type %s for method DiscardDeploymentChanges, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DiscardDeploymentChangesResponse.class.getName(),
                   Exception.class.getName())));
@@ -713,7 +724,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ComputeDeploymentStatus, expected %s or %s",
+                  "Unrecognized response type %s for method ComputeDeploymentStatus, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ComputeDeploymentStatusResponse.class.getName(),
                   Exception.class.getName())));
@@ -755,7 +767,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetHydratedDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method GetHydratedDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   HydratedDeployment.class.getName(),
                   Exception.class.getName())));
@@ -777,7 +790,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListHydratedDeployments, expected %s or %s",
+                  "Unrecognized response type %s for method ListHydratedDeployments, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListHydratedDeploymentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -799,7 +813,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateHydratedDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateHydratedDeployment, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   HydratedDeployment.class.getName(),
                   Exception.class.getName())));
@@ -820,7 +835,8 @@ public class MockTelcoAutomationImpl extends TelcoAutomationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ApplyHydratedDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method ApplyHydratedDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   HydratedDeployment.class.getName(),
                   Exception.class.getName())));

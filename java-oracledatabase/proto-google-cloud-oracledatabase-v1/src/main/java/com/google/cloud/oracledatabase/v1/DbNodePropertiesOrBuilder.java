@@ -36,6 +36,7 @@ public interface DbNodePropertiesOrBuilder
    * @return The ocid.
    */
   java.lang.String getOcid();
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public interface DbNodePropertiesOrBuilder
    * @return The dbServerOcid.
    */
   java.lang.String getDbServerOcid();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface DbNodePropertiesOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public interface DbNodePropertiesOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

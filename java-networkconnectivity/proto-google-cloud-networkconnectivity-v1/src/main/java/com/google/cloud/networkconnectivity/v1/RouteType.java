@@ -74,6 +74,7 @@ public enum RouteType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROUTE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ROUTE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum RouteType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VPC_PRIMARY_SUBNET = 1;</code>
    */
   public static final int VPC_PRIMARY_SUBNET_VALUE = 1;
+
   /**
    *
    *

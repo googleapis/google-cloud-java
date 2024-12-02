@@ -33,6 +33,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ConsumerTopicMetadata)
     ConsumerTopicMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConsumerTopicMetadata.newBuilder() to construct.
   private ConsumerTopicMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
   public int getPartitionsCount() {
     return internalGetPartitions().getMap().size();
   }
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
 
     return internalGetPartitions().getMap().containsKey(key);
   }
+
   /** Use {@link #getPartitionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -133,6 +136,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
       getPartitions() {
     return getPartitionsMap();
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
       getPartitionsMap() {
     return internalGetPartitions().getMap();
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
         map = internalGetPartitions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -368,6 +374,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -600,7 +607,8 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return PartitionsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final PartitionsConverter partitionsConverter = new PartitionsConverter();
 
@@ -640,6 +648,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
     public int getPartitionsCount() {
       return internalGetPartitions().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -657,6 +666,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
 
       return internalGetPartitions().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPartitionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -665,6 +675,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
         getPartitions() {
       return getPartitionsMap();
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
         getPartitionsMap() {
       return internalGetPartitions().getImmutableMap();
     }
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
           map = internalGetMutablePartitions().ensureBuilderMap();
       return map.containsKey(key) ? partitionsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
       internalGetMutablePartitions().clear();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
       internalGetMutablePartitions().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -764,6 +779,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000001;
       return internalGetMutablePartitions().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +829,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

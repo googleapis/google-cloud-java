@@ -34,6 +34,7 @@ public interface ListResourcesResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
    */
   java.util.List<com.google.cloud.config.v1.Resource> getResourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListResourcesResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
    */
   com.google.cloud.config.v1.Resource getResources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListResourcesResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
    */
   int getResourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListResourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.config.v1.ResourceOrBuilder>
       getResourcesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListResourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ListResourcesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ListResourcesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface ListResourcesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

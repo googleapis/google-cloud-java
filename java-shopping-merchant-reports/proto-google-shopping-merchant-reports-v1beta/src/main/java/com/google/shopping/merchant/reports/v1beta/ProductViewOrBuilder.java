@@ -40,6 +40,7 @@ public interface ProductViewOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface ProductViewOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface ProductViewOrBuilder
    * @return Whether the channel field is set.
    */
   boolean hasChannel();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface ProductViewOrBuilder
    * @return The enum numeric value on the wire for channel.
    */
   int getChannelValue();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface ProductViewOrBuilder
    * @return Whether the languageCode field is set.
    */
   boolean hasLanguageCode();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface ProductViewOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface ProductViewOrBuilder
    * @return Whether the feedLabel field is set.
    */
   boolean hasFeedLabel();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface ProductViewOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface ProductViewOrBuilder
    * @return Whether the offerId field is set.
    */
   boolean hasOfferId();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface ProductViewOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
+
   /**
    *
    *
@@ -233,6 +243,7 @@ public interface ProductViewOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public interface ProductViewOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface ProductViewOrBuilder
    * @return Whether the brand field is set.
    */
   boolean hasBrand();
+
   /**
    *
    *
@@ -282,6 +295,7 @@ public interface ProductViewOrBuilder
    * @return The brand.
    */
   java.lang.String getBrand();
+
   /**
    *
    *
@@ -308,6 +322,7 @@ public interface ProductViewOrBuilder
    * @return Whether the categoryL1 field is set.
    */
   boolean hasCategoryL1();
+
   /**
    *
    *
@@ -321,6 +336,7 @@ public interface ProductViewOrBuilder
    * @return The categoryL1.
    */
   java.lang.String getCategoryL1();
+
   /**
    *
    *
@@ -348,6 +364,7 @@ public interface ProductViewOrBuilder
    * @return Whether the categoryL2 field is set.
    */
   boolean hasCategoryL2();
+
   /**
    *
    *
@@ -361,6 +378,7 @@ public interface ProductViewOrBuilder
    * @return The categoryL2.
    */
   java.lang.String getCategoryL2();
+
   /**
    *
    *
@@ -388,6 +406,7 @@ public interface ProductViewOrBuilder
    * @return Whether the categoryL3 field is set.
    */
   boolean hasCategoryL3();
+
   /**
    *
    *
@@ -401,6 +420,7 @@ public interface ProductViewOrBuilder
    * @return The categoryL3.
    */
   java.lang.String getCategoryL3();
+
   /**
    *
    *
@@ -428,6 +448,7 @@ public interface ProductViewOrBuilder
    * @return Whether the categoryL4 field is set.
    */
   boolean hasCategoryL4();
+
   /**
    *
    *
@@ -441,6 +462,7 @@ public interface ProductViewOrBuilder
    * @return The categoryL4.
    */
   java.lang.String getCategoryL4();
+
   /**
    *
    *
@@ -468,6 +490,7 @@ public interface ProductViewOrBuilder
    * @return Whether the categoryL5 field is set.
    */
   boolean hasCategoryL5();
+
   /**
    *
    *
@@ -481,6 +504,7 @@ public interface ProductViewOrBuilder
    * @return The categoryL5.
    */
   java.lang.String getCategoryL5();
+
   /**
    *
    *
@@ -508,6 +532,7 @@ public interface ProductViewOrBuilder
    * @return Whether the productTypeL1 field is set.
    */
   boolean hasProductTypeL1();
+
   /**
    *
    *
@@ -521,6 +546,7 @@ public interface ProductViewOrBuilder
    * @return The productTypeL1.
    */
   java.lang.String getProductTypeL1();
+
   /**
    *
    *
@@ -548,6 +574,7 @@ public interface ProductViewOrBuilder
    * @return Whether the productTypeL2 field is set.
    */
   boolean hasProductTypeL2();
+
   /**
    *
    *
@@ -561,6 +588,7 @@ public interface ProductViewOrBuilder
    * @return The productTypeL2.
    */
   java.lang.String getProductTypeL2();
+
   /**
    *
    *
@@ -588,6 +616,7 @@ public interface ProductViewOrBuilder
    * @return Whether the productTypeL3 field is set.
    */
   boolean hasProductTypeL3();
+
   /**
    *
    *
@@ -601,6 +630,7 @@ public interface ProductViewOrBuilder
    * @return The productTypeL3.
    */
   java.lang.String getProductTypeL3();
+
   /**
    *
    *
@@ -628,6 +658,7 @@ public interface ProductViewOrBuilder
    * @return Whether the productTypeL4 field is set.
    */
   boolean hasProductTypeL4();
+
   /**
    *
    *
@@ -641,6 +672,7 @@ public interface ProductViewOrBuilder
    * @return The productTypeL4.
    */
   java.lang.String getProductTypeL4();
+
   /**
    *
    *
@@ -668,6 +700,7 @@ public interface ProductViewOrBuilder
    * @return Whether the productTypeL5 field is set.
    */
   boolean hasProductTypeL5();
+
   /**
    *
    *
@@ -681,6 +714,7 @@ public interface ProductViewOrBuilder
    * @return The productTypeL5.
    */
   java.lang.String getProductTypeL5();
+
   /**
    *
    *
@@ -708,6 +742,7 @@ public interface ProductViewOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
+
   /**
    *
    *
@@ -721,6 +756,7 @@ public interface ProductViewOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
+
   /**
    *
    *
@@ -746,6 +782,7 @@ public interface ProductViewOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -759,6 +796,7 @@ public interface ProductViewOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
+
   /**
    *
    *
@@ -786,6 +824,7 @@ public interface ProductViewOrBuilder
    * @return Whether the availability field is set.
    */
   boolean hasAvailability();
+
   /**
    *
    *
@@ -799,6 +838,7 @@ public interface ProductViewOrBuilder
    * @return The availability.
    */
   java.lang.String getAvailability();
+
   /**
    *
    *
@@ -827,6 +867,7 @@ public interface ProductViewOrBuilder
    * @return Whether the shippingLabel field is set.
    */
   boolean hasShippingLabel();
+
   /**
    *
    *
@@ -841,6 +882,7 @@ public interface ProductViewOrBuilder
    * @return The shippingLabel.
    */
   java.lang.String getShippingLabel();
+
   /**
    *
    *
@@ -868,6 +910,7 @@ public interface ProductViewOrBuilder
    * @return A list containing the gtin.
    */
   java.util.List<java.lang.String> getGtinList();
+
   /**
    *
    *
@@ -880,6 +923,7 @@ public interface ProductViewOrBuilder
    * @return The count of gtin.
    */
   int getGtinCount();
+
   /**
    *
    *
@@ -893,6 +937,7 @@ public interface ProductViewOrBuilder
    * @return The gtin at the given index.
    */
   java.lang.String getGtin(int index);
+
   /**
    *
    *
@@ -919,6 +964,7 @@ public interface ProductViewOrBuilder
    * @return Whether the itemGroupId field is set.
    */
   boolean hasItemGroupId();
+
   /**
    *
    *
@@ -931,6 +977,7 @@ public interface ProductViewOrBuilder
    * @return The itemGroupId.
    */
   java.lang.String getItemGroupId();
+
   /**
    *
    *
@@ -957,6 +1004,7 @@ public interface ProductViewOrBuilder
    * @return Whether the thumbnailLink field is set.
    */
   boolean hasThumbnailLink();
+
   /**
    *
    *
@@ -970,6 +1018,7 @@ public interface ProductViewOrBuilder
    * @return The thumbnailLink.
    */
   java.lang.String getThumbnailLink();
+
   /**
    *
    *
@@ -996,6 +1045,7 @@ public interface ProductViewOrBuilder
    * @return Whether the creationTime field is set.
    */
   boolean hasCreationTime();
+
   /**
    *
    *
@@ -1008,6 +1058,7 @@ public interface ProductViewOrBuilder
    * @return The creationTime.
    */
   com.google.protobuf.Timestamp getCreationTime();
+
   /**
    *
    *
@@ -1031,6 +1082,7 @@ public interface ProductViewOrBuilder
    * @return Whether the expirationDate field is set.
    */
   boolean hasExpirationDate();
+
   /**
    *
    *
@@ -1043,6 +1095,7 @@ public interface ProductViewOrBuilder
    * @return The expirationDate.
    */
   com.google.type.Date getExpirationDate();
+
   /**
    *
    *
@@ -1068,6 +1121,7 @@ public interface ProductViewOrBuilder
    * @return Whether the aggregatedReportingContextStatus field is set.
    */
   boolean hasAggregatedReportingContextStatus();
+
   /**
    *
    *
@@ -1082,6 +1136,7 @@ public interface ProductViewOrBuilder
    * @return The enum numeric value on the wire for aggregatedReportingContextStatus.
    */
   int getAggregatedReportingContextStatusValue();
+
   /**
    *
    *
@@ -1116,6 +1171,7 @@ public interface ProductViewOrBuilder
    */
   java.util.List<com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue>
       getItemIssuesList();
+
   /**
    *
    *
@@ -1133,6 +1189,7 @@ public interface ProductViewOrBuilder
    * </code>
    */
   com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue getItemIssues(int index);
+
   /**
    *
    *
@@ -1150,6 +1207,7 @@ public interface ProductViewOrBuilder
    * </code>
    */
   int getItemIssuesCount();
+
   /**
    *
    *
@@ -1169,6 +1227,7 @@ public interface ProductViewOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssueOrBuilder>
       getItemIssuesOrBuilderList();
+
   /**
    *
    *
@@ -1202,6 +1261,7 @@ public interface ProductViewOrBuilder
    * @return The enum numeric value on the wire for clickPotential.
    */
   int getClickPotentialValue();
+
   /**
    *
    *
@@ -1231,6 +1291,7 @@ public interface ProductViewOrBuilder
    * @return Whether the clickPotentialRank field is set.
    */
   boolean hasClickPotentialRank();
+
   /**
    *
    *

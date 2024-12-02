@@ -33,6 +33,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.language.v2.AnalyzeSentimentResponse)
     AnalyzeSentimentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeSentimentResponse.newBuilder() to construct.
   private AnalyzeSentimentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int DOCUMENT_SENTIMENT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v2.Sentiment documentSentiment_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
   public boolean hasDocumentSentiment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         ? com.google.cloud.language.v2.Sentiment.getDefaultInstance()
         : documentSentiment_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v2.Sentence> sentences_;
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.language.v2.Sentence> getSentencesList() {
     return sentences_;
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       getSentencesOrBuilderList() {
     return sentences_;
   }
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
   public int getSentencesCount() {
     return sentences_.size();
   }
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
   public com.google.cloud.language.v2.Sentence getSentences(int index) {
     return sentences_.get(index);
   }
+
   /**
    *
    *
@@ -243,6 +254,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
 
   public static final int LANGUAGE_SUPPORTED_FIELD_NUMBER = 4;
   private boolean languageSupported_ = false;
+
   /**
    *
    *
@@ -455,6 +467,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -752,6 +765,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
             com.google.cloud.language.v2.Sentiment.Builder,
             com.google.cloud.language.v2.SentimentOrBuilder>
         documentSentimentBuilder_;
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     public boolean hasDocumentSentiment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -786,6 +801,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         return documentSentimentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       onChanged();
       return getDocumentSentimentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
             : documentSentiment_;
       }
     }
+
     /**
      *
      *
@@ -933,6 +955,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -957,6 +980,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -981,6 +1005,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1049,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1107,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         return sentencesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1124,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         return sentencesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1141,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         return sentencesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1164,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1185,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1208,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1198,6 +1231,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1251,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1272,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1293,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1313,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1333,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1346,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     public com.google.cloud.language.v2.Sentence.Builder getSentencesBuilder(int index) {
       return getSentencesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1323,6 +1363,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         return sentencesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1340,6 +1381,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(sentences_);
       }
     }
+
     /**
      *
      *
@@ -1353,6 +1395,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       return getSentencesFieldBuilder()
           .addBuilder(com.google.cloud.language.v2.Sentence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1366,6 +1409,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       return getSentencesFieldBuilder()
           .addBuilder(index, com.google.cloud.language.v2.Sentence.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1397,6 +1441,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     }
 
     private boolean languageSupported_;
+
     /**
      *
      *
@@ -1414,6 +1459,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     public boolean getLanguageSupported() {
       return languageSupported_;
     }
+
     /**
      *
      *
@@ -1435,6 +1481,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

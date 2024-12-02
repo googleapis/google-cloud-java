@@ -36,6 +36,7 @@ public interface UsageExportLocationOrBuilder
    * @return Whether the bucketName field is set.
    */
   boolean hasBucketName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UsageExportLocationOrBuilder
    * @return The bucketName.
    */
   java.lang.String getBucketName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UsageExportLocationOrBuilder
    * @return Whether the reportNamePrefix field is set.
    */
   boolean hasReportNamePrefix();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface UsageExportLocationOrBuilder
    * @return The reportNamePrefix.
    */
   java.lang.String getReportNamePrefix();
+
   /**
    *
    *

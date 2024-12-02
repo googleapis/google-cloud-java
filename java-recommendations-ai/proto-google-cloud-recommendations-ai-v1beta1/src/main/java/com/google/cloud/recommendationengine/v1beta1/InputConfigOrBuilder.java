@@ -37,6 +37,7 @@ public interface InputConfigOrBuilder
    * @return Whether the catalogInlineSource field is set.
    */
   boolean hasCatalogInlineSource();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface InputConfigOrBuilder
    * @return The catalogInlineSource.
    */
   com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource getCatalogInlineSource();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface InputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface InputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.recommendationengine.v1beta1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface InputConfigOrBuilder
    * @return Whether the userEventInlineSource field is set.
    */
   boolean hasUserEventInlineSource();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface InputConfigOrBuilder
    * @return The userEventInlineSource.
    */
   com.google.cloud.recommendationengine.v1beta1.UserEventInlineSource getUserEventInlineSource();
+
   /**
    *
    *

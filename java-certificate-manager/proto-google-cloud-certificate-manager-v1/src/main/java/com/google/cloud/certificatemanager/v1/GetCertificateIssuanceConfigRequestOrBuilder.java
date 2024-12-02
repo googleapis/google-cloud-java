@@ -39,6 +39,7 @@ public interface GetCertificateIssuanceConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.SqlDatabaseSystemSpec)
     SqlDatabaseSystemSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SqlDatabaseSystemSpec.newBuilder() to construct.
   private SqlDatabaseSystemSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sqlEngine_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseVersion_ = "";
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceHost_ = "";
+
   /**
    *
    *
@@ -218,6 +224,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -428,6 +435,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +652,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object sqlEngine_ = "";
+
     /**
      *
      *
@@ -673,6 +682,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -702,6 +712,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +741,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +766,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +798,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object databaseVersion_ = "";
+
     /**
      *
      *
@@ -807,6 +821,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +844,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -850,6 +866,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +884,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +909,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object instanceHost_ = "";
+
     /**
      *
      *
@@ -921,6 +940,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -951,6 +971,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -980,6 +1001,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1027,7 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

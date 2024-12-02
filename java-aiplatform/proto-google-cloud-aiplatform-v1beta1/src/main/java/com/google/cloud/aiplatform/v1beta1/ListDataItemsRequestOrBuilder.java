@@ -40,6 +40,7 @@ public interface ListDataItemsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ListDataItemsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface ListDataItemsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface ListDataItemsRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface ListDataItemsRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface ListDataItemsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

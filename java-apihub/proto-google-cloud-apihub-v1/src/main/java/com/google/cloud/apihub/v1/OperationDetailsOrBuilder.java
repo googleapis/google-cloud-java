@@ -36,6 +36,7 @@ public interface OperationDetailsOrBuilder
    * @return Whether the httpOperation field is set.
    */
   boolean hasHttpOperation();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OperationDetailsOrBuilder
    * @return The httpOperation.
    */
   com.google.cloud.apihub.v1.HttpOperation getHttpOperation();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface OperationDetailsOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface OperationDetailsOrBuilder
    * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface OperationDetailsOrBuilder
    * @return The documentation.
    */
   com.google.cloud.apihub.v1.Documentation getDocumentation();
+
   /**
    *
    *

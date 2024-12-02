@@ -33,6 +33,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.ContainerStartedEvent)
     ContainerStartedEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContainerStartedEvent.newBuilder() to construct.
   private ContainerStartedEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
 
   public static final int ACTION_ID_FIELD_NUMBER = 1;
   private int actionId_ = 0;
+
   /**
    *
    *
@@ -121,6 +123,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
   public int getPortMappingsCount() {
     return internalGetPortMappings().getMap().size();
   }
+
   /**
    *
    *
@@ -137,12 +140,14 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
 
     return internalGetPortMappings().getMap().containsKey(key);
   }
+
   /** Use {@link #getPortMappingsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.Integer, java.lang.Integer> getPortMappings() {
     return getPortMappingsMap();
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.Integer, java.lang.Integer> getPortMappingsMap() {
     return internalGetPortMappings().getMap();
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.Integer, java.lang.Integer> map = internalGetPortMappings().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -439,6 +448,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -677,6 +687,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int actionId_;
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     public int getActionId() {
       return actionId_;
     }
+
     /**
      *
      *
@@ -711,6 +723,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     public int getPortMappingsCount() {
       return internalGetPortMappings().getMap().size();
     }
+
     /**
      *
      *
@@ -773,12 +787,14 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
 
       return internalGetPortMappings().getMap().containsKey(key);
     }
+
     /** Use {@link #getPortMappingsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, java.lang.Integer> getPortMappings() {
       return getPortMappingsMap();
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.Integer, java.lang.Integer> getPortMappingsMap() {
       return internalGetPortMappings().getMap();
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.Integer, java.lang.Integer> map = internalGetPortMappings().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       internalGetMutablePortMappings().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -853,12 +872,14 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       internalGetMutablePortMappings().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, java.lang.Integer> getMutablePortMappings() {
       bitField0_ |= 0x00000002;
       return internalGetMutablePortMappings().getMutableMap();
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +916,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -919,6 +942,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -944,6 +968,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +993,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1014,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

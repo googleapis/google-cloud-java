@@ -48,6 +48,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.CohortSpec)
     CohortSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CohortSpec.newBuilder() to construct.
   private CohortSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.Cohort> cohorts_;
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.analytics.data.v1beta.Cohort> getCohortsList() {
     return cohorts_;
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       getCohortsOrBuilderList() {
     return cohorts_;
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
   public int getCohortsCount() {
     return cohorts_.size();
   }
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.analytics.data.v1beta.Cohort getCohorts(int index) {
     return cohorts_.get(index);
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COHORTS_RANGE_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1beta.CohortsRange cohortsRange_;
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCohortsRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.data.v1beta.CohortsRange.getDefaultInstance()
         : cohortsRange_;
   }
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COHORT_REPORT_SETTINGS_FIELD_NUMBER = 3;
   private com.google.analytics.data.v1beta.CohortReportSettings cohortReportSettings_;
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCohortReportSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.data.v1beta.CohortReportSettings.getDefaultInstance()
         : cohortReportSettings_;
   }
+
   /**
    *
    *
@@ -459,6 +471,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -790,6 +803,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         return cohortsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -809,6 +823,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         return cohortsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -828,6 +843,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         return cohortsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -853,6 +869,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +893,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +919,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +945,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +968,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1016,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1039,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1062,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1078,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.Cohort.Builder getCohortsBuilder(int index) {
       return getCohortsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1072,6 +1098,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         return cohortsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1119,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(cohorts_);
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1136,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       return getCohortsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.Cohort.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1124,6 +1153,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       return getCohortsFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1beta.Cohort.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1163,6 +1193,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1beta.CohortsRange.Builder,
             com.google.analytics.data.v1beta.CohortsRangeOrBuilder>
         cohortsRangeBuilder_;
+
     /**
      *
      *
@@ -1178,6 +1209,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCohortsRange() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1199,6 +1231,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         return cohortsRangeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1222,6 +1255,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1277,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1307,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1328,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1344,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCohortsRangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1326,6 +1364,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
             : cohortsRange_;
       }
     }
+
     /**
      *
      *
@@ -1359,6 +1398,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1beta.CohortReportSettings.Builder,
             com.google.analytics.data.v1beta.CohortReportSettingsOrBuilder>
         cohortReportSettingsBuilder_;
+
     /**
      *
      *
@@ -1373,6 +1413,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCohortReportSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1393,6 +1434,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
         return cohortReportSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1416,6 +1458,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1479,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1465,6 +1509,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1529,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1499,6 +1545,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCohortReportSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1518,6 +1565,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
             : cohortReportSettings_;
       }
     }
+
     /**
      *
      *

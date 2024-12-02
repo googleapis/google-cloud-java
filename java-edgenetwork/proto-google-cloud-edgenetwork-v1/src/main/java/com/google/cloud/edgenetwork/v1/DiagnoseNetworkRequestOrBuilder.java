@@ -38,6 +38,7 @@ public interface DiagnoseNetworkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

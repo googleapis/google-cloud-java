@@ -34,6 +34,7 @@ public interface ListQaQuestionsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaQuestion qa_questions = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QaQuestion> getQaQuestionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListQaQuestionsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaQuestion qa_questions = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.QaQuestion getQaQuestions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListQaQuestionsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaQuestion qa_questions = 1;</code>
    */
   int getQaQuestionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListQaQuestionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.QaQuestionOrBuilder>
       getQaQuestionsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListQaQuestionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

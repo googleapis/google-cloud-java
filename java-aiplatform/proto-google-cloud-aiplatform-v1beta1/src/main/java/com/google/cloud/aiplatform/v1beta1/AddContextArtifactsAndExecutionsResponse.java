@@ -35,6 +35,7 @@ public final class AddContextArtifactsAndExecutionsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsResponse)
     AddContextArtifactsAndExecutionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddContextArtifactsAndExecutionsResponse.newBuilder() to construct.
   private AddContextArtifactsAndExecutionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -223,6 +224,7 @@ public final class AddContextArtifactsAndExecutionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

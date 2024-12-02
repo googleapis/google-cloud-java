@@ -33,6 +33,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ExecutionStageState)
     ExecutionStageStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExecutionStageState.newBuilder() to construct.
   private ExecutionStageState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object executionStageName_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
 
   public static final int EXECUTION_STAGE_STATE_FIELD_NUMBER = 2;
   private int executionStageState_ = 0;
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
   public int getExecutionStageStateValue() {
     return executionStageState_;
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
 
   public static final int CURRENT_STATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp currentStateTime_;
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
   public boolean hasCurrentStateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : currentStateTime_;
   }
+
   /**
    *
    *
@@ -385,6 +393,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -613,6 +622,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object executionStageName_ = "";
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +708,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
     }
 
     private int executionStageState_ = 0;
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
     public int getExecutionStageStateValue() {
       return executionStageState_;
     }
+
     /**
      *
      *
@@ -752,6 +768,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +786,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
           com.google.dataflow.v1beta3.JobState.forNumber(executionStageState_);
       return result == null ? com.google.dataflow.v1beta3.JobState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -790,6 +808,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +833,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         currentStateTimeBuilder_;
+
     /**
      *
      *
@@ -828,6 +848,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
     public boolean hasCurrentStateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -848,6 +869,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
         return currentStateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -870,6 +892,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +940,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +960,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +975,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCurrentStateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -967,6 +994,7 @@ public final class ExecutionStageState extends com.google.protobuf.GeneratedMess
             : currentStateTime_;
       }
     }
+
     /**
      *
      *

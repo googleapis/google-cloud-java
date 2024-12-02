@@ -37,6 +37,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return Whether the routingMode field is set.
    */
   boolean hasRoutingMode();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return The routingMode.
    */
   java.lang.String getRoutingMode();
+
   /**
    *
    *

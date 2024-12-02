@@ -33,6 +33,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.EntitlementChange)
     EntitlementChangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EntitlementChange.newBuilder() to construct.
   private EntitlementChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -244,6 +245,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>CHANGE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CHANGE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -254,6 +256,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>CREATED = 1;</code>
      */
     public static final int CREATED_VALUE = 1;
+
     /**
      *
      *
@@ -264,6 +267,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>PRICE_PLAN_SWITCHED = 3;</code>
      */
     public static final int PRICE_PLAN_SWITCHED_VALUE = 3;
+
     /**
      *
      *
@@ -274,6 +278,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>COMMITMENT_CHANGED = 4;</code>
      */
     public static final int COMMITMENT_CHANGED_VALUE = 4;
+
     /**
      *
      *
@@ -284,6 +289,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>RENEWED = 5;</code>
      */
     public static final int RENEWED_VALUE = 5;
+
     /**
      *
      *
@@ -294,6 +300,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>SUSPENDED = 6;</code>
      */
     public static final int SUSPENDED_VALUE = 6;
+
     /**
      *
      *
@@ -304,6 +311,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>ACTIVATED = 7;</code>
      */
     public static final int ACTIVATED_VALUE = 7;
+
     /**
      *
      *
@@ -314,6 +322,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>CANCELLED = 8;</code>
      */
     public static final int CANCELLED_VALUE = 8;
+
     /**
      *
      *
@@ -325,6 +334,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>SKU_CHANGED = 9;</code>
      */
     public static final int SKU_CHANGED_VALUE = 9;
+
     /**
      *
      *
@@ -335,6 +345,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>RENEWAL_SETTING_CHANGED = 10;</code>
      */
     public static final int RENEWAL_SETTING_CHANGED_VALUE = 10;
+
     /**
      *
      *
@@ -347,6 +358,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>PAID_SUBSCRIPTION_STARTED = 11;</code>
      */
     public static final int PAID_SUBSCRIPTION_STARTED_VALUE = 11;
+
     /**
      *
      *
@@ -357,6 +369,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>LICENSE_CAP_CHANGED = 12;</code>
      */
     public static final int LICENSE_CAP_CHANGED_VALUE = 12;
+
     /**
      *
      *
@@ -367,6 +380,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>SUSPENSION_DETAILS_CHANGED = 13;</code>
      */
     public static final int SUSPENSION_DETAILS_CHANGED_VALUE = 13;
+
     /**
      *
      *
@@ -377,6 +391,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>TRIAL_END_DATE_EXTENDED = 14;</code>
      */
     public static final int TRIAL_END_DATE_EXTENDED_VALUE = 14;
+
     /**
      *
      *
@@ -568,6 +583,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>OPERATOR_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int OPERATOR_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -578,6 +594,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>CUSTOMER_SERVICE_REPRESENTATIVE = 1;</code>
      */
     public static final int CUSTOMER_SERVICE_REPRESENTATIVE_VALUE = 1;
+
     /**
      *
      *
@@ -588,6 +605,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>SYSTEM = 2;</code>
      */
     public static final int SYSTEM_VALUE = 2;
+
     /**
      *
      *
@@ -598,6 +616,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>CUSTOMER = 3;</code>
      */
     public static final int CUSTOMER_VALUE = 3;
+
     /**
      *
      *
@@ -761,6 +780,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>CANCELLATION_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int CANCELLATION_REASON_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -771,6 +791,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>SERVICE_TERMINATED = 1;</code>
      */
     public static final int SERVICE_TERMINATED_VALUE = 1;
+
     /**
      *
      *
@@ -782,6 +803,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>RELATIONSHIP_ENDED = 2;</code>
      */
     public static final int RELATIONSHIP_ENDED_VALUE = 2;
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>ACTIVATION_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int ACTIVATION_REASON_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -968,6 +991,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>RESELLER_REVOKED_SUSPENSION = 1;</code>
      */
     public static final int RESELLER_REVOKED_SUSPENSION_VALUE = 1;
+
     /**
      *
      *
@@ -978,6 +1002,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>CUSTOMER_ACCEPTED_PENDING_TOS = 2;</code>
      */
     public static final int CUSTOMER_ACCEPTED_PENDING_TOS_VALUE = 2;
+
     /**
      *
      *
@@ -990,6 +1015,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
      * <code>RENEWAL_SETTINGS_CHANGED = 3;</code>
      */
     public static final int RENEWAL_SETTINGS_CHANGED_VALUE = 3;
+
     /**
      *
      *
@@ -1111,6 +1137,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     private ChangeReasonCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1148,6 +1175,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SUSPENSION_REASON_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -1162,6 +1190,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public boolean hasSuspensionReason() {
     return changeReasonCase_ == 9;
   }
+
   /**
    *
    *
@@ -1179,6 +1208,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     }
     return 0;
   }
+
   /**
    *
    *
@@ -1203,6 +1233,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CANCELLATION_REASON_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -1218,6 +1249,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public boolean hasCancellationReason() {
     return changeReasonCase_ == 10;
   }
+
   /**
    *
    *
@@ -1236,6 +1268,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     }
     return 0;
   }
+
   /**
    *
    *
@@ -1262,6 +1295,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ACTIVATION_REASON_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -1277,6 +1311,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public boolean hasActivationReason() {
     return changeReasonCase_ == 11;
   }
+
   /**
    *
    *
@@ -1295,6 +1330,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     }
     return 0;
   }
+
   /**
    *
    *
@@ -1321,6 +1357,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OTHER_CHANGE_REASON_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -1335,6 +1372,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public boolean hasOtherChangeReason() {
     return changeReasonCase_ == 100;
   }
+
   /**
    *
    *
@@ -1362,6 +1400,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1394,6 +1433,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entitlement_ = "";
+
   /**
    *
    *
@@ -1420,6 +1460,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1451,6 +1492,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object offer_ = "";
+
   /**
    *
    *
@@ -1477,6 +1519,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1506,6 +1549,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
 
   public static final int PROVISIONED_SERVICE_FIELD_NUMBER = 3;
   private com.google.cloud.channel.v1.ProvisionedService provisionedService_;
+
   /**
    *
    *
@@ -1521,6 +1565,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public boolean hasProvisionedService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1538,6 +1583,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.channel.v1.ProvisionedService.getDefaultInstance()
         : provisionedService_;
   }
+
   /**
    *
    *
@@ -1556,6 +1602,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
 
   public static final int CHANGE_TYPE_FIELD_NUMBER = 4;
   private int changeType_ = 0;
+
   /**
    *
    *
@@ -1571,6 +1618,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public int getChangeTypeValue() {
     return changeType_;
   }
+
   /**
    *
    *
@@ -1593,6 +1641,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1608,6 +1657,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1623,6 +1673,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1639,6 +1690,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
 
   public static final int OPERATOR_TYPE_FIELD_NUMBER = 6;
   private int operatorType_ = 0;
+
   /**
    *
    *
@@ -1654,6 +1706,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public int getOperatorTypeValue() {
     return operatorType_;
   }
+
   /**
    *
    *
@@ -1678,6 +1731,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Parameter> parameters_;
+
   /**
    *
    *
@@ -1694,6 +1748,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.channel.v1.Parameter> getParametersList() {
     return parameters_;
   }
+
   /**
    *
    *
@@ -1711,6 +1766,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       getParametersOrBuilderList() {
     return parameters_;
   }
+
   /**
    *
    *
@@ -1727,6 +1783,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public int getParametersCount() {
     return parameters_.size();
   }
+
   /**
    *
    *
@@ -1743,6 +1800,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.channel.v1.Parameter getParameters(int index) {
     return parameters_.get(index);
   }
+
   /**
    *
    *
@@ -1764,6 +1822,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operator_ = "";
+
   /**
    *
    *
@@ -1789,6 +1848,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -2124,6 +2184,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2568,6 +2629,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public boolean hasSuspensionReason() {
       return changeReasonCase_ == 9;
     }
+
     /**
      *
      *
@@ -2586,6 +2648,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2604,6 +2667,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2627,6 +2691,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return com.google.cloud.channel.v1.Entitlement.SuspensionReason.SUSPENSION_REASON_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -2649,6 +2714,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2685,6 +2751,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public boolean hasCancellationReason() {
       return changeReasonCase_ == 10;
     }
+
     /**
      *
      *
@@ -2704,6 +2771,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2723,6 +2791,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2749,6 +2818,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       return com.google.cloud.channel.v1.EntitlementChange.CancellationReason
           .CANCELLATION_REASON_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -2772,6 +2842,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2809,6 +2880,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public boolean hasActivationReason() {
       return changeReasonCase_ == 11;
     }
+
     /**
      *
      *
@@ -2828,6 +2900,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2847,6 +2920,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2872,6 +2946,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       return com.google.cloud.channel.v1.EntitlementChange.ActivationReason
           .ACTIVATION_REASON_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -2895,6 +2970,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2931,6 +3007,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public boolean hasOtherChangeReason() {
       return changeReasonCase_ == 100;
     }
+
     /**
      *
      *
@@ -2959,6 +3036,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2987,6 +3065,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3008,6 +3087,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3027,6 +3107,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3051,6 +3132,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object entitlement_ = "";
+
     /**
      *
      *
@@ -3076,6 +3158,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3101,6 +3184,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3125,6 +3209,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3145,6 +3230,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3172,6 +3258,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object offer_ = "";
+
     /**
      *
      *
@@ -3197,6 +3284,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3222,6 +3310,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3246,6 +3335,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3266,6 +3356,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3298,6 +3389,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
             com.google.cloud.channel.v1.ProvisionedService.Builder,
             com.google.cloud.channel.v1.ProvisionedServiceOrBuilder>
         provisionedServiceBuilder_;
+
     /**
      *
      *
@@ -3312,6 +3404,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public boolean hasProvisionedService() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3332,6 +3425,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return provisionedServiceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3354,6 +3448,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3374,6 +3469,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3402,6 +3498,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3421,6 +3518,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3435,6 +3533,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getProvisionedServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3454,6 +3553,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
             : provisionedService_;
       }
     }
+
     /**
      *
      *
@@ -3481,6 +3581,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     }
 
     private int changeType_ = 0;
+
     /**
      *
      *
@@ -3496,6 +3597,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public int getChangeTypeValue() {
       return changeType_;
     }
+
     /**
      *
      *
@@ -3514,6 +3616,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3533,6 +3636,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.channel.v1.EntitlementChange.ChangeType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3554,6 +3658,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3578,6 +3683,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3592,6 +3698,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3612,6 +3719,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3634,6 +3742,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3653,6 +3762,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3680,6 +3790,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3699,6 +3810,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3713,6 +3825,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3731,6 +3844,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3758,6 +3872,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     }
 
     private int operatorType_ = 0;
+
     /**
      *
      *
@@ -3773,6 +3888,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public int getOperatorTypeValue() {
       return operatorType_;
     }
+
     /**
      *
      *
@@ -3791,6 +3907,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3810,6 +3927,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.channel.v1.EntitlementChange.OperatorType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3832,6 +3950,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3885,6 +4004,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return parametersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3904,6 +4024,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return parametersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3923,6 +4044,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return parametersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3948,6 +4070,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3971,6 +4094,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3996,6 +4120,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4021,6 +4146,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4043,6 +4169,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4066,6 +4193,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4089,6 +4217,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4111,6 +4240,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4133,6 +4263,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4148,6 +4279,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.channel.v1.Parameter.Builder getParametersBuilder(int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4167,6 +4299,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return parametersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4187,6 +4320,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(parameters_);
       }
     }
+
     /**
      *
      *
@@ -4203,6 +4337,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       return getParametersFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.Parameter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4219,6 +4354,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       return getParametersFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.Parameter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4254,6 +4390,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object operator_ = "";
+
     /**
      *
      *
@@ -4278,6 +4415,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4302,6 +4440,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4325,6 +4464,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4344,6 +4484,7 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

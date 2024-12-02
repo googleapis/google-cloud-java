@@ -33,6 +33,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.ConsumableTrafficPolyline)
     ConsumableTrafficPolylineOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConsumableTrafficPolyline.newBuilder() to construct.
   private ConsumableTrafficPolyline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.SpeedReadingInterval> speedReadingInterval_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       getSpeedReadingIntervalList() {
     return speedReadingInterval_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       getSpeedReadingIntervalOrBuilderList() {
     return speedReadingInterval_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
   public int getSpeedReadingIntervalCount() {
     return speedReadingInterval_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
   public com.google.maps.fleetengine.v1.SpeedReadingInterval getSpeedReadingInterval(int index) {
     return speedReadingInterval_.get(index);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object encodedPathToWaypoint_ = "";
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -371,6 +379,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +661,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
         return speedReadingIntervalBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
         return speedReadingIntervalBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
         return speedReadingIntervalBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
         getSpeedReadingIntervalBuilder(int index) {
       return getSpeedReadingIntervalFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -914,6 +936,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
         return speedReadingIntervalBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(speedReadingInterval_);
       }
     }
+
     /**
      *
      *
@@ -947,6 +971,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       return getSpeedReadingIntervalFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.SpeedReadingInterval.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -963,6 +988,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.maps.fleetengine.v1.SpeedReadingInterval.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -999,6 +1025,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
     }
 
     private java.lang.Object encodedPathToWaypoint_ = "";
+
     /**
      *
      *
@@ -1024,6 +1051,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1077,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1102,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1123,7 @@ public final class ConsumableTrafficPolyline extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

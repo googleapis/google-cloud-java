@@ -36,6 +36,7 @@ public interface AudienceEventTriggerOrBuilder
    * @return The eventName.
    */
   java.lang.String getEventName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AudienceEventTriggerOrBuilder
    * @return The enum numeric value on the wire for logCondition.
    */
   int getLogConditionValue();
+
   /**
    *
    *

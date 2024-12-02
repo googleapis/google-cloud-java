@@ -54,6 +54,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return The session.
    */
   java.lang.String getSession();
+
   /**
    *
    *
@@ -97,6 +98,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return Whether the queryParams field is set.
    */
   boolean hasQueryParams();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return The queryParams.
    */
   com.google.cloud.dialogflow.v2.QueryParameters getQueryParams();
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return Whether the queryInput field is set.
    */
   boolean hasQueryInput();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return The queryInput.
    */
   com.google.cloud.dialogflow.v2.QueryInput getQueryInput();
+
   /**
    *
    *
@@ -220,6 +225,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
+
   /**
    *
    *
@@ -234,6 +240,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
+
   /**
    *
    *
@@ -266,6 +273,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return Whether the outputAudioConfigMask field is set.
    */
   boolean hasOutputAudioConfigMask();
+
   /**
    *
    *
@@ -285,6 +293,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return The outputAudioConfigMask.
    */
   com.google.protobuf.FieldMask getOutputAudioConfigMask();
+
   /**
    *
    *

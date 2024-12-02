@@ -36,6 +36,7 @@ public final class UpdateReasoningEngineOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpdateReasoningEngineOperationMetadata)
     UpdateReasoningEngineOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateReasoningEngineOperationMetadata.newBuilder() to construct.
   private UpdateReasoningEngineOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class UpdateReasoningEngineOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class UpdateReasoningEngineOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class UpdateReasoningEngineOperationMetadata
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
+
   /**
    *
    *
@@ -290,6 +294,7 @@ public final class UpdateReasoningEngineOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -507,6 +512,7 @@ public final class UpdateReasoningEngineOperationMetadata
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
+
     /**
      *
      *
@@ -521,6 +527,7 @@ public final class UpdateReasoningEngineOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -541,6 +548,7 @@ public final class UpdateReasoningEngineOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -564,6 +572,7 @@ public final class UpdateReasoningEngineOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -584,6 +593,7 @@ public final class UpdateReasoningEngineOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class UpdateReasoningEngineOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +644,7 @@ public final class UpdateReasoningEngineOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +660,7 @@ public final class UpdateReasoningEngineOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class UpdateReasoningEngineOperationMetadata
             : genericMetadata_;
       }
     }
+
     /**
      *
      *

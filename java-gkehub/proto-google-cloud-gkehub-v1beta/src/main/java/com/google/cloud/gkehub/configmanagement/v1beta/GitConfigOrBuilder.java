@@ -36,6 +36,7 @@ public interface GitConfigOrBuilder
    * @return The syncRepo.
    */
   java.lang.String getSyncRepo();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GitConfigOrBuilder
    * @return The syncBranch.
    */
   java.lang.String getSyncBranch();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface GitConfigOrBuilder
    * @return The policyDir.
    */
   java.lang.String getPolicyDir();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface GitConfigOrBuilder
    * @return The syncRev.
    */
   java.lang.String getSyncRev();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface GitConfigOrBuilder
    * @return The secretType.
    */
   java.lang.String getSecretType();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface GitConfigOrBuilder
    * @return The httpsProxy.
    */
   java.lang.String getHttpsProxy();
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public interface GitConfigOrBuilder
    * @return The gcpServiceAccountEmail.
    */
   java.lang.String getGcpServiceAccountEmail();
+
   /**
    *
    *

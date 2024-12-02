@@ -49,6 +49,7 @@ public interface SetDiskAutoDeleteInstanceRequestOrBuilder
    * @return The deviceName.
    */
   java.lang.String getDeviceName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface SetDiskAutoDeleteInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface SetDiskAutoDeleteInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface SetDiskAutoDeleteInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface SetDiskAutoDeleteInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface SetDiskAutoDeleteInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

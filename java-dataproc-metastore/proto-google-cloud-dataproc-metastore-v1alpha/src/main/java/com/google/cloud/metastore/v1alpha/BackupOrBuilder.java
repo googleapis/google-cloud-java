@@ -38,6 +38,7 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface BackupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface BackupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BackupOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface BackupOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface BackupOrBuilder
    * @return Whether the serviceRevision field is set.
    */
   boolean hasServiceRevision();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface BackupOrBuilder
    * @return The serviceRevision.
    */
   com.google.cloud.metastore.v1alpha.Service getServiceRevision();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface BackupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface BackupOrBuilder
    * @return A list containing the restoringServices.
    */
   java.util.List<java.lang.String> getRestoringServicesList();
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public interface BackupOrBuilder
    * @return The count of restoringServices.
    */
   int getRestoringServicesCount();
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public interface BackupOrBuilder
    * @return The restoringServices at the given index.
    */
   java.lang.String getRestoringServices(int index);
+
   /**
    *
    *

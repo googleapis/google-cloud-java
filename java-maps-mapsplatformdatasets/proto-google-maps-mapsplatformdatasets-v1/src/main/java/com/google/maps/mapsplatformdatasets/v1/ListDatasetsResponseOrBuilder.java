@@ -34,6 +34,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.maps.mapsplatformdatasets.v1.Dataset datasets = 1;</code>
    */
   java.util.List<com.google.maps.mapsplatformdatasets.v1.Dataset> getDatasetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.maps.mapsplatformdatasets.v1.Dataset datasets = 1;</code>
    */
   com.google.maps.mapsplatformdatasets.v1.Dataset getDatasets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.maps.mapsplatformdatasets.v1.Dataset datasets = 1;</code>
    */
   int getDatasetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDatasetsResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.mapsplatformdatasets.v1.DatasetOrBuilder>
       getDatasetsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListDatasetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.AcceleratorConfig)
     AcceleratorConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AcceleratorConfig.newBuilder() to construct.
   private AcceleratorConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>V2 = 2;</code>
      */
     public static final int V2_VALUE = 2;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>V3 = 4;</code>
      */
     public static final int V3_VALUE = 4;
+
     /**
      *
      *
@@ -245,6 +249,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -262,6 +267,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -286,6 +292,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topology_ = "";
+
   /**
    *
    *
@@ -309,6 +316,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -501,6 +509,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -697,6 +706,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -734,6 +745,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +765,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
           com.google.cloud.tpu.v2.AcceleratorConfig.Type.forNumber(type_);
       return result == null ? com.google.cloud.tpu.v2.AcceleratorConfig.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -776,6 +789,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object topology_ = "";
+
     /**
      *
      *
@@ -819,6 +834,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

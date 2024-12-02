@@ -35,6 +35,7 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
    */
   java.util.List<com.google.cloud.automl.v1beta1.AnnotationPayload> getPayloadList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
    */
   com.google.cloud.automl.v1beta1.AnnotationPayload getPayload(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
    */
   int getPayloadCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface PredictResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.AnnotationPayloadOrBuilder>
       getPayloadOrBuilderList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface PredictResponseOrBuilder
    * @return Whether the preprocessedInput field is set.
    */
   boolean hasPreprocessedInput();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface PredictResponseOrBuilder
    * @return The preprocessedInput.
    */
   com.google.cloud.automl.v1beta1.ExamplePayload getPreprocessedInput();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface PredictResponseOrBuilder
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -176,9 +183,11 @@ public interface PredictResponseOrBuilder
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface PredictResponseOrBuilder
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface PredictResponseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

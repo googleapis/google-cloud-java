@@ -39,6 +39,7 @@ public interface ImportFlowRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface ImportFlowRequestOrBuilder
    * @return Whether the flowUri field is set.
    */
   boolean hasFlowUri();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface ImportFlowRequestOrBuilder
    * @return The flowUri.
    */
   java.lang.String getFlowUri();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface ImportFlowRequestOrBuilder
    * @return Whether the flowContent field is set.
    */
   boolean hasFlowContent();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface ImportFlowRequestOrBuilder
    * @return The enum numeric value on the wire for importOption.
    */
   int getImportOptionValue();
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface ImportFlowRequestOrBuilder
    * @return Whether the flowImportStrategy field is set.
    */
   boolean hasFlowImportStrategy();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface ImportFlowRequestOrBuilder
    * @return The flowImportStrategy.
    */
   com.google.cloud.dialogflow.cx.v3.FlowImportStrategy getFlowImportStrategy();
+
   /**
    *
    *

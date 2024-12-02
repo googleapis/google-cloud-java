@@ -37,6 +37,7 @@ public interface BuildProvenanceOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface BuildProvenanceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface BuildProvenanceOrBuilder
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
   java.util.List<io.grafeas.v1.Command> getCommandsList();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface BuildProvenanceOrBuilder
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
   io.grafeas.v1.Command getCommands(int index);
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface BuildProvenanceOrBuilder
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
   int getCommandsCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface BuildProvenanceOrBuilder
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
   java.util.List<? extends io.grafeas.v1.CommandOrBuilder> getCommandsOrBuilderList();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface BuildProvenanceOrBuilder
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
   java.util.List<io.grafeas.v1.Artifact> getBuiltArtifactsList();
+
   /**
    *
    *
@@ -146,6 +153,7 @@ public interface BuildProvenanceOrBuilder
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
   io.grafeas.v1.Artifact getBuiltArtifacts(int index);
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface BuildProvenanceOrBuilder
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
   int getBuiltArtifactsCount();
+
   /**
    *
    *
@@ -166,6 +175,7 @@ public interface BuildProvenanceOrBuilder
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
   java.util.List<? extends io.grafeas.v1.ArtifactOrBuilder> getBuiltArtifactsOrBuilderList();
+
   /**
    *
    *
@@ -189,6 +199,7 @@ public interface BuildProvenanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -201,6 +212,7 @@ public interface BuildProvenanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -224,6 +236,7 @@ public interface BuildProvenanceOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -236,6 +249,7 @@ public interface BuildProvenanceOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -259,6 +273,7 @@ public interface BuildProvenanceOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -271,6 +286,7 @@ public interface BuildProvenanceOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -296,6 +312,7 @@ public interface BuildProvenanceOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
+
   /**
    *
    *
@@ -323,6 +340,7 @@ public interface BuildProvenanceOrBuilder
    * @return The logsUri.
    */
   java.lang.String getLogsUri();
+
   /**
    *
    *
@@ -348,6 +366,7 @@ public interface BuildProvenanceOrBuilder
    * @return Whether the sourceProvenance field is set.
    */
   boolean hasSourceProvenance();
+
   /**
    *
    *
@@ -360,6 +379,7 @@ public interface BuildProvenanceOrBuilder
    * @return The sourceProvenance.
    */
   io.grafeas.v1.Source getSourceProvenance();
+
   /**
    *
    *
@@ -383,6 +403,7 @@ public interface BuildProvenanceOrBuilder
    * @return The triggerId.
    */
   java.lang.String getTriggerId();
+
   /**
    *
    *
@@ -407,6 +428,7 @@ public interface BuildProvenanceOrBuilder
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
   int getBuildOptionsCount();
+
   /**
    *
    *
@@ -418,9 +440,11 @@ public interface BuildProvenanceOrBuilder
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
   boolean containsBuildOptions(java.lang.String key);
+
   /** Use {@link #getBuildOptionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getBuildOptions();
+
   /**
    *
    *
@@ -432,6 +456,7 @@ public interface BuildProvenanceOrBuilder
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getBuildOptionsMap();
+
   /**
    *
    *
@@ -447,6 +472,7 @@ public interface BuildProvenanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -471,6 +497,7 @@ public interface BuildProvenanceOrBuilder
    * @return The builderVersion.
    */
   java.lang.String getBuilderVersion();
+
   /**
    *
    *

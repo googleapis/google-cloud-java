@@ -40,6 +40,7 @@ public interface GetMetadataStoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

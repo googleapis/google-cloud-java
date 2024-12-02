@@ -41,6 +41,7 @@ public interface InitializeEncryptionSpecRequestOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface InitializeEncryptionSpecRequestOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.dialogflow.v2beta1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *

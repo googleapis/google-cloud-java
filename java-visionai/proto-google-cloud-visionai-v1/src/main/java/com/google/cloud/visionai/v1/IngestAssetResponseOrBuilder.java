@@ -38,6 +38,7 @@ public interface IngestAssetResponseOrBuilder
    * @return Whether the successfullyIngestedPartition field is set.
    */
   boolean hasSuccessfullyIngestedPartition();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface IngestAssetResponseOrBuilder
    * @return The successfullyIngestedPartition.
    */
   com.google.cloud.visionai.v1.Partition.TemporalPartition getSuccessfullyIngestedPartition();
+
   /**
    *
    *

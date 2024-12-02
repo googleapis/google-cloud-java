@@ -38,6 +38,7 @@ public interface ExecutionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ExecutionOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ExecutionOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ExecutionOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ExecutionOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface ExecutionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface ExecutionOrBuilder
    * @return The argument.
    */
   java.lang.String getArgument();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface ExecutionOrBuilder
    * @return The result.
    */
   java.lang.String getResult();
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public interface ExecutionOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface ExecutionOrBuilder
    * @return The error.
    */
   com.google.cloud.workflows.executions.v1beta.Execution.Error getError();
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public interface ExecutionOrBuilder
    * @return The workflowRevisionId.
    */
   java.lang.String getWorkflowRevisionId();
+
   /**
    *
    *

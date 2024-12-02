@@ -38,6 +38,7 @@ public interface InsertInstanceTemplateRequestOrBuilder
    * @return Whether the instanceTemplateResource field is set.
    */
   boolean hasInstanceTemplateResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertInstanceTemplateRequestOrBuilder
    * @return The instanceTemplateResource.
    */
   com.google.cloud.compute.v1.InstanceTemplate getInstanceTemplateResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertInstanceTemplateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface InsertInstanceTemplateRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertInstanceTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

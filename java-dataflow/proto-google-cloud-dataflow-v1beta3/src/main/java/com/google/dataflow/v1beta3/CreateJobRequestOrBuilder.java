@@ -36,6 +36,7 @@ public interface CreateJobRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CreateJobRequestOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface CreateJobRequestOrBuilder
    * @return The job.
    */
   com.google.dataflow.v1beta3.Job getJob();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface CreateJobRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface CreateJobRequestOrBuilder
    * @return The replaceJobId.
    */
   java.lang.String getReplaceJobId();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface CreateJobRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

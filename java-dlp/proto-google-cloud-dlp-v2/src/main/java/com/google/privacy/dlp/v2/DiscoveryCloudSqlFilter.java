@@ -35,6 +35,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryCloudSqlFilter)
     DiscoveryCloudSqlFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryCloudSqlFilter.newBuilder() to construct.
   private DiscoveryCloudSqlFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     private FilterCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,6 +118,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
   }
 
   public static final int COLLECTION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
   public boolean hasCollection() {
     return filterCase_ == 1;
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.DatabaseResourceCollection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
   }
 
   public static final int OTHERS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
   public boolean hasOthers() {
     return filterCase_ == 2;
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.AllOtherDatabaseResources.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
   }
 
   public static final int DATABASE_RESOURCE_REFERENCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
   public boolean hasDatabaseResourceReference() {
     return filterCase_ == 3;
   }
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.DatabaseResourceReference.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -486,6 +497,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -741,6 +753,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DatabaseResourceCollection.Builder,
             com.google.privacy.dlp.v2.DatabaseResourceCollectionOrBuilder>
         collectionBuilder_;
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     public boolean hasCollection() {
       return filterCase_ == 1;
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DatabaseResourceCollection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +873,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +912,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.DatabaseResourceCollection.Builder getCollectionBuilder() {
       return getCollectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DatabaseResourceCollection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.AllOtherDatabaseResources.Builder,
             com.google.privacy.dlp.v2.AllOtherDatabaseResourcesOrBuilder>
         othersBuilder_;
+
     /**
      *
      *
@@ -969,6 +991,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     public boolean hasOthers() {
       return filterCase_ == 2;
     }
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.AllOtherDatabaseResources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1046,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1070,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1136,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.AllOtherDatabaseResources.Builder getOthersBuilder() {
       return getOthersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1147,6 +1176,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.AllOtherDatabaseResources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DatabaseResourceReference.Builder,
             com.google.privacy.dlp.v2.DatabaseResourceReferenceOrBuilder>
         databaseResourceReferenceBuilder_;
+
     /**
      *
      *
@@ -1205,6 +1236,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
     public boolean hasDatabaseResourceReference() {
       return filterCase_ == 3;
     }
+
     /**
      *
      *
@@ -1232,6 +1264,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DatabaseResourceReference.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1257,6 +1290,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1313,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1350,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       filterCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1378,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1394,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
         getDatabaseResourceReferenceBuilder() {
       return getDatabaseResourceReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1380,6 +1418,7 @@ public final class DiscoveryCloudSqlFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DatabaseResourceReference.getDefaultInstance();
       }
     }
+
     /**
      *
      *

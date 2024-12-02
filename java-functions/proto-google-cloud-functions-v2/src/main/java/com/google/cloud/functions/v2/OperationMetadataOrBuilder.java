@@ -36,6 +36,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface OperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface OperationMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface OperationMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface OperationMetadataOrBuilder
    * @return The statusDetail.
    */
   java.lang.String getStatusDetail();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface OperationMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the requestResource field is set.
    */
   boolean hasRequestResource();
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public interface OperationMetadataOrBuilder
    * @return The requestResource.
    */
   com.google.protobuf.Any getRequestResource();
+
   /**
    *
    *
@@ -257,6 +267,7 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.cloud.functions.v2.Stage stages = 9;</code>
    */
   java.util.List<com.google.cloud.functions.v2.Stage> getStagesList();
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.cloud.functions.v2.Stage stages = 9;</code>
    */
   com.google.cloud.functions.v2.Stage getStages(int index);
+
   /**
    *
    *
@@ -277,6 +289,7 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.cloud.functions.v2.Stage stages = 9;</code>
    */
   int getStagesCount();
+
   /**
    *
    *
@@ -287,6 +300,7 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.cloud.functions.v2.Stage stages = 9;</code>
    */
   java.util.List<? extends com.google.cloud.functions.v2.StageOrBuilder> getStagesOrBuilderList();
+
   /**
    *
    *
@@ -311,6 +325,7 @@ public interface OperationMetadataOrBuilder
    * @return The sourceToken.
    */
   java.lang.String getSourceToken();
+
   /**
    *
    *
@@ -337,6 +352,7 @@ public interface OperationMetadataOrBuilder
    * @return The buildName.
    */
   java.lang.String getBuildName();
+
   /**
    *
    *
@@ -362,6 +378,7 @@ public interface OperationMetadataOrBuilder
    * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
+
   /**
    *
    *

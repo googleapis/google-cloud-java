@@ -38,6 +38,7 @@ public interface DocumentOrBuilder
    * @return Whether the structData field is set.
    */
   boolean hasStructData();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DocumentOrBuilder
    * @return The structData.
    */
   com.google.protobuf.Struct getStructData();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DocumentOrBuilder
    * @return Whether the jsonData field is set.
    */
   boolean hasJsonData();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface DocumentOrBuilder
    * @return The jsonData.
    */
   java.lang.String getJsonData();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface DocumentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface DocumentOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface DocumentOrBuilder
    * @return The schemaId.
    */
   java.lang.String getSchemaId();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface DocumentOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public interface DocumentOrBuilder
    * @return The content.
    */
   com.google.cloud.discoveryengine.v1.Document.Content getContent();
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public interface DocumentOrBuilder
    * @return The parentDocumentId.
    */
   java.lang.String getParentDocumentId();
+
   /**
    *
    *
@@ -288,6 +298,7 @@ public interface DocumentOrBuilder
    * @return Whether the derivedStructData field is set.
    */
   boolean hasDerivedStructData();
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public interface DocumentOrBuilder
    * @return The derivedStructData.
    */
   com.google.protobuf.Struct getDerivedStructData();
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public interface DocumentOrBuilder
    * @return Whether the indexTime field is set.
    */
   boolean hasIndexTime();
+
   /**
    *
    *
@@ -351,6 +364,7 @@ public interface DocumentOrBuilder
    * @return The indexTime.
    */
   com.google.protobuf.Timestamp getIndexTime();
+
   /**
    *
    *
@@ -386,6 +400,7 @@ public interface DocumentOrBuilder
    * @return Whether the indexStatus field is set.
    */
   boolean hasIndexStatus();
+
   /**
    *
    *
@@ -405,6 +420,7 @@ public interface DocumentOrBuilder
    * @return The indexStatus.
    */
   com.google.cloud.discoveryengine.v1.Document.IndexStatus getIndexStatus();
+
   /**
    *
    *

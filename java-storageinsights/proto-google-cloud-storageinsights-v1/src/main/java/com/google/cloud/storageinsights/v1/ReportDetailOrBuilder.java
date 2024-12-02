@@ -37,6 +37,7 @@ public interface ReportDetailOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ReportDetailOrBuilder
    * @return Whether the snapshotTime field is set.
    */
   boolean hasSnapshotTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ReportDetailOrBuilder
    * @return The snapshotTime.
    */
   com.google.protobuf.Timestamp getSnapshotTime();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface ReportDetailOrBuilder
    * @return The reportPathPrefix.
    */
   java.lang.String getReportPathPrefix();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface ReportDetailOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface ReportDetailOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface ReportDetailOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -194,9 +201,11 @@ public interface ReportDetailOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface ReportDetailOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public interface ReportDetailOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public interface ReportDetailOrBuilder
    * @return Whether the targetDatetime field is set.
    */
   boolean hasTargetDatetime();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface ReportDetailOrBuilder
    * @return The targetDatetime.
    */
   com.google.type.DateTime getTargetDatetime();
+
   /**
    *
    *
@@ -282,6 +295,7 @@ public interface ReportDetailOrBuilder
    * @return Whether the reportMetrics field is set.
    */
   boolean hasReportMetrics();
+
   /**
    *
    *
@@ -294,6 +308,7 @@ public interface ReportDetailOrBuilder
    * @return The reportMetrics.
    */
   com.google.cloud.storageinsights.v1.ReportDetail.Metrics getReportMetrics();
+
   /**
    *
    *

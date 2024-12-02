@@ -36,6 +36,7 @@ public interface FstabEntryOrBuilder
    * @return The spec.
    */
   java.lang.String getSpec();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FstabEntryOrBuilder
    * @return The file.
    */
   java.lang.String getFile();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface FstabEntryOrBuilder
    * @return The vfstype.
    */
   java.lang.String getVfstype();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface FstabEntryOrBuilder
    * @return The mntops.
    */
   java.lang.String getMntops();
+
   /**
    *
    *

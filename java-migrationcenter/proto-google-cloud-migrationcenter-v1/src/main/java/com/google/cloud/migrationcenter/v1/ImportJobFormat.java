@@ -108,6 +108,7 @@ public enum ImportJobFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_JOB_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int IMPORT_JOB_FORMAT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -118,6 +119,7 @@ public enum ImportJobFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_JOB_FORMAT_RVTOOLS_XLSX = 1;</code>
    */
   public static final int IMPORT_JOB_FORMAT_RVTOOLS_XLSX_VALUE = 1;
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public enum ImportJobFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_JOB_FORMAT_RVTOOLS_CSV = 2;</code>
    */
   public static final int IMPORT_JOB_FORMAT_RVTOOLS_CSV_VALUE = 2;
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public enum ImportJobFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_JOB_FORMAT_EXPORTED_AWS_CSV = 4;</code>
    */
   public static final int IMPORT_JOB_FORMAT_EXPORTED_AWS_CSV_VALUE = 4;
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public enum ImportJobFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_JOB_FORMAT_EXPORTED_AZURE_CSV = 5;</code>
    */
   public static final int IMPORT_JOB_FORMAT_EXPORTED_AZURE_CSV_VALUE = 5;
+
   /**
    *
    *

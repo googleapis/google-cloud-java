@@ -42,6 +42,7 @@ public interface RoleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface RoleOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface RoleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface RoleOrBuilder
    * @return A list containing the includedPermissions.
    */
   java.util.List<java.lang.String> getIncludedPermissionsList();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface RoleOrBuilder
    * @return The count of includedPermissions.
    */
   int getIncludedPermissionsCount();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface RoleOrBuilder
    * @return The includedPermissions at the given index.
    */
   java.lang.String getIncludedPermissions(int index);
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface RoleOrBuilder
    * @return The enum numeric value on the wire for stage.
    */
   int getStageValue();
+
   /**
    *
    *

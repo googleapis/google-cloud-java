@@ -37,6 +37,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> getRulesList();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   com.google.cloud.compute.v1.FirewallPolicyRule getRules(int index);
+
   /**
    *
    *
@@ -129,6 +135,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *
@@ -164,6 +172,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -177,6 +186,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

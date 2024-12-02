@@ -38,6 +38,7 @@ public interface UploadConversationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface UploadConversationRequestOrBuilder
    * @return Whether the conversation field is set.
    */
   boolean hasConversation();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UploadConversationRequestOrBuilder
    * @return The conversation.
    */
   com.google.cloud.contactcenterinsights.v1.Conversation getConversation();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface UploadConversationRequestOrBuilder
    * @return The conversationId.
    */
   java.lang.String getConversationId();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface UploadConversationRequestOrBuilder
    * @return Whether the redactionConfig field is set.
    */
   boolean hasRedactionConfig();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface UploadConversationRequestOrBuilder
    * @return The redactionConfig.
    */
   com.google.cloud.contactcenterinsights.v1.RedactionConfig getRedactionConfig();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface UploadConversationRequestOrBuilder
    * @return Whether the speechConfig field is set.
    */
   boolean hasSpeechConfig();
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public interface UploadConversationRequestOrBuilder
    * @return The speechConfig.
    */
   com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig();
+
   /**
    *
    *

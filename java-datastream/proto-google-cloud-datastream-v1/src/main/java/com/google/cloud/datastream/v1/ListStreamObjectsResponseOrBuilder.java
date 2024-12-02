@@ -34,6 +34,7 @@ public interface ListStreamObjectsResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1.StreamObject stream_objects = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.StreamObject> getStreamObjectsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListStreamObjectsResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1.StreamObject stream_objects = 1;</code>
    */
   com.google.cloud.datastream.v1.StreamObject getStreamObjects(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListStreamObjectsResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1.StreamObject stream_objects = 1;</code>
    */
   int getStreamObjectsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListStreamObjectsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.StreamObjectOrBuilder>
       getStreamObjectsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListStreamObjectsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

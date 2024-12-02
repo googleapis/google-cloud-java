@@ -34,6 +34,7 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.developerconnect.v1.Connection connections = 1;</code>
    */
   java.util.List<com.google.cloud.developerconnect.v1.Connection> getConnectionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.developerconnect.v1.Connection connections = 1;</code>
    */
   com.google.cloud.developerconnect.v1.Connection getConnections(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.developerconnect.v1.Connection connections = 1;</code>
    */
   int getConnectionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.developerconnect.v1.ConnectionOrBuilder>
       getConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListConnectionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListConnectionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListConnectionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

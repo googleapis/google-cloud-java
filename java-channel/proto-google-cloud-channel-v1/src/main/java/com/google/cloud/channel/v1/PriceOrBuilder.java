@@ -36,6 +36,7 @@ public interface PriceOrBuilder
    * @return Whether the basePrice field is set.
    */
   boolean hasBasePrice();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PriceOrBuilder
    * @return The basePrice.
    */
   com.google.type.Money getBasePrice();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface PriceOrBuilder
    * @return Whether the effectivePrice field is set.
    */
   boolean hasEffectivePrice();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface PriceOrBuilder
    * @return The effectivePrice.
    */
   com.google.type.Money getEffectivePrice();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface PriceOrBuilder
    * @return The externalPriceUri.
    */
   java.lang.String getExternalPriceUri();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * @return Whether the ipCidrRange field is set.
    */
   boolean hasIpCidrRange();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * @return Whether the rangeName field is set.
    */
   boolean hasRangeName();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * @return The rangeName.
    */
   java.lang.String getRangeName();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * @return Whether the reservedInternalRange field is set.
    */
   boolean hasReservedInternalRange();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * @return The reservedInternalRange.
    */
   java.lang.String getReservedInternalRange();
+
   /**
    *
    *

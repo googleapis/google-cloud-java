@@ -33,6 +33,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.PrivilegedAccess)
     PrivilegedAccessOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrivilegedAccess.newBuilder() to construct.
   private PrivilegedAccess(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
      * @return The resourceType.
      */
     java.lang.String getResourceType();
+
     /**
      *
      *
@@ -103,6 +105,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
      * @return The resource.
      */
     java.lang.String getResource();
+
     /**
      *
      *
@@ -130,6 +133,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     java.util.List<
             com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess.RoleBinding>
         getRoleBindingsList();
+
     /**
      *
      *
@@ -143,6 +147,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess.RoleBinding
         getRoleBindings(int index);
+
     /**
      *
      *
@@ -155,6 +160,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     int getRoleBindingsCount();
+
     /**
      *
      *
@@ -171,6 +177,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess
                     .RoleBindingOrBuilder>
         getRoleBindingsOrBuilderList();
+
     /**
      *
      *
@@ -185,6 +192,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess.RoleBindingOrBuilder
         getRoleBindingsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess)
       GcpIamAccessOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GcpIamAccess.newBuilder() to construct.
     private GcpIamAccess(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -252,6 +261,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
        * @return The role.
        */
       java.lang.String getRole();
+
       /**
        *
        *
@@ -285,6 +295,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
        * @return The conditionExpression.
        */
       java.lang.String getConditionExpression();
+
       /**
        *
        *
@@ -305,6 +316,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
        */
       com.google.protobuf.ByteString getConditionExpressionBytes();
     }
+
     /**
      *
      *
@@ -320,6 +332,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess.RoleBinding)
         RoleBindingOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use RoleBinding.newBuilder() to construct.
       private RoleBinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -357,6 +370,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object role_ = "";
+
       /**
        *
        *
@@ -381,6 +395,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return s;
         }
       }
+
       /**
        *
        *
@@ -410,6 +425,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object conditionExpression_ = "";
+
       /**
        *
        *
@@ -440,6 +456,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return s;
         }
       }
+
       /**
        *
        *
@@ -668,6 +685,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -893,6 +911,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         private int bitField0_;
 
         private java.lang.Object role_ = "";
+
         /**
          *
          *
@@ -916,6 +935,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -939,6 +959,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -961,6 +982,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -979,6 +1001,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1004,6 +1027,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
 
         private java.lang.Object conditionExpression_ = "";
+
         /**
          *
          *
@@ -1033,6 +1057,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1062,6 +1087,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1090,6 +1116,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1114,6 +1141,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1219,6 +1247,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceType_ = "";
+
     /**
      *
      *
@@ -1242,6 +1271,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1270,6 +1300,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -1293,6 +1324,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1355,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     private java.util.List<
             com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess.RoleBinding>
         roleBindings_;
+
     /**
      *
      *
@@ -1340,6 +1373,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         getRoleBindingsList() {
       return roleBindings_;
     }
+
     /**
      *
      *
@@ -1359,6 +1393,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         getRoleBindingsOrBuilderList() {
       return roleBindings_;
     }
+
     /**
      *
      *
@@ -1374,6 +1409,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     public int getRoleBindingsCount() {
       return roleBindings_.size();
     }
+
     /**
      *
      *
@@ -1390,6 +1426,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         getRoleBindings(int index) {
       return roleBindings_.get(index);
     }
+
     /**
      *
      *
@@ -1596,6 +1633,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1876,6 +1914,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object resourceType_ = "";
+
       /**
        *
        *
@@ -1898,6 +1937,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1920,6 +1960,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1941,6 +1982,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1958,6 +2000,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1982,6 +2025,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object resource_ = "";
+
       /**
        *
        *
@@ -2004,6 +2048,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2026,6 +2071,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2047,6 +2093,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2064,6 +2111,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2129,6 +2177,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return roleBindingsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2147,6 +2196,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return roleBindingsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2166,6 +2216,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return roleBindingsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2193,6 +2244,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2218,6 +2270,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2244,6 +2297,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2271,6 +2325,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2295,6 +2350,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2320,6 +2376,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2346,6 +2403,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2367,6 +2425,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2388,6 +2447,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2404,6 +2464,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           getRoleBindingsBuilder(int index) {
         return getRoleBindingsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2424,6 +2485,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return roleBindingsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2446,6 +2508,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
           return java.util.Collections.unmodifiableList(roleBindings_);
         }
       }
+
       /**
        *
        *
@@ -2465,6 +2528,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess
                     .RoleBinding.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2485,6 +2549,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess
                     .RoleBinding.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2612,6 +2677,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     private AccessTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2643,6 +2709,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GCP_IAM_ACCESS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -2660,6 +2727,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
   public boolean hasGcpIamAccess() {
     return accessTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -2683,6 +2751,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2884,6 +2953,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3106,6 +3176,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
             com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess.Builder,
             com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccessOrBuilder>
         gcpIamAccessBuilder_;
+
     /**
      *
      *
@@ -3123,6 +3194,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
     public boolean hasGcpIamAccess() {
       return accessTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -3154,6 +3226,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3179,6 +3252,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
       accessTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3202,6 +3276,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
       accessTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3240,6 +3315,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
       accessTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3267,6 +3343,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3282,6 +3359,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
         getGcpIamAccessBuilder() {
       return getGcpIamAccessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3307,6 +3385,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

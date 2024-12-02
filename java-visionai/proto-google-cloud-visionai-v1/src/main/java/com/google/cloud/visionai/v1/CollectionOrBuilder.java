@@ -37,6 +37,7 @@ public interface CollectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CollectionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CollectionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

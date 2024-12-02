@@ -39,6 +39,7 @@ public interface CircleOrBuilder
    * @return Whether the center field is set.
    */
   boolean hasCenter();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CircleOrBuilder
    * @return The center.
    */
   com.google.type.LatLng getCenter();
+
   /**
    *
    *

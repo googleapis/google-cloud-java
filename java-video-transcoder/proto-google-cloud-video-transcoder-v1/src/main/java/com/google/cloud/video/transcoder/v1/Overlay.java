@@ -33,6 +33,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Overlay)
     OverlayOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Overlay.newBuilder() to construct.
   private Overlay(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * <code>FADE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int FADE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * <code>FADE_IN = 1;</code>
      */
     public static final int FADE_IN_VALUE = 1;
+
     /**
      *
      *
@@ -251,6 +254,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      */
     double getY();
   }
+
   /**
    *
    *
@@ -265,6 +269,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate)
       NormalizedCoordinateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NormalizedCoordinate.newBuilder() to construct.
     private NormalizedCoordinate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -295,6 +300,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int X_FIELD_NUMBER = 1;
     private double x_ = 0D;
+
     /**
      *
      *
@@ -313,6 +319,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int Y_FIELD_NUMBER = 2;
     private double y_ = 0D;
+
     /**
      *
      *
@@ -506,6 +513,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -711,6 +719,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private double x_;
+
       /**
        *
        *
@@ -726,6 +735,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public double getX() {
         return x_;
       }
+
       /**
        *
        *
@@ -745,6 +755,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -764,6 +775,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double y_;
+
       /**
        *
        *
@@ -779,6 +791,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public double getY() {
         return y_;
       }
+
       /**
        *
        *
@@ -798,6 +811,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -901,6 +915,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -930,6 +945,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resolution field is set.
      */
     boolean hasResolution();
+
     /**
      *
      *
@@ -945,6 +961,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The resolution.
      */
     com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate getResolution();
+
     /**
      *
      *
@@ -974,6 +991,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      */
     double getAlpha();
   }
+
   /**
    *
    *
@@ -988,6 +1006,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Overlay.Image)
       ImageOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Image.newBuilder() to construct.
     private Image(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1023,6 +1042,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1047,6 +1067,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1095,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESOLUTION_FIELD_NUMBER = 2;
     private com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate resolution_;
+
     /**
      *
      *
@@ -1092,6 +1114,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResolution() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1112,6 +1135,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.getDefaultInstance()
           : resolution_;
     }
+
     /**
      *
      *
@@ -1134,6 +1158,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALPHA_FIELD_NUMBER = 3;
     private double alpha_ = 0D;
+
     /**
      *
      *
@@ -1338,6 +1363,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1568,6 +1594,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -1591,6 +1618,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1614,6 +1642,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1636,6 +1665,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1654,6 +1684,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1684,6 +1715,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.Builder,
               com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinateOrBuilder>
           resolutionBuilder_;
+
       /**
        *
        *
@@ -1701,6 +1733,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasResolution() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1725,6 +1758,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return resolutionBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1751,6 +1785,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1775,6 +1810,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1808,6 +1844,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1830,6 +1867,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1848,6 +1886,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getResolutionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1871,6 +1910,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               : resolution_;
         }
       }
+
       /**
        *
        *
@@ -1901,6 +1941,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double alpha_;
+
       /**
        *
        *
@@ -1917,6 +1958,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public double getAlpha() {
         return alpha_;
       }
+
       /**
        *
        *
@@ -1937,6 +1979,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2041,6 +2084,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the xy field is set.
      */
     boolean hasXy();
+
     /**
      *
      *
@@ -2057,6 +2101,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The xy.
      */
     com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate getXy();
+
     /**
      *
      *
@@ -2084,6 +2129,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTimeOffset field is set.
      */
     boolean hasStartTimeOffset();
+
     /**
      *
      *
@@ -2096,6 +2142,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The startTimeOffset.
      */
     com.google.protobuf.Duration getStartTimeOffset();
+
     /**
      *
      *
@@ -2107,6 +2154,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getStartTimeOffsetOrBuilder();
   }
+
   /**
    *
    *
@@ -2121,6 +2169,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Overlay.AnimationStatic)
       AnimationStaticOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AnimationStatic.newBuilder() to construct.
     private AnimationStatic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2152,6 +2201,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int XY_FIELD_NUMBER = 1;
     private com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate xy_;
+
     /**
      *
      *
@@ -2171,6 +2221,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasXy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2192,6 +2243,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.getDefaultInstance()
           : xy_;
     }
+
     /**
      *
      *
@@ -2215,6 +2267,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int START_TIME_OFFSET_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration startTimeOffset_;
+
     /**
      *
      *
@@ -2230,6 +2283,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTimeOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2247,6 +2301,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : startTimeOffset_;
     }
+
     /**
      *
      *
@@ -2443,6 +2498,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2673,6 +2729,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.Builder,
               com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinateOrBuilder>
           xyBuilder_;
+
       /**
        *
        *
@@ -2691,6 +2748,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasXy() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2716,6 +2774,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return xyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2743,6 +2802,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2768,6 +2828,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2802,6 +2863,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2825,6 +2887,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2844,6 +2907,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getXyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2868,6 +2932,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               : xy_;
         }
       }
+
       /**
        *
        *
@@ -2904,6 +2969,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           startTimeOffsetBuilder_;
+
       /**
        *
        *
@@ -2918,6 +2984,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartTimeOffset() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2938,6 +3005,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return startTimeOffsetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2960,6 +3028,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2979,6 +3048,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3006,6 +3076,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3025,6 +3096,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3039,6 +3111,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStartTimeOffsetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3057,6 +3130,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               : startTimeOffset_;
         }
       }
+
       /**
        *
        *
@@ -3169,6 +3243,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for fadeType.
      */
     int getFadeTypeValue();
+
     /**
      *
      *
@@ -3200,6 +3275,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the xy field is set.
      */
     boolean hasXy();
+
     /**
      *
      *
@@ -3216,6 +3292,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The xy.
      */
     com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate getXy();
+
     /**
      *
      *
@@ -3243,6 +3320,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTimeOffset field is set.
      */
     boolean hasStartTimeOffset();
+
     /**
      *
      *
@@ -3255,6 +3333,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The startTimeOffset.
      */
     com.google.protobuf.Duration getStartTimeOffset();
+
     /**
      *
      *
@@ -3279,6 +3358,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTimeOffset field is set.
      */
     boolean hasEndTimeOffset();
+
     /**
      *
      *
@@ -3292,6 +3372,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The endTimeOffset.
      */
     com.google.protobuf.Duration getEndTimeOffset();
+
     /**
      *
      *
@@ -3304,6 +3385,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getEndTimeOffsetOrBuilder();
   }
+
   /**
    *
    *
@@ -3318,6 +3400,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Overlay.AnimationFade)
       AnimationFadeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AnimationFade.newBuilder() to construct.
     private AnimationFade(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3351,6 +3434,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int FADE_TYPE_FIELD_NUMBER = 1;
     private int fadeType_ = 0;
+
     /**
      *
      *
@@ -3368,6 +3452,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public int getFadeTypeValue() {
       return fadeType_;
     }
+
     /**
      *
      *
@@ -3392,6 +3477,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int XY_FIELD_NUMBER = 2;
     private com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate xy_;
+
     /**
      *
      *
@@ -3411,6 +3497,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasXy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3432,6 +3519,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.getDefaultInstance()
           : xy_;
     }
+
     /**
      *
      *
@@ -3455,6 +3543,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int START_TIME_OFFSET_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration startTimeOffset_;
+
     /**
      *
      *
@@ -3470,6 +3559,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTimeOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3487,6 +3577,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : startTimeOffset_;
     }
+
     /**
      *
      *
@@ -3505,6 +3596,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int END_TIME_OFFSET_FIELD_NUMBER = 4;
     private com.google.protobuf.Duration endTimeOffset_;
+
     /**
      *
      *
@@ -3521,6 +3613,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTimeOffset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3539,6 +3632,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : endTimeOffset_;
     }
+
     /**
      *
      *
@@ -3763,6 +3857,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4021,6 +4116,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int fadeType_ = 0;
+
       /**
        *
        *
@@ -4038,6 +4134,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public int getFadeTypeValue() {
         return fadeType_;
       }
+
       /**
        *
        *
@@ -4058,6 +4155,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4079,6 +4177,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.video.transcoder.v1.Overlay.FadeType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4102,6 +4201,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4128,6 +4228,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.Builder,
               com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinateOrBuilder>
           xyBuilder_;
+
       /**
        *
        *
@@ -4146,6 +4247,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasXy() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -4171,6 +4273,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return xyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4198,6 +4301,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4223,6 +4327,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4257,6 +4362,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4280,6 +4386,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4299,6 +4406,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getXyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4323,6 +4431,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               : xy_;
         }
       }
+
       /**
        *
        *
@@ -4359,6 +4468,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           startTimeOffsetBuilder_;
+
       /**
        *
        *
@@ -4373,6 +4483,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartTimeOffset() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -4393,6 +4504,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return startTimeOffsetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4415,6 +4527,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4434,6 +4547,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4461,6 +4575,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4480,6 +4595,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4494,6 +4610,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStartTimeOffsetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4512,6 +4629,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               : startTimeOffset_;
         }
       }
+
       /**
        *
        *
@@ -4544,6 +4662,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           endTimeOffsetBuilder_;
+
       /**
        *
        *
@@ -4559,6 +4678,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEndTimeOffset() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -4580,6 +4700,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return endTimeOffsetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4603,6 +4724,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4623,6 +4745,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4651,6 +4774,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4671,6 +4795,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4686,6 +4811,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEndTimeOffsetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4705,6 +4831,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               : endTimeOffset_;
         }
       }
+
       /**
        *
        *
@@ -4814,6 +4941,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTimeOffset field is set.
      */
     boolean hasStartTimeOffset();
+
     /**
      *
      *
@@ -4826,6 +4954,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The startTimeOffset.
      */
     com.google.protobuf.Duration getStartTimeOffset();
+
     /**
      *
      *
@@ -4837,6 +4966,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getStartTimeOffsetOrBuilder();
   }
+
   /**
    *
    *
@@ -4853,6 +4983,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Overlay.AnimationEnd)
       AnimationEndOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AnimationEnd.newBuilder() to construct.
     private AnimationEnd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4884,6 +5015,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int START_TIME_OFFSET_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration startTimeOffset_;
+
     /**
      *
      *
@@ -4899,6 +5031,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTimeOffset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4916,6 +5049,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : startTimeOffset_;
     }
+
     /**
      *
      *
@@ -5098,6 +5232,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5308,6 +5443,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           startTimeOffsetBuilder_;
+
       /**
        *
        *
@@ -5322,6 +5458,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartTimeOffset() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5342,6 +5479,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return startTimeOffsetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5364,6 +5502,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5383,6 +5522,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5410,6 +5550,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5429,6 +5570,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5443,6 +5585,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStartTimeOffsetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5461,6 +5604,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               : startTimeOffset_;
         }
       }
+
       /**
        *
        *
@@ -5568,6 +5712,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the animationStatic field is set.
      */
     boolean hasAnimationStatic();
+
     /**
      *
      *
@@ -5580,6 +5725,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The animationStatic.
      */
     com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic getAnimationStatic();
+
     /**
      *
      *
@@ -5604,6 +5750,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the animationFade field is set.
      */
     boolean hasAnimationFade();
+
     /**
      *
      *
@@ -5616,6 +5763,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The animationFade.
      */
     com.google.cloud.video.transcoder.v1.Overlay.AnimationFade getAnimationFade();
+
     /**
      *
      *
@@ -5639,6 +5787,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the animationEnd field is set.
      */
     boolean hasAnimationEnd();
+
     /**
      *
      *
@@ -5651,6 +5800,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      * @return The animationEnd.
      */
     com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd getAnimationEnd();
+
     /**
      *
      *
@@ -5664,6 +5814,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.video.transcoder.v1.Overlay.Animation.AnimationTypeCase getAnimationTypeCase();
   }
+
   /**
    *
    *
@@ -5678,6 +5829,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Overlay.Animation)
       AnimationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Animation.newBuilder() to construct.
     private Animation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5724,6 +5876,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       private AnimationTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -5759,6 +5912,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ANIMATION_STATIC_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -5774,6 +5928,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnimationStatic() {
       return animationTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -5792,6 +5947,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5811,6 +5967,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ANIMATION_FADE_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -5826,6 +5983,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnimationFade() {
       return animationTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -5844,6 +6002,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.video.transcoder.v1.Overlay.AnimationFade.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5863,6 +6022,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ANIMATION_END_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -5878,6 +6038,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnimationEnd() {
       return animationTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -5896,6 +6057,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -6123,6 +6285,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6380,6 +6543,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic.Builder,
               com.google.cloud.video.transcoder.v1.Overlay.AnimationStaticOrBuilder>
           animationStaticBuilder_;
+
       /**
        *
        *
@@ -6396,6 +6560,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAnimationStatic() {
         return animationTypeCase_ == 1;
       }
+
       /**
        *
        *
@@ -6422,6 +6587,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6446,6 +6612,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6467,6 +6634,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6504,6 +6672,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6530,6 +6699,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6544,6 +6714,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           getAnimationStaticBuilder() {
         return getAnimationStaticFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6566,6 +6737,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6606,6 +6778,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Overlay.AnimationFade.Builder,
               com.google.cloud.video.transcoder.v1.Overlay.AnimationFadeOrBuilder>
           animationFadeBuilder_;
+
       /**
        *
        *
@@ -6621,6 +6794,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAnimationFade() {
         return animationTypeCase_ == 2;
       }
+
       /**
        *
        *
@@ -6646,6 +6820,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.video.transcoder.v1.Overlay.AnimationFade.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6669,6 +6844,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6689,6 +6865,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6724,6 +6901,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6749,6 +6927,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6762,6 +6941,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           getAnimationFadeBuilder() {
         return getAnimationFadeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6783,6 +6963,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.video.transcoder.v1.Overlay.AnimationFade.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6822,6 +7003,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd.Builder,
               com.google.cloud.video.transcoder.v1.Overlay.AnimationEndOrBuilder>
           animationEndBuilder_;
+
       /**
        *
        *
@@ -6837,6 +7019,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAnimationEnd() {
         return animationTypeCase_ == 3;
       }
+
       /**
        *
        *
@@ -6862,6 +7045,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6885,6 +7069,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6905,6 +7090,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6940,6 +7126,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         animationTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6965,6 +7152,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6978,6 +7166,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           getAnimationEndBuilder() {
         return getAnimationEndFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6999,6 +7188,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7100,6 +7290,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int IMAGE_FIELD_NUMBER = 1;
   private com.google.cloud.video.transcoder.v1.Overlay.Image image_;
+
   /**
    *
    *
@@ -7115,6 +7306,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -7132,6 +7324,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.transcoder.v1.Overlay.Image.getDefaultInstance()
         : image_;
   }
+
   /**
    *
    *
@@ -7152,6 +7345,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.Overlay.Animation> animations_;
+
   /**
    *
    *
@@ -7167,6 +7361,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       getAnimationsList() {
     return animations_;
   }
+
   /**
    *
    *
@@ -7182,6 +7377,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       getAnimationsOrBuilderList() {
     return animations_;
   }
+
   /**
    *
    *
@@ -7196,6 +7392,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
   public int getAnimationsCount() {
     return animations_.size();
   }
+
   /**
    *
    *
@@ -7210,6 +7407,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.Overlay.Animation getAnimations(int index) {
     return animations_.get(index);
   }
+
   /**
    *
    *
@@ -7401,6 +7599,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7665,6 +7864,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.Overlay.Image.Builder,
             com.google.cloud.video.transcoder.v1.Overlay.ImageOrBuilder>
         imageBuilder_;
+
     /**
      *
      *
@@ -7679,6 +7879,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -7699,6 +7900,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         return imageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7721,6 +7923,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7741,6 +7944,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7768,6 +7972,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7787,6 +7992,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7801,6 +8007,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7819,6 +8026,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
             : image_;
       }
     }
+
     /**
      *
      *
@@ -7881,6 +8089,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         return animationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7898,6 +8107,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         return animationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7915,6 +8125,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         return animationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7939,6 +8150,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7960,6 +8172,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7983,6 +8196,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8007,6 +8221,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8028,6 +8243,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8049,6 +8265,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8071,6 +8288,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8091,6 +8309,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8111,6 +8330,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8125,6 +8345,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAnimationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8143,6 +8364,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         return animationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8161,6 +8383,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(animations_);
       }
     }
+
     /**
      *
      *
@@ -8175,6 +8398,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       return getAnimationsFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.Overlay.Animation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8191,6 +8415,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.video.transcoder.v1.Overlay.Animation.getDefaultInstance());
     }
+
     /**
      *
      *

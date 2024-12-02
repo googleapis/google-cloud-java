@@ -37,6 +37,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the diskName field is set.
    */
   boolean hasDiskName();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The diskName.
    */
   java.lang.String getDiskName();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the diskSizeGb field is set.
    */
   boolean hasDiskSizeGb();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the diskType field is set.
    */
   boolean hasDiskType();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the enableConfidentialCompute field is set.
    */
   boolean hasEnableConfidentialCompute();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -245,9 +256,11 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -258,6 +271,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -272,6 +286,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -295,6 +310,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return A list containing the licenses.
    */
   java.util.List<java.lang.String> getLicensesList();
+
   /**
    *
    *
@@ -307,6 +323,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The count of licenses.
    */
   int getLicensesCount();
+
   /**
    *
    *
@@ -320,6 +337,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The licenses at the given index.
    */
   java.lang.String getLicenses(int index);
+
   /**
    *
    *
@@ -347,6 +365,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the onUpdateAction field is set.
    */
   boolean hasOnUpdateAction();
+
   /**
    *
    *
@@ -360,6 +379,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The onUpdateAction.
    */
   java.lang.String getOnUpdateAction();
+
   /**
    *
    *
@@ -386,6 +406,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the provisionedIops field is set.
    */
   boolean hasProvisionedIops();
+
   /**
    *
    *
@@ -411,6 +432,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the provisionedThroughput field is set.
    */
   boolean hasProvisionedThroughput();
+
   /**
    *
    *
@@ -436,6 +458,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return A list containing the replicaZones.
    */
   java.util.List<java.lang.String> getReplicaZonesList();
+
   /**
    *
    *
@@ -448,6 +471,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The count of replicaZones.
    */
   int getReplicaZonesCount();
+
   /**
    *
    *
@@ -461,6 +485,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The replicaZones at the given index.
    */
   java.lang.String getReplicaZones(int index);
+
   /**
    *
    *
@@ -485,6 +510,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
   int getResourceManagerTagsCount();
+
   /**
    *
    *
@@ -495,9 +521,11 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
   boolean containsResourceManagerTags(java.lang.String key);
+
   /** Use {@link #getResourceManagerTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags();
+
   /**
    *
    *
@@ -508,6 +536,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap();
+
   /**
    *
    *
@@ -522,6 +551,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -545,6 +575,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return A list containing the resourcePolicies.
    */
   java.util.List<java.lang.String> getResourcePoliciesList();
+
   /**
    *
    *
@@ -557,6 +588,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The count of resourcePolicies.
    */
   int getResourcePoliciesCount();
+
   /**
    *
    *
@@ -570,6 +602,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The resourcePolicies at the given index.
    */
   java.lang.String getResourcePolicies(int index);
+
   /**
    *
    *
@@ -596,6 +629,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the sourceImage field is set.
    */
   boolean hasSourceImage();
+
   /**
    *
    *
@@ -608,6 +642,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The sourceImage.
    */
   java.lang.String getSourceImage();
+
   /**
    *
    *
@@ -635,6 +670,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the sourceImageEncryptionKey field is set.
    */
   boolean hasSourceImageEncryptionKey();
+
   /**
    *
    *
@@ -649,6 +685,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The sourceImageEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceImageEncryptionKey();
+
   /**
    *
    *
@@ -674,6 +711,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the sourceSnapshot field is set.
    */
   boolean hasSourceSnapshot();
+
   /**
    *
    *
@@ -686,6 +724,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The sourceSnapshot.
    */
   java.lang.String getSourceSnapshot();
+
   /**
    *
    *
@@ -713,6 +752,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the sourceSnapshotEncryptionKey field is set.
    */
   boolean hasSourceSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -727,6 +767,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The sourceSnapshotEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -753,6 +794,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return Whether the storagePool field is set.
    */
   boolean hasStoragePool();
+
   /**
    *
    *
@@ -765,6 +807,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * @return The storagePool.
    */
   java.lang.String getStoragePool();
+
   /**
    *
    *

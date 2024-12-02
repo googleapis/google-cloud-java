@@ -33,6 +33,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.DeleteOperationMetadata)
     DeleteOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteOperationMetadata.newBuilder() to construct.
   private DeleteOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

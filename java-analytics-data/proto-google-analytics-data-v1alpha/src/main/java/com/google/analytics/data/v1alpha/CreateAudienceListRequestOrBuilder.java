@@ -39,6 +39,7 @@ public interface CreateAudienceListRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateAudienceListRequestOrBuilder
    * @return Whether the audienceList field is set.
    */
   boolean hasAudienceList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateAudienceListRequestOrBuilder
    * @return The audienceList.
    */
   com.google.analytics.data.v1alpha.AudienceList getAudienceList();
+
   /**
    *
    *

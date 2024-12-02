@@ -34,6 +34,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p7beta1.RelationshipAttributes)
     RelationshipAttributesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RelationshipAttributes.newBuilder() to construct.
   private RelationshipAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceResourceType_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetResourceType_ = "";
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -460,6 +469,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -690,6 +700,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -713,6 +724,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -736,6 +748,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +790,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object sourceResourceType_ = "";
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object targetResourceType_ = "";
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -951,6 +973,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1013,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object action_ = "";
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1084,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1106,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1124,7 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

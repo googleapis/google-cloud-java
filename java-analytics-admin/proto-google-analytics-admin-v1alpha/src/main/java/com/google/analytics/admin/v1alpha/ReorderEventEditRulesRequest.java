@@ -33,6 +33,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ReorderEventEditRulesRequest)
     ReorderEventEditRulesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReorderEventEditRulesRequest.newBuilder() to construct.
   private ReorderEventEditRulesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList eventEditRules_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getEventEditRulesList() {
     return eventEditRules_;
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
   public int getEventEditRulesCount() {
     return eventEditRules_.size();
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
   public java.lang.String getEventEditRules(int index) {
     return eventEditRules_.get(index);
   }
+
   /**
    *
    *
@@ -367,6 +374,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -577,6 +585,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +679,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       eventEditRules_.makeImmutable();
       return eventEditRules_;
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
     public int getEventEditRulesCount() {
       return eventEditRules_.size();
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
     public java.lang.String getEventEditRules(int index) {
       return eventEditRules_.get(index);
     }
+
     /**
      *
      *
@@ -768,6 +785,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getEventEditRulesBytes(int index) {
       return eventEditRules_.getByteString(index);
     }
+
     /**
      *
      *
@@ -793,6 +811,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +858,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +879,7 @@ public final class ReorderEventEditRulesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

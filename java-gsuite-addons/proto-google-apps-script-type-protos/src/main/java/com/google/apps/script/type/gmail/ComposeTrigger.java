@@ -33,6 +33,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.script.type.gmail.ComposeTrigger)
     ComposeTriggerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComposeTrigger.newBuilder() to construct.
   private ComposeTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>NONE = 1;</code>
      */
     public static final int NONE_VALUE = 1;
+
     /**
      *
      *
@@ -231,6 +234,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.MenuItemExtensionPoint> actions_;
+
   /**
    *
    *
@@ -245,6 +249,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.apps.script.type.MenuItemExtensionPoint> getActionsList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -260,6 +265,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       getActionsOrBuilderList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -274,6 +280,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
   public int getActionsCount() {
     return actions_.size();
   }
+
   /**
    *
    *
@@ -288,6 +295,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
   public com.google.apps.script.type.MenuItemExtensionPoint getActions(int index) {
     return actions_.get(index);
   }
+
   /**
    *
    *
@@ -306,6 +314,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DRAFT_ACCESS_FIELD_NUMBER = 4;
   private int draftAccess_ = 0;
+
   /**
    *
    *
@@ -321,6 +330,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
   public int getDraftAccessValue() {
     return draftAccess_;
   }
+
   /**
    *
    *
@@ -513,6 +523,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -790,6 +801,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -807,6 +819,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -824,6 +837,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -847,6 +861,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +883,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +907,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +931,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +953,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +975,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +997,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1018,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1039,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1053,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.script.type.MenuItemExtensionPoint.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
         return actionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(actions_);
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1106,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       return getActionsFieldBuilder()
           .addBuilder(com.google.apps.script.type.MenuItemExtensionPoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1095,6 +1122,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.apps.script.type.MenuItemExtensionPoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1128,6 +1156,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int draftAccess_ = 0;
+
     /**
      *
      *
@@ -1143,6 +1172,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
     public int getDraftAccessValue() {
       return draftAccess_;
     }
+
     /**
      *
      *
@@ -1161,6 +1191,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1211,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
           ? com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1202,6 +1234,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

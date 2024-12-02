@@ -37,6 +37,7 @@ public interface ChannelGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ChannelGroupOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ChannelGroupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface ChannelGroupOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.GroupingRule> getGroupingRuleList();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ChannelGroupOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.GroupingRule getGroupingRule(int index);
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ChannelGroupOrBuilder
    * </code>
    */
   int getGroupingRuleCount();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface ChannelGroupOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.GroupingRuleOrBuilder>
       getGroupingRuleOrBuilderList();
+
   /**
    *
    *

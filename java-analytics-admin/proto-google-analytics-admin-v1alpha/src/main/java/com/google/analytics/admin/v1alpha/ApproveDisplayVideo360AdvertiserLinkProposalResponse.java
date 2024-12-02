@@ -35,6 +35,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse)
     ApproveDisplayVideo360AdvertiserLinkProposalResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApproveDisplayVideo360AdvertiserLinkProposalResponse.newBuilder() to construct.
   private ApproveDisplayVideo360AdvertiserLinkProposalResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
   public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
       displayVideo360AdvertiserLink_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
   public boolean hasDisplayVideo360AdvertiserLink() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
         ? com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.getDefaultInstance()
         : displayVideo360AdvertiserLink_;
   }
+
   /**
    *
    *
@@ -320,6 +324,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -550,6 +555,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
             com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder,
             com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder>
         displayVideo360AdvertiserLinkBuilder_;
+
     /**
      *
      *
@@ -567,6 +573,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
     public boolean hasDisplayVideo360AdvertiserLink() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -591,6 +598,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
         return displayVideo360AdvertiserLinkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -617,6 +625,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +649,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +683,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
       onChanged();
       return getDisplayVideo360AdvertiserLinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
             : displayVideo360AdvertiserLink_;
       }
     }
+
     /**
      *
      *

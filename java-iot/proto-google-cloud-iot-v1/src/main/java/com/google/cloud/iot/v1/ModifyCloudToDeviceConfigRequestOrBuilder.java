@@ -40,6 +40,7 @@ public interface ModifyCloudToDeviceConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

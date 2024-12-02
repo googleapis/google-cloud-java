@@ -30,6 +30,7 @@ public interface AggregationResultOrBuilder
    * @return The field.
    */
   java.lang.String getField();
+
   /**
    * <code>string field = 1;</code>
    *
@@ -43,12 +44,14 @@ public interface AggregationResultOrBuilder
    * @return Whether the count field is set.
    */
   boolean hasCount();
+
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code>
    *
    * @return The count.
    */
   com.google.cloud.migrationcenter.v1.AggregationResult.Count getCount();
+
   /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
   com.google.cloud.migrationcenter.v1.AggregationResult.CountOrBuilder getCountOrBuilder();
 
@@ -58,12 +61,14 @@ public interface AggregationResultOrBuilder
    * @return Whether the sum field is set.
    */
   boolean hasSum();
+
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code>
    *
    * @return The sum.
    */
   com.google.cloud.migrationcenter.v1.AggregationResult.Sum getSum();
+
   /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
   com.google.cloud.migrationcenter.v1.AggregationResult.SumOrBuilder getSumOrBuilder();
 
@@ -73,12 +78,14 @@ public interface AggregationResultOrBuilder
    * @return Whether the histogram field is set.
    */
   boolean hasHistogram();
+
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code>
    *
    * @return The histogram.
    */
   com.google.cloud.migrationcenter.v1.AggregationResult.Histogram getHistogram();
+
   /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
   com.google.cloud.migrationcenter.v1.AggregationResult.HistogramOrBuilder getHistogramOrBuilder();
 
@@ -88,12 +95,14 @@ public interface AggregationResultOrBuilder
    * @return Whether the frequency field is set.
    */
   boolean hasFrequency();
+
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code>
    *
    * @return The frequency.
    */
   com.google.cloud.migrationcenter.v1.AggregationResult.Frequency getFrequency();
+
   /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
   com.google.cloud.migrationcenter.v1.AggregationResult.FrequencyOrBuilder getFrequencyOrBuilder();
 

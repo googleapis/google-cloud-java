@@ -34,6 +34,7 @@ public interface ListInspectTemplatesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.InspectTemplate> getInspectTemplatesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListInspectTemplatesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
   com.google.privacy.dlp.v2.InspectTemplate getInspectTemplates(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListInspectTemplatesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
   int getInspectTemplatesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListInspectTemplatesResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.InspectTemplateOrBuilder>
       getInspectTemplatesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListInspectTemplatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.DeleteScanConfigRequest)
     DeleteScanConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteScanConfigRequest.newBuilder() to construct.
   private DeleteScanConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +279,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -463,6 +467,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -486,6 +491,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -509,6 +515,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -531,6 +538,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

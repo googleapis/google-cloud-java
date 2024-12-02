@@ -33,6 +33,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CloudRunConfig)
     CloudRunConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudRunConfig.newBuilder() to construct.
   private CloudRunConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTOMATIC_TRAFFIC_CONTROL_FIELD_NUMBER = 1;
   private boolean automaticTrafficControl_ = false;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList canaryRevisionTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getCanaryRevisionTagsList() {
     return canaryRevisionTags_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public int getCanaryRevisionTagsCount() {
     return canaryRevisionTags_.size();
   }
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getCanaryRevisionTags(int index) {
     return canaryRevisionTags_.get(index);
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList priorRevisionTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPriorRevisionTagsList() {
     return priorRevisionTags_;
   }
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public int getPriorRevisionTagsCount() {
     return priorRevisionTags_.size();
   }
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPriorRevisionTags(int index) {
     return priorRevisionTags_.get(index);
   }
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList stableRevisionTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getStableRevisionTagsList() {
     return stableRevisionTags_;
   }
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStableRevisionTagsCount() {
     return stableRevisionTags_.size();
   }
+
   /**
    *
    *
@@ -280,6 +293,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getStableRevisionTags(int index) {
     return stableRevisionTags_.get(index);
   }
+
   /**
    *
    *
@@ -505,6 +519,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -752,6 +767,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean automaticTrafficControl_;
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getAutomaticTrafficControl() {
       return automaticTrafficControl_;
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       canaryRevisionTags_.makeImmutable();
       return canaryRevisionTags_;
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public int getCanaryRevisionTagsCount() {
       return canaryRevisionTags_.size();
     }
+
     /**
      *
      *
@@ -872,6 +893,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCanaryRevisionTags(int index) {
       return canaryRevisionTags_.get(index);
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCanaryRevisionTagsBytes(int index) {
       return canaryRevisionTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -914,6 +937,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +962,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +984,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1005,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1041,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1031,6 +1059,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       priorRevisionTags_.makeImmutable();
       return priorRevisionTags_;
     }
+
     /**
      *
      *
@@ -1047,6 +1076,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPriorRevisionTagsCount() {
       return priorRevisionTags_.size();
     }
+
     /**
      *
      *
@@ -1064,6 +1094,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPriorRevisionTags(int index) {
       return priorRevisionTags_.get(index);
     }
+
     /**
      *
      *
@@ -1081,6 +1112,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPriorRevisionTagsBytes(int index) {
       return priorRevisionTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1106,6 +1138,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1163,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1185,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1206,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1242,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1223,6 +1260,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       stableRevisionTags_.makeImmutable();
       return stableRevisionTags_;
     }
+
     /**
      *
      *
@@ -1239,6 +1277,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStableRevisionTagsCount() {
       return stableRevisionTags_.size();
     }
+
     /**
      *
      *
@@ -1256,6 +1295,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getStableRevisionTags(int index) {
       return stableRevisionTags_.get(index);
     }
+
     /**
      *
      *
@@ -1273,6 +1313,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getStableRevisionTagsBytes(int index) {
       return stableRevisionTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1298,6 +1339,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1364,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1386,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1407,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

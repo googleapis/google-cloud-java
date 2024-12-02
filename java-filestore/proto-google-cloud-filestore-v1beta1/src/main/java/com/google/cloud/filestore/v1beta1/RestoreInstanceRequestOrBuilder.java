@@ -39,6 +39,7 @@ public interface RestoreInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RestoreInstanceRequestOrBuilder
    * @return The fileShare.
    */
   java.lang.String getFileShare();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface RestoreInstanceRequestOrBuilder
    */
   @java.lang.Deprecated
   boolean hasSourceSnapshot();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface RestoreInstanceRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getSourceSnapshot();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface RestoreInstanceRequestOrBuilder
    * @return Whether the sourceBackup field is set.
    */
   boolean hasSourceBackup();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface RestoreInstanceRequestOrBuilder
    * @return The sourceBackup.
    */
   java.lang.String getSourceBackup();
+
   /**
    *
    *

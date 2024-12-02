@@ -33,6 +33,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.UpdateBillingAccountRequest)
     UpdateBillingAccountRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateBillingAccountRequest.newBuilder() to construct.
   private UpdateBillingAccountRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
 
   public static final int ACCOUNT_FIELD_NUMBER = 2;
   private com.google.cloud.billing.v1.BillingAccount account_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
   public boolean hasAccount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
         ? com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()
         : account_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -415,6 +424,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +657,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +751,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
             com.google.cloud.billing.v1.BillingAccount.Builder,
             com.google.cloud.billing.v1.BillingAccountOrBuilder>
         accountBuilder_;
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     public boolean hasAccount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
         return accountBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +874,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +905,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +928,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +946,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return getAccountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -945,6 +968,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
             : account_;
       }
     }
+
     /**
      *
      *
@@ -980,6 +1004,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -995,6 +1020,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1016,6 +1042,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1066,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1087,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1116,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1137,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1153,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1141,6 +1173,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
             : updateMask_;
       }
     }
+
     /**
      *
      *

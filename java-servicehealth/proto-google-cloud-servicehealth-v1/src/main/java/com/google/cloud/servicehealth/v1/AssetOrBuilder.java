@@ -38,6 +38,7 @@ public interface AssetOrBuilder
    * @return The assetName.
    */
   java.lang.String getAssetName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface AssetOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
+
   /**
    *
    *

@@ -441,7 +441,8 @@ public class SessionEntityTypeName implements ResourceName {
     private Builder(SessionEntityTypeName sessionEntityTypeName) {
       Preconditions.checkArgument(
           Objects.equals(sessionEntityTypeName.pathTemplate, PROJECT_SESSION_ENTITY_TYPE),
-          "toBuilder is only supported when SessionEntityTypeName has the pattern of projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}");
+          "toBuilder is only supported when SessionEntityTypeName has the pattern of"
+              + " projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}");
       this.project = sessionEntityTypeName.project;
       this.session = sessionEntityTypeName.session;
       this.entityType = sessionEntityTypeName.entityType;

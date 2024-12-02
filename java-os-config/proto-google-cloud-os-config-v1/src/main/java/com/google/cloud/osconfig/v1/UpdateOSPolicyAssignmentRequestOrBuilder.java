@@ -38,6 +38,7 @@ public interface UpdateOSPolicyAssignmentRequestOrBuilder
    * @return Whether the osPolicyAssignment field is set.
    */
   boolean hasOsPolicyAssignment();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateOSPolicyAssignmentRequestOrBuilder
    * @return The osPolicyAssignment.
    */
   com.google.cloud.osconfig.v1.OSPolicyAssignment getOsPolicyAssignment();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateOSPolicyAssignmentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateOSPolicyAssignmentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

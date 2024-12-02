@@ -36,6 +36,7 @@ public interface QueryAssetsResponseOrBuilder
    * @return The jobReference.
    */
   java.lang.String getJobReference();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface QueryAssetsResponseOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface QueryAssetsResponseOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface QueryAssetsResponseOrBuilder
    * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface QueryAssetsResponseOrBuilder
    * @return The queryResult.
    */
   com.google.cloud.asset.v1.QueryResult getQueryResult();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface QueryAssetsResponseOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface QueryAssetsResponseOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.asset.v1.QueryAssetsOutputConfig getOutputConfig();
+
   /**
    *
    *

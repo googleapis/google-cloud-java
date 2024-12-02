@@ -33,6 +33,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GetStreamThumbnailRequest)
     GetStreamThumbnailRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetStreamThumbnailRequest.newBuilder() to construct.
   private GetStreamThumbnailRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stream_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcsObjectName_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object event_ = "";
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -260,6 +268,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -483,6 +492,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -712,6 +722,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object stream_ = "";
+
     /**
      *
      *
@@ -734,6 +745,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -756,6 +768,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +790,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +808,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object gcsObjectName_ = "";
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -883,6 +901,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +919,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +944,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object event_ = "";
+
     /**
      *
      *
@@ -947,6 +968,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -970,6 +992,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1015,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1034,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1060,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1069,6 +1095,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1103,6 +1130,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1164,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1194,7 @@ public final class GetStreamThumbnailRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

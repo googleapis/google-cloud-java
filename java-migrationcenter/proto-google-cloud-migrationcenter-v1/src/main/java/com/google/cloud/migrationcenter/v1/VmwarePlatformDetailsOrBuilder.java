@@ -36,6 +36,7 @@ public interface VmwarePlatformDetailsOrBuilder
    * @return The vcenterVersion.
    */
   java.lang.String getVcenterVersion();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VmwarePlatformDetailsOrBuilder
    * @return The esxVersion.
    */
   java.lang.String getEsxVersion();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface VmwarePlatformDetailsOrBuilder
    * @return The osid.
    */
   java.lang.String getOsid();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface VmwarePlatformDetailsOrBuilder
    * @return The vcenterFolder.
    */
   java.lang.String getVcenterFolder();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface VmwarePlatformDetailsOrBuilder
    * @return The vcenterUri.
    */
   java.lang.String getVcenterUri();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface VmwarePlatformDetailsOrBuilder
    * @return The vcenterVmId.
    */
   java.lang.String getVcenterVmId();
+
   /**
    *
    *

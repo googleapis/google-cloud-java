@@ -34,6 +34,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.UnassignRequest)
     UnassignRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UnassignRequest.newBuilder() to construct.
   private UnassignRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList usernames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getUsernamesList() {
     return usernames_;
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
   public int getUsernamesCount() {
     return usernames_.size();
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getUsernames(int index) {
     return usernames_.get(index);
   }
+
   /**
    *
    *
@@ -361,6 +368,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +581,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +700,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -703,6 +717,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       usernames_.makeImmutable();
       return usernames_;
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
     public int getUsernamesCount() {
       return usernames_.size();
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getUsernames(int index) {
       return usernames_.get(index);
     }
+
     /**
      *
      *
@@ -750,6 +767,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getUsernamesBytes(int index) {
       return usernames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -774,6 +792,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +837,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +857,7 @@ public final class UnassignRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

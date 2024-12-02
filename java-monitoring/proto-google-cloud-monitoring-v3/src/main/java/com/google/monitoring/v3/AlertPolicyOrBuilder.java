@@ -45,6 +45,7 @@ public interface AlertPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface AlertPolicyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -126,6 +128,7 @@ public interface AlertPolicyOrBuilder
    * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface AlertPolicyOrBuilder
    * @return The documentation.
    */
   com.google.monitoring.v3.AlertPolicy.Documentation getDocumentation();
+
   /**
    *
    *
@@ -180,6 +184,7 @@ public interface AlertPolicyOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
    */
   int getUserLabelsCount();
+
   /**
    *
    *
@@ -203,9 +208,11 @@ public interface AlertPolicyOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
    */
   boolean containsUserLabels(java.lang.String key);
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public interface AlertPolicyOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public interface AlertPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -297,6 +306,7 @@ public interface AlertPolicyOrBuilder
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
    */
   java.util.List<com.google.monitoring.v3.AlertPolicy.Condition> getConditionsList();
+
   /**
    *
    *
@@ -314,6 +324,7 @@ public interface AlertPolicyOrBuilder
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
    */
   com.google.monitoring.v3.AlertPolicy.Condition getConditions(int index);
+
   /**
    *
    *
@@ -331,6 +342,7 @@ public interface AlertPolicyOrBuilder
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -349,6 +361,7 @@ public interface AlertPolicyOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.AlertPolicy.ConditionOrBuilder>
       getConditionsOrBuilderList();
+
   /**
    *
    *
@@ -382,6 +395,7 @@ public interface AlertPolicyOrBuilder
    * @return The enum numeric value on the wire for combiner.
    */
   int getCombinerValue();
+
   /**
    *
    *
@@ -414,6 +428,7 @@ public interface AlertPolicyOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
+
   /**
    *
    *
@@ -430,6 +445,7 @@ public interface AlertPolicyOrBuilder
    * @return The enabled.
    */
   com.google.protobuf.BoolValue getEnabled();
+
   /**
    *
    *
@@ -459,6 +475,7 @@ public interface AlertPolicyOrBuilder
    * @return Whether the validity field is set.
    */
   boolean hasValidity();
+
   /**
    *
    *
@@ -473,6 +490,7 @@ public interface AlertPolicyOrBuilder
    * @return The validity.
    */
   com.google.rpc.Status getValidity();
+
   /**
    *
    *
@@ -507,6 +525,7 @@ public interface AlertPolicyOrBuilder
    * @return A list containing the notificationChannels.
    */
   java.util.List<java.lang.String> getNotificationChannelsList();
+
   /**
    *
    *
@@ -528,6 +547,7 @@ public interface AlertPolicyOrBuilder
    * @return The count of notificationChannels.
    */
   int getNotificationChannelsCount();
+
   /**
    *
    *
@@ -550,6 +570,7 @@ public interface AlertPolicyOrBuilder
    * @return The notificationChannels at the given index.
    */
   java.lang.String getNotificationChannels(int index);
+
   /**
    *
    *
@@ -586,6 +607,7 @@ public interface AlertPolicyOrBuilder
    * @return Whether the creationRecord field is set.
    */
   boolean hasCreationRecord();
+
   /**
    *
    *
@@ -599,6 +621,7 @@ public interface AlertPolicyOrBuilder
    * @return The creationRecord.
    */
   com.google.monitoring.v3.MutationRecord getCreationRecord();
+
   /**
    *
    *
@@ -624,6 +647,7 @@ public interface AlertPolicyOrBuilder
    * @return Whether the mutationRecord field is set.
    */
   boolean hasMutationRecord();
+
   /**
    *
    *
@@ -637,6 +661,7 @@ public interface AlertPolicyOrBuilder
    * @return The mutationRecord.
    */
   com.google.monitoring.v3.MutationRecord getMutationRecord();
+
   /**
    *
    *
@@ -661,6 +686,7 @@ public interface AlertPolicyOrBuilder
    * @return Whether the alertStrategy field is set.
    */
   boolean hasAlertStrategy();
+
   /**
    *
    *
@@ -673,6 +699,7 @@ public interface AlertPolicyOrBuilder
    * @return The alertStrategy.
    */
   com.google.monitoring.v3.AlertPolicy.AlertStrategy getAlertStrategy();
+
   /**
    *
    *
@@ -700,6 +727,7 @@ public interface AlertPolicyOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *

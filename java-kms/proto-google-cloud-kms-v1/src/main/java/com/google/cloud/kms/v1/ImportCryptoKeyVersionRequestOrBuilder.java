@@ -42,6 +42,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * @return The cryptoKeyVersion.
    */
   java.lang.String getCryptoKeyVersion();
+
   /**
    *
    *
@@ -146,6 +148,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
+
   /**
    *
    *
@@ -179,6 +182,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * @return The importJob.
    */
   java.lang.String getImportJob();
+
   /**
    *
    *
@@ -260,6 +264,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * @return Whether the rsaAesWrappedKey field is set.
    */
   boolean hasRsaAesWrappedKey();
+
   /**
    *
    *

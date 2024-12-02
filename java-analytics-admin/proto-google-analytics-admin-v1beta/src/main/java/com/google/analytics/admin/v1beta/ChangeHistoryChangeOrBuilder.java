@@ -36,6 +36,7 @@ public interface ChangeHistoryChangeOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ChangeHistoryChangeOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface ChangeHistoryChangeOrBuilder
    * @return Whether the resourceBeforeChange field is set.
    */
   boolean hasResourceBeforeChange();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface ChangeHistoryChangeOrBuilder
    */
   com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource
       getResourceBeforeChange();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface ChangeHistoryChangeOrBuilder
    * @return Whether the resourceAfterChange field is set.
    */
   boolean hasResourceAfterChange();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface ChangeHistoryChangeOrBuilder
    */
   com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource
       getResourceAfterChange();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface MarketingInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface MarketingInfoOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface MarketingInfoOrBuilder
    * @return Whether the defaultLogo field is set.
    */
   boolean hasDefaultLogo();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface MarketingInfoOrBuilder
    * @return The defaultLogo.
    */
   com.google.cloud.channel.v1.Media getDefaultLogo();
+
   /**
    *
    *

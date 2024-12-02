@@ -38,6 +38,7 @@ public interface CompleteQueryResponseOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2.CompleteQueryResponse.CompletionResult>
       getCompletionResultsList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface CompleteQueryResponseOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2.CompleteQueryResponse.CompletionResult getCompletionResults(int index);
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface CompleteQueryResponseOrBuilder
    * </code>
    */
   int getCompletionResultsCount();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface CompleteQueryResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.retail.v2.CompleteQueryResponse.CompletionResultOrBuilder>
       getCompletionResultsOrBuilderList();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface CompleteQueryResponseOrBuilder
    * @return The attributionToken.
    */
   java.lang.String getAttributionToken();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface CompleteQueryResponseOrBuilder
   @java.lang.Deprecated
   java.util.List<com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult>
       getRecentSearchResultsList();
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public interface CompleteQueryResponseOrBuilder
   @java.lang.Deprecated
   com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult getRecentSearchResults(
       int index);
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public interface CompleteQueryResponseOrBuilder
    */
   @java.lang.Deprecated
   int getRecentSearchResultsCount();
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public interface CompleteQueryResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResultOrBuilder>
       getRecentSearchResultsOrBuilderList();
+
   /**
    *
    *
@@ -315,6 +324,7 @@ public interface CompleteQueryResponseOrBuilder
    * </code>
    */
   int getAttributeResultsCount();
+
   /**
    *
    *
@@ -334,10 +344,12 @@ public interface CompleteQueryResponseOrBuilder
    * </code>
    */
   boolean containsAttributeResults(java.lang.String key);
+
   /** Use {@link #getAttributeResultsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CompleteQueryResponse.AttributeResult>
       getAttributeResults();
+
   /**
    *
    *
@@ -358,6 +370,7 @@ public interface CompleteQueryResponseOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CompleteQueryResponse.AttributeResult>
       getAttributeResultsMap();
+
   /**
    *
    *
@@ -381,6 +394,7 @@ public interface CompleteQueryResponseOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.retail.v2.CompleteQueryResponse.AttributeResult defaultValue);
+
   /**
    *
    *

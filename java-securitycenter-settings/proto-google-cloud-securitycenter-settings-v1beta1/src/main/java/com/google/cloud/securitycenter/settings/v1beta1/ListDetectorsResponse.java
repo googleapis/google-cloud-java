@@ -33,6 +33,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.ListDetectorsResponse)
     ListDetectorsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDetectorsResponse.newBuilder() to construct.
   private ListDetectorsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.settings.v1beta1.Detector> detectors_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       getDetectorsList() {
     return detectors_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       getDetectorsOrBuilderList() {
     return detectors_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
   public int getDetectorsCount() {
     return detectors_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.securitycenter.settings.v1beta1.Detector getDetectors(int index) {
     return detectors_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -363,6 +371,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -651,6 +660,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
         return detectorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -667,6 +677,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
         return detectorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
         return detectorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +852,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +892,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +906,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getDetectorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -902,6 +924,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
         return detectorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -920,6 +943,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(detectors_);
       }
     }
+
     /**
      *
      *
@@ -934,6 +958,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.cloud.securitycenter.settings.v1beta1.Detector.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -950,6 +975,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
               index,
               com.google.cloud.securitycenter.settings.v1beta1.Detector.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -982,6 +1008,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1005,6 +1032,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1056,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1079,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1098,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

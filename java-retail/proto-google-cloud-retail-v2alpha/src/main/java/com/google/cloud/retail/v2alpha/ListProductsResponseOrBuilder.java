@@ -34,6 +34,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Product products = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.Product> getProductsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Product products = 1;</code>
    */
   com.google.cloud.retail.v2alpha.Product getProducts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Product products = 1;</code>
    */
   int getProductsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListProductsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.ProductOrBuilder>
       getProductsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListProductsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

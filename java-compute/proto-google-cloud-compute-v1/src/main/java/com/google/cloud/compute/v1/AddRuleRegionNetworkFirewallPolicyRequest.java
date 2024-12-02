@@ -34,6 +34,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddRuleRegionNetworkFirewallPolicyRequest)
     AddRuleRegionNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddRuleRegionNetworkFirewallPolicyRequest.newBuilder() to construct.
   private AddRuleRegionNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
 
   public static final int FIREWALL_POLICY_RULE_RESOURCE_FIELD_NUMBER = 250523523;
   private com.google.cloud.compute.v1.FirewallPolicyRule firewallPolicyRuleResource_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
   public boolean hasFirewallPolicyRuleResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         ? com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance()
         : firewallPolicyRuleResource_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
 
   public static final int MAX_PRIORITY_FIELD_NUMBER = 329635359;
   private int maxPriority_ = 0;
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
   public boolean hasMaxPriority() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
 
   public static final int MIN_PRIORITY_FIELD_NUMBER = 267190513;
   private int minPriority_ = 0;
+
   /**
    *
    *
@@ -227,6 +236,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
   public boolean hasMinPriority() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -327,6 +340,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -357,6 +371,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -372,6 +387,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -395,6 +411,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -657,6 +674,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -955,6 +973,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
+
     /**
      *
      *
@@ -977,6 +996,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -999,6 +1019,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1041,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1059,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1089,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
             com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
             com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
         firewallPolicyRuleResourceBuilder_;
+
     /**
      *
      *
@@ -1082,6 +1106,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     public boolean hasFirewallPolicyRuleResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return firewallPolicyRuleResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1155,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1178,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1210,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1232,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1250,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return getFirewallPolicyRuleResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1241,6 +1272,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
             : firewallPolicyRuleResource_;
       }
     }
+
     /**
      *
      *
@@ -1270,6 +1302,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     }
 
     private int maxPriority_;
+
     /**
      *
      *
@@ -1285,6 +1318,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     public boolean hasMaxPriority() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1300,6 +1334,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     public int getMaxPriority() {
       return maxPriority_;
     }
+
     /**
      *
      *
@@ -1319,6 +1354,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1374,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     }
 
     private int minPriority_;
+
     /**
      *
      *
@@ -1353,6 +1390,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     public boolean hasMinPriority() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1368,6 +1406,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     public int getMinPriority() {
       return minPriority_;
     }
+
     /**
      *
      *
@@ -1387,6 +1426,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1406,6 +1446,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1430,6 +1471,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1454,6 +1496,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1477,6 +1520,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1540,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1522,6 +1567,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1546,6 +1592,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1570,6 +1617,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1593,6 +1641,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1612,6 +1661,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1688,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1652,6 +1703,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1674,6 +1726,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1696,6 +1749,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1717,6 +1771,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1734,6 +1789,7 @@ public final class AddRuleRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

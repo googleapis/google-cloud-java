@@ -322,7 +322,8 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListFindingTypeStats, expected %s or %s",
+                  "Unrecognized response type %s for method ListFindingTypeStats, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListFindingTypeStatsResponse.class.getName(),
                   Exception.class.getName())));

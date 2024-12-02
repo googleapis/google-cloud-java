@@ -41,6 +41,7 @@ public interface CancelExecutionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface CancelExecutionRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

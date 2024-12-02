@@ -34,6 +34,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RougeSpec)
     RougeSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RougeSpec.newBuilder() to construct.
   private RougeSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rougeType_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USE_STEMMER_FIELD_NUMBER = 2;
   private boolean useStemmer_ = false;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPLIT_SUMMARIES_FIELD_NUMBER = 3;
   private boolean splitSummaries_ = false;
+
   /**
    *
    *
@@ -328,6 +333,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -538,6 +544,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object rougeType_ = "";
+
     /**
      *
      *
@@ -560,6 +567,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -620,6 +630,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean useStemmer_;
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean getUseStemmer() {
       return useStemmer_;
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean splitSummaries_;
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean getSplitSummaries() {
       return splitSummaries_;
     }
+
     /**
      *
      *
@@ -731,6 +747,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

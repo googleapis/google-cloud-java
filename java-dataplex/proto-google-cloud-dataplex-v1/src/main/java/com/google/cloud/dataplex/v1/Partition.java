@@ -33,6 +33,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Partition)
     PartitionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Partition.newBuilder() to construct.
   private Partition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -294,6 +304,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -513,6 +524,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -748,6 +760,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -776,6 +789,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -804,6 +818,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -831,6 +846,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +870,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -910,6 +928,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       values_.makeImmutable();
       return values_;
     }
+
     /**
      *
      *
@@ -927,6 +946,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -945,6 +965,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
+
     /**
      *
      *
@@ -989,6 +1011,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1037,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1060,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1082,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1111,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -1111,6 +1138,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1137,6 +1165,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1191,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1213,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1242,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -1236,6 +1268,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1294,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1285,6 +1319,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1340,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

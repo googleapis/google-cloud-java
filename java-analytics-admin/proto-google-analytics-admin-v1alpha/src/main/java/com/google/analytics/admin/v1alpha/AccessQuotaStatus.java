@@ -33,6 +33,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.AccessQuotaStatus)
     AccessQuotaStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccessQuotaStatus.newBuilder() to construct.
   private AccessQuotaStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
 
   public static final int CONSUMED_FIELD_NUMBER = 1;
   private int consumed_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
 
   public static final int REMAINING_FIELD_NUMBER = 2;
   private int remaining_ = 0;
+
   /**
    *
    *
@@ -265,6 +268,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -460,6 +464,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int consumed_;
+
     /**
      *
      *
@@ -475,6 +480,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
     public int getConsumed() {
       return consumed_;
     }
+
     /**
      *
      *
@@ -494,6 +500,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
     }
 
     private int remaining_;
+
     /**
      *
      *
@@ -528,6 +536,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
     public int getRemaining() {
       return remaining_;
     }
+
     /**
      *
      *
@@ -547,6 +556,7 @@ public final class AccessQuotaStatus extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

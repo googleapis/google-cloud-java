@@ -33,6 +33,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.ReadFileResponse)
     ReadFileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadFileResponse.newBuilder() to construct.
   private ReadFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int FILE_CONTENTS_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString fileContents_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private com.google.protobuf.ByteString fileContents_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -437,6 +441,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getFileContents() {
       return fileContents_;
     }
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class ReadFileResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

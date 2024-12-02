@@ -39,6 +39,7 @@ public interface ListTestCasesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface ListTestCasesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface ListTestCasesRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *

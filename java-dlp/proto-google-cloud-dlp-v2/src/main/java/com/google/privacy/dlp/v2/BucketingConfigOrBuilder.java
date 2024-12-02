@@ -34,6 +34,7 @@ public interface BucketingConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> getBucketsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BucketingConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
   com.google.privacy.dlp.v2.BucketingConfig.Bucket getBuckets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BucketingConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
   int getBucketsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BucketingConfigOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>
       getBucketsOrBuilderList();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface SandboxConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getSandboxType();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SandboxConfigOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

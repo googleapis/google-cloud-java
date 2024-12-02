@@ -34,6 +34,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.CreateServiceRolloutRequest)
     CreateServiceRolloutRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateServiceRolloutRequest.newBuilder() to construct.
   private CreateServiceRolloutRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceName_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
 
   public static final int ROLLOUT_FIELD_NUMBER = 2;
   private com.google.api.servicemanagement.v1.Rollout rollout_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
   public boolean hasRollout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
         ? com.google.api.servicemanagement.v1.Rollout.getDefaultInstance()
         : rollout_;
   }
+
   /**
    *
    *
@@ -350,6 +356,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +575,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
             com.google.api.servicemanagement.v1.Rollout.Builder,
             com.google.api.servicemanagement.v1.RolloutOrBuilder>
         rolloutBuilder_;
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
     public boolean hasRollout() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
         return rolloutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -751,6 +766,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +857,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       onChanged();
       return getRolloutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
             : rollout_;
       }
     }
+
     /**
      *
      *

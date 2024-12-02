@@ -41,6 +41,7 @@ public final class CompetitiveVisibilityCompetitorView
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.CompetitiveVisibilityCompetitorView)
     CompetitiveVisibilityCompetitorViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompetitiveVisibilityCompetitorView.newBuilder() to construct.
   private CompetitiveVisibilityCompetitorView(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -78,6 +79,7 @@ public final class CompetitiveVisibilityCompetitorView
   private int bitField0_;
   public static final int DATE_FIELD_NUMBER = 1;
   private com.google.type.Date date_;
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class CompetitiveVisibilityCompetitorView
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasDomain() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class CompetitiveVisibilityCompetitorView
       return s;
     }
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   public static final int IS_YOUR_DOMAIN_FIELD_NUMBER = 3;
   private boolean isYourDomain_ = false;
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasIsYourDomain() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reportCountryCode_ = "";
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasReportCountryCode() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public final class CompetitiveVisibilityCompetitorView
       return s;
     }
   }
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   public static final int REPORT_CATEGORY_ID_FIELD_NUMBER = 5;
   private long reportCategoryId_ = 0L;
+
   /**
    *
    *
@@ -337,6 +350,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasReportCategoryId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -360,6 +374,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   public static final int TRAFFIC_SOURCE_FIELD_NUMBER = 6;
   private int trafficSource_ = 0;
+
   /**
    *
    *
@@ -379,6 +394,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasTrafficSource() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -398,6 +414,7 @@ public final class CompetitiveVisibilityCompetitorView
   public int getTrafficSourceValue() {
     return trafficSource_;
   }
+
   /**
    *
    *
@@ -426,6 +443,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   public static final int RANK_FIELD_NUMBER = 7;
   private long rank_ = 0L;
+
   /**
    *
    *
@@ -445,6 +463,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasRank() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -467,6 +486,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   public static final int ADS_ORGANIC_RATIO_FIELD_NUMBER = 8;
   private double adsOrganicRatio_ = 0D;
+
   /**
    *
    *
@@ -487,6 +507,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasAdsOrganicRatio() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -510,6 +531,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   public static final int PAGE_OVERLAP_RATE_FIELD_NUMBER = 9;
   private double pageOverlapRate_ = 0D;
+
   /**
    *
    *
@@ -530,6 +552,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasPageOverlapRate() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -553,6 +576,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   public static final int HIGHER_POSITION_RATE_FIELD_NUMBER = 10;
   private double higherPositionRate_ = 0D;
+
   /**
    *
    *
@@ -573,6 +597,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasHigherPositionRate() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -596,6 +621,7 @@ public final class CompetitiveVisibilityCompetitorView
 
   public static final int RELATIVE_VISIBILITY_FIELD_NUMBER = 11;
   private double relativeVisibility_ = 0D;
+
   /**
    *
    *
@@ -618,6 +644,7 @@ public final class CompetitiveVisibilityCompetitorView
   public boolean hasRelativeVisibility() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -970,6 +997,7 @@ public final class CompetitiveVisibilityCompetitorView
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1336,6 +1364,7 @@ public final class CompetitiveVisibilityCompetitorView
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateBuilder_;
+
     /**
      *
      *
@@ -1352,6 +1381,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1372,6 +1402,7 @@ public final class CompetitiveVisibilityCompetitorView
         return dateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1396,6 +1427,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1449,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1446,6 +1479,7 @@ public final class CompetitiveVisibilityCompetitorView
       }
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1501,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1518,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return getDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1501,6 +1537,7 @@ public final class CompetitiveVisibilityCompetitorView
         return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
       }
     }
+
     /**
      *
      *
@@ -1526,6 +1563,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private java.lang.Object domain_ = "";
+
     /**
      *
      *
@@ -1543,6 +1581,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasDomain() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1568,6 +1607,7 @@ public final class CompetitiveVisibilityCompetitorView
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1593,6 +1633,7 @@ public final class CompetitiveVisibilityCompetitorView
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1617,6 +1658,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1679,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1707,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private boolean isYourDomain_;
+
     /**
      *
      *
@@ -1681,6 +1725,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasIsYourDomain() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1698,6 +1743,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean getIsYourDomain() {
       return isYourDomain_;
     }
+
     /**
      *
      *
@@ -1719,6 +1765,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1787,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private java.lang.Object reportCountryCode_ = "";
+
     /**
      *
      *
@@ -1757,6 +1805,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasReportCountryCode() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1782,6 +1831,7 @@ public final class CompetitiveVisibilityCompetitorView
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1807,6 +1857,7 @@ public final class CompetitiveVisibilityCompetitorView
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1831,6 +1882,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1903,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1878,6 +1931,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private long reportCategoryId_;
+
     /**
      *
      *
@@ -1898,6 +1952,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasReportCategoryId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1918,6 +1973,7 @@ public final class CompetitiveVisibilityCompetitorView
     public long getReportCategoryId() {
       return reportCategoryId_;
     }
+
     /**
      *
      *
@@ -1942,6 +1998,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1966,6 +2023,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private int trafficSource_ = 0;
+
     /**
      *
      *
@@ -1985,6 +2043,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasTrafficSource() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2004,6 +2063,7 @@ public final class CompetitiveVisibilityCompetitorView
     public int getTrafficSourceValue() {
       return trafficSource_;
     }
+
     /**
      *
      *
@@ -2026,6 +2086,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2051,6 +2112,7 @@ public final class CompetitiveVisibilityCompetitorView
           ? com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2077,6 +2139,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2100,6 +2163,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private long rank_;
+
     /**
      *
      *
@@ -2119,6 +2183,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasRank() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2138,6 +2203,7 @@ public final class CompetitiveVisibilityCompetitorView
     public long getRank() {
       return rank_;
     }
+
     /**
      *
      *
@@ -2161,6 +2227,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2184,6 +2251,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private double adsOrganicRatio_;
+
     /**
      *
      *
@@ -2204,6 +2272,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasAdsOrganicRatio() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2224,6 +2293,7 @@ public final class CompetitiveVisibilityCompetitorView
     public double getAdsOrganicRatio() {
       return adsOrganicRatio_;
     }
+
     /**
      *
      *
@@ -2248,6 +2318,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2272,6 +2343,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private double pageOverlapRate_;
+
     /**
      *
      *
@@ -2292,6 +2364,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasPageOverlapRate() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2312,6 +2385,7 @@ public final class CompetitiveVisibilityCompetitorView
     public double getPageOverlapRate() {
       return pageOverlapRate_;
     }
+
     /**
      *
      *
@@ -2336,6 +2410,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2360,6 +2435,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private double higherPositionRate_;
+
     /**
      *
      *
@@ -2380,6 +2456,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasHigherPositionRate() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2400,6 +2477,7 @@ public final class CompetitiveVisibilityCompetitorView
     public double getHigherPositionRate() {
       return higherPositionRate_;
     }
+
     /**
      *
      *
@@ -2424,6 +2502,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2448,6 +2527,7 @@ public final class CompetitiveVisibilityCompetitorView
     }
 
     private double relativeVisibility_;
+
     /**
      *
      *
@@ -2470,6 +2550,7 @@ public final class CompetitiveVisibilityCompetitorView
     public boolean hasRelativeVisibility() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2492,6 +2573,7 @@ public final class CompetitiveVisibilityCompetitorView
     public double getRelativeVisibility() {
       return relativeVisibility_;
     }
+
     /**
      *
      *
@@ -2518,6 +2600,7 @@ public final class CompetitiveVisibilityCompetitorView
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public interface ListWorkstationClustersResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.workstations.v1.WorkstationCluster> getWorkstationClustersList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListWorkstationClustersResponseOrBuilder
    * </code>
    */
   com.google.cloud.workstations.v1.WorkstationCluster getWorkstationClusters(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListWorkstationClustersResponseOrBuilder
    * </code>
    */
   int getWorkstationClustersCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListWorkstationClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.workstations.v1.WorkstationClusterOrBuilder>
       getWorkstationClustersOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListWorkstationClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface ListWorkstationClustersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -133,6 +139,7 @@ public interface ListWorkstationClustersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -146,6 +153,7 @@ public interface ListWorkstationClustersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

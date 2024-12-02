@@ -38,6 +38,7 @@ public interface RecognitionAudioOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface RecognitionAudioOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface RecognitionAudioOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

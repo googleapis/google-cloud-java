@@ -38,6 +38,7 @@ public interface TextMetadataOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

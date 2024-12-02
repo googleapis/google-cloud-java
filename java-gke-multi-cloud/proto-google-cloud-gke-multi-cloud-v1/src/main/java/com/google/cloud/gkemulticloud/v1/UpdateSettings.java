@@ -55,6 +55,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.UpdateSettings)
     UpdateSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateSettings.newBuilder() to construct.
   private UpdateSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SURGE_SETTINGS_FIELD_NUMBER = 1;
   private com.google.cloud.gkemulticloud.v1.SurgeSettings surgeSettings_;
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSurgeSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkemulticloud.v1.SurgeSettings.getDefaultInstance()
         : surgeSettings_;
   }
+
   /**
    *
    *
@@ -304,6 +308,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -530,6 +535,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkemulticloud.v1.SurgeSettings.Builder,
             com.google.cloud.gkemulticloud.v1.SurgeSettingsOrBuilder>
         surgeSettingsBuilder_;
+
     /**
      *
      *
@@ -546,6 +552,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSurgeSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -568,6 +575,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
         return surgeSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +676,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSurgeSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class UpdateSettings extends com.google.protobuf.GeneratedMessageV3
             : surgeSettings_;
       }
     }
+
     /**
      *
      *

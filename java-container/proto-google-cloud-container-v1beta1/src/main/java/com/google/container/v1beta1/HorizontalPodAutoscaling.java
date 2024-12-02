@@ -35,6 +35,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.HorizontalPodAutoscaling)
     HorizontalPodAutoscalingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HorizontalPodAutoscaling.newBuilder() to construct.
   private HorizontalPodAutoscaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
 
   public static final int DISABLED_FIELD_NUMBER = 1;
   private boolean disabled_ = false;
+
   /**
    *
    *
@@ -243,6 +245,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -427,6 +430,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean disabled_;
+
     /**
      *
      *
@@ -444,6 +448,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
     public boolean getDisabled() {
       return disabled_;
     }
+
     /**
      *
      *
@@ -465,6 +470,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

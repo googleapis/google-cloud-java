@@ -35,6 +35,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.image.Derived)
     DerivedOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Derived.newBuilder() to construct.
   private Derived(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 1;
   private io.grafeas.v1beta1.image.Fingerprint fingerprint_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1beta1.image.Fingerprint.getDefaultInstance()
         : fingerprint_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISTANCE_FIELD_NUMBER = 2;
   private int distance_ = 0;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1beta1.image.Layer> layerInfo_;
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1beta1.image.Layer> getLayerInfoList() {
     return layerInfo_;
   }
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       getLayerInfoOrBuilderList() {
     return layerInfo_;
   }
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
   public int getLayerInfoCount() {
     return layerInfo_.size();
   }
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1beta1.image.Layer getLayerInfo(int index) {
     return layerInfo_.get(index);
   }
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseResourceUrl_ = "";
+
   /**
    *
    *
@@ -243,6 +254,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -459,6 +471,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -751,6 +764,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.image.Fingerprint.Builder,
             io.grafeas.v1beta1.image.FingerprintOrBuilder>
         fingerprintBuilder_;
+
     /**
      *
      *
@@ -765,6 +779,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         return fingerprintBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +906,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFingerprintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -904,6 +925,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
             : fingerprint_;
       }
     }
+
     /**
      *
      *
@@ -931,6 +953,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int distance_;
+
     /**
      *
      *
@@ -947,6 +970,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     public int getDistance() {
       return distance_;
     }
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         return layerInfoBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         return layerInfoBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1083,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         return layerInfoBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1108,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1130,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1155,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1180,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1202,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1224,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1247,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1269,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1291,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1269,6 +1306,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.image.Layer.Builder getLayerInfoBuilder(int index) {
       return getLayerInfoFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1287,6 +1325,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         return layerInfoBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1345,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(layerInfo_);
       }
     }
+
     /**
      *
      *
@@ -1321,6 +1361,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       return getLayerInfoFieldBuilder()
           .addBuilder(io.grafeas.v1beta1.image.Layer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1336,6 +1377,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       return getLayerInfoFieldBuilder()
           .addBuilder(index, io.grafeas.v1beta1.image.Layer.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1369,6 +1411,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object baseResourceUrl_ = "";
+
     /**
      *
      *
@@ -1392,6 +1435,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1415,6 +1459,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1437,6 +1482,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1501,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

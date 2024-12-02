@@ -38,6 +38,7 @@ public interface DenyGrantRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DenyGrantRequestOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
+
   /**
    *
    *

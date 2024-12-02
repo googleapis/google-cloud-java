@@ -36,6 +36,7 @@ public interface ListLbTrafficExtensionsResponseOrBuilder
    */
   java.util.List<com.google.cloud.networkservices.v1.LbTrafficExtension>
       getLbTrafficExtensionsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListLbTrafficExtensionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.networkservices.v1.LbTrafficExtension getLbTrafficExtensions(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListLbTrafficExtensionsResponseOrBuilder
    * </code>
    */
   int getLbTrafficExtensionsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListLbTrafficExtensionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.LbTrafficExtensionOrBuilder>
       getLbTrafficExtensionsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListLbTrafficExtensionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface ListLbTrafficExtensionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -132,6 +138,7 @@ public interface ListLbTrafficExtensionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -145,6 +152,7 @@ public interface ListLbTrafficExtensionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -49,6 +49,7 @@ public interface EventTriggerOrBuilder
    * @return The eventType.
    */
   java.lang.String getEventType();
+
   /**
    *
    *
@@ -105,6 +106,7 @@ public interface EventTriggerOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -152,6 +154,7 @@ public interface EventTriggerOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -181,6 +184,7 @@ public interface EventTriggerOrBuilder
    * @return Whether the failurePolicy field is set.
    */
   boolean hasFailurePolicy();
+
   /**
    *
    *
@@ -193,6 +197,7 @@ public interface EventTriggerOrBuilder
    * @return The failurePolicy.
    */
   com.google.cloud.functions.v1.FailurePolicy getFailurePolicy();
+
   /**
    *
    *

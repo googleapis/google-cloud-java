@@ -38,6 +38,7 @@ public interface CreateEdgeSlmRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateEdgeSlmRequestOrBuilder
    * @return The edgeSlmId.
    */
   java.lang.String getEdgeSlmId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateEdgeSlmRequestOrBuilder
    * @return Whether the edgeSlm field is set.
    */
   boolean hasEdgeSlm();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateEdgeSlmRequestOrBuilder
    * @return The edgeSlm.
    */
   com.google.cloud.telcoautomation.v1.EdgeSlm getEdgeSlm();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface CreateEdgeSlmRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

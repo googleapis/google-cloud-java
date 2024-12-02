@@ -36,6 +36,7 @@ public interface ListHardwareGroupsResponseOrBuilder
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup>
       getHardwareGroupsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListHardwareGroupsResponseOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup getHardwareGroups(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListHardwareGroupsResponseOrBuilder
    * </code>
    */
   int getHardwareGroupsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListHardwareGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroupOrBuilder>
       getHardwareGroupsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListHardwareGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface ListHardwareGroupsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -132,6 +138,7 @@ public interface ListHardwareGroupsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -145,6 +152,7 @@ public interface ListHardwareGroupsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

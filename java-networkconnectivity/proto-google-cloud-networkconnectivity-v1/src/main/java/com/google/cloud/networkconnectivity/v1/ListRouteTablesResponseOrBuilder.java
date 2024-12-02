@@ -34,6 +34,7 @@ public interface ListRouteTablesResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.RouteTable route_tables = 1;</code>
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.RouteTable> getRouteTablesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRouteTablesResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.RouteTable route_tables = 1;</code>
    */
   com.google.cloud.networkconnectivity.v1.RouteTable getRouteTables(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRouteTablesResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.RouteTable route_tables = 1;</code>
    */
   int getRouteTablesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRouteTablesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.RouteTableOrBuilder>
       getRouteTablesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListRouteTablesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ListRouteTablesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ListRouteTablesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface ListRouteTablesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

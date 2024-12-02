@@ -38,6 +38,7 @@ public interface ResourceRuntimeSpecOrBuilder
    * @return Whether the serviceAccountSpec field is set.
    */
   boolean hasServiceAccountSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ResourceRuntimeSpecOrBuilder
    * @return The serviceAccountSpec.
    */
   com.google.cloud.aiplatform.v1.ServiceAccountSpec getServiceAccountSpec();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface ResourceRuntimeSpecOrBuilder
    * @return Whether the raySpec field is set.
    */
   boolean hasRaySpec();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface ResourceRuntimeSpecOrBuilder
    * @return The raySpec.
    */
   com.google.cloud.aiplatform.v1.RaySpec getRaySpec();
+
   /**
    *
    *

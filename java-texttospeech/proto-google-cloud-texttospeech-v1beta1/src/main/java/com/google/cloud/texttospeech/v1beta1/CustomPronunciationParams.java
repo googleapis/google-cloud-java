@@ -33,6 +33,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.CustomPronunciationParams)
     CustomPronunciationParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomPronunciationParams.newBuilder() to construct.
   private CustomPronunciationParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      * <code>PHONETIC_ENCODING_UNSPECIFIED = 0;</code>
      */
     public static final int PHONETIC_ENCODING_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -132,6 +134,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      * <code>PHONETIC_ENCODING_IPA = 1;</code>
      */
     public static final int PHONETIC_ENCODING_IPA_VALUE = 1;
+
     /**
      *
      *
@@ -236,6 +239,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phrase_ = "";
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
   public boolean hasPhrase() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +283,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -306,6 +312,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
 
   public static final int PHONETIC_ENCODING_FIELD_NUMBER = 2;
   private int phoneticEncoding_ = 0;
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
   public boolean hasPhoneticEncoding() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -340,6 +348,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
   public int getPhoneticEncodingValue() {
     return phoneticEncoding_;
   }
+
   /**
    *
    *
@@ -369,6 +378,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pronunciation_ = "";
+
   /**
    *
    *
@@ -385,6 +395,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
   public boolean hasPronunciation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -409,6 +420,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -627,6 +639,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -848,6 +861,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object phrase_ = "";
+
     /**
      *
      *
@@ -864,6 +878,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     public boolean hasPhrase() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -888,6 +903,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -912,6 +928,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -935,6 +952,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +972,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +999,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     }
 
     private int phoneticEncoding_ = 0;
+
     /**
      *
      *
@@ -997,6 +1017,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     public boolean hasPhoneticEncoding() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1014,6 +1035,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     public int getPhoneticEncodingValue() {
       return phoneticEncoding_;
     }
+
     /**
      *
      *
@@ -1034,6 +1056,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1081,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1082,6 +1106,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1128,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     }
 
     private java.lang.Object pronunciation_ = "";
+
     /**
      *
      *
@@ -1118,6 +1144,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     public boolean hasPronunciation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1141,6 +1168,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1192,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1215,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1234,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

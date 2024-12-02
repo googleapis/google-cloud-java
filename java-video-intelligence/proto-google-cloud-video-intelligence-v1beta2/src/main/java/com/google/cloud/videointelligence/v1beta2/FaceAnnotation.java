@@ -33,6 +33,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1beta2.FaceAnnotation)
     FaceAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FaceAnnotation.newBuilder() to construct.
   private FaceAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int THUMBNAIL_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString thumbnail_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.FaceSegment> segments_;
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.videointelligence.v1beta2.FaceSegment> getSegmentsList() {
     return segments_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       getSegmentsOrBuilderList() {
     return segments_;
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getSegmentsCount() {
     return segments_.size();
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.videointelligence.v1beta2.FaceSegment getSegments(int index) {
     return segments_.get(index);
   }
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1beta2.FaceFrame> frames_;
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.videointelligence.v1beta2.FaceFrame> getFramesList() {
     return frames_;
   }
+
   /**
    *
    *
@@ -186,6 +195,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       getFramesOrBuilderList() {
     return frames_;
   }
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getFramesCount() {
     return frames_.size();
   }
+
   /**
    *
    *
@@ -212,6 +223,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.videointelligence.v1beta2.FaceFrame getFrames(int index) {
     return frames_.get(index);
   }
+
   /**
    *
    *
@@ -409,6 +421,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -710,6 +723,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString thumbnail_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getThumbnail() {
       return thumbnail_;
     }
+
     /**
      *
      *
@@ -746,6 +761,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +815,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +941,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +962,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +983,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1005,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1025,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1045,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1059,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSegmentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1048,6 +1077,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1095,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(segments_);
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1109,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       return getSegmentsFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1beta2.FaceSegment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1093,6 +1125,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.videointelligence.v1beta2.FaceSegment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1157,6 +1190,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return framesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1207,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return framesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1224,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return framesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1248,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1269,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1292,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1316,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1337,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1358,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1379,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1399,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1419,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1433,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getFramesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1405,6 +1451,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return framesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1469,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(frames_);
       }
     }
+
     /**
      *
      *
@@ -1435,6 +1483,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       return getFramesFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1beta2.FaceFrame.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1450,6 +1499,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.videointelligence.v1beta2.FaceFrame.getDefaultInstance());
     }
+
     /**
      *
      *

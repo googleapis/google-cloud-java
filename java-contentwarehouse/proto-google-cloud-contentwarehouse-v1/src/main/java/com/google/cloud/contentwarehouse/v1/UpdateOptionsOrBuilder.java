@@ -36,6 +36,7 @@ public interface UpdateOptionsOrBuilder
    * @return The enum numeric value on the wire for updateType.
    */
   int getUpdateTypeValue();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UpdateOptionsOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateOptionsOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdateOptionsOrBuilder
    * @return Whether the mergeFieldsOptions field is set.
    */
   boolean hasMergeFieldsOptions();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface UpdateOptionsOrBuilder
    * @return The mergeFieldsOptions.
    */
   com.google.cloud.contentwarehouse.v1.MergeFieldsOptions getMergeFieldsOptions();
+
   /**
    *
    *

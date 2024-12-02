@@ -33,6 +33,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.RelationshipDetails)
     RelationshipDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RelationshipDetails.newBuilder() to construct.
   private RelationshipDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object linkedTable_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -274,6 +277,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -458,6 +462,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object linkedTable_ = "";
+
     /**
      *
      *
@@ -480,6 +485,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -502,6 +508,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -523,6 +530,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -540,6 +548,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

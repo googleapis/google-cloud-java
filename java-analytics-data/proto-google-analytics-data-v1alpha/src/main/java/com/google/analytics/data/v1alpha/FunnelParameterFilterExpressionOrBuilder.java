@@ -37,6 +37,7 @@ public interface FunnelParameterFilterExpressionOrBuilder
    * @return Whether the andGroup field is set.
    */
   boolean hasAndGroup();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface FunnelParameterFilterExpressionOrBuilder
    * @return The andGroup.
    */
   com.google.analytics.data.v1alpha.FunnelParameterFilterExpressionList getAndGroup();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface FunnelParameterFilterExpressionOrBuilder
    * @return Whether the orGroup field is set.
    */
   boolean hasOrGroup();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface FunnelParameterFilterExpressionOrBuilder
    * @return The orGroup.
    */
   com.google.analytics.data.v1alpha.FunnelParameterFilterExpressionList getOrGroup();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface FunnelParameterFilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface FunnelParameterFilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.data.v1alpha.FunnelParameterFilterExpression getNotExpression();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface FunnelParameterFilterExpressionOrBuilder
    * @return Whether the funnelParameterFilter field is set.
    */
   boolean hasFunnelParameterFilter();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface FunnelParameterFilterExpressionOrBuilder
    * @return The funnelParameterFilter.
    */
   com.google.analytics.data.v1alpha.FunnelParameterFilter getFunnelParameterFilter();
+
   /**
    *
    *

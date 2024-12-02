@@ -42,6 +42,7 @@ public interface AssessmentEnvironmentOrBuilder
    * @return The client.
    */
   java.lang.String getClient();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface AssessmentEnvironmentOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

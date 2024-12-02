@@ -36,6 +36,7 @@ public interface TraceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TraceOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface TraceOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
   java.util.List<com.google.devtools.cloudtrace.v1.TraceSpan> getSpansList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface TraceOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
   com.google.devtools.cloudtrace.v1.TraceSpan getSpans(int index);
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface TraceOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
   int getSpansCount();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface TraceOrBuilder
    */
   java.util.List<? extends com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder>
       getSpansOrBuilderList();
+
   /**
    *
    *

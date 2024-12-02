@@ -36,6 +36,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the affinityCookieTtlSec field is set.
    */
   boolean hasAffinityCookieTtlSec();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface BackendServiceOrBuilder
    * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Backend> getBackendsList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface BackendServiceOrBuilder
    * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   com.google.cloud.compute.v1.Backend getBackends(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface BackendServiceOrBuilder
    * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   int getBackendsCount();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface BackendServiceOrBuilder
    * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.BackendOrBuilder> getBackendsOrBuilderList();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the cdnPolicy field is set.
    */
   boolean hasCdnPolicy();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface BackendServiceOrBuilder
    * @return The cdnPolicy.
    */
   com.google.cloud.compute.v1.BackendServiceCdnPolicy getCdnPolicy();
+
   /**
    *
    *
@@ -141,12 +148,14 @@ public interface BackendServiceOrBuilder
    * @return Whether the circuitBreakers field is set.
    */
   boolean hasCircuitBreakers();
+
   /**
    * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    *
    * @return The circuitBreakers.
    */
   com.google.cloud.compute.v1.CircuitBreakers getCircuitBreakers();
+
   /**
    * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    */
@@ -165,6 +174,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the compressionMode field is set.
    */
   boolean hasCompressionMode();
+
   /**
    *
    *
@@ -178,6 +188,7 @@ public interface BackendServiceOrBuilder
    * @return The compressionMode.
    */
   java.lang.String getCompressionMode();
+
   /**
    *
    *
@@ -199,6 +210,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the connectionDraining field is set.
    */
   boolean hasConnectionDraining();
+
   /**
    * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
    * </code>
@@ -206,6 +218,7 @@ public interface BackendServiceOrBuilder
    * @return The connectionDraining.
    */
   com.google.cloud.compute.v1.ConnectionDraining getConnectionDraining();
+
   /**
    * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
    * </code>
@@ -226,6 +239,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the connectionTrackingPolicy field is set.
    */
   boolean hasConnectionTrackingPolicy();
+
   /**
    *
    *
@@ -240,6 +254,7 @@ public interface BackendServiceOrBuilder
    * @return The connectionTrackingPolicy.
    */
   com.google.cloud.compute.v1.BackendServiceConnectionTrackingPolicy getConnectionTrackingPolicy();
+
   /**
    *
    *
@@ -268,6 +283,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the consistentHash field is set.
    */
   boolean hasConsistentHash();
+
   /**
    *
    *
@@ -282,6 +298,7 @@ public interface BackendServiceOrBuilder
    * @return The consistentHash.
    */
   com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings getConsistentHash();
+
   /**
    *
    *
@@ -308,6 +325,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -320,6 +338,7 @@ public interface BackendServiceOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -345,6 +364,7 @@ public interface BackendServiceOrBuilder
    * @return A list containing the customRequestHeaders.
    */
   java.util.List<java.lang.String> getCustomRequestHeadersList();
+
   /**
    *
    *
@@ -357,6 +377,7 @@ public interface BackendServiceOrBuilder
    * @return The count of customRequestHeaders.
    */
   int getCustomRequestHeadersCount();
+
   /**
    *
    *
@@ -370,6 +391,7 @@ public interface BackendServiceOrBuilder
    * @return The customRequestHeaders at the given index.
    */
   java.lang.String getCustomRequestHeaders(int index);
+
   /**
    *
    *
@@ -396,6 +418,7 @@ public interface BackendServiceOrBuilder
    * @return A list containing the customResponseHeaders.
    */
   java.util.List<java.lang.String> getCustomResponseHeadersList();
+
   /**
    *
    *
@@ -408,6 +431,7 @@ public interface BackendServiceOrBuilder
    * @return The count of customResponseHeaders.
    */
   int getCustomResponseHeadersCount();
+
   /**
    *
    *
@@ -421,6 +445,7 @@ public interface BackendServiceOrBuilder
    * @return The customResponseHeaders at the given index.
    */
   java.lang.String getCustomResponseHeaders(int index);
+
   /**
    *
    *
@@ -447,6 +472,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -459,6 +485,7 @@ public interface BackendServiceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -484,6 +511,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the edgeSecurityPolicy field is set.
    */
   boolean hasEdgeSecurityPolicy();
+
   /**
    *
    *
@@ -496,6 +524,7 @@ public interface BackendServiceOrBuilder
    * @return The edgeSecurityPolicy.
    */
   java.lang.String getEdgeSecurityPolicy();
+
   /**
    *
    *
@@ -521,6 +550,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the enableCDN field is set.
    */
   boolean hasEnableCDN();
+
   /**
    *
    *
@@ -548,6 +578,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the failoverPolicy field is set.
    */
   boolean hasFailoverPolicy();
+
   /**
    *
    *
@@ -562,6 +593,7 @@ public interface BackendServiceOrBuilder
    * @return The failoverPolicy.
    */
   com.google.cloud.compute.v1.BackendServiceFailoverPolicy getFailoverPolicy();
+
   /**
    *
    *
@@ -587,6 +619,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -599,6 +632,7 @@ public interface BackendServiceOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -624,6 +658,7 @@ public interface BackendServiceOrBuilder
    * @return A list containing the healthChecks.
    */
   java.util.List<java.lang.String> getHealthChecksList();
+
   /**
    *
    *
@@ -636,6 +671,7 @@ public interface BackendServiceOrBuilder
    * @return The count of healthChecks.
    */
   int getHealthChecksCount();
+
   /**
    *
    *
@@ -649,6 +685,7 @@ public interface BackendServiceOrBuilder
    * @return The healthChecks at the given index.
    */
   java.lang.String getHealthChecks(int index);
+
   /**
    *
    *
@@ -675,6 +712,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the iap field is set.
    */
   boolean hasIap();
+
   /**
    *
    *
@@ -687,6 +725,7 @@ public interface BackendServiceOrBuilder
    * @return The iap.
    */
   com.google.cloud.compute.v1.BackendServiceIAP getIap();
+
   /**
    *
    *
@@ -710,6 +749,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -736,6 +776,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the ipAddressSelectionPolicy field is set.
    */
   boolean hasIpAddressSelectionPolicy();
+
   /**
    *
    *
@@ -749,6 +790,7 @@ public interface BackendServiceOrBuilder
    * @return The ipAddressSelectionPolicy.
    */
   java.lang.String getIpAddressSelectionPolicy();
+
   /**
    *
    *
@@ -775,6 +817,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -787,6 +830,7 @@ public interface BackendServiceOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -813,6 +857,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the loadBalancingScheme field is set.
    */
   boolean hasLoadBalancingScheme();
+
   /**
    *
    *
@@ -826,6 +871,7 @@ public interface BackendServiceOrBuilder
    * @return The loadBalancingScheme.
    */
   java.lang.String getLoadBalancingScheme();
+
   /**
    *
    *
@@ -853,6 +899,7 @@ public interface BackendServiceOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig>
       getLocalityLbPoliciesList();
+
   /**
    *
    *
@@ -866,6 +913,7 @@ public interface BackendServiceOrBuilder
    */
   com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig getLocalityLbPolicies(
       int index);
+
   /**
    *
    *
@@ -878,6 +926,7 @@ public interface BackendServiceOrBuilder
    * </code>
    */
   int getLocalityLbPoliciesCount();
+
   /**
    *
    *
@@ -893,6 +942,7 @@ public interface BackendServiceOrBuilder
           ? extends
               com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder>
       getLocalityLbPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -920,6 +970,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the localityLbPolicy field is set.
    */
   boolean hasLocalityLbPolicy();
+
   /**
    *
    *
@@ -933,6 +984,7 @@ public interface BackendServiceOrBuilder
    * @return The localityLbPolicy.
    */
   java.lang.String getLocalityLbPolicy();
+
   /**
    *
    *
@@ -959,6 +1011,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the logConfig field is set.
    */
   boolean hasLogConfig();
+
   /**
    *
    *
@@ -971,6 +1024,7 @@ public interface BackendServiceOrBuilder
    * @return The logConfig.
    */
   com.google.cloud.compute.v1.BackendServiceLogConfig getLogConfig();
+
   /**
    *
    *
@@ -994,6 +1048,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the maxStreamDuration field is set.
    */
   boolean hasMaxStreamDuration();
+
   /**
    *
    *
@@ -1006,6 +1061,7 @@ public interface BackendServiceOrBuilder
    * @return The maxStreamDuration.
    */
   com.google.cloud.compute.v1.Duration getMaxStreamDuration();
+
   /**
    *
    *
@@ -1027,6 +1083,7 @@ public interface BackendServiceOrBuilder
    * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
    */
   int getMetadatasCount();
+
   /**
    *
    *
@@ -1037,9 +1094,11 @@ public interface BackendServiceOrBuilder
    * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
    */
   boolean containsMetadatas(java.lang.String key);
+
   /** Use {@link #getMetadatasMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadatas();
+
   /**
    *
    *
@@ -1050,6 +1109,7 @@ public interface BackendServiceOrBuilder
    * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadatasMap();
+
   /**
    *
    *
@@ -1064,6 +1124,7 @@ public interface BackendServiceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -1087,6 +1148,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -1099,6 +1161,7 @@ public interface BackendServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -1124,6 +1187,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -1136,6 +1200,7 @@ public interface BackendServiceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -1161,6 +1226,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the outlierDetection field is set.
    */
   boolean hasOutlierDetection();
+
   /**
    *
    *
@@ -1173,6 +1239,7 @@ public interface BackendServiceOrBuilder
    * @return The outlierDetection.
    */
   com.google.cloud.compute.v1.OutlierDetection getOutlierDetection();
+
   /**
    *
    *
@@ -1196,6 +1263,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
+
   /**
    *
    *
@@ -1221,6 +1289,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the portName field is set.
    */
   boolean hasPortName();
+
   /**
    *
    *
@@ -1233,6 +1302,7 @@ public interface BackendServiceOrBuilder
    * @return The portName.
    */
   java.lang.String getPortName();
+
   /**
    *
    *
@@ -1259,6 +1329,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the protocol field is set.
    */
   boolean hasProtocol();
+
   /**
    *
    *
@@ -1272,6 +1343,7 @@ public interface BackendServiceOrBuilder
    * @return The protocol.
    */
   java.lang.String getProtocol();
+
   /**
    *
    *
@@ -1298,6 +1370,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -1310,6 +1383,7 @@ public interface BackendServiceOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -1335,6 +1409,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the securityPolicy field is set.
    */
   boolean hasSecurityPolicy();
+
   /**
    *
    *
@@ -1347,6 +1422,7 @@ public interface BackendServiceOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
+
   /**
    *
    *
@@ -1372,6 +1448,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the securitySettings field is set.
    */
   boolean hasSecuritySettings();
+
   /**
    *
    *
@@ -1384,6 +1461,7 @@ public interface BackendServiceOrBuilder
    * @return The securitySettings.
    */
   com.google.cloud.compute.v1.SecuritySettings getSecuritySettings();
+
   /**
    *
    *
@@ -1407,6 +1485,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -1419,6 +1498,7 @@ public interface BackendServiceOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -1444,6 +1524,7 @@ public interface BackendServiceOrBuilder
    * @return A list containing the serviceBindings.
    */
   java.util.List<java.lang.String> getServiceBindingsList();
+
   /**
    *
    *
@@ -1456,6 +1537,7 @@ public interface BackendServiceOrBuilder
    * @return The count of serviceBindings.
    */
   int getServiceBindingsCount();
+
   /**
    *
    *
@@ -1469,6 +1551,7 @@ public interface BackendServiceOrBuilder
    * @return The serviceBindings at the given index.
    */
   java.lang.String getServiceBindings(int index);
+
   /**
    *
    *
@@ -1495,6 +1578,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the serviceLbPolicy field is set.
    */
   boolean hasServiceLbPolicy();
+
   /**
    *
    *
@@ -1507,6 +1591,7 @@ public interface BackendServiceOrBuilder
    * @return The serviceLbPolicy.
    */
   java.lang.String getServiceLbPolicy();
+
   /**
    *
    *
@@ -1533,6 +1618,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the sessionAffinity field is set.
    */
   boolean hasSessionAffinity();
+
   /**
    *
    *
@@ -1546,6 +1632,7 @@ public interface BackendServiceOrBuilder
    * @return The sessionAffinity.
    */
   java.lang.String getSessionAffinity();
+
   /**
    *
    *
@@ -1574,6 +1661,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the strongSessionAffinityCookie field is set.
    */
   boolean hasStrongSessionAffinityCookie();
+
   /**
    *
    *
@@ -1588,6 +1676,7 @@ public interface BackendServiceOrBuilder
    * @return The strongSessionAffinityCookie.
    */
   com.google.cloud.compute.v1.BackendServiceHttpCookie getStrongSessionAffinityCookie();
+
   /**
    *
    *
@@ -1608,12 +1697,14 @@ public interface BackendServiceOrBuilder
    * @return Whether the subsetting field is set.
    */
   boolean hasSubsetting();
+
   /**
    * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
    *
    * @return The subsetting.
    */
   com.google.cloud.compute.v1.Subsetting getSubsetting();
+
   /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
   com.google.cloud.compute.v1.SubsettingOrBuilder getSubsettingOrBuilder();
 
@@ -1629,6 +1720,7 @@ public interface BackendServiceOrBuilder
    * @return Whether the timeoutSec field is set.
    */
   boolean hasTimeoutSec();
+
   /**
    *
    *
@@ -1652,6 +1744,7 @@ public interface BackendServiceOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code>
    */
   java.util.List<com.google.cloud.compute.v1.BackendServiceUsedBy> getUsedByList();
+
   /**
    *
    *
@@ -1662,6 +1755,7 @@ public interface BackendServiceOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code>
    */
   com.google.cloud.compute.v1.BackendServiceUsedBy getUsedBy(int index);
+
   /**
    *
    *
@@ -1672,6 +1766,7 @@ public interface BackendServiceOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code>
    */
   int getUsedByCount();
+
   /**
    *
    *
@@ -1683,6 +1778,7 @@ public interface BackendServiceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>
       getUsedByOrBuilderList();
+
   /**
    *
    *

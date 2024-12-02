@@ -42,6 +42,7 @@ public interface BatchDeleteAccessBindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface BatchDeleteAccessBindingsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest> getRequestsList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface BatchDeleteAccessBindingsRequestOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest getRequests(int index);
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface BatchDeleteAccessBindingsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface BatchDeleteAccessBindingsRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.DeleteAccessBindingRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

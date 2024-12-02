@@ -77,6 +77,7 @@ public interface TaskStatusOrBuilder
    * @return Whether the firstAttemptStatus field is set.
    */
   boolean hasFirstAttemptStatus();
+
   /**
    *
    *
@@ -98,6 +99,7 @@ public interface TaskStatusOrBuilder
    * @return The firstAttemptStatus.
    */
   com.google.cloud.tasks.v2beta2.AttemptStatus getFirstAttemptStatus();
+
   /**
    *
    *
@@ -133,6 +135,7 @@ public interface TaskStatusOrBuilder
    * @return Whether the lastAttemptStatus field is set.
    */
   boolean hasLastAttemptStatus();
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public interface TaskStatusOrBuilder
    * @return The lastAttemptStatus.
    */
   com.google.cloud.tasks.v2beta2.AttemptStatus getLastAttemptStatus();
+
   /**
    *
    *

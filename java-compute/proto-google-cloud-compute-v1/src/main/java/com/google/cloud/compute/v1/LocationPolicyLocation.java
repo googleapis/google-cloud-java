@@ -32,6 +32,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LocationPolicyLocation)
     LocationPolicyLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationPolicyLocation.newBuilder() to construct.
   private LocationPolicyLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_PREFERENCE = 0;</code>
      */
     public static final int UNDEFINED_PREFERENCE_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * <code>ALLOW = 62368553;</code>
      */
     public static final int ALLOW_VALUE = 62368553;
+
     /**
      *
      *
@@ -145,6 +148,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * <code>DENY = 2094604;</code>
      */
     public static final int DENY_VALUE = 2094604;
+
     /**
      *
      *
@@ -246,6 +250,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int CONSTRAINTS_FIELD_NUMBER = 3909174;
   private com.google.cloud.compute.v1.LocationPolicyLocationConstraints constraints_;
+
   /**
    *
    *
@@ -263,6 +268,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
   public boolean hasConstraints() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -282,6 +288,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
         ? com.google.cloud.compute.v1.LocationPolicyLocationConstraints.getDefaultInstance()
         : constraints_;
   }
+
   /**
    *
    *
@@ -305,6 +312,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object preference_ = "";
+
   /**
    *
    *
@@ -321,6 +329,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
   public boolean hasPreference() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -345,6 +354,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -548,6 +558,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -767,6 +778,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.LocationPolicyLocationConstraints.Builder,
             com.google.cloud.compute.v1.LocationPolicyLocationConstraintsOrBuilder>
         constraintsBuilder_;
+
     /**
      *
      *
@@ -783,6 +795,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     public boolean hasConstraints() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -805,6 +818,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
         return constraintsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -830,6 +844,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +867,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +900,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +922,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +940,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return getConstraintsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -943,6 +962,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
             : constraints_;
       }
     }
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object preference_ = "";
+
     /**
      *
      *
@@ -987,6 +1008,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     public boolean hasPreference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1010,6 +1032,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1056,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1079,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1098,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class CompanyCreditStatusEnum extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CompanyCreditStatusEnum)
     CompanyCreditStatusEnumOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompanyCreditStatusEnum.newBuilder() to construct.
   private CompanyCreditStatusEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -192,6 +193,7 @@ public final class CompanyCreditStatusEnum extends com.google.protobuf.Generated
      * <code>COMPANY_CREDIT_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int COMPANY_CREDIT_STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -207,6 +209,7 @@ public final class CompanyCreditStatusEnum extends com.google.protobuf.Generated
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -227,6 +230,7 @@ public final class CompanyCreditStatusEnum extends com.google.protobuf.Generated
      * <code>INACTIVE = 2;</code>
      */
     public static final int INACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -245,6 +249,7 @@ public final class CompanyCreditStatusEnum extends com.google.protobuf.Generated
      * <code>ON_HOLD = 3;</code>
      */
     public static final int ON_HOLD_VALUE = 3;
+
     /**
      *
      *
@@ -262,6 +267,7 @@ public final class CompanyCreditStatusEnum extends com.google.protobuf.Generated
      * <code>STOP = 4;</code>
      */
     public static final int STOP_VALUE = 4;
+
     /**
      *
      *
@@ -524,6 +530,7 @@ public final class CompanyCreditStatusEnum extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

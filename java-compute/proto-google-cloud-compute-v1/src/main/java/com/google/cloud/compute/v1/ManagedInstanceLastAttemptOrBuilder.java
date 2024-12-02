@@ -36,6 +36,7 @@ public interface ManagedInstanceLastAttemptOrBuilder
    * @return Whether the errors field is set.
    */
   boolean hasErrors();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ManagedInstanceLastAttemptOrBuilder
    * @return The errors.
    */
   com.google.cloud.compute.v1.Errors getErrors();
+
   /**
    *
    *

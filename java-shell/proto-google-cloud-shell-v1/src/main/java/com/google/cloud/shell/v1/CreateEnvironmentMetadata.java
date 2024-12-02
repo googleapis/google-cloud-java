@@ -34,6 +34,7 @@ public final class CreateEnvironmentMetadata extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.CreateEnvironmentMetadata)
     CreateEnvironmentMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateEnvironmentMetadata.newBuilder() to construct.
   private CreateEnvironmentMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class CreateEnvironmentMetadata extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

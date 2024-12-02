@@ -40,6 +40,7 @@ public interface RecordingOrBuilder
    * @return Whether the driveDestination field is set.
    */
   boolean hasDriveDestination();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface RecordingOrBuilder
    * @return The driveDestination.
    */
   com.google.apps.meet.v2beta.DriveDestination getDriveDestination();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RecordingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface RecordingOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface RecordingOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface RecordingOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface RecordingOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface RecordingOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

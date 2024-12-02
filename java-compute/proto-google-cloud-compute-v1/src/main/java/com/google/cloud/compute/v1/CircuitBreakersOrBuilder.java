@@ -36,6 +36,7 @@ public interface CircuitBreakersOrBuilder
    * @return Whether the maxConnections field is set.
    */
   boolean hasMaxConnections();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CircuitBreakersOrBuilder
    * @return Whether the maxPendingRequests field is set.
    */
   boolean hasMaxPendingRequests();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface CircuitBreakersOrBuilder
    * @return Whether the maxRequests field is set.
    */
   boolean hasMaxRequests();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface CircuitBreakersOrBuilder
    * @return Whether the maxRequestsPerConnection field is set.
    */
   boolean hasMaxRequestsPerConnection();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface CircuitBreakersOrBuilder
    * @return Whether the maxRetries field is set.
    */
   boolean hasMaxRetries();
+
   /**
    *
    *

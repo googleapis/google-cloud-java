@@ -38,6 +38,7 @@ public interface UpdatePrivateConnectionRequestOrBuilder
    * @return Whether the privateConnection field is set.
    */
   boolean hasPrivateConnection();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdatePrivateConnectionRequestOrBuilder
    * @return The privateConnection.
    */
   com.google.cloud.vmwareengine.v1.PrivateConnection getPrivateConnection();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdatePrivateConnectionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdatePrivateConnectionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdatePrivateConnectionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

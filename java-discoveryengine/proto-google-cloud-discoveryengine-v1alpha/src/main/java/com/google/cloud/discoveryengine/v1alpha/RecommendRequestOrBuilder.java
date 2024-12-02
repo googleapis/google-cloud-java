@@ -50,6 +50,7 @@ public interface RecommendRequestOrBuilder
    * @return The servingConfig.
    */
   java.lang.String getServingConfig();
+
   /**
    *
    *
@@ -106,6 +107,7 @@ public interface RecommendRequestOrBuilder
    * @return Whether the userEvent field is set.
    */
   boolean hasUserEvent();
+
   /**
    *
    *
@@ -135,6 +137,7 @@ public interface RecommendRequestOrBuilder
    * @return The userEvent.
    */
   com.google.cloud.discoveryengine.v1alpha.UserEvent getUserEvent();
+
   /**
    *
    *
@@ -217,6 +220,7 @@ public interface RecommendRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -309,6 +313,7 @@ public interface RecommendRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
    */
   int getParamsCount();
+
   /**
    *
    *
@@ -346,9 +351,11 @@ public interface RecommendRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
    */
   boolean containsParams(java.lang.String key);
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getParams();
+
   /**
    *
    *
@@ -386,6 +393,7 @@ public interface RecommendRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getParamsMap();
+
   /**
    *
    *
@@ -427,6 +435,7 @@ public interface RecommendRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
+
   /**
    *
    *
@@ -491,6 +500,7 @@ public interface RecommendRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
   int getUserLabelsCount();
+
   /**
    *
    *
@@ -517,9 +527,11 @@ public interface RecommendRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
   boolean containsUserLabels(java.lang.String key);
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
   /**
    *
    *
@@ -546,6 +558,7 @@ public interface RecommendRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
   /**
    *
    *
@@ -576,6 +589,7 @@ public interface RecommendRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

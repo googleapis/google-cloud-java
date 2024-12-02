@@ -36,6 +36,7 @@ public interface SummarizationQualityInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SummarizationQualityInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SummarizationQualityInstanceOrBuilder
    * @return Whether the reference field is set.
    */
   boolean hasReference();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SummarizationQualityInstanceOrBuilder
    * @return The reference.
    */
   java.lang.String getReference();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface SummarizationQualityInstanceOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface SummarizationQualityInstanceOrBuilder
    * @return The context.
    */
   java.lang.String getContext();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface SummarizationQualityInstanceOrBuilder
    * @return Whether the instruction field is set.
    */
   boolean hasInstruction();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface SummarizationQualityInstanceOrBuilder
    * @return The instruction.
    */
   java.lang.String getInstruction();
+
   /**
    *
    *

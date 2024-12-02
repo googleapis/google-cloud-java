@@ -39,6 +39,7 @@ public interface OperationMetadataV1OrBuilder
    * @return The method.
    */
   java.lang.String getMethod();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface OperationMetadataV1OrBuilder
    * @return Whether the insertTime field is set.
    */
   boolean hasInsertTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface OperationMetadataV1OrBuilder
    * @return The insertTime.
    */
   com.google.protobuf.Timestamp getInsertTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface OperationMetadataV1OrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface OperationMetadataV1OrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface OperationMetadataV1OrBuilder
    * @return The user.
    */
   java.lang.String getUser();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface OperationMetadataV1OrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface OperationMetadataV1OrBuilder
    * @return The ephemeralMessage.
    */
   java.lang.String getEphemeralMessage();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface OperationMetadataV1OrBuilder
    * @return A list containing the warning.
    */
   java.util.List<java.lang.String> getWarningList();
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public interface OperationMetadataV1OrBuilder
    * @return The count of warning.
    */
   int getWarningCount();
+
   /**
    *
    *
@@ -264,6 +274,7 @@ public interface OperationMetadataV1OrBuilder
    * @return The warning at the given index.
    */
   java.lang.String getWarning(int index);
+
   /**
    *
    *
@@ -285,12 +296,14 @@ public interface OperationMetadataV1OrBuilder
    * @return Whether the createVersionMetadata field is set.
    */
   boolean hasCreateVersionMetadata();
+
   /**
    * <code>.google.appengine.v1.CreateVersionMetadataV1 create_version_metadata = 8;</code>
    *
    * @return The createVersionMetadata.
    */
   com.google.appengine.v1.CreateVersionMetadataV1 getCreateVersionMetadata();
+
   /** <code>.google.appengine.v1.CreateVersionMetadataV1 create_version_metadata = 8;</code> */
   com.google.appengine.v1.CreateVersionMetadataV1OrBuilder getCreateVersionMetadataOrBuilder();
 

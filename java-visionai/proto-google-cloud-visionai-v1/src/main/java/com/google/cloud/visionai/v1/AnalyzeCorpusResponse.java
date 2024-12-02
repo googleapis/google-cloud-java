@@ -33,6 +33,7 @@ public final class AnalyzeCorpusResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AnalyzeCorpusResponse)
     AnalyzeCorpusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeCorpusResponse.newBuilder() to construct.
   private AnalyzeCorpusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class AnalyzeCorpusResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

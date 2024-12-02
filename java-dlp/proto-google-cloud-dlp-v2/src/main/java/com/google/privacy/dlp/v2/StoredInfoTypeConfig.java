@@ -35,6 +35,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StoredInfoTypeConfig)
     StoredInfoTypeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StoredInfoTypeConfig.newBuilder() to construct.
   private StoredInfoTypeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     private TypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -122,6 +124,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LARGE_CUSTOM_DICTIONARY_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   public boolean hasLargeCustomDictionary() {
     return typeCase_ == 3;
   }
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -273,6 +282,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DICTIONARY_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -288,6 +298,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   public boolean hasDictionary() {
     return typeCase_ == 4;
   }
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int REGEX_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -339,6 +352,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   public boolean hasRegex() {
     return typeCase_ == 5;
   }
+
   /**
    *
    *
@@ -357,6 +371,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -596,6 +611,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -876,6 +892,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -898,6 +915,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -920,6 +938,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -941,6 +960,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +978,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1003,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1004,6 +1026,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1049,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1071,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1089,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1118,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
             com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.Builder,
             com.google.privacy.dlp.v2.LargeCustomDictionaryConfigOrBuilder>
         largeCustomDictionaryBuilder_;
+
     /**
      *
      *
@@ -1107,6 +1134,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     public boolean hasLargeCustomDictionary() {
       return typeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1132,6 +1160,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1155,6 +1184,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1205,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1240,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1280,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         getLargeCustomDictionaryBuilder() {
       return getLargeCustomDictionaryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1268,6 +1302,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1341,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
             com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder,
             com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder>
         dictionaryBuilder_;
+
     /**
      *
      *
@@ -1321,6 +1357,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     public boolean hasDictionary() {
       return typeCase_ == 4;
     }
+
     /**
      *
      *
@@ -1346,6 +1383,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1368,6 +1406,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1427,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1460,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1445,6 +1486,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1499,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder getDictionaryBuilder() {
       return getDictionaryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1477,6 +1520,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1515,6 +1559,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
             com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
             com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>
         regexBuilder_;
+
     /**
      *
      *
@@ -1530,6 +1575,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     public boolean hasRegex() {
       return typeCase_ == 5;
     }
+
     /**
      *
      *
@@ -1555,6 +1601,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1577,6 +1624,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1645,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1678,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       typeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1704,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1666,6 +1717,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder getRegexBuilder() {
       return getRegexFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1686,6 +1738,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
       }
     }
+
     /**
      *
      *

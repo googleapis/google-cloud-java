@@ -47,6 +47,7 @@ public interface MembershipOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface MembershipOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -91,9 +93,11 @@ public interface MembershipOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface MembershipOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface MembershipOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface MembershipOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface MembershipOrBuilder
    * @return Whether the endpoint field is set.
    */
   boolean hasEndpoint();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface MembershipOrBuilder
    * @return The endpoint.
    */
   com.google.cloud.gkehub.v1beta1.MembershipEndpoint getEndpoint();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface MembershipOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public interface MembershipOrBuilder
    * @return The state.
    */
   com.google.cloud.gkehub.v1beta1.MembershipState getState();
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public interface MembershipOrBuilder
    * @return Whether the authority field is set.
    */
   boolean hasAuthority();
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface MembershipOrBuilder
    * @return The authority.
    */
   com.google.cloud.gkehub.v1beta1.Authority getAuthority();
+
   /**
    *
    *
@@ -298,6 +311,7 @@ public interface MembershipOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -311,6 +325,7 @@ public interface MembershipOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -336,6 +351,7 @@ public interface MembershipOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -349,6 +365,7 @@ public interface MembershipOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -374,6 +391,7 @@ public interface MembershipOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -387,6 +405,7 @@ public interface MembershipOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -419,6 +438,7 @@ public interface MembershipOrBuilder
    * @return The externalId.
    */
   java.lang.String getExternalId();
+
   /**
    *
    *
@@ -458,6 +478,7 @@ public interface MembershipOrBuilder
    * @return Whether the lastConnectionTime field is set.
    */
   boolean hasLastConnectionTime();
+
   /**
    *
    *
@@ -476,6 +497,7 @@ public interface MembershipOrBuilder
    * @return The lastConnectionTime.
    */
   com.google.protobuf.Timestamp getLastConnectionTime();
+
   /**
    *
    *
@@ -507,6 +529,7 @@ public interface MembershipOrBuilder
    * @return The uniqueId.
    */
   java.lang.String getUniqueId();
+
   /**
    *
    *
@@ -536,6 +559,7 @@ public interface MembershipOrBuilder
    * @return The enum numeric value on the wire for infrastructureType.
    */
   int getInfrastructureTypeValue();
+
   /**
    *
    *
@@ -565,6 +589,7 @@ public interface MembershipOrBuilder
    * @return Whether the monitoringConfig field is set.
    */
   boolean hasMonitoringConfig();
+
   /**
    *
    *
@@ -579,6 +604,7 @@ public interface MembershipOrBuilder
    * @return The monitoringConfig.
    */
   com.google.cloud.gkehub.v1beta1.MonitoringConfig getMonitoringConfig();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GenerateContentResponse)
     GenerateContentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateContentResponse.newBuilder() to construct.
   private GenerateContentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return The enum numeric value on the wire for blockReason.
      */
     int getBlockReasonValue();
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     java.util.List<com.google.cloud.aiplatform.v1beta1.SafetyRating> getSafetyRatingsList();
+
     /**
      *
      *
@@ -123,6 +126,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.SafetyRating getSafetyRatings(int index);
+
     /**
      *
      *
@@ -135,6 +139,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     int getSafetyRatingsCount();
+
     /**
      *
      *
@@ -148,6 +153,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SafetyRatingOrBuilder>
         getSafetyRatingsOrBuilderList();
+
     /**
      *
      *
@@ -173,6 +179,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return The blockReasonMessage.
      */
     java.lang.String getBlockReasonMessage();
+
     /**
      *
      *
@@ -186,6 +193,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getBlockReasonMessageBytes();
   }
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback)
       PromptFeedbackOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PromptFeedback.newBuilder() to construct.
     private PromptFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -308,6 +317,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        * <code>BLOCKED_REASON_UNSPECIFIED = 0;</code>
        */
       public static final int BLOCKED_REASON_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -318,6 +328,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        * <code>SAFETY = 1;</code>
        */
       public static final int SAFETY_VALUE = 1;
+
       /**
        *
        *
@@ -328,6 +339,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        * <code>OTHER = 2;</code>
        */
       public static final int OTHER_VALUE = 2;
+
       /**
        *
        *
@@ -339,6 +351,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        * <code>BLOCKLIST = 3;</code>
        */
       public static final int BLOCKLIST_VALUE = 3;
+
       /**
        *
        *
@@ -444,6 +457,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     public static final int BLOCK_REASON_FIELD_NUMBER = 1;
     private int blockReason_ = 0;
+
     /**
      *
      *
@@ -461,6 +475,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public int getBlockReasonValue() {
       return blockReason_;
     }
+
     /**
      *
      *
@@ -491,6 +506,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1beta1.SafetyRating> safetyRatings_;
+
     /**
      *
      *
@@ -506,6 +522,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public java.util.List<com.google.cloud.aiplatform.v1beta1.SafetyRating> getSafetyRatingsList() {
       return safetyRatings_;
     }
+
     /**
      *
      *
@@ -522,6 +539,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         getSafetyRatingsOrBuilderList() {
       return safetyRatings_;
     }
+
     /**
      *
      *
@@ -537,6 +555,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public int getSafetyRatingsCount() {
       return safetyRatings_.size();
     }
+
     /**
      *
      *
@@ -552,6 +571,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.SafetyRating getSafetyRatings(int index) {
       return safetyRatings_.get(index);
     }
+
     /**
      *
      *
@@ -573,6 +593,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object blockReasonMessage_ = "";
+
     /**
      *
      *
@@ -596,6 +617,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -814,6 +836,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1087,6 +1110,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       private int bitField0_;
 
       private int blockReason_ = 0;
+
       /**
        *
        *
@@ -1104,6 +1128,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public int getBlockReasonValue() {
         return blockReason_;
       }
+
       /**
        *
        *
@@ -1124,6 +1149,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1150,6 +1176,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                 .BlockedReason.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1175,6 +1202,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1232,6 +1260,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           return safetyRatingsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1250,6 +1279,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           return safetyRatingsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1268,6 +1298,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           return safetyRatingsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1293,6 +1324,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1315,6 +1347,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1339,6 +1372,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1364,6 +1398,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1386,6 +1421,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1408,6 +1444,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1430,6 +1467,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1451,6 +1489,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1472,6 +1511,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1487,6 +1527,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           int index) {
         return getSafetyRatingsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1506,6 +1547,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           return safetyRatingsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1525,6 +1567,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(safetyRatings_);
         }
       }
+
       /**
        *
        *
@@ -1540,6 +1583,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return getSafetyRatingsFieldBuilder()
             .addBuilder(com.google.cloud.aiplatform.v1beta1.SafetyRating.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1557,6 +1601,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             .addBuilder(
                 index, com.google.cloud.aiplatform.v1beta1.SafetyRating.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1594,6 +1639,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
 
       private java.lang.Object blockReasonMessage_ = "";
+
       /**
        *
        *
@@ -1616,6 +1662,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1638,6 +1685,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1659,6 +1707,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1676,6 +1725,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1828,6 +1878,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     int getCachedContentTokenCount();
   }
+
   /**
    *
    *
@@ -1842,6 +1893,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata)
       UsageMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UsageMetadata.newBuilder() to construct.
     private UsageMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1873,6 +1925,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     public static final int PROMPT_TOKEN_COUNT_FIELD_NUMBER = 1;
     private int promptTokenCount_ = 0;
+
     /**
      *
      *
@@ -1893,6 +1946,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     public static final int CANDIDATES_TOKEN_COUNT_FIELD_NUMBER = 2;
     private int candidatesTokenCount_ = 0;
+
     /**
      *
      *
@@ -1911,6 +1965,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     public static final int TOTAL_TOKEN_COUNT_FIELD_NUMBER = 3;
     private int totalTokenCount_ = 0;
+
     /**
      *
      *
@@ -1929,6 +1984,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     public static final int CACHED_CONTENT_TOKEN_COUNT_FIELD_NUMBER = 5;
     private int cachedContentTokenCount_ = 0;
+
     /**
      *
      *
@@ -2142,6 +2198,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2377,6 +2434,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       private int bitField0_;
 
       private int promptTokenCount_;
+
       /**
        *
        *
@@ -2394,6 +2452,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public int getPromptTokenCount() {
         return promptTokenCount_;
       }
+
       /**
        *
        *
@@ -2415,6 +2474,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2436,6 +2496,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
 
       private int candidatesTokenCount_;
+
       /**
        *
        *
@@ -2451,6 +2512,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public int getCandidatesTokenCount() {
         return candidatesTokenCount_;
       }
+
       /**
        *
        *
@@ -2470,6 +2532,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2489,6 +2552,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
 
       private int totalTokenCount_;
+
       /**
        *
        *
@@ -2504,6 +2568,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public int getTotalTokenCount() {
         return totalTokenCount_;
       }
+
       /**
        *
        *
@@ -2523,6 +2588,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2542,6 +2608,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
 
       private int cachedContentTokenCount_;
+
       /**
        *
        *
@@ -2559,6 +2626,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public int getCachedContentTokenCount() {
         return cachedContentTokenCount_;
       }
+
       /**
        *
        *
@@ -2580,6 +2648,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2673,6 +2742,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Candidate> candidates_;
+
   /**
    *
    *
@@ -2688,6 +2758,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Candidate> getCandidatesList() {
     return candidates_;
   }
+
   /**
    *
    *
@@ -2704,6 +2775,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       getCandidatesOrBuilderList() {
     return candidates_;
   }
+
   /**
    *
    *
@@ -2719,6 +2791,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
   public int getCandidatesCount() {
     return candidates_.size();
   }
+
   /**
    *
    *
@@ -2734,6 +2807,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
   public com.google.cloud.aiplatform.v1beta1.Candidate getCandidates(int index) {
     return candidates_.get(index);
   }
+
   /**
    *
    *
@@ -2754,6 +2828,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelVersion_ = "";
+
   /**
    *
    *
@@ -2777,6 +2852,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -2804,6 +2880,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
   public static final int PROMPT_FEEDBACK_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback
       promptFeedback_;
+
   /**
    *
    *
@@ -2823,6 +2900,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
   public boolean hasPromptFeedback() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2846,6 +2924,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             .getDefaultInstance()
         : promptFeedback_;
   }
+
   /**
    *
    *
@@ -2870,6 +2949,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
   public static final int USAGE_METADATA_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata usageMetadata_;
+
   /**
    *
    *
@@ -2887,6 +2967,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
   public boolean hasUsageMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2908,6 +2989,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             .getDefaultInstance()
         : usageMetadata_;
   }
+
   /**
    *
    *
@@ -3127,6 +3209,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3457,6 +3540,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return candidatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3475,6 +3559,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return candidatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3493,6 +3578,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return candidatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3517,6 +3603,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3539,6 +3626,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3563,6 +3651,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3587,6 +3676,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3609,6 +3699,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3631,6 +3722,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3653,6 +3745,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3674,6 +3767,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3695,6 +3789,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3709,6 +3804,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.Candidate.Builder getCandidatesBuilder(int index) {
       return getCandidatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3728,6 +3824,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return candidatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3747,6 +3844,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(candidates_);
       }
     }
+
     /**
      *
      *
@@ -3762,6 +3860,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       return getCandidatesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Candidate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3777,6 +3876,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       return getCandidatesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Candidate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3811,6 +3911,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object modelVersion_ = "";
+
     /**
      *
      *
@@ -3833,6 +3934,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3855,6 +3957,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3876,6 +3979,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3893,6 +3997,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3923,6 +4028,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback.Builder,
             com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedbackOrBuilder>
         promptFeedbackBuilder_;
+
     /**
      *
      *
@@ -3941,6 +4047,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public boolean hasPromptFeedback() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3967,6 +4074,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return promptFeedbackBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3994,6 +4102,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4019,6 +4128,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4053,6 +4163,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4076,6 +4187,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4095,6 +4207,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return getPromptFeedbackFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4119,6 +4232,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             : promptFeedback_;
       }
     }
+
     /**
      *
      *
@@ -4157,6 +4271,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadataOrBuilder>
         usageMetadataBuilder_;
+
     /**
      *
      *
@@ -4173,6 +4288,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public boolean hasUsageMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4197,6 +4313,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return usageMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4222,6 +4339,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4245,6 +4363,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4277,6 +4396,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4298,6 +4418,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4315,6 +4436,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       onChanged();
       return getUsageMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4337,6 +4459,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             : usageMetadata_;
       }
     }
+
     /**
      *
      *

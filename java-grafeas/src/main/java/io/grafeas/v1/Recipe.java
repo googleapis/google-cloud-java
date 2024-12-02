@@ -36,6 +36,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Recipe)
     RecipeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Recipe.newBuilder() to construct.
   private Recipe(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFINED_IN_MATERIAL_FIELD_NUMBER = 2;
   private long definedInMaterial_ = 0L;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entryPoint_ = "";
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> arguments_;
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.Any> getArgumentsList() {
     return arguments_;
   }
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getArgumentsOrBuilderList() {
     return arguments_;
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   public int getArgumentsCount() {
     return arguments_.size();
   }
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Any getArguments(int index) {
     return arguments_.get(index);
   }
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> environment_;
+
   /**
    *
    *
@@ -315,6 +327,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.Any> getEnvironmentList() {
     return environment_;
   }
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getEnvironmentOrBuilderList() {
     return environment_;
   }
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   public int getEnvironmentCount() {
     return environment_.size();
   }
+
   /**
    *
    *
@@ -363,6 +378,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Any getEnvironment(int index) {
     return environment_.get(index);
   }
+
   /**
    *
    *
@@ -577,6 +593,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -900,6 +917,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -923,6 +941,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -946,6 +965,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +988,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1007,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long definedInMaterial_;
+
     /**
      *
      *
@@ -1030,6 +1053,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     public long getDefinedInMaterial() {
       return definedInMaterial_;
     }
+
     /**
      *
      *
@@ -1053,6 +1077,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1101,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object entryPoint_ = "";
+
     /**
      *
      *
@@ -1102,6 +1128,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1128,6 +1155,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1153,6 +1181,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1203,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1267,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return argumentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1258,6 +1289,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return argumentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1279,6 +1311,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return argumentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1339,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1364,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1392,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1420,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1445,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1432,6 +1470,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1495,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1520,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1545,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1521,6 +1563,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any.Builder getArgumentsBuilder(int index) {
       return getArgumentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1542,6 +1585,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return argumentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1563,6 +1607,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(arguments_);
       }
     }
+
     /**
      *
      *
@@ -1580,6 +1625,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any.Builder addArgumentsBuilder() {
       return getArgumentsFieldBuilder().addBuilder(com.google.protobuf.Any.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1598,6 +1644,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       return getArgumentsFieldBuilder()
           .addBuilder(index, com.google.protobuf.Any.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1668,6 +1715,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return environmentBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1687,6 +1735,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return environmentBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1706,6 +1755,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return environmentBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1731,6 +1781,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1753,6 +1804,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1830,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1856,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1825,6 +1879,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1847,6 +1902,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1925,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1948,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1913,6 +1971,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1928,6 +1987,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any.Builder getEnvironmentBuilder(int index) {
       return getEnvironmentFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1947,6 +2007,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return environmentBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1967,6 +2028,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(environment_);
       }
     }
+
     /**
      *
      *
@@ -1982,6 +2044,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any.Builder addEnvironmentBuilder() {
       return getEnvironmentFieldBuilder().addBuilder(com.google.protobuf.Any.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1998,6 +2061,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       return getEnvironmentFieldBuilder()
           .addBuilder(index, com.google.protobuf.Any.getDefaultInstance());
     }
+
     /**
      *
      *

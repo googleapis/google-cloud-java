@@ -36,6 +36,7 @@ public interface EndpointOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface EndpointOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface EndpointOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface EndpointOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface EndpointOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -145,9 +151,11 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -172,6 +181,7 @@ public interface EndpointOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -196,6 +206,7 @@ public interface EndpointOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -222,6 +233,7 @@ public interface EndpointOrBuilder
    * @return The endpointForwardingRule.
    */
   java.lang.String getEndpointForwardingRule();
+
   /**
    *
    *
@@ -247,6 +259,7 @@ public interface EndpointOrBuilder
    * @return The endpointIp.
    */
   java.lang.String getEndpointIp();
+
   /**
    *
    *
@@ -272,6 +285,7 @@ public interface EndpointOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -299,6 +313,7 @@ public interface EndpointOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *
@@ -328,6 +343,7 @@ public interface EndpointOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

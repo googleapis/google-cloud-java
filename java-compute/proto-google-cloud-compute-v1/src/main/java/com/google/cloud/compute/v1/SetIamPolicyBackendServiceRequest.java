@@ -33,6 +33,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyBackendServiceRequest)
     SetIamPolicyBackendServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetIamPolicyBackendServiceRequest.newBuilder() to construct.
   private SetIamPolicyBackendServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
   private int bitField0_;
   public static final int GLOBAL_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 337048498;
   private com.google.cloud.compute.v1.GlobalSetPolicyRequest globalSetPolicyRequestResource_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
   public boolean hasGlobalSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.GlobalSetPolicyRequest.getDefaultInstance()
         : globalSetPolicyRequestResource_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -653,6 +662,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
             com.google.cloud.compute.v1.GlobalSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.GlobalSetPolicyRequestOrBuilder>
         globalSetPolicyRequestResourceBuilder_;
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
     public boolean hasGlobalSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
         return globalSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +783,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +805,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       onChanged();
       return getGlobalSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
             : globalSetPolicyRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -857,6 +875,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +986,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -985,6 +1009,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1032,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1054,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1072,7 @@ public final class SetIamPolicyBackendServiceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

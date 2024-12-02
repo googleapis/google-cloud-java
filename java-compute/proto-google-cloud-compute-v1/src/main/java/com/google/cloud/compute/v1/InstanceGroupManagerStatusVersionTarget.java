@@ -33,6 +33,7 @@ public final class InstanceGroupManagerStatusVersionTarget
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget)
     InstanceGroupManagerStatusVersionTargetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerStatusVersionTarget.newBuilder() to construct.
   private InstanceGroupManagerStatusVersionTarget(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class InstanceGroupManagerStatusVersionTarget
   private int bitField0_;
   public static final int IS_REACHED_FIELD_NUMBER = 433209149;
   private boolean isReached_ = false;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class InstanceGroupManagerStatusVersionTarget
   public boolean hasIsReached() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -262,6 +265,7 @@ public final class InstanceGroupManagerStatusVersionTarget
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -453,6 +457,7 @@ public final class InstanceGroupManagerStatusVersionTarget
     private int bitField0_;
 
     private boolean isReached_;
+
     /**
      *
      *
@@ -468,6 +473,7 @@ public final class InstanceGroupManagerStatusVersionTarget
     public boolean hasIsReached() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -483,6 +489,7 @@ public final class InstanceGroupManagerStatusVersionTarget
     public boolean getIsReached() {
       return isReached_;
     }
+
     /**
      *
      *
@@ -502,6 +509,7 @@ public final class InstanceGroupManagerStatusVersionTarget
       onChanged();
       return this;
     }
+
     /**
      *
      *

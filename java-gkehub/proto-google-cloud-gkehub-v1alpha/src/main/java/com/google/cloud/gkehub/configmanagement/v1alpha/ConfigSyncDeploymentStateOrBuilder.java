@@ -36,6 +36,7 @@ public interface ConfigSyncDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for importer.
    */
   int getImporterValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ConfigSyncDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for syncer.
    */
   int getSyncerValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ConfigSyncDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for gitSync.
    */
   int getGitSyncValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ConfigSyncDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for monitor.
    */
   int getMonitorValue();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface ConfigSyncDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for reconcilerManager.
    */
   int getReconcilerManagerValue();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface ConfigSyncDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for rootReconciler.
    */
   int getRootReconcilerValue();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface BatchTransferResourcesResponseOrBuilder
   java.util.List<
           com.google.cloud.translate.v3.BatchTransferResourcesResponse.TransferResourceResponse>
       getResponsesList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface BatchTransferResourcesResponseOrBuilder
    */
   com.google.cloud.translate.v3.BatchTransferResourcesResponse.TransferResourceResponse
       getResponses(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface BatchTransferResourcesResponseOrBuilder
    * </code>
    */
   int getResponsesCount();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface BatchTransferResourcesResponseOrBuilder
               com.google.cloud.translate.v3.BatchTransferResourcesResponse
                   .TransferResourceResponseOrBuilder>
       getResponsesOrBuilderList();
+
   /**
    *
    *

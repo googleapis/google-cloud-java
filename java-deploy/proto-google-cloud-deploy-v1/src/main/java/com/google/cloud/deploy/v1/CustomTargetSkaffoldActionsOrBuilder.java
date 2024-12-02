@@ -38,6 +38,7 @@ public interface CustomTargetSkaffoldActionsOrBuilder
    * @return The renderAction.
    */
   java.lang.String getRenderAction();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CustomTargetSkaffoldActionsOrBuilder
    * @return The deployAction.
    */
   java.lang.String getDeployAction();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CustomTargetSkaffoldActionsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.SkaffoldModules> getIncludeSkaffoldModulesList();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CustomTargetSkaffoldActionsOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.SkaffoldModules getIncludeSkaffoldModules(int index);
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface CustomTargetSkaffoldActionsOrBuilder
    * </code>
    */
   int getIncludeSkaffoldModulesCount();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface CustomTargetSkaffoldActionsOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.SkaffoldModulesOrBuilder>
       getIncludeSkaffoldModulesOrBuilderList();
+
   /**
    *
    *

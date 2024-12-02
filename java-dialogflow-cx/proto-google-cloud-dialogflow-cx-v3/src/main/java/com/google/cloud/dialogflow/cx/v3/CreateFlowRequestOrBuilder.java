@@ -39,6 +39,7 @@ public interface CreateFlowRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateFlowRequestOrBuilder
    * @return Whether the flow field is set.
    */
   boolean hasFlow();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateFlowRequestOrBuilder
    * @return The flow.
    */
   com.google.cloud.dialogflow.cx.v3.Flow getFlow();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateFlowRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

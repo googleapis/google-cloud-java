@@ -33,6 +33,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.OracleProfile)
     OracleProfileOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OracleProfile.newBuilder() to construct.
   private OracleProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_FIELD_NUMBER = 2;
   private int port_ = 0;
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseService_ = "";
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -328,6 +338,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
   public int getConnectionAttributesCount() {
     return internalGetConnectionAttributes().getMap().size();
   }
+
   /**
    *
    *
@@ -344,12 +355,14 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetConnectionAttributes().getMap().containsKey(key);
   }
+
   /** Use {@link #getConnectionAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getConnectionAttributes() {
     return getConnectionAttributesMap();
   }
+
   /**
    *
    *
@@ -363,6 +376,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getConnectionAttributesMap() {
     return internalGetConnectionAttributes().getMap();
   }
+
   /**
    *
    *
@@ -384,6 +398,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         internalGetConnectionAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -622,6 +637,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -906,6 +922,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object hostname_ = "";
+
     /**
      *
      *
@@ -928,6 +945,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -950,6 +968,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -971,6 +990,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1008,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1033,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int port_;
+
     /**
      *
      *
@@ -1027,6 +1049,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     public int getPort() {
       return port_;
     }
+
     /**
      *
      *
@@ -1046,6 +1069,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1089,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object username_ = "";
+
     /**
      *
      *
@@ -1087,6 +1112,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1109,6 +1135,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1130,6 +1157,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1175,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1200,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object password_ = "";
+
     /**
      *
      *
@@ -1193,6 +1223,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1215,6 +1246,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1268,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1286,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1311,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object databaseService_ = "";
+
     /**
      *
      *
@@ -1299,6 +1334,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1321,6 +1357,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1379,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1397,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1411,6 +1450,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     public int getConnectionAttributesCount() {
       return internalGetConnectionAttributes().getMap().size();
     }
+
     /**
      *
      *
@@ -1427,12 +1467,14 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetConnectionAttributes().getMap().containsKey(key);
     }
+
     /** Use {@link #getConnectionAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getConnectionAttributes() {
       return getConnectionAttributesMap();
     }
+
     /**
      *
      *
@@ -1446,6 +1488,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getConnectionAttributesMap() {
       return internalGetConnectionAttributes().getMap();
     }
+
     /**
      *
      *
@@ -1467,6 +1510,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
           internalGetConnectionAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1494,6 +1538,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConnectionAttributes().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1510,12 +1555,14 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConnectionAttributes().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConnectionAttributes() {
       bitField0_ |= 0x00000020;
       return internalGetMutableConnectionAttributes().getMutableMap();
     }
+
     /**
      *
      *
@@ -1536,6 +1583,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *

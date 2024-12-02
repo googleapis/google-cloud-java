@@ -33,6 +33,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.BatchEnableServicesRequest)
     BatchEnableServicesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchEnableServicesRequest.newBuilder() to construct.
   private BatchEnableServicesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getServiceIdsList() {
     return serviceIds_;
   }
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
   public int getServiceIdsCount() {
     return serviceIds_.size();
   }
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
   public java.lang.String getServiceIds(int index) {
     return serviceIds_.get(index);
   }
+
   /**
    *
    *
@@ -419,6 +426,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -628,6 +636,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -656,6 +665,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -684,6 +694,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -711,6 +722,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +785,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -800,6 +814,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       serviceIds_.makeImmutable();
       return serviceIds_;
     }
+
     /**
      *
      *
@@ -827,6 +842,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
     public int getServiceIdsCount() {
       return serviceIds_.size();
     }
+
     /**
      *
      *
@@ -855,6 +871,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
     public java.lang.String getServiceIds(int index) {
       return serviceIds_.get(index);
     }
+
     /**
      *
      *
@@ -883,6 +900,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getServiceIdsBytes(int index) {
       return serviceIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +973,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1006,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1038,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

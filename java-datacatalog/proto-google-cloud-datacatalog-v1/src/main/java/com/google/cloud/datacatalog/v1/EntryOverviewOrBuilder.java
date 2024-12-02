@@ -42,6 +42,7 @@ public interface EntryOverviewOrBuilder
    * @return The overview.
    */
   java.lang.String getOverview();
+
   /**
    *
    *

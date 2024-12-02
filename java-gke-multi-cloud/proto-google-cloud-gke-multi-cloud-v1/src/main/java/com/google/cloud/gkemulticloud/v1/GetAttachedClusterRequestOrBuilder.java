@@ -46,6 +46,7 @@ public interface GetAttachedClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface GetServerConfigRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface GetServerConfigRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface GetServerConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

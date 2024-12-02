@@ -33,6 +33,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.BatchUpdateJobsRequest)
     BatchUpdateJobsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchUpdateJobsRequest.newBuilder() to construct.
   private BatchUpdateJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.Job> jobs_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.talent.v4.Job> getJobsList() {
     return jobs_;
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
   public java.util.List<? extends com.google.cloud.talent.v4.JobOrBuilder> getJobsOrBuilderList() {
     return jobs_;
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
   public int getJobsCount() {
     return jobs_.size();
   }
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
   public com.google.cloud.talent.v4.Job getJobs(int index) {
     return jobs_.get(index);
   }
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -481,6 +492,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -755,6 +767,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -782,6 +795,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -809,6 +823,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +850,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +873,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +937,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         return jobsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -939,6 +957,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         return jobsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -958,6 +977,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         return jobsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -983,6 +1003,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1026,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1052,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1078,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1101,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1124,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1147,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1170,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1193,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1209,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.talent.v4.Job.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1199,6 +1229,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         return jobsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(jobs_);
       }
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.talent.v4.Job.Builder addJobsBuilder() {
       return getJobsFieldBuilder().addBuilder(com.google.cloud.talent.v4.Job.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1250,6 +1283,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       return getJobsFieldBuilder()
           .addBuilder(index, com.google.cloud.talent.v4.Job.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1289,6 +1323,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1318,6 +1353,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1353,6 +1389,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1390,6 +1427,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1462,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1505,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1540,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1570,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1562,6 +1604,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
             : updateMask_;
       }
     }
+
     /**
      *
      *

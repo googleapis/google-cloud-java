@@ -36,6 +36,7 @@ public interface TransferableSkuOrBuilder
    * @return Whether the transferEligibility field is set.
    */
   boolean hasTransferEligibility();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TransferableSkuOrBuilder
    * @return The transferEligibility.
    */
   com.google.cloud.channel.v1.TransferEligibility getTransferEligibility();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TransferableSkuOrBuilder
    * @return Whether the sku field is set.
    */
   boolean hasSku();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface TransferableSkuOrBuilder
    * @return The sku.
    */
   com.google.cloud.channel.v1.Sku getSku();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface TransferableSkuOrBuilder
    * @return Whether the legacySku field is set.
    */
   boolean hasLegacySku();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface TransferableSkuOrBuilder
    * @return The legacySku.
    */
   com.google.cloud.channel.v1.Sku getLegacySku();
+
   /**
    *
    *

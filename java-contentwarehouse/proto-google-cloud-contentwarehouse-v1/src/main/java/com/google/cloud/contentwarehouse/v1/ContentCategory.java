@@ -83,6 +83,7 @@ public enum ContentCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTENT_CATEGORY_UNSPECIFIED = 0;</code>
    */
   public static final int CONTENT_CATEGORY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public enum ContentCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTENT_CATEGORY_IMAGE = 1;</code>
    */
   public static final int CONTENT_CATEGORY_IMAGE_VALUE = 1;
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public enum ContentCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTENT_CATEGORY_AUDIO = 2;</code>
    */
   public static final int CONTENT_CATEGORY_AUDIO_VALUE = 2;
+
   /**
    *
    *

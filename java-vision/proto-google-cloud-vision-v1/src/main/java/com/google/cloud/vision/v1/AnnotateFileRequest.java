@@ -33,6 +33,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AnnotateFileRequest)
     AnnotateFileRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateFileRequest.newBuilder() to construct.
   private AnnotateFileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int INPUT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.InputConfig inputConfig_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
         : inputConfig_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.Feature> features_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.vision.v1.Feature> getFeaturesList() {
     return features_;
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       getFeaturesOrBuilderList() {
     return features_;
   }
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   public int getFeaturesCount() {
     return features_.size();
   }
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.vision.v1.Feature getFeatures(int index) {
     return features_.get(index);
   }
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
 
   public static final int IMAGE_CONTEXT_FIELD_NUMBER = 3;
   private com.google.cloud.vision.v1.ImageContext imageContext_;
+
   /**
    *
    *
@@ -203,6 +213,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   public boolean hasImageContext() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +231,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.vision.v1.ImageContext.getDefaultInstance()
         : imageContext_;
   }
+
   /**
    *
    *
@@ -240,6 +252,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList pages_ = emptyIntList();
+
   /**
    *
    *
@@ -268,6 +281,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getPagesList() {
     return pages_;
   }
+
   /**
    *
    *
@@ -295,6 +309,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   public int getPagesCount() {
     return pages_.size();
   }
+
   /**
    *
    *
@@ -540,6 +555,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -858,6 +874,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.vision.v1.InputConfig.Builder,
             com.google.cloud.vision.v1.InputConfigOrBuilder>
         inputConfigBuilder_;
+
     /**
      *
      *
@@ -872,6 +889,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -892,6 +910,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         return inputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +953,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +981,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1001,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1016,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1011,6 +1035,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
             : inputConfig_;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         return featuresBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1085,6 +1111,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         return featuresBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         return featuresBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1123,6 +1151,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1172,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1195,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1218,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1238,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1259,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1246,6 +1280,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1300,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1320,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1333,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vision.v1.Feature.Builder getFeaturesBuilder(int index) {
       return getFeaturesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1312,6 +1350,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         return featuresBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1329,6 +1368,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(features_);
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1382,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       return getFeaturesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.Feature.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1355,6 +1396,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       return getFeaturesFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.Feature.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1391,6 +1433,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.vision.v1.ImageContext.Builder,
             com.google.cloud.vision.v1.ImageContextOrBuilder>
         imageContextBuilder_;
+
     /**
      *
      *
@@ -1405,6 +1448,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     public boolean hasImageContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1425,6 +1469,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         return imageContextBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1447,6 +1492,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1513,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1494,6 +1541,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1513,6 +1561,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1527,6 +1576,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getImageContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1545,6 +1595,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
             : imageContext_;
       }
     }
+
     /**
      *
      *
@@ -1579,6 +1630,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1607,6 +1659,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       pages_.makeImmutable();
       return pages_;
     }
+
     /**
      *
      *
@@ -1634,6 +1687,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     public int getPagesCount() {
       return pages_.size();
     }
+
     /**
      *
      *
@@ -1662,6 +1716,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     public int getPages(int index) {
       return pages_.getInt(index);
     }
+
     /**
      *
      *
@@ -1696,6 +1751,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1785,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1761,6 +1818,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

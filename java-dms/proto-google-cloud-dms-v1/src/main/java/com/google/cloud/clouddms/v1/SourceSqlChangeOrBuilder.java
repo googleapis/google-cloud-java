@@ -36,6 +36,7 @@ public interface SourceSqlChangeOrBuilder
    * @return The sqlCode.
    */
   java.lang.String getSqlCode();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UrlMapValidationResult)
     UrlMapValidationResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UrlMapValidationResult.newBuilder() to construct.
   private UrlMapValidationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList loadErrors_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    * <code>repeated string load_errors = 310147300;</code>
    *
@@ -78,6 +80,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getLoadErrorsList() {
     return loadErrors_;
   }
+
   /**
    * <code>repeated string load_errors = 310147300;</code>
    *
@@ -86,6 +89,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   public int getLoadErrorsCount() {
     return loadErrors_.size();
   }
+
   /**
    * <code>repeated string load_errors = 310147300;</code>
    *
@@ -95,6 +99,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   public java.lang.String getLoadErrors(int index) {
     return loadErrors_.get(index);
   }
+
   /**
    * <code>repeated string load_errors = 310147300;</code>
    *
@@ -107,6 +112,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
 
   public static final int LOAD_SUCCEEDED_FIELD_NUMBER = 128326216;
   private boolean loadSucceeded_ = false;
+
   /**
    *
    *
@@ -122,6 +128,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   public boolean hasLoadSucceeded() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -142,27 +149,32 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.TestFailure> testFailures_;
+
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.TestFailure> getTestFailuresList() {
     return testFailures_;
   }
+
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.TestFailureOrBuilder>
       getTestFailuresOrBuilderList() {
     return testFailures_;
   }
+
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public int getTestFailuresCount() {
     return testFailures_.size();
   }
+
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.TestFailure getTestFailures(int index) {
     return testFailures_.get(index);
   }
+
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.TestFailureOrBuilder getTestFailuresOrBuilder(int index) {
@@ -171,6 +183,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
 
   public static final int TEST_PASSED_FIELD_NUMBER = 192708797;
   private boolean testPassed_ = false;
+
   /**
    *
    *
@@ -186,6 +199,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   public boolean hasTestPassed() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -408,6 +422,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -698,6 +713,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -707,6 +723,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       loadErrors_.makeImmutable();
       return loadErrors_;
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -715,6 +732,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public int getLoadErrorsCount() {
       return loadErrors_.size();
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -724,6 +742,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public java.lang.String getLoadErrors(int index) {
       return loadErrors_.get(index);
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -733,6 +752,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getLoadErrorsBytes(int index) {
       return loadErrors_.getByteString(index);
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -750,6 +770,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -766,6 +787,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -779,6 +801,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -791,6 +814,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      * <code>repeated string load_errors = 310147300;</code>
      *
@@ -810,6 +834,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     }
 
     private boolean loadSucceeded_;
+
     /**
      *
      *
@@ -825,6 +850,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public boolean hasLoadSucceeded() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -840,6 +866,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public boolean getLoadSucceeded() {
       return loadSucceeded_;
     }
+
     /**
      *
      *
@@ -859,6 +886,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +930,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return testFailuresBuilder_.getMessageList();
       }
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public int getTestFailuresCount() {
       if (testFailuresBuilder_ == null) {
@@ -910,6 +939,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return testFailuresBuilder_.getCount();
       }
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailure getTestFailures(int index) {
       if (testFailuresBuilder_ == null) {
@@ -918,6 +948,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return testFailuresBuilder_.getMessage(index);
       }
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder setTestFailures(int index, com.google.cloud.compute.v1.TestFailure value) {
       if (testFailuresBuilder_ == null) {
@@ -932,6 +963,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder setTestFailures(
         int index, com.google.cloud.compute.v1.TestFailure.Builder builderForValue) {
@@ -944,6 +976,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addTestFailures(com.google.cloud.compute.v1.TestFailure value) {
       if (testFailuresBuilder_ == null) {
@@ -958,6 +991,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addTestFailures(int index, com.google.cloud.compute.v1.TestFailure value) {
       if (testFailuresBuilder_ == null) {
@@ -972,6 +1006,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addTestFailures(
         com.google.cloud.compute.v1.TestFailure.Builder builderForValue) {
@@ -984,6 +1019,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addTestFailures(
         int index, com.google.cloud.compute.v1.TestFailure.Builder builderForValue) {
@@ -996,6 +1032,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addAllTestFailures(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.TestFailure> values) {
@@ -1008,6 +1045,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder clearTestFailures() {
       if (testFailuresBuilder_ == null) {
@@ -1019,6 +1057,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder removeTestFailures(int index) {
       if (testFailuresBuilder_ == null) {
@@ -1030,10 +1069,12 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailure.Builder getTestFailuresBuilder(int index) {
       return getTestFailuresFieldBuilder().getBuilder(index);
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailureOrBuilder getTestFailuresOrBuilder(int index) {
       if (testFailuresBuilder_ == null) {
@@ -1042,6 +1083,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return testFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public java.util.List<? extends com.google.cloud.compute.v1.TestFailureOrBuilder>
         getTestFailuresOrBuilderList() {
@@ -1051,16 +1093,19 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(testFailures_);
       }
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailure.Builder addTestFailuresBuilder() {
       return getTestFailuresFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.TestFailure.getDefaultInstance());
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailure.Builder addTestFailuresBuilder(int index) {
       return getTestFailuresFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.TestFailure.getDefaultInstance());
     }
+
     /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public java.util.List<com.google.cloud.compute.v1.TestFailure.Builder>
         getTestFailuresBuilderList() {
@@ -1085,6 +1130,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     }
 
     private boolean testPassed_;
+
     /**
      *
      *
@@ -1100,6 +1146,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public boolean hasTestPassed() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1115,6 +1162,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public boolean getTestPassed() {
       return testPassed_;
     }
+
     /**
      *
      *
@@ -1134,6 +1182,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

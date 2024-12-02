@@ -36,6 +36,7 @@ public interface BoundingPolyConfigOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BoundingPolyConfigOrBuilder
    * @return The instructionMessage.
    */
   java.lang.String getInstructionMessage();
+
   /**
    *
    *

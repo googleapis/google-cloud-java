@@ -33,6 +33,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DateTimeRangeArray)
     DateTimeRangeArrayOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DateTimeRangeArray.newBuilder() to construct.
   private DateTimeRangeArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.DateTimeRange> dateTimeRanges_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.visionai.v1.DateTimeRange> getDateTimeRangesList() {
     return dateTimeRanges_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       getDateTimeRangesOrBuilderList() {
     return dateTimeRanges_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
   public int getDateTimeRangesCount() {
     return dateTimeRanges_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.visionai.v1.DateTimeRange getDateTimeRanges(int index) {
     return dateTimeRanges_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -557,6 +564,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
         return dateTimeRangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
         return dateTimeRangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
         return dateTimeRangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +665,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +751,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +771,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +791,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +804,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.visionai.v1.DateTimeRange.Builder getDateTimeRangesBuilder(int index) {
       return getDateTimeRangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -802,6 +822,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
         return dateTimeRangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -819,6 +840,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(dateTimeRanges_);
       }
     }
+
     /**
      *
      *
@@ -832,6 +854,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       return getDateTimeRangesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.DateTimeRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -845,6 +868,7 @@ public final class DateTimeRangeArray extends com.google.protobuf.GeneratedMessa
       return getDateTimeRangesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.DateTimeRange.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface TransferMessageOrBuilder
    * @return Whether the messageTime field is set.
    */
   boolean hasMessageTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TransferMessageOrBuilder
    * @return The messageTime.
    */
   com.google.protobuf.Timestamp getMessageTime();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface TransferMessageOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface TransferMessageOrBuilder
    * @return The messageText.
    */
   java.lang.String getMessageText();
+
   /**
    *
    *

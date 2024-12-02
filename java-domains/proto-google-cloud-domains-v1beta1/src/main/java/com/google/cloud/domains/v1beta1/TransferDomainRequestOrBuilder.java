@@ -39,6 +39,7 @@ public interface TransferDomainRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface TransferDomainRequestOrBuilder
    * @return Whether the registration field is set.
    */
   boolean hasRegistration();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface TransferDomainRequestOrBuilder
    * @return The registration.
    */
   com.google.cloud.domains.v1beta1.Registration getRegistration();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface TransferDomainRequestOrBuilder
    * @return A list containing the contactNotices.
    */
   java.util.List<com.google.cloud.domains.v1beta1.ContactNotice> getContactNoticesList();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface TransferDomainRequestOrBuilder
    * @return The count of contactNotices.
    */
   int getContactNoticesCount();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface TransferDomainRequestOrBuilder
    * @return The contactNotices at the given index.
    */
   com.google.cloud.domains.v1beta1.ContactNotice getContactNotices(int index);
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface TransferDomainRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for contactNotices.
    */
   java.util.List<java.lang.Integer> getContactNoticesValueList();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface TransferDomainRequestOrBuilder
    * @return Whether the yearlyPrice field is set.
    */
   boolean hasYearlyPrice();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface TransferDomainRequestOrBuilder
    * @return The yearlyPrice.
    */
   com.google.type.Money getYearlyPrice();
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public interface TransferDomainRequestOrBuilder
    * @return Whether the authorizationCode field is set.
    */
   boolean hasAuthorizationCode();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface TransferDomainRequestOrBuilder
    * @return The authorizationCode.
    */
   com.google.cloud.domains.v1beta1.AuthorizationCode getAuthorizationCode();
+
   /**
    *
    *

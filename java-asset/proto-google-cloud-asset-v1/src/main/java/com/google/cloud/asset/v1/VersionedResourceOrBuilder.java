@@ -41,6 +41,7 @@ public interface VersionedResourceOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface VersionedResourceOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface VersionedResourceOrBuilder
    * @return The resource.
    */
   com.google.protobuf.Struct getResource();
+
   /**
    *
    *

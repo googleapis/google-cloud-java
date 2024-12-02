@@ -40,6 +40,7 @@ public interface DeleteTagRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

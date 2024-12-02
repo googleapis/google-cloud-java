@@ -34,6 +34,7 @@ public interface ListCommentsResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Comment comments = 1;</code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Comment> getCommentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCommentsResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Comment comments = 1;</code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Comment getComments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCommentsResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Comment comments = 1;</code>
    */
   int getCommentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCommentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.CommentOrBuilder>
       getCommentsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListCommentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListCommentsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListCommentsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListCommentsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

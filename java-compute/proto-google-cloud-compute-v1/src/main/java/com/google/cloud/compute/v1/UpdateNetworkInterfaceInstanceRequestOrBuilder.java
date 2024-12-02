@@ -36,6 +36,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * @return The networkInterface.
    */
   java.lang.String getNetworkInterface();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * @return Whether the networkInterfaceResource field is set.
    */
   boolean hasNetworkInterfaceResource();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * @return The networkInterfaceResource.
    */
   com.google.cloud.compute.v1.NetworkInterface getNetworkInterfaceResource();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

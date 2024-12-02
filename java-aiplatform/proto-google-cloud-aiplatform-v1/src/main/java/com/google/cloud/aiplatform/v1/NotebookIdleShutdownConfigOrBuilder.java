@@ -39,6 +39,7 @@ public interface NotebookIdleShutdownConfigOrBuilder
    * @return Whether the idleTimeout field is set.
    */
   boolean hasIdleTimeout();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface NotebookIdleShutdownConfigOrBuilder
    * @return The idleTimeout.
    */
   com.google.protobuf.Duration getIdleTimeout();
+
   /**
    *
    *

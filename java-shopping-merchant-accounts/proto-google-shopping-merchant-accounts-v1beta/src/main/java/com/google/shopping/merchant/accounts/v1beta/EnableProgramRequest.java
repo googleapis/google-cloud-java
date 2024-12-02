@@ -33,6 +33,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.EnableProgramRequest)
     EnableProgramRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EnableProgramRequest.newBuilder() to construct.
   private EnableProgramRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +284,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -470,6 +474,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -495,6 +500,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -520,6 +526,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -544,6 +551,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -564,6 +572,7 @@ public final class EnableProgramRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

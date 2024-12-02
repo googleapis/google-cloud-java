@@ -33,6 +33,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertAddressRequest)
     InsertAddressRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertAddressRequest.newBuilder() to construct.
   private InsertAddressRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ADDRESS_RESOURCE_FIELD_NUMBER = 483888121;
   private com.google.cloud.compute.v1.Address addressResource_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
   public boolean hasAddressResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.Address.getDefaultInstance()
         : addressResource_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -495,6 +506,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -745,6 +757,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.Address.Builder,
             com.google.cloud.compute.v1.AddressOrBuilder>
         addressResourceBuilder_;
+
     /**
      *
      *
@@ -761,6 +774,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
     public boolean hasAddressResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
         return addressResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -807,6 +822,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +896,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAddressResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
             : addressResource_;
       }
     }
+
     /**
      *
      *
@@ -943,6 +964,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1058,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1085,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1083,6 +1110,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1135,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1130,6 +1159,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1179,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1206,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1211,6 +1244,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1267,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1254,6 +1289,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1307,7 @@ public final class InsertAddressRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

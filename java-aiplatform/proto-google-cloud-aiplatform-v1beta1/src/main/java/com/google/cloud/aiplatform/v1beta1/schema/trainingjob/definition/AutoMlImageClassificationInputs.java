@@ -29,6 +29,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs)
     AutoMlImageClassificationInputsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlImageClassificationInputs.newBuilder() to construct.
   private AutoMlImageClassificationInputs(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -145,6 +146,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -157,6 +159,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * <code>CLOUD = 1;</code>
      */
     public static final int CLOUD_VALUE = 1;
+
     /**
      *
      *
@@ -171,6 +174,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * <code>MOBILE_TF_LOW_LATENCY_1 = 2;</code>
      */
     public static final int MOBILE_TF_LOW_LATENCY_1_VALUE = 2;
+
     /**
      *
      *
@@ -183,6 +187,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * <code>MOBILE_TF_VERSATILE_1 = 3;</code>
      */
     public static final int MOBILE_TF_VERSATILE_1_VALUE = 3;
+
     /**
      *
      *
@@ -290,6 +295,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
   private int modelType_ = 0;
+
   /**
    * <code>
    * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType model_type = 1;
@@ -301,6 +307,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   public int getModelTypeValue() {
     return modelType_;
   }
+
   /**
    * <code>
    * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType model_type = 1;
@@ -327,6 +334,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseModelId_ = "";
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -384,6 +393,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
 
   public static final int BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 3;
   private long budgetMilliNodeHours_ = 0L;
+
   /**
    *
    *
@@ -416,6 +426,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
 
   public static final int DISABLE_EARLY_STOPPING_FIELD_NUMBER = 4;
   private boolean disableEarlyStopping_ = false;
+
   /**
    *
    *
@@ -437,6 +448,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
 
   public static final int MULTI_LABEL_FIELD_NUMBER = 5;
   private boolean multiLabel_ = false;
+
   /**
    *
    *
@@ -685,6 +697,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs}
@@ -948,6 +961,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     private int bitField0_;
 
     private int modelType_ = 0;
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType model_type = 1;
@@ -959,6 +973,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     public int getModelTypeValue() {
       return modelType_;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType model_type = 1;
@@ -973,6 +988,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType model_type = 1;
@@ -994,6 +1010,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
               .AutoMlImageClassificationInputs.ModelType.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType model_type = 1;
@@ -1014,6 +1031,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType model_type = 1;
@@ -1029,6 +1047,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     }
 
     private java.lang.Object baseModelId_ = "";
+
     /**
      *
      *
@@ -1055,6 +1074,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1101,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1127,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1149,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1178,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     }
 
     private long budgetMilliNodeHours_;
+
     /**
      *
      *
@@ -1184,6 +1208,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     public long getBudgetMilliNodeHours() {
       return budgetMilliNodeHours_;
     }
+
     /**
      *
      *
@@ -1217,6 +1242,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1276,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     }
 
     private boolean disableEarlyStopping_;
+
     /**
      *
      *
@@ -1268,6 +1295,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     public boolean getDisableEarlyStopping() {
       return disableEarlyStopping_;
     }
+
     /**
      *
      *
@@ -1290,6 +1318,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1341,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     }
 
     private boolean multiLabel_;
+
     /**
      *
      *
@@ -1330,6 +1360,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     public boolean getMultiLabel() {
       return multiLabel_;
     }
+
     /**
      *
      *
@@ -1352,6 +1383,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

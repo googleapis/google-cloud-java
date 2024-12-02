@@ -75,7 +75,8 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConversationProfiles, expected %s or %s",
+                  "Unrecognized response type %s for method ListConversationProfiles, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConversationProfilesResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,7 +97,8 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConversationProfile, expected %s or %s",
+                  "Unrecognized response type %s for method GetConversationProfile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversationProfile.class.getName(),
                   Exception.class.getName())));
@@ -118,7 +120,8 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConversationProfile, expected %s or %s",
+                  "Unrecognized response type %s for method CreateConversationProfile, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversationProfile.class.getName(),
                   Exception.class.getName())));
@@ -140,7 +143,8 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateConversationProfile, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateConversationProfile, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversationProfile.class.getName(),
                   Exception.class.getName())));
@@ -161,7 +165,8 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConversationProfile, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteConversationProfile, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -182,7 +187,8 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetSuggestionFeatureConfig, expected %s or %s",
+                  "Unrecognized response type %s for method SetSuggestionFeatureConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -203,7 +209,8 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ClearSuggestionFeatureConfig, expected %s or %s",
+                  "Unrecognized response type %s for method ClearSuggestionFeatureConfig, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

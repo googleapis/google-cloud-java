@@ -36,6 +36,7 @@ public interface ResourceGroupReferenceOrBuilder
    * @return Whether the group field is set.
    */
   boolean hasGroup();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResourceGroupReferenceOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
+
   /**
    *
    *

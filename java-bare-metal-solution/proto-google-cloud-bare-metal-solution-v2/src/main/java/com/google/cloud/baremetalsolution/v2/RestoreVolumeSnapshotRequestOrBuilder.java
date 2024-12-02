@@ -39,6 +39,7 @@ public interface RestoreVolumeSnapshotRequestOrBuilder
    * @return The volumeSnapshot.
    */
   java.lang.String getVolumeSnapshot();
+
   /**
    *
    *

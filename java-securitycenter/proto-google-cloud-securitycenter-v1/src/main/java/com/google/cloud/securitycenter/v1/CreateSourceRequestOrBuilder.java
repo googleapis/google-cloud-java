@@ -39,6 +39,7 @@ public interface CreateSourceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateSourceRequestOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateSourceRequestOrBuilder
    * @return The source.
    */
   com.google.cloud.securitycenter.v1.Source getSource();
+
   /**
    *
    *

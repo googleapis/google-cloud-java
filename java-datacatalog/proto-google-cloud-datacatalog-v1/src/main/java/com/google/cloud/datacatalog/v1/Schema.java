@@ -33,6 +33,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.Schema)
     SchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Schema.newBuilder() to construct.
   private Schema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> columns_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> getColumnsList() {
     return columns_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       getColumnsOrBuilderList() {
     return columns_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getColumnsCount() {
     return columns_.size();
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1.ColumnSchema getColumns(int index) {
     return columns_.get(index);
   }
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +578,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -590,6 +598,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.ColumnSchema.Builder getColumnsBuilder(int index) {
       return getColumnsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return columnsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(columns_);
       }
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return getColumnsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.ColumnSchema.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -906,6 +929,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return getColumnsFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1.ColumnSchema.getDefaultInstance());
     }
+
     /**
      *
      *

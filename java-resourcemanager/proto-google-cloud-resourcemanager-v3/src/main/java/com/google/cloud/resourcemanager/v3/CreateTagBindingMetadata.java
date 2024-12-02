@@ -33,6 +33,7 @@ public final class CreateTagBindingMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.CreateTagBindingMetadata)
     CreateTagBindingMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateTagBindingMetadata.newBuilder() to construct.
   private CreateTagBindingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class CreateTagBindingMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

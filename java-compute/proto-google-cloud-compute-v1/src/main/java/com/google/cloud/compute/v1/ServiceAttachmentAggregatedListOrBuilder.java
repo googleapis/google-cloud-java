@@ -36,6 +36,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -85,10 +88,12 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.ServiceAttachmentsScopedList>
       getItems();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.ServiceAttachmentsScopedList>
       getItemsMap();
+
   /**
    *
    *
@@ -118,6 +124,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.ServiceAttachmentsScopedList defaultValue);
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -155,6 +163,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -192,6 +202,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -217,6 +228,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -229,6 +241,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -254,6 +267,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -266,6 +280,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -279,6 +294,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -305,6 +321,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -317,6 +334,7 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2beta3.Task tasks = 1;</code>
    */
   java.util.List<com.google.cloud.tasks.v2beta3.Task> getTasksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2beta3.Task tasks = 1;</code>
    */
   com.google.cloud.tasks.v2beta3.Task getTasks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2beta3.Task tasks = 1;</code>
    */
   int getTasksCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2beta3.Task tasks = 1;</code>
    */
   java.util.List<? extends com.google.cloud.tasks.v2beta3.TaskOrBuilder> getTasksOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListTasksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

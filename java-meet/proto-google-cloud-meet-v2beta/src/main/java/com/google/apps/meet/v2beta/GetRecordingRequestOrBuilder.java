@@ -38,6 +38,7 @@ public interface GetRecordingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

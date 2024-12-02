@@ -40,6 +40,7 @@ public interface DeleteCustomClassRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -99,6 +100,7 @@ public interface DeleteCustomClassRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

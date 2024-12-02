@@ -57,6 +57,7 @@ public interface SearchCriteriaPropertyOrBuilder
    * @return A list containing the mappedFields.
    */
   java.util.List<java.lang.String> getMappedFieldsList();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface SearchCriteriaPropertyOrBuilder
    * @return The count of mappedFields.
    */
   int getMappedFieldsCount();
+
   /**
    *
    *
@@ -124,6 +126,7 @@ public interface SearchCriteriaPropertyOrBuilder
    * @return The mappedFields at the given index.
    */
   java.lang.String getMappedFields(int index);
+
   /**
    *
    *

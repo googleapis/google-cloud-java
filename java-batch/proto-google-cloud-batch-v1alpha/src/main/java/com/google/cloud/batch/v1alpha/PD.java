@@ -33,6 +33,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.PD)
     PDOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PD.newBuilder() to construct.
   private PD(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disk_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object device_ = "";
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXISTING_FIELD_NUMBER = 3;
   private boolean existing_ = false;
+
   /**
    *
    *
@@ -365,6 +371,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -575,6 +582,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object disk_ = "";
+
     /**
      *
      *
@@ -597,6 +605,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object device_ = "";
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -746,6 +761,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +779,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +804,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean existing_;
+
     /**
      *
      *
@@ -808,6 +826,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     public boolean getExisting() {
       return existing_;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ReconcileTagsRequest)
     ReconcileTagsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReconcileTagsRequest.newBuilder() to construct.
   private ReconcileTagsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tagTemplate_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int FORCE_DELETE_MISSING_FIELD_NUMBER = 3;
   private boolean forceDeleteMissing_ = false;
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.Tag> tags_;
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.datacatalog.v1.Tag> getTagsList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       getTagsOrBuilderList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
   public int getTagsCount() {
     return tags_.size();
   }
+
   /**
    *
    *
@@ -265,6 +275,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.datacatalog.v1.Tag getTags(int index) {
     return tags_.get(index);
   }
+
   /**
    *
    *
@@ -470,6 +481,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -744,6 +756,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -768,6 +781,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +806,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object tagTemplate_ = "";
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -931,6 +951,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +998,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean forceDeleteMissing_;
+
     /**
      *
      *
@@ -993,6 +1016,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
     public boolean getForceDeleteMissing() {
       return forceDeleteMissing_;
     }
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1114,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1134,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1132,6 +1160,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1183,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1209,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1235,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1258,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1281,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1305,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1328,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1351,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1367,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.datacatalog.v1.Tag.Builder getTagsBuilder(int index) {
       return getTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1349,6 +1387,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1369,6 +1408,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(tags_);
       }
     }
+
     /**
      *
      *
@@ -1385,6 +1425,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       return getTagsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1401,6 +1442,7 @@ public final class ReconcileTagsRequest extends com.google.protobuf.GeneratedMes
       return getTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *

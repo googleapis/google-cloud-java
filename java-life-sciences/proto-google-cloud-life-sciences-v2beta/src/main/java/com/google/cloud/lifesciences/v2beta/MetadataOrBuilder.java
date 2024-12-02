@@ -36,6 +36,7 @@ public interface MetadataOrBuilder
    * @return Whether the pipeline field is set.
    */
   boolean hasPipeline();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MetadataOrBuilder
    * @return The pipeline.
    */
   com.google.cloud.lifesciences.v2beta.Pipeline getPipeline();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface MetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -79,9 +82,11 @@ public interface MetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -92,6 +97,7 @@ public interface MetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -106,6 +112,7 @@ public interface MetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -128,6 +135,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Event events = 3;</code>
    */
   java.util.List<com.google.cloud.lifesciences.v2beta.Event> getEventsList();
+
   /**
    *
    *
@@ -139,6 +147,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Event events = 3;</code>
    */
   com.google.cloud.lifesciences.v2beta.Event getEvents(int index);
+
   /**
    *
    *
@@ -150,6 +159,7 @@ public interface MetadataOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Event events = 3;</code>
    */
   int getEventsCount();
+
   /**
    *
    *
@@ -162,6 +172,7 @@ public interface MetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.lifesciences.v2beta.EventOrBuilder>
       getEventsOrBuilderList();
+
   /**
    *
    *
@@ -186,6 +197,7 @@ public interface MetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -198,6 +210,7 @@ public interface MetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -221,6 +234,7 @@ public interface MetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -233,6 +247,7 @@ public interface MetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -256,6 +271,7 @@ public interface MetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -268,6 +284,7 @@ public interface MetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -292,6 +309,7 @@ public interface MetadataOrBuilder
    * @return The pubSubTopic.
    */
   java.lang.String getPubSubTopic();
+
   /**
    *
    *

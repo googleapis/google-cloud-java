@@ -38,6 +38,7 @@ public interface AcknowledgeViolationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AcknowledgeViolationRequestOrBuilder
    * @return The comment.
    */
   java.lang.String getComment();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface AcknowledgeViolationRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNonCompliantOrgPolicy();
+
   /**
    *
    *

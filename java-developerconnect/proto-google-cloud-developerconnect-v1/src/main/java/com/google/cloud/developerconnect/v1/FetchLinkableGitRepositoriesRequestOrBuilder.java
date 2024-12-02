@@ -39,6 +39,7 @@ public interface FetchLinkableGitRepositoriesRequestOrBuilder
    * @return The connection.
    */
   java.lang.String getConnection();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface FetchLinkableGitRepositoriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

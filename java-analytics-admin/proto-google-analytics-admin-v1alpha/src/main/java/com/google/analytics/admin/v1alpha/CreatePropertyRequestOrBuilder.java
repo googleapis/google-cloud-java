@@ -39,6 +39,7 @@ public interface CreatePropertyRequestOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CreatePropertyRequestOrBuilder
    * @return The property.
    */
   com.google.analytics.admin.v1alpha.Property getProperty();
+
   /**
    *
    *

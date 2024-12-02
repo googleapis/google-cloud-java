@@ -36,6 +36,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface AcceleratorTypeOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.AcceleratorConfig accelerator_configs = 3;</code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.AcceleratorConfig> getAcceleratorConfigsList();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface AcceleratorTypeOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.AcceleratorConfig accelerator_configs = 3;</code>
    */
   com.google.cloud.tpu.v2alpha1.AcceleratorConfig getAcceleratorConfigs(int index);
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface AcceleratorTypeOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.AcceleratorConfig accelerator_configs = 3;</code>
    */
   int getAcceleratorConfigsCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface AcceleratorTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.AcceleratorConfigOrBuilder>
       getAcceleratorConfigsOrBuilderList();
+
   /**
    *
    *

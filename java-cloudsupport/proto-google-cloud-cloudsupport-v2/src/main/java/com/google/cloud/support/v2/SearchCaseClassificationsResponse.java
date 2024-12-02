@@ -33,6 +33,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.support.v2.SearchCaseClassificationsResponse)
     SearchCaseClassificationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchCaseClassificationsResponse.newBuilder() to construct.
   private SearchCaseClassificationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.support.v2.CaseClassification> caseClassifications_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       getCaseClassificationsList() {
     return caseClassifications_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       getCaseClassificationsOrBuilderList() {
     return caseClassifications_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
   public int getCaseClassificationsCount() {
     return caseClassifications_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
   public com.google.cloud.support.v2.CaseClassification getCaseClassifications(int index) {
     return caseClassifications_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +373,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +656,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
         return caseClassificationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
         return caseClassificationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
         return caseClassificationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +735,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +865,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +899,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
         int index) {
       return getCaseClassificationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -895,6 +917,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
         return caseClassificationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
         return java.util.Collections.unmodifiableList(caseClassifications_);
       }
     }
+
     /**
      *
      *
@@ -925,6 +949,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       return getCaseClassificationsFieldBuilder()
           .addBuilder(com.google.cloud.support.v2.CaseClassification.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -939,6 +964,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       return getCaseClassificationsFieldBuilder()
           .addBuilder(index, com.google.cloud.support.v2.CaseClassification.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -974,6 +1000,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -998,6 +1025,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1050,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1074,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1094,7 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

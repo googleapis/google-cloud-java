@@ -36,6 +36,7 @@ public interface RouterStatusResponseOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RouterStatusResponseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -67,12 +69,14 @@ public interface RouterStatusResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    * <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code>
    *
    * @return The result.
    */
   com.google.cloud.compute.v1.RouterStatus getResult();
+
   /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
   com.google.cloud.compute.v1.RouterStatusOrBuilder getResultOrBuilder();
 }

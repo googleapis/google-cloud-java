@@ -39,6 +39,7 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig getOutputConfig();
+
   /**
    *
    *

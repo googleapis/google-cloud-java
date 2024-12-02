@@ -39,6 +39,7 @@ public interface ListServiceAccountsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface ListServiceAccountsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.CreateWorkstationClusterRequest)
     CreateWorkstationClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateWorkstationClusterRequest.newBuilder() to construct.
   private CreateWorkstationClusterRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workstationClusterId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
 
   public static final int WORKSTATION_CLUSTER_FIELD_NUMBER = 3;
   private com.google.cloud.workstations.v1beta.WorkstationCluster workstationCluster_;
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
   public boolean hasWorkstationCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
         ? com.google.cloud.workstations.v1beta.WorkstationCluster.getDefaultInstance()
         : workstationCluster_;
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -441,6 +450,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -693,6 +703,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -741,6 +753,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object workstationClusterId_ = "";
+
     /**
      *
      *
@@ -831,6 +847,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +910,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +940,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
             com.google.cloud.workstations.v1beta.WorkstationCluster.Builder,
             com.google.cloud.workstations.v1beta.WorkstationClusterOrBuilder>
         workstationClusterBuilder_;
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
     public boolean hasWorkstationCluster() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
         return workstationClusterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -983,6 +1006,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1029,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1061,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1101,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return getWorkstationClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1095,6 +1123,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
             : workstationCluster_;
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1153,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1140,6 +1170,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1160,6 +1191,7 @@ public final class CreateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

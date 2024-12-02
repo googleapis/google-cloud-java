@@ -36,6 +36,7 @@ public final class AddFulfillmentPlacesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.AddFulfillmentPlacesResponse)
     AddFulfillmentPlacesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddFulfillmentPlacesResponse.newBuilder() to construct.
   private AddFulfillmentPlacesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,6 +216,7 @@ public final class AddFulfillmentPlacesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

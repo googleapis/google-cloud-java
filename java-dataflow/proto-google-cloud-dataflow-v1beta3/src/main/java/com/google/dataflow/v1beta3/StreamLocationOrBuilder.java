@@ -37,6 +37,7 @@ public interface StreamLocationOrBuilder
    * @return Whether the streamingStageLocation field is set.
    */
   boolean hasStreamingStageLocation();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface StreamLocationOrBuilder
    * @return The streamingStageLocation.
    */
   com.google.dataflow.v1beta3.StreamingStageLocation getStreamingStageLocation();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface StreamLocationOrBuilder
    * @return Whether the pubsubLocation field is set.
    */
   boolean hasPubsubLocation();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface StreamLocationOrBuilder
    * @return The pubsubLocation.
    */
   com.google.dataflow.v1beta3.PubsubLocation getPubsubLocation();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface StreamLocationOrBuilder
    * @return Whether the sideInputLocation field is set.
    */
   boolean hasSideInputLocation();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface StreamLocationOrBuilder
    * @return The sideInputLocation.
    */
   com.google.dataflow.v1beta3.StreamingSideInputLocation getSideInputLocation();
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface StreamLocationOrBuilder
    * @return Whether the customSourceLocation field is set.
    */
   boolean hasCustomSourceLocation();
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public interface StreamLocationOrBuilder
    * @return The customSourceLocation.
    */
   com.google.dataflow.v1beta3.CustomSourceLocation getCustomSourceLocation();
+
   /**
    *
    *

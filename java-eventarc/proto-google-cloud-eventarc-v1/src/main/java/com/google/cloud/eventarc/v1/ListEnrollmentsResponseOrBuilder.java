@@ -34,6 +34,7 @@ public interface ListEnrollmentsResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Enrollment enrollments = 1;</code>
    */
   java.util.List<com.google.cloud.eventarc.v1.Enrollment> getEnrollmentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEnrollmentsResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Enrollment enrollments = 1;</code>
    */
   com.google.cloud.eventarc.v1.Enrollment getEnrollments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEnrollmentsResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Enrollment enrollments = 1;</code>
    */
   int getEnrollmentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEnrollmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.EnrollmentOrBuilder>
       getEnrollmentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListEnrollmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListEnrollmentsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListEnrollmentsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListEnrollmentsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

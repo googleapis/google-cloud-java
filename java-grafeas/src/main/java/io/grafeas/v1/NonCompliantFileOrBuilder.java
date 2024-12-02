@@ -37,6 +37,7 @@ public interface NonCompliantFileOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface NonCompliantFileOrBuilder
    * @return The displayCommand.
    */
   java.lang.String getDisplayCommand();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface NonCompliantFileOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
+
   /**
    *
    *

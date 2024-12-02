@@ -37,6 +37,7 @@ public interface SearchJobsResponseOrBuilder
    */
   java.util.List<com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob>
       getMatchingJobsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface SearchJobsResponseOrBuilder
    * </code>
    */
   com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob getMatchingJobs(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface SearchJobsResponseOrBuilder
    * </code>
    */
   int getMatchingJobsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface SearchJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJobOrBuilder>
       getMatchingJobsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface SearchJobsResponseOrBuilder
    */
   java.util.List<com.google.cloud.talent.v4beta1.HistogramQueryResult>
       getHistogramQueryResultsList();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface SearchJobsResponseOrBuilder
    * </code>
    */
   com.google.cloud.talent.v4beta1.HistogramQueryResult getHistogramQueryResults(int index);
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface SearchJobsResponseOrBuilder
    * </code>
    */
   int getHistogramQueryResultsCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface SearchJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder>
       getHistogramQueryResultsOrBuilderList();
+
   /**
    *
    *
@@ -165,6 +173,7 @@ public interface SearchJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public interface SearchJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Location location_filters = 4;</code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.Location> getLocationFiltersList();
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface SearchJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Location location_filters = 4;</code>
    */
   com.google.cloud.talent.v4beta1.Location getLocationFilters(int index);
+
   /**
    *
    *
@@ -221,6 +232,7 @@ public interface SearchJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Location location_filters = 4;</code>
    */
   int getLocationFiltersCount();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface SearchJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.LocationOrBuilder>
       getLocationFiltersOrBuilderList();
+
   /**
    *
    *
@@ -294,6 +307,7 @@ public interface SearchJobsResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -307,6 +321,7 @@ public interface SearchJobsResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata();
+
   /**
    *
    *
@@ -350,6 +365,7 @@ public interface SearchJobsResponseOrBuilder
    * @return Whether the spellCorrection field is set.
    */
   boolean hasSpellCorrection();
+
   /**
    *
    *
@@ -362,6 +378,7 @@ public interface SearchJobsResponseOrBuilder
    * @return The spellCorrection.
    */
   com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection();
+
   /**
    *
    *

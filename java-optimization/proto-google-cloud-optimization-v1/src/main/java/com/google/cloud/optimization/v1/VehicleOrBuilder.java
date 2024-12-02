@@ -37,6 +37,7 @@ public interface VehicleOrBuilder
    * @return The enum numeric value on the wire for travelMode.
    */
   int getTravelModeValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface VehicleOrBuilder
    * @return Whether the routeModifiers field is set.
    */
   boolean hasRouteModifiers();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface VehicleOrBuilder
    * @return The routeModifiers.
    */
   com.google.cloud.optimization.v1.RouteModifiers getRouteModifiers();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface VehicleOrBuilder
    * @return Whether the startLocation field is set.
    */
   boolean hasStartLocation();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface VehicleOrBuilder
    * @return The startLocation.
    */
   com.google.type.LatLng getStartLocation();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface VehicleOrBuilder
    * @return Whether the startWaypoint field is set.
    */
   boolean hasStartWaypoint();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface VehicleOrBuilder
    * @return The startWaypoint.
    */
   com.google.cloud.optimization.v1.Waypoint getStartWaypoint();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface VehicleOrBuilder
    * @return Whether the endLocation field is set.
    */
   boolean hasEndLocation();
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public interface VehicleOrBuilder
    * @return The endLocation.
    */
   com.google.type.LatLng getEndLocation();
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public interface VehicleOrBuilder
    * @return Whether the endWaypoint field is set.
    */
   boolean hasEndWaypoint();
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public interface VehicleOrBuilder
    * @return The endWaypoint.
    */
   com.google.cloud.optimization.v1.Waypoint getEndWaypoint();
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public interface VehicleOrBuilder
    * @return A list containing the startTags.
    */
   java.util.List<java.lang.String> getStartTagsList();
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public interface VehicleOrBuilder
    * @return The count of startTags.
    */
   int getStartTagsCount();
+
   /**
    *
    *
@@ -326,6 +339,7 @@ public interface VehicleOrBuilder
    * @return The startTags at the given index.
    */
   java.lang.String getStartTags(int index);
+
   /**
    *
    *
@@ -356,6 +370,7 @@ public interface VehicleOrBuilder
    * @return A list containing the endTags.
    */
   java.util.List<java.lang.String> getEndTagsList();
+
   /**
    *
    *
@@ -370,6 +385,7 @@ public interface VehicleOrBuilder
    * @return The count of endTags.
    */
   int getEndTagsCount();
+
   /**
    *
    *
@@ -385,6 +401,7 @@ public interface VehicleOrBuilder
    * @return The endTags at the given index.
    */
   java.lang.String getEndTags(int index);
+
   /**
    *
    *
@@ -422,6 +439,7 @@ public interface VehicleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.TimeWindow start_time_windows = 9;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.TimeWindow> getStartTimeWindowsList();
+
   /**
    *
    *
@@ -443,6 +461,7 @@ public interface VehicleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.TimeWindow start_time_windows = 9;</code>
    */
   com.google.cloud.optimization.v1.TimeWindow getStartTimeWindows(int index);
+
   /**
    *
    *
@@ -464,6 +483,7 @@ public interface VehicleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.TimeWindow start_time_windows = 9;</code>
    */
   int getStartTimeWindowsCount();
+
   /**
    *
    *
@@ -486,6 +506,7 @@ public interface VehicleOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.TimeWindowOrBuilder>
       getStartTimeWindowsOrBuilderList();
+
   /**
    *
    *
@@ -529,6 +550,7 @@ public interface VehicleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.TimeWindow end_time_windows = 10;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.TimeWindow> getEndTimeWindowsList();
+
   /**
    *
    *
@@ -550,6 +572,7 @@ public interface VehicleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.TimeWindow end_time_windows = 10;</code>
    */
   com.google.cloud.optimization.v1.TimeWindow getEndTimeWindows(int index);
+
   /**
    *
    *
@@ -571,6 +594,7 @@ public interface VehicleOrBuilder
    * <code>repeated .google.cloud.optimization.v1.TimeWindow end_time_windows = 10;</code>
    */
   int getEndTimeWindowsCount();
+
   /**
    *
    *
@@ -593,6 +617,7 @@ public interface VehicleOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.TimeWindowOrBuilder>
       getEndTimeWindowsOrBuilderList();
+
   /**
    *
    *
@@ -639,6 +664,7 @@ public interface VehicleOrBuilder
    * @return Whether the travelDurationMultiple field is set.
    */
   boolean hasTravelDurationMultiple();
+
   /**
    *
    *
@@ -676,6 +702,7 @@ public interface VehicleOrBuilder
    * @return The enum numeric value on the wire for unloadingPolicy.
    */
   int getUnloadingPolicyValue();
+
   /**
    *
    *
@@ -705,6 +732,7 @@ public interface VehicleOrBuilder
    * </code>
    */
   int getLoadLimitsCount();
+
   /**
    *
    *
@@ -721,10 +749,12 @@ public interface VehicleOrBuilder
    * </code>
    */
   boolean containsLoadLimits(java.lang.String key);
+
   /** Use {@link #getLoadLimitsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Vehicle.LoadLimit>
       getLoadLimits();
+
   /**
    *
    *
@@ -742,6 +772,7 @@ public interface VehicleOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Vehicle.LoadLimit>
       getLoadLimitsMap();
+
   /**
    *
    *
@@ -762,6 +793,7 @@ public interface VehicleOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.optimization.v1.Vehicle.LoadLimit defaultValue);
+
   /**
    *
    *
@@ -882,6 +914,7 @@ public interface VehicleOrBuilder
    * @return Whether the routeDurationLimit field is set.
    */
   boolean hasRouteDurationLimit();
+
   /**
    *
    *
@@ -896,6 +929,7 @@ public interface VehicleOrBuilder
    * @return The routeDurationLimit.
    */
   com.google.cloud.optimization.v1.Vehicle.DurationLimit getRouteDurationLimit();
+
   /**
    *
    *
@@ -923,6 +957,7 @@ public interface VehicleOrBuilder
    * @return Whether the travelDurationLimit field is set.
    */
   boolean hasTravelDurationLimit();
+
   /**
    *
    *
@@ -937,6 +972,7 @@ public interface VehicleOrBuilder
    * @return The travelDurationLimit.
    */
   com.google.cloud.optimization.v1.Vehicle.DurationLimit getTravelDurationLimit();
+
   /**
    *
    *
@@ -964,6 +1000,7 @@ public interface VehicleOrBuilder
    * @return Whether the routeDistanceLimit field is set.
    */
   boolean hasRouteDistanceLimit();
+
   /**
    *
    *
@@ -978,6 +1015,7 @@ public interface VehicleOrBuilder
    * @return The routeDistanceLimit.
    */
   com.google.cloud.optimization.v1.DistanceLimit getRouteDistanceLimit();
+
   /**
    *
    *
@@ -1010,6 +1048,7 @@ public interface VehicleOrBuilder
    * </code>
    */
   int getExtraVisitDurationForVisitTypeCount();
+
   /**
    *
    *
@@ -1029,9 +1068,11 @@ public interface VehicleOrBuilder
    * </code>
    */
   boolean containsExtraVisitDurationForVisitType(java.lang.String key);
+
   /** Use {@link #getExtraVisitDurationForVisitTypeMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Duration> getExtraVisitDurationForVisitType();
+
   /**
    *
    *
@@ -1052,6 +1093,7 @@ public interface VehicleOrBuilder
    */
   java.util.Map<java.lang.String, com.google.protobuf.Duration>
       getExtraVisitDurationForVisitTypeMap();
+
   /**
    *
    *
@@ -1075,6 +1117,7 @@ public interface VehicleOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Duration defaultValue);
+
   /**
    *
    *
@@ -1108,6 +1151,7 @@ public interface VehicleOrBuilder
    * @return Whether the breakRule field is set.
    */
   boolean hasBreakRule();
+
   /**
    *
    *
@@ -1121,6 +1165,7 @@ public interface VehicleOrBuilder
    * @return The breakRule.
    */
   com.google.cloud.optimization.v1.BreakRule getBreakRule();
+
   /**
    *
    *
@@ -1147,6 +1192,7 @@ public interface VehicleOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *
@@ -1207,6 +1253,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.Integer> getBreakRuleIndicesList();
+
   /**
    *
    *
@@ -1227,6 +1274,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   int getBreakRuleIndicesCount();
+
   /**
    *
    *
@@ -1264,6 +1312,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.optimization.v1.CapacityQuantity> getCapacitiesList();
+
   /**
    *
    *
@@ -1279,6 +1328,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.optimization.v1.CapacityQuantity getCapacities(int index);
+
   /**
    *
    *
@@ -1294,6 +1344,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   int getCapacitiesCount();
+
   /**
    *
    *
@@ -1310,6 +1361,7 @@ public interface VehicleOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.optimization.v1.CapacityQuantityOrBuilder>
       getCapacitiesOrBuilderList();
+
   /**
    *
    *
@@ -1342,6 +1394,7 @@ public interface VehicleOrBuilder
   @java.lang.Deprecated
   java.util.List<com.google.cloud.optimization.v1.CapacityQuantityInterval>
       getStartLoadIntervalsList();
+
   /**
    *
    *
@@ -1357,6 +1410,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.optimization.v1.CapacityQuantityInterval getStartLoadIntervals(int index);
+
   /**
    *
    *
@@ -1372,6 +1426,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   int getStartLoadIntervalsCount();
+
   /**
    *
    *
@@ -1388,6 +1443,7 @@ public interface VehicleOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.optimization.v1.CapacityQuantityIntervalOrBuilder>
       getStartLoadIntervalsOrBuilderList();
+
   /**
    *
    *
@@ -1421,6 +1477,7 @@ public interface VehicleOrBuilder
   @java.lang.Deprecated
   java.util.List<com.google.cloud.optimization.v1.CapacityQuantityInterval>
       getEndLoadIntervalsList();
+
   /**
    *
    *
@@ -1436,6 +1493,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.optimization.v1.CapacityQuantityInterval getEndLoadIntervals(int index);
+
   /**
    *
    *
@@ -1451,6 +1509,7 @@ public interface VehicleOrBuilder
    */
   @java.lang.Deprecated
   int getEndLoadIntervalsCount();
+
   /**
    *
    *
@@ -1467,6 +1526,7 @@ public interface VehicleOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.optimization.v1.CapacityQuantityIntervalOrBuilder>
       getEndLoadIntervalsOrBuilderList();
+
   /**
    *
    *

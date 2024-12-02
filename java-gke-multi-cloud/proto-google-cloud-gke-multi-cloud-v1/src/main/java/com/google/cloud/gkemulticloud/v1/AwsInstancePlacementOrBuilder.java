@@ -38,6 +38,7 @@ public interface AwsInstancePlacementOrBuilder
    * @return The enum numeric value on the wire for tenancy.
    */
   int getTenancyValue();
+
   /**
    *
    *

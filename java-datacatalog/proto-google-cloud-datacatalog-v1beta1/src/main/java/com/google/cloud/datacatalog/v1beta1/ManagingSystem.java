@@ -73,6 +73,7 @@ public enum ManagingSystem implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANAGING_SYSTEM_UNSPECIFIED = 0;</code>
    */
   public static final int MANAGING_SYSTEM_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum ManagingSystem implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANAGING_SYSTEM_DATAPLEX = 1;</code>
    */
   public static final int MANAGING_SYSTEM_DATAPLEX_VALUE = 1;
+
   /**
    *
    *

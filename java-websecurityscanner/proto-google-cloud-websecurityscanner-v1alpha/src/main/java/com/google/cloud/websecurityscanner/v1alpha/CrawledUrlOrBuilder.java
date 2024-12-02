@@ -37,6 +37,7 @@ public interface CrawledUrlOrBuilder
    * @return The httpMethod.
    */
   java.lang.String getHttpMethod();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CrawledUrlOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface CrawledUrlOrBuilder
    * @return The body.
    */
   java.lang.String getBody();
+
   /**
    *
    *

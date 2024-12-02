@@ -33,6 +33,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.QuestionAnsweringQualityResult)
     QuestionAnsweringQualityResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuestionAnsweringQualityResult.newBuilder() to construct.
   private QuestionAnsweringQualityResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object explanation_ = "";
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
 
   public static final int CONFIDENCE_FIELD_NUMBER = 3;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
   public boolean hasConfidence() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -373,6 +380,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -594,6 +602,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     }
 
     private java.lang.Object explanation_ = "";
+
     /**
      *
      *
@@ -684,6 +697,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +760,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +785,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -783,6 +801,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     public boolean hasConfidence() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -798,6 +817,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -817,6 +837,7 @@ public final class QuestionAnsweringQualityResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

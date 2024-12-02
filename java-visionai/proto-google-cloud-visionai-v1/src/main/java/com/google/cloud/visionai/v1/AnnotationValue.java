@@ -33,6 +33,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AnnotationValue)
     AnnotationValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotationValue.newBuilder() to construct.
   private AnnotationValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     private ValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -135,6 +137,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INT_VALUE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasIntValue() {
     return valueCase_ == 1;
   }
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int FLOAT_VALUE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasFloatValue() {
     return valueCase_ == 2;
   }
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int STR_VALUE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasStrValue() {
     return valueCase_ == 3;
   }
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DATETIME_VALUE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -289,6 +299,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasDatetimeValue() {
     return valueCase_ == 5;
   }
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -345,6 +357,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GEO_COORDINATE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -360,6 +373,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasGeoCoordinate() {
     return valueCase_ == 7;
   }
+
   /**
    *
    *
@@ -378,6 +392,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.visionai.v1.GeoCoordinate.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -396,6 +411,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROTO_ANY_VALUE_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -411,6 +427,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasProtoAnyValue() {
     return valueCase_ == 8;
   }
+
   /**
    *
    *
@@ -429,6 +446,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.protobuf.Any.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -447,6 +465,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -462,6 +481,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasBoolValue() {
     return valueCase_ == 9;
   }
+
   /**
    *
    *
@@ -482,6 +502,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CUSTOMIZED_STRUCT_DATA_VALUE_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -498,6 +519,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasCustomizedStructDataValue() {
     return valueCase_ == 10;
   }
+
   /**
    *
    *
@@ -517,6 +539,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.protobuf.Struct.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -536,6 +559,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LIST_VALUE_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -551,6 +575,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasListValue() {
     return valueCase_ == 11;
   }
+
   /**
    *
    *
@@ -569,6 +594,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.visionai.v1.AnnotationList.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -587,6 +613,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CUSTOMIZED_STRUCT_VALUE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -602,6 +629,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasCustomizedStructValue() {
     return valueCase_ == 6;
   }
+
   /**
    *
    *
@@ -620,6 +648,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.visionai.v1.AnnotationCustomizedStruct.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -945,6 +974,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1302,6 +1332,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasIntValue() {
       return valueCase_ == 1;
     }
+
     /**
      *
      *
@@ -1319,6 +1350,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -1338,6 +1370,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1405,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasFloatValue() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -1389,6 +1423,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return 0F;
     }
+
     /**
      *
      *
@@ -1408,6 +1443,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1479,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasStrValue() {
       return valueCase_ == 3;
     }
+
     /**
      *
      *
@@ -1471,6 +1508,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1499,6 +1537,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1520,6 +1559,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1539,6 +1579,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1618,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasDatetimeValue() {
       return valueCase_ == 5;
     }
+
     /**
      *
      *
@@ -1605,6 +1647,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1633,6 +1676,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1654,6 +1698,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1718,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1701,6 +1747,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.visionai.v1.GeoCoordinate.Builder,
             com.google.cloud.visionai.v1.GeoCoordinateOrBuilder>
         geoCoordinateBuilder_;
+
     /**
      *
      *
@@ -1716,6 +1763,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasGeoCoordinate() {
       return valueCase_ == 7;
     }
+
     /**
      *
      *
@@ -1741,6 +1789,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.visionai.v1.GeoCoordinate.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1763,6 +1812,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1833,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1866,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1892,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1852,6 +1905,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.visionai.v1.GeoCoordinate.Builder getGeoCoordinateBuilder() {
       return getGeoCoordinateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1872,6 +1926,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.visionai.v1.GeoCoordinate.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1910,6 +1965,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         protoAnyValueBuilder_;
+
     /**
      *
      *
@@ -1925,6 +1981,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasProtoAnyValue() {
       return valueCase_ == 8;
     }
+
     /**
      *
      *
@@ -1950,6 +2007,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.protobuf.Any.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1972,6 +2030,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1991,6 +2050,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2081,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2046,6 +2107,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2058,6 +2120,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.Any.Builder getProtoAnyValueBuilder() {
       return getProtoAnyValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2078,6 +2141,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.protobuf.Any.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2123,6 +2187,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasBoolValue() {
       return valueCase_ == 9;
     }
+
     /**
      *
      *
@@ -2140,6 +2205,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return false;
     }
+
     /**
      *
      *
@@ -2159,6 +2225,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2184,6 +2251,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customizedStructDataValueBuilder_;
+
     /**
      *
      *
@@ -2200,6 +2268,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasCustomizedStructDataValue() {
       return valueCase_ == 10;
     }
+
     /**
      *
      *
@@ -2226,6 +2295,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2319,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2270,6 +2341,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2373,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2327,6 +2400,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2340,6 +2414,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.Struct.Builder getCustomizedStructDataValueBuilder() {
       return getCustomizedStructDataValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2361,6 +2436,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2398,6 +2474,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.visionai.v1.AnnotationList.Builder,
             com.google.cloud.visionai.v1.AnnotationListOrBuilder>
         listValueBuilder_;
+
     /**
      *
      *
@@ -2413,6 +2490,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasListValue() {
       return valueCase_ == 11;
     }
+
     /**
      *
      *
@@ -2438,6 +2516,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.visionai.v1.AnnotationList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2460,6 +2539,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2480,6 +2560,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2512,6 +2593,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2537,6 +2619,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2549,6 +2632,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.visionai.v1.AnnotationList.Builder getListValueBuilder() {
       return getListValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2569,6 +2653,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.visionai.v1.AnnotationList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2607,6 +2692,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.visionai.v1.AnnotationCustomizedStruct.Builder,
             com.google.cloud.visionai.v1.AnnotationCustomizedStructOrBuilder>
         customizedStructValueBuilder_;
+
     /**
      *
      *
@@ -2623,6 +2709,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasCustomizedStructValue() {
       return valueCase_ == 6;
     }
+
     /**
      *
      *
@@ -2649,6 +2736,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.visionai.v1.AnnotationCustomizedStruct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2673,6 +2761,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2694,6 +2783,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2729,6 +2819,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2755,6 +2846,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2769,6 +2861,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getCustomizedStructValueBuilder() {
       return getCustomizedStructValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2791,6 +2884,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.visionai.v1.AnnotationCustomizedStruct.getDefaultInstance();
       }
     }
+
     /**
      *
      *

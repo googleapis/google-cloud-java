@@ -95,7 +95,8 @@ public class MockDomainsImpl extends DomainsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RetrieveRegisterParameters, expected %s or %s",
+                  "Unrecognized response type %s for method RetrieveRegisterParameters, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RetrieveRegisterParametersResponse.class.getName(),
                   Exception.class.getName())));
@@ -138,7 +139,8 @@ public class MockDomainsImpl extends DomainsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RetrieveTransferParameters, expected %s or %s",
+                  "Unrecognized response type %s for method RetrieveTransferParameters, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RetrieveTransferParametersResponse.class.getName(),
                   Exception.class.getName())));
@@ -244,7 +246,8 @@ public class MockDomainsImpl extends DomainsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ConfigureManagementSettings, expected %s or %s",
+                  "Unrecognized response type %s for method ConfigureManagementSettings, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -265,7 +268,8 @@ public class MockDomainsImpl extends DomainsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ConfigureDnsSettings, expected %s or %s",
+                  "Unrecognized response type %s for method ConfigureDnsSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -286,7 +290,8 @@ public class MockDomainsImpl extends DomainsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ConfigureContactSettings, expected %s or %s",
+                  "Unrecognized response type %s for method ConfigureContactSettings, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -350,7 +355,8 @@ public class MockDomainsImpl extends DomainsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RetrieveAuthorizationCode, expected %s or %s",
+                  "Unrecognized response type %s for method RetrieveAuthorizationCode, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AuthorizationCode.class.getName(),
                   Exception.class.getName())));
@@ -371,7 +377,8 @@ public class MockDomainsImpl extends DomainsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResetAuthorizationCode, expected %s or %s",
+                  "Unrecognized response type %s for method ResetAuthorizationCode, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AuthorizationCode.class.getName(),
                   Exception.class.getName())));

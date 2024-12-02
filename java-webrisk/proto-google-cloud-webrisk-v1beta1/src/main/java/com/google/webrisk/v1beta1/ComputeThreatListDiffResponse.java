@@ -25,6 +25,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.ComputeThreatListDiffResponse)
     ComputeThreatListDiffResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeThreatListDiffResponse.newBuilder() to construct.
   private ComputeThreatListDiffResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -111,6 +112,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      * <code>RESPONSE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RESPONSE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -121,6 +123,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      * <code>DIFF = 1;</code>
      */
     public static final int DIFF_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      */
     com.google.protobuf.ByteString getSha256();
   }
+
   /**
    *
    *
@@ -252,6 +256,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum)
       ChecksumOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Checksum.newBuilder() to construct.
     private Checksum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -284,6 +289,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
 
     public static final int SHA256_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString sha256_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -463,6 +469,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -655,6 +662,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       private int bitField0_;
 
       private com.google.protobuf.ByteString sha256_ = com.google.protobuf.ByteString.EMPTY;
+
       /**
        *
        *
@@ -671,6 +679,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       public com.google.protobuf.ByteString getSha256() {
         return sha256_;
       }
+
       /**
        *
        *
@@ -693,6 +702,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -782,6 +792,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int RESPONSE_TYPE_FIELD_NUMBER = 4;
   private int responseType_ = 0;
+
   /**
    *
    *
@@ -800,6 +811,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
   public int getResponseTypeValue() {
     return responseType_;
   }
+
   /**
    *
    *
@@ -826,6 +838,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
 
   public static final int ADDITIONS_FIELD_NUMBER = 5;
   private com.google.webrisk.v1beta1.ThreatEntryAdditions additions_;
+
   /**
    *
    *
@@ -841,6 +854,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
   public boolean hasAdditions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -858,6 +872,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         ? com.google.webrisk.v1beta1.ThreatEntryAdditions.getDefaultInstance()
         : additions_;
   }
+
   /**
    *
    *
@@ -876,6 +891,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
 
   public static final int REMOVALS_FIELD_NUMBER = 6;
   private com.google.webrisk.v1beta1.ThreatEntryRemovals removals_;
+
   /**
    *
    *
@@ -892,6 +908,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
   public boolean hasRemovals() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -910,6 +927,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         ? com.google.webrisk.v1beta1.ThreatEntryRemovals.getDefaultInstance()
         : removals_;
   }
+
   /**
    *
    *
@@ -929,6 +947,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
 
   public static final int NEW_VERSION_TOKEN_FIELD_NUMBER = 7;
   private com.google.protobuf.ByteString newVersionToken_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -947,6 +966,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
 
   public static final int CHECKSUM_FIELD_NUMBER = 8;
   private com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum checksum_;
+
   /**
    *
    *
@@ -965,6 +985,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
   public boolean hasChecksum() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -985,6 +1006,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         ? com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum.getDefaultInstance()
         : checksum_;
   }
+
   /**
    *
    *
@@ -1007,6 +1029,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
 
   public static final int RECOMMENDED_NEXT_DIFF_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp recommendedNextDiff_;
+
   /**
    *
    *
@@ -1025,6 +1048,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
   public boolean hasRecommendedNextDiff() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1045,6 +1069,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : recommendedNextDiff_;
   }
+
   /**
    *
    *
@@ -1295,6 +1320,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.webrisk.v1beta1.ComputeThreatListDiffResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1572,6 +1598,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     private int bitField0_;
 
     private int responseType_ = 0;
+
     /**
      *
      *
@@ -1590,6 +1617,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     public int getResponseTypeValue() {
       return responseType_;
     }
+
     /**
      *
      *
@@ -1611,6 +1639,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1663,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
           ? com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.ResponseType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1659,6 +1689,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1717,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             com.google.webrisk.v1beta1.ThreatEntryAdditions.Builder,
             com.google.webrisk.v1beta1.ThreatEntryAdditionsOrBuilder>
         additionsBuilder_;
+
     /**
      *
      *
@@ -1700,6 +1732,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     public boolean hasAdditions() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1720,6 +1753,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         return additionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1742,6 +1776,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1762,6 +1797,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1789,6 +1825,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1808,6 +1845,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1822,6 +1860,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return getAdditionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1840,6 +1879,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             : additions_;
       }
     }
+
     /**
      *
      *
@@ -1872,6 +1912,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             com.google.webrisk.v1beta1.ThreatEntryRemovals.Builder,
             com.google.webrisk.v1beta1.ThreatEntryRemovalsOrBuilder>
         removalsBuilder_;
+
     /**
      *
      *
@@ -1887,6 +1928,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     public boolean hasRemovals() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1908,6 +1950,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         return removalsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1931,6 +1974,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1952,6 +1996,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1980,6 +2025,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2000,6 +2046,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2015,6 +2062,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return getRemovalsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2034,6 +2082,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             : removals_;
       }
     }
+
     /**
      *
      *
@@ -2062,6 +2111,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     }
 
     private com.google.protobuf.ByteString newVersionToken_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -2077,6 +2127,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getNewVersionToken() {
       return newVersionToken_;
     }
+
     /**
      *
      *
@@ -2098,6 +2149,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2122,6 +2174,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum.Builder,
             com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.ChecksumOrBuilder>
         checksumBuilder_;
+
     /**
      *
      *
@@ -2140,6 +2193,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     public boolean hasChecksum() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2164,6 +2218,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         return checksumBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2191,6 +2246,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2215,6 +2271,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2306,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2272,6 +2330,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2291,6 +2350,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return getChecksumFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2314,6 +2374,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             : checksum_;
       }
     }
+
     /**
      *
      *
@@ -2350,6 +2411,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         recommendedNextDiffBuilder_;
+
     /**
      *
      *
@@ -2367,6 +2429,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     public boolean hasRecommendedNextDiff() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2390,6 +2453,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         return recommendedNextDiffBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2415,6 +2479,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2437,6 +2502,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2467,6 +2533,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2489,6 +2556,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2506,6 +2574,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       onChanged();
       return getRecommendedNextDiffFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2527,6 +2596,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             : recommendedNextDiff_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddHealthCheckTargetPoolRequest)
     AddHealthCheckTargetPoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddHealthCheckTargetPoolRequest.newBuilder() to construct.
   private AddHealthCheckTargetPoolRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetPool_ = "";
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
   public static final int TARGET_POOLS_ADD_HEALTH_CHECK_REQUEST_RESOURCE_FIELD_NUMBER = 269573412;
   private com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest
       targetPoolsAddHealthCheckRequestResource_;
+
   /**
    *
    *
@@ -315,6 +326,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
   public boolean hasTargetPoolsAddHealthCheckRequestResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -335,6 +347,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         ? com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.getDefaultInstance()
         : targetPoolsAddHealthCheckRequestResource_;
   }
+
   /**
    *
    *
@@ -564,6 +577,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -829,6 +843,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -853,6 +868,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -877,6 +893,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -900,6 +917,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -969,6 +989,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1014,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1038,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1058,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1085,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1146,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1140,6 +1168,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1186,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1211,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object targetPool_ = "";
+
     /**
      *
      *
@@ -1203,6 +1234,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1257,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1279,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1297,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1328,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.Builder,
             com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequestOrBuilder>
         targetPoolsAddHealthCheckRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1309,6 +1345,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     public boolean hasTargetPoolsAddHealthCheckRequestResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1332,6 +1369,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         return targetPoolsAddHealthCheckRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1357,6 +1395,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1418,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1411,6 +1451,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1432,6 +1473,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1491,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       onChanged();
       return getTargetPoolsAddHealthCheckRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1470,6 +1513,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
             : targetPoolsAddHealthCheckRequestResource_;
       }
     }
+
     /**
      *
      *

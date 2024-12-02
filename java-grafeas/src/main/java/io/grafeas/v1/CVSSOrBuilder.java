@@ -66,6 +66,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for attackVector.
    */
   int getAttackVectorValue();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for attackComplexity.
    */
   int getAttackComplexityValue();
+
   /**
    * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
    *
@@ -100,6 +102,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for authentication.
    */
   int getAuthenticationValue();
+
   /**
    * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
    *
@@ -113,6 +116,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for privilegesRequired.
    */
   int getPrivilegesRequiredValue();
+
   /**
    * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
    *
@@ -126,6 +130,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for userInteraction.
    */
   int getUserInteractionValue();
+
   /**
    * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
    *
@@ -139,6 +144,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
+
   /**
    * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
    *
@@ -152,6 +158,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for confidentialityImpact.
    */
   int getConfidentialityImpactValue();
+
   /**
    * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
    *
@@ -165,6 +172,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for integrityImpact.
    */
   int getIntegrityImpactValue();
+
   /**
    * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
    *
@@ -178,6 +186,7 @@ public interface CVSSOrBuilder
    * @return The enum numeric value on the wire for availabilityImpact.
    */
   int getAvailabilityImpactValue();
+
   /**
    * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
    *

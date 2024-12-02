@@ -35,6 +35,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Index)
     IndexOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Index.newBuilder() to construct.
   private Index(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,6 +134,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -143,6 +145,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -153,6 +156,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATED = 2;</code>
      */
     public static final int CREATED_VALUE = 2;
+
     /**
      *
      *
@@ -266,6 +270,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     private AssetFilterCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -297,6 +302,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTIRE_CORPUS_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -312,6 +318,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEntireCorpus() {
     return assetFilterCase_ == 9;
   }
+
   /**
    *
    *
@@ -335,6 +342,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -390,6 +399,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -413,6 +423,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -441,6 +452,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -464,6 +476,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -490,6 +503,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -507,6 +521,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -529,6 +544,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -545,6 +561,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -561,6 +578,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -578,6 +596,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -594,6 +613,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -610,6 +630,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -629,6 +650,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.DeployedIndexReference> deployedIndexes_;
+
   /**
    *
    *
@@ -647,6 +669,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       getDeployedIndexesList() {
     return deployedIndexes_;
   }
+
   /**
    *
    *
@@ -665,6 +688,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       getDeployedIndexesOrBuilderList() {
     return deployedIndexes_;
   }
+
   /**
    *
    *
@@ -682,6 +706,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public int getDeployedIndexesCount() {
     return deployedIndexes_.size();
   }
+
   /**
    *
    *
@@ -699,6 +724,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.DeployedIndexReference getDeployedIndexes(int index) {
     return deployedIndexes_.get(index);
   }
+
   /**
    *
    *
@@ -720,6 +746,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 11;
   private boolean satisfiesPzs_ = false;
+
   /**
    *
    *
@@ -737,6 +764,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSatisfiesPzs() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -757,6 +785,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 12;
   private boolean satisfiesPzi_ = false;
+
   /**
    *
    *
@@ -774,6 +803,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSatisfiesPzi() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1067,6 +1097,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1484,6 +1515,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEntireCorpus() {
       return assetFilterCase_ == 9;
     }
+
     /**
      *
      *
@@ -1501,6 +1533,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -1520,6 +1553,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1575,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1565,6 +1600,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1589,6 +1625,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1612,6 +1649,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1631,6 +1669,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1657,6 +1696,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1679,6 +1719,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1701,6 +1742,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1722,6 +1764,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1739,6 +1782,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1763,6 +1807,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1785,6 +1830,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1807,6 +1853,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1828,6 +1875,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1893,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1918,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1886,6 +1936,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1906,6 +1957,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1925,6 +1977,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.visionai.v1.Index.State.forNumber(state_);
       return result == null ? com.google.cloud.visionai.v1.Index.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1948,6 +2001,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1974,6 +2028,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1990,6 +2045,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2012,6 +2068,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2036,6 +2093,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2057,6 +2115,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2086,6 +2145,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2107,6 +2167,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2184,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2143,6 +2205,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2177,6 +2240,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2193,6 +2257,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2215,6 +2280,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2239,6 +2305,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2260,6 +2327,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2289,6 +2357,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2310,6 +2379,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2396,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2346,6 +2417,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2413,6 +2485,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return deployedIndexesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2433,6 +2506,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return deployedIndexesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2453,6 +2527,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return deployedIndexesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2480,6 +2555,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2504,6 +2580,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2530,6 +2607,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2557,6 +2635,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2581,6 +2660,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2605,6 +2685,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2629,6 +2710,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2652,6 +2734,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2675,6 +2758,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2692,6 +2776,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDeployedIndexesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2713,6 +2798,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return deployedIndexesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2734,6 +2820,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(deployedIndexes_);
       }
     }
+
     /**
      *
      *
@@ -2751,6 +2838,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       return getDeployedIndexesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.DeployedIndexReference.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2770,6 +2858,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.visionai.v1.DeployedIndexReference.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2809,6 +2898,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzs_;
+
     /**
      *
      *
@@ -2826,6 +2916,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSatisfiesPzs() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2843,6 +2934,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
+
     /**
      *
      *
@@ -2864,6 +2956,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2885,6 +2978,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzi_;
+
     /**
      *
      *
@@ -2902,6 +2996,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSatisfiesPzi() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2919,6 +3014,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
+
     /**
      *
      *
@@ -2940,6 +3036,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

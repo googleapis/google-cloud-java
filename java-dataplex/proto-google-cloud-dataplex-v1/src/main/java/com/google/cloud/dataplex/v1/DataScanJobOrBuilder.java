@@ -39,6 +39,7 @@ public interface DataScanJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DataScanJobOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface DataScanJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface DataScanJobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface DataScanJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface DataScanJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public interface DataScanJobOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public interface DataScanJobOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the dataQualitySpec field is set.
    */
   boolean hasDataQualitySpec();
+
   /**
    *
    *
@@ -305,6 +317,7 @@ public interface DataScanJobOrBuilder
    * @return The dataQualitySpec.
    */
   com.google.cloud.dataplex.v1.DataQualitySpec getDataQualitySpec();
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the dataProfileSpec field is set.
    */
   boolean hasDataProfileSpec();
+
   /**
    *
    *
@@ -346,6 +360,7 @@ public interface DataScanJobOrBuilder
    * @return The dataProfileSpec.
    */
   com.google.cloud.dataplex.v1.DataProfileSpec getDataProfileSpec();
+
   /**
    *
    *
@@ -373,6 +388,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the dataDiscoverySpec field is set.
    */
   boolean hasDataDiscoverySpec();
+
   /**
    *
    *
@@ -387,6 +403,7 @@ public interface DataScanJobOrBuilder
    * @return The dataDiscoverySpec.
    */
   com.google.cloud.dataplex.v1.DataDiscoverySpec getDataDiscoverySpec();
+
   /**
    *
    *
@@ -414,6 +431,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the dataQualityResult field is set.
    */
   boolean hasDataQualityResult();
+
   /**
    *
    *
@@ -428,6 +446,7 @@ public interface DataScanJobOrBuilder
    * @return The dataQualityResult.
    */
   com.google.cloud.dataplex.v1.DataQualityResult getDataQualityResult();
+
   /**
    *
    *
@@ -455,6 +474,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the dataProfileResult field is set.
    */
   boolean hasDataProfileResult();
+
   /**
    *
    *
@@ -469,6 +489,7 @@ public interface DataScanJobOrBuilder
    * @return The dataProfileResult.
    */
   com.google.cloud.dataplex.v1.DataProfileResult getDataProfileResult();
+
   /**
    *
    *
@@ -496,6 +517,7 @@ public interface DataScanJobOrBuilder
    * @return Whether the dataDiscoveryResult field is set.
    */
   boolean hasDataDiscoveryResult();
+
   /**
    *
    *
@@ -510,6 +532,7 @@ public interface DataScanJobOrBuilder
    * @return The dataDiscoveryResult.
    */
   com.google.cloud.dataplex.v1.DataDiscoveryResult getDataDiscoveryResult();
+
   /**
    *
    *

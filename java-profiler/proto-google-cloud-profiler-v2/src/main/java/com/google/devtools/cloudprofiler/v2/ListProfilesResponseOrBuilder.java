@@ -34,6 +34,7 @@ public interface ListProfilesResponseOrBuilder
    * <code>repeated .google.devtools.cloudprofiler.v2.Profile profiles = 1;</code>
    */
   java.util.List<com.google.devtools.cloudprofiler.v2.Profile> getProfilesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProfilesResponseOrBuilder
    * <code>repeated .google.devtools.cloudprofiler.v2.Profile profiles = 1;</code>
    */
   com.google.devtools.cloudprofiler.v2.Profile getProfiles(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProfilesResponseOrBuilder
    * <code>repeated .google.devtools.cloudprofiler.v2.Profile profiles = 1;</code>
    */
   int getProfilesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListProfilesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.cloudprofiler.v2.ProfileOrBuilder>
       getProfilesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListProfilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

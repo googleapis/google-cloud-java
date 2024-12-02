@@ -35,6 +35,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.AnnotateVideoProgress)
     AnnotateVideoProgressOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateVideoProgress.newBuilder() to construct.
   private AnnotateVideoProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.VideoAnnotationProgress>
       annotationProgress_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       getAnnotationProgressList() {
     return annotationProgress_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       getAnnotationProgressOrBuilderList() {
     return annotationProgress_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
   public int getAnnotationProgressCount() {
     return annotationProgress_.size();
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       int index) {
     return annotationProgress_.get(index);
   }
+
   /**
    *
    *
@@ -314,6 +320,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -583,6 +590,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
         return annotationProgressBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -601,6 +609,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
         return annotationProgressBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -620,6 +629,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
         return annotationProgressBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -645,6 +655,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +705,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
         getAnnotationProgressBuilder(int index) {
       return getAnnotationProgressFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
         return annotationProgressBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(annotationProgress_);
       }
     }
+
     /**
      *
      *
@@ -899,6 +921,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.cloud.videointelligence.v1.VideoAnnotationProgress.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -917,6 +940,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
               index,
               com.google.cloud.videointelligence.v1.VideoAnnotationProgress.getDefaultInstance());
     }
+
     /**
      *
      *

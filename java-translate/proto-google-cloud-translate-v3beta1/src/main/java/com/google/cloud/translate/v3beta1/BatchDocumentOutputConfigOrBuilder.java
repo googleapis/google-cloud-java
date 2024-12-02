@@ -80,6 +80,7 @@ public interface BatchDocumentOutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -136,6 +137,7 @@ public interface BatchDocumentOutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.translate.v3beta1.GcsDestination getGcsDestination();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface ListCatalogItemsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface ListCatalogItemsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface ListCatalogItemsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

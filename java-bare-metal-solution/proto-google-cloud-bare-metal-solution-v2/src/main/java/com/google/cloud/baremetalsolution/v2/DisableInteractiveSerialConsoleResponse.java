@@ -34,6 +34,7 @@ public final class DisableInteractiveSerialConsoleResponse
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleResponse)
     DisableInteractiveSerialConsoleResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DisableInteractiveSerialConsoleResponse.newBuilder() to construct.
   private DisableInteractiveSerialConsoleResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -222,6 +223,7 @@ public final class DisableInteractiveSerialConsoleResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

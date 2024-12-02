@@ -38,6 +38,7 @@ public interface NonProductPerformanceViewOrBuilder
    * @return Whether the date field is set.
    */
   boolean hasDate();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface NonProductPerformanceViewOrBuilder
    * @return The date.
    */
   com.google.type.Date getDate();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface NonProductPerformanceViewOrBuilder
    * @return Whether the week field is set.
    */
   boolean hasWeek();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface NonProductPerformanceViewOrBuilder
    * @return The week.
    */
   com.google.type.Date getWeek();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface NonProductPerformanceViewOrBuilder
    * @return Whether the clicks field is set.
    */
   boolean hasClicks();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface NonProductPerformanceViewOrBuilder
    * @return Whether the impressions field is set.
    */
   boolean hasImpressions();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface NonProductPerformanceViewOrBuilder
    * @return Whether the clickThroughRate field is set.
    */
   boolean hasClickThroughRate();
+
   /**
    *
    *

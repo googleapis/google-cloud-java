@@ -39,6 +39,7 @@ public interface ColumnSpecOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ColumnSpecOrBuilder
    * @return Whether the dataType field is set.
    */
   boolean hasDataType();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ColumnSpecOrBuilder
    * @return The dataType.
    */
   com.google.cloud.automl.v1beta1.DataType getDataType();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface ColumnSpecOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface ColumnSpecOrBuilder
    * @return Whether the dataStats field is set.
    */
   boolean hasDataStats();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface ColumnSpecOrBuilder
    * @return The dataStats.
    */
   com.google.cloud.automl.v1beta1.DataStats getDataStats();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface ColumnSpecOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn>
       getTopCorrelatedColumnsList();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface ColumnSpecOrBuilder
    * </code>
    */
   com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn getTopCorrelatedColumns(int index);
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface ColumnSpecOrBuilder
    * </code>
    */
   int getTopCorrelatedColumnsCount();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface ColumnSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumnOrBuilder>
       getTopCorrelatedColumnsOrBuilderList();
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public interface ColumnSpecOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

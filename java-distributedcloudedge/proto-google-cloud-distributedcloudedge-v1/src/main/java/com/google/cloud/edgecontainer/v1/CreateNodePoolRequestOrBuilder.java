@@ -38,6 +38,7 @@ public interface CreateNodePoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateNodePoolRequestOrBuilder
    * @return The nodePoolId.
    */
   java.lang.String getNodePoolId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateNodePoolRequestOrBuilder
    * @return Whether the nodePool field is set.
    */
   boolean hasNodePool();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateNodePoolRequestOrBuilder
    * @return The nodePool.
    */
   com.google.cloud.edgecontainer.v1.NodePool getNodePool();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface CreateNodePoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

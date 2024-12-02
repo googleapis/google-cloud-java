@@ -36,6 +36,7 @@ public interface TransformationErrorHandlingOrBuilder
    * @return Whether the throwError field is set.
    */
   boolean hasThrowError();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TransformationErrorHandlingOrBuilder
    * @return The throwError.
    */
   com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError getThrowError();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface TransformationErrorHandlingOrBuilder
    * @return Whether the leaveUntransformed field is set.
    */
   boolean hasLeaveUntransformed();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface TransformationErrorHandlingOrBuilder
    * @return The leaveUntransformed.
    */
   com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed getLeaveUntransformed();
+
   /**
    *
    *

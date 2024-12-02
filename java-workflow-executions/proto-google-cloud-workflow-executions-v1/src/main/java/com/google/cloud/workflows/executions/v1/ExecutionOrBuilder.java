@@ -38,6 +38,7 @@ public interface ExecutionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ExecutionOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ExecutionOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ExecutionOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ExecutionOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface ExecutionOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface ExecutionOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface ExecutionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public interface ExecutionOrBuilder
    * @return The argument.
    */
   java.lang.String getArgument();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface ExecutionOrBuilder
    * @return The result.
    */
   java.lang.String getResult();
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public interface ExecutionOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -290,6 +301,7 @@ public interface ExecutionOrBuilder
    * @return The error.
    */
   com.google.cloud.workflows.executions.v1.Execution.Error getError();
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public interface ExecutionOrBuilder
    * @return The workflowRevisionId.
    */
   java.lang.String getWorkflowRevisionId();
+
   /**
    *
    *
@@ -342,6 +355,7 @@ public interface ExecutionOrBuilder
    * @return The enum numeric value on the wire for callLogLevel.
    */
   int getCallLogLevelValue();
+
   /**
    *
    *
@@ -370,6 +384,7 @@ public interface ExecutionOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -385,6 +400,7 @@ public interface ExecutionOrBuilder
    * @return The status.
    */
   com.google.cloud.workflows.executions.v1.Execution.Status getStatus();
+
   /**
    *
    *
@@ -415,6 +431,7 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -431,9 +448,11 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -450,6 +469,7 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -470,6 +490,7 @@ public interface ExecutionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -503,6 +524,7 @@ public interface ExecutionOrBuilder
    * @return Whether the stateError field is set.
    */
   boolean hasStateError();
+
   /**
    *
    *
@@ -519,6 +541,7 @@ public interface ExecutionOrBuilder
    * @return The stateError.
    */
   com.google.cloud.workflows.executions.v1.Execution.StateError getStateError();
+
   /**
    *
    *

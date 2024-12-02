@@ -33,6 +33,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportDocumentsMetadata)
     ImportDocumentsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportDocumentsMetadata.newBuilder() to construct.
   private ImportDocumentsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      * @return The inputGcsSource.
      */
     java.lang.String getInputGcsSource();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      * @return Whether the status field is set.
      */
     boolean hasStatus();
+
     /**
      *
      *
@@ -118,6 +121,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      * @return The status.
      */
     com.google.rpc.Status getStatus();
+
     /**
      *
      *
@@ -142,6 +146,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      * @return Whether the outputDocumentId field is set.
      */
     boolean hasOutputDocumentId();
+
     /**
      *
      *
@@ -155,6 +160,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      * @return The outputDocumentId.
      */
     com.google.cloud.documentai.v1beta3.DocumentId getOutputDocumentId();
+
     /**
      *
      *
@@ -167,6 +173,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      */
     com.google.cloud.documentai.v1beta3.DocumentIdOrBuilder getOutputDocumentIdOrBuilder();
   }
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportDocumentsMetadata.IndividualImportStatus)
       IndividualImportStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndividualImportStatus.newBuilder() to construct.
     private IndividualImportStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -219,6 +227,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object inputGcsSource_ = "";
+
     /**
      *
      *
@@ -242,6 +251,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -268,6 +278,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.google.rpc.Status status_;
+
     /**
      *
      *
@@ -283,6 +294,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -298,6 +310,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
+
     /**
      *
      *
@@ -314,6 +327,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
     public static final int OUTPUT_DOCUMENT_ID_FIELD_NUMBER = 4;
     private com.google.cloud.documentai.v1beta3.DocumentId outputDocumentId_;
+
     /**
      *
      *
@@ -330,6 +344,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasOutputDocumentId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -348,6 +363,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           ? com.google.cloud.documentai.v1beta3.DocumentId.getDefaultInstance()
           : outputDocumentId_;
     }
+
     /**
      *
      *
@@ -563,6 +579,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object inputGcsSource_ = "";
+
       /**
        *
        *
@@ -844,6 +862,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -866,6 +885,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -887,6 +907,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -904,6 +925,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -931,6 +953,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
+
       /**
        *
        *
@@ -945,6 +968,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -963,6 +987,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return statusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -985,6 +1010,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1004,6 +1030,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1031,6 +1058,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1050,6 +1078,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1064,6 +1093,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1080,6 +1110,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
+
       /**
        *
        *
@@ -1109,6 +1140,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
               com.google.cloud.documentai.v1beta3.DocumentId.Builder,
               com.google.cloud.documentai.v1beta3.DocumentIdOrBuilder>
           outputDocumentIdBuilder_;
+
       /**
        *
        *
@@ -1124,6 +1156,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       public boolean hasOutputDocumentId() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1145,6 +1178,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return outputDocumentIdBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1168,6 +1202,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1189,6 +1224,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1218,6 +1254,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1238,6 +1275,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1253,6 +1291,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return getOutputDocumentIdFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1273,6 +1312,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
               : outputDocumentId_;
         }
       }
+
       /**
        *
        *
@@ -1386,6 +1426,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      * @return The inputGcsSource.
      */
     java.lang.String getInputGcsSource();
+
     /**
      *
      *
@@ -1411,6 +1452,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      * @return Whether the status field is set.
      */
     boolean hasStatus();
+
     /**
      *
      *
@@ -1423,6 +1465,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      * @return The status.
      */
     com.google.rpc.Status getStatus();
+
     /**
      *
      *
@@ -1434,6 +1477,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      */
     com.google.rpc.StatusOrBuilder getStatusOrBuilder();
   }
+
   /**
    *
    *
@@ -1452,6 +1496,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportDocumentsMetadata.ImportConfigValidationResult)
       ImportConfigValidationResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ImportConfigValidationResult.newBuilder() to construct.
     private ImportConfigValidationResult(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1490,6 +1535,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object inputGcsSource_ = "";
+
     /**
      *
      *
@@ -1513,6 +1559,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -1539,6 +1586,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.google.rpc.Status status_;
+
     /**
      *
      *
@@ -1554,6 +1602,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1569,6 +1618,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
+
     /**
      *
      *
@@ -1783,6 +1833,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2027,6 +2078,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object inputGcsSource_ = "";
+
       /**
        *
        *
@@ -2049,6 +2101,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2071,6 +2124,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2092,6 +2146,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2109,6 +2164,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2136,6 +2192,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
+
       /**
        *
        *
@@ -2150,6 +2207,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2168,6 +2226,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return statusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2190,6 +2249,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2209,6 +2269,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2236,6 +2297,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -2255,6 +2317,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2269,6 +2332,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2285,6 +2349,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
+
       /**
        *
        *
@@ -2382,6 +2447,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int COMMON_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
+
   /**
    *
    *
@@ -2397,6 +2463,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
   public boolean hasCommonMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2414,6 +2481,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance()
         : commonMetadata_;
   }
+
   /**
    *
    *
@@ -2437,6 +2505,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
   private java.util.List<
           com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata.IndividualImportStatus>
       individualImportStatuses_;
+
   /**
    *
    *
@@ -2454,6 +2523,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       getIndividualImportStatusesList() {
     return individualImportStatuses_;
   }
+
   /**
    *
    *
@@ -2473,6 +2543,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       getIndividualImportStatusesOrBuilderList() {
     return individualImportStatuses_;
   }
+
   /**
    *
    *
@@ -2488,6 +2559,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
   public int getIndividualImportStatusesCount() {
     return individualImportStatuses_.size();
   }
+
   /**
    *
    *
@@ -2504,6 +2576,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       getIndividualImportStatuses(int index) {
     return individualImportStatuses_.get(index);
   }
+
   /**
    *
    *
@@ -2527,6 +2600,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
   private java.util.List<
           com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata.ImportConfigValidationResult>
       importConfigValidationResults_;
+
   /**
    *
    *
@@ -2544,6 +2618,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       getImportConfigValidationResultsList() {
     return importConfigValidationResults_;
   }
+
   /**
    *
    *
@@ -2563,6 +2638,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       getImportConfigValidationResultsOrBuilderList() {
     return importConfigValidationResults_;
   }
+
   /**
    *
    *
@@ -2578,6 +2654,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
   public int getImportConfigValidationResultsCount() {
     return importConfigValidationResults_.size();
   }
+
   /**
    *
    *
@@ -2594,6 +2671,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       getImportConfigValidationResults(int index) {
     return importConfigValidationResults_.get(index);
   }
+
   /**
    *
    *
@@ -2614,6 +2692,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
   public static final int TOTAL_DOCUMENT_COUNT_FIELD_NUMBER = 3;
   private int totalDocumentCount_ = 0;
+
   /**
    *
    *
@@ -2832,6 +2911,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3178,6 +3258,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
             com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder,
             com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder>
         commonMetadataBuilder_;
+
     /**
      *
      *
@@ -3192,6 +3273,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasCommonMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3212,6 +3294,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return commonMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3235,6 +3318,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3255,6 +3339,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3285,6 +3370,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3304,6 +3390,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3319,6 +3406,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3338,6 +3426,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
             : commonMetadata_;
       }
     }
+
     /**
      *
      *
@@ -3406,6 +3495,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return individualImportStatusesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3424,6 +3514,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return individualImportStatusesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3443,6 +3534,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return individualImportStatusesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3469,6 +3561,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3493,6 +3586,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3518,6 +3612,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3544,6 +3639,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3567,6 +3663,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3591,6 +3688,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3617,6 +3715,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3638,6 +3737,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3659,6 +3759,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3675,6 +3776,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         getIndividualImportStatusesBuilder(int index) {
       return getIndividualImportStatusesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3695,6 +3797,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return individualImportStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3717,6 +3820,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(individualImportStatuses_);
       }
     }
+
     /**
      *
      *
@@ -3736,6 +3840,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
               com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata.IndividualImportStatus
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3756,6 +3861,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
               com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata.IndividualImportStatus
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3843,6 +3949,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return importConfigValidationResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3861,6 +3968,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return importConfigValidationResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3880,6 +3988,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return importConfigValidationResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3907,6 +4016,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3932,6 +4042,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3958,6 +4069,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3985,6 +4097,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4009,6 +4122,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4034,6 +4148,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4061,6 +4176,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4082,6 +4198,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4103,6 +4220,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4119,6 +4237,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         getImportConfigValidationResultsBuilder(int index) {
       return getImportConfigValidationResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4139,6 +4258,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return importConfigValidationResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4161,6 +4281,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(importConfigValidationResults_);
       }
     }
+
     /**
      *
      *
@@ -4180,6 +4301,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
               com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata
                   .ImportConfigValidationResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4200,6 +4322,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
               com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata
                   .ImportConfigValidationResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4245,6 +4368,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     }
 
     private int totalDocumentCount_;
+
     /**
      *
      *
@@ -4260,6 +4384,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     public int getTotalDocumentCount() {
       return totalDocumentCount_;
     }
+
     /**
      *
      *
@@ -4279,6 +4404,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface CreateReservationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateReservationRequestOrBuilder
    * @return The reservationId.
    */
   java.lang.String getReservationId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateReservationRequestOrBuilder
    * @return Whether the reservation field is set.
    */
   boolean hasReservation();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateReservationRequestOrBuilder
    * @return The reservation.
    */
   com.google.cloud.bigquery.reservation.v1.Reservation getReservation();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.Certification)
     CertificationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Certification.newBuilder() to construct.
   private Certification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificationAuthority_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCertificationAuthority() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificationName_ = "";
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCertificationName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificationCode_ = "";
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCertificationCode() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +291,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificationValue_ = "";
+
   /**
    *
    *
@@ -298,6 +309,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCertificationValue() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -323,6 +335,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -556,6 +569,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -794,6 +808,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object certificationAuthority_ = "";
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCertificationAuthority() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -832,6 +848,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +872,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +914,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +940,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object certificationName_ = "";
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCertificationName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -981,6 +1004,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1046,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1072,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object certificationCode_ = "";
+
     /**
      *
      *
@@ -1061,6 +1088,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCertificationCode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1136,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1159,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1178,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1204,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object certificationValue_ = "";
+
     /**
      *
      *
@@ -1188,6 +1221,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCertificationValue() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1212,6 +1246,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1271,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1259,6 +1295,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1315,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

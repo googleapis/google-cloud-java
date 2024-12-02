@@ -33,6 +33,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DailyResourceUsageAggregation)
     DailyResourceUsageAggregationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DailyResourceUsageAggregation.newBuilder() to construct.
   private DailyResourceUsageAggregation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      */
     float getPeak();
   }
+
   /**
    *
    *
@@ -132,6 +134,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats)
       StatsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Stats.newBuilder() to construct.
     private Stats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -163,6 +166,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
     public static final int AVERAGE_FIELD_NUMBER = 1;
     private float average_ = 0F;
+
     /**
      *
      *
@@ -181,6 +185,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
     public static final int MEDIAN_FIELD_NUMBER = 2;
     private float median_ = 0F;
+
     /**
      *
      *
@@ -199,6 +204,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
     public static final int NINTEY_FIFTH_PERCENTILE_FIELD_NUMBER = 3;
     private float ninteyFifthPercentile_ = 0F;
+
     /**
      *
      *
@@ -217,6 +223,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
     public static final int PEAK_FIELD_NUMBER = 4;
     private float peak_ = 0F;
+
     /**
      *
      *
@@ -427,6 +434,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -662,6 +670,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       private int bitField0_;
 
       private float average_;
+
       /**
        *
        *
@@ -677,6 +686,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public float getAverage() {
         return average_;
       }
+
       /**
        *
        *
@@ -696,6 +706,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -715,6 +726,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       }
 
       private float median_;
+
       /**
        *
        *
@@ -730,6 +742,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public float getMedian() {
         return median_;
       }
+
       /**
        *
        *
@@ -749,6 +762,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -768,6 +782,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       }
 
       private float ninteyFifthPercentile_;
+
       /**
        *
        *
@@ -783,6 +798,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public float getNinteyFifthPercentile() {
         return ninteyFifthPercentile_;
       }
+
       /**
        *
        *
@@ -802,6 +818,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -821,6 +838,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       }
 
       private float peak_;
+
       /**
        *
        *
@@ -836,6 +854,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public float getPeak() {
         return peak_;
       }
+
       /**
        *
        *
@@ -855,6 +874,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -960,6 +980,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      * @return Whether the utilizationPercentage field is set.
      */
     boolean hasUtilizationPercentage();
+
     /**
      *
      *
@@ -975,6 +996,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      */
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats
         getUtilizationPercentage();
+
     /**
      *
      *
@@ -989,6 +1011,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder
         getUtilizationPercentageOrBuilder();
   }
+
   /**
    *
    *
@@ -1003,6 +1026,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.CPU)
       CPUOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CPU.newBuilder() to construct.
     private CPU(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1035,6 +1059,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public static final int UTILIZATION_PERCENTAGE_FIELD_NUMBER = 1;
     private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats
         utilizationPercentage_;
+
     /**
      *
      *
@@ -1052,6 +1077,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasUtilizationPercentage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1073,6 +1099,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               .getDefaultInstance()
           : utilizationPercentage_;
     }
+
     /**
      *
      *
@@ -1261,6 +1288,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1483,6 +1511,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats.Builder,
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder>
           utilizationPercentageBuilder_;
+
       /**
        *
        *
@@ -1499,6 +1528,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public boolean hasUtilizationPercentage() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1523,6 +1553,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
           return utilizationPercentageBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1548,6 +1579,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1571,6 +1603,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1603,6 +1636,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -1624,6 +1658,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1641,6 +1676,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return getUtilizationPercentageFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1663,6 +1699,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               : utilizationPercentage_;
         }
       }
+
       /**
        *
        *
@@ -1778,6 +1815,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      * @return Whether the utilizationPercentage field is set.
      */
     boolean hasUtilizationPercentage();
+
     /**
      *
      *
@@ -1793,6 +1831,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      */
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats
         getUtilizationPercentage();
+
     /**
      *
      *
@@ -1807,6 +1846,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder
         getUtilizationPercentageOrBuilder();
   }
+
   /**
    *
    *
@@ -1821,6 +1861,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Memory)
       MemoryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Memory.newBuilder() to construct.
     private Memory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1854,6 +1895,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public static final int UTILIZATION_PERCENTAGE_FIELD_NUMBER = 1;
     private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats
         utilizationPercentage_;
+
     /**
      *
      *
@@ -1871,6 +1913,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasUtilizationPercentage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1892,6 +1935,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               .getDefaultInstance()
           : utilizationPercentage_;
     }
+
     /**
      *
      *
@@ -2086,6 +2130,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2308,6 +2353,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats.Builder,
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder>
           utilizationPercentageBuilder_;
+
       /**
        *
        *
@@ -2324,6 +2370,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public boolean hasUtilizationPercentage() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2348,6 +2395,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
           return utilizationPercentageBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2373,6 +2421,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2396,6 +2445,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2428,6 +2478,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -2449,6 +2500,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2466,6 +2518,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return getUtilizationPercentageFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2488,6 +2541,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               : utilizationPercentage_;
         }
       }
+
       /**
        *
        *
@@ -2602,6 +2656,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      * @return Whether the ingressBps field is set.
      */
     boolean hasIngressBps();
+
     /**
      *
      *
@@ -2615,6 +2670,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      * @return The ingressBps.
      */
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats getIngressBps();
+
     /**
      *
      *
@@ -2641,6 +2697,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      * @return Whether the egressBps field is set.
      */
     boolean hasEgressBps();
+
     /**
      *
      *
@@ -2654,6 +2711,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      * @return The egressBps.
      */
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats getEgressBps();
+
     /**
      *
      *
@@ -2667,6 +2725,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder
         getEgressBpsOrBuilder();
   }
+
   /**
    *
    *
@@ -2681,6 +2740,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Network)
       NetworkOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Network.newBuilder() to construct.
     private Network(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2713,6 +2773,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     private int bitField0_;
     public static final int INGRESS_BPS_FIELD_NUMBER = 1;
     private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats ingressBps_;
+
     /**
      *
      *
@@ -2729,6 +2790,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasIngressBps() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2748,6 +2810,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               .getDefaultInstance()
           : ingressBps_;
     }
+
     /**
      *
      *
@@ -2769,6 +2832,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
     public static final int EGRESS_BPS_FIELD_NUMBER = 2;
     private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats egressBps_;
+
     /**
      *
      *
@@ -2785,6 +2849,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasEgressBps() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2804,6 +2869,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               .getDefaultInstance()
           : egressBps_;
     }
+
     /**
      *
      *
@@ -3010,6 +3076,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3247,6 +3314,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats.Builder,
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder>
           ingressBpsBuilder_;
+
       /**
        *
        *
@@ -3262,6 +3330,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public boolean hasIngressBps() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -3285,6 +3354,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
           return ingressBpsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3309,6 +3379,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3331,6 +3402,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3362,6 +3434,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -3382,6 +3455,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3398,6 +3472,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return getIngressBpsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3419,6 +3494,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               : ingressBps_;
         }
       }
+
       /**
        *
        *
@@ -3452,6 +3528,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats.Builder,
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder>
           egressBpsBuilder_;
+
       /**
        *
        *
@@ -3467,6 +3544,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public boolean hasEgressBps() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -3490,6 +3568,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
           return egressBpsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3514,6 +3593,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3536,6 +3616,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3567,6 +3648,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -3587,6 +3669,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3603,6 +3686,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return getEgressBpsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3624,6 +3708,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               : egressBps_;
         }
       }
+
       /**
        *
        *
@@ -3736,6 +3821,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      * @return Whether the iops field is set.
      */
     boolean hasIops();
+
     /**
      *
      *
@@ -3748,6 +3834,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
      * @return The iops.
      */
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats getIops();
+
     /**
      *
      *
@@ -3760,6 +3847,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder
         getIopsOrBuilder();
   }
+
   /**
    *
    *
@@ -3774,6 +3862,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Disk)
       DiskOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Disk.newBuilder() to construct.
     private Disk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3805,6 +3894,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     private int bitField0_;
     public static final int IOPS_FIELD_NUMBER = 1;
     private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats iops_;
+
     /**
      *
      *
@@ -3820,6 +3910,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasIops() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3838,6 +3929,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               .getDefaultInstance()
           : iops_;
     }
+
     /**
      *
      *
@@ -4024,6 +4116,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4240,6 +4333,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Stats.Builder,
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.StatsOrBuilder>
           iopsBuilder_;
+
       /**
        *
        *
@@ -4254,6 +4348,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       public boolean hasIops() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4275,6 +4370,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
           return iopsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4298,6 +4394,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4319,6 +4416,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4349,6 +4447,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         }
         return this;
       }
+
       /**
        *
        *
@@ -4368,6 +4467,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4383,6 +4483,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         onChanged();
         return getIopsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4403,6 +4504,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
               : iops_;
         }
       }
+
       /**
        *
        *
@@ -4500,6 +4602,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int DATE_FIELD_NUMBER = 1;
   private com.google.type.Date date_;
+
   /**
    *
    *
@@ -4515,6 +4618,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
   public boolean hasDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4530,6 +4634,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
+
   /**
    *
    *
@@ -4546,6 +4651,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
   public static final int CPU_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.CPU cpu_;
+
   /**
    *
    *
@@ -4561,6 +4667,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
   public boolean hasCpu() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4578,6 +4685,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         ? com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.CPU.getDefaultInstance()
         : cpu_;
   }
+
   /**
    *
    *
@@ -4597,6 +4705,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
   public static final int MEMORY_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Memory memory_;
+
   /**
    *
    *
@@ -4612,6 +4721,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
   public boolean hasMemory() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -4630,6 +4740,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             .getDefaultInstance()
         : memory_;
   }
+
   /**
    *
    *
@@ -4650,6 +4761,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
   public static final int NETWORK_FIELD_NUMBER = 4;
   private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Network network_;
+
   /**
    *
    *
@@ -4666,6 +4778,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -4685,6 +4798,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             .getDefaultInstance()
         : network_;
   }
+
   /**
    *
    *
@@ -4706,6 +4820,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
 
   public static final int DISK_FIELD_NUMBER = 5;
   private com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Disk disk_;
+
   /**
    *
    *
@@ -4721,6 +4836,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
   public boolean hasDisk() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -4739,6 +4855,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             .getDefaultInstance()
         : disk_;
   }
+
   /**
    *
    *
@@ -4979,6 +5096,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5261,6 +5379,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateBuilder_;
+
     /**
      *
      *
@@ -5275,6 +5394,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5293,6 +5413,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         return dateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5315,6 +5436,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5334,6 +5456,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5361,6 +5484,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5380,6 +5504,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5394,6 +5519,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return getDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5410,6 +5536,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
       }
     }
+
     /**
      *
      *
@@ -5438,6 +5565,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.CPU.Builder,
             com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.CPUOrBuilder>
         cpuBuilder_;
+
     /**
      *
      *
@@ -5452,6 +5580,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasCpu() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5473,6 +5602,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         return cpuBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5496,6 +5626,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5517,6 +5648,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5547,6 +5679,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5566,6 +5699,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5581,6 +5715,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return getCpuFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5601,6 +5736,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             : cpu_;
       }
     }
+
     /**
      *
      *
@@ -5633,6 +5769,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Memory.Builder,
             com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.MemoryOrBuilder>
         memoryBuilder_;
+
     /**
      *
      *
@@ -5648,6 +5785,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasMemory() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -5670,6 +5808,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         return memoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5694,6 +5833,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5716,6 +5856,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5747,6 +5888,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5767,6 +5909,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5783,6 +5926,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return getMemoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5804,6 +5948,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             : memory_;
       }
     }
+
     /**
      *
      *
@@ -5837,6 +5982,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Network.Builder,
             com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.NetworkOrBuilder>
         networkBuilder_;
+
     /**
      *
      *
@@ -5852,6 +5998,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5874,6 +6021,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         return networkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5898,6 +6046,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5920,6 +6069,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5951,6 +6101,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -5971,6 +6122,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5987,6 +6139,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6008,6 +6161,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             : network_;
       }
     }
+
     /**
      *
      *
@@ -6041,6 +6195,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Disk.Builder,
             com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.DiskOrBuilder>
         diskBuilder_;
+
     /**
      *
      *
@@ -6055,6 +6210,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
     public boolean hasDisk() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -6076,6 +6232,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
         return diskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6099,6 +6256,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6120,6 +6278,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6150,6 +6309,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -6169,6 +6329,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6184,6 +6345,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
       onChanged();
       return getDiskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6204,6 +6366,7 @@ public final class DailyResourceUsageAggregation extends com.google.protobuf.Gen
             : disk_;
       }
     }
+
     /**
      *
      *

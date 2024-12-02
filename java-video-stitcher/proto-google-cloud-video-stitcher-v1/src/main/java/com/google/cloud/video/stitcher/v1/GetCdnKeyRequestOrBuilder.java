@@ -39,6 +39,7 @@ public interface GetCdnKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

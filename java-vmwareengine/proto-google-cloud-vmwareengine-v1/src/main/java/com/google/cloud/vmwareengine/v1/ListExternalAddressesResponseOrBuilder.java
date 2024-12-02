@@ -34,6 +34,7 @@ public interface ListExternalAddressesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.ExternalAddress external_addresses = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.ExternalAddress> getExternalAddressesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListExternalAddressesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.ExternalAddress external_addresses = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.ExternalAddress getExternalAddresses(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListExternalAddressesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.ExternalAddress external_addresses = 1;</code>
    */
   int getExternalAddressesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListExternalAddressesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.ExternalAddressOrBuilder>
       getExternalAddressesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListExternalAddressesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ListExternalAddressesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface ListExternalAddressesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -144,6 +151,7 @@ public interface ListExternalAddressesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

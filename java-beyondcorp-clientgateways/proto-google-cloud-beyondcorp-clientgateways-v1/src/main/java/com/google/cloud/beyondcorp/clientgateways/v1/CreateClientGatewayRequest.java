@@ -33,6 +33,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientgateways.v1.CreateClientGatewayRequest)
     CreateClientGatewayRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateClientGatewayRequest.newBuilder() to construct.
   private CreateClientGatewayRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientGatewayId_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
 
   public static final int CLIENT_GATEWAY_FIELD_NUMBER = 3;
   private com.google.cloud.beyondcorp.clientgateways.v1.ClientGateway clientGateway_;
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
   public boolean hasClientGateway() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
         ? com.google.cloud.beyondcorp.clientgateways.v1.ClientGateway.getDefaultInstance()
         : clientGateway_;
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -312,6 +322,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -532,6 +543,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -799,6 +811,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -823,6 +836,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -847,6 +861,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -870,6 +885,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +905,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +932,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object clientGatewayId_ = "";
+
     /**
      *
      *
@@ -940,6 +958,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -965,6 +984,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1009,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1030,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1063,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
             com.google.cloud.beyondcorp.clientgateways.v1.ClientGateway.Builder,
             com.google.cloud.beyondcorp.clientgateways.v1.ClientGatewayOrBuilder>
         clientGatewayBuilder_;
+
     /**
      *
      *
@@ -1057,6 +1080,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
     public boolean hasClientGateway() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1079,6 +1103,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
         return clientGatewayBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1152,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1185,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1207,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1225,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return getClientGatewayFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1217,6 +1247,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
             : clientGateway_;
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1277,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1280,6 +1312,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1314,6 +1347,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1347,6 +1381,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1411,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1448,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1428,6 +1465,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1448,6 +1486,7 @@ public final class CreateClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -41,6 +41,7 @@ public interface MetricsScopeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface MetricsScopeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface MetricsScopeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface MetricsScopeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface MetricsScopeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface MetricsScopeOrBuilder
    * </code>
    */
   java.util.List<com.google.monitoring.metricsscope.v1.MonitoredProject> getMonitoredProjectsList();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface MetricsScopeOrBuilder
    * </code>
    */
   com.google.monitoring.metricsscope.v1.MonitoredProject getMonitoredProjects(int index);
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface MetricsScopeOrBuilder
    * </code>
    */
   int getMonitoredProjectsCount();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface MetricsScopeOrBuilder
    */
   java.util.List<? extends com.google.monitoring.metricsscope.v1.MonitoredProjectOrBuilder>
       getMonitoredProjectsOrBuilderList();
+
   /**
    *
    *

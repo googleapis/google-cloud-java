@@ -39,6 +39,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.RuntimeSoftwareConfig)
     RuntimeSoftwareConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuntimeSoftwareConfig.newBuilder() to construct.
   private RuntimeSoftwareConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * <code>POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 0;</code>
      */
     public static final int POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      * <code>RUN_EVERY_START = 1;</code>
      */
     public static final int RUN_EVERY_START_VALUE = 1;
+
     /**
      *
      *
@@ -241,6 +244,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notebookUpgradeSchedule_ = "";
+
   /**
    *
    *
@@ -265,6 +269,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -292,6 +297,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   public static final int ENABLE_HEALTH_MONITORING_FIELD_NUMBER = 2;
   private boolean enableHealthMonitoring_ = false;
+
   /**
    *
    *
@@ -308,6 +314,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public boolean hasEnableHealthMonitoring() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -327,6 +334,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   public static final int IDLE_SHUTDOWN_FIELD_NUMBER = 3;
   private boolean idleShutdown_ = false;
+
   /**
    *
    *
@@ -343,6 +351,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public boolean hasIdleShutdown() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -362,6 +371,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   public static final int IDLE_SHUTDOWN_TIMEOUT_FIELD_NUMBER = 4;
   private int idleShutdownTimeout_ = 0;
+
   /**
    *
    *
@@ -380,6 +390,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   public static final int INSTALL_GPU_DRIVER_FIELD_NUMBER = 5;
   private boolean installGpuDriver_ = false;
+
   /**
    *
    *
@@ -401,6 +412,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customGpuDriverPath_ = "";
+
   /**
    *
    *
@@ -425,6 +437,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -454,6 +467,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postStartupScript_ = "";
+
   /**
    *
    *
@@ -479,6 +493,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -509,6 +524,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v1.ContainerImage> kernels_;
+
   /**
    *
    *
@@ -524,6 +540,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.notebooks.v1.ContainerImage> getKernelsList() {
     return kernels_;
   }
+
   /**
    *
    *
@@ -540,6 +557,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       getKernelsOrBuilderList() {
     return kernels_;
   }
+
   /**
    *
    *
@@ -555,6 +573,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public int getKernelsCount() {
     return kernels_.size();
   }
+
   /**
    *
    *
@@ -570,6 +589,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public com.google.cloud.notebooks.v1.ContainerImage getKernels(int index) {
     return kernels_.get(index);
   }
+
   /**
    *
    *
@@ -588,6 +608,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   public static final int UPGRADEABLE_FIELD_NUMBER = 9;
   private boolean upgradeable_ = false;
+
   /**
    *
    *
@@ -603,6 +624,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public boolean hasUpgradeable() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -621,6 +643,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   public static final int POST_STARTUP_SCRIPT_BEHAVIOR_FIELD_NUMBER = 10;
   private int postStartupScriptBehavior_ = 0;
+
   /**
    *
    *
@@ -638,6 +661,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public int getPostStartupScriptBehaviorValue() {
     return postStartupScriptBehavior_;
   }
+
   /**
    *
    *
@@ -664,6 +688,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   public static final int DISABLE_TERMINAL_FIELD_NUMBER = 11;
   private boolean disableTerminal_ = false;
+
   /**
    *
    *
@@ -680,6 +705,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public boolean hasDisableTerminal() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -701,6 +727,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -716,6 +743,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -739,6 +767,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -1054,6 +1083,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1448,6 +1478,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object notebookUpgradeSchedule_ = "";
+
     /**
      *
      *
@@ -1471,6 +1502,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1494,6 +1526,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1516,6 +1549,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1568,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1594,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private boolean enableHealthMonitoring_;
+
     /**
      *
      *
@@ -1575,6 +1611,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean hasEnableHealthMonitoring() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1591,6 +1628,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean getEnableHealthMonitoring() {
       return enableHealthMonitoring_;
     }
+
     /**
      *
      *
@@ -1611,6 +1649,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1631,6 +1670,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private boolean idleShutdown_;
+
     /**
      *
      *
@@ -1647,6 +1687,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean hasIdleShutdown() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1663,6 +1704,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean getIdleShutdown() {
       return idleShutdown_;
     }
+
     /**
      *
      *
@@ -1683,6 +1725,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1703,6 +1746,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int idleShutdownTimeout_;
+
     /**
      *
      *
@@ -1718,6 +1762,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public int getIdleShutdownTimeout() {
       return idleShutdownTimeout_;
     }
+
     /**
      *
      *
@@ -1737,6 +1782,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1756,6 +1802,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private boolean installGpuDriver_;
+
     /**
      *
      *
@@ -1772,6 +1819,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean getInstallGpuDriver() {
       return installGpuDriver_;
     }
+
     /**
      *
      *
@@ -1792,6 +1840,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1812,6 +1861,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object customGpuDriverPath_ = "";
+
     /**
      *
      *
@@ -1835,6 +1885,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1858,6 +1909,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1880,6 +1932,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1898,6 +1951,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1977,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object postStartupScript_ = "";
+
     /**
      *
      *
@@ -1947,6 +2002,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1971,6 +2027,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1994,6 +2051,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2013,6 +2071,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2072,6 +2131,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return kernelsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2090,6 +2150,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return kernelsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2108,6 +2169,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return kernelsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2132,6 +2194,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2154,6 +2217,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2178,6 +2242,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2202,6 +2267,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2290,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2246,6 +2313,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2268,6 +2336,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2289,6 +2358,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2310,6 +2380,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2324,6 +2395,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.notebooks.v1.ContainerImage.Builder getKernelsBuilder(int index) {
       return getKernelsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2342,6 +2414,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return kernelsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2361,6 +2434,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(kernels_);
       }
     }
+
     /**
      *
      *
@@ -2376,6 +2450,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       return getKernelsFieldBuilder()
           .addBuilder(com.google.cloud.notebooks.v1.ContainerImage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2391,6 +2466,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       return getKernelsFieldBuilder()
           .addBuilder(index, com.google.cloud.notebooks.v1.ContainerImage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2425,6 +2501,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private boolean upgradeable_;
+
     /**
      *
      *
@@ -2440,6 +2517,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean hasUpgradeable() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2455,6 +2533,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean getUpgradeable() {
       return upgradeable_;
     }
+
     /**
      *
      *
@@ -2474,6 +2553,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2493,6 +2573,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int postStartupScriptBehavior_ = 0;
+
     /**
      *
      *
@@ -2510,6 +2591,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public int getPostStartupScriptBehaviorValue() {
       return postStartupScriptBehavior_;
     }
+
     /**
      *
      *
@@ -2530,6 +2612,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2554,6 +2637,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2578,6 +2662,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2599,6 +2684,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private boolean disableTerminal_;
+
     /**
      *
      *
@@ -2615,6 +2701,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean hasDisableTerminal() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2631,6 +2718,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean getDisableTerminal() {
       return disableTerminal_;
     }
+
     /**
      *
      *
@@ -2651,6 +2739,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2671,6 +2760,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -2685,6 +2775,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -2707,6 +2798,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2729,6 +2821,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2750,6 +2843,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2767,6 +2861,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

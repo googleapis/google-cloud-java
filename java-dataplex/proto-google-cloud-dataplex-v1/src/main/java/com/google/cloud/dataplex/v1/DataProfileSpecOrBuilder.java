@@ -58,6 +58,7 @@ public interface DataProfileSpecOrBuilder
    * @return The rowFilter.
    */
   java.lang.String getRowFilter();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface DataProfileSpecOrBuilder
    * @return Whether the postScanActions field is set.
    */
   boolean hasPostScanActions();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface DataProfileSpecOrBuilder
    * @return The postScanActions.
    */
   com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions getPostScanActions();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface DataProfileSpecOrBuilder
    * @return Whether the includeFields field is set.
    */
   boolean hasIncludeFields();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface DataProfileSpecOrBuilder
    * @return The includeFields.
    */
   com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields getIncludeFields();
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public interface DataProfileSpecOrBuilder
    * @return Whether the excludeFields field is set.
    */
   boolean hasExcludeFields();
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface DataProfileSpecOrBuilder
    * @return The excludeFields.
    */
   com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields getExcludeFields();
+
   /**
    *
    *

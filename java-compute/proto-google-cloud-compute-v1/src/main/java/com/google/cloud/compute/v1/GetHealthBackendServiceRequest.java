@@ -33,6 +33,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetHealthBackendServiceRequest)
     GetHealthBackendServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetHealthBackendServiceRequest.newBuilder() to construct.
   private GetHealthBackendServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backendService_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -138,6 +142,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -158,6 +163,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
 
   public static final int RESOURCE_GROUP_REFERENCE_RESOURCE_FIELD_NUMBER = 112951123;
   private com.google.cloud.compute.v1.ResourceGroupReference resourceGroupReferenceResource_;
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
   public boolean hasResourceGroupReferenceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.ResourceGroupReference.getDefaultInstance()
         : resourceGroupReferenceResource_;
   }
+
   /**
    *
    *
@@ -400,6 +408,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -633,6 +642,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object backendService_ = "";
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -755,6 +770,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -771,6 +787,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -786,6 +803,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -797,6 +815,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -820,6 +839,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.ResourceGroupReference.Builder,
             com.google.cloud.compute.v1.ResourceGroupReferenceOrBuilder>
         resourceGroupReferenceResourceBuilder_;
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
     public boolean hasResourceGroupReferenceResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -858,6 +879,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
         return resourceGroupReferenceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -883,6 +905,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +960,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +982,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +1000,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
       onChanged();
       return getResourceGroupReferenceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -995,6 +1022,7 @@ public final class GetHealthBackendServiceRequest extends com.google.protobuf.Ge
             : resourceGroupReferenceResource_;
       }
     }
+
     /**
      *
      *

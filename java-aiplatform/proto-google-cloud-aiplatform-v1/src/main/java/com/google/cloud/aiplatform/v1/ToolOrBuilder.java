@@ -43,6 +43,7 @@ public interface ToolOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.FunctionDeclaration> getFunctionDeclarationsList();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ToolOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.FunctionDeclaration getFunctionDeclarations(int index);
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ToolOrBuilder
    * </code>
    */
   int getFunctionDeclarationsCount();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface ToolOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.FunctionDeclarationOrBuilder>
       getFunctionDeclarationsOrBuilderList();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface ToolOrBuilder
    * @return Whether the retrieval field is set.
    */
   boolean hasRetrieval();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface ToolOrBuilder
    * @return The retrieval.
    */
   com.google.cloud.aiplatform.v1.Retrieval getRetrieval();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface ToolOrBuilder
    * @return Whether the googleSearchRetrieval field is set.
    */
   boolean hasGoogleSearchRetrieval();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface ToolOrBuilder
    * @return The googleSearchRetrieval.
    */
   com.google.cloud.aiplatform.v1.GoogleSearchRetrieval getGoogleSearchRetrieval();
+
   /**
    *
    *

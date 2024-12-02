@@ -38,6 +38,7 @@ public interface RuntimeConfigOrBuilder
    * @return Whether the codeInterpreterRuntimeConfig field is set.
    */
   boolean hasCodeInterpreterRuntimeConfig();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface RuntimeConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RuntimeConfig.CodeInterpreterRuntimeConfig
       getCodeInterpreterRuntimeConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface RuntimeConfigOrBuilder
    * @return Whether the vertexAiSearchRuntimeConfig field is set.
    */
   boolean hasVertexAiSearchRuntimeConfig();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface RuntimeConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig
       getVertexAiSearchRuntimeConfig();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface RuntimeConfigOrBuilder
    * @return Whether the defaultParams field is set.
    */
   boolean hasDefaultParams();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface RuntimeConfigOrBuilder
    * @return The defaultParams.
    */
   com.google.protobuf.Struct getDefaultParams();
+
   /**
    *
    *

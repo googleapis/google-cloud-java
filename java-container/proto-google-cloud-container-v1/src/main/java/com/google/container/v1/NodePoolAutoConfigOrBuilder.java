@@ -39,6 +39,7 @@ public interface NodePoolAutoConfigOrBuilder
    * @return Whether the networkTags field is set.
    */
   boolean hasNetworkTags();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface NodePoolAutoConfigOrBuilder
    * @return The networkTags.
    */
   com.google.container.v1.NetworkTags getNetworkTags();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface NodePoolAutoConfigOrBuilder
    * @return Whether the resourceManagerTags field is set.
    */
   boolean hasResourceManagerTags();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface NodePoolAutoConfigOrBuilder
    * @return The resourceManagerTags.
    */
   com.google.container.v1.ResourceManagerTags getResourceManagerTags();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface NodePoolAutoConfigOrBuilder
    * @return Whether the nodeKubeletConfig field is set.
    */
   boolean hasNodeKubeletConfig();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface NodePoolAutoConfigOrBuilder
    * @return The nodeKubeletConfig.
    */
   com.google.container.v1.NodeKubeletConfig getNodeKubeletConfig();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface NodePoolAutoConfigOrBuilder
    * @return Whether the linuxNodeConfig field is set.
    */
   boolean hasLinuxNodeConfig();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface NodePoolAutoConfigOrBuilder
    * @return The linuxNodeConfig.
    */
   com.google.container.v1.LinuxNodeConfig getLinuxNodeConfig();
+
   /**
    *
    *

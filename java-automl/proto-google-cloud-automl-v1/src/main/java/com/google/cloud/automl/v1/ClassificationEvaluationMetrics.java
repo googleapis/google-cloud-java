@@ -35,6 +35,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ClassificationEvaluationMetrics)
     ClassificationEvaluationMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClassificationEvaluationMetrics.newBuilder() to construct.
   private ClassificationEvaluationMetrics(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -268,6 +269,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      */
     long getTrueNegativeCount();
   }
+
   /**
    *
    *
@@ -283,6 +285,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)
       ConfidenceMetricsEntryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConfidenceMetricsEntry.newBuilder() to construct.
     private ConfidenceMetricsEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -315,6 +318,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
     private float confidenceThreshold_ = 0F;
+
     /**
      *
      *
@@ -334,6 +338,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int POSITION_THRESHOLD_FIELD_NUMBER = 14;
     private int positionThreshold_ = 0;
+
     /**
      *
      *
@@ -354,6 +359,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int RECALL_FIELD_NUMBER = 2;
     private float recall_ = 0F;
+
     /**
      *
      *
@@ -373,6 +379,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int PRECISION_FIELD_NUMBER = 3;
     private float precision_ = 0F;
+
     /**
      *
      *
@@ -391,6 +398,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int FALSE_POSITIVE_RATE_FIELD_NUMBER = 8;
     private float falsePositiveRate_ = 0F;
+
     /**
      *
      *
@@ -409,6 +417,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int F1_SCORE_FIELD_NUMBER = 4;
     private float f1Score_ = 0F;
+
     /**
      *
      *
@@ -427,6 +436,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int RECALL_AT1_FIELD_NUMBER = 5;
     private float recallAt1_ = 0F;
+
     /**
      *
      *
@@ -447,6 +457,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int PRECISION_AT1_FIELD_NUMBER = 6;
     private float precisionAt1_ = 0F;
+
     /**
      *
      *
@@ -467,6 +478,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int FALSE_POSITIVE_RATE_AT1_FIELD_NUMBER = 9;
     private float falsePositiveRateAt1_ = 0F;
+
     /**
      *
      *
@@ -487,6 +499,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int F1_SCORE_AT1_FIELD_NUMBER = 7;
     private float f1ScoreAt1_ = 0F;
+
     /**
      *
      *
@@ -505,6 +518,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int TRUE_POSITIVE_COUNT_FIELD_NUMBER = 10;
     private long truePositiveCount_ = 0L;
+
     /**
      *
      *
@@ -524,6 +538,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int FALSE_POSITIVE_COUNT_FIELD_NUMBER = 11;
     private long falsePositiveCount_ = 0L;
+
     /**
      *
      *
@@ -543,6 +558,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int FALSE_NEGATIVE_COUNT_FIELD_NUMBER = 12;
     private long falseNegativeCount_ = 0L;
+
     /**
      *
      *
@@ -562,6 +578,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
     public static final int TRUE_NEGATIVE_COUNT_FIELD_NUMBER = 13;
     private long trueNegativeCount_ = 0L;
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1247,6 +1265,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       private int bitField0_;
 
       private float confidenceThreshold_;
+
       /**
        *
        *
@@ -1263,6 +1282,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
+
       /**
        *
        *
@@ -1283,6 +1303,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1303,6 +1324,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private int positionThreshold_;
+
       /**
        *
        *
@@ -1320,6 +1342,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public int getPositionThreshold() {
         return positionThreshold_;
       }
+
       /**
        *
        *
@@ -1341,6 +1364,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1362,6 +1386,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float recall_;
+
       /**
        *
        *
@@ -1378,6 +1403,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getRecall() {
         return recall_;
       }
+
       /**
        *
        *
@@ -1398,6 +1424,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1418,6 +1445,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float precision_;
+
       /**
        *
        *
@@ -1433,6 +1461,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getPrecision() {
         return precision_;
       }
+
       /**
        *
        *
@@ -1452,6 +1481,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1471,6 +1501,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float falsePositiveRate_;
+
       /**
        *
        *
@@ -1486,6 +1517,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getFalsePositiveRate() {
         return falsePositiveRate_;
       }
+
       /**
        *
        *
@@ -1505,6 +1537,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1524,6 +1557,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float f1Score_;
+
       /**
        *
        *
@@ -1539,6 +1573,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getF1Score() {
         return f1Score_;
       }
+
       /**
        *
        *
@@ -1558,6 +1593,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1577,6 +1613,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float recallAt1_;
+
       /**
        *
        *
@@ -1594,6 +1631,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getRecallAt1() {
         return recallAt1_;
       }
+
       /**
        *
        *
@@ -1615,6 +1653,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1636,6 +1675,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float precisionAt1_;
+
       /**
        *
        *
@@ -1653,6 +1693,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getPrecisionAt1() {
         return precisionAt1_;
       }
+
       /**
        *
        *
@@ -1674,6 +1715,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1695,6 +1737,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float falsePositiveRateAt1_;
+
       /**
        *
        *
@@ -1712,6 +1755,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getFalsePositiveRateAt1() {
         return falsePositiveRateAt1_;
       }
+
       /**
        *
        *
@@ -1733,6 +1777,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1754,6 +1799,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float f1ScoreAt1_;
+
       /**
        *
        *
@@ -1769,6 +1815,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public float getF1ScoreAt1() {
         return f1ScoreAt1_;
       }
+
       /**
        *
        *
@@ -1788,6 +1835,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1807,6 +1855,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private long truePositiveCount_;
+
       /**
        *
        *
@@ -1823,6 +1872,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public long getTruePositiveCount() {
         return truePositiveCount_;
       }
+
       /**
        *
        *
@@ -1843,6 +1893,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1863,6 +1914,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private long falsePositiveCount_;
+
       /**
        *
        *
@@ -1879,6 +1931,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public long getFalsePositiveCount() {
         return falsePositiveCount_;
       }
+
       /**
        *
        *
@@ -1899,6 +1952,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1919,6 +1973,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private long falseNegativeCount_;
+
       /**
        *
        *
@@ -1935,6 +1990,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public long getFalseNegativeCount() {
         return falseNegativeCount_;
       }
+
       /**
        *
        *
@@ -1955,6 +2011,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1975,6 +2032,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
 
       private long trueNegativeCount_;
+
       /**
        *
        *
@@ -1991,6 +2049,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public long getTrueNegativeCount() {
         return trueNegativeCount_;
       }
+
       /**
        *
        *
@@ -2011,6 +2070,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2119,6 +2179,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * @return A list containing the annotationSpecId.
      */
     java.util.List<java.lang.String> getAnnotationSpecIdList();
+
     /**
      *
      *
@@ -2134,6 +2195,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * @return The count of annotationSpecId.
      */
     int getAnnotationSpecIdCount();
+
     /**
      *
      *
@@ -2150,6 +2212,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * @return The annotationSpecId at the given index.
      */
     java.lang.String getAnnotationSpecId(int index);
+
     /**
      *
      *
@@ -2184,6 +2247,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * @return A list containing the displayName.
      */
     java.util.List<java.lang.String> getDisplayNameList();
+
     /**
      *
      *
@@ -2201,6 +2265,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * @return The count of displayName.
      */
     int getDisplayNameCount();
+
     /**
      *
      *
@@ -2219,6 +2284,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * @return The displayName at the given index.
      */
     java.lang.String getDisplayName(int index);
+
     /**
      *
      *
@@ -2255,6 +2321,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      */
     java.util.List<com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row>
         getRowList();
+
     /**
      *
      *
@@ -2272,6 +2339,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      */
     com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row getRow(
         int index);
+
     /**
      *
      *
@@ -2288,6 +2356,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * </code>
      */
     int getRowCount();
+
     /**
      *
      *
@@ -2308,6 +2377,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
                 com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
                     .RowOrBuilder>
         getRowOrBuilderList();
+
     /**
      *
      *
@@ -2326,6 +2396,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder
         getRowOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -2340,6 +2411,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix)
       ConfusionMatrixOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConfusionMatrix.newBuilder() to construct.
     private ConfusionMatrix(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2393,6 +2465,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * @return A list containing the exampleCount.
        */
       java.util.List<java.lang.Integer> getExampleCountList();
+
       /**
        *
        *
@@ -2408,6 +2481,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * @return The count of exampleCount.
        */
       int getExampleCountCount();
+
       /**
        *
        *
@@ -2425,6 +2499,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        */
       int getExampleCount(int index);
     }
+
     /**
      *
      *
@@ -2440,6 +2515,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row)
         RowOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Row.newBuilder() to construct.
       private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2476,6 +2552,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
       @SuppressWarnings("serial")
       private com.google.protobuf.Internal.IntList exampleCount_ = emptyIntList();
+
       /**
        *
        *
@@ -2494,6 +2571,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public java.util.List<java.lang.Integer> getExampleCountList() {
         return exampleCount_;
       }
+
       /**
        *
        *
@@ -2511,6 +2589,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public int getExampleCountCount() {
         return exampleCount_.size();
       }
+
       /**
        *
        *
@@ -2722,6 +2801,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2952,6 +3032,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           }
           bitField0_ |= 0x00000001;
         }
+
         /**
          *
          *
@@ -2970,6 +3051,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           exampleCount_.makeImmutable();
           return exampleCount_;
         }
+
         /**
          *
          *
@@ -2987,6 +3069,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         public int getExampleCountCount() {
           return exampleCount_.size();
         }
+
         /**
          *
          *
@@ -3005,6 +3088,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         public int getExampleCount(int index) {
           return exampleCount_.getInt(index);
         }
+
         /**
          *
          *
@@ -3029,6 +3113,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3052,6 +3137,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3074,6 +3160,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3169,6 +3256,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3186,6 +3274,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
       return annotationSpecId_;
     }
+
     /**
      *
      *
@@ -3203,6 +3292,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public int getAnnotationSpecIdCount() {
       return annotationSpecId_.size();
     }
+
     /**
      *
      *
@@ -3221,6 +3311,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public java.lang.String getAnnotationSpecId(int index) {
       return annotationSpecId_.get(index);
     }
+
     /**
      *
      *
@@ -3245,6 +3336,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList displayName_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3264,6 +3356,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public com.google.protobuf.ProtocolStringList getDisplayNameList() {
       return displayName_;
     }
+
     /**
      *
      *
@@ -3283,6 +3376,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public int getDisplayNameCount() {
       return displayName_.size();
     }
+
     /**
      *
      *
@@ -3303,6 +3397,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public java.lang.String getDisplayName(int index) {
       return displayName_.get(index);
     }
+
     /**
      *
      *
@@ -3330,6 +3425,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     private java.util.List<
             com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row>
         row_;
+
     /**
      *
      *
@@ -3351,6 +3447,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         getRowList() {
       return row_;
     }
+
     /**
      *
      *
@@ -3374,6 +3471,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         getRowOrBuilderList() {
       return row_;
     }
+
     /**
      *
      *
@@ -3393,6 +3491,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public int getRowCount() {
       return row_.size();
     }
+
     /**
      *
      *
@@ -3413,6 +3512,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         int index) {
       return row_.get(index);
     }
+
     /**
      *
      *
@@ -3636,6 +3736,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3934,6 +4035,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -3952,6 +4054,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         annotationSpecId_.makeImmutable();
         return annotationSpecId_;
       }
+
       /**
        *
        *
@@ -3969,6 +4072,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public int getAnnotationSpecIdCount() {
         return annotationSpecId_.size();
       }
+
       /**
        *
        *
@@ -3987,6 +4091,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public java.lang.String getAnnotationSpecId(int index) {
         return annotationSpecId_.get(index);
       }
+
       /**
        *
        *
@@ -4005,6 +4110,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
         return annotationSpecId_.getByteString(index);
       }
+
       /**
        *
        *
@@ -4031,6 +4137,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4056,6 +4163,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4078,6 +4186,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4099,6 +4208,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4135,6 +4245,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -4155,6 +4266,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         displayName_.makeImmutable();
         return displayName_;
       }
+
       /**
        *
        *
@@ -4174,6 +4286,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public int getDisplayNameCount() {
         return displayName_.size();
       }
+
       /**
        *
        *
@@ -4194,6 +4307,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public java.lang.String getDisplayName(int index) {
         return displayName_.get(index);
       }
+
       /**
        *
        *
@@ -4214,6 +4328,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public com.google.protobuf.ByteString getDisplayNameBytes(int index) {
         return displayName_.getByteString(index);
       }
+
       /**
        *
        *
@@ -4242,6 +4357,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4269,6 +4385,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4293,6 +4410,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4316,6 +4434,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4391,6 +4510,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           return rowBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4413,6 +4533,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           return rowBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4436,6 +4557,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           return rowBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4466,6 +4588,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4494,6 +4617,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4523,6 +4647,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4553,6 +4678,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4580,6 +4706,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4608,6 +4735,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4638,6 +4766,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4663,6 +4792,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4688,6 +4818,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -4707,6 +4838,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           getRowBuilder(int index) {
         return getRowFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -4730,6 +4862,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           return rowBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -4756,6 +4889,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           return java.util.Collections.unmodifiableList(row_);
         }
       }
+
       /**
        *
        *
@@ -4778,6 +4912,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
                 com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4801,6 +4936,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
                 com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4915,6 +5051,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   private int bitField0_;
   public static final int AU_PRC_FIELD_NUMBER = 1;
   private float auPrc_ = 0F;
+
   /**
    *
    *
@@ -4934,6 +5071,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
   public static final int AU_ROC_FIELD_NUMBER = 6;
   private float auRoc_ = 0F;
+
   /**
    *
    *
@@ -4953,6 +5091,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
   public static final int LOG_LOSS_FIELD_NUMBER = 7;
   private float logLoss_ = 0F;
+
   /**
    *
    *
@@ -4975,6 +5114,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   private java.util.List<
           com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry>
       confidenceMetricsEntry_;
+
   /**
    *
    *
@@ -4998,6 +5138,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       getConfidenceMetricsEntryList() {
     return confidenceMetricsEntry_;
   }
+
   /**
    *
    *
@@ -5023,6 +5164,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       getConfidenceMetricsEntryOrBuilderList() {
     return confidenceMetricsEntry_;
   }
+
   /**
    *
    *
@@ -5044,6 +5186,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   public int getConfidenceMetricsEntryCount() {
     return confidenceMetricsEntry_.size();
   }
+
   /**
    *
    *
@@ -5066,6 +5209,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       getConfidenceMetricsEntry(int index) {
     return confidenceMetricsEntry_.get(index);
   }
+
   /**
    *
    *
@@ -5092,6 +5236,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   public static final int CONFUSION_MATRIX_FIELD_NUMBER = 4;
   private com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
       confusionMatrix_;
+
   /**
    *
    *
@@ -5112,6 +5257,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   public boolean hasConfusionMatrix() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5136,6 +5282,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
             .getDefaultInstance()
         : confusionMatrix_;
   }
+
   /**
    *
    *
@@ -5164,6 +5311,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -5178,6 +5326,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
     return annotationSpecId_;
   }
+
   /**
    *
    *
@@ -5192,6 +5341,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   public int getAnnotationSpecIdCount() {
     return annotationSpecId_.size();
   }
+
   /**
    *
    *
@@ -5207,6 +5357,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   public java.lang.String getAnnotationSpecId(int index) {
     return annotationSpecId_.get(index);
   }
+
   /**
    *
    *
@@ -5448,6 +5599,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5775,6 +5927,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     private int bitField0_;
 
     private float auPrc_;
+
     /**
      *
      *
@@ -5791,6 +5944,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public float getAuPrc() {
       return auPrc_;
     }
+
     /**
      *
      *
@@ -5811,6 +5965,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5831,6 +5986,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     }
 
     private float auRoc_;
+
     /**
      *
      *
@@ -5847,6 +6003,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public float getAuRoc() {
       return auRoc_;
     }
+
     /**
      *
      *
@@ -5867,6 +6024,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5887,6 +6045,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     }
 
     private float logLoss_;
+
     /**
      *
      *
@@ -5902,6 +6061,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public float getLogLoss() {
       return logLoss_;
     }
+
     /**
      *
      *
@@ -5921,6 +6081,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5987,6 +6148,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         return confidenceMetricsEntryBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6011,6 +6173,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         return confidenceMetricsEntryBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6036,6 +6199,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         return confidenceMetricsEntryBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6068,6 +6232,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6098,6 +6263,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6129,6 +6295,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6161,6 +6328,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6190,6 +6358,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6220,6 +6389,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6252,6 +6422,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6279,6 +6450,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6306,6 +6478,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6327,6 +6500,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         getConfidenceMetricsEntryBuilder(int index) {
       return getConfidenceMetricsEntryFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6353,6 +6527,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         return confidenceMetricsEntryBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6381,6 +6556,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
       }
     }
+
     /**
      *
      *
@@ -6405,6 +6581,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
               com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6430,6 +6607,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
               com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6485,6 +6663,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
             com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Builder,
             com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder>
         confusionMatrixBuilder_;
+
     /**
      *
      *
@@ -6504,6 +6683,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public boolean hasConfusionMatrix() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -6531,6 +6711,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         return confusionMatrixBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6559,6 +6740,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6585,6 +6767,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6620,6 +6803,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -6644,6 +6828,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6664,6 +6849,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return getConfusionMatrixFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6689,6 +6875,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
             : confusionMatrix_;
       }
     }
+
     /**
      *
      *
@@ -6730,6 +6917,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -6745,6 +6933,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       annotationSpecId_.makeImmutable();
       return annotationSpecId_;
     }
+
     /**
      *
      *
@@ -6759,6 +6948,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public int getAnnotationSpecIdCount() {
       return annotationSpecId_.size();
     }
+
     /**
      *
      *
@@ -6774,6 +6964,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public java.lang.String getAnnotationSpecId(int index) {
       return annotationSpecId_.get(index);
     }
+
     /**
      *
      *
@@ -6789,6 +6980,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
       return annotationSpecId_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6812,6 +7004,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6834,6 +7027,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6853,6 +7047,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6871,6 +7066,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

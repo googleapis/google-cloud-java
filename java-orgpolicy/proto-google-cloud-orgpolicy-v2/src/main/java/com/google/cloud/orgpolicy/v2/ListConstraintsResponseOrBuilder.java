@@ -34,6 +34,7 @@ public interface ListConstraintsResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.Constraint constraints = 1;</code>
    */
   java.util.List<com.google.cloud.orgpolicy.v2.Constraint> getConstraintsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListConstraintsResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.Constraint constraints = 1;</code>
    */
   com.google.cloud.orgpolicy.v2.Constraint getConstraints(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListConstraintsResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.Constraint constraints = 1;</code>
    */
   int getConstraintsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListConstraintsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.orgpolicy.v2.ConstraintOrBuilder>
       getConstraintsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListConstraintsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

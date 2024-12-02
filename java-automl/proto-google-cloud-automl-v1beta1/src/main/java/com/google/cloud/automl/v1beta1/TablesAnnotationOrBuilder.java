@@ -58,6 +58,7 @@ public interface TablesAnnotationOrBuilder
    * @return Whether the predictionInterval field is set.
    */
   boolean hasPredictionInterval();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface TablesAnnotationOrBuilder
    * @return The predictionInterval.
    */
   com.google.cloud.automl.v1beta1.DoubleRange getPredictionInterval();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface TablesAnnotationOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface TablesAnnotationOrBuilder
    * @return The value.
    */
   com.google.protobuf.Value getValue();
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public interface TablesAnnotationOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>
       getTablesModelColumnInfoList();
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public interface TablesAnnotationOrBuilder
    * </code>
    */
   com.google.cloud.automl.v1beta1.TablesModelColumnInfo getTablesModelColumnInfo(int index);
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public interface TablesAnnotationOrBuilder
    * </code>
    */
   int getTablesModelColumnInfoCount();
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public interface TablesAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder>
       getTablesModelColumnInfoOrBuilderList();
+
   /**
    *
    *

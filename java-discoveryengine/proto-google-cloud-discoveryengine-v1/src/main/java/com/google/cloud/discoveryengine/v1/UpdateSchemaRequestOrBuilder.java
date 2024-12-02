@@ -38,6 +38,7 @@ public interface UpdateSchemaRequestOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateSchemaRequestOrBuilder
    * @return The schema.
    */
   com.google.cloud.discoveryengine.v1.Schema getSchema();
+
   /**
    *
    *

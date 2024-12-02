@@ -34,6 +34,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReadIndexDatapointsResponse)
     ReadIndexDatapointsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadIndexDatapointsResponse.newBuilder() to construct.
   private ReadIndexDatapointsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint> datapoints_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint> getDatapointsList() {
     return datapoints_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       getDatapointsOrBuilderList() {
     return datapoints_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
   public int getDatapointsCount() {
     return datapoints_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
   public com.google.cloud.aiplatform.v1.IndexDatapoint getDatapoints(int index) {
     return datapoints_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -560,6 +567,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
         return datapointsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -576,6 +584,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
         return datapointsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -592,6 +601,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
         return datapointsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +668,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +712,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +754,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +774,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +807,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1.IndexDatapoint.Builder getDatapointsBuilder(int index) {
       return getDatapointsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -805,6 +825,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
         return datapointsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -822,6 +843,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(datapoints_);
       }
     }
+
     /**
      *
      *
@@ -835,6 +857,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       return getDatapointsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.IndexDatapoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -848,6 +871,7 @@ public final class ReadIndexDatapointsResponse extends com.google.protobuf.Gener
       return getDatapointsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.IndexDatapoint.getDefaultInstance());
     }
+
     /**
      *
      *

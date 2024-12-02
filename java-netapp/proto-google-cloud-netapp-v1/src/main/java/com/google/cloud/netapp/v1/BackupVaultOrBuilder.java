@@ -38,6 +38,7 @@ public interface BackupVaultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface BackupVaultOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface BackupVaultOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface BackupVaultOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface BackupVaultOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface BackupVaultOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -165,9 +171,11 @@ public interface BackupVaultOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public interface BackupVaultOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -192,6 +201,7 @@ public interface BackupVaultOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.PurgeUserEventsResponse)
     PurgeUserEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PurgeUserEventsResponse.newBuilder() to construct.
   private PurgeUserEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
 
   public static final int PURGED_EVENTS_COUNT_FIELD_NUMBER = 1;
   private long purgedEventsCount_ = 0L;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -424,6 +427,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private long purgedEventsCount_;
+
     /**
      *
      *
@@ -439,6 +443,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     public long getPurgedEventsCount() {
       return purgedEventsCount_;
     }
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

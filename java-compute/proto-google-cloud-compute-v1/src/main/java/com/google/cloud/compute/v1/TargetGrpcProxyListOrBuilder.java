@@ -36,6 +36,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TargetGrpcProxyListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetGrpcProxy items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetGrpcProxy> getItemsList();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface TargetGrpcProxyListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetGrpcProxy items = 100526016;</code>
    */
   com.google.cloud.compute.v1.TargetGrpcProxy getItems(int index);
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface TargetGrpcProxyListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetGrpcProxy items = 100526016;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface TargetGrpcProxyListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetGrpcProxyOrBuilder>
       getItemsOrBuilderList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -211,6 +222,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -248,6 +261,7 @@ public interface TargetGrpcProxyListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

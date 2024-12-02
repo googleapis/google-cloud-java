@@ -46,6 +46,7 @@ public interface MasterAuthOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public interface MasterAuthOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -130,6 +132,7 @@ public interface MasterAuthOrBuilder
    * @return Whether the clientCertificateConfig field is set.
    */
   boolean hasClientCertificateConfig();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface MasterAuthOrBuilder
    * @return The clientCertificateConfig.
    */
   com.google.container.v1.ClientCertificateConfig getClientCertificateConfig();
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public interface MasterAuthOrBuilder
    * @return The clusterCaCertificate.
    */
   java.lang.String getClusterCaCertificate();
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface MasterAuthOrBuilder
    * @return The clientCertificate.
    */
   java.lang.String getClientCertificate();
+
   /**
    *
    *
@@ -226,6 +232,7 @@ public interface MasterAuthOrBuilder
    * @return The clientKey.
    */
   java.lang.String getClientKey();
+
   /**
    *
    *

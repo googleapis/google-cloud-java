@@ -33,6 +33,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.UpdateConnectionProfileRequest)
     UpdateConnectionProfileRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateConnectionProfileRequest.newBuilder() to construct.
   private UpdateConnectionProfileRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
 
   public static final int CONNECTION_PROFILE_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1.ConnectionProfile connectionProfile_;
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
   public boolean hasConnectionProfile() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
         ? com.google.cloud.datastream.v1.ConnectionProfile.getDefaultInstance()
         : connectionProfile_;
   }
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
 
   public static final int FORCE_FIELD_NUMBER = 5;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -500,6 +511,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -770,6 +782,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -789,6 +802,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -814,6 +828,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -841,6 +856,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +939,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +959,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -963,6 +983,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1021,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
             com.google.cloud.datastream.v1.ConnectionProfile.Builder,
             com.google.cloud.datastream.v1.ConnectionProfileOrBuilder>
         connectionProfileBuilder_;
+
     /**
      *
      *
@@ -1016,6 +1038,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     public boolean hasConnectionProfile() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1038,6 +1061,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
         return connectionProfileBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1086,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1109,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1140,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1162,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1179,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return getConnectionProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1172,6 +1201,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
             : connectionProfile_;
       }
     }
+
     /**
      *
      *
@@ -1201,6 +1231,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1235,6 +1266,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1269,6 +1301,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1335,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1365,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1402,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1383,6 +1419,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1403,6 +1440,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1461,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -1438,6 +1477,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -1457,6 +1497,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

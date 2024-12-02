@@ -33,6 +33,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.BatchAnnotateFilesRequest)
     BatchAnnotateFilesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchAnnotateFilesRequest.newBuilder() to construct.
   private BatchAnnotateFilesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.AnnotateFileRequest> requests_;
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.vision.v1.AnnotateFileRequest> getRequestsList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       getRequestsOrBuilderList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
   public int getRequestsCount() {
     return requests_.size();
   }
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
   public com.google.cloud.vision.v1.AnnotateFileRequest getRequests(int index) {
     return requests_.get(index);
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -282,12 +291,14 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -331,6 +343,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -544,6 +557,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -865,6 +879,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
         return requestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -884,6 +899,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
         return requestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -903,6 +919,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
         return requestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -928,6 +945,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +969,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +995,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1021,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1045,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1069,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1093,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1139,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1155,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
     public com.google.cloud.vision.v1.AnnotateFileRequest.Builder getRequestsBuilder(int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1148,6 +1175,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1196,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
+
     /**
      *
      *
@@ -1184,6 +1213,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       return getRequestsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.AnnotateFileRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1200,6 +1230,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       return getRequestsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.AnnotateFileRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1235,6 +1266,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1268,6 +1300,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1301,6 +1334,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1333,6 +1367,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1396,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1456,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1441,12 +1478,14 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1465,6 +1504,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1490,6 +1530,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1521,6 +1562,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1542,12 +1584,14 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1573,6 +1617,7 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *

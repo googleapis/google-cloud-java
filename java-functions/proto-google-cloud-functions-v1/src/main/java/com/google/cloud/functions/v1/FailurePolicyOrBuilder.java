@@ -36,6 +36,7 @@ public interface FailurePolicyOrBuilder
    * @return Whether the retry field is set.
    */
   boolean hasRetry();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FailurePolicyOrBuilder
    * @return The retry.
    */
   com.google.cloud.functions.v1.FailurePolicy.Retry getRetry();
+
   /**
    *
    *

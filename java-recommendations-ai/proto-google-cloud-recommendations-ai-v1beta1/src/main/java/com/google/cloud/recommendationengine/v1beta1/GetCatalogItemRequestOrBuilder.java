@@ -39,6 +39,7 @@ public interface GetCatalogItemRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

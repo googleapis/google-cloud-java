@@ -33,6 +33,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.SearchResponse)
     SearchResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchResponse.newBuilder() to construct.
   private SearchResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.reports.v1beta.ReportRow> results_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.shopping.merchant.reports.v1beta.ReportRow> getResultsList() {
     return results_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       getResultsOrBuilderList() {
     return results_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   public int getResultsCount() {
     return results_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.merchant.reports.v1beta.ReportRow getResults(int index) {
     return results_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -639,6 +648,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return resultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return resultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return resultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +816,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -888,6 +910,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(results_);
       }
     }
+
     /**
      *
      *
@@ -918,6 +942,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return getResultsFieldBuilder()
           .addBuilder(com.google.shopping.merchant.reports.v1beta.ReportRow.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -933,6 +958,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.shopping.merchant.reports.v1beta.ReportRow.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -965,6 +991,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -988,6 +1015,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1039,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1062,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1081,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

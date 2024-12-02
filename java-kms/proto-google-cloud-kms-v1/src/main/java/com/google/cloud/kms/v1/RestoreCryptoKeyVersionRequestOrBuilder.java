@@ -39,6 +39,7 @@ public interface RestoreCryptoKeyVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListExamplesResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Example examples = 1;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.Example> getExamplesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListExamplesResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Example examples = 1;</code>
    */
   com.google.cloud.datalabeling.v1beta1.Example getExamples(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListExamplesResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Example examples = 1;</code>
    */
   int getExamplesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListExamplesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
       getExamplesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListExamplesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

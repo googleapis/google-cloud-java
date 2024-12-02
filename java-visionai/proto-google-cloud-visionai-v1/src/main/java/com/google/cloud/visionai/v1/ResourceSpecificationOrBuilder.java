@@ -46,6 +46,7 @@ public interface ResourceSpecificationOrBuilder
    * @return The cpu.
    */
   java.lang.String getCpu();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ResourceSpecificationOrBuilder
    * @return The cpuLimits.
    */
   java.lang.String getCpuLimits();
+
   /**
    *
    *
@@ -124,6 +126,7 @@ public interface ResourceSpecificationOrBuilder
    * @return The memory.
    */
   java.lang.String getMemory();
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public interface ResourceSpecificationOrBuilder
    * @return The memoryLimits.
    */
   java.lang.String getMemoryLimits();
+
   /**
    *
    *

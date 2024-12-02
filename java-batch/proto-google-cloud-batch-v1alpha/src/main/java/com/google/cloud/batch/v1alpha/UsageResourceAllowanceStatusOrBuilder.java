@@ -38,6 +38,7 @@ public interface UsageResourceAllowanceStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface UsageResourceAllowanceStatusOrBuilder
    * @return Whether the limitStatus field is set.
    */
   boolean hasLimitStatus();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UsageResourceAllowanceStatusOrBuilder
    * @return The limitStatus.
    */
   com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.LimitStatus getLimitStatus();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface UsageResourceAllowanceStatusOrBuilder
    * @return Whether the report field is set.
    */
   boolean hasReport();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface UsageResourceAllowanceStatusOrBuilder
    * @return The report.
    */
   com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.ConsumptionReport getReport();
+
   /**
    *
    *

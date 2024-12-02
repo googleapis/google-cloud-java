@@ -33,6 +33,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Canary)
     CanaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Canary.newBuilder() to construct.
   private Canary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     private ModeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RUNTIME_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.RuntimeConfig runtimeConfig_;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRuntimeConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.RuntimeConfig.getDefaultInstance()
         : runtimeConfig_;
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CANARY_DEPLOYMENT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCanaryDeployment() {
     return modeCase_ == 2;
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.CanaryDeployment.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_CANARY_DEPLOYMENT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomCanaryDeployment() {
     return modeCase_ == 3;
   }
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.CustomCanaryDeployment.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -483,6 +494,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -749,6 +761,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.RuntimeConfig.Builder,
             com.google.cloud.deploy.v1.RuntimeConfigOrBuilder>
         runtimeConfigBuilder_;
+
     /**
      *
      *
@@ -767,6 +780,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRuntimeConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
         return runtimeConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -817,6 +832,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +889,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +913,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +932,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRuntimeConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
             : runtimeConfig_;
       }
     }
+
     /**
      *
      *
@@ -970,6 +991,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.CanaryDeployment.Builder,
             com.google.cloud.deploy.v1.CanaryDeploymentOrBuilder>
         canaryDeploymentBuilder_;
+
     /**
      *
      *
@@ -985,6 +1007,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCanaryDeployment() {
       return modeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1010,6 +1033,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.CanaryDeployment.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1032,6 +1056,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1077,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1110,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1136,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1149,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.CanaryDeployment.Builder getCanaryDeploymentBuilder() {
       return getCanaryDeploymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1141,6 +1170,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.CanaryDeployment.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1209,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.CustomCanaryDeployment.Builder,
             com.google.cloud.deploy.v1.CustomCanaryDeploymentOrBuilder>
         customCanaryDeploymentBuilder_;
+
     /**
      *
      *
@@ -1196,6 +1227,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomCanaryDeployment() {
       return modeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1223,6 +1255,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.CustomCanaryDeployment.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1248,6 +1281,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1304,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1340,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1368,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1347,6 +1384,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
         getCustomCanaryDeploymentBuilder() {
       return getCustomCanaryDeploymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1370,6 +1408,7 @@ public final class Canary extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.CustomCanaryDeployment.getDefaultInstance();
       }
     }
+
     /**
      *
      *

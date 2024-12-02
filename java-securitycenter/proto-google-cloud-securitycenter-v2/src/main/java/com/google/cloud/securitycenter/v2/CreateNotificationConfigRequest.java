@@ -33,6 +33,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.CreateNotificationConfigRequest)
     CreateNotificationConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateNotificationConfigRequest.newBuilder() to construct.
   private CreateNotificationConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object configId_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
 
   public static final int NOTIFICATION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v2.NotificationConfig notificationConfig_;
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
   public boolean hasNotificationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         ? com.google.cloud.securitycenter.v2.NotificationConfig.getDefaultInstance()
         : notificationConfig_;
   }
+
   /**
    *
    *
@@ -431,6 +439,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -670,6 +679,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -724,6 +735,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -750,6 +762,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +785,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object configId_ = "";
+
     /**
      *
      *
@@ -826,6 +841,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -851,6 +867,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +913,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +946,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
             com.google.cloud.securitycenter.v2.NotificationConfig.Builder,
             com.google.cloud.securitycenter.v2.NotificationConfigOrBuilder>
         notificationConfigBuilder_;
+
     /**
      *
      *
@@ -945,6 +965,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     public boolean hasNotificationConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         return notificationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -996,6 +1018,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1043,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1077,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1101,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1121,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       onChanged();
       return getNotificationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1118,6 +1145,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
             : notificationConfig_;
       }
     }
+
     /**
      *
      *

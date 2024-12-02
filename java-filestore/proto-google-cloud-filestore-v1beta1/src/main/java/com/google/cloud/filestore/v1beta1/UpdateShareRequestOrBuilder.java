@@ -39,6 +39,7 @@ public interface UpdateShareRequestOrBuilder
    * @return Whether the share field is set.
    */
   boolean hasShare();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateShareRequestOrBuilder
    * @return The share.
    */
   com.google.cloud.filestore.v1beta1.Share getShare();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateShareRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface UpdateShareRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

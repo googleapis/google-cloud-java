@@ -37,6 +37,7 @@ public interface StatisticalTableOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface StatisticalTableOrBuilder
    * @return The table.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface StatisticalTableOrBuilder
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField> getQuasiIdsList();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface StatisticalTableOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField getQuasiIds(int index);
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface StatisticalTableOrBuilder
    * </code>
    */
   int getQuasiIdsCount();
+
   /**
    *
    *
@@ -111,6 +116,7 @@ public interface StatisticalTableOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder>
       getQuasiIdsOrBuilderList();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface StatisticalTableOrBuilder
    * @return Whether the relativeFrequency field is set.
    */
   boolean hasRelativeFrequency();
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface StatisticalTableOrBuilder
    * @return The relativeFrequency.
    */
   com.google.privacy.dlp.v2.FieldId getRelativeFrequency();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface SbomReferenceIntotoPredicateOrBuilder
    * @return The referrerId.
    */
   java.lang.String getReferrerId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface SbomReferenceIntotoPredicateOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface SbomReferenceIntotoPredicateOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface SbomReferenceIntotoPredicateOrBuilder
    * <code>map&lt;string, string&gt; digest = 4;</code>
    */
   int getDigestCount();
+
   /**
    *
    *
@@ -120,9 +124,11 @@ public interface SbomReferenceIntotoPredicateOrBuilder
    * <code>map&lt;string, string&gt; digest = 4;</code>
    */
   boolean containsDigest(java.lang.String key);
+
   /** Use {@link #getDigestMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDigest();
+
   /**
    *
    *
@@ -133,6 +139,7 @@ public interface SbomReferenceIntotoPredicateOrBuilder
    * <code>map&lt;string, string&gt; digest = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDigestMap();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface SbomReferenceIntotoPredicateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface PullGitCommitsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface PullGitCommitsRequestOrBuilder
    * @return The remoteBranch.
    */
   java.lang.String getRemoteBranch();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface PullGitCommitsRequestOrBuilder
    * @return Whether the author field is set.
    */
   boolean hasAuthor();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface PullGitCommitsRequestOrBuilder
    * @return The author.
    */
   com.google.cloud.dataform.v1alpha2.CommitAuthor getAuthor();
+
   /**
    *
    *

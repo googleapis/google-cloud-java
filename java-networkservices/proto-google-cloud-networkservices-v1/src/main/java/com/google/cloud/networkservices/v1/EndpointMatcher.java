@@ -34,6 +34,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.EndpointMatcher)
     EndpointMatcherOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EndpointMatcher.newBuilder() to construct.
   private EndpointMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for metadataLabelMatchCriteria.
      */
     int getMetadataLabelMatchCriteriaValue();
+
     /**
      *
      *
@@ -166,6 +168,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     java.util.List<
             com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher.MetadataLabels>
         getMetadataLabelsList();
+
     /**
      *
      *
@@ -183,6 +186,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
      */
     com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher.MetadataLabels
         getMetadataLabels(int index);
+
     /**
      *
      *
@@ -199,6 +203,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     int getMetadataLabelsCount();
+
     /**
      *
      *
@@ -219,6 +224,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher
                     .MetadataLabelsOrBuilder>
         getMetadataLabelsOrBuilderList();
+
     /**
      *
      *
@@ -237,6 +243,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher.MetadataLabelsOrBuilder
         getMetadataLabelsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -251,6 +258,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher)
       MetadataLabelMatcherOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MetadataLabelMatcher.newBuilder() to construct.
     private MetadataLabelMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -339,6 +347,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        * <code>METADATA_LABEL_MATCH_CRITERIA_UNSPECIFIED = 0;</code>
        */
       public static final int METADATA_LABEL_MATCH_CRITERIA_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -350,6 +359,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        * <code>MATCH_ANY = 1;</code>
        */
       public static final int MATCH_ANY_VALUE = 1;
+
       /**
        *
        *
@@ -468,6 +478,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        * @return The labelName.
        */
       java.lang.String getLabelName();
+
       /**
        *
        *
@@ -494,6 +505,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        * @return The labelValue.
        */
       java.lang.String getLabelValue();
+
       /**
        *
        *
@@ -508,6 +520,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        */
       com.google.protobuf.ByteString getLabelValueBytes();
     }
+
     /**
      *
      *
@@ -523,6 +536,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher.MetadataLabels)
         MetadataLabelsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use MetadataLabels.newBuilder() to construct.
       private MetadataLabels(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -560,6 +574,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object labelName_ = "";
+
       /**
        *
        *
@@ -583,6 +598,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           return s;
         }
       }
+
       /**
        *
        *
@@ -611,6 +627,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object labelValue_ = "";
+
       /**
        *
        *
@@ -635,6 +652,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           return s;
         }
       }
+
       /**
        *
        *
@@ -857,6 +875,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1085,6 +1104,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         private int bitField0_;
 
         private java.lang.Object labelName_ = "";
+
         /**
          *
          *
@@ -1107,6 +1127,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1129,6 +1150,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1150,6 +1172,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1167,6 +1190,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1191,6 +1215,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
 
         private java.lang.Object labelValue_ = "";
+
         /**
          *
          *
@@ -1214,6 +1239,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1237,6 +1263,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1259,6 +1286,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1277,6 +1305,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1374,6 +1403,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
 
     public static final int METADATA_LABEL_MATCH_CRITERIA_FIELD_NUMBER = 1;
     private int metadataLabelMatchCriteria_ = 0;
+
     /**
      *
      *
@@ -1416,6 +1446,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     public int getMetadataLabelMatchCriteriaValue() {
       return metadataLabelMatchCriteria_;
     }
+
     /**
      *
      *
@@ -1475,6 +1506,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     private java.util.List<
             com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher.MetadataLabels>
         metadataLabels_;
+
     /**
      *
      *
@@ -1496,6 +1528,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         getMetadataLabelsList() {
       return metadataLabels_;
     }
+
     /**
      *
      *
@@ -1519,6 +1552,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         getMetadataLabelsOrBuilderList() {
       return metadataLabels_;
     }
+
     /**
      *
      *
@@ -1538,6 +1572,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     public int getMetadataLabelsCount() {
       return metadataLabels_.size();
     }
+
     /**
      *
      *
@@ -1558,6 +1593,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         getMetadataLabels(int index) {
       return metadataLabels_.get(index);
     }
+
     /**
      *
      *
@@ -1766,6 +1802,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2027,6 +2064,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int metadataLabelMatchCriteria_ = 0;
+
       /**
        *
        *
@@ -2069,6 +2107,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
       public int getMetadataLabelMatchCriteriaValue() {
         return metadataLabelMatchCriteria_;
       }
+
       /**
        *
        *
@@ -2114,6 +2153,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2166,6 +2206,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
                 .MetadataLabelMatchCriteria.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2217,6 +2258,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2311,6 +2353,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           return metadataLabelsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2333,6 +2376,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           return metadataLabelsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2356,6 +2400,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           return metadataLabelsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2387,6 +2432,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2416,6 +2462,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2446,6 +2493,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2477,6 +2525,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2505,6 +2554,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2534,6 +2584,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2564,6 +2615,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2589,6 +2641,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2614,6 +2667,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2634,6 +2688,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           getMetadataLabelsBuilder(int index) {
         return getMetadataLabelsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2658,6 +2713,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           return metadataLabelsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2684,6 +2740,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
           return java.util.Collections.unmodifiableList(metadataLabels_);
         }
       }
+
       /**
        *
        *
@@ -2707,6 +2764,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher
                     .MetadataLabels.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2731,6 +2789,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher
                     .MetadataLabels.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2863,6 +2922,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     private MatcherTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2894,6 +2954,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int METADATA_LABEL_MATCHER_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -2911,6 +2972,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
   public boolean hasMetadataLabelMatcher() {
     return matcherTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -2934,6 +2996,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3134,6 +3197,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3354,6 +3418,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcher.Builder,
             com.google.cloud.networkservices.v1.EndpointMatcher.MetadataLabelMatcherOrBuilder>
         metadataLabelMatcherBuilder_;
+
     /**
      *
      *
@@ -3371,6 +3436,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
     public boolean hasMetadataLabelMatcher() {
       return matcherTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -3402,6 +3468,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3427,6 +3494,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
       matcherTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3450,6 +3518,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
       matcherTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3488,6 +3557,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
       matcherTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3515,6 +3585,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3530,6 +3601,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
         getMetadataLabelMatcherBuilder() {
       return getMetadataLabelMatcherFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3555,6 +3627,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.Entrypoint)
     EntrypointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Entrypoint.newBuilder() to construct.
   private Entrypoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
     private CommandCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHELL_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasShell() {
     return commandCase_ == 1;
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -347,6 +352,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +576,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasShell() {
       return commandCase_ == 1;
     }
+
     /**
      *
      *
@@ -598,6 +605,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -626,6 +634,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -647,6 +656,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +676,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

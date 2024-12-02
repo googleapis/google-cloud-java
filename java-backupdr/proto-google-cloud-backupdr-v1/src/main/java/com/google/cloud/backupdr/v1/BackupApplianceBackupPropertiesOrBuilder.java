@@ -37,6 +37,7 @@ public interface BackupApplianceBackupPropertiesOrBuilder
    * @return Whether the generationId field is set.
    */
   boolean hasGenerationId();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface BackupApplianceBackupPropertiesOrBuilder
    * @return Whether the finalizeTime field is set.
    */
   boolean hasFinalizeTime();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BackupApplianceBackupPropertiesOrBuilder
    * @return The finalizeTime.
    */
   com.google.protobuf.Timestamp getFinalizeTime();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface BackupApplianceBackupPropertiesOrBuilder
    * @return Whether the recoveryRangeStartTime field is set.
    */
   boolean hasRecoveryRangeStartTime();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface BackupApplianceBackupPropertiesOrBuilder
    * @return The recoveryRangeStartTime.
    */
   com.google.protobuf.Timestamp getRecoveryRangeStartTime();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface BackupApplianceBackupPropertiesOrBuilder
    * @return Whether the recoveryRangeEndTime field is set.
    */
   boolean hasRecoveryRangeEndTime();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface BackupApplianceBackupPropertiesOrBuilder
    * @return The recoveryRangeEndTime.
    */
   com.google.protobuf.Timestamp getRecoveryRangeEndTime();
+
   /**
    *
    *

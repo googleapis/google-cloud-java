@@ -72,7 +72,8 @@ public class MockOnlineReturnPolicyServiceImpl extends OnlineReturnPolicyService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOnlineReturnPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method GetOnlineReturnPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   OnlineReturnPolicy.class.getName(),
                   Exception.class.getName())));
@@ -94,7 +95,8 @@ public class MockOnlineReturnPolicyServiceImpl extends OnlineReturnPolicyService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListOnlineReturnPolicies, expected %s or %s",
+                  "Unrecognized response type %s for method ListOnlineReturnPolicies, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListOnlineReturnPoliciesResponse.class.getName(),
                   Exception.class.getName())));

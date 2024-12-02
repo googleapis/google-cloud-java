@@ -33,6 +33,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.Point)
     PointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Point.newBuilder() to construct.
   private Point(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int INTERVAL_FIELD_NUMBER = 1;
   private com.google.monitoring.v3.TimeInterval interval_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
         : interval_;
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.monitoring.v3.TypedValue value_;
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.v3.TypedValue getValue() {
     return value_ == null ? com.google.monitoring.v3.TypedValue.getDefaultInstance() : value_;
   }
+
   /**
    *
    *
@@ -357,6 +364,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -576,6 +584,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.v3.TimeInterval.Builder,
             com.google.monitoring.v3.TimeIntervalOrBuilder>
         intervalBuilder_;
+
     /**
      *
      *
@@ -598,6 +607,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
         return intervalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
             : interval_;
       }
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.v3.TypedValue.Builder,
             com.google.monitoring.v3.TypedValueOrBuilder>
         valueBuilder_;
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
         return valueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +955,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +975,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +990,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -982,6 +1007,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
         return value_ == null ? com.google.monitoring.v3.TypedValue.getDefaultInstance() : value_;
       }
     }
+
     /**
      *
      *

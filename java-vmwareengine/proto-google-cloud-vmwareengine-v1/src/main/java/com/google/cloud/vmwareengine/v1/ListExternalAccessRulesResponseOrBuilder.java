@@ -35,6 +35,7 @@ public interface ListExternalAccessRulesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.ExternalAccessRule> getExternalAccessRulesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListExternalAccessRulesResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.ExternalAccessRule getExternalAccessRules(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListExternalAccessRulesResponseOrBuilder
    * </code>
    */
   int getExternalAccessRulesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListExternalAccessRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.ExternalAccessRuleOrBuilder>
       getExternalAccessRulesOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListExternalAccessRulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ListExternalAccessRulesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -135,6 +141,7 @@ public interface ListExternalAccessRulesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -149,6 +156,7 @@ public interface ListExternalAccessRulesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

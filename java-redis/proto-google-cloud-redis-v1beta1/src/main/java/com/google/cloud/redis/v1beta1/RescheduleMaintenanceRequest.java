@@ -33,6 +33,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.RescheduleMaintenanceRequest)
     RescheduleMaintenanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RescheduleMaintenanceRequest.newBuilder() to construct.
   private RescheduleMaintenanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * <code>RESCHEDULE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RESCHEDULE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * <code>IMMEDIATE = 1;</code>
      */
     public static final int IMMEDIATE_VALUE = 1;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      * <code>NEXT_AVAILABLE_WINDOW = 2;</code>
      */
     public static final int NEXT_AVAILABLE_WINDOW_VALUE = 2;
+
     /**
      *
      *
@@ -252,6 +256,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -279,6 +284,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
 
   public static final int RESCHEDULE_TYPE_FIELD_NUMBER = 2;
   private int rescheduleType_ = 0;
+
   /**
    *
    *
@@ -326,6 +333,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
   public int getRescheduleTypeValue() {
     return rescheduleType_;
   }
+
   /**
    *
    *
@@ -352,6 +360,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp scheduleTime_;
+
   /**
    *
    *
@@ -370,6 +379,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
   public boolean hasScheduleTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -390,6 +400,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : scheduleTime_;
   }
+
   /**
    *
    *
@@ -598,6 +609,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -825,6 +837,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -851,6 +864,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -877,6 +891,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +917,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +939,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +968,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     }
 
     private int rescheduleType_ = 0;
+
     /**
      *
      *
@@ -968,6 +986,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     public int getRescheduleTypeValue() {
       return rescheduleType_;
     }
+
     /**
      *
      *
@@ -988,6 +1007,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1031,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
           ? com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest.RescheduleType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1035,6 +1056,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1083,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scheduleTimeBuilder_;
+
     /**
      *
      *
@@ -1078,6 +1101,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
     public boolean hasScheduleTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1101,6 +1125,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
         return scheduleTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1151,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1174,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1205,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1228,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1246,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1238,6 +1268,7 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
             : scheduleTime_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface ListNpmPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.NpmPackage npm_packages = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.NpmPackage> getNpmPackagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListNpmPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.NpmPackage npm_packages = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.NpmPackage getNpmPackages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListNpmPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.NpmPackage npm_packages = 1;</code>
    */
   int getNpmPackagesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListNpmPackagesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.NpmPackageOrBuilder>
       getNpmPackagesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListNpmPackagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

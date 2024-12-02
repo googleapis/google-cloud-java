@@ -36,6 +36,7 @@ public interface TranslateDocumentResponseOrBuilder
    * @return Whether the documentTranslation field is set.
    */
   boolean hasDocumentTranslation();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TranslateDocumentResponseOrBuilder
    * @return The documentTranslation.
    */
   com.google.cloud.translate.v3beta1.DocumentTranslation getDocumentTranslation();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface TranslateDocumentResponseOrBuilder
    * @return Whether the glossaryDocumentTranslation field is set.
    */
   boolean hasGlossaryDocumentTranslation();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface TranslateDocumentResponseOrBuilder
    * @return The glossaryDocumentTranslation.
    */
   com.google.cloud.translate.v3beta1.DocumentTranslation getGlossaryDocumentTranslation();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface TranslateDocumentResponseOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface TranslateDocumentResponseOrBuilder
    * @return Whether the glossaryConfig field is set.
    */
   boolean hasGlossaryConfig();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface TranslateDocumentResponseOrBuilder
    * @return The glossaryConfig.
    */
   com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossaryConfig();
+
   /**
    *
    *

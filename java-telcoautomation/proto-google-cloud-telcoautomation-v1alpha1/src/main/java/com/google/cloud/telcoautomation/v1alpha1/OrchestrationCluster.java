@@ -34,6 +34,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.OrchestrationCluster)
     OrchestrationClusterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OrchestrationCluster.newBuilder() to construct.
   private OrchestrationCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -152,6 +153,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -162,6 +164,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -172,6 +175,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -182,6 +186,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
+
     /**
      *
      *
@@ -288,6 +293,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -312,6 +318,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -339,6 +346,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
 
   public static final int MANAGEMENT_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.telcoautomation.v1alpha1.ManagementConfig managementConfig_;
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
   public boolean hasManagementConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -371,6 +380,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.telcoautomation.v1alpha1.ManagementConfig.getDefaultInstance()
         : managementConfig_;
   }
+
   /**
    *
    *
@@ -390,6 +400,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -406,6 +417,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -422,6 +434,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -439,6 +452,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -455,6 +469,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -471,6 +486,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -512,6 +528,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -528,12 +545,14 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -547,6 +566,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -567,6 +587,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -592,6 +613,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tnaVersion_ = "";
+
   /**
    *
    *
@@ -615,6 +637,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -641,6 +664,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
+
   /**
    *
    *
@@ -658,6 +682,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -921,6 +946,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1247,6 +1273,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1270,6 +1297,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1293,6 +1321,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1315,6 +1344,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1363,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1394,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
             com.google.cloud.telcoautomation.v1alpha1.ManagementConfig.Builder,
             com.google.cloud.telcoautomation.v1alpha1.ManagementConfigOrBuilder>
         managementConfigBuilder_;
+
     /**
      *
      *
@@ -1377,6 +1409,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     public boolean hasManagementConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1397,6 +1430,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
         return managementConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1454,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1475,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1506,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1526,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1542,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return getManagementConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1523,6 +1562,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
             : managementConfig_;
       }
     }
+
     /**
      *
      *
@@ -1555,6 +1595,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1571,6 +1612,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1593,6 +1635,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1617,6 +1660,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1682,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1667,6 +1712,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1734,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1751,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1724,6 +1772,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1758,6 +1807,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1774,6 +1824,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1796,6 +1847,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1820,6 +1872,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1841,6 +1894,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1870,6 +1924,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1946,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1907,6 +1963,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1927,6 +1984,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1980,6 +2038,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1996,12 +2055,14 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2015,6 +2076,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2035,6 +2097,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2061,6 +2124,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2077,12 +2141,14 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2103,6 +2169,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -2119,6 +2186,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object tnaVersion_ = "";
+
     /**
      *
      *
@@ -2141,6 +2209,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2163,6 +2232,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2184,6 +2254,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2201,6 +2272,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2297,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2242,6 +2315,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2262,6 +2336,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2283,6 +2358,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.telcoautomation.v1alpha1.OrchestrationCluster.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2307,6 +2383,7 @@ public final class OrchestrationCluster extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

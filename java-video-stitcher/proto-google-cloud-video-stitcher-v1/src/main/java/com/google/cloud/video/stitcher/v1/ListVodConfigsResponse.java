@@ -33,6 +33,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.ListVodConfigsResponse)
     ListVodConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListVodConfigsResponse.newBuilder() to construct.
   private ListVodConfigsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.VodConfig> vodConfigs_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.video.stitcher.v1.VodConfig> getVodConfigsList() {
     return vodConfigs_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       getVodConfigsOrBuilderList() {
     return vodConfigs_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
   public int getVodConfigsCount() {
     return vodConfigs_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.video.stitcher.v1.VodConfig getVodConfigs(int index) {
     return vodConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -438,6 +450,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -737,6 +750,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
         return vodConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -753,6 +767,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
         return vodConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
         return vodConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +874,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +916,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +977,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.video.stitcher.v1.VodConfig.Builder getVodConfigsBuilder(int index) {
       return getVodConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -981,6 +1007,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
         return vodConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -998,6 +1025,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(vodConfigs_);
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1039,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       return getVodConfigsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.VodConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1024,6 +1053,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       return getVodConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.stitcher.v1.VodConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1056,6 +1086,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1078,6 +1109,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1132,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1121,6 +1154,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1172,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1205,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1185,6 +1221,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1199,6 +1236,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1214,6 +1252,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1229,6 +1268,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1252,6 +1292,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1315,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1335,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1354,7 @@ public final class ListVodConfigsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

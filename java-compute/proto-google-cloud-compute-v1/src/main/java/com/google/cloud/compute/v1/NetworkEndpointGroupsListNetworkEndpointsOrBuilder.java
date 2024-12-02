@@ -36,6 +36,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus> getItemsList();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus getItems(int index);
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -106,6 +111,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkEndpointWithHealthStatusOrBuilder>
       getItemsOrBuilderList();
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -179,6 +188,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -204,6 +214,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -216,6 +227,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

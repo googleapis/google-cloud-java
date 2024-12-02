@@ -38,6 +38,7 @@ public interface ZipInfoOrBuilder
    * @return The sourceUrl.
    */
   java.lang.String getSourceUrl();
+
   /**
    *
    *

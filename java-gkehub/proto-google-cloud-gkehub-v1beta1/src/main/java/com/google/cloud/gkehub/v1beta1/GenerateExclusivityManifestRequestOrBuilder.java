@@ -39,6 +39,7 @@ public interface GenerateExclusivityManifestRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface GenerateExclusivityManifestRequestOrBuilder
    * @return The crdManifest.
    */
   java.lang.String getCrdManifest();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface GenerateExclusivityManifestRequestOrBuilder
    * @return The crManifest.
    */
   java.lang.String getCrManifest();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface OracleProfileOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface OracleProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface OracleProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface OracleProfileOrBuilder
    * @return The databaseService.
    */
   java.lang.String getDatabaseService();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface OracleProfileOrBuilder
    * <code>map&lt;string, string&gt; connection_attributes = 6;</code>
    */
   int getConnectionAttributesCount();
+
   /**
    *
    *
@@ -157,9 +162,11 @@ public interface OracleProfileOrBuilder
    * <code>map&lt;string, string&gt; connection_attributes = 6;</code>
    */
   boolean containsConnectionAttributes(java.lang.String key);
+
   /** Use {@link #getConnectionAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getConnectionAttributes();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface OracleProfileOrBuilder
    * <code>map&lt;string, string&gt; connection_attributes = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getConnectionAttributesMap();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface OracleProfileOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

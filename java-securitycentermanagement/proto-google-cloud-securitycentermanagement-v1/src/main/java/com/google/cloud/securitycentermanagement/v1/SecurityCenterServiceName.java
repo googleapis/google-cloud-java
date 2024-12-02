@@ -346,7 +346,8 @@ public class SecurityCenterServiceName implements ResourceName {
     private Builder(SecurityCenterServiceName securityCenterServiceName) {
       Preconditions.checkArgument(
           Objects.equals(securityCenterServiceName.pathTemplate, PROJECT_LOCATION_SERVICE),
-          "toBuilder is only supported when SecurityCenterServiceName has the pattern of projects/{project}/locations/{location}/securityCenterServices/{service}");
+          "toBuilder is only supported when SecurityCenterServiceName has the pattern of"
+              + " projects/{project}/locations/{location}/securityCenterServices/{service}");
       this.project = securityCenterServiceName.project;
       this.location = securityCenterServiceName.location;
       this.service = securityCenterServiceName.service;

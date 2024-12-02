@@ -33,6 +33,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ConversationDataSource)
     ConversationDataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversationDataSource.newBuilder() to construct.
   private ConversationDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.contactcenterinsights.v1.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
   }
 
   public static final int DIALOGFLOW_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
   public boolean hasDialogflowSource() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.contactcenterinsights.v1.DialogflowSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -403,6 +411,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
             com.google.cloud.contactcenterinsights.v1.GcsSource.Builder,
             com.google.cloud.contactcenterinsights.v1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
         return com.google.cloud.contactcenterinsights.v1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +773,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     public com.google.cloud.contactcenterinsights.v1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
         return com.google.cloud.contactcenterinsights.v1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
             com.google.cloud.contactcenterinsights.v1.DialogflowSource.Builder,
             com.google.cloud.contactcenterinsights.v1.DialogflowSourceOrBuilder>
         dialogflowSourceBuilder_;
+
     /**
      *
      *
@@ -869,6 +888,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
     public boolean hasDialogflowSource() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -894,6 +914,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
         return com.google.cloud.contactcenterinsights.v1.DialogflowSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
         getDialogflowSourceBuilder() {
       return getDialogflowSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1031,6 +1057,7 @@ public final class ConversationDataSource extends com.google.protobuf.GeneratedM
         return com.google.cloud.contactcenterinsights.v1.DialogflowSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.QuotaBucket)
     QuotaBucketOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuotaBucket.newBuilder() to construct.
   private QuotaBucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int EFFECTIVE_LIMIT_FIELD_NUMBER = 1;
   private long effectiveLimit_ = 0L;
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_LIMIT_FIELD_NUMBER = 2;
   private long defaultLimit_ = 0L;
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRODUCER_OVERRIDE_FIELD_NUMBER = 3;
   private com.google.api.serviceusage.v1beta1.QuotaOverride producerOverride_;
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProducerOverride() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         ? com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance()
         : producerOverride_;
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONSUMER_OVERRIDE_FIELD_NUMBER = 4;
   private com.google.api.serviceusage.v1beta1.QuotaOverride consumerOverride_;
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConsumerOverride() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         ? com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance()
         : consumerOverride_;
   }
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADMIN_OVERRIDE_FIELD_NUMBER = 5;
   private com.google.api.serviceusage.v1beta1.QuotaOverride adminOverride_;
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdminOverride() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         ? com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance()
         : adminOverride_;
   }
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRODUCER_QUOTA_POLICY_FIELD_NUMBER = 7;
   private com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producerQuotaPolicy_;
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProducerQuotaPolicy() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -296,6 +310,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         ? com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.getDefaultInstance()
         : producerQuotaPolicy_;
   }
+
   /**
    *
    *
@@ -339,6 +354,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
   public int getDimensionsCount() {
     return internalGetDimensions().getMap().size();
   }
+
   /**
    *
    *
@@ -365,12 +381,14 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetDimensions().getMap().containsKey(key);
   }
+
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
     return getDimensionsMap();
   }
+
   /**
    *
    *
@@ -394,6 +412,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
     return internalGetDimensions().getMap();
   }
+
   /**
    *
    *
@@ -424,6 +443,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDimensions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -696,6 +716,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1027,6 +1048,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long effectiveLimit_;
+
     /**
      *
      *
@@ -1043,6 +1065,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     public long getEffectiveLimit() {
       return effectiveLimit_;
     }
+
     /**
      *
      *
@@ -1063,6 +1086,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1107,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long defaultLimit_;
+
     /**
      *
      *
@@ -1099,6 +1124,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     public long getDefaultLimit() {
       return defaultLimit_;
     }
+
     /**
      *
      *
@@ -1119,6 +1145,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1171,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.api.serviceusage.v1beta1.QuotaOverride.Builder,
             com.google.api.serviceusage.v1beta1.QuotaOverrideOrBuilder>
         producerOverrideBuilder_;
+
     /**
      *
      *
@@ -1158,6 +1186,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProducerOverride() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1178,6 +1207,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         return producerOverrideBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1200,6 +1230,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1251,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1280,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1300,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1315,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProducerOverrideFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1300,6 +1335,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             : producerOverride_;
       }
     }
+
     /**
      *
      *
@@ -1332,6 +1368,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.api.serviceusage.v1beta1.QuotaOverride.Builder,
             com.google.api.serviceusage.v1beta1.QuotaOverrideOrBuilder>
         consumerOverrideBuilder_;
+
     /**
      *
      *
@@ -1346,6 +1383,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConsumerOverride() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1366,6 +1404,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         return consumerOverrideBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1388,6 +1427,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1448,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1477,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1497,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1512,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConsumerOverrideFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1488,6 +1532,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             : consumerOverride_;
       }
     }
+
     /**
      *
      *
@@ -1520,6 +1565,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.api.serviceusage.v1beta1.QuotaOverride.Builder,
             com.google.api.serviceusage.v1beta1.QuotaOverrideOrBuilder>
         adminOverrideBuilder_;
+
     /**
      *
      *
@@ -1534,6 +1580,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdminOverride() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1554,6 +1601,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         return adminOverrideBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1576,6 +1624,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1645,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1674,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1643,6 +1694,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1657,6 +1709,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAdminOverrideFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1675,6 +1728,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             : adminOverride_;
       }
     }
+
     /**
      *
      *
@@ -1707,6 +1761,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.Builder,
             com.google.api.serviceusage.v1beta1.ProducerQuotaPolicyOrBuilder>
         producerQuotaPolicyBuilder_;
+
     /**
      *
      *
@@ -1721,6 +1776,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProducerQuotaPolicy() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1741,6 +1797,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         return producerQuotaPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1764,6 +1821,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1842,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1872,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1832,6 +1892,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1847,6 +1908,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProducerQuotaPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1866,6 +1928,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             : producerQuotaPolicy_;
       }
     }
+
     /**
      *
      *
@@ -1920,6 +1983,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     public int getDimensionsCount() {
       return internalGetDimensions().getMap().size();
     }
+
     /**
      *
      *
@@ -1946,12 +2010,14 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDimensions().getMap().containsKey(key);
     }
+
     /** Use {@link #getDimensionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
       return getDimensionsMap();
     }
+
     /**
      *
      *
@@ -1975,6 +2041,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
       return internalGetDimensions().getMap();
     }
+
     /**
      *
      *
@@ -2005,6 +2072,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDimensions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2041,6 +2109,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDimensions().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2067,12 +2136,14 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDimensions().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDimensions() {
       bitField0_ |= 0x00000040;
       return internalGetMutableDimensions().getMutableMap();
     }
+
     /**
      *
      *
@@ -2103,6 +2174,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest)
     TargetHttpsProxiesSetQuicOverrideRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TargetHttpsProxiesSetQuicOverrideRequest.newBuilder() to construct.
   private TargetHttpsProxiesSetQuicOverrideRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -128,6 +129,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * <code>UNDEFINED_QUIC_OVERRIDE = 0;</code>
      */
     public static final int UNDEFINED_QUIC_OVERRIDE_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * <code>DISABLE = 241807048;</code>
      */
     public static final int DISABLE_VALUE = 241807048;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * <code>ENABLE = 438835587;</code>
      */
     public static final int ENABLE_VALUE = 438835587;
+
     /**
      *
      *
@@ -251,6 +255,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object quicOverride_ = "";
+
   /**
    *
    *
@@ -267,6 +272,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
   public boolean hasQuicOverride() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -291,6 +297,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -482,6 +489,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -675,6 +683,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     private int bitField0_;
 
     private java.lang.Object quicOverride_ = "";
+
     /**
      *
      *
@@ -690,6 +699,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     public boolean hasQuicOverride() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -713,6 +723,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -736,6 +747,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +770,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +789,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

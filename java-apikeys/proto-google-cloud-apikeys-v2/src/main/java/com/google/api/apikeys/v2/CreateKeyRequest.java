@@ -33,6 +33,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.api.apikeys.v2.CreateKeyRequest)
     CreateKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateKeyRequest.newBuilder() to construct.
   private CreateKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int KEY_FIELD_NUMBER = 2;
   private com.google.api.apikeys.v2.Key key_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
   public com.google.api.apikeys.v2.Key getKey() {
     return key_ == null ? com.google.api.apikeys.v2.Key.getDefaultInstance() : key_;
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -421,6 +429,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +783,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
             com.google.api.apikeys.v2.Key.Builder,
             com.google.api.apikeys.v2.KeyOrBuilder>
         keyBuilder_;
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasKey() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
         return keyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +937,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
         return key_ == null ? com.google.api.apikeys.v2.Key.getDefaultInstance() : key_;
       }
     }
+
     /**
      *
      *
@@ -963,6 +986,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object keyId_ = "";
+
     /**
      *
      *
@@ -993,6 +1017,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1078,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1104,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

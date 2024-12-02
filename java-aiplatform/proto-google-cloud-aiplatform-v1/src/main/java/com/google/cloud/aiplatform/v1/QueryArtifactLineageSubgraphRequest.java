@@ -35,6 +35,7 @@ public final class QueryArtifactLineageSubgraphRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QueryArtifactLineageSubgraphRequest)
     QueryArtifactLineageSubgraphRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryArtifactLineageSubgraphRequest.newBuilder() to construct.
   private QueryArtifactLineageSubgraphRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class QueryArtifactLineageSubgraphRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object artifact_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class QueryArtifactLineageSubgraphRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class QueryArtifactLineageSubgraphRequest
 
   public static final int MAX_HOPS_FIELD_NUMBER = 2;
   private int maxHops_ = 0;
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class QueryArtifactLineageSubgraphRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -207,6 +212,7 @@ public final class QueryArtifactLineageSubgraphRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -434,6 +440,7 @@ public final class QueryArtifactLineageSubgraphRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +661,7 @@ public final class QueryArtifactLineageSubgraphRequest
     private int bitField0_;
 
     private java.lang.Object artifact_ = "";
+
     /**
      *
      *
@@ -684,6 +692,7 @@ public final class QueryArtifactLineageSubgraphRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -714,6 +723,7 @@ public final class QueryArtifactLineageSubgraphRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -743,6 +753,7 @@ public final class QueryArtifactLineageSubgraphRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +779,7 @@ public final class QueryArtifactLineageSubgraphRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +812,7 @@ public final class QueryArtifactLineageSubgraphRequest
     }
 
     private int maxHops_;
+
     /**
      *
      *
@@ -819,6 +832,7 @@ public final class QueryArtifactLineageSubgraphRequest
     public int getMaxHops() {
       return maxHops_;
     }
+
     /**
      *
      *
@@ -842,6 +856,7 @@ public final class QueryArtifactLineageSubgraphRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +880,7 @@ public final class QueryArtifactLineageSubgraphRequest
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -911,6 +927,7 @@ public final class QueryArtifactLineageSubgraphRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -957,6 +974,7 @@ public final class QueryArtifactLineageSubgraphRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1020,7 @@ public final class QueryArtifactLineageSubgraphRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1062,7 @@ public final class QueryArtifactLineageSubgraphRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

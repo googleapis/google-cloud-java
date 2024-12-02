@@ -33,6 +33,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SmartReplyModelMetadata)
     SmartReplyModelMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SmartReplyModelMetadata.newBuilder() to construct.
   private SmartReplyModelMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
 
   public static final int TRAINING_MODEL_TYPE_FIELD_NUMBER = 6;
   private int trainingModelType_ = 0;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
   public int getTrainingModelTypeValue() {
     return trainingModelType_;
   }
+
   /**
    *
    *
@@ -270,6 +273,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -452,6 +456,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int trainingModelType_ = 0;
+
     /**
      *
      *
@@ -470,6 +475,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
     public int getTrainingModelTypeValue() {
       return trainingModelType_;
     }
+
     /**
      *
      *
@@ -491,6 +497,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
           ? com.google.cloud.dialogflow.v2.ConversationModel.ModelType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class SmartReplyModelMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

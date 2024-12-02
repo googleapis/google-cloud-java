@@ -33,6 +33,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datapolicies.v1.CreateDataPolicyRequest)
     CreateDataPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDataPolicyRequest.newBuilder() to construct.
   private CreateDataPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
 
   public static final int DATA_POLICY_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.datapolicies.v1.DataPolicy dataPolicy_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
   public boolean hasDataPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
         ? com.google.cloud.bigquery.datapolicies.v1.DataPolicy.getDefaultInstance()
         : dataPolicy_;
   }
+
   /**
    *
    *
@@ -355,6 +361,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +580,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
             com.google.cloud.bigquery.datapolicies.v1.DataPolicy.Builder,
             com.google.cloud.bigquery.datapolicies.v1.DataPolicyOrBuilder>
         dataPolicyBuilder_;
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
     public boolean hasDataPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
         return dataPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +835,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +858,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
       onChanged();
       return getDataPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -878,6 +898,7 @@ public final class CreateDataPolicyRequest extends com.google.protobuf.Generated
             : dataPolicy_;
       }
     }
+
     /**
      *
      *

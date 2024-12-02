@@ -36,6 +36,7 @@ public interface ApplianceVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ApplianceVersionOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface ApplianceVersionOrBuilder
    * @return The releaseNotesUri.
    */
   java.lang.String getReleaseNotesUri();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface PricingInfoOrBuilder
    * @return Whether the effectiveTime field is set.
    */
   boolean hasEffectiveTime();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface PricingInfoOrBuilder
    * @return The effectiveTime.
    */
   com.google.protobuf.Timestamp getEffectiveTime();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface PricingInfoOrBuilder
    * @return The summary.
    */
   java.lang.String getSummary();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface PricingInfoOrBuilder
    * @return Whether the pricingExpression field is set.
    */
   boolean hasPricingExpression();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface PricingInfoOrBuilder
    * @return The pricingExpression.
    */
   com.google.cloud.billing.v1.PricingExpression getPricingExpression();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface PricingInfoOrBuilder
    * @return Whether the aggregationInfo field is set.
    */
   boolean hasAggregationInfo();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface PricingInfoOrBuilder
    * @return The aggregationInfo.
    */
   com.google.cloud.billing.v1.AggregationInfo getAggregationInfo();
+
   /**
    *
    *

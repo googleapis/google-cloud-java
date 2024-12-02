@@ -34,6 +34,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse)
     ListBatchPredictionJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListBatchPredictionJobsResponse.newBuilder() to construct.
   private ListBatchPredictionJobsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.BatchPredictionJob> batchPredictionJobs_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       getBatchPredictionJobsList() {
     return batchPredictionJobs_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       getBatchPredictionJobsOrBuilderList() {
     return batchPredictionJobs_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
   public int getBatchPredictionJobsCount() {
     return batchPredictionJobs_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
   public com.google.cloud.aiplatform.v1.BatchPredictionJob getBatchPredictionJobs(int index) {
     return batchPredictionJobs_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -653,6 +662,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
         return batchPredictionJobsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
         return batchPredictionJobsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
         return batchPredictionJobsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -711,6 +723,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +769,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
         int index) {
       return getBatchPredictionJobsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -914,6 +936,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
         return batchPredictionJobsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(batchPredictionJobs_);
       }
     }
+
     /**
      *
      *
@@ -947,6 +971,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       return getBatchPredictionJobsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.BatchPredictionJob.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -963,6 +988,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.BatchPredictionJob.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -999,6 +1025,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1024,6 +1051,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1077,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1102,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1123,7 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    * @return The clientConnectorServiceId.
    */
   java.lang.String getClientConnectorServiceId();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    * @return Whether the clientConnectorService field is set.
    */
   boolean hasClientConnectorService();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    */
   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       getClientConnectorService();
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

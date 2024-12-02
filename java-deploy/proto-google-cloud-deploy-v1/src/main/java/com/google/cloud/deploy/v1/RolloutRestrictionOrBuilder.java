@@ -37,6 +37,7 @@ public interface RolloutRestrictionOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface RolloutRestrictionOrBuilder
    * @return A list containing the invokers.
    */
   java.util.List<com.google.cloud.deploy.v1.DeployPolicy.Invoker> getInvokersList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface RolloutRestrictionOrBuilder
    * @return The count of invokers.
    */
   int getInvokersCount();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface RolloutRestrictionOrBuilder
    * @return The invokers at the given index.
    */
   com.google.cloud.deploy.v1.DeployPolicy.Invoker getInvokers(int index);
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface RolloutRestrictionOrBuilder
    * @return A list containing the enum numeric values on the wire for invokers.
    */
   java.util.List<java.lang.Integer> getInvokersValueList();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface RolloutRestrictionOrBuilder
    * @return A list containing the actions.
    */
   java.util.List<com.google.cloud.deploy.v1.RolloutRestriction.RolloutActions> getActionsList();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface RolloutRestrictionOrBuilder
    * @return The count of actions.
    */
   int getActionsCount();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface RolloutRestrictionOrBuilder
    * @return The actions at the given index.
    */
   com.google.cloud.deploy.v1.RolloutRestriction.RolloutActions getActions(int index);
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public interface RolloutRestrictionOrBuilder
    * @return A list containing the enum numeric values on the wire for actions.
    */
   java.util.List<java.lang.Integer> getActionsValueList();
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface RolloutRestrictionOrBuilder
    * @return Whether the timeWindows field is set.
    */
   boolean hasTimeWindows();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface RolloutRestrictionOrBuilder
    * @return The timeWindows.
    */
   com.google.cloud.deploy.v1.TimeWindows getTimeWindows();
+
   /**
    *
    *

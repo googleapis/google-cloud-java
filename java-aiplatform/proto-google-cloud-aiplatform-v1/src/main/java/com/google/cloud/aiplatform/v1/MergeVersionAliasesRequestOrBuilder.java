@@ -41,6 +41,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * @return A list containing the versionAliases.
    */
   java.util.List<java.lang.String> getVersionAliasesList();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * @return The count of versionAliases.
    */
   int getVersionAliasesCount();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * @return The versionAliases at the given index.
    */
   java.lang.String getVersionAliases(int index);
+
   /**
    *
    *

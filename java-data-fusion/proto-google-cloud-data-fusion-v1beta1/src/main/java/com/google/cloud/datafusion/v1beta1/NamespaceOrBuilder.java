@@ -36,6 +36,7 @@ public interface NamespaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NamespaceOrBuilder
    * @return Whether the iamPolicy field is set.
    */
   boolean hasIamPolicy();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NamespaceOrBuilder
    * @return The iamPolicy.
    */
   com.google.cloud.datafusion.v1beta1.IAMPolicy getIamPolicy();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.Installment)
     InstallmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Installment.newBuilder() to construct.
   private Installment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MONTHS_FIELD_NUMBER = 1;
   private long months_ = 0L;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AMOUNT_FIELD_NUMBER = 2;
   private com.google.shopping.type.Price amount_;
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAmount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.type.Price getAmount() {
     return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DOWNPAYMENT_FIELD_NUMBER = 3;
   private com.google.shopping.type.Price downpayment_;
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDownpayment() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.type.Price.getDefaultInstance()
         : downpayment_;
   }
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creditType_ = "";
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreditType() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -455,6 +466,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -702,6 +714,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long months_;
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
     public long getMonths() {
       return months_;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         amountBuilder_;
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
         return amountBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAmountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -909,6 +932,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
         return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
       }
     }
+
     /**
      *
      *
@@ -941,6 +965,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         downpaymentBuilder_;
+
     /**
      *
      *
@@ -955,6 +980,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDownpayment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
         return downpaymentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -997,6 +1024,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1044,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1072,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1092,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1107,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDownpaymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1094,6 +1126,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
             : downpayment_;
       }
     }
+
     /**
      *
      *
@@ -1121,6 +1154,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object creditType_ = "";
+
     /**
      *
      *
@@ -1138,6 +1172,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreditType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1163,6 +1198,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1224,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1249,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1270,7 @@ public final class Installment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

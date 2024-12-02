@@ -45,6 +45,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ServiceLevelIndicator)
     ServiceLevelIndicatorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceLevelIndicator.newBuilder() to construct.
   private ServiceLevelIndicator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -91,6 +92,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     private TypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -126,6 +128,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   }
 
   public static final int BASIC_SLI_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   public boolean hasBasicSli() {
     return typeCase_ == 4;
   }
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     }
     return com.google.monitoring.v3.BasicSli.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REQUEST_BASED_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   public boolean hasRequestBased() {
     return typeCase_ == 1;
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     }
     return com.google.monitoring.v3.RequestBasedSli.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   }
 
   public static final int WINDOWS_BASED_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   public boolean hasWindowsBased() {
     return typeCase_ == 2;
   }
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     }
     return com.google.monitoring.v3.WindowsBasedSli.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -482,6 +493,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -745,6 +757,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
             com.google.monitoring.v3.BasicSli.Builder,
             com.google.monitoring.v3.BasicSliOrBuilder>
         basicSliBuilder_;
+
     /**
      *
      *
@@ -760,6 +773,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     public boolean hasBasicSli() {
       return typeCase_ == 4;
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
         return com.google.monitoring.v3.BasicSli.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -807,6 +822,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +842,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +874,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +900,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     public com.google.monitoring.v3.BasicSli.Builder getBasicSliBuilder() {
       return getBasicSliFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
         return com.google.monitoring.v3.BasicSli.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
             com.google.monitoring.v3.RequestBasedSli.Builder,
             com.google.monitoring.v3.RequestBasedSliOrBuilder>
         requestBasedBuilder_;
+
     /**
      *
      *
@@ -965,6 +987,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     public boolean hasRequestBased() {
       return typeCase_ == 1;
     }
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
         return com.google.monitoring.v3.RequestBasedSli.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1036,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1057,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1090,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1116,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1129,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     public com.google.monitoring.v3.RequestBasedSli.Builder getRequestBasedBuilder() {
       return getRequestBasedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1121,6 +1150,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
         return com.google.monitoring.v3.RequestBasedSli.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1189,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
             com.google.monitoring.v3.WindowsBasedSli.Builder,
             com.google.monitoring.v3.WindowsBasedSliOrBuilder>
         windowsBasedBuilder_;
+
     /**
      *
      *
@@ -1174,6 +1205,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     public boolean hasWindowsBased() {
       return typeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1199,6 +1231,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
         return com.google.monitoring.v3.WindowsBasedSli.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1254,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1275,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1308,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       typeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1334,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1347,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     public com.google.monitoring.v3.WindowsBasedSli.Builder getWindowsBasedBuilder() {
       return getWindowsBasedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1330,6 +1368,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
         return com.google.monitoring.v3.WindowsBasedSli.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface CustomFieldOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface CustomFieldOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface CustomFieldOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface CustomFieldOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public interface CustomFieldOrBuilder
    * @return The enum numeric value on the wire for entityType.
    */
   int getEntityTypeValue();
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public interface CustomFieldOrBuilder
    * @return The enum numeric value on the wire for dataType.
    */
   int getDataTypeValue();
+
   /**
    *
    *
@@ -218,6 +224,7 @@ public interface CustomFieldOrBuilder
    * @return The enum numeric value on the wire for visibility.
    */
   int getVisibilityValue();
+
   /**
    *
    *
@@ -247,6 +254,7 @@ public interface CustomFieldOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.CustomFieldOption> getOptionsList();
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public interface CustomFieldOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.CustomFieldOption getOptions(int index);
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public interface CustomFieldOrBuilder
    * </code>
    */
   int getOptionsCount();
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public interface CustomFieldOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.CustomFieldOptionOrBuilder>
       getOptionsOrBuilderList();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface UndeployModelRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface UndeployModelRequestOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface UndeployModelRequestOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
    */
   int getTrafficSplitCount();
+
   /**
    *
    *
@@ -114,9 +117,11 @@ public interface UndeployModelRequestOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
    */
   boolean containsTrafficSplit(java.lang.String key);
+
   /** Use {@link #getTrafficSplitMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplit();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface UndeployModelRequestOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplitMap();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface UndeployModelRequestOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
    */
   int getTrafficSplitOrDefault(java.lang.String key, int defaultValue);
+
   /**
    *
    *

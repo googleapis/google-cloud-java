@@ -34,6 +34,7 @@ public interface ListSchedulesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Schedule schedules = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Schedule> getSchedulesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSchedulesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Schedule schedules = 1;</code>
    */
   com.google.cloud.aiplatform.v1.Schedule getSchedules(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSchedulesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Schedule schedules = 1;</code>
    */
   int getSchedulesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSchedulesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ScheduleOrBuilder>
       getSchedulesOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListSchedulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

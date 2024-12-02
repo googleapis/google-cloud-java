@@ -37,6 +37,7 @@ public interface ReviewDocumentResponseOrBuilder
    * @return The gcsDestination.
    */
   java.lang.String getGcsDestination();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ReviewDocumentResponseOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ReviewDocumentResponseOrBuilder
    * @return The rejectionReason.
    */
   java.lang.String getRejectionReason();
+
   /**
    *
    *

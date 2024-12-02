@@ -34,6 +34,7 @@ public interface ListFirebaseLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.FirebaseLink firebase_links = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.FirebaseLink> getFirebaseLinksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFirebaseLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.FirebaseLink firebase_links = 1;</code>
    */
   com.google.analytics.admin.v1beta.FirebaseLink getFirebaseLinks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFirebaseLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.FirebaseLink firebase_links = 1;</code>
    */
   int getFirebaseLinksCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFirebaseLinksResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.FirebaseLinkOrBuilder>
       getFirebaseLinksOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListFirebaseLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface ListConversationModelEvaluationsResponseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2.ConversationModelEvaluation>
       getConversationModelEvaluationsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListConversationModelEvaluationsResponseOrBuilder
    */
   com.google.cloud.dialogflow.v2.ConversationModelEvaluation getConversationModelEvaluations(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListConversationModelEvaluationsResponseOrBuilder
    * </code>
    */
   int getConversationModelEvaluationsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ListConversationModelEvaluationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ConversationModelEvaluationOrBuilder>
       getConversationModelEvaluationsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListConversationModelEvaluationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

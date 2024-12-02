@@ -34,6 +34,7 @@ public interface ListKeyRingsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
   java.util.List<com.google.cloud.kms.v1.KeyRing> getKeyRingsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListKeyRingsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
   com.google.cloud.kms.v1.KeyRing getKeyRings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListKeyRingsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
   int getKeyRingsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListKeyRingsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
   java.util.List<? extends com.google.cloud.kms.v1.KeyRingOrBuilder> getKeyRingsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListKeyRingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

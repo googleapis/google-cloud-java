@@ -36,6 +36,7 @@ public interface AnnotationSpecOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AnnotationSpecOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface AnnotationSpecOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface AnnotationSpecOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AnnotationSpecOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface AnnotationSpecOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface AnnotationSpecOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

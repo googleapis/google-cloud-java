@@ -33,6 +33,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Address)
     AddressOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Address.newBuilder() to construct.
   private Address(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object streetAddress_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStreetAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object city_ = "";
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCity() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object administrativeArea_ = "";
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdministrativeArea() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postalCode_ = "";
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostalCode() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -314,6 +326,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -342,6 +355,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
+
   /**
    *
    *
@@ -359,6 +373,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegionCode() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -384,6 +399,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -630,6 +646,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -881,6 +898,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object streetAddress_ = "";
+
     /**
      *
      *
@@ -895,6 +913,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStreetAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -917,6 +936,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -939,6 +959,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -960,6 +981,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +999,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1024,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object city_ = "";
+
     /**
      *
      *
@@ -1016,6 +1040,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1039,6 +1064,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1088,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1111,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1156,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object administrativeArea_ = "";
+
     /**
      *
      *
@@ -1143,6 +1173,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdministrativeArea() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1167,6 +1198,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1223,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1247,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1267,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1294,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object postalCode_ = "";
+
     /**
      *
      *
@@ -1273,6 +1309,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostalCode() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1295,6 +1332,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1317,6 +1355,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1338,6 +1377,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1395,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1420,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -1395,6 +1437,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegionCode() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1419,6 +1462,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1443,6 +1487,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1466,6 +1511,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1531,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

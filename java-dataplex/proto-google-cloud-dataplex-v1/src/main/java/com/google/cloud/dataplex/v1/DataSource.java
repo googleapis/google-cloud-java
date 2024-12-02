@@ -33,6 +33,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataSource)
     DataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataSource.newBuilder() to construct.
   private DataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTITY_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEntity() {
     return sourceCase_ == 100;
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResource() {
     return sourceCase_ == 101;
   }
+
   /**
    *
    *
@@ -240,6 +247,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -455,6 +463,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -697,6 +706,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEntity() {
       return sourceCase_ == 100;
     }
+
     /**
      *
      *
@@ -729,6 +739,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -761,6 +772,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -786,6 +798,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +822,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +868,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResource() {
       return sourceCase_ == 101;
     }
+
     /**
      *
      *
@@ -885,6 +900,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -916,6 +932,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -940,6 +957,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +980,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

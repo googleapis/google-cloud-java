@@ -34,6 +34,7 @@ public interface ListBrandsResponseOrBuilder
    * <code>repeated .google.cloud.iap.v1.Brand brands = 1;</code>
    */
   java.util.List<com.google.cloud.iap.v1.Brand> getBrandsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBrandsResponseOrBuilder
    * <code>repeated .google.cloud.iap.v1.Brand brands = 1;</code>
    */
   com.google.cloud.iap.v1.Brand getBrands(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBrandsResponseOrBuilder
    * <code>repeated .google.cloud.iap.v1.Brand brands = 1;</code>
    */
   int getBrandsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListBrandsResponseOrBuilder
    * <code>repeated .google.cloud.iap.v1.Brand brands = 1;</code>
    */
   java.util.List<? extends com.google.cloud.iap.v1.BrandOrBuilder> getBrandsOrBuilderList();
+
   /**
    *
    *

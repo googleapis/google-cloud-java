@@ -34,6 +34,7 @@ public interface ListGrantsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Grant grants = 1;</code>
    */
   java.util.List<com.google.cloud.privilegedaccessmanager.v1.Grant> getGrantsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListGrantsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Grant grants = 1;</code>
    */
   com.google.cloud.privilegedaccessmanager.v1.Grant getGrants(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListGrantsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Grant grants = 1;</code>
    */
   int getGrantsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListGrantsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.privilegedaccessmanager.v1.GrantOrBuilder>
       getGrantsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListGrantsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListGrantsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListGrantsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListGrantsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

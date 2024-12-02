@@ -33,6 +33,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment)
     PhoneFraudAssessmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PhoneFraudAssessment.newBuilder() to construct.
   private PhoneFraudAssessment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int SMS_TOLL_FRAUD_VERDICT_FIELD_NUMBER = 1;
   private com.google.recaptchaenterprise.v1.SmsTollFraudVerdict smsTollFraudVerdict_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
   public boolean hasSmsTollFraudVerdict() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
         ? com.google.recaptchaenterprise.v1.SmsTollFraudVerdict.getDefaultInstance()
         : smsTollFraudVerdict_;
   }
+
   /**
    *
    *
@@ -284,6 +288,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -491,6 +496,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
             com.google.recaptchaenterprise.v1.SmsTollFraudVerdict.Builder,
             com.google.recaptchaenterprise.v1.SmsTollFraudVerdictOrBuilder>
         smsTollFraudVerdictBuilder_;
+
     /**
      *
      *
@@ -507,6 +513,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
     public boolean hasSmsTollFraudVerdict() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -529,6 +536,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
         return smsTollFraudVerdictBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -554,6 +562,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -576,6 +585,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +657,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
       onChanged();
       return getSmsTollFraudVerdictFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class PhoneFraudAssessment extends com.google.protobuf.GeneratedMes
             : smsTollFraudVerdict_;
       }
     }
+
     /**
      *
      *

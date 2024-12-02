@@ -38,6 +38,7 @@ public interface UpdateEndpointRequestOrBuilder
    * @return Whether the endpoint field is set.
    */
   boolean hasEndpoint();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateEndpointRequestOrBuilder
    * @return The endpoint.
    */
   com.google.cloud.aiplatform.v1.Endpoint getEndpoint();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateEndpointRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateEndpointRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.WorkflowInvocationAction)
     WorkflowInvocationActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkflowInvocationAction.newBuilder() to construct.
   private WorkflowInvocationAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -159,6 +160,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * <code>PENDING = 0;</code>
      */
     public static final int PENDING_VALUE = 0;
+
     /**
      *
      *
@@ -169,6 +171,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * <code>RUNNING = 1;</code>
      */
     public static final int RUNNING_VALUE = 1;
+
     /**
      *
      *
@@ -180,6 +183,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * <code>SKIPPED = 2;</code>
      */
     public static final int SKIPPED_VALUE = 2;
+
     /**
      *
      *
@@ -191,6 +195,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * <code>DISABLED = 3;</code>
      */
     public static final int DISABLED_VALUE = 3;
+
     /**
      *
      *
@@ -201,6 +206,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * <code>SUCCEEDED = 4;</code>
      */
     public static final int SUCCEEDED_VALUE = 4;
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * <code>CANCELLED = 5;</code>
      */
     public static final int CANCELLED_VALUE = 5;
+
     /**
      *
      *
@@ -332,6 +339,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return The sqlScript.
      */
     java.lang.String getSqlScript();
+
     /**
      *
      *
@@ -345,6 +353,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     com.google.protobuf.ByteString getSqlScriptBytes();
   }
+
   /**
    *
    *
@@ -359,6 +368,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.WorkflowInvocationAction.BigQueryAction)
       BigQueryActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BigQueryAction.newBuilder() to construct.
     private BigQueryAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -394,6 +404,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sqlScript_ = "";
+
     /**
      *
      *
@@ -417,6 +428,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         return s;
       }
     }
+
     /**
      *
      *
@@ -609,6 +621,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -807,6 +820,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       private int bitField0_;
 
       private java.lang.Object sqlScript_ = "";
+
       /**
        *
        *
@@ -829,6 +843,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -851,6 +866,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -872,6 +888,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -889,6 +906,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -983,6 +1001,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int TARGET_FIELD_NUMBER = 1;
   private com.google.cloud.dataform.v1alpha2.Target target_;
+
   /**
    *
    *
@@ -1000,6 +1019,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   public boolean hasTarget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1019,6 +1039,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         ? com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()
         : target_;
   }
+
   /**
    *
    *
@@ -1039,6 +1060,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
 
   public static final int CANONICAL_TARGET_FIELD_NUMBER = 2;
   private com.google.cloud.dataform.v1alpha2.Target canonicalTarget_;
+
   /**
    *
    *
@@ -1057,6 +1079,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   public boolean hasCanonicalTarget() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1077,6 +1100,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         ? com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()
         : canonicalTarget_;
   }
+
   /**
    *
    *
@@ -1098,6 +1122,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1115,6 +1140,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1141,6 +1167,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failureReason_ = "";
+
   /**
    *
    *
@@ -1164,6 +1191,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1190,6 +1218,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
 
   public static final int INVOCATION_TIMING_FIELD_NUMBER = 5;
   private com.google.type.Interval invocationTiming_;
+
   /**
    *
    *
@@ -1210,6 +1239,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   public boolean hasInvocationTiming() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1232,6 +1262,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         ? com.google.type.Interval.getDefaultInstance()
         : invocationTiming_;
   }
+
   /**
    *
    *
@@ -1256,6 +1287,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   public static final int BIGQUERY_ACTION_FIELD_NUMBER = 6;
   private com.google.cloud.dataform.v1alpha2.WorkflowInvocationAction.BigQueryAction
       bigqueryAction_;
+
   /**
    *
    *
@@ -1273,6 +1305,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   public boolean hasBigqueryAction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1294,6 +1327,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             .getDefaultInstance()
         : bigqueryAction_;
   }
+
   /**
    *
    *
@@ -1541,6 +1575,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1833,6 +1868,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             com.google.cloud.dataform.v1alpha2.Target.Builder,
             com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
         targetBuilder_;
+
     /**
      *
      *
@@ -1849,6 +1885,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public boolean hasTarget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1871,6 +1908,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         return targetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1895,6 +1933,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1916,6 +1955,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1945,6 +1985,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1966,6 +2007,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1982,6 +2024,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2002,6 +2045,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             : target_;
       }
     }
+
     /**
      *
      *
@@ -2036,6 +2080,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             com.google.cloud.dataform.v1alpha2.Target.Builder,
             com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
         canonicalTargetBuilder_;
+
     /**
      *
      *
@@ -2053,6 +2098,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public boolean hasCanonicalTarget() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2076,6 +2122,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         return canonicalTargetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2101,6 +2148,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2124,6 +2172,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2154,6 +2203,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2176,6 +2226,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2193,6 +2244,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return getCanonicalTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2214,6 +2266,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             : canonicalTarget_;
       }
     }
+
     /**
      *
      *
@@ -2244,6 +2297,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2261,6 +2315,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2281,6 +2336,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2302,6 +2358,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           ? com.google.cloud.dataform.v1alpha2.WorkflowInvocationAction.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2326,6 +2383,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2347,6 +2405,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     }
 
     private java.lang.Object failureReason_ = "";
+
     /**
      *
      *
@@ -2369,6 +2428,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2391,6 +2451,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2412,6 +2473,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2429,6 +2491,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2458,6 +2521,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         invocationTimingBuilder_;
+
     /**
      *
      *
@@ -2478,6 +2542,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public boolean hasInvocationTiming() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2504,6 +2569,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         return invocationTimingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2532,6 +2598,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2557,6 +2624,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2590,6 +2658,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2615,6 +2684,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2635,6 +2705,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return getInvocationTimingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2659,6 +2730,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             : invocationTiming_;
       }
     }
+
     /**
      *
      *
@@ -2698,6 +2770,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             com.google.cloud.dataform.v1alpha2.WorkflowInvocationAction.BigQueryAction.Builder,
             com.google.cloud.dataform.v1alpha2.WorkflowInvocationAction.BigQueryActionOrBuilder>
         bigqueryActionBuilder_;
+
     /**
      *
      *
@@ -2714,6 +2787,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public boolean hasBigqueryAction() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2738,6 +2812,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         return bigqueryActionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2763,6 +2838,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2786,6 +2862,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2818,6 +2895,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2839,6 +2917,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2856,6 +2935,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       onChanged();
       return getBigqueryActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2878,6 +2958,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             : bigqueryAction_;
       }
     }
+
     /**
      *
      *

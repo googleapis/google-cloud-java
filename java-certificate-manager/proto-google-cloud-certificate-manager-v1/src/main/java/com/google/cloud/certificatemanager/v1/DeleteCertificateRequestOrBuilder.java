@@ -39,6 +39,7 @@ public interface DeleteCertificateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

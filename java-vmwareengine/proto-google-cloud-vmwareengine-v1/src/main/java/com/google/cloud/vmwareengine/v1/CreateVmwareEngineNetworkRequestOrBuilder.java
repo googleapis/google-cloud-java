@@ -44,6 +44,7 @@ public interface CreateVmwareEngineNetworkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface CreateVmwareEngineNetworkRequestOrBuilder
    * @return The vmwareEngineNetworkId.
    */
   java.lang.String getVmwareEngineNetworkId();
+
   /**
    *
    *
@@ -130,6 +132,7 @@ public interface CreateVmwareEngineNetworkRequestOrBuilder
    * @return Whether the vmwareEngineNetwork field is set.
    */
   boolean hasVmwareEngineNetwork();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface CreateVmwareEngineNetworkRequestOrBuilder
    * @return The vmwareEngineNetwork.
    */
   com.google.cloud.vmwareengine.v1.VmwareEngineNetwork getVmwareEngineNetwork();
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public interface CreateVmwareEngineNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

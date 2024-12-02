@@ -45,6 +45,7 @@ public interface ContentLocationOrBuilder
    * @return The containerName.
    */
   java.lang.String getContainerName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface ContentLocationOrBuilder
    * @return Whether the recordLocation field is set.
    */
   boolean hasRecordLocation();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ContentLocationOrBuilder
    * @return The recordLocation.
    */
   com.google.privacy.dlp.v2.RecordLocation getRecordLocation();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface ContentLocationOrBuilder
    * @return Whether the imageLocation field is set.
    */
   boolean hasImageLocation();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface ContentLocationOrBuilder
    * @return The imageLocation.
    */
   com.google.privacy.dlp.v2.ImageLocation getImageLocation();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface ContentLocationOrBuilder
    * @return Whether the documentLocation field is set.
    */
   boolean hasDocumentLocation();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface ContentLocationOrBuilder
    * @return The documentLocation.
    */
   com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface ContentLocationOrBuilder
    * @return Whether the metadataLocation field is set.
    */
   boolean hasMetadataLocation();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface ContentLocationOrBuilder
    * @return The metadataLocation.
    */
   com.google.privacy.dlp.v2.MetadataLocation getMetadataLocation();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface ContentLocationOrBuilder
    * @return Whether the containerTimestamp field is set.
    */
   boolean hasContainerTimestamp();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface ContentLocationOrBuilder
    * @return The containerTimestamp.
    */
   com.google.protobuf.Timestamp getContainerTimestamp();
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public interface ContentLocationOrBuilder
    * @return The containerVersion.
    */
   java.lang.String getContainerVersion();
+
   /**
    *
    *

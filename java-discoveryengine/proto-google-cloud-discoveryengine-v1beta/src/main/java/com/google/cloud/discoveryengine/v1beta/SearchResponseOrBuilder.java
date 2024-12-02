@@ -36,6 +36,7 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>
       getResultsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface SearchResponseOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult getResults(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface SearchResponseOrBuilder
    * </code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -71,6 +74,7 @@ public interface SearchResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Facet facets = 2;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.Facet> getFacetsList();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Facet facets = 2;</code>
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.Facet getFacets(int index);
+
   /**
    *
    *
@@ -114,6 +120,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Facet facets = 2;</code>
    */
   int getFacetsCount();
+
   /**
    *
    *
@@ -125,6 +132,7 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.FacetOrBuilder>
       getFacetsOrBuilderList();
+
   /**
    *
    *
@@ -151,6 +159,7 @@ public interface SearchResponseOrBuilder
    * @return Whether the guidedSearchResult field is set.
    */
   boolean hasGuidedSearchResult();
+
   /**
    *
    *
@@ -165,6 +174,7 @@ public interface SearchResponseOrBuilder
    * @return The guidedSearchResult.
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult getGuidedSearchResult();
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public interface SearchResponseOrBuilder
    * @return The attributionToken.
    */
   java.lang.String getAttributionToken();
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public interface SearchResponseOrBuilder
    * @return The redirectUri.
    */
   java.lang.String getRedirectUri();
+
   /**
    *
    *
@@ -280,6 +292,7 @@ public interface SearchResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -310,6 +323,7 @@ public interface SearchResponseOrBuilder
    * @return The correctedQuery.
    */
   java.lang.String getCorrectedQuery();
+
   /**
    *
    *
@@ -340,6 +354,7 @@ public interface SearchResponseOrBuilder
    * @return Whether the summary field is set.
    */
   boolean hasSummary();
+
   /**
    *
    *
@@ -355,6 +370,7 @@ public interface SearchResponseOrBuilder
    * @return The summary.
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary getSummary();
+
   /**
    *
    *
@@ -381,6 +397,7 @@ public interface SearchResponseOrBuilder
    * @return A list containing the appliedControls.
    */
   java.util.List<java.lang.String> getAppliedControlsList();
+
   /**
    *
    *
@@ -393,6 +410,7 @@ public interface SearchResponseOrBuilder
    * @return The count of appliedControls.
    */
   int getAppliedControlsCount();
+
   /**
    *
    *
@@ -406,6 +424,7 @@ public interface SearchResponseOrBuilder
    * @return The appliedControls at the given index.
    */
   java.lang.String getAppliedControls(int index);
+
   /**
    *
    *
@@ -427,6 +446,7 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo>
       getGeoSearchDebugInfoList();
+
   /**
    * <code>
    * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
@@ -434,12 +454,14 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo getGeoSearchDebugInfo(
       int index);
+
   /**
    * <code>
    * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
    * </code>
    */
   int getGeoSearchDebugInfoCount();
+
   /**
    * <code>
    * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
@@ -449,6 +471,7 @@ public interface SearchResponseOrBuilder
           ? extends
               com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfoOrBuilder>
       getGeoSearchDebugInfoOrBuilderList();
+
   /**
    * <code>
    * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
@@ -471,6 +494,7 @@ public interface SearchResponseOrBuilder
    * @return Whether the queryExpansionInfo field is set.
    */
   boolean hasQueryExpansionInfo();
+
   /**
    *
    *
@@ -485,6 +509,7 @@ public interface SearchResponseOrBuilder
    * @return The queryExpansionInfo.
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo getQueryExpansionInfo();
+
   /**
    *
    *
@@ -513,6 +538,7 @@ public interface SearchResponseOrBuilder
    * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
    */
   boolean hasNaturalLanguageQueryUnderstandingInfo();
+
   /**
    *
    *
@@ -528,6 +554,7 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
       getNaturalLanguageQueryUnderstandingInfo();
+
   /**
    *
    *
@@ -559,6 +586,7 @@ public interface SearchResponseOrBuilder
    * @return Whether the sessionInfo field is set.
    */
   boolean hasSessionInfo();
+
   /**
    *
    *
@@ -575,6 +603,7 @@ public interface SearchResponseOrBuilder
    * @return The sessionInfo.
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo getSessionInfo();
+
   /**
    *
    *
@@ -605,6 +634,7 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>
       getOneBoxResultsList();
+
   /**
    *
    *
@@ -618,6 +648,7 @@ public interface SearchResponseOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult getOneBoxResults(int index);
+
   /**
    *
    *
@@ -631,6 +662,7 @@ public interface SearchResponseOrBuilder
    * </code>
    */
   int getOneBoxResultsCount();
+
   /**
    *
    *
@@ -646,6 +678,7 @@ public interface SearchResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder>
       getOneBoxResultsOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.Waypoint)
     WaypointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Waypoint.newBuilder() to construct.
   private Waypoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     private LocationTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocation() {
     return locationTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.maps.routing.v2.Location.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PLACE_ID_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPlaceId() {
     return locationTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAddress() {
     return locationTypeCase_ == 7;
   }
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -313,6 +324,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VIA_FIELD_NUMBER = 3;
   private boolean via_ = false;
+
   /**
    *
    *
@@ -341,6 +353,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_STOPOVER_FIELD_NUMBER = 4;
   private boolean vehicleStopover_ = false;
+
   /**
    *
    *
@@ -364,6 +377,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIDE_OF_ROAD_FIELD_NUMBER = 5;
   private boolean sideOfRoad_ = false;
+
   /**
    *
    *
@@ -610,6 +624,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -894,6 +909,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.Location.Builder,
             com.google.maps.routing.v2.LocationOrBuilder>
         locationBuilder_;
+
     /**
      *
      *
@@ -910,6 +926,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocation() {
       return locationTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -936,6 +953,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return com.google.maps.routing.v2.Location.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -959,6 +977,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       locationTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +998,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       locationTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1032,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       locationTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1059,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1073,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.routing.v2.Location.Builder getLocationBuilder() {
       return getLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1072,6 +1095,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return com.google.maps.routing.v2.Location.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1121,6 +1145,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPlaceId() {
       return locationTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1149,6 +1174,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1203,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1198,6 +1225,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1245,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1285,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAddress() {
       return locationTypeCase_ == 7;
     }
+
     /**
      *
      *
@@ -1285,6 +1315,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1314,6 +1345,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1336,6 +1368,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1389,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1415,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean via_;
+
     /**
      *
      *
@@ -1406,6 +1441,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean getVia() {
       return via_;
     }
+
     /**
      *
      *
@@ -1435,6 +1471,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1501,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean vehicleStopover_;
+
     /**
      *
      *
@@ -1484,6 +1522,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean getVehicleStopover() {
       return vehicleStopover_;
     }
+
     /**
      *
      *
@@ -1508,6 +1547,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1532,6 +1572,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean sideOfRoad_;
+
     /**
      *
      *
@@ -1552,6 +1593,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean getSideOfRoad() {
       return sideOfRoad_;
     }
+
     /**
      *
      *
@@ -1576,6 +1618,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

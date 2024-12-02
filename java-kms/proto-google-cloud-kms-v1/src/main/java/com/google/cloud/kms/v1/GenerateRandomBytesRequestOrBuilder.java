@@ -37,6 +37,7 @@ public interface GenerateRandomBytesRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface GenerateRandomBytesRequestOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.TransitPreferences)
     TransitPreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransitPreferences.newBuilder() to construct.
   private TransitPreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,6 +150,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
      * <code>TRANSIT_TRAVEL_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int TRANSIT_TRAVEL_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -159,6 +161,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
      * <code>BUS = 1;</code>
      */
     public static final int BUS_VALUE = 1;
+
     /**
      *
      *
@@ -169,6 +172,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
      * <code>SUBWAY = 2;</code>
      */
     public static final int SUBWAY_VALUE = 2;
+
     /**
      *
      *
@@ -179,6 +183,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
      * <code>TRAIN = 3;</code>
      */
     public static final int TRAIN_VALUE = 3;
+
     /**
      *
      *
@@ -189,6 +194,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
      * <code>LIGHT_RAIL = 4;</code>
      */
     public static final int LIGHT_RAIL_VALUE = 4;
+
     /**
      *
      *
@@ -348,6 +354,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
      * <code>TRANSIT_ROUTING_PREFERENCE_UNSPECIFIED = 0;</code>
      */
     public static final int TRANSIT_ROUTING_PREFERENCE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -359,6 +366,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
      * <code>LESS_WALKING = 1;</code>
      */
     public static final int LESS_WALKING_VALUE = 1;
+
     /**
      *
      *
@@ -477,6 +485,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
+
   /**
    *
    *
@@ -498,6 +507,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
         java.lang.Integer, com.google.maps.routing.v2.TransitPreferences.TransitTravelMode>(
         allowedTravelModes_, allowedTravelModes_converter_);
   }
+
   /**
    *
    *
@@ -516,6 +526,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
   public int getAllowedTravelModesCount() {
     return allowedTravelModes_.size();
   }
+
   /**
    *
    *
@@ -536,6 +547,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       int index) {
     return allowedTravelModes_converter_.convert(allowedTravelModes_.get(index));
   }
+
   /**
    *
    *
@@ -554,6 +566,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getAllowedTravelModesValueList() {
     return allowedTravelModes_;
   }
+
   /**
    *
    *
@@ -578,6 +591,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
 
   public static final int ROUTING_PREFERENCE_FIELD_NUMBER = 2;
   private int routingPreference_ = 0;
+
   /**
    *
    *
@@ -596,6 +610,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
   public int getRoutingPreferenceValue() {
     return routingPreference_;
   }
+
   /**
    *
    *
@@ -812,6 +827,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1042,6 +1058,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1079,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.maps.routing.v2.TransitPreferences.TransitTravelMode>(
           allowedTravelModes_, allowedTravelModes_converter_);
     }
+
     /**
      *
      *
@@ -1079,6 +1097,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
     public int getAllowedTravelModesCount() {
       return allowedTravelModes_.size();
     }
+
     /**
      *
      *
@@ -1098,6 +1117,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
         int index) {
       return allowedTravelModes_converter_.convert(allowedTravelModes_.get(index));
     }
+
     /**
      *
      *
@@ -1124,6 +1144,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1170,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1197,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1218,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1236,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getAllowedTravelModesValueList() {
       return java.util.Collections.unmodifiableList(allowedTravelModes_);
     }
+
     /**
      *
      *
@@ -1230,6 +1255,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
     public int getAllowedTravelModesValue(int index) {
       return allowedTravelModes_.get(index);
     }
+
     /**
      *
      *
@@ -1252,6 +1278,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1300,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1326,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
     }
 
     private int routingPreference_ = 0;
+
     /**
      *
      *
@@ -1316,6 +1345,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
     public int getRoutingPreferenceValue() {
       return routingPreference_;
     }
+
     /**
      *
      *
@@ -1337,6 +1367,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1392,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
           ? com.google.maps.routing.v2.TransitPreferences.TransitRoutingPreference.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1386,6 +1418,7 @@ public final class TransitPreferences extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

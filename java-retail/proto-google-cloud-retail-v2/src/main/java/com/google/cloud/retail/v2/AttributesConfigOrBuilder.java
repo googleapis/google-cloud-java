@@ -39,6 +39,7 @@ public interface AttributesConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface AttributesConfigOrBuilder
    * </code>
    */
   int getCatalogAttributesCount();
+
   /**
    *
    *
@@ -93,10 +95,12 @@ public interface AttributesConfigOrBuilder
    * </code>
    */
   boolean containsCatalogAttributes(java.lang.String key);
+
   /** Use {@link #getCatalogAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CatalogAttribute>
       getCatalogAttributes();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface AttributesConfigOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CatalogAttribute>
       getCatalogAttributesMap();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface AttributesConfigOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.retail.v2.CatalogAttribute defaultValue);
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface AttributesConfigOrBuilder
    * @return The enum numeric value on the wire for attributeConfigLevel.
    */
   int getAttributeConfigLevelValue();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface SearchVersionsRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SearchVersionsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface SearchVersionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

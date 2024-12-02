@@ -33,6 +33,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ApplicationStreamInput)
     ApplicationStreamInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApplicationStreamInput.newBuilder() to construct.
   private ApplicationStreamInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int STREAM_WITH_ANNOTATION_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.StreamWithAnnotation streamWithAnnotation_;
+
   /**
    * <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code>
    *
@@ -73,6 +75,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
   public boolean hasStreamWithAnnotation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code>
    *
@@ -84,6 +87,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
         ? com.google.cloud.visionai.v1.StreamWithAnnotation.getDefaultInstance()
         : streamWithAnnotation_;
   }
+
   /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
   @java.lang.Override
   public com.google.cloud.visionai.v1.StreamWithAnnotationOrBuilder
@@ -258,6 +262,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -465,6 +470,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
             com.google.cloud.visionai.v1.StreamWithAnnotation.Builder,
             com.google.cloud.visionai.v1.StreamWithAnnotationOrBuilder>
         streamWithAnnotationBuilder_;
+
     /**
      * <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code>
      *
@@ -473,6 +479,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
     public boolean hasStreamWithAnnotation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code>
      *
@@ -487,6 +494,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
         return streamWithAnnotationBuilder_.getMessage();
       }
     }
+
     /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
     public Builder setStreamWithAnnotation(
         com.google.cloud.visionai.v1.StreamWithAnnotation value) {
@@ -502,6 +510,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
     public Builder setStreamWithAnnotation(
         com.google.cloud.visionai.v1.StreamWithAnnotation.Builder builderForValue) {
@@ -514,6 +523,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
     public Builder mergeStreamWithAnnotation(
         com.google.cloud.visionai.v1.StreamWithAnnotation value) {
@@ -535,6 +545,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
     public Builder clearStreamWithAnnotation() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -546,6 +557,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
     public com.google.cloud.visionai.v1.StreamWithAnnotation.Builder
         getStreamWithAnnotationBuilder() {
@@ -553,6 +565,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
       onChanged();
       return getStreamWithAnnotationFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
     public com.google.cloud.visionai.v1.StreamWithAnnotationOrBuilder
         getStreamWithAnnotationOrBuilder() {
@@ -564,6 +577,7 @@ public final class ApplicationStreamInput extends com.google.protobuf.GeneratedM
             : streamWithAnnotation_;
       }
     }
+
     /** <code>.google.cloud.visionai.v1.StreamWithAnnotation stream_with_annotation = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.visionai.v1.StreamWithAnnotation,

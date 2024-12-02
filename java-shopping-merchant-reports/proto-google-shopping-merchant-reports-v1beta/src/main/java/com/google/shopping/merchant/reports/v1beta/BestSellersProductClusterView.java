@@ -41,6 +41,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.BestSellersProductClusterView)
     BestSellersProductClusterViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BestSellersProductClusterView.newBuilder() to construct.
   private BestSellersProductClusterView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -151,6 +152,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * <code>INVENTORY_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int INVENTORY_STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -161,6 +163,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * <code>IN_STOCK = 1;</code>
      */
     public static final int IN_STOCK_VALUE = 1;
+
     /**
      *
      *
@@ -172,6 +175,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * <code>OUT_OF_STOCK = 2;</code>
      */
     public static final int OUT_OF_STOCK_VALUE = 2;
+
     /**
      *
      *
@@ -276,6 +280,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int REPORT_DATE_FIELD_NUMBER = 1;
   private com.google.type.Date reportDate_;
+
   /**
    *
    *
@@ -298,6 +303,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasReportDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -320,6 +326,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public com.google.type.Date getReportDate() {
     return reportDate_ == null ? com.google.type.Date.getDefaultInstance() : reportDate_;
   }
+
   /**
    *
    *
@@ -343,6 +350,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int REPORT_GRANULARITY_FIELD_NUMBER = 2;
   private int reportGranularity_ = 0;
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasReportGranularity() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -385,6 +394,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public int getReportGranularityValue() {
     return reportGranularity_;
   }
+
   /**
    *
    *
@@ -418,6 +428,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reportCountryCode_ = "";
+
   /**
    *
    *
@@ -437,6 +448,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasReportCountryCode() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -464,6 +476,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -494,6 +507,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int REPORT_CATEGORY_ID_FIELD_NUMBER = 4;
   private long reportCategoryId_ = 0L;
+
   /**
    *
    *
@@ -515,6 +529,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasReportCategoryId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -541,6 +556,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -556,6 +572,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasTitle() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -579,6 +596,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -607,6 +625,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object brand_ = "";
+
   /**
    *
    *
@@ -622,6 +641,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasBrand() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -645,6 +665,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -673,6 +694,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL1_ = "";
+
   /**
    *
    *
@@ -690,6 +712,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasCategoryL1() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -715,6 +738,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -745,6 +769,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL2_ = "";
+
   /**
    *
    *
@@ -762,6 +787,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasCategoryL2() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -787,6 +813,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -817,6 +844,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL3_ = "";
+
   /**
    *
    *
@@ -834,6 +862,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasCategoryL3() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -859,6 +888,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -889,6 +919,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL4_ = "";
+
   /**
    *
    *
@@ -906,6 +937,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasCategoryL4() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -931,6 +963,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -961,6 +994,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL5_ = "";
+
   /**
    *
    *
@@ -978,6 +1012,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasCategoryL5() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -1003,6 +1038,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -1034,6 +1070,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList variantGtins_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1048,6 +1085,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getVariantGtinsList() {
     return variantGtins_;
   }
+
   /**
    *
    *
@@ -1062,6 +1100,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public int getVariantGtinsCount() {
     return variantGtins_.size();
   }
+
   /**
    *
    *
@@ -1077,6 +1116,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public java.lang.String getVariantGtins(int index) {
     return variantGtins_.get(index);
   }
+
   /**
    *
    *
@@ -1095,6 +1135,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int INVENTORY_STATUS_FIELD_NUMBER = 14;
   private int inventoryStatus_ = 0;
+
   /**
    *
    *
@@ -1116,6 +1157,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasInventoryStatus() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -1137,6 +1179,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public int getInventoryStatusValue() {
     return inventoryStatus_;
   }
+
   /**
    *
    *
@@ -1169,6 +1212,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int BRAND_INVENTORY_STATUS_FIELD_NUMBER = 15;
   private int brandInventoryStatus_ = 0;
+
   /**
    *
    *
@@ -1191,6 +1235,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasBrandInventoryStatus() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -1213,6 +1258,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public int getBrandInventoryStatusValue() {
     return brandInventoryStatus_;
   }
+
   /**
    *
    *
@@ -1246,6 +1292,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int RANK_FIELD_NUMBER = 16;
   private long rank_ = 0L;
+
   /**
    *
    *
@@ -1262,6 +1309,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasRank() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -1281,6 +1329,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int PREVIOUS_RANK_FIELD_NUMBER = 17;
   private long previousRank_ = 0L;
+
   /**
    *
    *
@@ -1296,6 +1345,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasPreviousRank() {
     return ((bitField0_ & 0x00004000) != 0);
   }
+
   /**
    *
    *
@@ -1314,6 +1364,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int RELATIVE_DEMAND_FIELD_NUMBER = 18;
   private int relativeDemand_ = 0;
+
   /**
    *
    *
@@ -1332,6 +1383,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasRelativeDemand() {
     return ((bitField0_ & 0x00008000) != 0);
   }
+
   /**
    *
    *
@@ -1350,6 +1402,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public int getRelativeDemandValue() {
     return relativeDemand_;
   }
+
   /**
    *
    *
@@ -1377,6 +1430,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int PREVIOUS_RELATIVE_DEMAND_FIELD_NUMBER = 19;
   private int previousRelativeDemand_ = 0;
+
   /**
    *
    *
@@ -1396,6 +1450,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasPreviousRelativeDemand() {
     return ((bitField0_ & 0x00010000) != 0);
   }
+
   /**
    *
    *
@@ -1415,6 +1470,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public int getPreviousRelativeDemandValue() {
     return previousRelativeDemand_;
   }
+
   /**
    *
    *
@@ -1443,6 +1499,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
 
   public static final int RELATIVE_DEMAND_CHANGE_FIELD_NUMBER = 20;
   private int relativeDemandChange_ = 0;
+
   /**
    *
    *
@@ -1460,6 +1517,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public boolean hasRelativeDemandChange() {
     return ((bitField0_ & 0x00020000) != 0);
   }
+
   /**
    *
    *
@@ -1477,6 +1535,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   public int getRelativeDemandChangeValue() {
     return relativeDemandChange_;
   }
+
   /**
    *
    *
@@ -1926,6 +1985,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2422,6 +2482,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         reportDateBuilder_;
+
     /**
      *
      *
@@ -2443,6 +2504,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasReportDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2468,6 +2530,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return reportDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2497,6 +2560,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2523,6 +2587,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2557,6 +2622,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2583,6 +2649,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2604,6 +2671,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return getReportDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2627,6 +2695,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return reportDate_ == null ? com.google.type.Date.getDefaultInstance() : reportDate_;
       }
     }
+
     /**
      *
      *
@@ -2657,6 +2726,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private int reportGranularity_ = 0;
+
     /**
      *
      *
@@ -2678,6 +2748,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasReportGranularity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2699,6 +2770,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public int getReportGranularityValue() {
       return reportGranularity_;
     }
+
     /**
      *
      *
@@ -2723,6 +2795,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2751,6 +2824,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2779,6 +2853,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2804,6 +2879,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private java.lang.Object reportCountryCode_ = "";
+
     /**
      *
      *
@@ -2822,6 +2898,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasReportCountryCode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2848,6 +2925,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2874,6 +2952,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2899,6 +2978,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2920,6 +3000,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2948,6 +3029,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private long reportCategoryId_;
+
     /**
      *
      *
@@ -2969,6 +3051,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasReportCategoryId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2990,6 +3073,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public long getReportCategoryId() {
       return reportCategoryId_;
     }
+
     /**
      *
      *
@@ -3015,6 +3099,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3040,6 +3125,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -3054,6 +3140,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3076,6 +3163,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3098,6 +3186,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3119,6 +3208,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3136,6 +3226,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3160,6 +3251,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private java.lang.Object brand_ = "";
+
     /**
      *
      *
@@ -3174,6 +3266,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasBrand() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3196,6 +3289,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3218,6 +3312,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3239,6 +3334,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3256,6 +3352,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3280,6 +3377,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private java.lang.Object categoryL1_ = "";
+
     /**
      *
      *
@@ -3296,6 +3394,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasCategoryL1() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3320,6 +3419,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3344,6 +3444,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3367,6 +3468,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3386,6 +3488,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3412,6 +3515,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private java.lang.Object categoryL2_ = "";
+
     /**
      *
      *
@@ -3428,6 +3532,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasCategoryL2() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3452,6 +3557,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3476,6 +3582,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3499,6 +3606,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3518,6 +3626,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3544,6 +3653,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private java.lang.Object categoryL3_ = "";
+
     /**
      *
      *
@@ -3560,6 +3670,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasCategoryL3() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3584,6 +3695,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3608,6 +3720,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3631,6 +3744,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3650,6 +3764,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3676,6 +3791,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private java.lang.Object categoryL4_ = "";
+
     /**
      *
      *
@@ -3692,6 +3808,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasCategoryL4() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3716,6 +3833,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3740,6 +3858,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3763,6 +3882,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3782,6 +3902,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3808,6 +3929,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private java.lang.Object categoryL5_ = "";
+
     /**
      *
      *
@@ -3824,6 +3946,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasCategoryL5() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3848,6 +3971,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3872,6 +3996,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3895,6 +4020,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3914,6 +4040,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3948,6 +4075,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -3963,6 +4091,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       variantGtins_.makeImmutable();
       return variantGtins_;
     }
+
     /**
      *
      *
@@ -3977,6 +4106,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public int getVariantGtinsCount() {
       return variantGtins_.size();
     }
+
     /**
      *
      *
@@ -3992,6 +4122,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public java.lang.String getVariantGtins(int index) {
       return variantGtins_.get(index);
     }
+
     /**
      *
      *
@@ -4007,6 +4138,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getVariantGtinsBytes(int index) {
       return variantGtins_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4030,6 +4162,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4052,6 +4185,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4071,6 +4205,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4089,6 +4224,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4114,6 +4250,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private int inventoryStatus_ = 0;
+
     /**
      *
      *
@@ -4135,6 +4272,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasInventoryStatus() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4156,6 +4294,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public int getInventoryStatusValue() {
       return inventoryStatus_;
     }
+
     /**
      *
      *
@@ -4180,6 +4319,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4209,6 +4349,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
               .InventoryStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4238,6 +4379,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4263,6 +4405,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private int brandInventoryStatus_ = 0;
+
     /**
      *
      *
@@ -4285,6 +4428,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasBrandInventoryStatus() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -4307,6 +4451,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public int getBrandInventoryStatusValue() {
       return brandInventoryStatus_;
     }
+
     /**
      *
      *
@@ -4332,6 +4477,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4362,6 +4508,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
               .InventoryStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4392,6 +4539,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4418,6 +4566,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private long rank_;
+
     /**
      *
      *
@@ -4434,6 +4583,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasRank() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -4450,6 +4600,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public long getRank() {
       return rank_;
     }
+
     /**
      *
      *
@@ -4470,6 +4621,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4490,6 +4642,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private long previousRank_;
+
     /**
      *
      *
@@ -4505,6 +4658,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasPreviousRank() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -4520,6 +4674,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public long getPreviousRank() {
       return previousRank_;
     }
+
     /**
      *
      *
@@ -4539,6 +4694,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4558,6 +4714,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private int relativeDemand_ = 0;
+
     /**
      *
      *
@@ -4576,6 +4733,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasRelativeDemand() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -4594,6 +4752,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public int getRelativeDemandValue() {
       return relativeDemand_;
     }
+
     /**
      *
      *
@@ -4615,6 +4774,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4640,6 +4800,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4665,6 +4826,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4687,6 +4849,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private int previousRelativeDemand_ = 0;
+
     /**
      *
      *
@@ -4706,6 +4869,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasPreviousRelativeDemand() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -4725,6 +4889,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public int getPreviousRelativeDemandValue() {
       return previousRelativeDemand_;
     }
+
     /**
      *
      *
@@ -4747,6 +4912,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4773,6 +4939,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4799,6 +4966,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4822,6 +4990,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     }
 
     private int relativeDemandChange_ = 0;
+
     /**
      *
      *
@@ -4839,6 +5008,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public boolean hasRelativeDemandChange() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -4856,6 +5026,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public int getRelativeDemandChangeValue() {
       return relativeDemandChange_;
     }
+
     /**
      *
      *
@@ -4876,6 +5047,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4903,6 +5075,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
               .RelativeDemandChangeTypeEnum.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4929,6 +5102,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

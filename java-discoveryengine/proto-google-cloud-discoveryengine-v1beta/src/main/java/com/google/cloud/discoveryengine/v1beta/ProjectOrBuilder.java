@@ -39,6 +39,7 @@ public interface ProjectOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ProjectOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ProjectOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface ProjectOrBuilder
    * @return Whether the provisionCompletionTime field is set.
    */
   boolean hasProvisionCompletionTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ProjectOrBuilder
    * @return The provisionCompletionTime.
    */
   com.google.protobuf.Timestamp getProvisionCompletionTime();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface ProjectOrBuilder
    * </code>
    */
   int getServiceTermsMapCount();
+
   /**
    *
    *
@@ -166,10 +172,12 @@ public interface ProjectOrBuilder
    * </code>
    */
   boolean containsServiceTermsMap(java.lang.String key);
+
   /** Use {@link #getServiceTermsMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.Project.ServiceTerms>
       getServiceTermsMap();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface ProjectOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.Project.ServiceTerms>
       getServiceTermsMapMap();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface ProjectOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.discoveryengine.v1beta.Project.ServiceTerms defaultValue);
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest> getRequestsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest getRequests(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

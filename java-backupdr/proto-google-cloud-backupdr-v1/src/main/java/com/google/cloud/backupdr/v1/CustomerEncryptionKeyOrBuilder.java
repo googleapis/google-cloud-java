@@ -37,6 +37,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return Whether the rawKey field is set.
    */
   boolean hasRawKey();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return The rawKey.
    */
   java.lang.String getRawKey();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return Whether the rsaEncryptedKey field is set.
    */
   boolean hasRsaEncryptedKey();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return The rsaEncryptedKey.
    */
   java.lang.String getRsaEncryptedKey();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return Whether the kmsKeyName field is set.
    */
   boolean hasKmsKeyName();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return Whether the kmsKeyServiceAccount field is set.
    */
   boolean hasKmsKeyServiceAccount();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return The kmsKeyServiceAccount.
    */
   java.lang.String getKmsKeyServiceAccount();
+
   /**
    *
    *

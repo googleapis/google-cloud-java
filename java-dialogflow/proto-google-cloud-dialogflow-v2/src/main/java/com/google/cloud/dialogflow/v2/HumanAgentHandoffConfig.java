@@ -37,6 +37,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.HumanAgentHandoffConfig)
     HumanAgentHandoffConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HumanAgentHandoffConfig.newBuilder() to construct.
   private HumanAgentHandoffConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      * @return The accountNumber.
      */
     java.lang.String getAccountNumber();
+
     /**
      *
      *
@@ -97,6 +99,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getAccountNumberBytes();
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig)
       LivePersonConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LivePersonConfig.newBuilder() to construct.
     private LivePersonConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -146,6 +150,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object accountNumber_ = "";
+
     /**
      *
      *
@@ -170,6 +175,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -358,6 +364,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -556,6 +563,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object accountNumber_ = "";
+
       /**
        *
        *
@@ -579,6 +587,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -602,6 +611,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -624,6 +634,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -642,6 +653,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -751,6 +763,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      * @return The organizationId.
      */
     java.lang.String getOrganizationId();
+
     /**
      *
      *
@@ -776,6 +789,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      * @return The deploymentId.
      */
     java.lang.String getDeploymentId();
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      * @return The buttonId.
      */
     java.lang.String getButtonId();
+
     /**
      *
      *
@@ -829,6 +844,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      * @return The endpointDomain.
      */
     java.lang.String getEndpointDomain();
+
     /**
      *
      *
@@ -845,6 +861,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getEndpointDomainBytes();
   }
+
   /**
    *
    *
@@ -860,6 +877,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.HumanAgentHandoffConfig.SalesforceLiveAgentConfig)
       SalesforceLiveAgentConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SalesforceLiveAgentConfig.newBuilder() to construct.
     private SalesforceLiveAgentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -899,6 +917,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object organizationId_ = "";
+
     /**
      *
      *
@@ -922,6 +941,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object deploymentId_ = "";
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1023,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object buttonId_ = "";
+
     /**
      *
      *
@@ -1024,6 +1047,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1076,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object endpointDomain_ = "";
+
     /**
      *
      *
@@ -1078,6 +1103,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1328,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1551,6 +1578,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object organizationId_ = "";
+
       /**
        *
        *
@@ -1573,6 +1601,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1595,6 +1624,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1616,6 +1646,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1633,6 +1664,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1657,6 +1689,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       }
 
       private java.lang.Object deploymentId_ = "";
+
       /**
        *
        *
@@ -1679,6 +1712,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1701,6 +1735,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1722,6 +1757,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1739,6 +1775,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1763,6 +1800,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       }
 
       private java.lang.Object buttonId_ = "";
+
       /**
        *
        *
@@ -1785,6 +1823,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1807,6 +1846,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1828,6 +1868,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1845,6 +1886,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1869,6 +1911,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       }
 
       private java.lang.Object endpointDomain_ = "";
+
       /**
        *
        *
@@ -1894,6 +1937,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1919,6 +1963,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1943,6 +1988,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1963,6 +2009,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2075,6 +2122,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     private AgentServiceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2108,6 +2156,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
   }
 
   public static final int LIVE_PERSON_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -2125,6 +2174,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
   public boolean hasLivePersonConfig() {
     return agentServiceCase_ == 1;
   }
+
   /**
    *
    *
@@ -2148,6 +2198,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     return com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2171,6 +2222,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
   }
 
   public static final int SALESFORCE_LIVE_AGENT_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -2188,6 +2240,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
   public boolean hasSalesforceLiveAgentConfig() {
     return agentServiceCase_ == 2;
   }
+
   /**
    *
    *
@@ -2211,6 +2264,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     return com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.SalesforceLiveAgentConfig
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2433,6 +2487,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2674,6 +2729,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
             com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig.Builder,
             com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfigOrBuilder>
         livePersonConfigBuilder_;
+
     /**
      *
      *
@@ -2691,6 +2747,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     public boolean hasLivePersonConfig() {
       return agentServiceCase_ == 1;
     }
+
     /**
      *
      *
@@ -2722,6 +2779,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2747,6 +2805,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       agentServiceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2770,6 +2829,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       agentServiceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2808,6 +2868,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       agentServiceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2835,6 +2896,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2850,6 +2912,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         getLivePersonConfigBuilder() {
       return getLivePersonConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2875,6 +2938,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2920,6 +2984,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
             com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig
                 .SalesforceLiveAgentConfigOrBuilder>
         salesforceLiveAgentConfigBuilder_;
+
     /**
      *
      *
@@ -2937,6 +3002,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     public boolean hasSalesforceLiveAgentConfig() {
       return agentServiceCase_ == 2;
     }
+
     /**
      *
      *
@@ -2968,6 +3034,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2993,6 +3060,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       agentServiceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3016,6 +3084,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       agentServiceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3056,6 +3125,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       agentServiceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3083,6 +3153,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3098,6 +3169,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         getSalesforceLiveAgentConfigBuilder() {
       return getSalesforceLiveAgentConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3123,6 +3195,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

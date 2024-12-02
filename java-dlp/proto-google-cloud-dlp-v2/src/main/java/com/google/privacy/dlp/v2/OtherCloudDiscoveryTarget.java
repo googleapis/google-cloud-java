@@ -36,6 +36,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OtherCloudDiscoveryTarget)
     OtherCloudDiscoveryTargetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OtherCloudDiscoveryTarget.newBuilder() to construct.
   private OtherCloudDiscoveryTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     private CadenceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,6 +118,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
 
   public static final int DATA_SOURCE_TYPE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.DataSourceType dataSourceType_;
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
   public boolean hasDataSourceType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.DataSourceType.getDefaultInstance()
         : dataSourceType_;
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
 
   public static final int FILTER_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryOtherCloudFilter filter_;
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.DiscoveryOtherCloudFilter.getDefaultInstance()
         : filter_;
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
 
   public static final int CONDITIONS_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.DiscoveryOtherCloudConditions conditions_;
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
   public boolean hasConditions() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.DiscoveryOtherCloudConditions.getDefaultInstance()
         : conditions_;
   }
+
   /**
    *
    *
@@ -295,6 +306,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
   }
 
   public static final int GENERATION_CADENCE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -313,6 +325,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
   public boolean hasGenerationCadence() {
     return cadenceCase_ == 4;
   }
+
   /**
    *
    *
@@ -334,6 +347,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     }
     return com.google.privacy.dlp.v2.DiscoveryOtherCloudGenerationCadence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -356,6 +370,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
   }
 
   public static final int DISABLED_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -371,6 +386,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
   public boolean hasDisabled() {
     return cadenceCase_ == 5;
   }
+
   /**
    *
    *
@@ -389,6 +405,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     }
     return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -638,6 +655,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -946,6 +964,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.DataSourceType.Builder,
             com.google.privacy.dlp.v2.DataSourceTypeOrBuilder>
         dataSourceTypeBuilder_;
+
     /**
      *
      *
@@ -964,6 +983,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     public boolean hasDataSourceType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -988,6 +1008,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         return dataSourceTypeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1035,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1060,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1092,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return getDataSourceTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1132,6 +1158,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
             : dataSourceType_;
       }
     }
+
     /**
      *
      *
@@ -1168,6 +1195,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.DiscoveryOtherCloudFilter.Builder,
             com.google.privacy.dlp.v2.DiscoveryOtherCloudFilterOrBuilder>
         filterBuilder_;
+
     /**
      *
      *
@@ -1185,6 +1213,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1208,6 +1237,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         return filterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1263,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1287,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1319,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1342,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1360,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1347,6 +1382,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
             : filter_;
       }
     }
+
     /**
      *
      *
@@ -1382,6 +1418,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.DiscoveryOtherCloudConditions.Builder,
             com.google.privacy.dlp.v2.DiscoveryOtherCloudConditionsOrBuilder>
         conditionsBuilder_;
+
     /**
      *
      *
@@ -1399,6 +1436,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     public boolean hasConditions() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1422,6 +1460,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         return conditionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1447,6 +1486,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1510,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1542,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1565,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1540,6 +1583,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       onChanged();
       return getConditionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1562,6 +1606,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
             : conditions_;
       }
     }
+
     /**
      *
      *
@@ -1596,6 +1641,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.DiscoveryOtherCloudGenerationCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryOtherCloudGenerationCadenceOrBuilder>
         generationCadenceBuilder_;
+
     /**
      *
      *
@@ -1614,6 +1660,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     public boolean hasGenerationCadence() {
       return cadenceCase_ == 4;
     }
+
     /**
      *
      *
@@ -1642,6 +1689,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.DiscoveryOtherCloudGenerationCadence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1668,6 +1716,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       cadenceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1740,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       cadenceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1779,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       cadenceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1808,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1773,6 +1825,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         getGenerationCadenceBuilder() {
       return getGenerationCadenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1797,6 +1850,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.DiscoveryOtherCloudGenerationCadence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1839,6 +1893,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.Disabled.Builder,
             com.google.privacy.dlp.v2.DisabledOrBuilder>
         disabledBuilder_;
+
     /**
      *
      *
@@ -1854,6 +1909,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     public boolean hasDisabled() {
       return cadenceCase_ == 5;
     }
+
     /**
      *
      *
@@ -1879,6 +1935,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1901,6 +1958,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       cadenceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1920,6 +1978,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       cadenceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1952,6 +2011,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       cadenceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1977,6 +2037,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1989,6 +2050,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.Disabled.Builder getDisabledBuilder() {
       return getDisabledFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2009,6 +2071,7 @@ public final class OtherCloudDiscoveryTarget extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
       }
     }
+
     /**
      *
      *

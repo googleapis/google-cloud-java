@@ -38,6 +38,7 @@ public interface PolicyTagOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface PolicyTagOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface PolicyTagOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface PolicyTagOrBuilder
    * @return The parentPolicyTag.
    */
   java.lang.String getParentPolicyTag();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface PolicyTagOrBuilder
    * @return A list containing the childPolicyTags.
    */
   java.util.List<java.lang.String> getChildPolicyTagsList();
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public interface PolicyTagOrBuilder
    * @return The count of childPolicyTags.
    */
   int getChildPolicyTagsCount();
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface PolicyTagOrBuilder
    * @return The childPolicyTags at the given index.
    */
   java.lang.String getChildPolicyTags(int index);
+
   /**
    *
    *

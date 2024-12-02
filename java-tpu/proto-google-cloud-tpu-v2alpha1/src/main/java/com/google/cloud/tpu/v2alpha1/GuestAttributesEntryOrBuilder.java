@@ -36,6 +36,7 @@ public interface GuestAttributesEntryOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GuestAttributesEntryOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GuestAttributesEntryOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

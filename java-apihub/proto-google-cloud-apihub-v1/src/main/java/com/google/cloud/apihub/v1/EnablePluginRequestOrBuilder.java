@@ -39,6 +39,7 @@ public interface EnablePluginRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

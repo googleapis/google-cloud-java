@@ -72,6 +72,7 @@ public enum Registry implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REGISTRY_UNSPECIFIED = 0;</code>
    */
   public static final int REGISTRY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum Registry implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PUBLIC = 1;</code>
    */
   public static final int PUBLIC_VALUE = 1;
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface JobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface JobOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -140,9 +143,11 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -253,9 +261,11 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -302,6 +313,7 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -337,6 +349,7 @@ public interface JobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -350,6 +363,7 @@ public interface JobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -375,6 +389,7 @@ public interface JobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -388,6 +403,7 @@ public interface JobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -414,6 +430,7 @@ public interface JobOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -428,6 +445,7 @@ public interface JobOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -455,6 +473,7 @@ public interface JobOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -469,6 +488,7 @@ public interface JobOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -494,6 +514,7 @@ public interface JobOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
+
   /**
    *
    *
@@ -519,6 +540,7 @@ public interface JobOrBuilder
    * @return The lastModifier.
    */
   java.lang.String getLastModifier();
+
   /**
    *
    *
@@ -544,6 +566,7 @@ public interface JobOrBuilder
    * @return The client.
    */
   java.lang.String getClient();
+
   /**
    *
    *
@@ -569,6 +592,7 @@ public interface JobOrBuilder
    * @return The clientVersion.
    */
   java.lang.String getClientVersion();
+
   /**
    *
    *
@@ -603,6 +627,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for launchStage.
    */
   int getLaunchStageValue();
+
   /**
    *
    *
@@ -637,6 +662,7 @@ public interface JobOrBuilder
    * @return Whether the binaryAuthorization field is set.
    */
   boolean hasBinaryAuthorization();
+
   /**
    *
    *
@@ -649,6 +675,7 @@ public interface JobOrBuilder
    * @return The binaryAuthorization.
    */
   com.google.cloud.run.v2.BinaryAuthorization getBinaryAuthorization();
+
   /**
    *
    *
@@ -674,6 +701,7 @@ public interface JobOrBuilder
    * @return Whether the template field is set.
    */
   boolean hasTemplate();
+
   /**
    *
    *
@@ -688,6 +716,7 @@ public interface JobOrBuilder
    * @return The template.
    */
   com.google.cloud.run.v2.ExecutionTemplate getTemplate();
+
   /**
    *
    *
@@ -730,6 +759,7 @@ public interface JobOrBuilder
    * @return Whether the terminalCondition field is set.
    */
   boolean hasTerminalCondition();
+
   /**
    *
    *
@@ -745,6 +775,7 @@ public interface JobOrBuilder
    * @return The terminalCondition.
    */
   com.google.cloud.run.v2.Condition getTerminalCondition();
+
   /**
    *
    *
@@ -774,6 +805,7 @@ public interface JobOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.Condition> getConditionsList();
+
   /**
    *
    *
@@ -789,6 +821,7 @@ public interface JobOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.Condition getConditions(int index);
+
   /**
    *
    *
@@ -804,6 +837,7 @@ public interface JobOrBuilder
    * </code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -819,6 +853,7 @@ public interface JobOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ConditionOrBuilder> getConditionsOrBuilderList();
+
   /**
    *
    *
@@ -862,6 +897,7 @@ public interface JobOrBuilder
    * @return Whether the latestCreatedExecution field is set.
    */
   boolean hasLatestCreatedExecution();
+
   /**
    *
    *
@@ -876,6 +912,7 @@ public interface JobOrBuilder
    * @return The latestCreatedExecution.
    */
   com.google.cloud.run.v2.ExecutionReference getLatestCreatedExecution();
+
   /**
    *
    *
@@ -949,6 +986,7 @@ public interface JobOrBuilder
    * @return Whether the startExecutionToken field is set.
    */
   boolean hasStartExecutionToken();
+
   /**
    *
    *
@@ -963,6 +1001,7 @@ public interface JobOrBuilder
    * @return The startExecutionToken.
    */
   java.lang.String getStartExecutionToken();
+
   /**
    *
    *
@@ -992,6 +1031,7 @@ public interface JobOrBuilder
    * @return Whether the runExecutionToken field is set.
    */
   boolean hasRunExecutionToken();
+
   /**
    *
    *
@@ -1006,6 +1046,7 @@ public interface JobOrBuilder
    * @return The runExecutionToken.
    */
   java.lang.String getRunExecutionToken();
+
   /**
    *
    *
@@ -1034,6 +1075,7 @@ public interface JobOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

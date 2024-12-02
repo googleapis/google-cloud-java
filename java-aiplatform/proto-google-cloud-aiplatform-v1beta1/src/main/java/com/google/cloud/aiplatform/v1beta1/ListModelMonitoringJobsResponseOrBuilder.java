@@ -37,6 +37,7 @@ public interface ListModelMonitoringJobsResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob>
       getModelMonitoringJobsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListModelMonitoringJobsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob getModelMonitoringJobs(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListModelMonitoringJobsResponseOrBuilder
    * </code>
    */
   int getModelMonitoringJobsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListModelMonitoringJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringJobOrBuilder>
       getModelMonitoringJobsOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListModelMonitoringJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

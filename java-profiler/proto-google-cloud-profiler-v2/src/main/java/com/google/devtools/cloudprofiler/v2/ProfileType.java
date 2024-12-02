@@ -130,6 +130,7 @@ public enum ProfileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROFILE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int PROFILE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -140,6 +141,7 @@ public enum ProfileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CPU = 1;</code>
    */
   public static final int CPU_VALUE = 1;
+
   /**
    *
    *
@@ -150,6 +152,7 @@ public enum ProfileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>WALL = 2;</code>
    */
   public static final int WALL_VALUE = 2;
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public enum ProfileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HEAP = 3;</code>
    */
   public static final int HEAP_VALUE = 3;
+
   /**
    *
    *
@@ -171,6 +175,7 @@ public enum ProfileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>THREADS = 4;</code>
    */
   public static final int THREADS_VALUE = 4;
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public enum ProfileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTENTION = 5;</code>
    */
   public static final int CONTENTION_VALUE = 5;
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public enum ProfileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PEAK_HEAP = 6;</code>
    */
   public static final int PEAK_HEAP_VALUE = 6;
+
   /**
    *
    *

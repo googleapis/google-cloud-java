@@ -38,6 +38,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.BulkMuteFindingsRequest)
     BulkMuteFindingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BulkMuteFindingsRequest.newBuilder() to construct.
   private BulkMuteFindingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,6 +125,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * <code>MUTE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int MUTE_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -134,6 +136,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * <code>MUTED = 1;</code>
      */
     public static final int MUTED_VALUE = 1;
+
     /**
      *
      *
@@ -234,6 +237,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -261,6 +265,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -293,6 +298,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -335,6 +341,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -382,6 +389,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object muteAnnotation_ = "";
+
   /**
    *
    *
@@ -409,6 +417,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -439,6 +448,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
 
   public static final int MUTE_STATE_FIELD_NUMBER = 4;
   private int muteState_ = 0;
+
   /**
    *
    *
@@ -458,6 +468,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
   public int getMuteStateValue() {
     return muteState_;
   }
+
   /**
    *
    *
@@ -675,6 +686,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -907,6 +919,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -933,6 +946,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -959,6 +973,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -984,6 +999,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1021,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1050,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1074,6 +1092,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1134,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1155,6 +1175,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1212,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1256,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object muteAnnotation_ = "";
+
     /**
      *
      *
@@ -1260,6 +1283,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1310,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1311,6 +1336,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1358,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1387,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     }
 
     private int muteState_ = 0;
+
     /**
      *
      *
@@ -1379,6 +1407,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     public int getMuteStateValue() {
       return muteState_;
     }
+
     /**
      *
      *
@@ -1401,6 +1430,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1425,6 +1455,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
           ? com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest.MuteState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1451,6 +1482,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

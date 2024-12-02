@@ -37,6 +37,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsInstancePlacement)
     AwsInstancePlacementOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AwsInstancePlacement.newBuilder() to construct.
   private AwsInstancePlacement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
      * <code>TENANCY_UNSPECIFIED = 0;</code>
      */
     public static final int TENANCY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
      * <code>DEFAULT = 1;</code>
      */
     public static final int DEFAULT_VALUE = 1;
+
     /**
      *
      *
@@ -150,6 +153,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
      * <code>DEDICATED = 2;</code>
      */
     public static final int DEDICATED_VALUE = 2;
+
     /**
      *
      *
@@ -250,6 +254,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
 
   public static final int TENANCY_FIELD_NUMBER = 1;
   private int tenancy_ = 0;
+
   /**
    *
    *
@@ -267,6 +272,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
   public int getTenancyValue() {
     return tenancy_;
   }
+
   /**
    *
    *
@@ -453,6 +459,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -639,6 +646,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int tenancy_ = 0;
+
     /**
      *
      *
@@ -656,6 +664,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
     public int getTenancyValue() {
       return tenancy_;
     }
+
     /**
      *
      *
@@ -676,6 +685,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -721,6 +732,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

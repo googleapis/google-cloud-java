@@ -34,6 +34,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.AcknowledgeTaskRequest)
     AcknowledgeTaskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AcknowledgeTaskRequest.newBuilder() to construct.
   private AcknowledgeTaskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp scheduleTime_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
   public boolean hasScheduleTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : scheduleTime_;
   }
+
   /**
    *
    *
@@ -361,6 +367,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -576,6 +583,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -601,6 +609,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -626,6 +635,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +681,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scheduleTimeBuilder_;
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
     public boolean hasScheduleTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
         return scheduleTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -895,6 +915,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
             : scheduleTime_;
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface CleanupPolicyMostRecentVersionsOrBuilder
    * @return A list containing the packageNamePrefixes.
    */
   java.util.List<java.lang.String> getPackageNamePrefixesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CleanupPolicyMostRecentVersionsOrBuilder
    * @return The count of packageNamePrefixes.
    */
   int getPackageNamePrefixesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface CleanupPolicyMostRecentVersionsOrBuilder
    * @return The packageNamePrefixes at the given index.
    */
   java.lang.String getPackageNamePrefixes(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface CleanupPolicyMostRecentVersionsOrBuilder
    * @return Whether the keepCount field is set.
    */
   boolean hasKeepCount();
+
   /**
    *
    *

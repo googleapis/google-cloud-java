@@ -36,6 +36,7 @@ public interface MessageUpdatedEventDataOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MessageUpdatedEventDataOrBuilder
    * @return The message.
    */
   com.google.chat.v1.Message getMessage();
+
   /**
    *
    *

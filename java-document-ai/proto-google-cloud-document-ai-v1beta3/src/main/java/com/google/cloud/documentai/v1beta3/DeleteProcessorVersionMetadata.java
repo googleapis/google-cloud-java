@@ -35,6 +35,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.DeleteProcessorVersionMetadata)
     DeleteProcessorVersionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteProcessorVersionMetadata.newBuilder() to construct.
   private DeleteProcessorVersionMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int COMMON_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
   public boolean hasCommonMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
         ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance()
         : commonMetadata_;
   }
+
   /**
    *
    *
@@ -282,6 +286,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -495,6 +500,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
             com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder,
             com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder>
         commonMetadataBuilder_;
+
     /**
      *
      *
@@ -509,6 +515,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
     public boolean hasCommonMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -529,6 +536,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
         return commonMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -552,6 +560,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -572,6 +581,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +632,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +648,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -655,6 +668,7 @@ public final class DeleteProcessorVersionMetadata extends com.google.protobuf.Ge
             : commonMetadata_;
       }
     }
+
     /**
      *
      *

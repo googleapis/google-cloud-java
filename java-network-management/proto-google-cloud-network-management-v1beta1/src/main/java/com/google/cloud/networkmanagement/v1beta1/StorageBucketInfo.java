@@ -33,6 +33,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.StorageBucketInfo)
     StorageBucketInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StorageBucketInfo.newBuilder() to construct.
   private StorageBucketInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucket_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -274,6 +277,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -461,6 +465,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object bucket_ = "";
+
     /**
      *
      *
@@ -483,6 +488,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -505,6 +511,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -526,6 +533,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -543,6 +551,7 @@ public final class StorageBucketInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

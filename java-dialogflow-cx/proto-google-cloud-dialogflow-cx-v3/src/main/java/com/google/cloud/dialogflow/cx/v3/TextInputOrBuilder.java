@@ -36,6 +36,7 @@ public interface TextInputOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *

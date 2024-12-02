@@ -39,6 +39,7 @@ public interface FetchDatasetErrorsRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface FetchDatasetErrorsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

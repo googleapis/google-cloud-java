@@ -36,6 +36,7 @@ public interface UserInfoOrBuilder
    * @return Whether the email field is set.
    */
   boolean hasEmail();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UserInfoOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *

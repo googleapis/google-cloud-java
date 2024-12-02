@@ -37,6 +37,7 @@ public interface DatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DatasetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface DatasetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface DatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface DatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface DatasetOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.InputConfig> getInputConfigsList();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface DatasetOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
   com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfigs(int index);
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface DatasetOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
   int getInputConfigsCount();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface DatasetOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder>
       getInputConfigsOrBuilderList();
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public interface DatasetOrBuilder
    * @return A list containing the blockingResources.
    */
   java.util.List<java.lang.String> getBlockingResourcesList();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface DatasetOrBuilder
    * @return The count of blockingResources.
    */
   int getBlockingResourcesCount();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface DatasetOrBuilder
    * @return The blockingResources at the given index.
    */
   java.lang.String getBlockingResources(int index);
+
   /**
    *
    *

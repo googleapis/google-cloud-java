@@ -33,6 +33,7 @@ public final class UndeployApplicationResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UndeployApplicationResponse)
     UndeployApplicationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UndeployApplicationResponse.newBuilder() to construct.
   private UndeployApplicationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class UndeployApplicationResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

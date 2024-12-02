@@ -38,6 +38,7 @@ public interface FreeShippingThresholdOrBuilder
    * @return Whether the country field is set.
    */
   boolean hasCountry();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface FreeShippingThresholdOrBuilder
    * @return The country.
    */
   java.lang.String getCountry();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface FreeShippingThresholdOrBuilder
    * @return Whether the priceThreshold field is set.
    */
   boolean hasPriceThreshold();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface FreeShippingThresholdOrBuilder
    * @return The priceThreshold.
    */
   com.google.shopping.type.Price getPriceThreshold();
+
   /**
    *
    *

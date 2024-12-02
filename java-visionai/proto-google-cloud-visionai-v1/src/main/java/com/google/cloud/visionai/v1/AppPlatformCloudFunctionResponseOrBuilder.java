@@ -40,6 +40,7 @@ public interface AppPlatformCloudFunctionResponseOrBuilder
   java.util.List<
           com.google.cloud.visionai.v1.AppPlatformCloudFunctionResponse.StructedOutputAnnotation>
       getAnnotationsList();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface AppPlatformCloudFunctionResponseOrBuilder
    */
   com.google.cloud.visionai.v1.AppPlatformCloudFunctionResponse.StructedOutputAnnotation
       getAnnotations(int index);
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface AppPlatformCloudFunctionResponseOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface AppPlatformCloudFunctionResponseOrBuilder
               com.google.cloud.visionai.v1.AppPlatformCloudFunctionResponse
                   .StructedOutputAnnotationOrBuilder>
       getAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AppPlatformCloudFunctionResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AppPlatformEventBody events = 4;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.AppPlatformEventBody> getEventsList();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface AppPlatformCloudFunctionResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AppPlatformEventBody events = 4;</code>
    */
   com.google.cloud.visionai.v1.AppPlatformEventBody getEvents(int index);
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface AppPlatformCloudFunctionResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AppPlatformEventBody events = 4;</code>
    */
   int getEventsCount();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface AppPlatformCloudFunctionResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.AppPlatformEventBodyOrBuilder>
       getEventsOrBuilderList();
+
   /**
    *
    *

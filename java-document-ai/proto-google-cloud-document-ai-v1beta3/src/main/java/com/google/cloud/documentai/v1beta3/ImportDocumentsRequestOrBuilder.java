@@ -40,6 +40,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ImportDocumentsRequestOrBuilder
   java.util.List<
           com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig>
       getBatchDocumentsImportConfigsList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ImportDocumentsRequestOrBuilder
    */
   com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig
       getBatchDocumentsImportConfigs(int index);
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface ImportDocumentsRequestOrBuilder
    * </code>
    */
   int getBatchDocumentsImportConfigsCount();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface ImportDocumentsRequestOrBuilder
               com.google.cloud.documentai.v1beta3.ImportDocumentsRequest
                   .BatchDocumentsImportConfigOrBuilder>
       getBatchDocumentsImportConfigsOrBuilderList();
+
   /**
    *
    *

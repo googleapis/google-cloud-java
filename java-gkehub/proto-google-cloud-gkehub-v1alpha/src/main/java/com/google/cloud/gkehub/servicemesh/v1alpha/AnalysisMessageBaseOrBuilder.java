@@ -36,6 +36,7 @@ public interface AnalysisMessageBaseOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AnalysisMessageBaseOrBuilder
    * @return The type.
    */
   com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type getType();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface AnalysisMessageBaseOrBuilder
    * @return The enum numeric value on the wire for level.
    */
   int getLevelValue();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface AnalysisMessageBaseOrBuilder
    * @return The documentationUrl.
    */
   java.lang.String getDocumentationUrl();
+
   /**
    *
    *

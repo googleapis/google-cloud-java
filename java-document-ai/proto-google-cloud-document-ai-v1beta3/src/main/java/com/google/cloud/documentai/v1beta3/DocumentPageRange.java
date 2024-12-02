@@ -33,6 +33,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.DocumentPageRange)
     DocumentPageRangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentPageRange.newBuilder() to construct.
   private DocumentPageRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
 
   public static final int START_FIELD_NUMBER = 1;
   private int start_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
 
   public static final int END_FIELD_NUMBER = 2;
   private int end_ = 0;
+
   /**
    *
    *
@@ -266,6 +269,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -461,6 +465,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int start_;
+
     /**
      *
      *
@@ -476,6 +481,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
     public int getStart() {
       return start_;
     }
+
     /**
      *
      *
@@ -495,6 +501,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -514,6 +521,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
     }
 
     private int end_;
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
     public int getEnd() {
       return end_;
     }
+
     /**
      *
      *
@@ -548,6 +557,7 @@ public final class DocumentPageRange extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

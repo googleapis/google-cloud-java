@@ -44,6 +44,7 @@ public interface QuotaOperationOrBuilder
    * @return The operationId.
    */
   java.lang.String getOperationId();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface QuotaOperationOrBuilder
    * @return The methodName.
    */
   java.lang.String getMethodName();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface QuotaOperationOrBuilder
    * @return The consumerId.
    */
   java.lang.String getConsumerId();
+
   /**
    *
    *
@@ -155,6 +158,7 @@ public interface QuotaOperationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -165,9 +169,11 @@ public interface QuotaOperationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface QuotaOperationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface QuotaOperationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public interface QuotaOperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet quota_metrics = 5;</code>
    */
   java.util.List<com.google.api.servicecontrol.v1.MetricValueSet> getQuotaMetricsList();
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public interface QuotaOperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet quota_metrics = 5;</code>
    */
   com.google.api.servicecontrol.v1.MetricValueSet getQuotaMetrics(int index);
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface QuotaOperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet quota_metrics = 5;</code>
    */
   int getQuotaMetricsCount();
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public interface QuotaOperationOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.MetricValueSetOrBuilder>
       getQuotaMetricsOrBuilderList();
+
   /**
    *
    *
@@ -322,6 +334,7 @@ public interface QuotaOperationOrBuilder
    * @return The enum numeric value on the wire for quotaMode.
    */
   int getQuotaModeValue();
+
   /**
    *
    *

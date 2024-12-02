@@ -36,6 +36,7 @@ public interface InstanceGroupManagersDeleteInstancesRequestOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagersDeleteInstancesRequestOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface InstanceGroupManagersDeleteInstancesRequestOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface InstanceGroupManagersDeleteInstancesRequestOrBuilder
    * @return Whether the skipInstancesOnValidationError field is set.
    */
   boolean hasSkipInstancesOnValidationError();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DeleteMachineImageRequestOrBuilder
    * @return The machineImage.
    */
   java.lang.String getMachineImage();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteMachineImageRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeleteMachineImageRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteMachineImageRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

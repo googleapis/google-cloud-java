@@ -36,6 +36,7 @@ public interface ArticleAnswerOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ArticleAnswerOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ArticleAnswerOrBuilder
    * @return A list containing the snippets.
    */
   java.util.List<java.lang.String> getSnippetsList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ArticleAnswerOrBuilder
    * @return The count of snippets.
    */
   int getSnippetsCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface ArticleAnswerOrBuilder
    * @return The snippets at the given index.
    */
   java.lang.String getSnippets(int index);
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface ArticleAnswerOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -147,9 +153,11 @@ public interface ArticleAnswerOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -161,6 +169,7 @@ public interface ArticleAnswerOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface ArticleAnswerOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -202,6 +212,7 @@ public interface ArticleAnswerOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
+
   /**
    *
    *

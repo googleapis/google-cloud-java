@@ -38,6 +38,7 @@ public interface DiagnoseClusterResultsOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
+
   /**
    *
    *

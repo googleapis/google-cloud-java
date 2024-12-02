@@ -37,6 +37,7 @@ public interface ResourcePolicyWeeklyCycleOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek>
       getDayOfWeeksList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ResourcePolicyWeeklyCycleOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek getDayOfWeeks(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ResourcePolicyWeeklyCycleOrBuilder
    * </code>
    */
   int getDayOfWeeksCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ResourcePolicyWeeklyCycleOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeekOrBuilder>
       getDayOfWeeksOrBuilderList();
+
   /**
    *
    *

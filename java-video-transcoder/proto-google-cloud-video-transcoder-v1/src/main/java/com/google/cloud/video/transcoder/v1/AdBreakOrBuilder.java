@@ -37,6 +37,7 @@ public interface AdBreakOrBuilder
    * @return Whether the startTimeOffset field is set.
    */
   boolean hasStartTimeOffset();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AdBreakOrBuilder
    * @return The startTimeOffset.
    */
   com.google.protobuf.Duration getStartTimeOffset();
+
   /**
    *
    *

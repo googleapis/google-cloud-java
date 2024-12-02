@@ -33,6 +33,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.CreateRouteRequest)
     CreateRouteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateRouteRequest.newBuilder() to construct.
   private CreateRouteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object routeId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ROUTE_FIELD_NUMBER = 3;
   private com.google.cloud.datastream.v1.Route route_;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasRoute() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.datastream.v1.Route getRoute() {
     return route_ == null ? com.google.cloud.datastream.v1.Route.getDefaultInstance() : route_;
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -487,6 +497,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -730,6 +741,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -754,6 +766,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +791,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +835,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +862,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object routeId_ = "";
+
     /**
      *
      *
@@ -868,6 +885,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +908,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +930,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +948,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +978,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1.Route.Builder,
             com.google.cloud.datastream.v1.RouteOrBuilder>
         routeBuilder_;
+
     /**
      *
      *
@@ -972,6 +994,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRoute() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return routeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1059,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1088,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1109,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRouteFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1114,6 +1143,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return route_ == null ? com.google.cloud.datastream.v1.Route.getDefaultInstance() : route_;
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1172,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1176,6 +1207,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1210,6 +1242,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1276,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1306,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

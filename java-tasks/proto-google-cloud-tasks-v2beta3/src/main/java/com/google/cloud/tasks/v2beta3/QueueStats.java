@@ -33,6 +33,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.QueueStats)
     QueueStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueueStats.newBuilder() to construct.
   private QueueStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TASKS_COUNT_FIELD_NUMBER = 1;
   private long tasksCount_ = 0L;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OLDEST_ESTIMATED_ARRIVAL_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp oldestEstimatedArrivalTime_;
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOldestEstimatedArrivalTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : oldestEstimatedArrivalTime_;
   }
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTED_LAST_MINUTE_COUNT_FIELD_NUMBER = 3;
   private long executedLastMinuteCount_ = 0L;
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONCURRENT_DISPATCHES_COUNT_FIELD_NUMBER = 4;
   private long concurrentDispatchesCount_ = 0L;
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EFFECTIVE_EXECUTION_RATE_FIELD_NUMBER = 5;
   private double effectiveExecutionRate_ = 0D;
+
   /**
    *
    *
@@ -410,6 +418,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -663,6 +672,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long tasksCount_;
+
     /**
      *
      *
@@ -681,6 +691,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public long getTasksCount() {
       return tasksCount_;
     }
+
     /**
      *
      *
@@ -703,6 +714,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         oldestEstimatedArrivalTimeBuilder_;
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOldestEstimatedArrivalTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
         return oldestEstimatedArrivalTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +865,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOldestEstimatedArrivalTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
             : oldestEstimatedArrivalTime_;
       }
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long executedLastMinuteCount_;
+
     /**
      *
      *
@@ -956,6 +978,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public long getExecutedLastMinuteCount() {
       return executedLastMinuteCount_;
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long concurrentDispatchesCount_;
+
     /**
      *
      *
@@ -1017,6 +1042,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public long getConcurrentDispatchesCount() {
       return concurrentDispatchesCount_;
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1086,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double effectiveExecutionRate_;
+
     /**
      *
      *
@@ -1078,6 +1106,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public double getEffectiveExecutionRate() {
       return effectiveExecutionRate_;
     }
+
     /**
      *
      *
@@ -1101,6 +1130,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

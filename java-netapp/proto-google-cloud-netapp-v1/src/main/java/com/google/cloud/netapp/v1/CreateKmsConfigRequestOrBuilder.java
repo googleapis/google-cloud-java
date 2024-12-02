@@ -38,6 +38,7 @@ public interface CreateKmsConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateKmsConfigRequestOrBuilder
    * @return The kmsConfigId.
    */
   java.lang.String getKmsConfigId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface CreateKmsConfigRequestOrBuilder
    * @return Whether the kmsConfig field is set.
    */
   boolean hasKmsConfig();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateKmsConfigRequestOrBuilder
    * @return The kmsConfig.
    */
   com.google.cloud.netapp.v1.KmsConfig getKmsConfig();
+
   /**
    *
    *

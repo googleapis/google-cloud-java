@@ -36,6 +36,7 @@ public interface GcsDocumentOrBuilder
    * @return The gcsUri.
    */
   java.lang.String getGcsUri();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GcsDocumentOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

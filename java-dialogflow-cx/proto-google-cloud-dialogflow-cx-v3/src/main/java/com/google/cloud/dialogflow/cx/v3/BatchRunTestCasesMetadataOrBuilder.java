@@ -34,6 +34,7 @@ public interface BatchRunTestCasesMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestError errors = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.TestError> getErrorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchRunTestCasesMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestError errors = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.TestError getErrors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchRunTestCasesMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TestError errors = 1;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchRunTestCasesMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.TestErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *

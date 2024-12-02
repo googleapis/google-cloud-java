@@ -37,6 +37,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.ServiceProjectAttachment)
     ServiceProjectAttachmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceProjectAttachment.newBuilder() to construct.
   private ServiceProjectAttachment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -135,6 +136,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -145,6 +147,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -157,6 +160,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -260,6 +264,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -284,6 +289,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -313,6 +319,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceProject_ = "";
+
   /**
    *
    *
@@ -340,6 +347,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -370,6 +378,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -386,6 +395,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -402,6 +412,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -421,6 +432,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -447,6 +459,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -476,6 +489,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -493,6 +507,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -719,6 +734,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -979,6 +995,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1002,6 +1019,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1043,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1066,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1085,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1111,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
     }
 
     private java.lang.Object serviceProject_ = "";
+
     /**
      *
      *
@@ -1116,6 +1138,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1165,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1191,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1213,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1247,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1237,6 +1264,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1259,6 +1287,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1312,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1334,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1364,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1386,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1403,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1390,6 +1424,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1419,6 +1454,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -1444,6 +1480,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1469,6 +1506,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1493,6 +1531,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1513,6 +1552,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1540,6 +1580,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1557,6 +1598,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1577,6 +1619,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1598,6 +1641,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
           ? com.google.cloud.apphub.v1.ServiceProjectAttachment.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1621,6 +1665,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface LicenseOrBuilder
    * @return Whether the chargesUseFee field is set.
    */
   boolean hasChargesUseFee();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LicenseOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface LicenseOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface LicenseOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface LicenseOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface LicenseOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface LicenseOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface LicenseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface LicenseOrBuilder
    * @return Whether the licenseCode field is set.
    */
   boolean hasLicenseCode();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface LicenseOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public interface LicenseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public interface LicenseOrBuilder
    * @return Whether the resourceRequirements field is set.
    */
   boolean hasResourceRequirements();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
@@ -263,6 +275,7 @@ public interface LicenseOrBuilder
    * @return The resourceRequirements.
    */
   com.google.cloud.compute.v1.LicenseResourceRequirements getResourceRequirements();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
@@ -283,6 +296,7 @@ public interface LicenseOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -295,6 +309,7 @@ public interface LicenseOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -320,6 +335,7 @@ public interface LicenseOrBuilder
    * @return Whether the transferable field is set.
    */
   boolean hasTransferable();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface ReportSummaryOrBuilder
    * @return Whether the allAssetsStats field is set.
    */
   boolean hasAllAssetsStats();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ReportSummaryOrBuilder
    * @return The allAssetsStats.
    */
   com.google.cloud.migrationcenter.v1.ReportSummary.AssetAggregateStats getAllAssetsStats();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ReportSummaryOrBuilder
    */
   java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.GroupFinding>
       getGroupFindingsList();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface ReportSummaryOrBuilder
    * </code>
    */
   com.google.cloud.migrationcenter.v1.ReportSummary.GroupFinding getGroupFindings(int index);
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface ReportSummaryOrBuilder
    * </code>
    */
   int getGroupFindingsCount();
+
   /**
    *
    *
@@ -109,6 +114,7 @@ public interface ReportSummaryOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.ReportSummary.GroupFindingOrBuilder>
       getGroupFindingsOrBuilderList();
+
   /**
    *
    *

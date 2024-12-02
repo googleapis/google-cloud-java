@@ -32,6 +32,7 @@ public interface CreateBranchRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -49,6 +50,7 @@ public interface CreateBranchRuleRequestOrBuilder
    * @return Whether the branchRule field is set.
    */
   boolean hasBranchRule();
+
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -57,6 +59,7 @@ public interface CreateBranchRuleRequestOrBuilder
    * @return The branchRule.
    */
   com.google.cloud.securesourcemanager.v1.BranchRule getBranchRule();
+
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -70,6 +73,7 @@ public interface CreateBranchRuleRequestOrBuilder
    * @return The branchRuleId.
    */
   java.lang.String getBranchRuleId();
+
   /**
    * <code>string branch_rule_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *

@@ -37,6 +37,7 @@ public interface GCSOrBuilder
    * @return The remotePath.
    */
   java.lang.String getRemotePath();
+
   /**
    *
    *

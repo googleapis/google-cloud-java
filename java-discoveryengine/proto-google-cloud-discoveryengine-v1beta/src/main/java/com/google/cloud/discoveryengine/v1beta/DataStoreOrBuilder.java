@@ -41,6 +41,7 @@ public interface DataStoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface DataStoreOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface DataStoreOrBuilder
    * @return The enum numeric value on the wire for industryVertical.
    */
   int getIndustryVerticalValue();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface DataStoreOrBuilder
    * @return A list containing the solutionTypes.
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.SolutionType> getSolutionTypesList();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface DataStoreOrBuilder
    * @return The count of solutionTypes.
    */
   int getSolutionTypesCount();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface DataStoreOrBuilder
    * @return The solutionTypes at the given index.
    */
   com.google.cloud.discoveryengine.v1beta.SolutionType getSolutionTypes(int index);
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface DataStoreOrBuilder
    * @return A list containing the enum numeric values on the wire for solutionTypes.
    */
   java.util.List<java.lang.Integer> getSolutionTypesValueList();
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public interface DataStoreOrBuilder
    * @return The defaultSchemaId.
    */
   java.lang.String getDefaultSchemaId();
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public interface DataStoreOrBuilder
    * @return The enum numeric value on the wire for contentConfig.
    */
   int getContentConfigValue();
+
   /**
    *
    *
@@ -283,6 +292,7 @@ public interface DataStoreOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public interface DataStoreOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -322,6 +333,7 @@ public interface DataStoreOrBuilder
    * @return Whether the languageInfo field is set.
    */
   boolean hasLanguageInfo();
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public interface DataStoreOrBuilder
    * @return The languageInfo.
    */
   com.google.cloud.discoveryengine.v1beta.LanguageInfo getLanguageInfo();
+
   /**
    *
    *
@@ -359,6 +372,7 @@ public interface DataStoreOrBuilder
    * @return Whether the naturalLanguageQueryUnderstandingConfig field is set.
    */
   boolean hasNaturalLanguageQueryUnderstandingConfig();
+
   /**
    *
    *
@@ -374,6 +388,7 @@ public interface DataStoreOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig
       getNaturalLanguageQueryUnderstandingConfig();
+
   /**
    *
    *
@@ -402,6 +417,7 @@ public interface DataStoreOrBuilder
    * @return Whether the billingEstimation field is set.
    */
   boolean hasBillingEstimation();
+
   /**
    *
    *
@@ -416,6 +432,7 @@ public interface DataStoreOrBuilder
    * @return The billingEstimation.
    */
   com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation getBillingEstimation();
+
   /**
    *
    *
@@ -446,6 +463,7 @@ public interface DataStoreOrBuilder
    * @return Whether the workspaceConfig field is set.
    */
   boolean hasWorkspaceConfig();
+
   /**
    *
    *
@@ -462,6 +480,7 @@ public interface DataStoreOrBuilder
    * @return The workspaceConfig.
    */
   com.google.cloud.discoveryengine.v1beta.WorkspaceConfig getWorkspaceConfig();
+
   /**
    *
    *
@@ -491,6 +510,7 @@ public interface DataStoreOrBuilder
    * @return Whether the documentProcessingConfig field is set.
    */
   boolean hasDocumentProcessingConfig();
+
   /**
    *
    *
@@ -505,6 +525,7 @@ public interface DataStoreOrBuilder
    * @return The documentProcessingConfig.
    */
   com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig getDocumentProcessingConfig();
+
   /**
    *
    *
@@ -545,6 +566,7 @@ public interface DataStoreOrBuilder
    * @return Whether the startingSchema field is set.
    */
   boolean hasStartingSchema();
+
   /**
    *
    *
@@ -571,6 +593,7 @@ public interface DataStoreOrBuilder
    * @return The startingSchema.
    */
   com.google.cloud.discoveryengine.v1beta.Schema getStartingSchema();
+
   /**
    *
    *
@@ -610,6 +633,7 @@ public interface DataStoreOrBuilder
    * @return Whether the servingConfigDataStore field is set.
    */
   boolean hasServingConfigDataStore();
+
   /**
    *
    *
@@ -625,6 +649,7 @@ public interface DataStoreOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore
       getServingConfigDataStore();
+
   /**
    *
    *

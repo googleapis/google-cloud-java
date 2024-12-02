@@ -41,6 +41,7 @@ public interface CreateBigQueryExportRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface CreateBigQueryExportRequestOrBuilder
    * @return Whether the bigQueryExport field is set.
    */
   boolean hasBigQueryExport();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateBigQueryExportRequestOrBuilder
    * @return The bigQueryExport.
    */
   com.google.cloud.securitycenter.v2.BigQueryExport getBigQueryExport();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CreateBigQueryExportRequestOrBuilder
    * @return The bigQueryExportId.
    */
   java.lang.String getBigQueryExportId();
+
   /**
    *
    *

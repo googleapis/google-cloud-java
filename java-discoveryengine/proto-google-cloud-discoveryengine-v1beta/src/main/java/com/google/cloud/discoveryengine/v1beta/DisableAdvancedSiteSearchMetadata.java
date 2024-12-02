@@ -36,6 +36,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.DisableAdvancedSiteSearchMetadata)
     DisableAdvancedSiteSearchMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DisableAdvancedSiteSearchMetadata.newBuilder() to construct.
   private DisableAdvancedSiteSearchMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -343,6 +350,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +587,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -635,6 +646,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +714,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -732,6 +748,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -764,6 +781,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -779,6 +797,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -800,6 +819,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -823,6 +843,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +864,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +893,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +914,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +930,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -925,6 +950,7 @@ public final class DisableAdvancedSiteSearchMetadata extends com.google.protobuf
             : updateTime_;
       }
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface SoftwareConfigOrBuilder
    * @return The imageVersion.
    */
   java.lang.String getImageVersion();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface SoftwareConfigOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -117,9 +119,11 @@ public interface SoftwareConfigOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface SoftwareConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public interface SoftwareConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public interface SoftwareConfigOrBuilder
    * @return A list containing the optionalComponents.
    */
   java.util.List<com.google.cloud.dataproc.v1.Component> getOptionalComponentsList();
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public interface SoftwareConfigOrBuilder
    * @return The count of optionalComponents.
    */
   int getOptionalComponentsCount();
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public interface SoftwareConfigOrBuilder
    * @return The optionalComponents at the given index.
    */
   com.google.cloud.dataproc.v1.Component getOptionalComponents(int index);
+
   /**
    *
    *
@@ -266,6 +275,7 @@ public interface SoftwareConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for optionalComponents.
    */
   java.util.List<java.lang.Integer> getOptionalComponentsValueList();
+
   /**
    *
    *

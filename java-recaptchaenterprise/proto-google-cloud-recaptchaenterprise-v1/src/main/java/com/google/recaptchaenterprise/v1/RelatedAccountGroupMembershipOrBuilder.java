@@ -39,6 +39,7 @@ public interface RelatedAccountGroupMembershipOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface RelatedAccountGroupMembershipOrBuilder
    * @return The accountId.
    */
   java.lang.String getAccountId();
+
   /**
    *
    *

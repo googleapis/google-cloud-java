@@ -37,6 +37,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the aggregationInterval field is set.
    */
   boolean hasAggregationInterval();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The enum numeric value on the wire for aggregationInterval.
    */
   int getAggregationIntervalValue();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the flowSampling field is set.
    */
   boolean hasFlowSampling();
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The enum numeric value on the wire for metadata.
    */
   int getMetadataValue();
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return A list containing the metadataFields.
    */
   java.util.List<java.lang.String> getMetadataFieldsList();
+
   /**
    *
    *
@@ -290,6 +301,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The count of metadataFields.
    */
   int getMetadataFieldsCount();
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The metadataFields at the given index.
    */
   java.lang.String getMetadataFields(int index);
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the filterExpr field is set.
    */
   boolean hasFilterExpr();
+
   /**
    *
    *
@@ -345,6 +359,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The filterExpr.
    */
   java.lang.String getFilterExpr();
+
   /**
    *
    *
@@ -373,6 +388,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the interconnectAttachment field is set.
    */
   boolean hasInterconnectAttachment();
+
   /**
    *
    *
@@ -387,6 +403,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The interconnectAttachment.
    */
   java.lang.String getInterconnectAttachment();
+
   /**
    *
    *
@@ -415,6 +432,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the vpnTunnel field is set.
    */
   boolean hasVpnTunnel();
+
   /**
    *
    *
@@ -428,6 +446,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The vpnTunnel.
    */
   java.lang.String getVpnTunnel();
+
   /**
    *
    *
@@ -452,6 +471,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -462,9 +482,11 @@ public interface VpcFlowLogsConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -475,6 +497,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -489,6 +512,7 @@ public interface VpcFlowLogsConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -513,6 +537,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -526,6 +551,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -551,6 +577,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -564,6 +591,7 @@ public interface VpcFlowLogsConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface SessionTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SessionTemplateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface SessionTemplateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface SessionTemplateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface SessionTemplateOrBuilder
    * @return Whether the jupyterSession field is set.
    */
   boolean hasJupyterSession();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface SessionTemplateOrBuilder
    * @return The jupyterSession.
    */
   com.google.cloud.dataproc.v1.JupyterConfig getJupyterSession();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface SessionTemplateOrBuilder
    * @return Whether the sparkConnectSession field is set.
    */
   boolean hasSparkConnectSession();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface SessionTemplateOrBuilder
    * @return The sparkConnectSession.
    */
   com.google.cloud.dataproc.v1.SparkConnectConfig getSparkConnectSession();
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public interface SessionTemplateOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public interface SessionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -251,9 +261,11 @@ public interface SessionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface SessionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface SessionTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -321,6 +335,7 @@ public interface SessionTemplateOrBuilder
    * @return Whether the runtimeConfig field is set.
    */
   boolean hasRuntimeConfig();
+
   /**
    *
    *
@@ -335,6 +350,7 @@ public interface SessionTemplateOrBuilder
    * @return The runtimeConfig.
    */
   com.google.cloud.dataproc.v1.RuntimeConfig getRuntimeConfig();
+
   /**
    *
    *
@@ -362,6 +378,7 @@ public interface SessionTemplateOrBuilder
    * @return Whether the environmentConfig field is set.
    */
   boolean hasEnvironmentConfig();
+
   /**
    *
    *
@@ -376,6 +393,7 @@ public interface SessionTemplateOrBuilder
    * @return The environmentConfig.
    */
   com.google.cloud.dataproc.v1.EnvironmentConfig getEnvironmentConfig();
+
   /**
    *
    *
@@ -402,6 +420,7 @@ public interface SessionTemplateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -415,6 +434,7 @@ public interface SessionTemplateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -440,6 +460,7 @@ public interface SessionTemplateOrBuilder
    * @return The uuid.
    */
   java.lang.String getUuid();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface GetDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetDiskRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

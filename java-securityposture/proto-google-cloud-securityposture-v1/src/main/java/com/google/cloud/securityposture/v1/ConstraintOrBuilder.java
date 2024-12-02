@@ -38,6 +38,7 @@ public interface ConstraintOrBuilder
    * @return Whether the securityHealthAnalyticsModule field is set.
    */
   boolean hasSecurityHealthAnalyticsModule();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ConstraintOrBuilder
    */
   com.google.cloud.securityposture.v1.SecurityHealthAnalyticsModule
       getSecurityHealthAnalyticsModule();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ConstraintOrBuilder
    * @return Whether the securityHealthAnalyticsCustomModule field is set.
    */
   boolean hasSecurityHealthAnalyticsCustomModule();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ConstraintOrBuilder
    */
   com.google.cloud.securityposture.v1.SecurityHealthAnalyticsCustomModule
       getSecurityHealthAnalyticsCustomModule();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface ConstraintOrBuilder
    * @return Whether the orgPolicyConstraint field is set.
    */
   boolean hasOrgPolicyConstraint();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ConstraintOrBuilder
    * @return The orgPolicyConstraint.
    */
   com.google.cloud.securityposture.v1.OrgPolicyConstraint getOrgPolicyConstraint();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface ConstraintOrBuilder
    * @return Whether the orgPolicyConstraintCustom field is set.
    */
   boolean hasOrgPolicyConstraintCustom();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface ConstraintOrBuilder
    * @return The orgPolicyConstraintCustom.
    */
   com.google.cloud.securityposture.v1.OrgPolicyConstraintCustom getOrgPolicyConstraintCustom();
+
   /**
    *
    *

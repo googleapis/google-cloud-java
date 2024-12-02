@@ -33,6 +33,7 @@ public final class GcsFuseCsiDriverConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.GcsFuseCsiDriverConfig)
     GcsFuseCsiDriverConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcsFuseCsiDriverConfig.newBuilder() to construct.
   private GcsFuseCsiDriverConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class GcsFuseCsiDriverConfig extends com.google.protobuf.GeneratedM
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class GcsFuseCsiDriverConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -420,6 +423,7 @@ public final class GcsFuseCsiDriverConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -435,6 +439,7 @@ public final class GcsFuseCsiDriverConfig extends com.google.protobuf.GeneratedM
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -454,6 +459,7 @@ public final class GcsFuseCsiDriverConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

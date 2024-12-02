@@ -34,6 +34,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult)
     StreamingTranslateSpeechResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingTranslateSpeechResult.newBuilder() to construct.
   private StreamingTranslateSpeechResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -80,6 +81,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      * @return The translation.
      */
     java.lang.String getTranslation();
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      */
     boolean getIsFinal();
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       // @@protoc_insertion_point(message_implements:google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.TextTranslationResult)
       TextTranslationResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TextTranslationResult.newBuilder() to construct.
     private TextTranslationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -162,6 +166,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object translation_ = "";
+
     /**
      *
      *
@@ -185,6 +190,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         return s;
       }
     }
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
 
     public static final int IS_FINAL_FIELD_NUMBER = 2;
     private boolean isFinal_ = false;
+
     /**
      *
      *
@@ -428,6 +435,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -658,6 +666,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       private int bitField0_;
 
       private java.lang.Object translation_ = "";
+
       /**
        *
        *
@@ -680,6 +689,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -702,6 +712,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -723,6 +734,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -740,6 +752,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -764,6 +777,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       }
 
       private boolean isFinal_;
+
       /**
        *
        *
@@ -784,6 +798,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       public boolean getIsFinal() {
         return isFinal_;
       }
+
       /**
        *
        *
@@ -808,6 +823,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -919,6 +935,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     private ResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -950,6 +967,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
   }
 
   public static final int TEXT_TRANSLATION_RESULT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -967,6 +985,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
   public boolean hasTextTranslationResult() {
     return resultCase_ == 1;
   }
+
   /**
    *
    *
@@ -992,6 +1011,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     return com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
         .TextTranslationResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1200,6 +1220,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1434,6 +1455,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
             com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
                 .TextTranslationResultOrBuilder>
         textTranslationResultBuilder_;
+
     /**
      *
      *
@@ -1451,6 +1473,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     public boolean hasTextTranslationResult() {
       return resultCase_ == 1;
     }
+
     /**
      *
      *
@@ -1484,6 +1507,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
             .TextTranslationResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1535,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1535,6 +1560,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1603,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1604,6 +1631,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1620,6 +1648,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         getTextTranslationResultBuilder() {
       return getTextTranslationResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1647,6 +1676,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
             .TextTranslationResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *

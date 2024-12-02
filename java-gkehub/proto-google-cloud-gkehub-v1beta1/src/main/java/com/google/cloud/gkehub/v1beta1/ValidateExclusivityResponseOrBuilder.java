@@ -41,6 +41,7 @@ public interface ValidateExclusivityResponseOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface ValidateExclusivityResponseOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *

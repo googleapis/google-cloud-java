@@ -35,6 +35,7 @@ public interface DatasetInputConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3.DatasetInputConfig.InputFile> getInputFilesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface DatasetInputConfigOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3.DatasetInputConfig.InputFile getInputFiles(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface DatasetInputConfigOrBuilder
    * </code>
    */
   int getInputFilesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface DatasetInputConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.DatasetInputConfig.InputFileOrBuilder>
       getInputFilesOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ReadTensorboardSizeResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReadTensorboardSizeResponse)
     ReadTensorboardSizeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadTensorboardSizeResponse.newBuilder() to construct.
   private ReadTensorboardSizeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ReadTensorboardSizeResponse extends com.google.protobuf.Gener
 
   public static final int STORAGE_SIZE_BYTE_FIELD_NUMBER = 1;
   private long storageSizeByte_ = 0L;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class ReadTensorboardSizeResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -427,6 +430,7 @@ public final class ReadTensorboardSizeResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private long storageSizeByte_;
+
     /**
      *
      *
@@ -442,6 +446,7 @@ public final class ReadTensorboardSizeResponse extends com.google.protobuf.Gener
     public long getStorageSizeByte() {
       return storageSizeByte_;
     }
+
     /**
      *
      *
@@ -461,6 +466,7 @@ public final class ReadTensorboardSizeResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

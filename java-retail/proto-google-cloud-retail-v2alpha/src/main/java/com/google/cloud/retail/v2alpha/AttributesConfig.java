@@ -33,6 +33,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.AttributesConfig)
     AttributesConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AttributesConfig.newBuilder() to construct.
   private AttributesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -168,6 +171,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
   public int getCatalogAttributesCount() {
     return internalGetCatalogAttributes().getMap().size();
   }
+
   /**
    *
    *
@@ -193,6 +197,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     }
     return internalGetCatalogAttributes().getMap().containsKey(key);
   }
+
   /** Use {@link #getCatalogAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -200,6 +205,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       getCatalogAttributes() {
     return getCatalogAttributesMap();
   }
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       getCatalogAttributesMap() {
     return internalGetCatalogAttributes().getMap();
   }
+
   /**
    *
    *
@@ -254,6 +261,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
         internalGetCatalogAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -288,6 +296,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int ATTRIBUTE_CONFIG_LEVEL_FIELD_NUMBER = 3;
   private int attributeConfigLevel_ = 0;
+
   /**
    *
    *
@@ -307,6 +316,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
   public int getAttributeConfigLevelValue() {
     return attributeConfigLevel_;
   }
+
   /**
    *
    *
@@ -525,6 +535,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -765,6 +776,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -790,6 +802,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -815,6 +828,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -839,6 +853,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +874,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,7 +921,8 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return CatalogAttributesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final CatalogAttributesConverter catalogAttributesConverter =
         new CatalogAttributesConverter();
@@ -946,6 +963,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     public int getCatalogAttributesCount() {
       return internalGetCatalogAttributes().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -972,6 +990,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       }
       return internalGetCatalogAttributes().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getCatalogAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -979,6 +998,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
         getCatalogAttributes() {
       return getCatalogAttributesMap();
     }
+
     /**
      *
      *
@@ -1003,6 +1023,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
         getCatalogAttributesMap() {
       return internalGetCatalogAttributes().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1035,6 +1056,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
           map = internalGetMutableCatalogAttributes().ensureBuilderMap();
       return map.containsKey(key) ? catalogAttributesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1073,6 +1095,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableCatalogAttributes().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1122,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableCatalogAttributes().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.CatalogAttribute>
@@ -1106,6 +1130,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       return internalGetMutableCatalogAttributes().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1137,6 +1162,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1194,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1231,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int attributeConfigLevel_ = 0;
+
     /**
      *
      *
@@ -1223,6 +1251,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
     public int getAttributeConfigLevelValue() {
       return attributeConfigLevel_;
     }
+
     /**
      *
      *
@@ -1245,6 +1274,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1298,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.retail.v2alpha.AttributeConfigLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1294,6 +1325,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

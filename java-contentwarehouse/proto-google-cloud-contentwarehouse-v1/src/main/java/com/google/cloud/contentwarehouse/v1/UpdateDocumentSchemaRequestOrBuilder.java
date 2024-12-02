@@ -40,6 +40,7 @@ public interface UpdateDocumentSchemaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UpdateDocumentSchemaRequestOrBuilder
    * @return Whether the documentSchema field is set.
    */
   boolean hasDocumentSchema();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateDocumentSchemaRequestOrBuilder
    * @return The documentSchema.
    */
   com.google.cloud.contentwarehouse.v1.DocumentSchema getDocumentSchema();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface TimePeriodOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TimePeriodOrBuilder
    * @return The startTime.
    */
   com.google.type.TimeOfDay getStartTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TimePeriodOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface TimePeriodOrBuilder
    * @return The endTime.
    */
   com.google.type.TimeOfDay getEndTime();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface TimePeriodOrBuilder
    * @return A list containing the days.
    */
   java.util.List<com.google.type.DayOfWeek> getDaysList();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface TimePeriodOrBuilder
    * @return The count of days.
    */
   int getDaysCount();
+
   /**
    *
    *
@@ -134,6 +140,7 @@ public interface TimePeriodOrBuilder
    * @return The days at the given index.
    */
   com.google.type.DayOfWeek getDays(int index);
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface TimePeriodOrBuilder
    * @return A list containing the enum numeric values on the wire for days.
    */
   java.util.List<java.lang.Integer> getDaysValueList();
+
   /**
    *
    *

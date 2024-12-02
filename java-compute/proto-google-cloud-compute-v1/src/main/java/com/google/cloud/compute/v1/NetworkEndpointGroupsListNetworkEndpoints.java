@@ -33,6 +33,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpointGroupsListNetworkEndpoints)
     NetworkEndpointGroupsListNetworkEndpointsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkEndpointGroupsListNetworkEndpoints.newBuilder() to construct.
   private NetworkEndpointGroupsListNetworkEndpoints(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus> items_;
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
   public com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       return s;
     }
   }
+
   /**
    *
    *
@@ -283,6 +295,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -298,6 +311,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -321,6 +335,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       return s;
     }
   }
+
   /**
    *
    *
@@ -347,6 +362,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -362,6 +378,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -377,6 +394,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -610,6 +628,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -925,6 +944,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -939,6 +959,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -961,6 +982,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -983,6 +1005,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1027,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1045,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1105,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1141,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1166,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1189,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1213,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1238,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1260,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1283,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1306,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1327,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1348,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1363,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1344,6 +1382,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1363,6 +1402,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1378,6 +1418,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
           .addBuilder(
               com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1395,6 +1436,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
               index,
               com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1428,6 +1470,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1442,6 +1485,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1464,6 +1508,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1486,6 +1531,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1507,6 +1553,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1524,6 +1571,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1596,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1562,6 +1611,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1584,6 +1634,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1606,6 +1657,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1679,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1644,6 +1697,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1727,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -1687,6 +1742,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1707,6 +1763,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1729,6 +1786,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1806,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1775,6 +1834,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       }
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1854,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1808,6 +1869,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1826,6 +1888,7 @@ public final class NetworkEndpointGroupsListNetworkEndpoints
             : warning_;
       }
     }
+
     /**
      *
      *

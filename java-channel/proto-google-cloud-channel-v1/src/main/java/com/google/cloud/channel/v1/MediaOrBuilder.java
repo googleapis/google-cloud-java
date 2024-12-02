@@ -36,6 +36,7 @@ public interface MediaOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface MediaOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface MediaOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

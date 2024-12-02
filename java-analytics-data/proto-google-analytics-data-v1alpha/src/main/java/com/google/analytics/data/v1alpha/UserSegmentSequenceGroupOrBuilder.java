@@ -43,6 +43,7 @@ public interface UserSegmentSequenceGroupOrBuilder
    * @return The enum numeric value on the wire for sequenceScoping.
    */
   int getSequenceScopingValue();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface UserSegmentSequenceGroupOrBuilder
    * @return Whether the sequenceMaximumDuration field is set.
    */
   boolean hasSequenceMaximumDuration();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface UserSegmentSequenceGroupOrBuilder
    * @return The sequenceMaximumDuration.
    */
   com.google.protobuf.Duration getSequenceMaximumDuration();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface UserSegmentSequenceGroupOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.UserSequenceStep user_sequence_steps = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.UserSequenceStep> getUserSequenceStepsList();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface UserSegmentSequenceGroupOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.UserSequenceStep user_sequence_steps = 3;</code>
    */
   com.google.analytics.data.v1alpha.UserSequenceStep getUserSequenceSteps(int index);
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface UserSegmentSequenceGroupOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.UserSequenceStep user_sequence_steps = 3;</code>
    */
   int getUserSequenceStepsCount();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface UserSegmentSequenceGroupOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.UserSequenceStepOrBuilder>
       getUserSequenceStepsOrBuilderList();
+
   /**
    *
    *

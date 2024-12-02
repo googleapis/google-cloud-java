@@ -73,7 +73,8 @@ public class MockKeyTrackingServiceImpl extends KeyTrackingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetProtectedResourcesSummary, expected %s or %s",
+                  "Unrecognized response type %s for method GetProtectedResourcesSummary, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProtectedResourcesSummary.class.getName(),
                   Exception.class.getName())));
@@ -95,7 +96,8 @@ public class MockKeyTrackingServiceImpl extends KeyTrackingServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchProtectedResources, expected %s or %s",
+                  "Unrecognized response type %s for method SearchProtectedResources, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchProtectedResourcesResponse.class.getName(),
                   Exception.class.getName())));

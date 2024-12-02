@@ -35,6 +35,7 @@ public interface DateTimeArrayOrBuilder
    * <code>repeated .google.type.DateTime values = 1;</code>
    */
   java.util.List<com.google.type.DateTime> getValuesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface DateTimeArrayOrBuilder
    * <code>repeated .google.type.DateTime values = 1;</code>
    */
   com.google.type.DateTime getValues(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface DateTimeArrayOrBuilder
    * <code>repeated .google.type.DateTime values = 1;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface DateTimeArrayOrBuilder
    * <code>repeated .google.type.DateTime values = 1;</code>
    */
   java.util.List<? extends com.google.type.DateTimeOrBuilder> getValuesOrBuilderList();
+
   /**
    *
    *

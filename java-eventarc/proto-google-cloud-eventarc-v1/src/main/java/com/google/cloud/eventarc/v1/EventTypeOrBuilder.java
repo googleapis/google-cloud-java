@@ -41,6 +41,7 @@ public interface EventTypeOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface EventTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface EventTypeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.eventarc.v1.FilteringAttribute> getFilteringAttributesList();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface EventTypeOrBuilder
    * </code>
    */
   com.google.cloud.eventarc.v1.FilteringAttribute getFilteringAttributes(int index);
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface EventTypeOrBuilder
    * </code>
    */
   int getFilteringAttributesCount();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface EventTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.FilteringAttributeOrBuilder>
       getFilteringAttributesOrBuilderList();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface EventTypeOrBuilder
    * @return The eventSchemaUri.
    */
   java.lang.String getEventSchemaUri();
+
   /**
    *
    *

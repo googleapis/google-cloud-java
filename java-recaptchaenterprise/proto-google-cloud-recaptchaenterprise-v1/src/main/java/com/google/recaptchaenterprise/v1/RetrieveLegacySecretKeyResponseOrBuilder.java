@@ -39,6 +39,7 @@ public interface RetrieveLegacySecretKeyResponseOrBuilder
    * @return The legacySecretKey.
    */
   java.lang.String getLegacySecretKey();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface DroppedLabelsOrBuilder
    * <code>map&lt;string, string&gt; label = 1;</code>
    */
   int getLabelCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface DroppedLabelsOrBuilder
    * <code>map&lt;string, string&gt; label = 1;</code>
    */
   boolean containsLabel(java.lang.String key);
+
   /** Use {@link #getLabelMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabel();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface DroppedLabelsOrBuilder
    * <code>map&lt;string, string&gt; label = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface DroppedLabelsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

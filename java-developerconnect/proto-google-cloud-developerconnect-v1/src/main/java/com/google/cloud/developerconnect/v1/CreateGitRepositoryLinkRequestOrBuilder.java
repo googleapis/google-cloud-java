@@ -38,6 +38,7 @@ public interface CreateGitRepositoryLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateGitRepositoryLinkRequestOrBuilder
    * @return Whether the gitRepositoryLink field is set.
    */
   boolean hasGitRepositoryLink();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateGitRepositoryLinkRequestOrBuilder
    * @return The gitRepositoryLink.
    */
   com.google.cloud.developerconnect.v1.GitRepositoryLink getGitRepositoryLink();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface CreateGitRepositoryLinkRequestOrBuilder
    * @return The gitRepositoryLinkId.
    */
   java.lang.String getGitRepositoryLinkId();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface CreateGitRepositoryLinkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

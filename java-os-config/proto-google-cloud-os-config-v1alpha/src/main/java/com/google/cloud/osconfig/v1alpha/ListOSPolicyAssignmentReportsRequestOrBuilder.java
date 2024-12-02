@@ -58,6 +58,7 @@ public interface ListOSPolicyAssignmentReportsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -119,6 +120,7 @@ public interface ListOSPolicyAssignmentReportsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -147,6 +149,7 @@ public interface ListOSPolicyAssignmentReportsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

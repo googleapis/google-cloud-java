@@ -40,6 +40,7 @@ public interface CreateTableRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateTableRequestOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateTableRequestOrBuilder
    * @return The table.
    */
   com.google.cloud.bigquery.biglake.v1.Table getTable();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateTableRequestOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the certificate field is set.
    */
   boolean hasCertificate();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SslCertificateOrBuilder
    * @return The certificate.
    */
   java.lang.String getCertificate();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SslCertificateOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface SslCertificateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface SslCertificateOrBuilder
    * @return The expireTime.
    */
   java.lang.String getExpireTime();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public interface SslCertificateOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -248,6 +259,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the managed field is set.
    */
   boolean hasManaged();
+
   /**
    *
    *
@@ -262,6 +274,7 @@ public interface SslCertificateOrBuilder
    * @return The managed.
    */
   com.google.cloud.compute.v1.SslCertificateManagedSslCertificate getManaged();
+
   /**
    *
    *
@@ -287,6 +300,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -299,6 +313,7 @@ public interface SslCertificateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -324,6 +339,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the privateKey field is set.
    */
   boolean hasPrivateKey();
+
   /**
    *
    *
@@ -336,6 +352,7 @@ public interface SslCertificateOrBuilder
    * @return The privateKey.
    */
   java.lang.String getPrivateKey();
+
   /**
    *
    *
@@ -361,6 +378,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -373,6 +391,7 @@ public interface SslCertificateOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -398,6 +417,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -410,6 +430,7 @@ public interface SslCertificateOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -437,6 +458,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the selfManaged field is set.
    */
   boolean hasSelfManaged();
+
   /**
    *
    *
@@ -451,6 +473,7 @@ public interface SslCertificateOrBuilder
    * @return The selfManaged.
    */
   com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate getSelfManaged();
+
   /**
    *
    *
@@ -477,6 +500,7 @@ public interface SslCertificateOrBuilder
    * @return A list containing the subjectAlternativeNames.
    */
   java.util.List<java.lang.String> getSubjectAlternativeNamesList();
+
   /**
    *
    *
@@ -489,6 +513,7 @@ public interface SslCertificateOrBuilder
    * @return The count of subjectAlternativeNames.
    */
   int getSubjectAlternativeNamesCount();
+
   /**
    *
    *
@@ -502,6 +527,7 @@ public interface SslCertificateOrBuilder
    * @return The subjectAlternativeNames at the given index.
    */
   java.lang.String getSubjectAlternativeNames(int index);
+
   /**
    *
    *
@@ -529,6 +555,7 @@ public interface SslCertificateOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -542,6 +569,7 @@ public interface SslCertificateOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

@@ -94,7 +94,8 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchProcessDocuments, expected %s or %s",
+                  "Unrecognized response type %s for method BatchProcessDocuments, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -222,7 +223,8 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method TrainProcessorVersion, expected %s or %s",
+                  "Unrecognized response type %s for method TrainProcessorVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -265,7 +267,8 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListProcessorVersions, expected %s or %s",
+                  "Unrecognized response type %s for method ListProcessorVersions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListProcessorVersionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -286,7 +289,8 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteProcessorVersion, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteProcessorVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -307,7 +311,8 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeployProcessorVersion, expected %s or %s",
+                  "Unrecognized response type %s for method DeployProcessorVersion, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -328,7 +333,8 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UndeployProcessorVersion, expected %s or %s",
+                  "Unrecognized response type %s for method UndeployProcessorVersion, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -433,7 +439,8 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetDefaultProcessorVersion, expected %s or %s",
+                  "Unrecognized response type %s for method SetDefaultProcessorVersion, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -475,7 +482,8 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method EvaluateProcessorVersion, expected %s or %s",
+                  "Unrecognized response type %s for method EvaluateProcessorVersion, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

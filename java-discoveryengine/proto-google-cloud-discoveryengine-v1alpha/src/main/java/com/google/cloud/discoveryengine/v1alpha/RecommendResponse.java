@@ -33,6 +33,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.RecommendResponse)
     RecommendResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecommendResponse.newBuilder() to construct.
   private RecommendResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -108,6 +110,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * @return Whether the document field is set.
      */
     boolean hasDocument();
+
     /**
      *
      *
@@ -121,6 +124,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * @return The document.
      */
     com.google.cloud.discoveryengine.v1alpha.Document getDocument();
+
     /**
      *
      *
@@ -149,6 +153,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 3;</code>
      */
     int getMetadataCount();
+
     /**
      *
      *
@@ -165,9 +170,11 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 3;</code>
      */
     boolean containsMetadata(java.lang.String key);
+
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata();
+
     /**
      *
      *
@@ -184,6 +191,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 3;</code>
      */
     java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap();
+
     /**
      *
      *
@@ -204,6 +212,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         java.lang.String key,
         /* nullable */
         com.google.protobuf.Value defaultValue);
+
     /**
      *
      *
@@ -221,6 +230,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.Value getMetadataOrThrow(java.lang.String key);
   }
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.RecommendResponse.RecommendationResult)
       RecommendationResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RecommendationResult.newBuilder() to construct.
     private RecommendationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -285,6 +296,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -308,6 +320,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -334,6 +347,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
 
     public static final int DOCUMENT_FIELD_NUMBER = 2;
     private com.google.cloud.discoveryengine.v1alpha.Document document_;
+
     /**
      *
      *
@@ -350,6 +364,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -368,6 +383,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.discoveryengine.v1alpha.Document.getDefaultInstance()
           : document_;
     }
+
     /**
      *
      *
@@ -414,6 +430,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -436,12 +453,14 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata() {
       return getMetadataMap();
     }
+
     /**
      *
      *
@@ -461,6 +480,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
+
     /**
      *
      *
@@ -488,6 +508,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
           internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -716,6 +737,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -991,6 +1013,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -1013,6 +1036,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1035,6 +1059,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1056,6 +1081,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1073,6 +1099,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1102,6 +1129,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
               com.google.cloud.discoveryengine.v1alpha.Document.Builder,
               com.google.cloud.discoveryengine.v1alpha.DocumentOrBuilder>
           documentBuilder_;
+
       /**
        *
        *
@@ -1117,6 +1145,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       public boolean hasDocument() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1138,6 +1167,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
           return documentBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1161,6 +1191,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1182,6 +1213,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1211,6 +1243,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -1231,6 +1264,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1246,6 +1280,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getDocumentFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1265,6 +1300,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
               : document_;
         }
       }
+
       /**
        *
        *
@@ -1308,7 +1344,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
             defaultEntry() {
           return MetadataDefaultEntryHolder.defaultEntry;
         }
-      };
+      }
+      ;
 
       private static final MetadataConverter metadataConverter = new MetadataConverter();
 
@@ -1348,6 +1385,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       public int getMetadataCount() {
         return internalGetMetadata().ensureBuilderMap().size();
       }
+
       /**
        *
        *
@@ -1370,12 +1408,14 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         }
         return internalGetMetadata().ensureBuilderMap().containsKey(key);
       }
+
       /** Use {@link #getMetadataMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata() {
         return getMetadataMap();
       }
+
       /**
        *
        *
@@ -1395,6 +1435,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap() {
         return internalGetMetadata().getImmutableMap();
       }
+
       /**
        *
        *
@@ -1422,6 +1463,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
             internalGetMutableMetadata().ensureBuilderMap();
         return map.containsKey(key) ? metadataConverter.build(map.get(key)) : defaultValue;
       }
+
       /**
        *
        *
@@ -1455,6 +1497,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         internalGetMutableMetadata().clear();
         return this;
       }
+
       /**
        *
        *
@@ -1477,12 +1520,14 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         internalGetMutableMetadata().ensureBuilderMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableMetadata() {
         bitField0_ |= 0x00000004;
         return internalGetMutableMetadata().ensureMessageMap();
       }
+
       /**
        *
        *
@@ -1509,6 +1554,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000004;
         return this;
       }
+
       /**
        *
        *
@@ -1536,6 +1582,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000004;
         return this;
       }
+
       /**
        *
        *
@@ -1641,6 +1688,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   private java.util.List<
           com.google.cloud.discoveryengine.v1alpha.RecommendResponse.RecommendationResult>
       results_;
+
   /**
    *
    *
@@ -1659,6 +1707,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       getResultsList() {
     return results_;
   }
+
   /**
    *
    *
@@ -1679,6 +1728,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       getResultsOrBuilderList() {
     return results_;
   }
+
   /**
    *
    *
@@ -1695,6 +1745,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   public int getResultsCount() {
     return results_.size();
   }
+
   /**
    *
    *
@@ -1712,6 +1763,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       int index) {
     return results_.get(index);
   }
+
   /**
    *
    *
@@ -1734,6 +1786,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attributionToken_ = "";
+
   /**
    *
    *
@@ -1760,6 +1813,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1792,6 +1846,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList missingIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1807,6 +1862,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getMissingIdsList() {
     return missingIds_;
   }
+
   /**
    *
    *
@@ -1822,6 +1878,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   public int getMissingIdsCount() {
     return missingIds_.size();
   }
+
   /**
    *
    *
@@ -1838,6 +1895,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   public java.lang.String getMissingIds(int index) {
     return missingIds_.get(index);
   }
+
   /**
    *
    *
@@ -1857,6 +1915,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -2071,6 +2130,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2394,6 +2454,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         return resultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2413,6 +2474,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         return resultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2433,6 +2495,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         return resultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2460,6 +2523,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2485,6 +2549,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2511,6 +2576,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2538,6 +2604,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2562,6 +2629,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2587,6 +2655,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2613,6 +2682,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2635,6 +2705,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2657,6 +2728,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2673,6 +2745,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         getResultsBuilder(int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2693,6 +2766,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2716,6 +2790,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(results_);
       }
     }
+
     /**
      *
      *
@@ -2735,6 +2810,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
               com.google.cloud.discoveryengine.v1alpha.RecommendResponse.RecommendationResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2755,6 +2831,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
               com.google.cloud.discoveryengine.v1alpha.RecommendResponse.RecommendationResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2794,6 +2871,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object attributionToken_ = "";
+
     /**
      *
      *
@@ -2819,6 +2897,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2844,6 +2923,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2868,6 +2948,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2888,6 +2969,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2923,6 +3005,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -2939,6 +3022,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       missingIds_.makeImmutable();
       return missingIds_;
     }
+
     /**
      *
      *
@@ -2954,6 +3038,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public int getMissingIdsCount() {
       return missingIds_.size();
     }
+
     /**
      *
      *
@@ -2970,6 +3055,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public java.lang.String getMissingIds(int index) {
       return missingIds_.get(index);
     }
+
     /**
      *
      *
@@ -2986,6 +3072,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getMissingIdsBytes(int index) {
       return missingIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3010,6 +3097,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3033,6 +3121,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3053,6 +3142,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3072,6 +3162,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3098,6 +3189,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -3115,6 +3207,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -3136,6 +3229,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

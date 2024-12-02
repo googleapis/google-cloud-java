@@ -36,6 +36,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.PkixPublicKey)
     PkixPublicKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PkixPublicKey.newBuilder() to construct.
   private PkixPublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,6 +216,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>EC_SIGN_P256_SHA256 = 9;</code>
      */
     public static final SignatureAlgorithm EC_SIGN_P256_SHA256 = ECDSA_P256_SHA256;
+
     /**
      *
      *
@@ -225,6 +227,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>EC_SIGN_P384_SHA384 = 10;</code>
      */
     public static final SignatureAlgorithm EC_SIGN_P384_SHA384 = ECDSA_P384_SHA384;
+
     /**
      *
      *
@@ -235,6 +238,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>EC_SIGN_P521_SHA512 = 11;</code>
      */
     public static final SignatureAlgorithm EC_SIGN_P521_SHA512 = ECDSA_P521_SHA512;
+
     /**
      *
      *
@@ -245,6 +249,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>SIGNATURE_ALGORITHM_UNSPECIFIED = 0;</code>
      */
     public static final int SIGNATURE_ALGORITHM_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -255,6 +260,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_PSS_2048_SHA256 = 1;</code>
      */
     public static final int RSA_PSS_2048_SHA256_VALUE = 1;
+
     /**
      *
      *
@@ -265,6 +271,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_PSS_3072_SHA256 = 2;</code>
      */
     public static final int RSA_PSS_3072_SHA256_VALUE = 2;
+
     /**
      *
      *
@@ -275,6 +282,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_PSS_4096_SHA256 = 3;</code>
      */
     public static final int RSA_PSS_4096_SHA256_VALUE = 3;
+
     /**
      *
      *
@@ -285,6 +293,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_PSS_4096_SHA512 = 4;</code>
      */
     public static final int RSA_PSS_4096_SHA512_VALUE = 4;
+
     /**
      *
      *
@@ -295,6 +304,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_SIGN_PKCS1_2048_SHA256 = 5;</code>
      */
     public static final int RSA_SIGN_PKCS1_2048_SHA256_VALUE = 5;
+
     /**
      *
      *
@@ -305,6 +315,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_SIGN_PKCS1_3072_SHA256 = 6;</code>
      */
     public static final int RSA_SIGN_PKCS1_3072_SHA256_VALUE = 6;
+
     /**
      *
      *
@@ -315,6 +326,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_SIGN_PKCS1_4096_SHA256 = 7;</code>
      */
     public static final int RSA_SIGN_PKCS1_4096_SHA256_VALUE = 7;
+
     /**
      *
      *
@@ -325,6 +337,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_SIGN_PKCS1_4096_SHA512 = 8;</code>
      */
     public static final int RSA_SIGN_PKCS1_4096_SHA512_VALUE = 8;
+
     /**
      *
      *
@@ -335,6 +348,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>ECDSA_P256_SHA256 = 9;</code>
      */
     public static final int ECDSA_P256_SHA256_VALUE = 9;
+
     /**
      *
      *
@@ -345,6 +359,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>EC_SIGN_P256_SHA256 = 9;</code>
      */
     public static final int EC_SIGN_P256_SHA256_VALUE = 9;
+
     /**
      *
      *
@@ -355,6 +370,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>ECDSA_P384_SHA384 = 10;</code>
      */
     public static final int ECDSA_P384_SHA384_VALUE = 10;
+
     /**
      *
      *
@@ -365,6 +381,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>EC_SIGN_P384_SHA384 = 10;</code>
      */
     public static final int EC_SIGN_P384_SHA384_VALUE = 10;
+
     /**
      *
      *
@@ -375,6 +392,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>ECDSA_P521_SHA512 = 11;</code>
      */
     public static final int ECDSA_P521_SHA512_VALUE = 11;
+
     /**
      *
      *
@@ -518,6 +536,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicKeyPem_ = "";
+
   /**
    *
    *
@@ -542,6 +561,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -569,6 +589,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIGNATURE_ALGORITHM_FIELD_NUMBER = 2;
   private int signatureAlgorithm_ = 0;
+
   /**
    *
    *
@@ -590,6 +611,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
   public int getSignatureAlgorithmValue() {
     return signatureAlgorithm_;
   }
+
   /**
    *
    *
@@ -793,6 +815,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -993,6 +1016,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object publicKeyPem_ = "";
+
     /**
      *
      *
@@ -1016,6 +1040,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1064,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1087,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1106,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1132,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int signatureAlgorithm_ = 0;
+
     /**
      *
      *
@@ -1125,6 +1154,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
     public int getSignatureAlgorithmValue() {
       return signatureAlgorithm_;
     }
+
     /**
      *
      *
@@ -1149,6 +1179,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1208,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1205,6 +1237,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

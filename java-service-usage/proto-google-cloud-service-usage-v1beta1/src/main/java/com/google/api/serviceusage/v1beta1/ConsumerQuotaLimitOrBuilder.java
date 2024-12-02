@@ -42,6 +42,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
+
   /**
    *
    *
@@ -165,6 +168,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaBucket quota_buckets = 9;</code>
    */
   java.util.List<com.google.api.serviceusage.v1beta1.QuotaBucket> getQuotaBucketsList();
+
   /**
    *
    *
@@ -177,6 +181,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaBucket quota_buckets = 9;</code>
    */
   com.google.api.serviceusage.v1beta1.QuotaBucket getQuotaBuckets(int index);
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaBucket quota_buckets = 9;</code>
    */
   int getQuotaBucketsCount();
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public interface ConsumerQuotaLimitOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1beta1.QuotaBucketOrBuilder>
       getQuotaBucketsOrBuilderList();
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * @return A list containing the supportedLocations.
    */
   java.util.List<java.lang.String> getSupportedLocationsList();
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * @return The count of supportedLocations.
    */
   int getSupportedLocationsCount();
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface ConsumerQuotaLimitOrBuilder
    * @return The supportedLocations at the given index.
    */
   java.lang.String getSupportedLocations(int index);
+
   /**
    *
    *

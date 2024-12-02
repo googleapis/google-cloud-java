@@ -33,6 +33,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.AddressComponent)
     AddressComponentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddressComponent.newBuilder() to construct.
   private AddressComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,6 +132,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * <code>CONFIRMATION_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int CONFIRMATION_LEVEL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -142,6 +144,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * <code>CONFIRMED = 1;</code>
      */
     public static final int CONFIRMED_VALUE = 1;
+
     /**
      *
      *
@@ -154,6 +157,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * <code>UNCONFIRMED_BUT_PLAUSIBLE = 2;</code>
      */
     public static final int UNCONFIRMED_BUT_PLAUSIBLE_VALUE = 2;
+
     /**
      *
      *
@@ -259,6 +263,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int COMPONENT_NAME_FIELD_NUMBER = 1;
   private com.google.maps.addressvalidation.v1.ComponentName componentName_;
+
   /**
    *
    *
@@ -274,6 +279,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   public boolean hasComponentName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -291,6 +297,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.addressvalidation.v1.ComponentName.getDefaultInstance()
         : componentName_;
   }
+
   /**
    *
    *
@@ -311,6 +318,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object componentType_ = "";
+
   /**
    *
    *
@@ -337,6 +345,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +375,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
 
   public static final int CONFIRMATION_LEVEL_FIELD_NUMBER = 3;
   private int confirmationLevel_ = 0;
+
   /**
    *
    *
@@ -384,6 +394,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   public int getConfirmationLevelValue() {
     return confirmationLevel_;
   }
+
   /**
    *
    *
@@ -411,6 +422,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
 
   public static final int INFERRED_FIELD_NUMBER = 4;
   private boolean inferred_ = false;
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
 
   public static final int SPELL_CORRECTED_FIELD_NUMBER = 5;
   private boolean spellCorrected_ = false;
+
   /**
    *
    *
@@ -453,6 +466,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
 
   public static final int REPLACED_FIELD_NUMBER = 6;
   private boolean replaced_ = false;
+
   /**
    *
    *
@@ -474,6 +488,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
 
   public static final int UNEXPECTED_FIELD_NUMBER = 7;
   private boolean unexpected_ = false;
+
   /**
    *
    *
@@ -717,6 +732,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1001,6 +1017,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
             com.google.maps.addressvalidation.v1.ComponentName.Builder,
             com.google.maps.addressvalidation.v1.ComponentNameOrBuilder>
         componentNameBuilder_;
+
     /**
      *
      *
@@ -1015,6 +1032,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public boolean hasComponentName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1035,6 +1053,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
         return componentNameBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1076,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1097,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1126,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1146,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1161,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getComponentNameFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1156,6 +1180,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
             : componentName_;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1208,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object componentType_ = "";
+
     /**
      *
      *
@@ -1208,6 +1234,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1260,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1257,6 +1285,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1306,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1334,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     }
 
     private int confirmationLevel_ = 0;
+
     /**
      *
      *
@@ -1322,6 +1353,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public int getConfirmationLevelValue() {
       return confirmationLevel_;
     }
+
     /**
      *
      *
@@ -1343,6 +1375,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1400,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
           ? com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1392,6 +1426,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1449,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean inferred_;
+
     /**
      *
      *
@@ -1431,6 +1467,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public boolean getInferred() {
       return inferred_;
     }
+
     /**
      *
      *
@@ -1452,6 +1489,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1473,6 +1511,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean spellCorrected_;
+
     /**
      *
      *
@@ -1492,6 +1531,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public boolean getSpellCorrected() {
       return spellCorrected_;
     }
+
     /**
      *
      *
@@ -1515,6 +1555,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1538,6 +1579,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean replaced_;
+
     /**
      *
      *
@@ -1556,6 +1598,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public boolean getReplaced() {
       return replaced_;
     }
+
     /**
      *
      *
@@ -1578,6 +1621,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1600,6 +1644,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean unexpected_;
+
     /**
      *
      *
@@ -1617,6 +1662,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public boolean getUnexpected() {
       return unexpected_;
     }
+
     /**
      *
      *
@@ -1638,6 +1684,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

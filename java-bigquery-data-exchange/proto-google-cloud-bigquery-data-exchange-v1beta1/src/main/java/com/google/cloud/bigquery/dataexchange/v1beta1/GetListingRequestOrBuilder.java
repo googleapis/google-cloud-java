@@ -39,6 +39,7 @@ public interface GetListingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

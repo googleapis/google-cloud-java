@@ -39,6 +39,7 @@ public interface CreatePartitionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreatePartitionRequestOrBuilder
    * @return Whether the partition field is set.
    */
   boolean hasPartition();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreatePartitionRequestOrBuilder
    * @return The partition.
    */
   com.google.cloud.dataplex.v1.Partition getPartition();
+
   /**
    *
    *

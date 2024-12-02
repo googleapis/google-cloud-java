@@ -40,6 +40,7 @@ public interface ListFeatureMonitorJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface ListFeatureMonitorJobsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -134,6 +136,7 @@ public interface ListFeatureMonitorJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -168,6 +171,7 @@ public interface ListFeatureMonitorJobsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

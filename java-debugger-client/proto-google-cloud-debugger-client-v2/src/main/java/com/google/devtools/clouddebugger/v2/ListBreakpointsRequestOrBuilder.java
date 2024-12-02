@@ -36,6 +36,7 @@ public interface ListBreakpointsRequestOrBuilder
    * @return The debuggeeId.
    */
   java.lang.String getDebuggeeId();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface ListBreakpointsRequestOrBuilder
    * @return Whether the action field is set.
    */
   boolean hasAction();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface ListBreakpointsRequestOrBuilder
    * @return The action.
    */
   com.google.devtools.clouddebugger.v2.ListBreakpointsRequest.BreakpointActionValue getAction();
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public interface ListBreakpointsRequestOrBuilder
    * @return The waitToken.
    */
   java.lang.String getWaitToken();
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public interface ListBreakpointsRequestOrBuilder
    * @return The clientVersion.
    */
   java.lang.String getClientVersion();
+
   /**
    *
    *

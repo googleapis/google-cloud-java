@@ -34,6 +34,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq)
     RegionInstanceGroupManagerDeleteInstanceConfigReqOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder() to construct.
   private RegionInstanceGroupManagerDeleteInstanceConfigReq(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
   public int getNamesCount() {
     return names_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
+
   /**
    *
    *
@@ -304,6 +309,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -515,6 +521,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -530,6 +537,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
       names_.makeImmutable();
       return names_;
     }
+
     /**
      *
      *
@@ -544,6 +552,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
     public int getNamesCount() {
       return names_.size();
     }
+
     /**
      *
      *
@@ -559,6 +568,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
+
     /**
      *
      *
@@ -574,6 +584,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
+
     /**
      *
      *
@@ -597,6 +608,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +631,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +651,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +670,7 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public interface ListConsumerGroupsResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.ConsumerGroup consumer_groups = 1;</code>
    */
   java.util.List<com.google.cloud.managedkafka.v1.ConsumerGroup> getConsumerGroupsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListConsumerGroupsResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.ConsumerGroup consumer_groups = 1;</code>
    */
   com.google.cloud.managedkafka.v1.ConsumerGroup getConsumerGroups(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListConsumerGroupsResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.ConsumerGroup consumer_groups = 1;</code>
    */
   int getConsumerGroupsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListConsumerGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.managedkafka.v1.ConsumerGroupOrBuilder>
       getConsumerGroupsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListConsumerGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

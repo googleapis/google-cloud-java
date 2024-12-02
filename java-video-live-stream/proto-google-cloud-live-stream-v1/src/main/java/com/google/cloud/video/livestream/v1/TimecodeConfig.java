@@ -33,6 +33,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.TimecodeConfig)
     TimecodeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TimecodeConfig.newBuilder() to construct.
   private TimecodeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>TIMECODE_SOURCE_UNSPECIFIED = 0;</code>
      */
     public static final int TIMECODE_SOURCE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>MEDIA_TIMESTAMP = 1;</code>
      */
     public static final int MEDIA_TIMESTAMP_VALUE = 1;
+
     /**
      *
      *
@@ -239,6 +242,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     private TimeOffsetCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -273,6 +277,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_FIELD_NUMBER = 1;
   private int source_ = 0;
+
   /**
    *
    *
@@ -290,6 +295,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
   public int getSourceValue() {
     return source_;
   }
+
   /**
    *
    *
@@ -313,6 +319,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UTC_OFFSET_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -328,6 +335,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUtcOffset() {
     return timeOffsetCase_ == 2;
   }
+
   /**
    *
    *
@@ -346,6 +354,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -364,6 +373,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -379,6 +389,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeZone() {
     return timeOffsetCase_ == 3;
   }
+
   /**
    *
    *
@@ -397,6 +408,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.TimeZone.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -618,6 +630,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -862,6 +875,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int source_ = 0;
+
     /**
      *
      *
@@ -879,6 +893,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     public int getSourceValue() {
       return source_;
     }
+
     /**
      *
      *
@@ -899,6 +914,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +936,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.livestream.v1.TimecodeConfig.TimecodeSource.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -944,6 +961,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +987,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         utcOffsetBuilder_;
+
     /**
      *
      *
@@ -984,6 +1003,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUtcOffset() {
       return timeOffsetCase_ == 2;
     }
+
     /**
      *
      *
@@ -1009,6 +1029,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1052,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       timeOffsetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1072,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       timeOffsetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1104,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       timeOffsetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1130,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1143,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration.Builder getUtcOffsetBuilder() {
       return getUtcOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1138,6 +1164,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1174,6 +1201,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeZone.Builder,
             com.google.type.TimeZoneOrBuilder>
         timeZoneBuilder_;
+
     /**
      *
      *
@@ -1189,6 +1217,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeZone() {
       return timeOffsetCase_ == 3;
     }
+
     /**
      *
      *
@@ -1214,6 +1243,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.TimeZone.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1266,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       timeOffsetCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1286,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       timeOffsetCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1317,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       timeOffsetCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1343,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1356,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.TimeZone.Builder getTimeZoneBuilder() {
       return getTimeZoneFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1342,6 +1377,7 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.TimeZone.getDefaultInstance();
       }
     }
+
     /**
      *
      *

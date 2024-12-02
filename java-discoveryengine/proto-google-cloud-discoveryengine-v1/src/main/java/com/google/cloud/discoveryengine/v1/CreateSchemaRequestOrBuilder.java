@@ -39,6 +39,7 @@ public interface CreateSchemaRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateSchemaRequestOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateSchemaRequestOrBuilder
    * @return The schema.
    */
   com.google.cloud.discoveryengine.v1.Schema getSchema();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CreateSchemaRequestOrBuilder
    * @return The schemaId.
    */
   java.lang.String getSchemaId();
+
   /**
    *
    *

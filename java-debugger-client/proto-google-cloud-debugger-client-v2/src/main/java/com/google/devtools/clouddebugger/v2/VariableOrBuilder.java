@@ -36,6 +36,7 @@ public interface VariableOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VariableOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface VariableOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface VariableOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable members = 3;</code>
    */
   java.util.List<com.google.devtools.clouddebugger.v2.Variable> getMembersList();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface VariableOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable members = 3;</code>
    */
   com.google.devtools.clouddebugger.v2.Variable getMembers(int index);
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface VariableOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable members = 3;</code>
    */
   int getMembersCount();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface VariableOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouddebugger.v2.VariableOrBuilder>
       getMembersOrBuilderList();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface VariableOrBuilder
    * @return Whether the varTableIndex field is set.
    */
   boolean hasVarTableIndex();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface VariableOrBuilder
    * @return The varTableIndex.
    */
   com.google.protobuf.Int32Value getVarTableIndex();
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public interface VariableOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public interface VariableOrBuilder
    * @return The status.
    */
   com.google.devtools.clouddebugger.v2.StatusMessage getStatus();
+
   /**
    *
    *

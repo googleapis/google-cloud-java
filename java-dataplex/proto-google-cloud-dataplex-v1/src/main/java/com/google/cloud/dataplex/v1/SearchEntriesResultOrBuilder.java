@@ -39,6 +39,7 @@ public interface SearchEntriesResultOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getLinkedResource();
+
   /**
    *
    *
@@ -61,12 +62,14 @@ public interface SearchEntriesResultOrBuilder
    * @return Whether the dataplexEntry field is set.
    */
   boolean hasDataplexEntry();
+
   /**
    * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
    *
    * @return The dataplexEntry.
    */
   com.google.cloud.dataplex.v1.Entry getDataplexEntry();
+
   /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
   com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder();
 
@@ -86,6 +89,7 @@ public interface SearchEntriesResultOrBuilder
    */
   @java.lang.Deprecated
   boolean hasSnippets();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface SearchEntriesResultOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets getSnippets();
+
   /**
    *
    *

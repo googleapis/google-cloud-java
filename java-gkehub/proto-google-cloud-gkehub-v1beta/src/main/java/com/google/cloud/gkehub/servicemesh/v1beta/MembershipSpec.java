@@ -33,6 +33,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.servicemesh.v1beta.MembershipSpec)
     MembershipSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MembershipSpec.newBuilder() to construct.
   private MembershipSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,6 +123,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTROL_PLANE_MANAGEMENT_UNSPECIFIED = 0;</code>
      */
     public static final int CONTROL_PLANE_MANAGEMENT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTOMATIC = 1;</code>
      */
     public static final int AUTOMATIC_VALUE = 1;
+
     /**
      *
      *
@@ -288,6 +291,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>MANAGEMENT_UNSPECIFIED = 0;</code>
      */
     public static final int MANAGEMENT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -298,6 +302,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>MANAGEMENT_AUTOMATIC = 1;</code>
      */
     public static final int MANAGEMENT_AUTOMATIC_VALUE = 1;
+
     /**
      *
      *
@@ -396,6 +401,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTROL_PLANE_FIELD_NUMBER = 1;
   private int controlPlane_ = 0;
+
   /**
    *
    *
@@ -417,6 +423,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   public int getControlPlaneValue() {
     return controlPlane_;
   }
+
   /**
    *
    *
@@ -448,6 +455,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MANAGEMENT_FIELD_NUMBER = 4;
   private int management_ = 0;
+
   /**
    *
    *
@@ -463,6 +471,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   public int getManagementValue() {
     return management_;
   }
+
   /**
    *
    *
@@ -664,6 +673,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -859,6 +869,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int controlPlane_ = 0;
+
     /**
      *
      *
@@ -880,6 +891,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public int getControlPlaneValue() {
       return controlPlane_;
     }
+
     /**
      *
      *
@@ -904,6 +916,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +945,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -960,6 +974,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1000,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int management_ = 0;
+
     /**
      *
      *
@@ -1001,6 +1017,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public int getManagementValue() {
       return management_;
     }
+
     /**
      *
      *
@@ -1020,6 +1037,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1059,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.Management.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1064,6 +1083,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

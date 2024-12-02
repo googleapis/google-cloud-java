@@ -33,6 +33,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError)
     InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceManagedByIgmErrorManagedInstanceError.newBuilder() to construct.
   private InstanceManagedByIgmErrorManagedInstanceError(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
   public boolean hasCode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
   public boolean hasMessage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +387,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -593,6 +601,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
     private int bitField0_;
 
     private java.lang.Object code_ = "";
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
     public boolean hasCode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -672,6 +684,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
     }
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -749,6 +765,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -771,6 +788,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +810,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +828,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
       onChanged();
       return this;
     }
+
     /**
      *
      *

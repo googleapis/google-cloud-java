@@ -33,6 +33,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CloudIdentityInfo)
     CloudIdentityInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudIdentityInfo.newBuilder() to construct.
   private CloudIdentityInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * <code>CUSTOMER_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOMER_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      * <code>DOMAIN = 1;</code>
      */
     public static final int DOMAIN_VALUE = 1;
+
     /**
      *
      *
@@ -228,6 +231,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int CUSTOMER_TYPE_FIELD_NUMBER = 1;
   private int customerType_ = 0;
+
   /**
    *
    *
@@ -243,6 +247,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   public int getCustomerTypeValue() {
     return customerType_;
   }
+
   /**
    *
    *
@@ -267,6 +272,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryDomain_ = "";
+
   /**
    *
    *
@@ -290,6 +296,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -316,6 +323,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int IS_DOMAIN_VERIFIED_FIELD_NUMBER = 4;
   private boolean isDomainVerified_ = false;
+
   /**
    *
    *
@@ -340,6 +348,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object alternateEmail_ = "";
+
   /**
    *
    *
@@ -363,6 +372,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -391,6 +401,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phoneNumber_ = "";
+
   /**
    *
    *
@@ -414,6 +425,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -442,6 +454,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -465,6 +478,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -493,6 +507,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adminConsoleUri_ = "";
+
   /**
    *
    *
@@ -516,6 +531,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -542,6 +558,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int EDU_DATA_FIELD_NUMBER = 22;
   private com.google.cloud.channel.v1.EduData eduData_;
+
   /**
    *
    *
@@ -557,6 +574,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   public boolean hasEduData() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -572,6 +590,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.channel.v1.EduData getEduData() {
     return eduData_ == null ? com.google.cloud.channel.v1.EduData.getDefaultInstance() : eduData_;
   }
+
   /**
    *
    *
@@ -817,6 +836,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1115,6 +1135,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int customerType_ = 0;
+
     /**
      *
      *
@@ -1130,6 +1151,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     public int getCustomerTypeValue() {
       return customerType_;
     }
+
     /**
      *
      *
@@ -1148,6 +1170,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1190,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1189,6 +1213,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1233,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object primaryDomain_ = "";
+
     /**
      *
      *
@@ -1230,6 +1256,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1252,6 +1279,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1273,6 +1301,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1319,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1344,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean isDomainVerified_;
+
     /**
      *
      *
@@ -1333,6 +1364,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     public boolean getIsDomainVerified() {
       return isDomainVerified_;
     }
+
     /**
      *
      *
@@ -1356,6 +1388,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1412,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object alternateEmail_ = "";
+
     /**
      *
      *
@@ -1401,6 +1435,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1458,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1444,6 +1480,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1498,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1523,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object phoneNumber_ = "";
+
     /**
      *
      *
@@ -1507,6 +1546,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1529,6 +1569,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1550,6 +1591,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1567,6 +1609,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1634,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -1613,6 +1657,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1635,6 +1680,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1656,6 +1702,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1720,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1697,6 +1745,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object adminConsoleUri_ = "";
+
     /**
      *
      *
@@ -1719,6 +1768,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1741,6 +1791,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1762,6 +1813,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1831,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1808,6 +1861,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
             com.google.cloud.channel.v1.EduData.Builder,
             com.google.cloud.channel.v1.EduDataOrBuilder>
         eduDataBuilder_;
+
     /**
      *
      *
@@ -1822,6 +1876,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     public boolean hasEduData() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1842,6 +1897,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
         return eduDataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1864,6 +1920,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1940,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1968,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1929,6 +1988,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1943,6 +2003,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEduDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1961,6 +2022,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
             : eduData_;
       }
     }
+
     /**
      *
      *

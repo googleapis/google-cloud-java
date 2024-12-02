@@ -33,6 +33,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsAuthorization)
     AwsAuthorizationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AwsAuthorization.newBuilder() to construct.
   private AwsAuthorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AwsClusterUser> adminUsers_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.gkemulticloud.v1.AwsClusterUser> getAdminUsersList() {
     return adminUsers_;
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       getAdminUsersOrBuilderList() {
     return adminUsers_;
   }
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
   public int getAdminUsersCount() {
     return adminUsers_.size();
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.gkemulticloud.v1.AwsClusterUser getAdminUsers(int index) {
     return adminUsers_.get(index);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AwsClusterGroup> adminGroups_;
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.gkemulticloud.v1.AwsClusterGroup> getAdminGroupsList() {
     return adminGroups_;
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       getAdminGroupsOrBuilderList() {
     return adminGroups_;
   }
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
   public int getAdminGroupsCount() {
     return adminGroups_.size();
   }
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.gkemulticloud.v1.AwsClusterGroup getAdminGroups(int index) {
     return adminGroups_.get(index);
   }
+
   /**
    *
    *
@@ -450,6 +461,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -777,6 +789,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return adminUsersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -800,6 +813,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return adminUsersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -823,6 +837,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return adminUsersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -853,6 +868,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +896,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +926,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +957,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +985,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1013,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1041,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1068,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1095,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         int index) {
       return getAdminUsersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1116,6 +1141,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return adminUsersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1140,6 +1166,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(adminUsers_);
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1187,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       return getAdminUsersFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AwsClusterUser.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1181,6 +1209,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       return getAdminUsersFieldBuilder()
           .addBuilder(index, com.google.cloud.gkemulticloud.v1.AwsClusterUser.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1260,6 +1289,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return adminGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1313,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return adminGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1337,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return adminGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1336,6 +1368,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1396,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1426,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1457,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1485,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1513,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1541,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1568,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1555,6 +1595,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1616,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         int index) {
       return getAdminGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1599,6 +1641,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return adminGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1623,6 +1666,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(adminGroups_);
       }
     }
+
     /**
      *
      *
@@ -1643,6 +1687,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
       return getAdminGroupsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AwsClusterGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1665,6 +1710,7 @@ public final class AwsAuthorization extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.cloud.gkemulticloud.v1.AwsClusterGroup.getDefaultInstance());
     }
+
     /**
      *
      *

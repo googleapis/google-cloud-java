@@ -33,6 +33,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeDescription)
     InfoTypeDescriptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InfoTypeDescription.newBuilder() to construct.
   private InfoTypeDescription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                   : result;
             }
           };
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         java.lang.Integer, com.google.privacy.dlp.v2.InfoTypeSupportedBy>(
         supportedBy_, supportedBy_converter_);
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public int getSupportedByCount() {
     return supportedBy_.size();
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index) {
     return supportedBy_converter_.convert(supportedBy_.get(index));
   }
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getSupportedByValueList() {
     return supportedBy_;
   }
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -328,6 +340,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.VersionDescription> versions_;
+
   /**
    *
    *
@@ -341,6 +354,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.privacy.dlp.v2.VersionDescription> getVersionsList() {
     return versions_;
   }
+
   /**
    *
    *
@@ -355,6 +369,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       getVersionsOrBuilderList() {
     return versions_;
   }
+
   /**
    *
    *
@@ -368,6 +383,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public int getVersionsCount() {
     return versions_.size();
   }
+
   /**
    *
    *
@@ -381,6 +397,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.VersionDescription getVersions(int index) {
     return versions_.get(index);
   }
+
   /**
    *
    *
@@ -399,6 +416,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> categories_;
+
   /**
    *
    *
@@ -412,6 +430,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> getCategoriesList() {
     return categories_;
   }
+
   /**
    *
    *
@@ -426,6 +445,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       getCategoriesOrBuilderList() {
     return categories_;
   }
+
   /**
    *
    *
@@ -439,6 +459,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public int getCategoriesCount() {
     return categories_.size();
   }
+
   /**
    *
    *
@@ -452,6 +473,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.InfoTypeCategory getCategories(int index) {
     return categories_.get(index);
   }
+
   /**
    *
    *
@@ -468,6 +490,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   public static final int SENSITIVITY_SCORE_FIELD_NUMBER = 11;
   private com.google.privacy.dlp.v2.SensitivityScore sensitivityScore_;
+
   /**
    *
    *
@@ -483,6 +506,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public boolean hasSensitivityScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -500,6 +524,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
         : sensitivityScore_;
   }
+
   /**
    *
    *
@@ -754,6 +779,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1152,6 +1178,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1174,6 +1201,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1224,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1246,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1264,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1289,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1280,6 +1312,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1335,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1357,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1375,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1407,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000004;
       }
     }
+
     /**
      *
      *
@@ -1387,6 +1424,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
           java.lang.Integer, com.google.privacy.dlp.v2.InfoTypeSupportedBy>(
           supportedBy_, supportedBy_converter_);
     }
+
     /**
      *
      *
@@ -1401,6 +1439,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public int getSupportedByCount() {
       return supportedBy_.size();
     }
+
     /**
      *
      *
@@ -1416,6 +1455,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index) {
       return supportedBy_converter_.convert(supportedBy_.get(index));
     }
+
     /**
      *
      *
@@ -1438,6 +1478,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1500,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1522,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1497,6 +1540,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1555,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getSupportedByValueList() {
       return java.util.Collections.unmodifiableList(supportedBy_);
     }
+
     /**
      *
      *
@@ -1526,6 +1571,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public int getSupportedByValue(int index) {
       return supportedBy_.get(index);
     }
+
     /**
      *
      *
@@ -1545,6 +1591,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1610,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1585,6 +1633,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1608,6 +1657,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1631,6 +1681,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1653,6 +1704,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1671,6 +1723,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1781,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return versionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1744,6 +1798,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return versionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1760,6 +1815,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return versionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1782,6 +1838,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1859,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1882,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1846,6 +1905,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1866,6 +1926,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1886,6 +1947,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1906,6 +1968,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1925,6 +1988,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1944,6 +2008,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2021,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.VersionDescription.Builder getVersionsBuilder(int index) {
       return getVersionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1972,6 +2038,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return versionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1989,6 +2056,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(versions_);
       }
     }
+
     /**
      *
      *
@@ -2002,6 +2070,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return getVersionsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.VersionDescription.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2015,6 +2084,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return getVersionsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.VersionDescription.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2079,6 +2149,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return categoriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2095,6 +2166,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return categoriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2111,6 +2183,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return categoriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2133,6 +2206,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2153,6 +2227,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2175,6 +2250,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2197,6 +2273,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2217,6 +2294,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2237,6 +2315,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2257,6 +2336,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2276,6 +2356,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2295,6 +2376,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2307,6 +2389,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.InfoTypeCategory.Builder getCategoriesBuilder(int index) {
       return getCategoriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2323,6 +2406,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return categoriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2340,6 +2424,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(categories_);
       }
     }
+
     /**
      *
      *
@@ -2353,6 +2438,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return getCategoriesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.InfoTypeCategory.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2366,6 +2452,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return getCategoriesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.InfoTypeCategory.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2403,6 +2490,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.SensitivityScore.Builder,
             com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
         sensitivityScoreBuilder_;
+
     /**
      *
      *
@@ -2417,6 +2505,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public boolean hasSensitivityScore() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2437,6 +2526,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return sensitivityScoreBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2459,6 +2549,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2479,6 +2570,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2507,6 +2599,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2526,6 +2619,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2540,6 +2634,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSensitivityScoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2558,6 +2653,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             : sensitivityScore_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Error)
     ErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Error.newBuilder() to construct.
   private Error(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR_INFO_UNSPECIFIED = 0;</code>
      */
     public static final int ERROR_INFO_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * <code>IMAGE_SCAN_UNAVAILABLE_IN_REGION = 1;</code>
      */
     public static final int IMAGE_SCAN_UNAVAILABLE_IN_REGION_VALUE = 1;
+
     /**
      *
      *
@@ -224,6 +227,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int DETAILS_FIELD_NUMBER = 1;
   private com.google.rpc.Status details_;
+
   /**
    *
    *
@@ -239,6 +243,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -254,6 +259,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getDetails() {
     return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
   }
+
   /**
    *
    *
@@ -272,6 +278,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Timestamp> timestamps_;
+
   /**
    *
    *
@@ -286,6 +293,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.Timestamp> getTimestampsList() {
     return timestamps_;
   }
+
   /**
    *
    *
@@ -301,6 +309,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       getTimestampsOrBuilderList() {
     return timestamps_;
   }
+
   /**
    *
    *
@@ -315,6 +324,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public int getTimestampsCount() {
     return timestamps_.size();
   }
+
   /**
    *
    *
@@ -329,6 +339,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getTimestamps(int index) {
     return timestamps_.get(index);
   }
+
   /**
    *
    *
@@ -346,6 +357,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXTRA_INFO_FIELD_NUMBER = 4;
   private int extraInfo_ = 0;
+
   /**
    *
    *
@@ -361,6 +373,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public int getExtraInfoValue() {
     return extraInfo_;
   }
+
   /**
    *
    *
@@ -563,6 +576,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -835,6 +849,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         detailsBuilder_;
+
     /**
      *
      *
@@ -849,6 +864,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDetails() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +926,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +954,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +974,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -984,6 +1006,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1063,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return timestampsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1081,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return timestampsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1099,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return timestampsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1144,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1168,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1192,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1213,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1234,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1277,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1298,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1312,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getTimestampsBuilder(int index) {
       return getTimestampsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1294,6 +1330,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return timestampsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1312,6 +1349,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(timestamps_);
       }
     }
+
     /**
      *
      *
@@ -1326,6 +1364,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       return getTimestampsFieldBuilder()
           .addBuilder(com.google.protobuf.Timestamp.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1340,6 +1379,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       return getTimestampsFieldBuilder()
           .addBuilder(index, com.google.protobuf.Timestamp.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1372,6 +1412,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int extraInfo_ = 0;
+
     /**
      *
      *
@@ -1387,6 +1428,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public int getExtraInfoValue() {
       return extraInfo_;
     }
+
     /**
      *
      *
@@ -1405,6 +1447,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1465,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
           com.google.privacy.dlp.v2.Error.ErrorExtraInfo.forNumber(extraInfo_);
       return result == null ? com.google.privacy.dlp.v2.Error.ErrorExtraInfo.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1443,6 +1487,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

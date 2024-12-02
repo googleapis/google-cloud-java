@@ -34,6 +34,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TabularRegressionPredictionResult)
     TabularRegressionPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TabularRegressionPredictionResult.newBuilder() to construct.
   private TabularRegressionPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private float value_ = 0F;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
 
   public static final int LOWER_BOUND_FIELD_NUMBER = 2;
   private float lowerBound_ = 0F;
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
 
   public static final int UPPER_BOUND_FIELD_NUMBER = 3;
   private float upperBound_ = 0F;
+
   /**
    *
    *
@@ -328,6 +332,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -569,6 +574,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     private int bitField0_;
 
     private float value_;
+
     /**
      *
      *
@@ -584,6 +590,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     public float getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -603,6 +610,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +630,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     }
 
     private float lowerBound_;
+
     /**
      *
      *
@@ -637,6 +646,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     public float getLowerBound() {
       return lowerBound_;
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     }
 
     private float upperBound_;
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     public float getUpperBound() {
       return upperBound_;
     }
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

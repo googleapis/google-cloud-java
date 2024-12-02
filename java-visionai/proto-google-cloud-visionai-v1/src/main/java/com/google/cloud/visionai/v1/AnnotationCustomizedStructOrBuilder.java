@@ -34,6 +34,7 @@ public interface AnnotationCustomizedStructOrBuilder
    * <code>map&lt;string, .google.cloud.visionai.v1.AnnotationValue&gt; elements = 2;</code>
    */
   int getElementsCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface AnnotationCustomizedStructOrBuilder
    * <code>map&lt;string, .google.cloud.visionai.v1.AnnotationValue&gt; elements = 2;</code>
    */
   boolean containsElements(java.lang.String key);
+
   /** Use {@link #getElementsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.visionai.v1.AnnotationValue> getElements();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface AnnotationCustomizedStructOrBuilder
    * <code>map&lt;string, .google.cloud.visionai.v1.AnnotationValue&gt; elements = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.visionai.v1.AnnotationValue> getElementsMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface AnnotationCustomizedStructOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.visionai.v1.AnnotationValue defaultValue);
+
   /**
    *
    *

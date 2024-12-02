@@ -38,6 +38,7 @@ public interface VoiceOrBuilder
    * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String> getLanguageCodesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface VoiceOrBuilder
    * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface VoiceOrBuilder
    * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface VoiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface VoiceOrBuilder
    * @return The enum numeric value on the wire for ssmlGender.
    */
   int getSsmlGenderValue();
+
   /**
    *
    *

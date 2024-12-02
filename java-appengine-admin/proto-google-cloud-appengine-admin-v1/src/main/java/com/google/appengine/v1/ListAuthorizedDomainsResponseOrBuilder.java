@@ -34,6 +34,7 @@ public interface ListAuthorizedDomainsResponseOrBuilder
    * <code>repeated .google.appengine.v1.AuthorizedDomain domains = 1;</code>
    */
   java.util.List<com.google.appengine.v1.AuthorizedDomain> getDomainsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAuthorizedDomainsResponseOrBuilder
    * <code>repeated .google.appengine.v1.AuthorizedDomain domains = 1;</code>
    */
   com.google.appengine.v1.AuthorizedDomain getDomains(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAuthorizedDomainsResponseOrBuilder
    * <code>repeated .google.appengine.v1.AuthorizedDomain domains = 1;</code>
    */
   int getDomainsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAuthorizedDomainsResponseOrBuilder
    */
   java.util.List<? extends com.google.appengine.v1.AuthorizedDomainOrBuilder>
       getDomainsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListAuthorizedDomainsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

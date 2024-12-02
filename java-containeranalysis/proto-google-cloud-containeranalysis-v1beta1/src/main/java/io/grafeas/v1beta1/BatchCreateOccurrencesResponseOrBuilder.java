@@ -34,6 +34,7 @@ public interface BatchCreateOccurrencesResponseOrBuilder
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 1;</code>
    */
   java.util.List<io.grafeas.v1beta1.Occurrence> getOccurrencesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchCreateOccurrencesResponseOrBuilder
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 1;</code>
    */
   io.grafeas.v1beta1.Occurrence getOccurrences(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchCreateOccurrencesResponseOrBuilder
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 1;</code>
    */
   int getOccurrencesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface BatchCreateOccurrencesResponseOrBuilder
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 1;</code>
    */
   java.util.List<? extends io.grafeas.v1beta1.OccurrenceOrBuilder> getOccurrencesOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class TuneModelResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.TuneModelResponse)
     TuneModelResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TuneModelResponse.newBuilder() to construct.
   private TuneModelResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class TuneModelResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

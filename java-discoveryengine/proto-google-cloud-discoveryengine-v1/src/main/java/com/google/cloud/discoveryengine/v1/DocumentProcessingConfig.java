@@ -38,6 +38,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig)
     DocumentProcessingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentProcessingConfig.newBuilder() to construct.
   private DocumentProcessingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * @return Whether the layoutBasedChunkingConfig field is set.
      */
     boolean hasLayoutBasedChunkingConfig();
+
     /**
      *
      *
@@ -115,6 +117,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
             .LayoutBasedChunkingConfig
         getLayoutBasedChunkingConfig();
+
     /**
      *
      *
@@ -133,6 +136,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.ChunkModeCase
         getChunkModeCase();
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig)
       ChunkingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ChunkingConfig.newBuilder() to construct.
     private ChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -213,6 +218,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        */
       boolean getIncludeAncestorHeadings();
     }
+
     /**
      *
      *
@@ -229,6 +235,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig)
         LayoutBasedChunkingConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use LayoutBasedChunkingConfig.newBuilder() to construct.
       private LayoutBasedChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -261,6 +268,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
 
       public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
       private int chunkSize_ = 0;
+
       /**
        *
        *
@@ -282,6 +290,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
 
       public static final int INCLUDE_ANCESTOR_HEADINGS_FIELD_NUMBER = 2;
       private boolean includeAncestorHeadings_ = false;
+
       /**
        *
        *
@@ -501,6 +510,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -729,6 +739,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         private int bitField0_;
 
         private int chunkSize_;
+
         /**
          *
          *
@@ -747,6 +758,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public int getChunkSize() {
           return chunkSize_;
         }
+
         /**
          *
          *
@@ -769,6 +781,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -791,6 +804,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
 
         private boolean includeAncestorHeadings_;
+
         /**
          *
          *
@@ -809,6 +823,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public boolean getIncludeAncestorHeadings() {
           return includeAncestorHeadings_;
         }
+
         /**
          *
          *
@@ -831,6 +846,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -940,6 +956,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       private ChunkModeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -971,6 +988,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     }
 
     public static final int LAYOUT_BASED_CHUNKING_CONFIG_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -988,6 +1006,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public boolean hasLayoutBasedChunkingConfig() {
       return chunkModeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1013,6 +1032,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
           .LayoutBasedChunkingConfig.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1228,6 +1248,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1466,6 +1487,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
                   .LayoutBasedChunkingConfigOrBuilder>
           layoutBasedChunkingConfigBuilder_;
+
       /**
        *
        *
@@ -1483,6 +1505,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       public boolean hasLayoutBasedChunkingConfig() {
         return chunkModeCase_ == 1;
       }
+
       /**
        *
        *
@@ -1516,6 +1539,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               .LayoutBasedChunkingConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1543,6 +1567,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         chunkModeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1567,6 +1592,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         chunkModeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1609,6 +1635,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         chunkModeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1636,6 +1663,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -1652,6 +1680,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           getLayoutBasedChunkingConfigBuilder() {
         return getLayoutBasedChunkingConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1679,6 +1708,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               .LayoutBasedChunkingConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1811,6 +1841,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * @return Whether the digitalParsingConfig field is set.
      */
     boolean hasDigitalParsingConfig();
+
     /**
      *
      *
@@ -1826,6 +1857,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      */
     com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.DigitalParsingConfig
         getDigitalParsingConfig();
+
     /**
      *
      *
@@ -1856,6 +1888,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * @return Whether the ocrParsingConfig field is set.
      */
     boolean hasOcrParsingConfig();
+
     /**
      *
      *
@@ -1872,6 +1905,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      */
     com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig
         getOcrParsingConfig();
+
     /**
      *
      *
@@ -1902,6 +1936,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * @return Whether the layoutParsingConfig field is set.
      */
     boolean hasLayoutParsingConfig();
+
     /**
      *
      *
@@ -1917,6 +1952,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      */
     com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig
         getLayoutParsingConfig();
+
     /**
      *
      *
@@ -1936,6 +1972,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             .TypeDedicatedConfigCase
         getTypeDedicatedConfigCase();
   }
+
   /**
    *
    *
@@ -1950,6 +1987,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig)
       ParsingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ParsingConfig.newBuilder() to construct.
     private ParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1983,6 +2021,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.DigitalParsingConfig)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -1998,6 +2037,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.DigitalParsingConfig)
         DigitalParsingConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use DigitalParsingConfig.newBuilder() to construct.
       private DigitalParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2209,6 +2249,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2492,6 +2533,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        */
       @java.lang.Deprecated
       java.util.List<java.lang.String> getEnhancedDocumentElementsList();
+
       /**
        *
        *
@@ -2510,6 +2552,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        */
       @java.lang.Deprecated
       int getEnhancedDocumentElementsCount();
+
       /**
        *
        *
@@ -2529,6 +2572,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        */
       @java.lang.Deprecated
       java.lang.String getEnhancedDocumentElements(int index);
+
       /**
        *
        *
@@ -2563,6 +2607,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        */
       boolean getUseNativeText();
     }
+
     /**
      *
      *
@@ -2578,6 +2623,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig)
         OcrParsingConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use OcrParsingConfig.newBuilder() to construct.
       private OcrParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2615,6 +2661,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList enhancedDocumentElements_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -2635,6 +2682,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       public com.google.protobuf.ProtocolStringList getEnhancedDocumentElementsList() {
         return enhancedDocumentElements_;
       }
+
       /**
        *
        *
@@ -2655,6 +2703,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       public int getEnhancedDocumentElementsCount() {
         return enhancedDocumentElements_.size();
       }
+
       /**
        *
        *
@@ -2676,6 +2725,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       public java.lang.String getEnhancedDocumentElements(int index) {
         return enhancedDocumentElements_.get(index);
       }
+
       /**
        *
        *
@@ -2700,6 +2750,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
 
       public static final int USE_NATIVE_TEXT_FIELD_NUMBER = 2;
       private boolean useNativeText_ = false;
+
       /**
        *
        *
@@ -2924,6 +2975,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3170,6 +3222,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           bitField0_ |= 0x00000001;
         }
+
         /**
          *
          *
@@ -3191,6 +3244,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           enhancedDocumentElements_.makeImmutable();
           return enhancedDocumentElements_;
         }
+
         /**
          *
          *
@@ -3211,6 +3265,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public int getEnhancedDocumentElementsCount() {
           return enhancedDocumentElements_.size();
         }
+
         /**
          *
          *
@@ -3232,6 +3287,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public java.lang.String getEnhancedDocumentElements(int index) {
           return enhancedDocumentElements_.get(index);
         }
+
         /**
          *
          *
@@ -3253,6 +3309,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public com.google.protobuf.ByteString getEnhancedDocumentElementsBytes(int index) {
           return enhancedDocumentElements_.getByteString(index);
         }
+
         /**
          *
          *
@@ -3282,6 +3339,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3310,6 +3368,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3335,6 +3394,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3359,6 +3419,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3390,6 +3451,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
 
         private boolean useNativeText_;
+
         /**
          *
          *
@@ -3406,6 +3468,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public boolean getUseNativeText() {
           return useNativeText_;
         }
+
         /**
          *
          *
@@ -3426,6 +3489,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3521,6 +3585,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -3536,6 +3601,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig)
         LayoutParsingConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use LayoutParsingConfig.newBuilder() to construct.
       private LayoutParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3747,6 +3813,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -4025,6 +4092,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       private TypeDedicatedConfigCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4060,6 +4128,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     }
 
     public static final int DIGITAL_PARSING_CONFIG_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -4077,6 +4146,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public boolean hasDigitalParsingConfig() {
       return typeDedicatedConfigCase_ == 1;
     }
+
     /**
      *
      *
@@ -4102,6 +4172,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
           .DigitalParsingConfig.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4127,6 +4198,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     }
 
     public static final int OCR_PARSING_CONFIG_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -4145,6 +4217,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public boolean hasOcrParsingConfig() {
       return typeDedicatedConfigCase_ == 2;
     }
+
     /**
      *
      *
@@ -4171,6 +4244,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
           .OcrParsingConfig.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4197,6 +4271,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     }
 
     public static final int LAYOUT_PARSING_CONFIG_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -4214,6 +4289,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public boolean hasLayoutParsingConfig() {
       return typeDedicatedConfigCase_ == 3;
     }
+
     /**
      *
      *
@@ -4239,6 +4315,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
           .LayoutParsingConfig.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4497,6 +4574,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4770,6 +4848,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
                   .DigitalParsingConfigOrBuilder>
           digitalParsingConfigBuilder_;
+
       /**
        *
        *
@@ -4787,6 +4866,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       public boolean hasDigitalParsingConfig() {
         return typeDedicatedConfigCase_ == 1;
       }
+
       /**
        *
        *
@@ -4820,6 +4900,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               .DigitalParsingConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4847,6 +4928,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4871,6 +4953,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4913,6 +4996,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4940,6 +5024,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4956,6 +5041,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           getDigitalParsingConfigBuilder() {
         return getDigitalParsingConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4983,6 +5069,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               .DigitalParsingConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5036,6 +5123,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
                   .OcrParsingConfigOrBuilder>
           ocrParsingConfigBuilder_;
+
       /**
        *
        *
@@ -5054,6 +5142,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       public boolean hasOcrParsingConfig() {
         return typeDedicatedConfigCase_ == 2;
       }
+
       /**
        *
        *
@@ -5088,6 +5177,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               .OcrParsingConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5116,6 +5206,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5141,6 +5232,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5184,6 +5276,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -5212,6 +5305,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -5229,6 +5323,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           getOcrParsingConfigBuilder() {
         return getOcrParsingConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5257,6 +5352,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               .OcrParsingConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5311,6 +5407,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
                   .LayoutParsingConfigOrBuilder>
           layoutParsingConfigBuilder_;
+
       /**
        *
        *
@@ -5328,6 +5425,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       public boolean hasLayoutParsingConfig() {
         return typeDedicatedConfigCase_ == 3;
       }
+
       /**
        *
        *
@@ -5361,6 +5459,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               .LayoutParsingConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5388,6 +5487,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5412,6 +5512,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5454,6 +5555,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         typeDedicatedConfigCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5481,6 +5583,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -5497,6 +5600,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           getLayoutParsingConfigBuilder() {
         return getLayoutParsingConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5524,6 +5628,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               .LayoutParsingConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5642,6 +5747,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -5667,6 +5773,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -5696,6 +5803,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
   public static final int CHUNKING_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
       chunkingConfig_;
+
   /**
    *
    *
@@ -5713,6 +5821,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
   public boolean hasChunkingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5734,6 +5843,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             .getDefaultInstance()
         : chunkingConfig_;
   }
+
   /**
    *
    *
@@ -5757,6 +5867,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
   public static final int DEFAULT_PARSING_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
       defaultParsingConfig_;
+
   /**
    *
    *
@@ -5777,6 +5888,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
   public boolean hasDefaultParsingConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -5801,6 +5913,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             .getDefaultInstance()
         : defaultParsingConfig_;
   }
+
   /**
    *
    *
@@ -5864,6 +5977,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
   public int getParsingConfigOverridesCount() {
     return internalGetParsingConfigOverrides().getMap().size();
   }
+
   /**
    *
    *
@@ -5896,6 +6010,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     }
     return internalGetParsingConfigOverrides().getMap().containsKey(key);
   }
+
   /** Use {@link #getParsingConfigOverridesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -5905,6 +6020,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       getParsingConfigOverrides() {
     return getParsingConfigOverridesMap();
   }
+
   /**
    *
    *
@@ -5937,6 +6053,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       getParsingConfigOverridesMap() {
     return internalGetParsingConfigOverrides().getMap();
   }
+
   /**
    *
    *
@@ -5977,6 +6094,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         map = internalGetParsingConfigOverrides().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -6233,6 +6351,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6525,6 +6644,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -6549,6 +6669,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6573,6 +6694,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6596,6 +6718,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6615,6 +6738,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6647,6 +6771,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.Builder,
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfigOrBuilder>
         chunkingConfigBuilder_;
+
     /**
      *
      *
@@ -6663,6 +6788,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public boolean hasChunkingConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -6687,6 +6813,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         return chunkingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6712,6 +6839,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6735,6 +6863,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6767,6 +6896,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -6788,6 +6918,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6805,6 +6936,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return getChunkingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6827,6 +6959,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             : chunkingConfig_;
       }
     }
+
     /**
      *
      *
@@ -6863,6 +6996,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.Builder,
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfigOrBuilder>
         defaultParsingConfigBuilder_;
+
     /**
      *
      *
@@ -6882,6 +7016,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public boolean hasDefaultParsingConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -6909,6 +7044,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         return defaultParsingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6937,6 +7073,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6963,6 +7100,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6998,6 +7136,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -7022,6 +7161,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7042,6 +7182,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       onChanged();
       return getDefaultParsingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7067,6 +7208,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             : defaultParsingConfig_;
       }
     }
+
     /**
      *
      *
@@ -7123,7 +7265,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           defaultEntry() {
         return ParsingConfigOverridesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ParsingConfigOverridesConverter parsingConfigOverridesConverter =
         new ParsingConfigOverridesConverter();
@@ -7165,6 +7308,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public int getParsingConfigOverridesCount() {
       return internalGetParsingConfigOverrides().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -7197,6 +7341,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       }
       return internalGetParsingConfigOverrides().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getParsingConfigOverridesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -7206,6 +7351,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         getParsingConfigOverrides() {
       return getParsingConfigOverridesMap();
     }
+
     /**
      *
      *
@@ -7238,6 +7384,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         getParsingConfigOverridesMap() {
       return internalGetParsingConfigOverrides().getImmutableMap();
     }
+
     /**
      *
      *
@@ -7281,6 +7428,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           ? parsingConfigOverridesConverter.build(map.get(key))
           : defaultValue;
     }
+
     /**
      *
      *
@@ -7327,6 +7475,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       internalGetMutableParsingConfigOverrides().clear();
       return this;
     }
+
     /**
      *
      *
@@ -7359,6 +7508,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       internalGetMutableParsingConfigOverrides().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -7368,6 +7518,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       bitField0_ |= 0x00000008;
       return internalGetMutableParsingConfigOverrides().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -7406,6 +7557,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -7448,6 +7600,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *

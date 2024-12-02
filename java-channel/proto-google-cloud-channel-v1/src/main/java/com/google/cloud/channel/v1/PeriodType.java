@@ -82,6 +82,7 @@ public enum PeriodType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PERIOD_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int PERIOD_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum PeriodType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DAY = 1;</code>
    */
   public static final int DAY_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum PeriodType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MONTH = 2;</code>
    */
   public static final int MONTH_VALUE = 2;
+
   /**
    *
    *

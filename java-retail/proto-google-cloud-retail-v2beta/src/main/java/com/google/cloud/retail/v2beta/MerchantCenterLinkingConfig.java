@@ -35,6 +35,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.MerchantCenterLinkingConfig)
     MerchantCenterLinkingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MerchantCenterLinkingConfig.newBuilder() to construct.
   private MerchantCenterLinkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.MerchantCenterLink> links_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.retail.v2beta.MerchantCenterLink> getLinksList() {
     return links_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       getLinksOrBuilderList() {
     return links_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
   public int getLinksCount() {
     return links_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
   public com.google.cloud.retail.v2beta.MerchantCenterLink getLinks(int index) {
     return links_.get(index);
   }
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +569,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
         return linksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
         return linksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
         return linksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +670,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +693,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +714,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +735,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +756,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +776,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +796,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +809,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
     public com.google.cloud.retail.v2beta.MerchantCenterLink.Builder getLinksBuilder(int index) {
       return getLinksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -806,6 +826,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
         return linksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -823,6 +844,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(links_);
       }
     }
+
     /**
      *
      *
@@ -836,6 +858,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
       return getLinksFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.MerchantCenterLink.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -850,6 +873,7 @@ public final class MerchantCenterLinkingConfig extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.retail.v2beta.MerchantCenterLink.getDefaultInstance());
     }
+
     /**
      *
      *

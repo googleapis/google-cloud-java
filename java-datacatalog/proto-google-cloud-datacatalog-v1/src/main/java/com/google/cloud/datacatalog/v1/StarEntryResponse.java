@@ -35,6 +35,7 @@ public final class StarEntryResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.StarEntryResponse)
     StarEntryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StarEntryResponse.newBuilder() to construct.
   private StarEntryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class StarEntryResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

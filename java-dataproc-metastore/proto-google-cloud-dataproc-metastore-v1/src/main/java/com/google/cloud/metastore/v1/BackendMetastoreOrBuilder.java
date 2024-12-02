@@ -43,6 +43,7 @@ public interface BackendMetastoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface BackendMetastoreOrBuilder
    * @return The enum numeric value on the wire for metastoreType.
    */
   int getMetastoreTypeValue();
+
   /**
    *
    *

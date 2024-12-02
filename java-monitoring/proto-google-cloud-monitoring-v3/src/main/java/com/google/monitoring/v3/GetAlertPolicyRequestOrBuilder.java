@@ -40,6 +40,7 @@ public interface GetAlertPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

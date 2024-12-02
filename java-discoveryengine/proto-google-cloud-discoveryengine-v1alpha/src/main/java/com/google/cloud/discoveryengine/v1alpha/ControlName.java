@@ -407,7 +407,8 @@ public class ControlName implements ResourceName {
     private Builder(ControlName controlName) {
       Preconditions.checkArgument(
           Objects.equals(controlName.pathTemplate, PROJECT_LOCATION_DATA_STORE_CONTROL),
-          "toBuilder is only supported when ControlName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/controls/{control}");
+          "toBuilder is only supported when ControlName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/controls/{control}");
       this.project = controlName.project;
       this.location = controlName.location;
       this.dataStore = controlName.dataStore;

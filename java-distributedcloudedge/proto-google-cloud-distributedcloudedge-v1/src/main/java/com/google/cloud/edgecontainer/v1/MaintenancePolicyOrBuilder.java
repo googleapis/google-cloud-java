@@ -36,6 +36,7 @@ public interface MaintenancePolicyOrBuilder
    * @return Whether the window field is set.
    */
   boolean hasWindow();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MaintenancePolicyOrBuilder
    * @return The window.
    */
   com.google.cloud.edgecontainer.v1.MaintenanceWindow getWindow();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface MaintenancePolicyOrBuilder
    */
   java.util.List<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>
       getMaintenanceExclusionsList();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface MaintenancePolicyOrBuilder
    * </code>
    */
   com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow getMaintenanceExclusions(int index);
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface MaintenancePolicyOrBuilder
    * </code>
    */
   int getMaintenanceExclusionsCount();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface MaintenancePolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder>
       getMaintenanceExclusionsOrBuilderList();
+
   /**
    *
    *

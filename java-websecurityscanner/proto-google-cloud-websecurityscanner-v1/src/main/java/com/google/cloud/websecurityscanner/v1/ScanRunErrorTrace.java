@@ -34,6 +34,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanRunErrorTrace)
     ScanRunErrorTraceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScanRunErrorTrace.newBuilder() to construct.
   private ScanRunErrorTrace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -164,6 +165,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <code>CODE_UNSPECIFIED = 0;</code>
      */
     public static final int CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -174,6 +176,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <code>INTERNAL_ERROR = 1;</code>
      */
     public static final int INTERNAL_ERROR_VALUE = 1;
+
     /**
      *
      *
@@ -185,6 +188,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <code>SCAN_CONFIG_ISSUE = 2;</code>
      */
     public static final int SCAN_CONFIG_ISSUE_VALUE = 2;
+
     /**
      *
      *
@@ -196,6 +200,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <code>AUTHENTICATION_CONFIG_ISSUE = 3;</code>
      */
     public static final int AUTHENTICATION_CONFIG_ISSUE_VALUE = 3;
+
     /**
      *
      *
@@ -206,6 +211,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <code>TIMED_OUT_WHILE_SCANNING = 4;</code>
      */
     public static final int TIMED_OUT_WHILE_SCANNING_VALUE = 4;
+
     /**
      *
      *
@@ -217,6 +223,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <code>TOO_MANY_REDIRECTS = 5;</code>
      */
     public static final int TOO_MANY_REDIRECTS_VALUE = 5;
+
     /**
      *
      *
@@ -326,6 +333,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
+
   /**
    *
    *
@@ -341,6 +349,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -363,6 +372,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
 
   public static final int SCAN_CONFIG_ERROR_FIELD_NUMBER = 2;
   private com.google.cloud.websecurityscanner.v1.ScanConfigError scanConfigError_;
+
   /**
    *
    *
@@ -380,6 +390,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
   public boolean hasScanConfigError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -399,6 +410,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.websecurityscanner.v1.ScanConfigError.getDefaultInstance()
         : scanConfigError_;
   }
+
   /**
    *
    *
@@ -420,6 +432,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
 
   public static final int MOST_COMMON_HTTP_ERROR_CODE_FIELD_NUMBER = 3;
   private int mostCommonHttpErrorCode_ = 0;
+
   /**
    *
    *
@@ -625,6 +638,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -851,6 +865,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -866,6 +881,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -884,6 +900,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +920,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.Code.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -924,6 +942,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +967,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
             com.google.cloud.websecurityscanner.v1.ScanConfigError.Builder,
             com.google.cloud.websecurityscanner.v1.ScanConfigErrorOrBuilder>
         scanConfigErrorBuilder_;
+
     /**
      *
      *
@@ -964,6 +984,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     public boolean hasScanConfigError() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -986,6 +1007,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
         return scanConfigErrorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1056,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1110,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1128,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getScanConfigErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
             : scanConfigError_;
       }
     }
+
     /**
      *
      *
@@ -1152,6 +1180,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     }
 
     private int mostCommonHttpErrorCode_;
+
     /**
      *
      *
@@ -1169,6 +1198,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     public int getMostCommonHttpErrorCode() {
       return mostCommonHttpErrorCode_;
     }
+
     /**
      *
      *
@@ -1190,6 +1220,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

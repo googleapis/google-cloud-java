@@ -36,6 +36,7 @@ public interface IndexPrivateEndpointsOrBuilder
    * @return The matchGrpcAddress.
    */
   java.lang.String getMatchGrpcAddress();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface IndexPrivateEndpointsOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface IndexPrivateEndpointsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.PscAutomatedEndpoints>
       getPscAutomatedEndpointsList();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface IndexPrivateEndpointsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.PscAutomatedEndpoints getPscAutomatedEndpoints(int index);
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface IndexPrivateEndpointsOrBuilder
    * </code>
    */
   int getPscAutomatedEndpointsCount();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface IndexPrivateEndpointsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.PscAutomatedEndpointsOrBuilder>
       getPscAutomatedEndpointsOrBuilderList();
+
   /**
    *
    *

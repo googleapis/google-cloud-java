@@ -36,6 +36,7 @@ public interface RoutersPreviewResponseOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RoutersPreviewResponseOrBuilder
    * @return The resource.
    */
   com.google.cloud.compute.v1.Router getResource();
+
   /**
    *
    *

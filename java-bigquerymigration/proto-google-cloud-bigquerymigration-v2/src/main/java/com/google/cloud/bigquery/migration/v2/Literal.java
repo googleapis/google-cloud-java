@@ -33,6 +33,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.Literal)
     LiteralOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Literal.newBuilder() to construct.
   private Literal(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
     private LiteralDataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LITERAL_STRING_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLiteralString() {
     return literalDataCase_ == 2;
   }
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LITERAL_BYTES_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLiteralBytes() {
     return literalDataCase_ == 3;
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object relativePath_ = "";
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -464,6 +473,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -714,6 +724,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLiteralString() {
       return literalDataCase_ == 2;
     }
+
     /**
      *
      *
@@ -742,6 +753,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -770,6 +782,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -791,6 +804,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +824,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +862,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLiteralBytes() {
       return literalDataCase_ == 3;
     }
+
     /**
      *
      *
@@ -864,6 +880,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +924,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object relativePath_ = "";
+
     /**
      *
      *
@@ -928,6 +947,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1010,7 @@ public final class Literal extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -32,6 +32,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionDisksResizeRequest)
     RegionDisksResizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionDisksResizeRequest.newBuilder() to construct.
   private RegionDisksResizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int SIZE_GB_FIELD_NUMBER = 494929369;
   private long sizeGb_ = 0L;
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
   public boolean hasSizeGb() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -258,6 +261,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -442,6 +446,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private long sizeGb_;
+
     /**
      *
      *
@@ -457,6 +462,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     public boolean hasSizeGb() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -472,6 +478,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     public long getSizeGb() {
       return sizeGb_;
     }
+
     /**
      *
      *
@@ -491,6 +498,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

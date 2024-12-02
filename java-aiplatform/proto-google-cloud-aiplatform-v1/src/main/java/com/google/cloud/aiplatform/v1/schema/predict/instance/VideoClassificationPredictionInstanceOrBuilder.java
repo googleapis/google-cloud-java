@@ -37,6 +37,7 @@ public interface VideoClassificationPredictionInstanceOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface VideoClassificationPredictionInstanceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface VideoClassificationPredictionInstanceOrBuilder
    * @return The timeSegmentStart.
    */
   java.lang.String getTimeSegmentStart();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface VideoClassificationPredictionInstanceOrBuilder
    * @return The timeSegmentEnd.
    */
   java.lang.String getTimeSegmentEnd();
+
   /**
    *
    *

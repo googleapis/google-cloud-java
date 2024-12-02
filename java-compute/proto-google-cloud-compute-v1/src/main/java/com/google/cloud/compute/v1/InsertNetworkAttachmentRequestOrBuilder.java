@@ -38,6 +38,7 @@ public interface InsertNetworkAttachmentRequestOrBuilder
    * @return Whether the networkAttachmentResource field is set.
    */
   boolean hasNetworkAttachmentResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertNetworkAttachmentRequestOrBuilder
    * @return The networkAttachmentResource.
    */
   com.google.cloud.compute.v1.NetworkAttachment getNetworkAttachmentResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertNetworkAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface InsertNetworkAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface InsertNetworkAttachmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface InsertNetworkAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

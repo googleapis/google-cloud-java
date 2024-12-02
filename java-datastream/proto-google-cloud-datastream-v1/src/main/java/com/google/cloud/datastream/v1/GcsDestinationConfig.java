@@ -33,6 +33,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.GcsDestinationConfig)
     GcsDestinationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcsDestinationConfig.newBuilder() to construct.
   private GcsDestinationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     private FileFormatCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
 
   public static final int FILE_ROTATION_MB_FIELD_NUMBER = 2;
   private int fileRotationMb_ = 0;
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
 
   public static final int FILE_ROTATION_INTERVAL_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration fileRotationInterval_;
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
   public boolean hasFileRotationInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Duration.getDefaultInstance()
         : fileRotationInterval_;
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int AVRO_FILE_FORMAT_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
   public boolean hasAvroFileFormat() {
     return fileFormatCase_ == 100;
   }
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.datastream.v1.AvroFileFormat.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -290,6 +301,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int JSON_FILE_FORMAT_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -305,6 +317,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
   public boolean hasJsonFileFormat() {
     return fileFormatCase_ == 101;
   }
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.datastream.v1.JsonFileFormat.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -562,6 +576,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -854,6 +869,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -876,6 +892,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -898,6 +915,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +955,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +980,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     }
 
     private int fileRotationMb_;
+
     /**
      *
      *
@@ -975,6 +996,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public int getFileRotationMb() {
       return fileRotationMb_;
     }
+
     /**
      *
      *
@@ -994,6 +1016,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         fileRotationIntervalBuilder_;
+
     /**
      *
      *
@@ -1034,6 +1058,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public boolean hasFileRotationInterval() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1056,6 +1081,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         return fileRotationIntervalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1106,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1158,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1180,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1197,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getFileRotationIntervalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1187,6 +1218,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
             : fileRotationInterval_;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1252,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.datastream.v1.AvroFileFormat.Builder,
             com.google.cloud.datastream.v1.AvroFileFormatOrBuilder>
         avroFileFormatBuilder_;
+
     /**
      *
      *
@@ -1235,6 +1268,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public boolean hasAvroFileFormat() {
       return fileFormatCase_ == 100;
     }
+
     /**
      *
      *
@@ -1260,6 +1294,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.datastream.v1.AvroFileFormat.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1282,6 +1317,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       fileFormatCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1338,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       fileFormatCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1371,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       fileFormatCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1397,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1410,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.datastream.v1.AvroFileFormat.Builder getAvroFileFormatBuilder() {
       return getAvroFileFormatFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1391,6 +1431,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.datastream.v1.AvroFileFormat.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1429,6 +1470,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.datastream.v1.JsonFileFormat.Builder,
             com.google.cloud.datastream.v1.JsonFileFormatOrBuilder>
         jsonFileFormatBuilder_;
+
     /**
      *
      *
@@ -1444,6 +1486,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public boolean hasJsonFileFormat() {
       return fileFormatCase_ == 101;
     }
+
     /**
      *
      *
@@ -1469,6 +1512,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.datastream.v1.JsonFileFormat.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1491,6 +1535,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       fileFormatCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1556,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       fileFormatCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1543,6 +1589,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       fileFormatCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1568,6 +1615,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1580,6 +1628,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.datastream.v1.JsonFileFormat.Builder getJsonFileFormatBuilder() {
       return getJsonFileFormatFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1600,6 +1649,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.datastream.v1.JsonFileFormat.getDefaultInstance();
       }
     }
+
     /**
      *
      *

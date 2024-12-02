@@ -37,6 +37,7 @@ public interface TargetTcpProxiesSetProxyHeaderRequestOrBuilder
    * @return Whether the proxyHeader field is set.
    */
   boolean hasProxyHeader();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TargetTcpProxiesSetProxyHeaderRequestOrBuilder
    * @return The proxyHeader.
    */
   java.lang.String getProxyHeader();
+
   /**
    *
    *

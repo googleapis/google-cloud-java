@@ -33,6 +33,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.CreateBlueprintRequest)
     CreateBlueprintRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateBlueprintRequest.newBuilder() to construct.
   private CreateBlueprintRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object blueprintId_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
 
   public static final int BLUEPRINT_FIELD_NUMBER = 3;
   private com.google.cloud.telcoautomation.v1alpha1.Blueprint blueprint_;
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
   public boolean hasBlueprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.telcoautomation.v1alpha1.Blueprint.getDefaultInstance()
         : blueprint_;
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +757,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +786,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object blueprintId_ = "";
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -816,6 +832,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -837,6 +854,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.telcoautomation.v1alpha1.Blueprint.Builder,
             com.google.cloud.telcoautomation.v1alpha1.BlueprintOrBuilder>
         blueprintBuilder_;
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
     public boolean hasBlueprint() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
         return blueprintBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1043,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getBlueprintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1081,7 @@ public final class CreateBlueprintRequest extends com.google.protobuf.GeneratedM
             : blueprint_;
       }
     }
+
     /**
      *
      *

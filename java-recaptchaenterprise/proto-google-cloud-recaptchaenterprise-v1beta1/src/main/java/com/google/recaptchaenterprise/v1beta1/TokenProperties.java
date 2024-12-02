@@ -25,6 +25,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.TokenProperties)
     TokenPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TokenProperties.newBuilder() to construct.
   private TokenProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -165,6 +166,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>INVALID_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int INVALID_REASON_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -175,6 +177,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>UNKNOWN_INVALID_REASON = 1;</code>
      */
     public static final int UNKNOWN_INVALID_REASON_VALUE = 1;
+
     /**
      *
      *
@@ -185,6 +188,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>MALFORMED = 2;</code>
      */
     public static final int MALFORMED_VALUE = 2;
+
     /**
      *
      *
@@ -195,6 +199,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>EXPIRED = 3;</code>
      */
     public static final int EXPIRED_VALUE = 3;
+
     /**
      *
      *
@@ -205,6 +210,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>DUPE = 4;</code>
      */
     public static final int DUPE_VALUE = 4;
+
     /**
      *
      *
@@ -218,6 +224,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>SITE_MISMATCH = 5 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int SITE_MISMATCH_VALUE = 5;
+
     /**
      *
      *
@@ -228,6 +235,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>MISSING = 6;</code>
      */
     public static final int MISSING_VALUE = 6;
+
     /**
      *
      *
@@ -338,6 +346,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int VALID_FIELD_NUMBER = 1;
   private boolean valid_ = false;
+
   /**
    *
    *
@@ -360,6 +369,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
 
   public static final int INVALID_REASON_FIELD_NUMBER = 2;
   private int invalidReason_ = 0;
+
   /**
    *
    *
@@ -377,6 +387,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   public int getInvalidReasonValue() {
     return invalidReason_;
   }
+
   /**
    *
    *
@@ -402,6 +413,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -417,6 +429,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -432,6 +445,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -450,6 +464,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
+
   /**
    *
    *
@@ -473,6 +488,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -501,6 +517,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
+
   /**
    *
    *
@@ -524,6 +541,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -755,6 +773,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.TokenProperties} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1001,6 +1020,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private boolean valid_;
+
     /**
      *
      *
@@ -1020,6 +1040,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     public boolean getValid() {
       return valid_;
     }
+
     /**
      *
      *
@@ -1043,6 +1064,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1088,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private int invalidReason_ = 0;
+
     /**
      *
      *
@@ -1083,6 +1106,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     public int getInvalidReasonValue() {
       return invalidReason_;
     }
+
     /**
      *
      *
@@ -1103,6 +1127,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1150,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
           ? com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1149,6 +1175,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1202,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1189,6 +1217,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1209,6 +1238,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1231,6 +1261,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1281,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1309,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1329,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1344,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1328,6 +1363,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1355,6 +1391,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object hostname_ = "";
+
     /**
      *
      *
@@ -1377,6 +1414,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1437,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1459,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1477,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1502,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object action_ = "";
+
     /**
      *
      *
@@ -1483,6 +1525,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1505,6 +1548,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1526,6 +1570,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1543,6 +1588,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

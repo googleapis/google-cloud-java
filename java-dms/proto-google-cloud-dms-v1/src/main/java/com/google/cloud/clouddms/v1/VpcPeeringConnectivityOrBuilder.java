@@ -36,6 +36,7 @@ public interface VpcPeeringConnectivityOrBuilder
    * @return The vpc.
    */
   java.lang.String getVpc();
+
   /**
    *
    *

@@ -50,6 +50,7 @@ public interface CheckInstanceUpgradabilityResponseOrBuilder
    * @return The upgradeVersion.
    */
   java.lang.String getUpgradeVersion();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface CheckInstanceUpgradabilityResponseOrBuilder
    * @return The upgradeInfo.
    */
   java.lang.String getUpgradeInfo();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface CheckInstanceUpgradabilityResponseOrBuilder
    * @return The upgradeImage.
    */
   java.lang.String getUpgradeImage();
+
   /**
    *
    *

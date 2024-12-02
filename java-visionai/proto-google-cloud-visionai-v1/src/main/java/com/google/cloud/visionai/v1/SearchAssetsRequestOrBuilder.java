@@ -37,6 +37,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return Whether the schemaKeySortingStrategy field is set.
    */
   boolean hasSchemaKeySortingStrategy();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return The schemaKeySortingStrategy.
    */
   com.google.cloud.visionai.v1.SchemaKeySortingStrategy getSchemaKeySortingStrategy();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return The corpus.
    */
   java.lang.String getCorpus();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return Whether the contentTimeRanges field is set.
    */
   boolean hasContentTimeRanges();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return The contentTimeRanges.
    */
   com.google.cloud.visionai.v1.DateTimeRangeArray getContentTimeRanges();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface SearchAssetsRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria criteria = 4;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Criteria> getCriteriaList();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface SearchAssetsRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria criteria = 4;</code>
    */
   com.google.cloud.visionai.v1.Criteria getCriteria(int index);
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public interface SearchAssetsRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria criteria = 4;</code>
    */
   int getCriteriaCount();
+
   /**
    *
    *
@@ -223,6 +232,7 @@ public interface SearchAssetsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.CriteriaOrBuilder>
       getCriteriaOrBuilderList();
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public interface SearchAssetsRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetGroup facet_selections = 6;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.FacetGroup> getFacetSelectionsList();
+
   /**
    *
    *
@@ -258,6 +269,7 @@ public interface SearchAssetsRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetGroup facet_selections = 6;</code>
    */
   com.google.cloud.visionai.v1.FacetGroup getFacetSelections(int index);
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface SearchAssetsRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetGroup facet_selections = 6;</code>
    */
   int getFacetSelectionsCount();
+
   /**
    *
    *
@@ -283,6 +296,7 @@ public interface SearchAssetsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.FacetGroupOrBuilder>
       getFacetSelectionsOrBuilderList();
+
   /**
    *
    *
@@ -311,6 +325,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return A list containing the resultAnnotationKeys.
    */
   java.util.List<java.lang.String> getResultAnnotationKeysList();
+
   /**
    *
    *
@@ -326,6 +341,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return The count of resultAnnotationKeys.
    */
   int getResultAnnotationKeysCount();
+
   /**
    *
    *
@@ -342,6 +358,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return The resultAnnotationKeys at the given index.
    */
   java.lang.String getResultAnnotationKeys(int index);
+
   /**
    *
    *
@@ -372,6 +389,7 @@ public interface SearchAssetsRequestOrBuilder
    * @return The searchQuery.
    */
   java.lang.String getSearchQuery();
+
   /**
    *
    *

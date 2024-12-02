@@ -38,6 +38,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return Whether the propertyName field is set.
    */
   boolean hasPropertyName();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return The propertyName.
    */
   java.lang.String getPropertyName();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return A list containing the textValue.
    */
   java.util.List<java.lang.String> getTextValueList();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return The count of textValue.
    */
   int getTextValueCount();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return The textValue at the given index.
    */
   java.lang.String getTextValue(int index);
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return A list containing the intValue.
    */
   java.util.List<java.lang.Long> getIntValueList();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return The count of intValue.
    */
   int getIntValueCount();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return A list containing the floatValue.
    */
   java.util.List<java.lang.Float> getFloatValueList();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return The count of floatValue.
    */
   int getFloatValueCount();
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return Whether the minValue field is set.
    */
   boolean hasMinValue();
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return Whether the maxValue field is set.
    */
   boolean hasMaxValue();
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return Whether the unitCode field is set.
    */
   boolean hasUnitCode();
+
   /**
    *
    *
@@ -325,6 +338,7 @@ public interface CloudExportAdditionalPropertiesOrBuilder
    * @return The unitCode.
    */
   java.lang.String getUnitCode();
+
   /**
    *
    *

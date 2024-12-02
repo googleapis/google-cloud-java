@@ -33,6 +33,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListGroupMembersResponse)
     ListGroupMembersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListGroupMembersResponse.newBuilder() to construct.
   private ListGroupMembersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.MonitoredResource> members_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.api.MonitoredResource> getMembersList() {
     return members_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       getMembersOrBuilderList() {
     return members_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
   public int getMembersCount() {
     return members_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
   public com.google.api.MonitoredResource getMembers(int index) {
     return members_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -387,6 +396,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -675,6 +685,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
         return membersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
         return membersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
         return membersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +889,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +909,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     public com.google.api.MonitoredResource.Builder getMembersBuilder(int index) {
       return getMembersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -916,6 +939,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
         return membersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -933,6 +957,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(members_);
       }
     }
+
     /**
      *
      *
@@ -946,6 +971,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       return getMembersFieldBuilder()
           .addBuilder(com.google.api.MonitoredResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -959,6 +985,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       return getMembersFieldBuilder()
           .addBuilder(index, com.google.api.MonitoredResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -990,6 +1017,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1014,6 +1042,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1067,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1091,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1111,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1138,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1121,6 +1154,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1140,6 +1174,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

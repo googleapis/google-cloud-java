@@ -33,6 +33,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1.Document)
     DocumentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Document.newBuilder() to construct.
   private Document(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>PLAIN_TEXT = 1;</code>
      */
     public static final int PLAIN_TEXT_VALUE = 1;
+
     /**
      *
      *
@@ -238,6 +241,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -272,6 +276,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -288,6 +293,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -308,6 +314,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContent() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -351,6 +359,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -381,6 +390,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_CONTENT_URI_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -398,6 +408,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsContentUri() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -428,6 +439,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -463,6 +475,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object language_ = "";
+
   /**
    *
    *
@@ -493,6 +506,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -725,6 +739,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -977,6 +992,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -993,6 +1009,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1012,6 +1029,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1048,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.language.v1.Document.Type.forNumber(type_);
       return result == null ? com.google.cloud.language.v1.Document.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1052,6 +1071,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1107,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContent() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1116,6 +1137,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1167,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1190,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1211,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1254,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsContentUri() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1260,6 +1286,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1291,6 +1318,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1315,6 +1343,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1366,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1394,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object language_ = "";
+
     /**
      *
      *
@@ -1393,6 +1424,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1454,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1450,6 +1483,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1474,6 +1508,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

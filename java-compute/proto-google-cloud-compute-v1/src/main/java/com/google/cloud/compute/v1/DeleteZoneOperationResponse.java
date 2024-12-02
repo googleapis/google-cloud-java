@@ -33,6 +33,7 @@ public final class DeleteZoneOperationResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteZoneOperationResponse)
     DeleteZoneOperationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteZoneOperationResponse.newBuilder() to construct.
   private DeleteZoneOperationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class DeleteZoneOperationResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

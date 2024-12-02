@@ -36,6 +36,7 @@ public interface PatchBackendServiceRequestOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PatchBackendServiceRequestOrBuilder
    * @return Whether the backendServiceResource field is set.
    */
   boolean hasBackendServiceResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PatchBackendServiceRequestOrBuilder
    * @return The backendServiceResource.
    */
   com.google.cloud.compute.v1.BackendService getBackendServiceResource();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface PatchBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface PatchBackendServiceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface PatchBackendServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface LicensePoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface LicensePoolOrBuilder
    * @return Whether the licenseAssignmentProtocol field is set.
    */
   boolean hasLicenseAssignmentProtocol();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface LicensePoolOrBuilder
    */
   com.google.cloud.commerce.consumer.procurement.v1.AssignmentProtocol
       getLicenseAssignmentProtocol();
+
   /**
    *
    *

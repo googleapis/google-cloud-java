@@ -42,6 +42,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return Whether the feature field is set.
    */
   boolean hasFeature();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return The feature.
    */
   com.google.cloud.aiplatform.v1.Feature getFeature();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface CreateFeatureRequestOrBuilder
    * @return The featureId.
    */
   java.lang.String getFeatureId();
+
   /**
    *
    *

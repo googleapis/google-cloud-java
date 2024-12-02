@@ -36,6 +36,7 @@ public interface ExportPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.netapp.v1.SimpleExportPolicyRule> getRulesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExportPolicyOrBuilder
    * </code>
    */
   com.google.cloud.netapp.v1.SimpleExportPolicyRule getRules(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ExportPolicyOrBuilder
    * </code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ExportPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.SimpleExportPolicyRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *

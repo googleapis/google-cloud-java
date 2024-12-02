@@ -41,12 +41,13 @@ public final class EnvVarProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n-google/cloud/aiplatform/v1beta1/env_va"
-          + "r.proto\022\037google.cloud.aiplatform.v1beta1"
-          + "\032\037google/api/field_behavior.proto\"/\n\006Env"
-          + "Var\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340"
-          + "A\002B\342\001\n#com.google.cloud.aiplatform.v1bet"
-          + "a1B\013EnvVarProtoP\001ZCcloud.google.com/go/a"
+      "\n"
+          + "-google/cloud/aiplatform/v1beta1/env_va"
+          + "r.proto\022\037google.cloud.aiplatform.v1beta1\032\037google/api/field_behavior.proto\"/\n"
+          + "\006EnvVar\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022\022\n"
+          + "\005value\030\002 \001(\tB\003\340A\002B\342\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\013EnvVarProtoP\001ZCcloud.google.com/go/a"
           + "iplatform/apiv1beta1/aiplatformpb;aiplat"
           + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
           + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"

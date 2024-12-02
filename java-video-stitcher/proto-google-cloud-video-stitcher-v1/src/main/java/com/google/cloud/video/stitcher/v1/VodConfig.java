@@ -33,6 +33,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.VodConfig)
     VodConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VodConfig.newBuilder() to construct.
   private VodConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
+
     /**
      *
      *
@@ -250,6 +254,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -274,6 +279,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +309,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceUri_ = "";
+
   /**
    *
    *
@@ -326,6 +333,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adTagUri_ = "";
+
   /**
    *
    *
@@ -377,6 +386,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -403,6 +413,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GAM_VOD_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.video.stitcher.v1.GamVodConfig gamVodConfig_;
+
   /**
    *
    *
@@ -420,6 +431,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGamVodConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -439,6 +451,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.GamVodConfig.getDefaultInstance()
         : gamVodConfig_;
   }
+
   /**
    *
    *
@@ -459,6 +472,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -476,6 +490,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -500,6 +515,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_FETCH_OPTIONS_FIELD_NUMBER = 8;
   private com.google.cloud.video.stitcher.v1.FetchOptions sourceFetchOptions_;
+
   /**
    *
    *
@@ -515,6 +531,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceFetchOptions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -532,6 +549,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.FetchOptions.getDefaultInstance()
         : sourceFetchOptions_;
   }
+
   /**
    *
    *
@@ -764,6 +782,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1043,6 +1062,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1066,6 +1086,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1089,6 +1110,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1111,6 +1133,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1152,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1178,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceUri_ = "";
+
     /**
      *
      *
@@ -1176,6 +1201,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1198,6 +1224,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1219,6 +1246,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1264,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1289,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object adTagUri_ = "";
+
     /**
      *
      *
@@ -1282,6 +1312,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1304,6 +1335,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1325,6 +1357,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1375,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1405,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.GamVodConfig.Builder,
             com.google.cloud.video.stitcher.v1.GamVodConfigOrBuilder>
         gamVodConfigBuilder_;
+
     /**
      *
      *
@@ -1387,6 +1422,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGamVodConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1409,6 +1445,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         return gamVodConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1433,6 +1470,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1493,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1524,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1506,6 +1546,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1522,6 +1563,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGamVodConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1542,6 +1584,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
             : gamVodConfig_;
       }
     }
+
     /**
      *
      *
@@ -1571,6 +1614,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1588,6 +1632,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1608,6 +1653,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1675,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.stitcher.v1.VodConfig.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1652,6 +1699,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1678,6 +1726,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.FetchOptions.Builder,
             com.google.cloud.video.stitcher.v1.FetchOptionsOrBuilder>
         sourceFetchOptionsBuilder_;
+
     /**
      *
      *
@@ -1692,6 +1741,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceFetchOptions() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1712,6 +1762,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
         return sourceFetchOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1734,6 +1785,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1806,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1782,6 +1835,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1801,6 +1855,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1870,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceFetchOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1834,6 +1890,7 @@ public final class VodConfig extends com.google.protobuf.GeneratedMessageV3
             : sourceFetchOptions_;
       }
     }
+
     /**
      *
      *

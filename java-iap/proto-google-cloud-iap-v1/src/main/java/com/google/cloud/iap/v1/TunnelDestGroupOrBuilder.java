@@ -40,6 +40,7 @@ public interface TunnelDestGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface TunnelDestGroupOrBuilder
    * @return A list containing the cidrs.
    */
   java.util.List<java.lang.String> getCidrsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface TunnelDestGroupOrBuilder
    * @return The count of cidrs.
    */
   int getCidrsCount();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface TunnelDestGroupOrBuilder
    * @return The cidrs at the given index.
    */
   java.lang.String getCidrs(int index);
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface TunnelDestGroupOrBuilder
    * @return A list containing the fqdns.
    */
   java.util.List<java.lang.String> getFqdnsList();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface TunnelDestGroupOrBuilder
    * @return The count of fqdns.
    */
   int getFqdnsCount();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface TunnelDestGroupOrBuilder
    * @return The fqdns at the given index.
    */
   java.lang.String getFqdns(int index);
+
   /**
    *
    *

@@ -42,6 +42,7 @@ public interface UpdateTableRequestOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateTableRequestOrBuilder
    * @return The table.
    */
   com.google.cloud.bigquery.biglake.v1.Table getTable();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface UpdateTableRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface UpdateTableRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

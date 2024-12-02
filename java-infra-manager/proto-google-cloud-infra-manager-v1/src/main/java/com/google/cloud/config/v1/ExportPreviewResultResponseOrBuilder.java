@@ -38,6 +38,7 @@ public interface ExportPreviewResultResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExportPreviewResultResponseOrBuilder
    * @return The result.
    */
   com.google.cloud.config.v1.PreviewResult getResult();
+
   /**
    *
    *

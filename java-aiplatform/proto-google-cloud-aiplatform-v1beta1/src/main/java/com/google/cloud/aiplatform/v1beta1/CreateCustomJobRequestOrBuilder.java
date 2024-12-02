@@ -39,6 +39,7 @@ public interface CreateCustomJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateCustomJobRequestOrBuilder
    * @return Whether the customJob field is set.
    */
   boolean hasCustomJob();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateCustomJobRequestOrBuilder
    * @return The customJob.
    */
   com.google.cloud.aiplatform.v1beta1.CustomJob getCustomJob();
+
   /**
    *
    *

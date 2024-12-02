@@ -36,6 +36,7 @@ public interface GetLicenseCodeRequestOrBuilder
    * @return The licenseCode.
    */
   java.lang.String getLicenseCode();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetLicenseCodeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the externalIpv6 field is set.
    */
   boolean hasExternalIpv6();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AccessConfigOrBuilder
    * @return The externalIpv6.
    */
   java.lang.String getExternalIpv6();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the externalIpv6PrefixLength field is set.
    */
   boolean hasExternalIpv6PrefixLength();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface AccessConfigOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface AccessConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the natIP field is set.
    */
   boolean hasNatIP();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface AccessConfigOrBuilder
    * @return The natIP.
    */
   java.lang.String getNatIP();
+
   /**
    *
    *
@@ -210,6 +219,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public interface AccessConfigOrBuilder
    * @return The networkTier.
    */
   java.lang.String getNetworkTier();
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the publicPtrDomainName field is set.
    */
   boolean hasPublicPtrDomainName();
+
   /**
    *
    *
@@ -261,6 +273,7 @@ public interface AccessConfigOrBuilder
    * @return The publicPtrDomainName.
    */
   java.lang.String getPublicPtrDomainName();
+
   /**
    *
    *
@@ -286,6 +299,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the securityPolicy field is set.
    */
   boolean hasSecurityPolicy();
+
   /**
    *
    *
@@ -298,6 +312,7 @@ public interface AccessConfigOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
+
   /**
    *
    *
@@ -323,6 +338,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the setPublicPtr field is set.
    */
   boolean hasSetPublicPtr();
+
   /**
    *
    *
@@ -349,6 +365,7 @@ public interface AccessConfigOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -362,6 +379,7 @@ public interface AccessConfigOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

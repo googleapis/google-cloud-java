@@ -33,6 +33,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.SkuInstance)
     SkuInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SkuInstance.newBuilder() to construct.
   private SkuInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POWER_SUPPLY_FIELD_NUMBER = 2;
   private int powerSupply_ = 0;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
   public int getPowerSupplyValue() {
     return powerSupply_;
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object billingSku_ = "";
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object billingSkuPerVcpu_ = "";
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUBSCRIPTION_DURATION_MONTHS_FIELD_NUMBER = 5;
   private int subscriptionDurationMonths_ = 0;
+
   /**
    *
    *
@@ -485,6 +495,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -725,6 +736,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -771,6 +784,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int powerSupply_ = 0;
+
     /**
      *
      *
@@ -851,6 +868,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     public int getPowerSupplyValue() {
       return powerSupply_;
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +907,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.PowerSupply.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -910,6 +930,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object billingSku_ = "";
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -977,6 +1000,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1044,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object billingSkuPerVcpu_ = "";
+
     /**
      *
      *
@@ -1069,6 +1096,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1121,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1165,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1192,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int subscriptionDurationMonths_;
+
     /**
      *
      *
@@ -1176,6 +1208,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
     public int getSubscriptionDurationMonths() {
       return subscriptionDurationMonths_;
     }
+
     /**
      *
      *
@@ -1195,6 +1228,7 @@ public final class SkuInstance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

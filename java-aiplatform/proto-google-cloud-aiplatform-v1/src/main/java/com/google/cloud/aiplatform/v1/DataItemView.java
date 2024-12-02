@@ -33,6 +33,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.DataItemView)
     DataItemViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataItemView.newBuilder() to construct.
   private DataItemView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int DATA_ITEM_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.DataItem dataItem_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataItem() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.DataItem.getDefaultInstance()
         : dataItem_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Annotation> annotations_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1.Annotation> getAnnotationsList() {
     return annotations_;
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       getAnnotationsOrBuilderList() {
     return annotations_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return annotations_.size();
   }
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.Annotation getAnnotations(int index) {
     return annotations_.get(index);
   }
+
   /**
    *
    *
@@ -197,6 +206,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HAS_TRUNCATED_ANNOTATIONS_FIELD_NUMBER = 3;
   private boolean hasTruncatedAnnotations_ = false;
+
   /**
    *
    *
@@ -402,6 +412,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -678,6 +689,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.DataItem.Builder,
             com.google.cloud.aiplatform.v1.DataItemOrBuilder>
         dataItemBuilder_;
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataItem() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         return dataItemBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +816,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +831,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataItemFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
             : dataItem_;
       }
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         return annotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -910,6 +931,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         return annotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         return annotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -952,6 +975,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +998,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1023,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1048,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1071,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1094,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1117,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1139,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1161,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1176,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Annotation.Builder getAnnotationsBuilder(int index) {
       return getAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1162,6 +1195,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         return annotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1215,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(annotations_);
       }
     }
+
     /**
      *
      *
@@ -1196,6 +1231,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       return getAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Annotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1211,6 +1247,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       return getAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Annotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1245,6 +1282,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hasTruncatedAnnotations_;
+
     /**
      *
      *
@@ -1265,6 +1303,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     public boolean getHasTruncatedAnnotations() {
       return hasTruncatedAnnotations_;
     }
+
     /**
      *
      *
@@ -1289,6 +1328,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

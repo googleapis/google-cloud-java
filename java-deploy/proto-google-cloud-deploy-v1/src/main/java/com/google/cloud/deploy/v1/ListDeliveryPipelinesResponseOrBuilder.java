@@ -34,6 +34,7 @@ public interface ListDeliveryPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.DeliveryPipeline delivery_pipelines = 1;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.DeliveryPipeline> getDeliveryPipelinesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDeliveryPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.DeliveryPipeline delivery_pipelines = 1;</code>
    */
   com.google.cloud.deploy.v1.DeliveryPipeline getDeliveryPipelines(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDeliveryPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.DeliveryPipeline delivery_pipelines = 1;</code>
    */
   int getDeliveryPipelinesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDeliveryPipelinesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.DeliveryPipelineOrBuilder>
       getDeliveryPipelinesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListDeliveryPipelinesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListDeliveryPipelinesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListDeliveryPipelinesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListDeliveryPipelinesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

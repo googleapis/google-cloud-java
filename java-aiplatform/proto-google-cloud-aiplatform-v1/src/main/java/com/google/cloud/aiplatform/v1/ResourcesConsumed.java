@@ -33,6 +33,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ResourcesConsumed)
     ResourcesConsumedOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourcesConsumed.newBuilder() to construct.
   private ResourcesConsumed(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
 
   public static final int REPLICA_HOURS_FIELD_NUMBER = 1;
   private double replicaHours_ = 0D;
+
   /**
    *
    *
@@ -244,6 +246,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -426,6 +429,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private double replicaHours_;
+
     /**
      *
      *
@@ -443,6 +447,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
     public double getReplicaHours() {
       return replicaHours_;
     }
+
     /**
      *
      *
@@ -464,6 +469,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

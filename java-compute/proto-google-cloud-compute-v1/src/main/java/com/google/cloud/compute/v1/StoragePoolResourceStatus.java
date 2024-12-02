@@ -33,6 +33,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StoragePoolResourceStatus)
     StoragePoolResourceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StoragePoolResourceStatus.newBuilder() to construct.
   private StoragePoolResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int DISK_COUNT_FIELD_NUMBER = 182933485;
   private long diskCount_ = 0L;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasDiskCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastResizeTimestamp_ = "";
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasLastResizeTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   public static final int MAX_TOTAL_PROVISIONED_DISK_CAPACITY_GB_FIELD_NUMBER = 165818207;
   private long maxTotalProvisionedDiskCapacityGb_ = 0L;
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasMaxTotalProvisionedDiskCapacityGb() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   public static final int POOL_USED_CAPACITY_BYTES_FIELD_NUMBER = 510407877;
   private long poolUsedCapacityBytes_ = 0L;
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasPoolUsedCapacityBytes() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   public static final int POOL_USED_IOPS_FIELD_NUMBER = 99558536;
   private long poolUsedIops_ = 0L;
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasPoolUsedIops() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   public static final int POOL_USED_THROUGHPUT_FIELD_NUMBER = 206130633;
   private long poolUsedThroughput_ = 0L;
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasPoolUsedThroughput() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -297,6 +311,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   public static final int POOL_USER_WRITTEN_BYTES_FIELD_NUMBER = 228964050;
   private long poolUserWrittenBytes_ = 0L;
+
   /**
    *
    *
@@ -312,6 +327,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasPoolUserWrittenBytes() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -330,6 +346,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   public static final int TOTAL_PROVISIONED_DISK_CAPACITY_GB_FIELD_NUMBER = 520930980;
   private long totalProvisionedDiskCapacityGb_ = 0L;
+
   /**
    *
    *
@@ -345,6 +362,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasTotalProvisionedDiskCapacityGb() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -363,6 +381,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   public static final int TOTAL_PROVISIONED_DISK_IOPS_FIELD_NUMBER = 32812549;
   private long totalProvisionedDiskIops_ = 0L;
+
   /**
    *
    *
@@ -378,6 +397,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasTotalProvisionedDiskIops() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -396,6 +416,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   public static final int TOTAL_PROVISIONED_DISK_THROUGHPUT_FIELD_NUMBER = 447677830;
   private long totalProvisionedDiskThroughput_ = 0L;
+
   /**
    *
    *
@@ -411,6 +432,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
   public boolean hasTotalProvisionedDiskThroughput() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -740,6 +762,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1053,6 +1076,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     private int bitField0_;
 
     private long diskCount_;
+
     /**
      *
      *
@@ -1068,6 +1092,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasDiskCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1083,6 +1108,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getDiskCount() {
       return diskCount_;
     }
+
     /**
      *
      *
@@ -1102,6 +1128,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1148,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object lastResizeTimestamp_ = "";
+
     /**
      *
      *
@@ -1135,6 +1163,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasLastResizeTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1157,6 +1186,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1209,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1200,6 +1231,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1249,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1274,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private long maxTotalProvisionedDiskCapacityGb_;
+
     /**
      *
      *
@@ -1256,6 +1290,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasMaxTotalProvisionedDiskCapacityGb() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1271,6 +1306,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getMaxTotalProvisionedDiskCapacityGb() {
       return maxTotalProvisionedDiskCapacityGb_;
     }
+
     /**
      *
      *
@@ -1290,6 +1326,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1346,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private long poolUsedCapacityBytes_;
+
     /**
      *
      *
@@ -1324,6 +1362,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasPoolUsedCapacityBytes() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1339,6 +1378,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getPoolUsedCapacityBytes() {
       return poolUsedCapacityBytes_;
     }
+
     /**
      *
      *
@@ -1358,6 +1398,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1418,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private long poolUsedIops_;
+
     /**
      *
      *
@@ -1392,6 +1434,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasPoolUsedIops() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1407,6 +1450,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getPoolUsedIops() {
       return poolUsedIops_;
     }
+
     /**
      *
      *
@@ -1426,6 +1470,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1445,6 +1490,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private long poolUsedThroughput_;
+
     /**
      *
      *
@@ -1460,6 +1506,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasPoolUsedThroughput() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1475,6 +1522,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getPoolUsedThroughput() {
       return poolUsedThroughput_;
     }
+
     /**
      *
      *
@@ -1494,6 +1542,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1513,6 +1562,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private long poolUserWrittenBytes_;
+
     /**
      *
      *
@@ -1528,6 +1578,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasPoolUserWrittenBytes() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1543,6 +1594,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getPoolUserWrittenBytes() {
       return poolUserWrittenBytes_;
     }
+
     /**
      *
      *
@@ -1562,6 +1614,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1634,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private long totalProvisionedDiskCapacityGb_;
+
     /**
      *
      *
@@ -1596,6 +1650,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasTotalProvisionedDiskCapacityGb() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1611,6 +1666,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getTotalProvisionedDiskCapacityGb() {
       return totalProvisionedDiskCapacityGb_;
     }
+
     /**
      *
      *
@@ -1630,6 +1686,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1649,6 +1706,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private long totalProvisionedDiskIops_;
+
     /**
      *
      *
@@ -1664,6 +1722,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasTotalProvisionedDiskIops() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -1679,6 +1738,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getTotalProvisionedDiskIops() {
       return totalProvisionedDiskIops_;
     }
+
     /**
      *
      *
@@ -1698,6 +1758,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1717,6 +1778,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     }
 
     private long totalProvisionedDiskThroughput_;
+
     /**
      *
      *
@@ -1732,6 +1794,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public boolean hasTotalProvisionedDiskThroughput() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -1747,6 +1810,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public long getTotalProvisionedDiskThroughput() {
       return totalProvisionedDiskThroughput_;
     }
+
     /**
      *
      *
@@ -1766,6 +1830,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

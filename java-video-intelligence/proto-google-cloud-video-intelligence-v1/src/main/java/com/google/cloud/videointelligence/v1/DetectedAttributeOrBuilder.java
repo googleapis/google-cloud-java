@@ -37,6 +37,7 @@ public interface DetectedAttributeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface DetectedAttributeOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

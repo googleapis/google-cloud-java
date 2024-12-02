@@ -40,6 +40,7 @@ public interface GetAzureJsonWebKeysRequestOrBuilder
    * @return The azureCluster.
    */
   java.lang.String getAzureCluster();
+
   /**
    *
    *

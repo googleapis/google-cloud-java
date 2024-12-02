@@ -32,6 +32,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest)
     InstanceGroupsSetNamedPortsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupsSetNamedPortsRequest.newBuilder() to construct.
   private InstanceGroupsSetNamedPortsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
     return namedPorts_;
   }
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       getNamedPortsOrBuilderList() {
     return namedPorts_;
   }
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
   public int getNamedPortsCount() {
     return namedPorts_.size();
   }
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
     return namedPorts_.get(index);
   }
+
   /**
    *
    *
@@ -379,6 +388,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -629,6 +639,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object fingerprint_ = "";
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -687,6 +700,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -708,6 +722,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
         return namedPortsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
         return namedPortsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
         return namedPortsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +940,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +961,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +982,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +1002,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1022,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1035,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1023,6 +1052,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
         return namedPortsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1070,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
         return java.util.Collections.unmodifiableList(namedPorts_);
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1084,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       return getNamedPortsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NamedPort.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1066,6 +1098,7 @@ public final class InstanceGroupsSetNamedPortsRequest extends com.google.protobu
       return getNamedPortsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NamedPort.getDefaultInstance());
     }
+
     /**
      *
      *

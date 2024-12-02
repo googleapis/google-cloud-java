@@ -33,6 +33,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.BatchOperationStatus)
     BatchOperationStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchOperationStatus.newBuilder() to construct.
   private BatchOperationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
 
   public static final int SUCCESS_COUNT_FIELD_NUMBER = 1;
   private int successCount_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
 
   public static final int FAILURE_COUNT_FIELD_NUMBER = 2;
   private int failureCount_ = 0;
+
   /**
    *
    *
@@ -267,6 +270,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -462,6 +466,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int successCount_;
+
     /**
      *
      *
@@ -478,6 +483,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
     public int getSuccessCount() {
       return successCount_;
     }
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -518,6 +525,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
     }
 
     private int failureCount_;
+
     /**
      *
      *
@@ -534,6 +542,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
     public int getFailureCount() {
       return failureCount_;
     }
+
     /**
      *
      *
@@ -554,6 +563,7 @@ public final class BatchOperationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

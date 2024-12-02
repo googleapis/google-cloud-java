@@ -38,6 +38,7 @@ public interface UpdateAccountLabelRequestOrBuilder
    * @return Whether the accountLabel field is set.
    */
   boolean hasAccountLabel();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateAccountLabelRequestOrBuilder
    * @return The accountLabel.
    */
   com.google.shopping.css.v1.AccountLabel getAccountLabel();
+
   /**
    *
    *

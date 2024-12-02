@@ -38,6 +38,7 @@ public interface AnalyzeOrgPolicyGovernedContainersResponseOrBuilder
   java.util.List<
           com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
       getGovernedContainersList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface AnalyzeOrgPolicyGovernedContainersResponseOrBuilder
    */
   com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer
       getGovernedContainers(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface AnalyzeOrgPolicyGovernedContainersResponseOrBuilder
    * </code>
    */
   int getGovernedContainersCount();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface AnalyzeOrgPolicyGovernedContainersResponseOrBuilder
               com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse
                   .GovernedContainerOrBuilder>
       getGovernedContainersOrBuilderList();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface AnalyzeOrgPolicyGovernedContainersResponseOrBuilder
    * @return Whether the constraint field is set.
    */
   boolean hasConstraint();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface AnalyzeOrgPolicyGovernedContainersResponseOrBuilder
    * @return The constraint.
    */
   com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint getConstraint();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface AnalyzeOrgPolicyGovernedContainersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

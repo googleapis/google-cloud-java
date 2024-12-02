@@ -33,6 +33,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectCircuitInfo)
     InterconnectCircuitInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectCircuitInfo.newBuilder() to construct.
   private InterconnectCircuitInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customerDemarcId_ = "";
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
   public boolean hasCustomerDemarcId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object googleCircuitId_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
   public boolean hasGoogleCircuitId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object googleDemarcId_ = "";
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
   public boolean hasGoogleDemarcId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -456,6 +466,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -675,6 +686,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object customerDemarcId_ = "";
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     public boolean hasCustomerDemarcId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -711,6 +724,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +747,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     }
 
     private java.lang.Object googleCircuitId_ = "";
+
     /**
      *
      *
@@ -809,6 +827,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     public boolean hasGoogleCircuitId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +913,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +938,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     }
 
     private java.lang.Object googleDemarcId_ = "";
+
     /**
      *
      *
@@ -929,6 +953,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     public boolean hasGoogleDemarcId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -951,6 +976,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -973,6 +999,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -994,6 +1021,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1039,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

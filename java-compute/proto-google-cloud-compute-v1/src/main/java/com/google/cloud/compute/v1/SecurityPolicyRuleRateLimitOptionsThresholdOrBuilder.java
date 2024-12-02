@@ -36,6 +36,7 @@ public interface SecurityPolicyRuleRateLimitOptionsThresholdOrBuilder
    * @return Whether the count field is set.
    */
   boolean hasCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SecurityPolicyRuleRateLimitOptionsThresholdOrBuilder
    * @return Whether the intervalSec field is set.
    */
   boolean hasIntervalSec();
+
   /**
    *
    *

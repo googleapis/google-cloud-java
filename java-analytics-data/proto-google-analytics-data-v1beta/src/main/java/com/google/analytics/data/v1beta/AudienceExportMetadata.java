@@ -33,6 +33,7 @@ public final class AudienceExportMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.AudienceExportMetadata)
     AudienceExportMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AudienceExportMetadata.newBuilder() to construct.
   private AudienceExportMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class AudienceExportMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

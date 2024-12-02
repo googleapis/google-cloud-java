@@ -43,6 +43,7 @@ public interface RunReportJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface RunReportJobRequestOrBuilder
    * @return Whether the dateRange field is set.
    */
   boolean hasDateRange();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface RunReportJobRequestOrBuilder
    * @return The dateRange.
    */
   com.google.cloud.channel.v1.DateRange getDateRange();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface RunReportJobRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface RunReportJobRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

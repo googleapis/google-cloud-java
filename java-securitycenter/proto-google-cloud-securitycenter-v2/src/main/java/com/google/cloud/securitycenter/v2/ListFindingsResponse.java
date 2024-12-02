@@ -33,6 +33,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.ListFindingsResponse)
     ListFindingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListFindingsResponse.newBuilder() to construct.
   private ListFindingsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the finding field is set.
      */
     boolean hasFinding();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * @return The finding.
      */
     com.google.cloud.securitycenter.v2.Finding getFinding();
+
     /**
      *
      *
@@ -118,6 +121,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the resource field is set.
      */
     boolean hasResource();
+
     /**
      *
      *
@@ -133,6 +137,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult.Resource
         getResource();
+
     /**
      *
      *
@@ -147,6 +152,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult.ResourceOrBuilder
         getResourceOrBuilder();
   }
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult)
       ListFindingsResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ListFindingsResult.newBuilder() to construct.
     private ListFindingsResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -208,6 +215,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The name.
        */
       java.lang.String getName();
+
       /**
        *
        *
@@ -234,6 +242,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The displayName.
        */
       java.lang.String getDisplayName();
+
       /**
        *
        *
@@ -259,6 +268,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The type.
        */
       java.lang.String getType();
+
       /**
        *
        *
@@ -284,6 +294,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The enum numeric value on the wire for cloudProvider.
        */
       int getCloudProviderValue();
+
       /**
        *
        *
@@ -309,6 +320,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The service.
        */
       java.lang.String getService();
+
       /**
        *
        *
@@ -334,6 +346,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The location.
        */
       java.lang.String getLocation();
+
       /**
        *
        *
@@ -359,6 +372,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the gcpMetadata field is set.
        */
       boolean hasGcpMetadata();
+
       /**
        *
        *
@@ -371,6 +385,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The gcpMetadata.
        */
       com.google.cloud.securitycenter.v2.GcpMetadata getGcpMetadata();
+
       /**
        *
        *
@@ -394,6 +409,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the awsMetadata field is set.
        */
       boolean hasAwsMetadata();
+
       /**
        *
        *
@@ -406,6 +422,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The awsMetadata.
        */
       com.google.cloud.securitycenter.v2.AwsMetadata getAwsMetadata();
+
       /**
        *
        *
@@ -429,6 +446,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the azureMetadata field is set.
        */
       boolean hasAzureMetadata();
+
       /**
        *
        *
@@ -441,6 +459,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The azureMetadata.
        */
       com.google.cloud.securitycenter.v2.AzureMetadata getAzureMetadata();
+
       /**
        *
        *
@@ -464,6 +483,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the resourcePath field is set.
        */
       boolean hasResourcePath();
+
       /**
        *
        *
@@ -476,6 +496,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The resourcePath.
        */
       com.google.cloud.securitycenter.v2.ResourcePath getResourcePath();
+
       /**
        *
        *
@@ -508,6 +529,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return The resourcePathString.
        */
       java.lang.String getResourcePathString();
+
       /**
        *
        *
@@ -534,6 +556,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               .CloudProviderMetadataCase
           getCloudProviderMetadataCase();
     }
+
     /**
      *
      *
@@ -550,6 +573,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult.Resource)
         ResourceOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Resource.newBuilder() to construct.
       private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -607,6 +631,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         private CloudProviderMetadataCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -645,6 +670,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -669,6 +695,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           return s;
         }
       }
+
       /**
        *
        *
@@ -698,6 +725,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -721,6 +749,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           return s;
         }
       }
+
       /**
        *
        *
@@ -749,6 +778,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object type_ = "";
+
       /**
        *
        *
@@ -772,6 +802,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           return s;
         }
       }
+
       /**
        *
        *
@@ -798,6 +829,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       public static final int CLOUD_PROVIDER_FIELD_NUMBER = 4;
       private int cloudProvider_ = 0;
+
       /**
        *
        *
@@ -813,6 +845,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public int getCloudProviderValue() {
         return cloudProvider_;
       }
+
       /**
        *
        *
@@ -837,6 +870,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object service_ = "";
+
       /**
        *
        *
@@ -860,6 +894,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           return s;
         }
       }
+
       /**
        *
        *
@@ -888,6 +923,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object location_ = "";
+
       /**
        *
        *
@@ -911,6 +947,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           return s;
         }
       }
+
       /**
        *
        *
@@ -936,6 +973,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int GCP_METADATA_FIELD_NUMBER = 7;
+
       /**
        *
        *
@@ -951,6 +989,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasGcpMetadata() {
         return cloudProviderMetadataCase_ == 7;
       }
+
       /**
        *
        *
@@ -969,6 +1008,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
         return com.google.cloud.securitycenter.v2.GcpMetadata.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -987,6 +1027,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int AWS_METADATA_FIELD_NUMBER = 8;
+
       /**
        *
        *
@@ -1002,6 +1043,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasAwsMetadata() {
         return cloudProviderMetadataCase_ == 8;
       }
+
       /**
        *
        *
@@ -1020,6 +1062,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
         return com.google.cloud.securitycenter.v2.AwsMetadata.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -1038,6 +1081,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int AZURE_METADATA_FIELD_NUMBER = 9;
+
       /**
        *
        *
@@ -1053,6 +1097,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasAzureMetadata() {
         return cloudProviderMetadataCase_ == 9;
       }
+
       /**
        *
        *
@@ -1071,6 +1116,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
         return com.google.cloud.securitycenter.v2.AzureMetadata.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -1090,6 +1136,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       public static final int RESOURCE_PATH_FIELD_NUMBER = 10;
       private com.google.cloud.securitycenter.v2.ResourcePath resourcePath_;
+
       /**
        *
        *
@@ -1105,6 +1152,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasResourcePath() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1122,6 +1170,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             ? com.google.cloud.securitycenter.v2.ResourcePath.getDefaultInstance()
             : resourcePath_;
       }
+
       /**
        *
        *
@@ -1142,6 +1191,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object resourcePathString_ = "";
+
       /**
        *
        *
@@ -1174,6 +1224,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           return s;
         }
       }
+
       /**
        *
        *
@@ -1522,6 +1573,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1933,6 +1985,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         private int bitField0_;
 
         private java.lang.Object name_ = "";
+
         /**
          *
          *
@@ -1956,6 +2009,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1979,6 +2033,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2001,6 +2056,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2019,6 +2075,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2044,6 +2101,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
 
         private java.lang.Object displayName_ = "";
+
         /**
          *
          *
@@ -2066,6 +2124,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2088,6 +2147,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2109,6 +2169,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2126,6 +2187,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2150,6 +2212,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
 
         private java.lang.Object type_ = "";
+
         /**
          *
          *
@@ -2172,6 +2235,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2194,6 +2258,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2215,6 +2280,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2232,6 +2298,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2256,6 +2323,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
 
         private int cloudProvider_ = 0;
+
         /**
          *
          *
@@ -2271,6 +2339,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public int getCloudProviderValue() {
           return cloudProvider_;
         }
+
         /**
          *
          *
@@ -2289,6 +2358,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2308,6 +2378,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               ? com.google.cloud.securitycenter.v2.CloudProvider.UNRECOGNIZED
               : result;
         }
+
         /**
          *
          *
@@ -2329,6 +2400,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2348,6 +2420,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
 
         private java.lang.Object service_ = "";
+
         /**
          *
          *
@@ -2370,6 +2443,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2392,6 +2466,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2413,6 +2488,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2430,6 +2506,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2454,6 +2531,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
 
         private java.lang.Object location_ = "";
+
         /**
          *
          *
@@ -2476,6 +2554,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2498,6 +2577,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2519,6 +2599,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2536,6 +2617,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2564,6 +2646,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.securitycenter.v2.GcpMetadata.Builder,
                 com.google.cloud.securitycenter.v2.GcpMetadataOrBuilder>
             gcpMetadataBuilder_;
+
         /**
          *
          *
@@ -2579,6 +2662,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasGcpMetadata() {
           return cloudProviderMetadataCase_ == 7;
         }
+
         /**
          *
          *
@@ -2604,6 +2688,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return com.google.cloud.securitycenter.v2.GcpMetadata.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2626,6 +2711,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 7;
           return this;
         }
+
         /**
          *
          *
@@ -2646,6 +2732,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 7;
           return this;
         }
+
         /**
          *
          *
@@ -2679,6 +2766,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 7;
           return this;
         }
+
         /**
          *
          *
@@ -2704,6 +2792,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -2716,6 +2805,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public com.google.cloud.securitycenter.v2.GcpMetadata.Builder getGcpMetadataBuilder() {
           return getGcpMetadataFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2736,6 +2826,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return com.google.cloud.securitycenter.v2.GcpMetadata.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2775,6 +2866,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.securitycenter.v2.AwsMetadata.Builder,
                 com.google.cloud.securitycenter.v2.AwsMetadataOrBuilder>
             awsMetadataBuilder_;
+
         /**
          *
          *
@@ -2790,6 +2882,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAwsMetadata() {
           return cloudProviderMetadataCase_ == 8;
         }
+
         /**
          *
          *
@@ -2815,6 +2908,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return com.google.cloud.securitycenter.v2.AwsMetadata.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2837,6 +2931,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 8;
           return this;
         }
+
         /**
          *
          *
@@ -2857,6 +2952,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 8;
           return this;
         }
+
         /**
          *
          *
@@ -2890,6 +2986,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 8;
           return this;
         }
+
         /**
          *
          *
@@ -2915,6 +3012,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -2927,6 +3025,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public com.google.cloud.securitycenter.v2.AwsMetadata.Builder getAwsMetadataBuilder() {
           return getAwsMetadataFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2947,6 +3046,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return com.google.cloud.securitycenter.v2.AwsMetadata.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2986,6 +3086,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.securitycenter.v2.AzureMetadata.Builder,
                 com.google.cloud.securitycenter.v2.AzureMetadataOrBuilder>
             azureMetadataBuilder_;
+
         /**
          *
          *
@@ -3001,6 +3102,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasAzureMetadata() {
           return cloudProviderMetadataCase_ == 9;
         }
+
         /**
          *
          *
@@ -3026,6 +3128,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return com.google.cloud.securitycenter.v2.AzureMetadata.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -3048,6 +3151,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 9;
           return this;
         }
+
         /**
          *
          *
@@ -3068,6 +3172,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 9;
           return this;
         }
+
         /**
          *
          *
@@ -3101,6 +3206,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           cloudProviderMetadataCase_ = 9;
           return this;
         }
+
         /**
          *
          *
@@ -3126,6 +3232,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -3138,6 +3245,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public com.google.cloud.securitycenter.v2.AzureMetadata.Builder getAzureMetadataBuilder() {
           return getAzureMetadataFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -3159,6 +3267,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return com.google.cloud.securitycenter.v2.AzureMetadata.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -3199,6 +3308,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.securitycenter.v2.ResourcePath.Builder,
                 com.google.cloud.securitycenter.v2.ResourcePathOrBuilder>
             resourcePathBuilder_;
+
         /**
          *
          *
@@ -3213,6 +3323,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public boolean hasResourcePath() {
           return ((bitField0_ & 0x00000200) != 0);
         }
+
         /**
          *
          *
@@ -3233,6 +3344,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return resourcePathBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -3255,6 +3367,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3275,6 +3388,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3303,6 +3417,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           }
           return this;
         }
+
         /**
          *
          *
@@ -3322,6 +3437,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3336,6 +3452,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return getResourcePathFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -3354,6 +3471,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                 : resourcePath_;
           }
         }
+
         /**
          *
          *
@@ -3381,6 +3499,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
 
         private java.lang.Object resourcePathString_ = "";
+
         /**
          *
          *
@@ -3412,6 +3531,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -3443,6 +3563,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -3473,6 +3594,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3499,6 +3621,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3605,6 +3728,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     private int bitField0_;
     public static final int FINDING_FIELD_NUMBER = 1;
     private com.google.cloud.securitycenter.v2.Finding finding_;
+
     /**
      *
      *
@@ -3620,6 +3744,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasFinding() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3637,6 +3762,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.securitycenter.v2.Finding.getDefaultInstance()
           : finding_;
     }
+
     /**
      *
      *
@@ -3656,6 +3782,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public static final int RESOURCE_FIELD_NUMBER = 3;
     private com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult.Resource
         resource_;
+
     /**
      *
      *
@@ -3673,6 +3800,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3694,6 +3822,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               .getDefaultInstance()
           : resource_;
     }
+
     /**
      *
      *
@@ -3902,6 +4031,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4138,6 +4268,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.securitycenter.v2.Finding.Builder,
               com.google.cloud.securitycenter.v2.FindingOrBuilder>
           findingBuilder_;
+
       /**
        *
        *
@@ -4152,6 +4283,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasFinding() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4172,6 +4304,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           return findingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4194,6 +4327,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4214,6 +4348,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4241,6 +4376,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -4260,6 +4396,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4274,6 +4411,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return getFindingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4292,6 +4430,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               : finding_;
         }
       }
+
       /**
        *
        *
@@ -4327,6 +4466,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult
                   .ResourceOrBuilder>
           resourceBuilder_;
+
       /**
        *
        *
@@ -4343,6 +4483,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public boolean hasResource() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -4367,6 +4508,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           return resourceBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4393,6 +4535,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4417,6 +4560,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4450,6 +4594,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -4471,6 +4616,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4489,6 +4635,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return getResourceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4512,6 +4659,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               : resource_;
         }
       }
+
       /**
        *
        *
@@ -4617,6 +4765,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult>
       listFindingsResults_;
+
   /**
    *
    *
@@ -4633,6 +4782,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       getListFindingsResultsList() {
     return listFindingsResults_;
   }
+
   /**
    *
    *
@@ -4651,6 +4801,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       getListFindingsResultsOrBuilderList() {
     return listFindingsResults_;
   }
+
   /**
    *
    *
@@ -4666,6 +4817,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
   public int getListFindingsResultsCount() {
     return listFindingsResults_.size();
   }
+
   /**
    *
    *
@@ -4682,6 +4834,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       getListFindingsResults(int index) {
     return listFindingsResults_.get(index);
   }
+
   /**
    *
    *
@@ -4703,6 +4856,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -4727,6 +4881,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -4754,6 +4909,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -4951,6 +5107,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5250,6 +5407,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return listFindingsResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5268,6 +5426,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return listFindingsResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5287,6 +5446,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return listFindingsResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5313,6 +5473,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5337,6 +5498,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5362,6 +5524,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5388,6 +5551,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5411,6 +5575,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5435,6 +5600,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5460,6 +5626,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5481,6 +5648,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5502,6 +5670,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5517,6 +5686,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         getListFindingsResultsBuilder(int index) {
       return getListFindingsResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5536,6 +5706,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return listFindingsResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5557,6 +5728,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(listFindingsResults_);
       }
     }
+
     /**
      *
      *
@@ -5575,6 +5747,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5594,6 +5767,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5633,6 +5807,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -5656,6 +5831,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5679,6 +5855,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5701,6 +5878,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5719,6 +5897,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5744,6 +5923,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -5759,6 +5939,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -5778,6 +5959,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface DirectoryEntryOrBuilder
    * @return Whether the file field is set.
    */
   boolean hasFile();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DirectoryEntryOrBuilder
    * @return The file.
    */
   java.lang.String getFile();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DirectoryEntryOrBuilder
    * @return Whether the directory field is set.
    */
   boolean hasDirectory();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface DirectoryEntryOrBuilder
    * @return The directory.
    */
   java.lang.String getDirectory();
+
   /**
    *
    *

@@ -76,6 +76,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest)
     StreamingAnalyzeContentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingAnalyzeContentRequest.newBuilder() to construct.
   private StreamingAnalyzeContentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -126,6 +127,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     private ConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -178,6 +180,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     private InputCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -220,6 +223,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object participant_ = "";
+
   /**
    *
    *
@@ -247,6 +251,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +281,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   public static final int AUDIO_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -291,6 +297,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasAudioConfig() {
     return configCase_ == 2;
   }
+
   /**
    *
    *
@@ -309,6 +316,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     }
     return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -327,6 +335,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   public static final int TEXT_CONFIG_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -342,6 +351,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasTextConfig() {
     return configCase_ == 3;
   }
+
   /**
    *
    *
@@ -360,6 +370,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     }
     return com.google.cloud.dialogflow.v2beta1.InputTextConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -379,6 +390,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   public static final int REPLY_AUDIO_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig replyAudioConfig_;
+
   /**
    *
    *
@@ -398,6 +410,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasReplyAudioConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -419,6 +432,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()
         : replyAudioConfig_;
   }
+
   /**
    *
    *
@@ -441,6 +455,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   public static final int INPUT_AUDIO_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -458,6 +473,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasInputAudio() {
     return inputCase_ == 5;
   }
+
   /**
    *
    *
@@ -480,6 +496,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   public static final int INPUT_TEXT_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -497,6 +514,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasInputText() {
     return inputCase_ == 6;
   }
+
   /**
    *
    *
@@ -527,6 +545,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -559,6 +578,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   public static final int INPUT_DTMF_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -577,6 +597,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasInputDtmf() {
     return inputCase_ == 9;
   }
+
   /**
    *
    *
@@ -598,6 +619,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     }
     return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -619,6 +641,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   public static final int INPUT_INTENT_FIELD_NUMBER = 17;
+
   /**
    *
    *
@@ -635,6 +658,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasInputIntent() {
     return inputCase_ == 17;
   }
+
   /**
    *
    *
@@ -664,6 +688,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -695,6 +720,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   public static final int INPUT_EVENT_FIELD_NUMBER = 20;
+
   /**
    *
    *
@@ -711,6 +737,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasInputEvent() {
     return inputCase_ == 20;
   }
+
   /**
    *
    *
@@ -740,6 +767,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -772,6 +800,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   public static final int QUERY_PARAMS_FIELD_NUMBER = 7;
   private com.google.cloud.dialogflow.v2beta1.QueryParameters queryParams_;
+
   /**
    *
    *
@@ -787,6 +816,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasQueryParams() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -804,6 +834,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         ? com.google.cloud.dialogflow.v2beta1.QueryParameters.getDefaultInstance()
         : queryParams_;
   }
+
   /**
    *
    *
@@ -822,6 +853,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   public static final int ASSIST_QUERY_PARAMS_FIELD_NUMBER = 8;
   private com.google.cloud.dialogflow.v2beta1.AssistQueryParameters assistQueryParams_;
+
   /**
    *
    *
@@ -837,6 +869,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasAssistQueryParams() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -854,6 +887,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         ? com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.getDefaultInstance()
         : assistQueryParams_;
   }
+
   /**
    *
    *
@@ -873,6 +907,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   public static final int CX_PARAMETERS_FIELD_NUMBER = 13;
   private com.google.protobuf.Struct cxParameters_;
+
   /**
    *
    *
@@ -893,6 +928,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public boolean hasCxParameters() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -913,6 +949,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   public com.google.protobuf.Struct getCxParameters() {
     return cxParameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cxParameters_;
   }
+
   /**
    *
    *
@@ -936,6 +973,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cxCurrentPage_ = "";
+
   /**
    *
    *
@@ -972,6 +1010,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1011,6 +1050,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   public static final int ENABLE_EXTENDED_STREAMING_FIELD_NUMBER = 11;
   private boolean enableExtendedStreaming_ = false;
+
   /**
    *
    *
@@ -1047,6 +1087,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   public static final int ENABLE_PARTIAL_AUTOMATED_AGENT_REPLY_FIELD_NUMBER = 12;
   private boolean enablePartialAutomatedAgentReply_ = false;
+
   /**
    *
    *
@@ -1068,6 +1109,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   public static final int ENABLE_DEBUGGING_INFO_FIELD_NUMBER = 19;
   private boolean enableDebuggingInfo_ = false;
+
   /**
    *
    *
@@ -1460,6 +1502,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1999,6 +2042,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object participant_ = "";
+
     /**
      *
      *
@@ -2025,6 +2069,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2051,6 +2096,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2076,6 +2122,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2097,6 +2144,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2129,6 +2177,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder,
             com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder>
         audioConfigBuilder_;
+
     /**
      *
      *
@@ -2144,6 +2193,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasAudioConfig() {
       return configCase_ == 2;
     }
+
     /**
      *
      *
@@ -2169,6 +2219,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2191,6 +2242,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       configCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2211,6 +2263,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       configCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2244,6 +2297,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       configCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2269,6 +2323,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -2281,6 +2336,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder getAudioConfigBuilder() {
       return getAudioConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2301,6 +2357,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2339,6 +2396,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2beta1.InputTextConfig.Builder,
             com.google.cloud.dialogflow.v2beta1.InputTextConfigOrBuilder>
         textConfigBuilder_;
+
     /**
      *
      *
@@ -2354,6 +2412,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasTextConfig() {
       return configCase_ == 3;
     }
+
     /**
      *
      *
@@ -2379,6 +2438,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return com.google.cloud.dialogflow.v2beta1.InputTextConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2401,6 +2461,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       configCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2421,6 +2482,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       configCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2454,6 +2516,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       configCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2479,6 +2542,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -2491,6 +2555,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.v2beta1.InputTextConfig.Builder getTextConfigBuilder() {
       return getTextConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2511,6 +2576,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return com.google.cloud.dialogflow.v2beta1.InputTextConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2550,6 +2616,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder,
             com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder>
         replyAudioConfigBuilder_;
+
     /**
      *
      *
@@ -2568,6 +2635,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasReplyAudioConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2592,6 +2660,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return replyAudioConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2619,6 +2688,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2643,6 +2713,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2676,6 +2747,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -2699,6 +2771,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2718,6 +2791,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return getReplyAudioConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2741,6 +2815,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             : replyAudioConfig_;
       }
     }
+
     /**
      *
      *
@@ -2787,6 +2862,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasInputAudio() {
       return inputCase_ == 5;
     }
+
     /**
      *
      *
@@ -2806,6 +2882,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -2829,6 +2906,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2869,6 +2947,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasInputText() {
       return inputCase_ == 6;
     }
+
     /**
      *
      *
@@ -2900,6 +2979,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2931,6 +3011,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2955,6 +3036,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2977,6 +3059,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -3008,6 +3091,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder,
             com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder>
         inputDtmfBuilder_;
+
     /**
      *
      *
@@ -3026,6 +3110,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasInputDtmf() {
       return inputCase_ == 9;
     }
+
     /**
      *
      *
@@ -3054,6 +3139,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3079,6 +3165,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       inputCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3102,6 +3189,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       inputCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3138,6 +3226,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       inputCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3166,6 +3255,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -3181,6 +3271,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder getInputDtmfBuilder() {
       return getInputDtmfFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3205,6 +3296,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3258,6 +3350,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasInputIntent() {
       return inputCase_ == 17;
     }
+
     /**
      *
      *
@@ -3288,6 +3381,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3318,6 +3412,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3341,6 +3436,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3362,6 +3458,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -3404,6 +3501,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasInputEvent() {
       return inputCase_ == 20;
     }
+
     /**
      *
      *
@@ -3434,6 +3532,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3464,6 +3563,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3487,6 +3587,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3508,6 +3609,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -3539,6 +3641,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2beta1.QueryParameters.Builder,
             com.google.cloud.dialogflow.v2beta1.QueryParametersOrBuilder>
         queryParamsBuilder_;
+
     /**
      *
      *
@@ -3553,6 +3656,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasQueryParams() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3573,6 +3677,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return queryParamsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3595,6 +3700,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3615,6 +3721,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3643,6 +3750,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -3662,6 +3770,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3676,6 +3785,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return getQueryParamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3694,6 +3804,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             : queryParams_;
       }
     }
+
     /**
      *
      *
@@ -3726,6 +3837,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder,
             com.google.cloud.dialogflow.v2beta1.AssistQueryParametersOrBuilder>
         assistQueryParamsBuilder_;
+
     /**
      *
      *
@@ -3740,6 +3852,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasAssistQueryParams() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3760,6 +3873,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return assistQueryParamsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3783,6 +3897,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3803,6 +3918,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3832,6 +3948,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -3851,6 +3968,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3866,6 +3984,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return getAssistQueryParamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3885,6 +4004,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             : assistQueryParams_;
       }
     }
+
     /**
      *
      *
@@ -3917,6 +4037,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         cxParametersBuilder_;
+
     /**
      *
      *
@@ -3936,6 +4057,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean hasCxParameters() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3961,6 +4083,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return cxParametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3988,6 +4111,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4012,6 +4136,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4044,6 +4169,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -4068,6 +4194,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4087,6 +4214,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return getCxParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4110,6 +4238,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             : cxParameters_;
       }
     }
+
     /**
      *
      *
@@ -4142,6 +4271,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object cxCurrentPage_ = "";
+
     /**
      *
      *
@@ -4177,6 +4307,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4212,6 +4343,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4246,6 +4378,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4276,6 +4409,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4313,6 +4447,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     }
 
     private boolean enableExtendedStreaming_;
+
     /**
      *
      *
@@ -4346,6 +4481,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean getEnableExtendedStreaming() {
       return enableExtendedStreaming_;
     }
+
     /**
      *
      *
@@ -4383,6 +4519,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4420,6 +4557,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     }
 
     private boolean enablePartialAutomatedAgentReply_;
+
     /**
      *
      *
@@ -4438,6 +4576,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean getEnablePartialAutomatedAgentReply() {
       return enablePartialAutomatedAgentReply_;
     }
+
     /**
      *
      *
@@ -4460,6 +4599,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4482,6 +4622,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     }
 
     private boolean enableDebuggingInfo_;
+
     /**
      *
      *
@@ -4498,6 +4639,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public boolean getEnableDebuggingInfo() {
       return enableDebuggingInfo_;
     }
+
     /**
      *
      *
@@ -4518,6 +4660,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

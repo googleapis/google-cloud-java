@@ -40,6 +40,7 @@ public interface LabelVideoRequestOrBuilder
    * @return Whether the videoClassificationConfig field is set.
    */
   boolean hasVideoClassificationConfig();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface LabelVideoRequestOrBuilder
    * @return The videoClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig getVideoClassificationConfig();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface LabelVideoRequestOrBuilder
    * @return Whether the objectDetectionConfig field is set.
    */
   boolean hasObjectDetectionConfig();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface LabelVideoRequestOrBuilder
    * @return The objectDetectionConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface LabelVideoRequestOrBuilder
    * @return Whether the objectTrackingConfig field is set.
    */
   boolean hasObjectTrackingConfig();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface LabelVideoRequestOrBuilder
    * @return The objectTrackingConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface LabelVideoRequestOrBuilder
    * @return Whether the eventConfig field is set.
    */
   boolean hasEventConfig();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface LabelVideoRequestOrBuilder
    * @return The eventConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EventConfig getEventConfig();
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public interface LabelVideoRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public interface LabelVideoRequestOrBuilder
    * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public interface LabelVideoRequestOrBuilder
    * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
+
   /**
    *
    *
@@ -289,6 +300,7 @@ public interface LabelVideoRequestOrBuilder
    * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
+
   /**
    *
    *

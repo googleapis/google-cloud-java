@@ -34,6 +34,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Task tasks = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Task> getTasksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Task tasks = 1;</code>
    */
   com.google.cloud.dataplex.v1.Task getTasks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Task tasks = 1;</code>
    */
   int getTasksCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListTasksResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Task tasks = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.TaskOrBuilder> getTasksOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListTasksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ListTasksResponseOrBuilder
    * @return A list containing the unreachableLocations.
    */
   java.util.List<java.lang.String> getUnreachableLocationsList();
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface ListTasksResponseOrBuilder
    * @return The count of unreachableLocations.
    */
   int getUnreachableLocationsCount();
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public interface ListTasksResponseOrBuilder
    * @return The unreachableLocations at the given index.
    */
   java.lang.String getUnreachableLocations(int index);
+
   /**
    *
    *

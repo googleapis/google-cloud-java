@@ -38,6 +38,7 @@ public interface SuggestKnowledgeAssistResponseOrBuilder
    * @return Whether the knowledgeAssistAnswer field is set.
    */
   boolean hasKnowledgeAssistAnswer();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SuggestKnowledgeAssistResponseOrBuilder
    * @return The knowledgeAssistAnswer.
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer getKnowledgeAssistAnswer();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface SuggestKnowledgeAssistResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

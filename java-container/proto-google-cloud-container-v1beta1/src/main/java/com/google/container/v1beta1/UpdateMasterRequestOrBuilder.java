@@ -42,6 +42,7 @@ public interface UpdateMasterRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface UpdateMasterRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface UpdateMasterRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public interface UpdateMasterRequestOrBuilder
    * @return The masterVersion.
    */
   java.lang.String getMasterVersion();
+
   /**
    *
    *
@@ -189,6 +193,7 @@ public interface UpdateMasterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

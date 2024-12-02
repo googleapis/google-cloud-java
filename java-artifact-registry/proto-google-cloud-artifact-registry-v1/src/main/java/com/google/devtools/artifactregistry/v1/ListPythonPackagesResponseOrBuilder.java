@@ -34,6 +34,7 @@ public interface ListPythonPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.PythonPackage python_packages = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.PythonPackage> getPythonPackagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPythonPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.PythonPackage python_packages = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.PythonPackage getPythonPackages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPythonPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.PythonPackage python_packages = 1;</code>
    */
   int getPythonPackagesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPythonPackagesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.PythonPackageOrBuilder>
       getPythonPackagesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListPythonPackagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

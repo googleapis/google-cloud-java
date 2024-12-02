@@ -37,6 +37,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.GoogleChannelConfig)
     GoogleChannelConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GoogleChannelConfig.newBuilder() to construct.
   private GoogleChannelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cryptoKeyName_ = "";
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +747,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +895,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +934,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -933,6 +955,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -962,6 +985,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object cryptoKeyName_ = "";
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1043,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

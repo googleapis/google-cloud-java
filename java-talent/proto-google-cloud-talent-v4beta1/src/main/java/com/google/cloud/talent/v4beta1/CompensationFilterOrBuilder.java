@@ -38,6 +38,7 @@ public interface CompensationFilterOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CompensationFilterOrBuilder
    * @return A list containing the units.
    */
   java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit> getUnitsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CompensationFilterOrBuilder
    * @return The count of units.
    */
   int getUnitsCount();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface CompensationFilterOrBuilder
    * @return The units at the given index.
    */
   com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index);
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface CompensationFilterOrBuilder
    * @return A list containing the enum numeric values on the wire for units.
    */
   java.util.List<java.lang.Integer> getUnitsValueList();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface CompensationFilterOrBuilder
    * @return Whether the range field is set.
    */
   boolean hasRange();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface CompensationFilterOrBuilder
    * @return The range.
    */
   com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange();
+
   /**
    *
    *

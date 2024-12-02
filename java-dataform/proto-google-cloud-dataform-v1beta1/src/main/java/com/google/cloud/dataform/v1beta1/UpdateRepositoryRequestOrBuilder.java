@@ -38,6 +38,7 @@ public interface UpdateRepositoryRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateRepositoryRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateRepositoryRequestOrBuilder
    * @return Whether the repository field is set.
    */
   boolean hasRepository();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateRepositoryRequestOrBuilder
    * @return The repository.
    */
   com.google.cloud.dataform.v1beta1.Repository getRepository();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface AutoUpgradeOptionsOrBuilder
    * @return The autoUpgradeStartTime.
    */
   java.lang.String getAutoUpgradeStartTime();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface AutoUpgradeOptionsOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

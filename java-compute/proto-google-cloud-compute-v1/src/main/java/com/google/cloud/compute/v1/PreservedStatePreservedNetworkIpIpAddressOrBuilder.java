@@ -36,6 +36,7 @@ public interface PreservedStatePreservedNetworkIpIpAddressOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PreservedStatePreservedNetworkIpIpAddressOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PreservedStatePreservedNetworkIpIpAddressOrBuilder
    * @return Whether the literal field is set.
    */
   boolean hasLiteral();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface PreservedStatePreservedNetworkIpIpAddressOrBuilder
    * @return The literal.
    */
   java.lang.String getLiteral();
+
   /**
    *
    *

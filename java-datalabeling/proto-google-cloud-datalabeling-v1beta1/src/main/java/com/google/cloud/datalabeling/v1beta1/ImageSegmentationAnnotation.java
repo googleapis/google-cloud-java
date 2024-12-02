@@ -33,6 +33,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation)
     ImageSegmentationAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageSegmentationAnnotation.newBuilder() to construct.
   private ImageSegmentationAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -111,6 +112,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
   public int getAnnotationColorsCount() {
     return internalGetAnnotationColors().getMap().size();
   }
+
   /**
    *
    *
@@ -131,6 +133,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     }
     return internalGetAnnotationColors().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationColorsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -138,6 +141,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       getAnnotationColors() {
     return getAnnotationColorsMap();
   }
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       getAnnotationColorsMap() {
     return internalGetAnnotationColors().getMap();
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
         internalGetAnnotationColors().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -262,6 +270,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
 
   public static final int IMAGE_BYTES_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString imageBytes_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -467,6 +476,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -731,7 +741,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
           defaultEntry() {
         return AnnotationColorsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final AnnotationColorsConverter annotationColorsConverter =
         new AnnotationColorsConverter();
@@ -772,6 +783,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     public int getAnnotationColorsCount() {
       return internalGetAnnotationColors().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -792,6 +804,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       }
       return internalGetAnnotationColors().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationColorsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -799,6 +812,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
         getAnnotationColors() {
       return getAnnotationColorsMap();
     }
+
     /**
      *
      *
@@ -817,6 +831,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
         getAnnotationColorsMap() {
       return internalGetAnnotationColors().getImmutableMap();
     }
+
     /**
      *
      *
@@ -843,6 +858,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
           map = internalGetMutableAnnotationColors().ensureBuilderMap();
       return map.containsKey(key) ? annotationColorsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -875,6 +891,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       internalGetMutableAnnotationColors().clear();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +912,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       internalGetMutableAnnotationColors().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
@@ -902,6 +920,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       bitField0_ |= 0x00000001;
       return internalGetMutableAnnotationColors().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -927,6 +946,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +974,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1005,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -1006,6 +1028,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1051,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1073,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     }
 
     private com.google.protobuf.ByteString imageBytes_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1105,6 +1132,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getImageBytes() {
       return imageBytes_;
     }
+
     /**
      *
      *
@@ -1126,6 +1154,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

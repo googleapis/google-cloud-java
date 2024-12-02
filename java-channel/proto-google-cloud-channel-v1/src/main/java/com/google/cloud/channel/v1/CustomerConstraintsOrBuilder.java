@@ -36,6 +36,7 @@ public interface CustomerConstraintsOrBuilder
    * @return A list containing the allowedRegions.
    */
   java.util.List<java.lang.String> getAllowedRegionsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CustomerConstraintsOrBuilder
    * @return The count of allowedRegions.
    */
   int getAllowedRegionsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface CustomerConstraintsOrBuilder
    * @return The allowedRegions at the given index.
    */
   java.lang.String getAllowedRegions(int index);
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface CustomerConstraintsOrBuilder
    */
   java.util.List<com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType>
       getAllowedCustomerTypesList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface CustomerConstraintsOrBuilder
    * @return The count of allowedCustomerTypes.
    */
   int getAllowedCustomerTypesCount();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface CustomerConstraintsOrBuilder
    * @return The allowedCustomerTypes at the given index.
    */
   com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType getAllowedCustomerTypes(int index);
+
   /**
    *
    *
@@ -133,6 +139,7 @@ public interface CustomerConstraintsOrBuilder
    * @return A list containing the enum numeric values on the wire for allowedCustomerTypes.
    */
   java.util.List<java.lang.Integer> getAllowedCustomerTypesValueList();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface CustomerConstraintsOrBuilder
    * @return A list containing the promotionalOrderTypes.
    */
   java.util.List<com.google.cloud.channel.v1.PromotionalOrderType> getPromotionalOrderTypesList();
+
   /**
    *
    *
@@ -175,6 +183,7 @@ public interface CustomerConstraintsOrBuilder
    * @return The count of promotionalOrderTypes.
    */
   int getPromotionalOrderTypesCount();
+
   /**
    *
    *
@@ -189,6 +198,7 @@ public interface CustomerConstraintsOrBuilder
    * @return The promotionalOrderTypes at the given index.
    */
   com.google.cloud.channel.v1.PromotionalOrderType getPromotionalOrderTypes(int index);
+
   /**
    *
    *
@@ -202,6 +212,7 @@ public interface CustomerConstraintsOrBuilder
    * @return A list containing the enum numeric values on the wire for promotionalOrderTypes.
    */
   java.util.List<java.lang.Integer> getPromotionalOrderTypesValueList();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface BatchCreateTargetSitesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface BatchCreateTargetSitesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest> getRequestsList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface BatchCreateTargetSitesRequestOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest getRequests(int index);
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface BatchCreateTargetSitesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface BatchCreateTargetSitesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

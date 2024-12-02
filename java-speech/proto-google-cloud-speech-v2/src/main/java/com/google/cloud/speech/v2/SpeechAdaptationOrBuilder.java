@@ -36,6 +36,7 @@ public interface SpeechAdaptationOrBuilder
    */
   java.util.List<com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet>
       getPhraseSetsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface SpeechAdaptationOrBuilder
    * </code>
    */
   com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet getPhraseSets(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface SpeechAdaptationOrBuilder
    * </code>
    */
   int getPhraseSetsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface SpeechAdaptationOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSetOrBuilder>
       getPhraseSetsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
    */
   java.util.List<com.google.cloud.speech.v2.CustomClass> getCustomClassesList();
+
   /**
    *
    *
@@ -105,6 +110,7 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
    */
   com.google.cloud.speech.v2.CustomClass getCustomClasses(int index);
+
   /**
    *
    *
@@ -116,6 +122,7 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
    */
   int getCustomClassesCount();
+
   /**
    *
    *
@@ -128,6 +135,7 @@ public interface SpeechAdaptationOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.CustomClassOrBuilder>
       getCustomClassesOrBuilderList();
+
   /**
    *
    *

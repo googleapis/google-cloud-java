@@ -36,6 +36,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * @return Whether the googleSystemId field is set.
    */
   boolean hasGoogleSystemId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * @return The googleSystemId.
    */
   java.lang.String getGoogleSystemId();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * @return Whether the neighborSystemId field is set.
    */
   boolean hasNeighborSystemId();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * @return The neighborSystemId.
    */
   java.lang.String getNeighborSystemId();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *

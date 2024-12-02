@@ -39,6 +39,7 @@ public interface UpdateAzureClusterRequestOrBuilder
    * @return Whether the azureCluster field is set.
    */
   boolean hasAzureCluster();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateAzureClusterRequestOrBuilder
    * @return The azureCluster.
    */
   com.google.cloud.gkemulticloud.v1.AzureCluster getAzureCluster();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface UpdateAzureClusterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface UpdateAzureClusterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

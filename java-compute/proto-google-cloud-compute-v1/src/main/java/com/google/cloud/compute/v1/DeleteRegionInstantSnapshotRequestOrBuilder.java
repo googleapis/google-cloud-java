@@ -36,6 +36,7 @@ public interface DeleteRegionInstantSnapshotRequestOrBuilder
    * @return The instantSnapshot.
    */
   java.lang.String getInstantSnapshot();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeleteRegionInstantSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface DeleteRegionInstantSnapshotRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface DeleteRegionInstantSnapshotRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface DeleteRegionInstantSnapshotRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertMachineImageRequest)
     InsertMachineImageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertMachineImageRequest.newBuilder() to construct.
   private InsertMachineImageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int MACHINE_IMAGE_RESOURCE_FIELD_NUMBER = 60740970;
   private com.google.cloud.compute.v1.MachineImage machineImageResource_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
   public boolean hasMachineImageResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         ? com.google.cloud.compute.v1.MachineImage.getDefaultInstance()
         : machineImageResource_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceInstance_ = "";
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
   public boolean hasSourceInstance() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -513,6 +525,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -767,6 +780,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.MachineImage.Builder,
             com.google.cloud.compute.v1.MachineImageOrBuilder>
         machineImageResourceBuilder_;
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     public boolean hasMachineImageResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -805,6 +820,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         return machineImageResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +868,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +921,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +938,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return getMachineImageResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
             : machineImageResource_;
       }
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1039,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1063,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1110,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1141,6 +1171,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1193,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1211,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1236,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object sourceInstance_ = "";
+
     /**
      *
      *
@@ -1217,6 +1251,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
     public boolean hasSourceInstance() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1239,6 +1274,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1297,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1282,6 +1319,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1337,7 @@ public final class InsertMachineImageRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

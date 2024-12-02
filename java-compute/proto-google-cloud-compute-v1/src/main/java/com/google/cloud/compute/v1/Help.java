@@ -33,6 +33,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Help)
     HelpOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Help.newBuilder() to construct.
   private Help(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HelpLink> links_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.HelpLink> getLinksList() {
     return links_;
   }
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       getLinksOrBuilderList() {
     return links_;
   }
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
   public int getLinksCount() {
     return links_.size();
   }
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.HelpLink getLinks(int index) {
     return links_.get(index);
   }
+
   /**
    *
    *
@@ -292,6 +298,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -550,6 +557,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -566,6 +574,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -582,6 +591,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -604,6 +614,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +681,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +701,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +722,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +743,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +763,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +783,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +796,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HelpLink.Builder getLinksBuilder(int index) {
       return getLinksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -793,6 +813,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -810,6 +831,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(links_);
       }
     }
+
     /**
      *
      *
@@ -823,6 +845,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       return getLinksFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.HelpLink.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -836,6 +859,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       return getLinksFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.HelpLink.getDefaultInstance());
     }
+
     /**
      *
      *

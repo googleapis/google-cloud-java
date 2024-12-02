@@ -36,6 +36,7 @@ public interface PeeringRouteOrBuilder
    * @return The destRange.
    */
   java.lang.String getDestRange();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PeeringRouteOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface PeeringRouteOrBuilder
    * @return The nextHopRegion.
    */
   java.lang.String getNextHopRegion();
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public interface PeeringRouteOrBuilder
    * @return The enum numeric value on the wire for direction.
    */
   int getDirectionValue();
+
   /**
    *
    *

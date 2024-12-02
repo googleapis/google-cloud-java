@@ -35,6 +35,7 @@ public interface ListAzureNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AzureNodePool> getAzureNodePoolsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListAzureNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
    */
   com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePools(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListAzureNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
    */
   int getAzureNodePoolsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListAzureNodePoolsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureNodePoolOrBuilder>
       getAzureNodePoolsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListAzureNodePoolsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

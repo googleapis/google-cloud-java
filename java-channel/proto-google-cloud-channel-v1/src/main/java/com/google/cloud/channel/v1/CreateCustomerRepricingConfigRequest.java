@@ -35,6 +35,7 @@ public final class CreateCustomerRepricingConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CreateCustomerRepricingConfigRequest)
     CreateCustomerRepricingConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateCustomerRepricingConfigRequest.newBuilder() to construct.
   private CreateCustomerRepricingConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CreateCustomerRepricingConfigRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateCustomerRepricingConfigRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CreateCustomerRepricingConfigRequest
 
   public static final int CUSTOMER_REPRICING_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.CustomerRepricingConfig customerRepricingConfig_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CreateCustomerRepricingConfigRequest
   public boolean hasCustomerRepricingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class CreateCustomerRepricingConfigRequest
         ? com.google.cloud.channel.v1.CustomerRepricingConfig.getDefaultInstance()
         : customerRepricingConfig_;
   }
+
   /**
    *
    *
@@ -358,6 +364,7 @@ public final class CreateCustomerRepricingConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +587,7 @@ public final class CreateCustomerRepricingConfigRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -606,6 +614,7 @@ public final class CreateCustomerRepricingConfigRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -632,6 +641,7 @@ public final class CreateCustomerRepricingConfigRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class CreateCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class CreateCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +723,7 @@ public final class CreateCustomerRepricingConfigRequest
             com.google.cloud.channel.v1.CustomerRepricingConfig.Builder,
             com.google.cloud.channel.v1.CustomerRepricingConfigOrBuilder>
         customerRepricingConfigBuilder_;
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class CreateCustomerRepricingConfigRequest
     public boolean hasCustomerRepricingConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class CreateCustomerRepricingConfigRequest
         return customerRepricingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class CreateCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class CreateCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class CreateCustomerRepricingConfigRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class CreateCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class CreateCustomerRepricingConfigRequest
       onChanged();
       return getCustomerRepricingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -886,6 +906,7 @@ public final class CreateCustomerRepricingConfigRequest
             : customerRepricingConfig_;
       }
     }
+
     /**
      *
      *

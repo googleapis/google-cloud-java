@@ -33,6 +33,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.CompilationResultAction)
     CompilationResultActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompilationResultAction.newBuilder() to construct.
   private CompilationResultAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     java.util.List<com.google.cloud.dataform.v1alpha2.Target> getDependencyTargetsList();
+
     /**
      *
      *
@@ -88,6 +90,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     com.google.cloud.dataform.v1alpha2.Target getDependencyTargets(int index);
+
     /**
      *
      *
@@ -98,6 +101,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     int getDependencyTargetsCount();
+
     /**
      *
      *
@@ -109,6 +113,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     java.util.List<? extends com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
         getDependencyTargetsOrBuilderList();
+
     /**
      *
      *
@@ -145,6 +150,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return A list containing the tags.
      */
     java.util.List<java.lang.String> getTagsList();
+
     /**
      *
      *
@@ -157,6 +163,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The count of tags.
      */
     int getTagsCount();
+
     /**
      *
      *
@@ -170,6 +177,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
+
     /**
      *
      *
@@ -196,6 +204,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return Whether the relationDescriptor field is set.
      */
     boolean hasRelationDescriptor();
+
     /**
      *
      *
@@ -208,6 +217,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The relationDescriptor.
      */
     com.google.cloud.dataform.v1alpha2.RelationDescriptor getRelationDescriptor();
+
     /**
      *
      *
@@ -233,6 +243,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The enum numeric value on the wire for relationType.
      */
     int getRelationTypeValue();
+
     /**
      *
      *
@@ -261,6 +272,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The selectQuery.
      */
     java.lang.String getSelectQuery();
+
     /**
      *
      *
@@ -286,6 +298,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return A list containing the preOperations.
      */
     java.util.List<java.lang.String> getPreOperationsList();
+
     /**
      *
      *
@@ -298,6 +311,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The count of preOperations.
      */
     int getPreOperationsCount();
+
     /**
      *
      *
@@ -311,6 +325,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The preOperations at the given index.
      */
     java.lang.String getPreOperations(int index);
+
     /**
      *
      *
@@ -337,6 +352,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return A list containing the postOperations.
      */
     java.util.List<java.lang.String> getPostOperationsList();
+
     /**
      *
      *
@@ -349,6 +365,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The count of postOperations.
      */
     int getPostOperationsCount();
+
     /**
      *
      *
@@ -362,6 +379,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The postOperations at the given index.
      */
     java.lang.String getPostOperations(int index);
+
     /**
      *
      *
@@ -391,6 +409,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return Whether the incrementalTableConfig field is set.
      */
     boolean hasIncrementalTableConfig();
+
     /**
      *
      *
@@ -407,6 +426,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.IncrementalTableConfig
         getIncrementalTableConfig();
+
     /**
      *
      *
@@ -435,6 +455,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The partitionExpression.
      */
     java.lang.String getPartitionExpression();
+
     /**
      *
      *
@@ -460,6 +481,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return A list containing the clusterExpressions.
      */
     java.util.List<java.lang.String> getClusterExpressionsList();
+
     /**
      *
      *
@@ -472,6 +494,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The count of clusterExpressions.
      */
     int getClusterExpressionsCount();
+
     /**
      *
      *
@@ -485,6 +508,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The clusterExpressions at the given index.
      */
     java.lang.String getClusterExpressions(int index);
+
     /**
      *
      *
@@ -539,6 +563,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>map&lt;string, string&gt; additional_options = 14;</code>
      */
     int getAdditionalOptionsCount();
+
     /**
      *
      *
@@ -552,9 +577,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>map&lt;string, string&gt; additional_options = 14;</code>
      */
     boolean containsAdditionalOptions(java.lang.String key);
+
     /** Use {@link #getAdditionalOptionsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getAdditionalOptions();
+
     /**
      *
      *
@@ -568,6 +595,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>map&lt;string, string&gt; additional_options = 14;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getAdditionalOptionsMap();
+
     /**
      *
      *
@@ -585,6 +613,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /**
      *
      *
@@ -599,6 +628,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     java.lang.String getAdditionalOptionsOrThrow(java.lang.String key);
   }
+
   /**
    *
    *
@@ -613,6 +643,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.CompilationResultAction.Relation)
       RelationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Relation.newBuilder() to construct.
     private Relation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -736,6 +767,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>RELATION_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int RELATION_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -746,6 +778,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>TABLE = 1;</code>
        */
       public static final int TABLE_VALUE = 1;
+
       /**
        *
        *
@@ -756,6 +789,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>VIEW = 2;</code>
        */
       public static final int VIEW_VALUE = 2;
+
       /**
        *
        *
@@ -766,6 +800,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * <code>INCREMENTAL_TABLE = 3;</code>
        */
       public static final int INCREMENTAL_TABLE_VALUE = 3;
+
       /**
        *
        *
@@ -884,6 +919,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return The incrementalSelectQuery.
        */
       java.lang.String getIncrementalSelectQuery();
+
       /**
        *
        *
@@ -926,6 +962,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the uniqueKeyParts.
        */
       java.util.List<java.lang.String> getUniqueKeyPartsList();
+
       /**
        *
        *
@@ -941,6 +978,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return The count of uniqueKeyParts.
        */
       int getUniqueKeyPartsCount();
+
       /**
        *
        *
@@ -957,6 +995,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return The uniqueKeyParts at the given index.
        */
       java.lang.String getUniqueKeyParts(int index);
+
       /**
        *
        *
@@ -988,6 +1027,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return The updatePartitionFilter.
        */
       java.lang.String getUpdatePartitionFilter();
+
       /**
        *
        *
@@ -1016,6 +1056,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the incrementalPreOperations.
        */
       java.util.List<java.lang.String> getIncrementalPreOperationsList();
+
       /**
        *
        *
@@ -1029,6 +1070,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return The count of incrementalPreOperations.
        */
       int getIncrementalPreOperationsCount();
+
       /**
        *
        *
@@ -1043,6 +1085,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return The incrementalPreOperations at the given index.
        */
       java.lang.String getIncrementalPreOperations(int index);
+
       /**
        *
        *
@@ -1071,6 +1114,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the incrementalPostOperations.
        */
       java.util.List<java.lang.String> getIncrementalPostOperationsList();
+
       /**
        *
        *
@@ -1084,6 +1128,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return The count of incrementalPostOperations.
        */
       int getIncrementalPostOperationsCount();
+
       /**
        *
        *
@@ -1098,6 +1143,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return The incrementalPostOperations at the given index.
        */
       java.lang.String getIncrementalPostOperations(int index);
+
       /**
        *
        *
@@ -1113,6 +1159,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        */
       com.google.protobuf.ByteString getIncrementalPostOperationsBytes(int index);
     }
+
     /**
      *
      *
@@ -1128,6 +1175,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.IncrementalTableConfig)
         IncrementalTableConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use IncrementalTableConfig.newBuilder() to construct.
       private IncrementalTableConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1168,6 +1216,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object incrementalSelectQuery_ = "";
+
       /**
        *
        *
@@ -1192,6 +1241,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return s;
         }
       }
+
       /**
        *
        *
@@ -1219,6 +1269,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
       public static final int REFRESH_DISABLED_FIELD_NUMBER = 2;
       private boolean refreshDisabled_ = false;
+
       /**
        *
        *
@@ -1240,6 +1291,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList uniqueKeyParts_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -1257,6 +1309,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ProtocolStringList getUniqueKeyPartsList() {
         return uniqueKeyParts_;
       }
+
       /**
        *
        *
@@ -1274,6 +1327,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getUniqueKeyPartsCount() {
         return uniqueKeyParts_.size();
       }
+
       /**
        *
        *
@@ -1292,6 +1346,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getUniqueKeyParts(int index) {
         return uniqueKeyParts_.get(index);
       }
+
       /**
        *
        *
@@ -1315,6 +1370,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object updatePartitionFilter_ = "";
+
       /**
        *
        *
@@ -1340,6 +1396,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return s;
         }
       }
+
       /**
        *
        *
@@ -1371,6 +1428,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList incrementalPreOperations_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -1386,6 +1444,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ProtocolStringList getIncrementalPreOperationsList() {
         return incrementalPreOperations_;
       }
+
       /**
        *
        *
@@ -1401,6 +1460,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getIncrementalPreOperationsCount() {
         return incrementalPreOperations_.size();
       }
+
       /**
        *
        *
@@ -1417,6 +1477,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getIncrementalPreOperations(int index) {
         return incrementalPreOperations_.get(index);
       }
+
       /**
        *
        *
@@ -1439,6 +1500,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList incrementalPostOperations_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -1454,6 +1516,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ProtocolStringList getIncrementalPostOperationsList() {
         return incrementalPostOperations_;
       }
+
       /**
        *
        *
@@ -1469,6 +1532,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getIncrementalPostOperationsCount() {
         return incrementalPostOperations_.size();
       }
+
       /**
        *
        *
@@ -1485,6 +1549,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getIncrementalPostOperations(int index) {
         return incrementalPostOperations_.get(index);
       }
+
       /**
        *
        *
@@ -1762,6 +1827,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2071,6 +2137,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         private int bitField0_;
 
         private java.lang.Object incrementalSelectQuery_ = "";
+
         /**
          *
          *
@@ -2094,6 +2161,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2117,6 +2185,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2139,6 +2208,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2157,6 +2227,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2182,6 +2253,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
 
         private boolean refreshDisabled_;
+
         /**
          *
          *
@@ -2197,6 +2269,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public boolean getRefreshDisabled() {
           return refreshDisabled_;
         }
+
         /**
          *
          *
@@ -2216,6 +2289,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2243,6 +2317,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           bitField0_ |= 0x00000004;
         }
+
         /**
          *
          *
@@ -2261,6 +2336,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           uniqueKeyParts_.makeImmutable();
           return uniqueKeyParts_;
         }
+
         /**
          *
          *
@@ -2278,6 +2354,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public int getUniqueKeyPartsCount() {
           return uniqueKeyParts_.size();
         }
+
         /**
          *
          *
@@ -2296,6 +2373,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public java.lang.String getUniqueKeyParts(int index) {
           return uniqueKeyParts_.get(index);
         }
+
         /**
          *
          *
@@ -2314,6 +2392,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public com.google.protobuf.ByteString getUniqueKeyPartsBytes(int index) {
           return uniqueKeyParts_.getByteString(index);
         }
+
         /**
          *
          *
@@ -2340,6 +2419,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2365,6 +2445,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2387,6 +2468,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2408,6 +2490,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2436,6 +2519,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
 
         private java.lang.Object updatePartitionFilter_ = "";
+
         /**
          *
          *
@@ -2460,6 +2544,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2484,6 +2569,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2507,6 +2593,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2526,6 +2613,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2561,6 +2649,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           bitField0_ |= 0x00000010;
         }
+
         /**
          *
          *
@@ -2577,6 +2666,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           incrementalPreOperations_.makeImmutable();
           return incrementalPreOperations_;
         }
+
         /**
          *
          *
@@ -2592,6 +2682,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public int getIncrementalPreOperationsCount() {
           return incrementalPreOperations_.size();
         }
+
         /**
          *
          *
@@ -2608,6 +2699,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public java.lang.String getIncrementalPreOperations(int index) {
           return incrementalPreOperations_.get(index);
         }
+
         /**
          *
          *
@@ -2624,6 +2716,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public com.google.protobuf.ByteString getIncrementalPreOperationsBytes(int index) {
           return incrementalPreOperations_.getByteString(index);
         }
+
         /**
          *
          *
@@ -2648,6 +2741,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2671,6 +2765,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2691,6 +2786,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2710,6 +2806,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2745,6 +2842,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           bitField0_ |= 0x00000020;
         }
+
         /**
          *
          *
@@ -2761,6 +2859,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           incrementalPostOperations_.makeImmutable();
           return incrementalPostOperations_;
         }
+
         /**
          *
          *
@@ -2776,6 +2875,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public int getIncrementalPostOperationsCount() {
           return incrementalPostOperations_.size();
         }
+
         /**
          *
          *
@@ -2792,6 +2892,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public java.lang.String getIncrementalPostOperations(int index) {
           return incrementalPostOperations_.get(index);
         }
+
         /**
          *
          *
@@ -2808,6 +2909,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public com.google.protobuf.ByteString getIncrementalPostOperationsBytes(int index) {
           return incrementalPostOperations_.getByteString(index);
         }
+
         /**
          *
          *
@@ -2832,6 +2934,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2855,6 +2958,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2877,6 +2981,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2896,6 +3001,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2998,6 +3104,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dataform.v1alpha2.Target> dependencyTargets_;
+
     /**
      *
      *
@@ -3011,6 +3118,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.util.List<com.google.cloud.dataform.v1alpha2.Target> getDependencyTargetsList() {
       return dependencyTargets_;
     }
+
     /**
      *
      *
@@ -3025,6 +3133,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         getDependencyTargetsOrBuilderList() {
       return dependencyTargets_;
     }
+
     /**
      *
      *
@@ -3038,6 +3147,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getDependencyTargetsCount() {
       return dependencyTargets_.size();
     }
+
     /**
      *
      *
@@ -3051,6 +3161,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.cloud.dataform.v1alpha2.Target getDependencyTargets(int index) {
       return dependencyTargets_.get(index);
     }
+
     /**
      *
      *
@@ -3068,6 +3179,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int DISABLED_FIELD_NUMBER = 2;
     private boolean disabled_ = false;
+
     /**
      *
      *
@@ -3089,6 +3201,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList tags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3103,6 +3216,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getTagsList() {
       return tags_;
     }
+
     /**
      *
      *
@@ -3117,6 +3231,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getTagsCount() {
       return tags_.size();
     }
+
     /**
      *
      *
@@ -3132,6 +3247,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
+
     /**
      *
      *
@@ -3150,6 +3266,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int RELATION_DESCRIPTOR_FIELD_NUMBER = 4;
     private com.google.cloud.dataform.v1alpha2.RelationDescriptor relationDescriptor_;
+
     /**
      *
      *
@@ -3165,6 +3282,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasRelationDescriptor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3182,6 +3300,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           ? com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()
           : relationDescriptor_;
     }
+
     /**
      *
      *
@@ -3201,6 +3320,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int RELATION_TYPE_FIELD_NUMBER = 5;
     private int relationType_ = 0;
+
     /**
      *
      *
@@ -3218,6 +3338,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getRelationTypeValue() {
       return relationType_;
     }
+
     /**
      *
      *
@@ -3247,6 +3368,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object selectQuery_ = "";
+
     /**
      *
      *
@@ -3270,6 +3392,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -3299,6 +3422,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList preOperations_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3313,6 +3437,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getPreOperationsList() {
       return preOperations_;
     }
+
     /**
      *
      *
@@ -3327,6 +3452,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getPreOperationsCount() {
       return preOperations_.size();
     }
+
     /**
      *
      *
@@ -3342,6 +3468,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.lang.String getPreOperations(int index) {
       return preOperations_.get(index);
     }
+
     /**
      *
      *
@@ -3363,6 +3490,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList postOperations_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3377,6 +3505,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getPostOperationsList() {
       return postOperations_;
     }
+
     /**
      *
      *
@@ -3391,6 +3520,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getPostOperationsCount() {
       return postOperations_.size();
     }
+
     /**
      *
      *
@@ -3406,6 +3536,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.lang.String getPostOperations(int index) {
       return postOperations_.get(index);
     }
+
     /**
      *
      *
@@ -3426,6 +3557,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     private com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
             .IncrementalTableConfig
         incrementalTableConfig_;
+
     /**
      *
      *
@@ -3444,6 +3576,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasIncrementalTableConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3467,6 +3600,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               .IncrementalTableConfig.getDefaultInstance()
           : incrementalTableConfig_;
     }
+
     /**
      *
      *
@@ -3493,6 +3627,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object partitionExpression_ = "";
+
     /**
      *
      *
@@ -3516,6 +3651,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -3545,6 +3681,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList clusterExpressions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3559,6 +3696,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getClusterExpressionsList() {
       return clusterExpressions_;
     }
+
     /**
      *
      *
@@ -3573,6 +3711,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getClusterExpressionsCount() {
       return clusterExpressions_.size();
     }
+
     /**
      *
      *
@@ -3588,6 +3727,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.lang.String getClusterExpressions(int index) {
       return clusterExpressions_.get(index);
     }
+
     /**
      *
      *
@@ -3606,6 +3746,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int PARTITION_EXPIRATION_DAYS_FIELD_NUMBER = 12;
     private int partitionExpirationDays_ = 0;
+
     /**
      *
      *
@@ -3624,6 +3765,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int REQUIRE_PARTITION_FILTER_FIELD_NUMBER = 13;
     private boolean requirePartitionFilter_ = false;
+
     /**
      *
      *
@@ -3669,6 +3811,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getAdditionalOptionsCount() {
       return internalGetAdditionalOptions().getMap().size();
     }
+
     /**
      *
      *
@@ -3688,12 +3831,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       return internalGetAdditionalOptions().getMap().containsKey(key);
     }
+
     /** Use {@link #getAdditionalOptionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalOptions() {
       return getAdditionalOptionsMap();
     }
+
     /**
      *
      *
@@ -3710,6 +3855,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalOptionsMap() {
       return internalGetAdditionalOptions().getMap();
     }
+
     /**
      *
      *
@@ -3734,6 +3880,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           internalGetAdditionalOptions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4102,6 +4249,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4644,6 +4792,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4660,6 +4809,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4676,6 +4826,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4699,6 +4850,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4719,6 +4871,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4741,6 +4894,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4764,6 +4918,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4784,6 +4939,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4804,6 +4960,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4824,6 +4981,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4843,6 +5001,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4862,6 +5021,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -4875,6 +5035,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           int index) {
         return getDependencyTargetsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -4892,6 +5053,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -4909,6 +5071,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(dependencyTargets_);
         }
       }
+
       /**
        *
        *
@@ -4922,6 +5085,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return getDependencyTargetsFieldBuilder()
             .addBuilder(com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4936,6 +5100,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return getDependencyTargetsFieldBuilder()
             .addBuilder(index, com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4971,6 +5136,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private boolean disabled_;
+
       /**
        *
        *
@@ -4986,6 +5152,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean getDisabled() {
         return disabled_;
       }
+
       /**
        *
        *
@@ -5005,6 +5172,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5032,6 +5200,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -5047,6 +5216,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         tags_.makeImmutable();
         return tags_;
       }
+
       /**
        *
        *
@@ -5061,6 +5231,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getTagsCount() {
         return tags_.size();
       }
+
       /**
        *
        *
@@ -5076,6 +5247,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
+
       /**
        *
        *
@@ -5091,6 +5263,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getTagsBytes(int index) {
         return tags_.getByteString(index);
       }
+
       /**
        *
        *
@@ -5114,6 +5287,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5136,6 +5310,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5155,6 +5330,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5173,6 +5349,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5203,6 +5380,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder,
               com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder>
           relationDescriptorBuilder_;
+
       /**
        *
        *
@@ -5217,6 +5395,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean hasRelationDescriptor() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -5237,6 +5416,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return relationDescriptorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5260,6 +5440,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5280,6 +5461,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5309,6 +5491,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -5328,6 +5511,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5343,6 +5527,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return getRelationDescriptorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5362,6 +5547,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               : relationDescriptor_;
         }
       }
+
       /**
        *
        *
@@ -5389,6 +5575,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private int relationType_ = 0;
+
       /**
        *
        *
@@ -5406,6 +5593,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getRelationTypeValue() {
         return relationType_;
       }
+
       /**
        *
        *
@@ -5426,6 +5614,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5450,6 +5639,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -5474,6 +5664,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5495,6 +5686,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private java.lang.Object selectQuery_ = "";
+
       /**
        *
        *
@@ -5517,6 +5709,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5539,6 +5732,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5560,6 +5754,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5577,6 +5772,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5609,6 +5805,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000040;
       }
+
       /**
        *
        *
@@ -5624,6 +5821,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         preOperations_.makeImmutable();
         return preOperations_;
       }
+
       /**
        *
        *
@@ -5638,6 +5836,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getPreOperationsCount() {
         return preOperations_.size();
       }
+
       /**
        *
        *
@@ -5653,6 +5852,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getPreOperations(int index) {
         return preOperations_.get(index);
       }
+
       /**
        *
        *
@@ -5668,6 +5868,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getPreOperationsBytes(int index) {
         return preOperations_.getByteString(index);
       }
+
       /**
        *
        *
@@ -5691,6 +5892,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5713,6 +5915,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5732,6 +5935,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5750,6 +5954,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5783,6 +5988,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000080;
       }
+
       /**
        *
        *
@@ -5798,6 +6004,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         postOperations_.makeImmutable();
         return postOperations_;
       }
+
       /**
        *
        *
@@ -5812,6 +6019,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getPostOperationsCount() {
         return postOperations_.size();
       }
+
       /**
        *
        *
@@ -5827,6 +6035,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getPostOperations(int index) {
         return postOperations_.get(index);
       }
+
       /**
        *
        *
@@ -5842,6 +6051,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getPostOperationsBytes(int index) {
         return postOperations_.getByteString(index);
       }
+
       /**
        *
        *
@@ -5865,6 +6075,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5887,6 +6098,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5906,6 +6118,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5924,6 +6137,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5959,6 +6173,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation
                   .IncrementalTableConfigOrBuilder>
           incrementalTableConfigBuilder_;
+
       /**
        *
        *
@@ -5976,6 +6191,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean hasIncrementalTableConfig() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        *
        *
@@ -6002,6 +6218,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return incrementalTableConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6029,6 +6246,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6054,6 +6272,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6088,6 +6307,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -6110,6 +6330,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6129,6 +6350,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return getIncrementalTableConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6153,6 +6375,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               : incrementalTableConfig_;
         }
       }
+
       /**
        *
        *
@@ -6189,6 +6412,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private java.lang.Object partitionExpression_ = "";
+
       /**
        *
        *
@@ -6211,6 +6435,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6233,6 +6458,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6254,6 +6480,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6271,6 +6498,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6303,6 +6531,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000400;
       }
+
       /**
        *
        *
@@ -6318,6 +6547,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         clusterExpressions_.makeImmutable();
         return clusterExpressions_;
       }
+
       /**
        *
        *
@@ -6332,6 +6562,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getClusterExpressionsCount() {
         return clusterExpressions_.size();
       }
+
       /**
        *
        *
@@ -6347,6 +6578,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getClusterExpressions(int index) {
         return clusterExpressions_.get(index);
       }
+
       /**
        *
        *
@@ -6362,6 +6594,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getClusterExpressionsBytes(int index) {
         return clusterExpressions_.getByteString(index);
       }
+
       /**
        *
        *
@@ -6385,6 +6618,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6407,6 +6641,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6426,6 +6661,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6444,6 +6680,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6469,6 +6706,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private int partitionExpirationDays_;
+
       /**
        *
        *
@@ -6484,6 +6722,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getPartitionExpirationDays() {
         return partitionExpirationDays_;
       }
+
       /**
        *
        *
@@ -6503,6 +6742,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6522,6 +6762,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private boolean requirePartitionFilter_;
+
       /**
        *
        *
@@ -6538,6 +6779,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean getRequirePartitionFilter() {
         return requirePartitionFilter_;
       }
+
       /**
        *
        *
@@ -6558,6 +6800,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6606,6 +6849,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getAdditionalOptionsCount() {
         return internalGetAdditionalOptions().getMap().size();
       }
+
       /**
        *
        *
@@ -6625,12 +6869,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return internalGetAdditionalOptions().getMap().containsKey(key);
       }
+
       /** Use {@link #getAdditionalOptionsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getAdditionalOptions() {
         return getAdditionalOptionsMap();
       }
+
       /**
        *
        *
@@ -6647,6 +6893,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.util.Map<java.lang.String, java.lang.String> getAdditionalOptionsMap() {
         return internalGetAdditionalOptions().getMap();
       }
+
       /**
        *
        *
@@ -6671,6 +6918,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             internalGetAdditionalOptions().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -6701,6 +6949,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         internalGetMutableAdditionalOptions().getMutableMap().clear();
         return this;
       }
+
       /**
        *
        *
@@ -6720,12 +6969,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         internalGetMutableAdditionalOptions().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableAdditionalOptions() {
         bitField0_ |= 0x00002000;
         return internalGetMutableAdditionalOptions().getMutableMap();
       }
+
       /**
        *
        *
@@ -6749,6 +7000,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         bitField0_ |= 0x00002000;
         return this;
       }
+
       /**
        *
        *
@@ -6850,6 +7102,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     java.util.List<com.google.cloud.dataform.v1alpha2.Target> getDependencyTargetsList();
+
     /**
      *
      *
@@ -6860,6 +7113,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     com.google.cloud.dataform.v1alpha2.Target getDependencyTargets(int index);
+
     /**
      *
      *
@@ -6870,6 +7124,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     int getDependencyTargetsCount();
+
     /**
      *
      *
@@ -6881,6 +7136,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     java.util.List<? extends com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
         getDependencyTargetsOrBuilderList();
+
     /**
      *
      *
@@ -6917,6 +7173,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return A list containing the tags.
      */
     java.util.List<java.lang.String> getTagsList();
+
     /**
      *
      *
@@ -6929,6 +7186,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The count of tags.
      */
     int getTagsCount();
+
     /**
      *
      *
@@ -6942,6 +7200,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
+
     /**
      *
      *
@@ -6969,6 +7228,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return Whether the relationDescriptor field is set.
      */
     boolean hasRelationDescriptor();
+
     /**
      *
      *
@@ -6982,6 +7242,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The relationDescriptor.
      */
     com.google.cloud.dataform.v1alpha2.RelationDescriptor getRelationDescriptor();
+
     /**
      *
      *
@@ -7007,6 +7268,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return A list containing the queries.
      */
     java.util.List<java.lang.String> getQueriesList();
+
     /**
      *
      *
@@ -7020,6 +7282,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The count of queries.
      */
     int getQueriesCount();
+
     /**
      *
      *
@@ -7034,6 +7297,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The queries at the given index.
      */
     java.lang.String getQueries(int index);
+
     /**
      *
      *
@@ -7062,6 +7326,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     boolean getHasOutput();
   }
+
   /**
    *
    *
@@ -7076,6 +7341,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.CompilationResultAction.Operations)
       OperationsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Operations.newBuilder() to construct.
     private Operations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7113,6 +7379,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dataform.v1alpha2.Target> dependencyTargets_;
+
     /**
      *
      *
@@ -7126,6 +7393,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.util.List<com.google.cloud.dataform.v1alpha2.Target> getDependencyTargetsList() {
       return dependencyTargets_;
     }
+
     /**
      *
      *
@@ -7140,6 +7408,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         getDependencyTargetsOrBuilderList() {
       return dependencyTargets_;
     }
+
     /**
      *
      *
@@ -7153,6 +7422,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getDependencyTargetsCount() {
       return dependencyTargets_.size();
     }
+
     /**
      *
      *
@@ -7166,6 +7436,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.cloud.dataform.v1alpha2.Target getDependencyTargets(int index) {
       return dependencyTargets_.get(index);
     }
+
     /**
      *
      *
@@ -7183,6 +7454,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int DISABLED_FIELD_NUMBER = 2;
     private boolean disabled_ = false;
+
     /**
      *
      *
@@ -7204,6 +7476,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList tags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -7218,6 +7491,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getTagsList() {
       return tags_;
     }
+
     /**
      *
      *
@@ -7232,6 +7506,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getTagsCount() {
       return tags_.size();
     }
+
     /**
      *
      *
@@ -7247,6 +7522,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
+
     /**
      *
      *
@@ -7265,6 +7541,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int RELATION_DESCRIPTOR_FIELD_NUMBER = 6;
     private com.google.cloud.dataform.v1alpha2.RelationDescriptor relationDescriptor_;
+
     /**
      *
      *
@@ -7281,6 +7558,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasRelationDescriptor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -7299,6 +7577,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           ? com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()
           : relationDescriptor_;
     }
+
     /**
      *
      *
@@ -7322,6 +7601,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList queries_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -7337,6 +7617,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getQueriesList() {
       return queries_;
     }
+
     /**
      *
      *
@@ -7352,6 +7633,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getQueriesCount() {
       return queries_.size();
     }
+
     /**
      *
      *
@@ -7368,6 +7650,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.lang.String getQueries(int index) {
       return queries_.get(index);
     }
+
     /**
      *
      *
@@ -7387,6 +7670,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int HAS_OUTPUT_FIELD_NUMBER = 5;
     private boolean hasOutput_ = false;
+
     /**
      *
      *
@@ -7633,6 +7917,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -8013,6 +8298,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -8029,6 +8315,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -8045,6 +8332,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -8068,6 +8356,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8088,6 +8377,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8110,6 +8400,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8133,6 +8424,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8153,6 +8445,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8173,6 +8466,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8193,6 +8487,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8212,6 +8507,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8231,6 +8527,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8244,6 +8541,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           int index) {
         return getDependencyTargetsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -8261,6 +8559,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -8278,6 +8577,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(dependencyTargets_);
         }
       }
+
       /**
        *
        *
@@ -8291,6 +8591,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return getDependencyTargetsFieldBuilder()
             .addBuilder(com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -8305,6 +8606,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return getDependencyTargetsFieldBuilder()
             .addBuilder(index, com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -8340,6 +8642,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private boolean disabled_;
+
       /**
        *
        *
@@ -8355,6 +8658,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean getDisabled() {
         return disabled_;
       }
+
       /**
        *
        *
@@ -8374,6 +8678,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8401,6 +8706,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -8416,6 +8722,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         tags_.makeImmutable();
         return tags_;
       }
+
       /**
        *
        *
@@ -8430,6 +8737,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getTagsCount() {
         return tags_.size();
       }
+
       /**
        *
        *
@@ -8445,6 +8753,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
+
       /**
        *
        *
@@ -8460,6 +8769,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getTagsBytes(int index) {
         return tags_.getByteString(index);
       }
+
       /**
        *
        *
@@ -8483,6 +8793,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8505,6 +8816,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8524,6 +8836,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8542,6 +8855,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8572,6 +8886,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder,
               com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder>
           relationDescriptorBuilder_;
+
       /**
        *
        *
@@ -8587,6 +8902,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean hasRelationDescriptor() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -8608,6 +8924,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return relationDescriptorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -8632,6 +8949,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8653,6 +8971,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8683,6 +9002,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -8703,6 +9023,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8719,6 +9040,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return getRelationDescriptorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8739,6 +9061,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               : relationDescriptor_;
         }
       }
+
       /**
        *
        *
@@ -8775,6 +9098,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000010;
       }
+
       /**
        *
        *
@@ -8791,6 +9115,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         queries_.makeImmutable();
         return queries_;
       }
+
       /**
        *
        *
@@ -8806,6 +9131,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getQueriesCount() {
         return queries_.size();
       }
+
       /**
        *
        *
@@ -8822,6 +9148,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getQueries(int index) {
         return queries_.get(index);
       }
+
       /**
        *
        *
@@ -8838,6 +9165,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getQueriesBytes(int index) {
         return queries_.getByteString(index);
       }
+
       /**
        *
        *
@@ -8862,6 +9190,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8885,6 +9214,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8905,6 +9235,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8924,6 +9255,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8950,6 +9282,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private boolean hasOutput_;
+
       /**
        *
        *
@@ -8965,6 +9298,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean getHasOutput() {
         return hasOutput_;
       }
+
       /**
        *
        *
@@ -8984,6 +9318,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9085,6 +9420,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     java.util.List<com.google.cloud.dataform.v1alpha2.Target> getDependencyTargetsList();
+
     /**
      *
      *
@@ -9095,6 +9431,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     com.google.cloud.dataform.v1alpha2.Target getDependencyTargets(int index);
+
     /**
      *
      *
@@ -9105,6 +9442,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.dataform.v1alpha2.Target dependency_targets = 1;</code>
      */
     int getDependencyTargetsCount();
+
     /**
      *
      *
@@ -9116,6 +9454,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     java.util.List<? extends com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
         getDependencyTargetsOrBuilderList();
+
     /**
      *
      *
@@ -9140,6 +9479,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return Whether the parentAction field is set.
      */
     boolean hasParentAction();
+
     /**
      *
      *
@@ -9153,6 +9493,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The parentAction.
      */
     com.google.cloud.dataform.v1alpha2.Target getParentAction();
+
     /**
      *
      *
@@ -9190,6 +9531,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return A list containing the tags.
      */
     java.util.List<java.lang.String> getTagsList();
+
     /**
      *
      *
@@ -9202,6 +9544,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The count of tags.
      */
     int getTagsCount();
+
     /**
      *
      *
@@ -9215,6 +9558,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
+
     /**
      *
      *
@@ -9242,6 +9586,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The selectQuery.
      */
     java.lang.String getSelectQuery();
+
     /**
      *
      *
@@ -9269,6 +9614,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return Whether the relationDescriptor field is set.
      */
     boolean hasRelationDescriptor();
+
     /**
      *
      *
@@ -9282,6 +9628,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The relationDescriptor.
      */
     com.google.cloud.dataform.v1alpha2.RelationDescriptor getRelationDescriptor();
+
     /**
      *
      *
@@ -9294,6 +9641,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder getRelationDescriptorOrBuilder();
   }
+
   /**
    *
    *
@@ -9309,6 +9657,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.CompilationResultAction.Assertion)
       AssertionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Assertion.newBuilder() to construct.
     private Assertion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9346,6 +9695,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dataform.v1alpha2.Target> dependencyTargets_;
+
     /**
      *
      *
@@ -9359,6 +9709,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.util.List<com.google.cloud.dataform.v1alpha2.Target> getDependencyTargetsList() {
       return dependencyTargets_;
     }
+
     /**
      *
      *
@@ -9373,6 +9724,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         getDependencyTargetsOrBuilderList() {
       return dependencyTargets_;
     }
+
     /**
      *
      *
@@ -9386,6 +9738,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getDependencyTargetsCount() {
       return dependencyTargets_.size();
     }
+
     /**
      *
      *
@@ -9399,6 +9752,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.cloud.dataform.v1alpha2.Target getDependencyTargets(int index) {
       return dependencyTargets_.get(index);
     }
+
     /**
      *
      *
@@ -9416,6 +9770,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int PARENT_ACTION_FIELD_NUMBER = 5;
     private com.google.cloud.dataform.v1alpha2.Target parentAction_;
+
     /**
      *
      *
@@ -9432,6 +9787,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasParentAction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -9450,6 +9806,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           ? com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()
           : parentAction_;
     }
+
     /**
      *
      *
@@ -9469,6 +9826,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int DISABLED_FIELD_NUMBER = 2;
     private boolean disabled_ = false;
+
     /**
      *
      *
@@ -9490,6 +9848,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList tags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -9504,6 +9863,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getTagsList() {
       return tags_;
     }
+
     /**
      *
      *
@@ -9518,6 +9878,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public int getTagsCount() {
       return tags_.size();
     }
+
     /**
      *
      *
@@ -9533,6 +9894,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
+
     /**
      *
      *
@@ -9553,6 +9915,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object selectQuery_ = "";
+
     /**
      *
      *
@@ -9577,6 +9940,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -9604,6 +9968,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     public static final int RELATION_DESCRIPTOR_FIELD_NUMBER = 6;
     private com.google.cloud.dataform.v1alpha2.RelationDescriptor relationDescriptor_;
+
     /**
      *
      *
@@ -9620,6 +9985,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasRelationDescriptor() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -9638,6 +10004,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           ? com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()
           : relationDescriptor_;
     }
+
     /**
      *
      *
@@ -9884,6 +10251,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10263,6 +10631,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -10279,6 +10648,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -10295,6 +10665,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -10318,6 +10689,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10338,6 +10710,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10360,6 +10733,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10383,6 +10757,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10403,6 +10778,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10423,6 +10799,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10443,6 +10820,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10462,6 +10840,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10481,6 +10860,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10494,6 +10874,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           int index) {
         return getDependencyTargetsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -10511,6 +10892,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return dependencyTargetsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -10528,6 +10910,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(dependencyTargets_);
         }
       }
+
       /**
        *
        *
@@ -10541,6 +10924,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return getDependencyTargetsFieldBuilder()
             .addBuilder(com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -10555,6 +10939,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return getDependencyTargetsFieldBuilder()
             .addBuilder(index, com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -10595,6 +10980,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               com.google.cloud.dataform.v1alpha2.Target.Builder,
               com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
           parentActionBuilder_;
+
       /**
        *
        *
@@ -10610,6 +10996,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean hasParentAction() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -10631,6 +11018,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return parentActionBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -10654,6 +11042,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10675,6 +11064,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10703,6 +11093,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -10723,6 +11114,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10738,6 +11130,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return getParentActionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -10757,6 +11150,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               : parentAction_;
         }
       }
+
       /**
        *
        *
@@ -10785,6 +11179,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private boolean disabled_;
+
       /**
        *
        *
@@ -10800,6 +11195,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean getDisabled() {
         return disabled_;
       }
+
       /**
        *
        *
@@ -10819,6 +11215,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10846,6 +11243,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000008;
       }
+
       /**
        *
        *
@@ -10861,6 +11259,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         tags_.makeImmutable();
         return tags_;
       }
+
       /**
        *
        *
@@ -10875,6 +11274,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public int getTagsCount() {
         return tags_.size();
       }
+
       /**
        *
        *
@@ -10890,6 +11290,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
+
       /**
        *
        *
@@ -10905,6 +11306,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getTagsBytes(int index) {
         return tags_.getByteString(index);
       }
+
       /**
        *
        *
@@ -10928,6 +11330,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10950,6 +11353,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10969,6 +11373,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10987,6 +11392,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11012,6 +11418,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       private java.lang.Object selectQuery_ = "";
+
       /**
        *
        *
@@ -11035,6 +11442,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -11058,6 +11466,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -11080,6 +11489,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11098,6 +11508,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11128,6 +11539,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder,
               com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder>
           relationDescriptorBuilder_;
+
       /**
        *
        *
@@ -11143,6 +11555,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean hasRelationDescriptor() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -11164,6 +11577,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return relationDescriptorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11188,6 +11602,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11209,6 +11624,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11239,6 +11655,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -11259,6 +11676,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11275,6 +11693,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return getRelationDescriptorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11295,6 +11714,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               : relationDescriptor_;
         }
       }
+
       /**
        *
        *
@@ -11407,6 +11827,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return Whether the relationDescriptor field is set.
      */
     boolean hasRelationDescriptor();
+
     /**
      *
      *
@@ -11420,6 +11841,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * @return The relationDescriptor.
      */
     com.google.cloud.dataform.v1alpha2.RelationDescriptor getRelationDescriptor();
+
     /**
      *
      *
@@ -11432,6 +11854,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      */
     com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder getRelationDescriptorOrBuilder();
   }
+
   /**
    *
    *
@@ -11447,6 +11870,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1alpha2.CompilationResultAction.Declaration)
       DeclarationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Declaration.newBuilder() to construct.
     private Declaration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11478,6 +11902,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     private int bitField0_;
     public static final int RELATION_DESCRIPTOR_FIELD_NUMBER = 1;
     private com.google.cloud.dataform.v1alpha2.RelationDescriptor relationDescriptor_;
+
     /**
      *
      *
@@ -11494,6 +11919,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasRelationDescriptor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -11512,6 +11938,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           ? com.google.cloud.dataform.v1alpha2.RelationDescriptor.getDefaultInstance()
           : relationDescriptor_;
     }
+
     /**
      *
      *
@@ -11699,6 +12126,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11920,6 +12348,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               com.google.cloud.dataform.v1alpha2.RelationDescriptor.Builder,
               com.google.cloud.dataform.v1alpha2.RelationDescriptorOrBuilder>
           relationDescriptorBuilder_;
+
       /**
        *
        *
@@ -11935,6 +12364,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public boolean hasRelationDescriptor() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -11956,6 +12386,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return relationDescriptorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11980,6 +12411,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12001,6 +12433,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12031,6 +12464,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -12051,6 +12485,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12067,6 +12502,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         onChanged();
         return getRelationDescriptorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -12087,6 +12523,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               : relationDescriptor_;
         }
       }
+
       /**
        *
        *
@@ -12202,6 +12639,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     private CompiledObjectCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -12240,6 +12678,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
   public static final int TARGET_FIELD_NUMBER = 1;
   private com.google.cloud.dataform.v1alpha2.Target target_;
+
   /**
    *
    *
@@ -12255,6 +12694,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   public boolean hasTarget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -12272,6 +12712,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         ? com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()
         : target_;
   }
+
   /**
    *
    *
@@ -12290,6 +12731,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
   public static final int CANONICAL_TARGET_FIELD_NUMBER = 2;
   private com.google.cloud.dataform.v1alpha2.Target canonicalTarget_;
+
   /**
    *
    *
@@ -12306,6 +12748,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   public boolean hasCanonicalTarget() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -12324,6 +12767,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         ? com.google.cloud.dataform.v1alpha2.Target.getDefaultInstance()
         : canonicalTarget_;
   }
+
   /**
    *
    *
@@ -12345,6 +12789,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filePath_ = "";
+
   /**
    *
    *
@@ -12369,6 +12814,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -12395,6 +12841,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   }
 
   public static final int RELATION_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -12410,6 +12857,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   public boolean hasRelation() {
     return compiledObjectCase_ == 4;
   }
+
   /**
    *
    *
@@ -12428,6 +12876,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
     return com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12447,6 +12896,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   }
 
   public static final int OPERATIONS_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -12462,6 +12912,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   public boolean hasOperations() {
     return compiledObjectCase_ == 5;
   }
+
   /**
    *
    *
@@ -12482,6 +12933,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     return com.google.cloud.dataform.v1alpha2.CompilationResultAction.Operations
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12503,6 +12955,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   }
 
   public static final int ASSERTION_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -12518,6 +12971,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   public boolean hasAssertion() {
     return compiledObjectCase_ == 6;
   }
+
   /**
    *
    *
@@ -12537,6 +12991,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     return com.google.cloud.dataform.v1alpha2.CompilationResultAction.Assertion
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12557,6 +13012,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   }
 
   public static final int DECLARATION_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -12573,6 +13029,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   public boolean hasDeclaration() {
     return compiledObjectCase_ == 7;
   }
+
   /**
    *
    *
@@ -12594,6 +13051,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     return com.google.cloud.dataform.v1alpha2.CompilationResultAction.Declaration
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12887,6 +13345,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -13222,6 +13681,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.cloud.dataform.v1alpha2.Target.Builder,
             com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
         targetBuilder_;
+
     /**
      *
      *
@@ -13236,6 +13696,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasTarget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -13256,6 +13717,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return targetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13278,6 +13740,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13297,6 +13760,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13324,6 +13788,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -13343,6 +13808,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13357,6 +13823,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13375,6 +13842,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             : target_;
       }
     }
+
     /**
      *
      *
@@ -13407,6 +13875,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.cloud.dataform.v1alpha2.Target.Builder,
             com.google.cloud.dataform.v1alpha2.TargetOrBuilder>
         canonicalTargetBuilder_;
+
     /**
      *
      *
@@ -13422,6 +13891,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasCanonicalTarget() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -13443,6 +13913,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return canonicalTargetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13466,6 +13937,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13487,6 +13959,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13515,6 +13988,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -13535,6 +14009,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13550,6 +14025,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return getCanonicalTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13569,6 +14045,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             : canonicalTarget_;
       }
     }
+
     /**
      *
      *
@@ -13597,6 +14074,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     private java.lang.Object filePath_ = "";
+
     /**
      *
      *
@@ -13620,6 +14098,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -13643,6 +14122,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -13665,6 +14145,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13683,6 +14164,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13712,6 +14194,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.Relation.Builder,
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.RelationOrBuilder>
         relationBuilder_;
+
     /**
      *
      *
@@ -13727,6 +14210,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasRelation() {
       return compiledObjectCase_ == 4;
     }
+
     /**
      *
      *
@@ -13755,6 +14239,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13778,6 +14263,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -13799,6 +14285,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -13835,6 +14322,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -13860,6 +14348,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -13873,6 +14362,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         getRelationBuilder() {
       return getRelationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13896,6 +14386,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13937,6 +14428,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.Operations.Builder,
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.OperationsOrBuilder>
         operationsBuilder_;
+
     /**
      *
      *
@@ -13953,6 +14445,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasOperations() {
       return compiledObjectCase_ == 5;
     }
+
     /**
      *
      *
@@ -13982,6 +14475,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14006,6 +14500,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -14028,6 +14523,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -14065,6 +14561,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -14091,6 +14588,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -14105,6 +14603,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         getOperationsBuilder() {
       return getOperationsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14129,6 +14628,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14171,6 +14671,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.Assertion.Builder,
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.AssertionOrBuilder>
         assertionBuilder_;
+
     /**
      *
      *
@@ -14186,6 +14687,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasAssertion() {
       return compiledObjectCase_ == 6;
     }
+
     /**
      *
      *
@@ -14214,6 +14716,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14237,6 +14740,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -14258,6 +14762,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -14294,6 +14799,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -14319,6 +14825,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -14332,6 +14839,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         getAssertionBuilder() {
       return getAssertionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14355,6 +14863,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14396,6 +14905,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.Declaration.Builder,
             com.google.cloud.dataform.v1alpha2.CompilationResultAction.DeclarationOrBuilder>
         declarationBuilder_;
+
     /**
      *
      *
@@ -14412,6 +14922,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public boolean hasDeclaration() {
       return compiledObjectCase_ == 7;
     }
+
     /**
      *
      *
@@ -14441,6 +14952,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14465,6 +14977,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -14487,6 +15000,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -14524,6 +15038,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -14550,6 +15065,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -14564,6 +15080,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         getDeclarationBuilder() {
       return getDeclarationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14588,6 +15105,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

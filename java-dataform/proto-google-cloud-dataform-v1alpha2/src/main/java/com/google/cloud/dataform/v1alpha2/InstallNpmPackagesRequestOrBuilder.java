@@ -38,6 +38,7 @@ public interface InstallNpmPackagesRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
+
   /**
    *
    *

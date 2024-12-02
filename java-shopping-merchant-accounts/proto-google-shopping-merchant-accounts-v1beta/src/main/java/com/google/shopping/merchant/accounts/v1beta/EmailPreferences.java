@@ -35,6 +35,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.EmailPreferences)
     EmailPreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EmailPreferences.newBuilder() to construct.
   private EmailPreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,6 +132,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
      * <code>OPT_IN_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int OPT_IN_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -141,6 +143,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
      * <code>OPTED_OUT = 1;</code>
      */
     public static final int OPTED_OUT_VALUE = 1;
+
     /**
      *
      *
@@ -151,6 +154,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
      * <code>OPTED_IN = 2;</code>
      */
     public static final int OPTED_IN_VALUE = 2;
+
     /**
      *
      *
@@ -255,6 +259,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -279,6 +284,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -306,6 +312,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
 
   public static final int NEWS_AND_TIPS_FIELD_NUMBER = 2;
   private int newsAndTips_ = 0;
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
   public int getNewsAndTipsValue() {
     return newsAndTips_;
   }
+
   /**
    *
    *
@@ -521,6 +529,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -723,6 +732,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -746,6 +756,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -769,6 +780,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -791,6 +803,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +822,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +848,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     }
 
     private int newsAndTips_ = 0;
+
     /**
      *
      *
@@ -851,6 +866,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     public int getNewsAndTipsValue() {
       return newsAndTips_;
     }
+
     /**
      *
      *
@@ -871,6 +887,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +911,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
           ? com.google.shopping.merchant.accounts.v1beta.EmailPreferences.OptInState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -918,6 +936,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

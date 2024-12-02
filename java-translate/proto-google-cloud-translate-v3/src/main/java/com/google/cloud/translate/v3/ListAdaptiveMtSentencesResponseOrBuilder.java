@@ -36,6 +36,7 @@ public interface ListAdaptiveMtSentencesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3.AdaptiveMtSentence> getAdaptiveMtSentencesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListAdaptiveMtSentencesResponseOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3.AdaptiveMtSentence getAdaptiveMtSentences(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListAdaptiveMtSentencesResponseOrBuilder
    * </code>
    */
   int getAdaptiveMtSentencesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListAdaptiveMtSentencesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.AdaptiveMtSentenceOrBuilder>
       getAdaptiveMtSentencesOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ListAdaptiveMtSentencesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

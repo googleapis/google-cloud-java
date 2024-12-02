@@ -37,6 +37,7 @@ public interface DeploymentOrBuilder
    * @return Whether the terraformBlueprint field is set.
    */
   boolean hasTerraformBlueprint();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DeploymentOrBuilder
    * @return The terraformBlueprint.
    */
   com.google.cloud.config.v1.TerraformBlueprint getTerraformBlueprint();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeploymentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface DeploymentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface DeploymentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface DeploymentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -185,9 +193,11 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -198,6 +208,7 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -212,6 +223,7 @@ public interface DeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -237,6 +249,7 @@ public interface DeploymentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -266,6 +279,7 @@ public interface DeploymentOrBuilder
    * @return The latestRevision.
    */
   java.lang.String getLatestRevision();
+
   /**
    *
    *
@@ -293,6 +307,7 @@ public interface DeploymentOrBuilder
    * @return The stateDetail.
    */
   java.lang.String getStateDetail();
+
   /**
    *
    *
@@ -320,6 +335,7 @@ public interface DeploymentOrBuilder
    * @return The enum numeric value on the wire for errorCode.
    */
   int getErrorCodeValue();
+
   /**
    *
    *
@@ -349,6 +365,7 @@ public interface DeploymentOrBuilder
    * @return Whether the deleteResults field is set.
    */
   boolean hasDeleteResults();
+
   /**
    *
    *
@@ -363,6 +380,7 @@ public interface DeploymentOrBuilder
    * @return The deleteResults.
    */
   com.google.cloud.config.v1.ApplyResults getDeleteResults();
+
   /**
    *
    *
@@ -389,6 +407,7 @@ public interface DeploymentOrBuilder
    * @return The deleteBuild.
    */
   java.lang.String getDeleteBuild();
+
   /**
    *
    *
@@ -416,6 +435,7 @@ public interface DeploymentOrBuilder
    * @return The deleteLogs.
    */
   java.lang.String getDeleteLogs();
+
   /**
    *
    *
@@ -444,6 +464,7 @@ public interface DeploymentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.config.v1.TerraformError> getTfErrorsList();
+
   /**
    *
    *
@@ -458,6 +479,7 @@ public interface DeploymentOrBuilder
    * </code>
    */
   com.google.cloud.config.v1.TerraformError getTfErrors(int index);
+
   /**
    *
    *
@@ -472,6 +494,7 @@ public interface DeploymentOrBuilder
    * </code>
    */
   int getTfErrorsCount();
+
   /**
    *
    *
@@ -487,6 +510,7 @@ public interface DeploymentOrBuilder
    */
   java.util.List<? extends com.google.cloud.config.v1.TerraformErrorOrBuilder>
       getTfErrorsOrBuilderList();
+
   /**
    *
    *
@@ -515,6 +539,7 @@ public interface DeploymentOrBuilder
    * @return The errorLogs.
    */
   java.lang.String getErrorLogs();
+
   /**
    *
    *
@@ -550,6 +575,7 @@ public interface DeploymentOrBuilder
    * @return Whether the artifactsGcsBucket field is set.
    */
   boolean hasArtifactsGcsBucket();
+
   /**
    *
    *
@@ -571,6 +597,7 @@ public interface DeploymentOrBuilder
    * @return The artifactsGcsBucket.
    */
   java.lang.String getArtifactsGcsBucket();
+
   /**
    *
    *
@@ -609,6 +636,7 @@ public interface DeploymentOrBuilder
    * @return Whether the serviceAccount field is set.
    */
   boolean hasServiceAccount();
+
   /**
    *
    *
@@ -625,6 +653,7 @@ public interface DeploymentOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -660,6 +689,7 @@ public interface DeploymentOrBuilder
    * @return Whether the importExistingResources field is set.
    */
   boolean hasImportExistingResources();
+
   /**
    *
    *
@@ -697,6 +727,7 @@ public interface DeploymentOrBuilder
    * @return Whether the workerPool field is set.
    */
   boolean hasWorkerPool();
+
   /**
    *
    *
@@ -715,6 +746,7 @@ public interface DeploymentOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
+
   /**
    *
    *
@@ -748,6 +780,7 @@ public interface DeploymentOrBuilder
    * @return The enum numeric value on the wire for lockState.
    */
   int getLockStateValue();
+
   /**
    *
    *
@@ -777,6 +810,7 @@ public interface DeploymentOrBuilder
    * @return Whether the tfVersionConstraint field is set.
    */
   boolean hasTfVersionConstraint();
+
   /**
    *
    *
@@ -791,6 +825,7 @@ public interface DeploymentOrBuilder
    * @return The tfVersionConstraint.
    */
   java.lang.String getTfVersionConstraint();
+
   /**
    *
    *
@@ -819,6 +854,7 @@ public interface DeploymentOrBuilder
    * @return The tfVersion.
    */
   java.lang.String getTfVersion();
+
   /**
    *
    *
@@ -849,6 +885,7 @@ public interface DeploymentOrBuilder
    * @return The enum numeric value on the wire for quotaValidation.
    */
   int getQuotaValidationValue();
+
   /**
    *
    *
@@ -880,6 +917,7 @@ public interface DeploymentOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -894,9 +932,11 @@ public interface DeploymentOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -911,6 +951,7 @@ public interface DeploymentOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -929,6 +970,7 @@ public interface DeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

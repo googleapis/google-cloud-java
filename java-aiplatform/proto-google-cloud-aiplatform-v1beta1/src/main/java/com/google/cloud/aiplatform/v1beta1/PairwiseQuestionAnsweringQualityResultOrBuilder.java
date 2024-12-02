@@ -38,6 +38,7 @@ public interface PairwiseQuestionAnsweringQualityResultOrBuilder
    * @return The enum numeric value on the wire for pairwiseChoice.
    */
   int getPairwiseChoiceValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PairwiseQuestionAnsweringQualityResultOrBuilder
    * @return The explanation.
    */
   java.lang.String getExplanation();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface PairwiseQuestionAnsweringQualityResultOrBuilder
    * @return Whether the confidence field is set.
    */
   boolean hasConfidence();
+
   /**
    *
    *

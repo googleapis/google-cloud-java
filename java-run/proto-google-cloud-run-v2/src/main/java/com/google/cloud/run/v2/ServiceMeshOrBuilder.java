@@ -38,6 +38,7 @@ public interface ServiceMeshOrBuilder
    * @return The mesh.
    */
   java.lang.String getMesh();
+
   /**
    *
    *

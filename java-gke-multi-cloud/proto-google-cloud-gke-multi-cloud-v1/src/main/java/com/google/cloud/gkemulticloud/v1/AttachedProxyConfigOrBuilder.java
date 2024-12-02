@@ -38,6 +38,7 @@ public interface AttachedProxyConfigOrBuilder
    * @return Whether the kubernetesSecret field is set.
    */
   boolean hasKubernetesSecret();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AttachedProxyConfigOrBuilder
    * @return The kubernetesSecret.
    */
   com.google.cloud.gkemulticloud.v1.KubernetesSecret getKubernetesSecret();
+
   /**
    *
    *

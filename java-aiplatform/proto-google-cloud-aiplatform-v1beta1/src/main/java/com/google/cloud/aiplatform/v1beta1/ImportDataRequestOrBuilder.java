@@ -40,6 +40,7 @@ public interface ImportDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ImportDataRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ImportDataConfig> getImportConfigsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ImportDataRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ImportDataConfig getImportConfigs(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ImportDataRequestOrBuilder
    * </code>
    */
   int getImportConfigsCount();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ImportDataRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ImportDataConfigOrBuilder>
       getImportConfigsOrBuilderList();
+
   /**
    *
    *

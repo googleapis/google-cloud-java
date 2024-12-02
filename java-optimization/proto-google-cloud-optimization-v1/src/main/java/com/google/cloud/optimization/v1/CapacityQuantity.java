@@ -36,6 +36,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.CapacityQuantity)
     CapacityQuantityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CapacityQuantity.newBuilder() to construct.
   private CapacityQuantity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    * <code>string type = 1;</code>
    *
@@ -87,6 +89,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    * <code>string type = 1;</code>
    *
@@ -107,6 +110,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private long value_ = 0L;
+
   /**
    * <code>int64 value = 2;</code>
    *
@@ -285,6 +289,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -484,6 +489,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object type_ = "";
+
     /**
      * <code>string type = 1;</code>
      *
@@ -500,6 +506,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string type = 1;</code>
      *
@@ -516,6 +523,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string type = 1;</code>
      *
@@ -531,6 +539,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      * <code>string type = 1;</code>
      *
@@ -542,6 +551,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      * <code>string type = 1;</code>
      *
@@ -560,6 +570,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     }
 
     private long value_;
+
     /**
      * <code>int64 value = 2;</code>
      *
@@ -569,6 +580,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     public long getValue() {
       return value_;
     }
+
     /**
      * <code>int64 value = 2;</code>
      *
@@ -582,6 +594,7 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      * <code>int64 value = 2;</code>
      *

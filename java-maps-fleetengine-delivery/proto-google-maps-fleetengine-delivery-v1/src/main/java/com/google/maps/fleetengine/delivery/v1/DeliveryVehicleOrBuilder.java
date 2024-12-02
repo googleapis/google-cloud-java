@@ -37,6 +37,7 @@ public interface DeliveryVehicleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeliveryVehicleOrBuilder
    * @return Whether the lastLocation field is set.
    */
   boolean hasLastLocation();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DeliveryVehicleOrBuilder
    * @return The lastLocation.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation getLastLocation();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface DeliveryVehicleOrBuilder
    * @return The enum numeric value on the wire for navigationStatus.
    */
   int getNavigationStatusValue();
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public interface DeliveryVehicleOrBuilder
    * @return Whether the currentRouteSegmentEndPoint field is set.
    */
   boolean hasCurrentRouteSegmentEndPoint();
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public interface DeliveryVehicleOrBuilder
    * @return The currentRouteSegmentEndPoint.
    */
   com.google.type.LatLng getCurrentRouteSegmentEndPoint();
+
   /**
    *
    *
@@ -232,6 +238,7 @@ public interface DeliveryVehicleOrBuilder
    * @return Whether the remainingDistanceMeters field is set.
    */
   boolean hasRemainingDistanceMeters();
+
   /**
    *
    *
@@ -255,6 +262,7 @@ public interface DeliveryVehicleOrBuilder
    * @return The remainingDistanceMeters.
    */
   com.google.protobuf.Int32Value getRemainingDistanceMeters();
+
   /**
    *
    *
@@ -300,6 +308,7 @@ public interface DeliveryVehicleOrBuilder
    * @return Whether the remainingDuration field is set.
    */
   boolean hasRemainingDuration();
+
   /**
    *
    *
@@ -323,6 +332,7 @@ public interface DeliveryVehicleOrBuilder
    * @return The remainingDuration.
    */
   com.google.protobuf.Duration getRemainingDuration();
+
   /**
    *
    *
@@ -360,6 +370,7 @@ public interface DeliveryVehicleOrBuilder
    */
   java.util.List<com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment>
       getRemainingVehicleJourneySegmentsList();
+
   /**
    *
    *
@@ -375,6 +386,7 @@ public interface DeliveryVehicleOrBuilder
    */
   com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment getRemainingVehicleJourneySegments(
       int index);
+
   /**
    *
    *
@@ -389,6 +401,7 @@ public interface DeliveryVehicleOrBuilder
    * </code>
    */
   int getRemainingVehicleJourneySegmentsCount();
+
   /**
    *
    *
@@ -404,6 +417,7 @@ public interface DeliveryVehicleOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.delivery.v1.VehicleJourneySegmentOrBuilder>
       getRemainingVehicleJourneySegmentsOrBuilderList();
+
   /**
    *
    *
@@ -432,6 +446,7 @@ public interface DeliveryVehicleOrBuilder
    */
   java.util.List<com.google.maps.fleetengine.delivery.v1.DeliveryVehicleAttribute>
       getAttributesList();
+
   /**
    *
    *
@@ -443,6 +458,7 @@ public interface DeliveryVehicleOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.DeliveryVehicleAttribute attributes = 9;</code>
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryVehicleAttribute getAttributes(int index);
+
   /**
    *
    *
@@ -454,6 +470,7 @@ public interface DeliveryVehicleOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.DeliveryVehicleAttribute attributes = 9;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -467,6 +484,7 @@ public interface DeliveryVehicleOrBuilder
   java.util.List<
           ? extends com.google.maps.fleetengine.delivery.v1.DeliveryVehicleAttributeOrBuilder>
       getAttributesOrBuilderList();
+
   /**
    *
    *
@@ -492,6 +510,7 @@ public interface DeliveryVehicleOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

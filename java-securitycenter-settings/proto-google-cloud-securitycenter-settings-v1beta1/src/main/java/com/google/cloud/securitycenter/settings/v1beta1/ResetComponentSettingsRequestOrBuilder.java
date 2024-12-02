@@ -46,6 +46,7 @@ public interface ResetComponentSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface ResetComponentSettingsRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v2.Stage)
     StageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Stage.newBuilder() to construct.
   private Stage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -161,6 +162,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>NAME_UNSPECIFIED = 0;</code>
      */
     public static final int NAME_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -171,6 +173,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>ARTIFACT_REGISTRY = 1;</code>
      */
     public static final int ARTIFACT_REGISTRY_VALUE = 1;
+
     /**
      *
      *
@@ -181,6 +184,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>BUILD = 2;</code>
      */
     public static final int BUILD_VALUE = 2;
+
     /**
      *
      *
@@ -191,6 +195,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVICE = 3;</code>
      */
     public static final int SERVICE_VALUE = 3;
+
     /**
      *
      *
@@ -201,6 +206,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>TRIGGER = 4;</code>
      */
     public static final int TRIGGER_VALUE = 4;
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVICE_ROLLBACK = 5;</code>
      */
     public static final int SERVICE_ROLLBACK_VALUE = 5;
+
     /**
      *
      *
@@ -376,6 +383,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -386,6 +394,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_STARTED = 1;</code>
      */
     public static final int NOT_STARTED_VALUE = 1;
+
     /**
      *
      *
@@ -396,6 +405,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * <code>IN_PROGRESS = 2;</code>
      */
     public static final int IN_PROGRESS_VALUE = 2;
+
     /**
      *
      *
@@ -494,6 +504,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 1;
   private int name_ = 0;
+
   /**
    *
    *
@@ -509,6 +520,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public int getNameValue() {
     return name_;
   }
+
   /**
    *
    *
@@ -531,6 +543,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -554,6 +567,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -580,6 +594,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -595,6 +610,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -617,6 +633,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -640,6 +657,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -668,6 +686,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceUri_ = "";
+
   /**
    *
    *
@@ -691,6 +710,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -719,6 +739,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v2.StateMessage> stateMessages_;
+
   /**
    *
    *
@@ -732,6 +753,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.functions.v2.StateMessage> getStateMessagesList() {
     return stateMessages_;
   }
+
   /**
    *
    *
@@ -746,6 +768,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       getStateMessagesOrBuilderList() {
     return stateMessages_;
   }
+
   /**
    *
    *
@@ -759,6 +782,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public int getStateMessagesCount() {
     return stateMessages_.size();
   }
+
   /**
    *
    *
@@ -772,6 +796,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.functions.v2.StateMessage getStateMessages(int index) {
     return stateMessages_.get(index);
   }
+
   /**
    *
    *
@@ -990,6 +1015,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1288,6 +1314,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int name_ = 0;
+
     /**
      *
      *
@@ -1303,6 +1330,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public int getNameValue() {
       return name_;
     }
+
     /**
      *
      *
@@ -1321,6 +1349,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1367,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.functions.v2.Stage.Name.forNumber(name_);
       return result == null ? com.google.cloud.functions.v2.Stage.Name.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1359,6 +1389,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1409,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -1400,6 +1432,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1455,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1443,6 +1477,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1460,6 +1495,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1520,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1499,6 +1536,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1517,6 +1555,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1573,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.functions.v2.Stage.State.forNumber(state_);
       return result == null ? com.google.cloud.functions.v2.Stage.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1555,6 +1595,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1574,6 +1615,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -1596,6 +1638,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1618,6 +1661,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1639,6 +1683,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1701,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1680,6 +1726,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceUri_ = "";
+
     /**
      *
      *
@@ -1702,6 +1749,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1724,6 +1772,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1745,6 +1794,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1762,6 +1812,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1869,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return stateMessagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1834,6 +1886,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return stateMessagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1850,6 +1903,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return stateMessagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1872,6 +1926,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1892,6 +1947,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1914,6 +1970,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1936,6 +1993,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2014,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1976,6 +2035,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1996,6 +2056,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2015,6 +2076,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2034,6 +2096,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2046,6 +2109,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2.StateMessage.Builder getStateMessagesBuilder(int index) {
       return getStateMessagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2063,6 +2127,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return stateMessagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2080,6 +2145,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(stateMessages_);
       }
     }
+
     /**
      *
      *
@@ -2093,6 +2159,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return getStateMessagesFieldBuilder()
           .addBuilder(com.google.cloud.functions.v2.StateMessage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2106,6 +2173,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return getStateMessagesFieldBuilder()
           .addBuilder(index, com.google.cloud.functions.v2.StateMessage.getDefaultInstance());
     }
+
     /**
      *
      *

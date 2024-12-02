@@ -38,6 +38,7 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * @return Whether the sshPublicKey field is set.
    */
   boolean hasSshPublicKey();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * @return The sshPublicKey.
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * @return A list containing the regions.
    */
   java.util.List<java.lang.String> getRegionsList();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * @return The count of regions.
    */
   int getRegionsCount();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * @return The regions at the given index.
    */
   java.lang.String getRegions(int index);
+
   /**
    *
    *

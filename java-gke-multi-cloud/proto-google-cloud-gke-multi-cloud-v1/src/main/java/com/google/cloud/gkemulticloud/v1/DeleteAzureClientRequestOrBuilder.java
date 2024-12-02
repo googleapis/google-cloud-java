@@ -46,6 +46,7 @@ public interface DeleteAzureClientRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

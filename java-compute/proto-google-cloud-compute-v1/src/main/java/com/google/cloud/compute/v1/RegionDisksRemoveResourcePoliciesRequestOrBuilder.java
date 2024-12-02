@@ -36,6 +36,7 @@ public interface RegionDisksRemoveResourcePoliciesRequestOrBuilder
    * @return A list containing the resourcePolicies.
    */
   java.util.List<java.lang.String> getResourcePoliciesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RegionDisksRemoveResourcePoliciesRequestOrBuilder
    * @return The count of resourcePolicies.
    */
   int getResourcePoliciesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface RegionDisksRemoveResourcePoliciesRequestOrBuilder
    * @return The resourcePolicies at the given index.
    */
   java.lang.String getResourcePolicies(int index);
+
   /**
    *
    *

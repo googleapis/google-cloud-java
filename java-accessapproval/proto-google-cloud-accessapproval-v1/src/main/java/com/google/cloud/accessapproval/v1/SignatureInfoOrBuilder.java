@@ -51,6 +51,7 @@ public interface SignatureInfoOrBuilder
    * @return Whether the googlePublicKeyPem field is set.
    */
   boolean hasGooglePublicKeyPem();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SignatureInfoOrBuilder
    * @return The googlePublicKeyPem.
    */
   java.lang.String getGooglePublicKeyPem();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface SignatureInfoOrBuilder
    * @return Whether the customerKmsKeyVersion field is set.
    */
   boolean hasCustomerKmsKeyVersion();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface SignatureInfoOrBuilder
    * @return The customerKmsKeyVersion.
    */
   java.lang.String getCustomerKmsKeyVersion();
+
   /**
    *
    *

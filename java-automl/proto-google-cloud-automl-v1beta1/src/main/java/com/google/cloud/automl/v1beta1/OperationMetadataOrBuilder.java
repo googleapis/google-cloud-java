@@ -36,6 +36,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the deleteDetails field is set.
    */
   boolean hasDeleteDetails();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OperationMetadataOrBuilder
    * @return The deleteDetails.
    */
   com.google.cloud.automl.v1beta1.DeleteOperationMetadata getDeleteDetails();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the deployModelDetails field is set.
    */
   boolean hasDeployModelDetails();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface OperationMetadataOrBuilder
    * @return The deployModelDetails.
    */
   com.google.cloud.automl.v1beta1.DeployModelOperationMetadata getDeployModelDetails();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the undeployModelDetails field is set.
    */
   boolean hasUndeployModelDetails();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface OperationMetadataOrBuilder
    * @return The undeployModelDetails.
    */
   com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata getUndeployModelDetails();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createModelDetails field is set.
    */
   boolean hasCreateModelDetails();
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface OperationMetadataOrBuilder
    * @return The createModelDetails.
    */
   com.google.cloud.automl.v1beta1.CreateModelOperationMetadata getCreateModelDetails();
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the importDataDetails field is set.
    */
   boolean hasImportDataDetails();
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public interface OperationMetadataOrBuilder
    * @return The importDataDetails.
    */
   com.google.cloud.automl.v1beta1.ImportDataOperationMetadata getImportDataDetails();
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the batchPredictDetails field is set.
    */
   boolean hasBatchPredictDetails();
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public interface OperationMetadataOrBuilder
    * @return The batchPredictDetails.
    */
   com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata getBatchPredictDetails();
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the exportDataDetails field is set.
    */
   boolean hasExportDataDetails();
+
   /**
    *
    *
@@ -275,6 +288,7 @@ public interface OperationMetadataOrBuilder
    * @return The exportDataDetails.
    */
   com.google.cloud.automl.v1beta1.ExportDataOperationMetadata getExportDataDetails();
+
   /**
    *
    *
@@ -300,6 +314,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the exportModelDetails field is set.
    */
   boolean hasExportModelDetails();
+
   /**
    *
    *
@@ -313,6 +328,7 @@ public interface OperationMetadataOrBuilder
    * @return The exportModelDetails.
    */
   com.google.cloud.automl.v1beta1.ExportModelOperationMetadata getExportModelDetails();
+
   /**
    *
    *
@@ -340,6 +356,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the exportEvaluatedExamplesDetails field is set.
    */
   boolean hasExportEvaluatedExamplesDetails();
+
   /**
    *
    *
@@ -355,6 +372,7 @@ public interface OperationMetadataOrBuilder
    */
   com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
       getExportEvaluatedExamplesDetails();
+
   /**
    *
    *
@@ -396,6 +414,7 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialFailuresList();
+
   /**
    *
    *
@@ -409,6 +428,7 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   com.google.rpc.Status getPartialFailures(int index);
+
   /**
    *
    *
@@ -422,6 +442,7 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   int getPartialFailuresCount();
+
   /**
    *
    *
@@ -435,6 +456,7 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
+
   /**
    *
    *
@@ -461,6 +483,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -473,6 +496,7 @@ public interface OperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -496,6 +520,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -508,6 +533,7 @@ public interface OperationMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

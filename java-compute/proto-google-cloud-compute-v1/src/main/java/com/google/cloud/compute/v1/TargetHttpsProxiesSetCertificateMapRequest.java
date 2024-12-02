@@ -33,6 +33,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequest)
     TargetHttpsProxiesSetCertificateMapRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TargetHttpsProxiesSetCertificateMapRequest.newBuilder() to construct.
   private TargetHttpsProxiesSetCertificateMapRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificateMap_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
   public boolean hasCertificateMap() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +301,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -491,6 +496,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
     private int bitField0_;
 
     private java.lang.Object certificateMap_ = "";
+
     /**
      *
      *
@@ -505,6 +511,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
     public boolean hasCertificateMap() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -527,6 +534,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -570,6 +579,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

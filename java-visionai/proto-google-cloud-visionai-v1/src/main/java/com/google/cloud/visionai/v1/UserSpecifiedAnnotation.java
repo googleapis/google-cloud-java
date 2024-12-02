@@ -33,6 +33,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UserSpecifiedAnnotation)
     UserSpecifiedAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserSpecifiedAnnotation.newBuilder() to construct.
   private UserSpecifiedAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.AnnotationValue value_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
   public boolean hasValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
         ? com.google.cloud.visionai.v1.AnnotationValue.getDefaultInstance()
         : value_;
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
 
   public static final int PARTITION_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.Partition partition_;
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
   public boolean hasPartition() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
         ? com.google.cloud.visionai.v1.Partition.getDefaultInstance()
         : partition_;
   }
+
   /**
    *
    *
@@ -407,6 +416,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -639,6 +649,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
             com.google.cloud.visionai.v1.AnnotationValue.Builder,
             com.google.cloud.visionai.v1.AnnotationValueOrBuilder>
         valueBuilder_;
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
         return valueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +919,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -916,6 +939,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
             : value_;
       }
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
             com.google.cloud.visionai.v1.Partition.Builder,
             com.google.cloud.visionai.v1.PartitionOrBuilder>
         partitionBuilder_;
+
     /**
      *
      *
@@ -963,6 +988,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
     public boolean hasPartition() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -983,6 +1009,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
         return partitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1032,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1052,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1080,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1100,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1115,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
       onChanged();
       return getPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1102,6 +1134,7 @@ public final class UserSpecifiedAnnotation extends com.google.protobuf.Generated
             : partition_;
       }
     }
+
     /**
      *
      *

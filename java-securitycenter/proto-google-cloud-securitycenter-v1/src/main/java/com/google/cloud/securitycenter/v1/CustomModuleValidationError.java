@@ -35,6 +35,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.CustomModuleValidationError)
     CustomModuleValidationErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomModuleValidationError.newBuilder() to construct.
   private CustomModuleValidationError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fieldPath_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
 
   public static final int START_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v1.Position start_;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
   public boolean hasStart() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         ? com.google.cloud.securitycenter.v1.Position.getDefaultInstance()
         : start_;
   }
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
 
   public static final int END_FIELD_NUMBER = 4;
   private com.google.cloud.securitycenter.v1.Position end_;
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
   public boolean hasEnd() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -263,6 +273,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
   public com.google.cloud.securitycenter.v1.Position getEnd() {
     return end_ == null ? com.google.cloud.securitycenter.v1.Position.getDefaultInstance() : end_;
   }
+
   /**
    *
    *
@@ -476,6 +487,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -730,6 +742,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +828,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +853,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     }
 
     private java.lang.Object fieldPath_ = "";
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -882,6 +901,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +924,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
             com.google.cloud.securitycenter.v1.Position.Builder,
             com.google.cloud.securitycenter.v1.PositionOrBuilder>
         startBuilder_;
+
     /**
      *
      *
@@ -968,6 +991,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     public boolean hasStart() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         return startBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1039,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1113,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1130,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return getStartFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1121,6 +1151,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
             : start_;
       }
     }
+
     /**
      *
      *
@@ -1155,6 +1186,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
             com.google.cloud.securitycenter.v1.Position.Builder,
             com.google.cloud.securitycenter.v1.PositionOrBuilder>
         endBuilder_;
+
     /**
      *
      *
@@ -1171,6 +1203,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     public boolean hasEnd() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1193,6 +1226,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         return endBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1251,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1273,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1303,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1288,6 +1325,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1342,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       onChanged();
       return getEndFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1324,6 +1363,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
             : end_;
       }
     }
+
     /**
      *
      *

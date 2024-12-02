@@ -33,6 +33,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ListSearchAds360LinksResponse)
     ListSearchAds360LinksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListSearchAds360LinksResponse.newBuilder() to construct.
   private ListSearchAds360LinksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.SearchAds360Link> searchAds360Links_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       getSearchAds360LinksList() {
     return searchAds360Links_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       getSearchAds360LinksOrBuilderList() {
     return searchAds360Links_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
   public int getSearchAds360LinksCount() {
     return searchAds360Links_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
   public com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Links(int index) {
     return searchAds360Links_.get(index);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -367,6 +375,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +661,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
         return searchAds360LinksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
         return searchAds360LinksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
         return searchAds360LinksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +793,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +815,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +859,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +880,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +916,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
         int index) {
       return getSearchAds360LinksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -913,6 +935,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
         return searchAds360LinksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(searchAds360Links_);
       }
     }
+
     /**
      *
      *
@@ -946,6 +970,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       return getSearchAds360LinksFieldBuilder()
           .addBuilder(com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -962,6 +987,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
           .addBuilder(
               index, com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -998,6 +1024,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1021,6 +1048,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1072,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1066,6 +1095,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1114,7 @@ public final class ListSearchAds360LinksResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

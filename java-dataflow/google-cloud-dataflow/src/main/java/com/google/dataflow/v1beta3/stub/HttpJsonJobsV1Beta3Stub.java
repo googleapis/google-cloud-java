@@ -286,8 +286,7 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request
-                                          .toBuilder()
+                                      request.toBuilder()
                                           .clearJobId()
                                           .clearLocation()
                                           .clearProjectId()
@@ -517,7 +516,8 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
   @Override
   public UnaryCallable<CheckActiveJobsRequest, CheckActiveJobsResponse> checkActiveJobsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: checkActiveJobsCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: checkActiveJobsCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override

@@ -39,6 +39,7 @@ public interface UpdateBigQueryLinkRequestOrBuilder
    * @return Whether the bigqueryLink field is set.
    */
   boolean hasBigqueryLink();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateBigQueryLinkRequestOrBuilder
    * @return The bigqueryLink.
    */
   com.google.analytics.admin.v1alpha.BigQueryLink getBigqueryLink();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateBigQueryLinkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateBigQueryLinkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface UpdateGatewayRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateGatewayRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateGatewayRequestOrBuilder
    * @return Whether the gateway field is set.
    */
   boolean hasGateway();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateGatewayRequestOrBuilder
    * @return The gateway.
    */
   com.google.cloud.apigateway.v1.Gateway getGateway();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListPublisherModelsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.PublisherModel publisher_models = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.PublisherModel> getPublisherModelsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPublisherModelsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.PublisherModel publisher_models = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.PublisherModel getPublisherModels(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPublisherModelsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.PublisherModel publisher_models = 1;</code>
    */
   int getPublisherModelsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPublisherModelsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PublisherModelOrBuilder>
       getPublisherModelsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListPublisherModelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListOperatorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Operator operators = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Operator> getOperatorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListOperatorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Operator operators = 1;</code>
    */
   com.google.cloud.visionai.v1.Operator getOperators(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListOperatorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Operator operators = 1;</code>
    */
   int getOperatorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListOperatorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.OperatorOrBuilder>
       getOperatorsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListOperatorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListOperatorsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListOperatorsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListOperatorsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

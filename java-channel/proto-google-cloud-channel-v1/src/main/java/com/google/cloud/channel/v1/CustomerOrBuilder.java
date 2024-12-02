@@ -37,6 +37,7 @@ public interface CustomerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CustomerOrBuilder
    * @return The orgDisplayName.
    */
   java.lang.String getOrgDisplayName();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CustomerOrBuilder
    * @return Whether the orgPostalAddress field is set.
    */
   boolean hasOrgPostalAddress();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CustomerOrBuilder
    * @return The orgPostalAddress.
    */
   com.google.type.PostalAddress getOrgPostalAddress();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface CustomerOrBuilder
    * @return Whether the primaryContactInfo field is set.
    */
   boolean hasPrimaryContactInfo();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface CustomerOrBuilder
    * @return The primaryContactInfo.
    */
   com.google.cloud.channel.v1.ContactInfo getPrimaryContactInfo();
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public interface CustomerOrBuilder
    * @return The alternateEmail.
    */
   java.lang.String getAlternateEmail();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface CustomerOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public interface CustomerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public interface CustomerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public interface CustomerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public interface CustomerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -310,6 +322,7 @@ public interface CustomerOrBuilder
    * @return The cloudIdentityId.
    */
   java.lang.String getCloudIdentityId();
+
   /**
    *
    *
@@ -338,6 +351,7 @@ public interface CustomerOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -368,6 +382,7 @@ public interface CustomerOrBuilder
    * @return Whether the cloudIdentityInfo field is set.
    */
   boolean hasCloudIdentityInfo();
+
   /**
    *
    *
@@ -383,6 +398,7 @@ public interface CustomerOrBuilder
    * @return The cloudIdentityInfo.
    */
   com.google.cloud.channel.v1.CloudIdentityInfo getCloudIdentityInfo();
+
   /**
    *
    *
@@ -410,6 +426,7 @@ public interface CustomerOrBuilder
    * @return The channelPartnerId.
    */
   java.lang.String getChannelPartnerId();
+
   /**
    *
    *
@@ -437,6 +454,7 @@ public interface CustomerOrBuilder
    * @return The correlationId.
    */
   java.lang.String getCorrelationId();
+
   /**
    *
    *

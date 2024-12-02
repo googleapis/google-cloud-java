@@ -180,7 +180,8 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingAnalyzeContent, expected %s or %s",
+                          "Unrecognized response type %s for method StreamingAnalyzeContent,"
+                              + " expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingAnalyzeContentResponse.class.getName(),
                           Exception.class.getName())));
@@ -280,7 +281,8 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SuggestKnowledgeAssist, expected %s or %s",
+                  "Unrecognized response type %s for method SuggestKnowledgeAssist, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SuggestKnowledgeAssistResponse.class.getName(),
                   Exception.class.getName())));

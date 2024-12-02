@@ -34,6 +34,7 @@ public final class UpdateInstanceMetadataItemsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse)
     UpdateInstanceMetadataItemsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateInstanceMetadataItemsResponse.newBuilder() to construct.
   private UpdateInstanceMetadataItemsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -101,6 +102,7 @@ public final class UpdateInstanceMetadataItemsResponse
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
+
   /**
    *
    *
@@ -117,12 +119,14 @@ public final class UpdateInstanceMetadataItemsResponse
     }
     return internalGetItems().getMap().containsKey(key);
   }
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getItems() {
     return getItemsMap();
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class UpdateInstanceMetadataItemsResponse
   public java.util.Map<java.lang.String, java.lang.String> getItemsMap() {
     return internalGetItems().getMap();
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class UpdateInstanceMetadataItemsResponse
     java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -346,6 +352,7 @@ public final class UpdateInstanceMetadataItemsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +589,7 @@ public final class UpdateInstanceMetadataItemsResponse
     public int getItemsCount() {
       return internalGetItems().getMap().size();
     }
+
     /**
      *
      *
@@ -598,12 +606,14 @@ public final class UpdateInstanceMetadataItemsResponse
       }
       return internalGetItems().getMap().containsKey(key);
     }
+
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getItems() {
       return getItemsMap();
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class UpdateInstanceMetadataItemsResponse
     public java.util.Map<java.lang.String, java.lang.String> getItemsMap() {
       return internalGetItems().getMap();
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class UpdateInstanceMetadataItemsResponse
       java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -663,6 +675,7 @@ public final class UpdateInstanceMetadataItemsResponse
       internalGetMutableItems().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -679,12 +692,14 @@ public final class UpdateInstanceMetadataItemsResponse
       internalGetMutableItems().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableItems() {
       bitField0_ |= 0x00000001;
       return internalGetMutableItems().getMutableMap();
     }
+
     /**
      *
      *
@@ -705,6 +720,7 @@ public final class UpdateInstanceMetadataItemsResponse
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

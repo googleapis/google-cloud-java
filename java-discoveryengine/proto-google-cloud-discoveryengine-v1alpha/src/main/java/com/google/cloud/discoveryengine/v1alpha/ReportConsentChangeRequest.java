@@ -33,6 +33,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ReportConsentChangeRequest)
     ReportConsentChangeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportConsentChangeRequest.newBuilder() to construct.
   private ReportConsentChangeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,6 +113,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
      * <code>CONSENT_CHANGE_ACTION_UNSPECIFIED = 0;</code>
      */
     public static final int CONSENT_CHANGE_ACTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -211,6 +213,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
 
   public static final int CONSENT_CHANGE_ACTION_FIELD_NUMBER = 1;
   private int consentChangeAction_ = 0;
+
   /**
    *
    *
@@ -230,6 +233,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
   public int getConsentChangeActionValue() {
     return consentChangeAction_;
   }
+
   /**
    *
    *
@@ -261,6 +265,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -288,6 +293,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -320,6 +326,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceTermId_ = "";
+
   /**
    *
    *
@@ -350,6 +357,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -385,6 +393,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceTermVersion_ = "";
+
   /**
    *
    *
@@ -408,6 +417,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -626,6 +636,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -860,6 +871,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int consentChangeAction_ = 0;
+
     /**
      *
      *
@@ -879,6 +891,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
     public int getConsentChangeActionValue() {
       return consentChangeAction_;
     }
+
     /**
      *
      *
@@ -901,6 +914,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +942,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -955,6 +970,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +994,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1004,6 +1021,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1048,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1074,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1096,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1125,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object serviceTermId_ = "";
+
     /**
      *
      *
@@ -1133,6 +1155,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1185,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1214,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1239,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1271,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object serviceTermVersion_ = "";
+
     /**
      *
      *
@@ -1267,6 +1294,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1289,6 +1317,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1310,6 +1339,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1357,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface CreateParticipantRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateParticipantRequestOrBuilder
    * @return Whether the participant field is set.
    */
   boolean hasParticipant();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateParticipantRequestOrBuilder
    * @return The participant.
    */
   com.google.cloud.dialogflow.v2.Participant getParticipant();
+
   /**
    *
    *

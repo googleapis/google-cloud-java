@@ -33,6 +33,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.SearchVehiclesResponse)
     SearchVehiclesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchVehiclesResponse.newBuilder() to construct.
   private SearchVehiclesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.VehicleMatch> matches_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.maps.fleetengine.v1.VehicleMatch> getMatchesList() {
     return matches_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       getMatchesOrBuilderList() {
     return matches_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
   public int getMatchesCount() {
     return matches_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
   public com.google.maps.fleetengine.v1.VehicleMatch getMatches(int index) {
     return matches_.get(index);
   }
+
   /**
    *
    *
@@ -301,6 +307,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +570,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
         return matchesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
         return matchesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
         return matchesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -620,6 +630,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +700,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +721,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +743,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +765,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +786,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +807,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +821,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
     public com.google.maps.fleetengine.v1.VehicleMatch.Builder getMatchesBuilder(int index) {
       return getMatchesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -819,6 +839,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
         return matchesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -837,6 +858,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(matches_);
       }
     }
+
     /**
      *
      *
@@ -851,6 +873,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       return getMatchesFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.VehicleMatch.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -865,6 +888,7 @@ public final class SearchVehiclesResponse extends com.google.protobuf.GeneratedM
       return getMatchesFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.VehicleMatch.getDefaultInstance());
     }
+
     /**
      *
      *

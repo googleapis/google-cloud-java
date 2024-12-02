@@ -37,6 +37,7 @@ public interface ListDescendantSecurityHealthAnalyticsCustomModulesResponseOrBui
    */
   java.util.List<com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule>
       getSecurityHealthAnalyticsCustomModulesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListDescendantSecurityHealthAnalyticsCustomModulesResponseOrBui
    */
   com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
       getSecurityHealthAnalyticsCustomModules(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListDescendantSecurityHealthAnalyticsCustomModulesResponseOrBui
    * </code>
    */
   int getSecurityHealthAnalyticsCustomModulesCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface ListDescendantSecurityHealthAnalyticsCustomModulesResponseOrBui
               com.google.cloud.securitycentermanagement.v1
                   .SecurityHealthAnalyticsCustomModuleOrBuilder>
       getSecurityHealthAnalyticsCustomModulesOrBuilderList();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface ListDescendantSecurityHealthAnalyticsCustomModulesResponseOrBui
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

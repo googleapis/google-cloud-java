@@ -36,6 +36,7 @@ public interface SearchCasesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface SearchCasesRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -169,6 +171,7 @@ public interface SearchCasesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

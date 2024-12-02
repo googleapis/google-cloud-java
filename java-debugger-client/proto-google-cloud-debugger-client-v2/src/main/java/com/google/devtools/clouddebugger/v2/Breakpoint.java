@@ -33,6 +33,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.Breakpoint)
     BreakpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Breakpoint.newBuilder() to construct.
   private Breakpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,6 +134,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>CAPTURE = 0;</code>
      */
     public static final int CAPTURE_VALUE = 0;
+
     /**
      *
      *
@@ -279,6 +281,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>INFO = 0;</code>
      */
     public static final int INFO_VALUE = 0;
+
     /**
      *
      *
@@ -289,6 +292,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>WARNING = 1;</code>
      */
     public static final int WARNING_VALUE = 1;
+
     /**
      *
      *
@@ -388,6 +392,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -411,6 +416,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -437,6 +443,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTION_FIELD_NUMBER = 13;
   private int action_ = 0;
+
   /**
    *
    *
@@ -453,6 +460,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public int getActionValue() {
     return action_;
   }
+
   /**
    *
    *
@@ -476,6 +484,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCATION_FIELD_NUMBER = 2;
   private com.google.devtools.clouddebugger.v2.SourceLocation location_;
+
   /**
    *
    *
@@ -491,6 +500,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -508,6 +518,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouddebugger.v2.SourceLocation.getDefaultInstance()
         : location_;
   }
+
   /**
    *
    *
@@ -528,6 +539,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object condition_ = "";
+
   /**
    *
    *
@@ -553,6 +565,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -584,6 +597,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList expressions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -601,6 +615,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExpressionsList() {
     return expressions_;
   }
+
   /**
    *
    *
@@ -618,6 +633,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public int getExpressionsCount() {
     return expressions_.size();
   }
+
   /**
    *
    *
@@ -636,6 +652,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExpressions(int index) {
     return expressions_.get(index);
   }
+
   /**
    *
    *
@@ -659,6 +676,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logMessageFormat_ = "";
+
   /**
    *
    *
@@ -689,6 +707,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -722,6 +741,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOG_LEVEL_FIELD_NUMBER = 15;
   private int logLevel_ = 0;
+
   /**
    *
    *
@@ -737,6 +757,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public int getLogLevelValue() {
     return logLevel_;
   }
+
   /**
    *
    *
@@ -759,6 +780,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_FINAL_STATE_FIELD_NUMBER = 5;
   private boolean isFinalState_ = false;
+
   /**
    *
    *
@@ -778,6 +800,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -793,6 +816,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -808,6 +832,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -824,6 +849,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FINAL_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp finalTime_;
+
   /**
    *
    *
@@ -840,6 +866,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFinalTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -856,6 +883,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getFinalTime() {
     return finalTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finalTime_;
   }
+
   /**
    *
    *
@@ -875,6 +903,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userEmail_ = "";
+
   /**
    *
    *
@@ -898,6 +927,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -924,6 +954,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 10;
   private com.google.devtools.clouddebugger.v2.StatusMessage status_;
+
   /**
    *
    *
@@ -953,6 +984,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -984,6 +1016,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouddebugger.v2.StatusMessage.getDefaultInstance()
         : status_;
   }
+
   /**
    *
    *
@@ -1018,6 +1051,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.StackFrame> stackFrames_;
+
   /**
    *
    *
@@ -1032,6 +1066,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.devtools.clouddebugger.v2.StackFrame> getStackFramesList() {
     return stackFrames_;
   }
+
   /**
    *
    *
@@ -1047,6 +1082,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       getStackFramesOrBuilderList() {
     return stackFrames_;
   }
+
   /**
    *
    *
@@ -1061,6 +1097,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public int getStackFramesCount() {
     return stackFrames_.size();
   }
+
   /**
    *
    *
@@ -1075,6 +1112,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.clouddebugger.v2.StackFrame getStackFrames(int index) {
     return stackFrames_.get(index);
   }
+
   /**
    *
    *
@@ -1095,6 +1133,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> evaluatedExpressions_;
+
   /**
    *
    *
@@ -1115,6 +1154,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       getEvaluatedExpressionsList() {
     return evaluatedExpressions_;
   }
+
   /**
    *
    *
@@ -1135,6 +1175,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       getEvaluatedExpressionsOrBuilderList() {
     return evaluatedExpressions_;
   }
+
   /**
    *
    *
@@ -1154,6 +1195,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public int getEvaluatedExpressionsCount() {
     return evaluatedExpressions_.size();
   }
+
   /**
    *
    *
@@ -1173,6 +1215,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.clouddebugger.v2.Variable getEvaluatedExpressions(int index) {
     return evaluatedExpressions_.get(index);
   }
+
   /**
    *
    *
@@ -1198,6 +1241,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> variableTable_;
+
   /**
    *
    *
@@ -1222,6 +1266,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.devtools.clouddebugger.v2.Variable> getVariableTableList() {
     return variableTable_;
   }
+
   /**
    *
    *
@@ -1247,6 +1292,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       getVariableTableOrBuilderList() {
     return variableTable_;
   }
+
   /**
    *
    *
@@ -1271,6 +1317,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public int getVariableTableCount() {
     return variableTable_.size();
   }
+
   /**
    *
    *
@@ -1295,6 +1342,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.clouddebugger.v2.Variable getVariableTable(int index) {
     return variableTable_.get(index);
   }
+
   /**
    *
    *
@@ -1347,6 +1395,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -1364,12 +1413,14 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -1384,6 +1435,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -1405,6 +1457,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1763,6 +1816,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2357,6 +2411,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -2379,6 +2434,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2401,6 +2457,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2422,6 +2479,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2439,6 +2497,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2463,6 +2522,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int action_ = 0;
+
     /**
      *
      *
@@ -2479,6 +2539,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public int getActionValue() {
       return action_;
     }
+
     /**
      *
      *
@@ -2498,6 +2559,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2518,6 +2580,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.clouddebugger.v2.Breakpoint.Action.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2540,6 +2603,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2565,6 +2629,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouddebugger.v2.SourceLocation.Builder,
             com.google.devtools.clouddebugger.v2.SourceLocationOrBuilder>
         locationBuilder_;
+
     /**
      *
      *
@@ -2579,6 +2644,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2599,6 +2665,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2621,6 +2688,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2641,6 +2709,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2669,6 +2738,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2688,6 +2758,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2702,6 +2773,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2720,6 +2792,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             : location_;
       }
     }
+
     /**
      *
      *
@@ -2747,6 +2820,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object condition_ = "";
+
     /**
      *
      *
@@ -2771,6 +2845,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2795,6 +2870,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2818,6 +2894,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2837,6 +2914,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2871,6 +2949,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -2889,6 +2968,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       expressions_.makeImmutable();
       return expressions_;
     }
+
     /**
      *
      *
@@ -2906,6 +2986,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public int getExpressionsCount() {
       return expressions_.size();
     }
+
     /**
      *
      *
@@ -2924,6 +3005,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExpressions(int index) {
       return expressions_.get(index);
     }
+
     /**
      *
      *
@@ -2942,6 +3024,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExpressionsBytes(int index) {
       return expressions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2968,6 +3051,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2993,6 +3077,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3015,6 +3100,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3036,6 +3122,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3064,6 +3151,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object logMessageFormat_ = "";
+
     /**
      *
      *
@@ -3093,6 +3181,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3122,6 +3211,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3150,6 +3240,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3174,6 +3265,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3205,6 +3297,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int logLevel_ = 0;
+
     /**
      *
      *
@@ -3220,6 +3313,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public int getLogLevelValue() {
       return logLevel_;
     }
+
     /**
      *
      *
@@ -3238,6 +3332,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3257,6 +3352,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3278,6 +3374,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3297,6 +3394,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isFinalState_;
+
     /**
      *
      *
@@ -3313,6 +3411,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsFinalState() {
       return isFinalState_;
     }
+
     /**
      *
      *
@@ -3333,6 +3432,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3358,6 +3458,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3372,6 +3473,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3392,6 +3494,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3414,6 +3517,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3433,6 +3537,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3460,6 +3565,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3479,6 +3585,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3493,6 +3600,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3511,6 +3619,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3543,6 +3652,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         finalTimeBuilder_;
+
     /**
      *
      *
@@ -3558,6 +3668,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFinalTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3577,6 +3688,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return finalTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3600,6 +3712,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3620,6 +3733,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3648,6 +3762,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3668,6 +3783,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3683,6 +3799,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFinalTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3700,6 +3817,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return finalTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finalTime_;
       }
     }
+
     /**
      *
      *
@@ -3728,6 +3846,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object userEmail_ = "";
+
     /**
      *
      *
@@ -3750,6 +3869,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3772,6 +3892,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3793,6 +3914,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3810,6 +3932,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3839,6 +3962,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouddebugger.v2.StatusMessage.Builder,
             com.google.devtools.clouddebugger.v2.StatusMessageOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -3867,6 +3991,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3901,6 +4026,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3937,6 +4063,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3971,6 +4098,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4012,6 +4140,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4045,6 +4174,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4073,6 +4203,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4105,6 +4236,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             : status_;
       }
     }
+
     /**
      *
      *
@@ -4179,6 +4311,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return stackFramesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4196,6 +4329,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return stackFramesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4213,6 +4347,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return stackFramesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4237,6 +4372,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4258,6 +4394,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4281,6 +4418,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4305,6 +4443,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4326,6 +4465,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4347,6 +4487,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4368,6 +4509,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4388,6 +4530,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4408,6 +4551,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4422,6 +4566,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getStackFramesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4440,6 +4585,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return stackFramesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4458,6 +4604,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(stackFrames_);
       }
     }
+
     /**
      *
      *
@@ -4472,6 +4619,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return getStackFramesFieldBuilder()
           .addBuilder(com.google.devtools.clouddebugger.v2.StackFrame.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4487,6 +4635,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return getStackFramesFieldBuilder()
           .addBuilder(index, com.google.devtools.clouddebugger.v2.StackFrame.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4560,6 +4709,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return evaluatedExpressionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4582,6 +4732,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return evaluatedExpressionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4604,6 +4755,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return evaluatedExpressionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4633,6 +4785,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4659,6 +4812,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4687,6 +4841,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4716,6 +4871,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4742,6 +4898,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4768,6 +4925,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4794,6 +4952,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4819,6 +4978,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4844,6 +5004,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4863,6 +5024,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getEvaluatedExpressionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4886,6 +5048,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return evaluatedExpressionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4909,6 +5072,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(evaluatedExpressions_);
       }
     }
+
     /**
      *
      *
@@ -4928,6 +5092,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return getEvaluatedExpressionsFieldBuilder()
           .addBuilder(com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4948,6 +5113,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return getEvaluatedExpressionsFieldBuilder()
           .addBuilder(index, com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5032,6 +5198,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return variableTableBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5059,6 +5226,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return variableTableBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5086,6 +5254,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return variableTableBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5120,6 +5289,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5151,6 +5321,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5184,6 +5355,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5218,6 +5390,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5249,6 +5422,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5280,6 +5454,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5311,6 +5486,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5341,6 +5517,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5371,6 +5548,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5395,6 +5573,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getVariableTableFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5423,6 +5602,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return variableTableBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5451,6 +5631,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(variableTable_);
       }
     }
+
     /**
      *
      *
@@ -5475,6 +5656,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return getVariableTableFieldBuilder()
           .addBuilder(com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5500,6 +5682,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return getVariableTableFieldBuilder()
           .addBuilder(index, com.google.devtools.clouddebugger.v2.Variable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5570,6 +5753,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -5587,12 +5771,14 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -5607,6 +5793,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -5628,6 +5815,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -5655,6 +5843,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -5672,12 +5861,14 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00008000;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -5699,6 +5890,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00008000;
       return this;
     }
+
     /**
      *
      *

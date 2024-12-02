@@ -38,6 +38,7 @@ public interface AttachDiskInstanceRequestOrBuilder
    * @return Whether the attachedDiskResource field is set.
    */
   boolean hasAttachedDiskResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AttachDiskInstanceRequestOrBuilder
    * @return The attachedDiskResource.
    */
   com.google.cloud.compute.v1.AttachedDisk getAttachedDiskResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AttachDiskInstanceRequestOrBuilder
    * @return Whether the forceAttach field is set.
    */
   boolean hasForceAttach();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface AttachDiskInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AttachDiskInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface AttachDiskInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface AttachDiskInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface AttachDiskInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

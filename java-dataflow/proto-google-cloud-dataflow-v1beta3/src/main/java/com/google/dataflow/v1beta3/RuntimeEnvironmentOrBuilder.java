@@ -66,6 +66,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The tempLocation.
    */
   java.lang.String getTempLocation();
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -188,6 +192,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return A list containing the additionalExperiments.
    */
   java.util.List<java.lang.String> getAdditionalExperimentsList();
+
   /**
    *
    *
@@ -201,6 +206,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The count of additionalExperiments.
    */
   int getAdditionalExperimentsCount();
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The additionalExperiments at the given index.
    */
   java.lang.String getAdditionalExperiments(int index);
+
   /**
    *
    *
@@ -243,6 +250,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -274,6 +282,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -307,6 +316,7 @@ public interface RuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   int getAdditionalUserLabelsCount();
+
   /**
    *
    *
@@ -322,9 +332,11 @@ public interface RuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   boolean containsAdditionalUserLabels(java.lang.String key);
+
   /** Use {@link #getAdditionalUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels();
+
   /**
    *
    *
@@ -340,6 +352,7 @@ public interface RuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap();
+
   /**
    *
    *
@@ -359,6 +372,7 @@ public interface RuntimeEnvironmentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -389,6 +403,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -416,6 +431,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The enum numeric value on the wire for ipConfiguration.
    */
   int getIpConfigurationValue();
+
   /**
    *
    *
@@ -445,6 +461,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The workerRegion.
    */
   java.lang.String getWorkerRegion();
+
   /**
    *
    *
@@ -479,6 +496,7 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The workerZone.
    */
   java.lang.String getWorkerZone();
+
   /**
    *
    *

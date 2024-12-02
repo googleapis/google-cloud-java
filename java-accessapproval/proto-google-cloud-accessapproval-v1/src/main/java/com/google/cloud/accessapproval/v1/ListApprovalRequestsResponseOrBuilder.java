@@ -34,6 +34,7 @@ public interface ListApprovalRequestsResponseOrBuilder
    * <code>repeated .google.cloud.accessapproval.v1.ApprovalRequest approval_requests = 1;</code>
    */
   java.util.List<com.google.cloud.accessapproval.v1.ApprovalRequest> getApprovalRequestsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListApprovalRequestsResponseOrBuilder
    * <code>repeated .google.cloud.accessapproval.v1.ApprovalRequest approval_requests = 1;</code>
    */
   com.google.cloud.accessapproval.v1.ApprovalRequest getApprovalRequests(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListApprovalRequestsResponseOrBuilder
    * <code>repeated .google.cloud.accessapproval.v1.ApprovalRequest approval_requests = 1;</code>
    */
   int getApprovalRequestsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListApprovalRequestsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.accessapproval.v1.ApprovalRequestOrBuilder>
       getApprovalRequestsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListApprovalRequestsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

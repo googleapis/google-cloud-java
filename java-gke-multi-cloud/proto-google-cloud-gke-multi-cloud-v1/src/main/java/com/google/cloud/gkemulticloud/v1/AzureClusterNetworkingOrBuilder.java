@@ -45,6 +45,7 @@ public interface AzureClusterNetworkingOrBuilder
    * @return The virtualNetworkId.
    */
   java.lang.String getVirtualNetworkId();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface AzureClusterNetworkingOrBuilder
    * @return A list containing the podAddressCidrBlocks.
    */
   java.util.List<java.lang.String> getPodAddressCidrBlocksList();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface AzureClusterNetworkingOrBuilder
    * @return The count of podAddressCidrBlocks.
    */
   int getPodAddressCidrBlocksCount();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface AzureClusterNetworkingOrBuilder
    * @return The podAddressCidrBlocks at the given index.
    */
   java.lang.String getPodAddressCidrBlocks(int index);
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public interface AzureClusterNetworkingOrBuilder
    * @return A list containing the serviceAddressCidrBlocks.
    */
   java.util.List<java.lang.String> getServiceAddressCidrBlocksList();
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public interface AzureClusterNetworkingOrBuilder
    * @return The count of serviceAddressCidrBlocks.
    */
   int getServiceAddressCidrBlocksCount();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface AzureClusterNetworkingOrBuilder
    * @return The serviceAddressCidrBlocks at the given index.
    */
   java.lang.String getServiceAddressCidrBlocks(int index);
+
   /**
    *
    *
@@ -247,6 +254,7 @@ public interface AzureClusterNetworkingOrBuilder
    * @return The serviceLoadBalancerSubnetId.
    */
   java.lang.String getServiceLoadBalancerSubnetId();
+
   /**
    *
    *

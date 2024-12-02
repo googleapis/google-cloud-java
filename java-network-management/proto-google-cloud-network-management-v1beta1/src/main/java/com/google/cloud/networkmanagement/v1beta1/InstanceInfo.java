@@ -33,6 +33,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.InstanceInfo)
     InstanceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceInfo.newBuilder() to construct.
   private InstanceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interface_ = "";
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkUri_ = "";
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -279,6 +288,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object internalIp_ = "";
+
   /**
    *
    *
@@ -302,6 +312,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -330,6 +341,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalIp_ = "";
+
   /**
    *
    *
@@ -353,6 +365,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -382,6 +395,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList networkTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -396,6 +410,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
     return networkTags_;
   }
+
   /**
    *
    *
@@ -410,6 +425,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
   public int getNetworkTagsCount() {
     return networkTags_.size();
   }
+
   /**
    *
    *
@@ -425,6 +441,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getNetworkTags(int index) {
     return networkTags_.get(index);
   }
+
   /**
    *
    *
@@ -445,6 +462,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -471,6 +489,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -502,6 +521,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pscNetworkAttachmentUri_ = "";
+
   /**
    *
    *
@@ -525,6 +545,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -788,6 +809,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1099,6 +1121,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1121,6 +1144,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1143,6 +1167,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1189,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1207,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1232,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1227,6 +1255,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1249,6 +1278,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1270,6 +1300,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1318,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1343,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object interface_ = "";
+
     /**
      *
      *
@@ -1333,6 +1366,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1355,6 +1389,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1376,6 +1411,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1429,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1454,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object networkUri_ = "";
+
     /**
      *
      *
@@ -1439,6 +1477,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1461,6 +1500,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1482,6 +1522,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1499,6 +1540,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1565,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object internalIp_ = "";
+
     /**
      *
      *
@@ -1545,6 +1588,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1567,6 +1611,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1588,6 +1633,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1651,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1676,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object externalIp_ = "";
+
     /**
      *
      *
@@ -1651,6 +1699,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1673,6 +1722,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1694,6 +1744,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1762,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1743,6 +1795,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -1758,6 +1811,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       networkTags_.makeImmutable();
       return networkTags_;
     }
+
     /**
      *
      *
@@ -1772,6 +1826,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     public int getNetworkTagsCount() {
       return networkTags_.size();
     }
+
     /**
      *
      *
@@ -1787,6 +1842,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNetworkTags(int index) {
       return networkTags_.get(index);
     }
+
     /**
      *
      *
@@ -1802,6 +1858,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
       return networkTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1825,6 +1882,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1847,6 +1905,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1866,6 +1925,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1884,6 +1944,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1909,6 +1970,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -1934,6 +1996,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1959,6 +2022,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1983,6 +2047,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2003,6 +2068,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2030,6 +2096,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pscNetworkAttachmentUri_ = "";
+
     /**
      *
      *
@@ -2052,6 +2119,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2074,6 +2142,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2095,6 +2164,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2112,6 +2182,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

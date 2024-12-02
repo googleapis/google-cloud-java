@@ -37,6 +37,7 @@ public interface GcsSourceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

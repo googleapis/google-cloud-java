@@ -34,6 +34,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallAction)
     FirewallActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FirewallAction.newBuilder() to construct.
   private FirewallAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.FirewallAction.AllowAction)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallAction.AllowAction)
       AllowActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AllowAction.newBuilder() to construct.
     private AllowAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -260,6 +263,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -494,6 +498,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.FirewallAction.BlockAction)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -509,6 +514,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallAction.BlockAction)
       BlockActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BlockAction.newBuilder() to construct.
     private BlockAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -689,6 +695,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -924,6 +931,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -944,6 +952,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction)
       IncludeRecaptchaScriptActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IncludeRecaptchaScriptAction.newBuilder() to construct.
     private IncludeRecaptchaScriptAction(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1134,6 +1143,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1385,6 +1395,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.FirewallAction.RedirectAction)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -1400,6 +1411,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallAction.RedirectAction)
       RedirectActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RedirectAction.newBuilder() to construct.
     private RedirectAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1581,6 +1593,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1832,6 +1845,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      * @return The path.
      */
     java.lang.String getPath();
+
     /**
      *
      *
@@ -1846,6 +1860,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPathBytes();
   }
+
   /**
    *
    *
@@ -1861,6 +1876,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallAction.SubstituteAction)
       SubstituteActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SubstituteAction.newBuilder() to construct.
     private SubstituteAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1895,6 +1911,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -1919,6 +1936,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2106,6 +2124,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2301,6 +2320,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object path_ = "";
+
       /**
        *
        *
@@ -2324,6 +2344,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2347,6 +2368,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2369,6 +2391,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2387,6 +2410,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2495,6 +2519,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      * @return The key.
      */
     java.lang.String getKey();
+
     /**
      *
      *
@@ -2520,6 +2545,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
+
     /**
      *
      *
@@ -2533,6 +2559,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getValueBytes();
   }
+
   /**
    *
    *
@@ -2549,6 +2576,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallAction.SetHeaderAction)
       SetHeaderActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SetHeaderAction.newBuilder() to construct.
     private SetHeaderAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2584,6 +2612,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -2607,6 +2636,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2635,6 +2665,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
+
     /**
      *
      *
@@ -2658,6 +2689,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2853,6 +2885,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3064,6 +3097,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object key_ = "";
+
       /**
        *
        *
@@ -3086,6 +3120,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3108,6 +3143,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3129,6 +3165,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3146,6 +3183,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3170,6 +3208,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object value_ = "";
+
       /**
        *
        *
@@ -3192,6 +3231,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3214,6 +3254,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3235,6 +3276,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3252,6 +3294,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3363,6 +3406,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     private FirewallActionOneofCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3404,6 +3448,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -3420,6 +3465,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAllow() {
     return firewallActionOneofCase_ == 1;
   }
+
   /**
    *
    *
@@ -3439,6 +3485,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.FirewallAction.AllowAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3458,6 +3505,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BLOCK_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -3474,6 +3522,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBlock() {
     return firewallActionOneofCase_ == 2;
   }
+
   /**
    *
    *
@@ -3493,6 +3542,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.FirewallAction.BlockAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3512,6 +3562,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUDE_RECAPTCHA_SCRIPT_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -3530,6 +3581,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIncludeRecaptchaScript() {
     return firewallActionOneofCase_ == 6;
   }
+
   /**
    *
    *
@@ -3554,6 +3606,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     return com.google.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3578,6 +3631,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REDIRECT_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -3594,6 +3648,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRedirect() {
     return firewallActionOneofCase_ == 5;
   }
+
   /**
    *
    *
@@ -3613,6 +3668,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.FirewallAction.RedirectAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3633,6 +3689,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBSTITUTE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -3650,6 +3707,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSubstitute() {
     return firewallActionOneofCase_ == 3;
   }
+
   /**
    *
    *
@@ -3671,6 +3729,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.FirewallAction.SubstituteAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3693,6 +3752,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SET_HEADER_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -3710,6 +3770,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSetHeader() {
     return firewallActionOneofCase_ == 4;
   }
+
   /**
    *
    *
@@ -3731,6 +3792,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.FirewallAction.SetHeaderAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4022,6 +4084,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4327,6 +4390,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FirewallAction.AllowAction.Builder,
             com.google.recaptchaenterprise.v1.FirewallAction.AllowActionOrBuilder>
         allowBuilder_;
+
     /**
      *
      *
@@ -4343,6 +4407,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAllow() {
       return firewallActionOneofCase_ == 1;
     }
+
     /**
      *
      *
@@ -4370,6 +4435,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.FirewallAction.AllowAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4393,6 +4459,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -4414,6 +4481,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -4450,6 +4518,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -4476,6 +4545,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4489,6 +4559,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.FirewallAction.AllowAction.Builder getAllowBuilder() {
       return getAllowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4512,6 +4583,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.FirewallAction.AllowAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4552,6 +4624,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FirewallAction.BlockAction.Builder,
             com.google.recaptchaenterprise.v1.FirewallAction.BlockActionOrBuilder>
         blockBuilder_;
+
     /**
      *
      *
@@ -4568,6 +4641,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBlock() {
       return firewallActionOneofCase_ == 2;
     }
+
     /**
      *
      *
@@ -4595,6 +4669,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.FirewallAction.BlockAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4618,6 +4693,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4639,6 +4715,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4675,6 +4752,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4701,6 +4779,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4714,6 +4793,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.FirewallAction.BlockAction.Builder getBlockBuilder() {
       return getBlockFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4737,6 +4817,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.FirewallAction.BlockAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4777,6 +4858,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction.Builder,
             com.google.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptActionOrBuilder>
         includeRecaptchaScriptBuilder_;
+
     /**
      *
      *
@@ -4795,6 +4877,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIncludeRecaptchaScript() {
       return firewallActionOneofCase_ == 6;
     }
+
     /**
      *
      *
@@ -4827,6 +4910,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4853,6 +4937,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4877,6 +4962,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4918,6 +5004,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4946,6 +5033,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4962,6 +5050,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         getIncludeRecaptchaScriptBuilder() {
       return getIncludeRecaptchaScriptFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4988,6 +5077,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5034,6 +5124,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FirewallAction.RedirectAction.Builder,
             com.google.recaptchaenterprise.v1.FirewallAction.RedirectActionOrBuilder>
         redirectBuilder_;
+
     /**
      *
      *
@@ -5050,6 +5141,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRedirect() {
       return firewallActionOneofCase_ == 5;
     }
+
     /**
      *
      *
@@ -5077,6 +5169,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.FirewallAction.RedirectAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5101,6 +5194,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -5122,6 +5216,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -5159,6 +5254,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -5185,6 +5281,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5199,6 +5296,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         getRedirectBuilder() {
       return getRedirectFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5222,6 +5320,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.FirewallAction.RedirectAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5263,6 +5362,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FirewallAction.SubstituteAction.Builder,
             com.google.recaptchaenterprise.v1.FirewallAction.SubstituteActionOrBuilder>
         substituteBuilder_;
+
     /**
      *
      *
@@ -5280,6 +5380,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSubstitute() {
       return firewallActionOneofCase_ == 3;
     }
+
     /**
      *
      *
@@ -5310,6 +5411,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5335,6 +5437,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5357,6 +5460,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5395,6 +5499,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5422,6 +5527,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5437,6 +5543,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         getSubstituteBuilder() {
       return getSubstituteFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5462,6 +5569,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5505,6 +5613,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FirewallAction.SetHeaderAction.Builder,
             com.google.recaptchaenterprise.v1.FirewallAction.SetHeaderActionOrBuilder>
         setHeaderBuilder_;
+
     /**
      *
      *
@@ -5522,6 +5631,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSetHeader() {
       return firewallActionOneofCase_ == 4;
     }
+
     /**
      *
      *
@@ -5552,6 +5662,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5577,6 +5688,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5599,6 +5711,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5637,6 +5750,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       firewallActionOneofCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5664,6 +5778,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5679,6 +5794,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
         getSetHeaderBuilder() {
       return getSetHeaderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5704,6 +5820,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

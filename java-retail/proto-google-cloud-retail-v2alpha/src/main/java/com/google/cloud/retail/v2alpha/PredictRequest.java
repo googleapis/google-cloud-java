@@ -33,6 +33,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.PredictRequest)
     PredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PredictRequest.newBuilder() to construct.
   private PredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object placement_ = "";
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_EVENT_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2alpha.UserEvent userEvent_;
+
   /**
    *
    *
@@ -189,6 +193,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserEvent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -221,6 +226,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2alpha.UserEvent.getDefaultInstance()
         : userEvent_;
   }
+
   /**
    *
    *
@@ -254,6 +260,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -277,6 +284,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -303,6 +311,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -334,6 +343,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -395,6 +405,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -459,6 +470,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 6;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -507,6 +519,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   public int getParamsCount() {
     return internalGetParams().getMap().size();
   }
+
   /**
    *
    *
@@ -549,12 +562,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetParams().getMap().containsKey(key);
   }
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getParams() {
     return getParamsMap();
   }
+
   /**
    *
    *
@@ -594,6 +609,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getParamsMap() {
     return internalGetParams().getMap();
   }
+
   /**
    *
    *
@@ -640,6 +656,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetParams().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -713,6 +730,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -745,12 +763,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -780,6 +800,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -816,6 +837,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1096,6 +1118,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1427,6 +1450,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object placement_ = "";
+
     /**
      *
      *
@@ -1462,6 +1486,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1497,6 +1522,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1531,6 +1557,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1561,6 +1588,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1603,6 +1631,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.UserEvent.Builder,
             com.google.cloud.retail.v2alpha.UserEventOrBuilder>
         userEventBuilder_;
+
     /**
      *
      *
@@ -1632,6 +1661,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserEvent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1667,6 +1697,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return userEventBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1704,6 +1735,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1738,6 +1770,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1813,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1814,6 +1848,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1843,6 +1878,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserEventFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1876,6 +1912,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             : userEvent_;
       }
     }
+
     /**
      *
      *
@@ -1918,6 +1955,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1936,6 +1974,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1958,6 +1997,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1980,6 +2020,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -2005,6 +2046,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2030,6 +2072,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2054,6 +2097,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2074,6 +2118,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2101,6 +2146,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -2161,6 +2207,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2221,6 +2268,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2280,6 +2328,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2335,6 +2384,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2397,6 +2447,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -2415,6 +2466,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -2437,6 +2489,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2474,7 +2527,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ParamsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ParamsConverter paramsConverter = new ParamsConverter();
 
@@ -2514,6 +2568,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public int getParamsCount() {
       return internalGetParams().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2556,12 +2611,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetParams().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getParamsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getParams() {
       return getParamsMap();
     }
+
     /**
      *
      *
@@ -2601,6 +2658,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getParamsMap() {
       return internalGetParams().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2648,6 +2706,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableParams().ensureBuilderMap();
       return map.containsKey(key) ? paramsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -2701,6 +2760,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableParams().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2743,12 +2803,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableParams().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableParams() {
       bitField0_ |= 0x00000040;
       return internalGetMutableParams().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -2795,6 +2857,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -2840,6 +2903,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -2915,6 +2979,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2947,12 +3012,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2982,6 +3049,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -3018,6 +3086,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3060,6 +3129,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3092,12 +3162,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3134,6 +3206,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Requests)
     RequestsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Requests.newBuilder() to construct.
   private Requests(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RATIO_FIELD_NUMBER = 1;
   private double ratio_ = 0D;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHORT_TERM_ALLOWED_FIELD_NUMBER = 2;
   private int shortTermAllowed_ = 0;
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LONG_TERM_ALLOWED_FIELD_NUMBER = 3;
   private int longTermAllowed_ = 0;
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LONG_TERM_DENIED_FIELD_NUMBER = 4;
   private int longTermDenied_ = 0;
+
   /**
    *
    *
@@ -324,6 +329,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -544,6 +550,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double ratio_;
+
     /**
      *
      *
@@ -561,6 +568,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     public double getRatio() {
       return ratio_;
     }
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int shortTermAllowed_;
+
     /**
      *
      *
@@ -618,6 +628,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     public int getShortTermAllowed() {
       return shortTermAllowed_;
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +668,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int longTermAllowed_;
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     public int getLongTermAllowed() {
       return longTermAllowed_;
     }
+
     /**
      *
      *
@@ -690,6 +704,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +724,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int longTermDenied_;
+
     /**
      *
      *
@@ -724,6 +740,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
     public int getLongTermDenied() {
       return longTermDenied_;
     }
+
     /**
      *
      *
@@ -743,6 +760,7 @@ public final class Requests extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

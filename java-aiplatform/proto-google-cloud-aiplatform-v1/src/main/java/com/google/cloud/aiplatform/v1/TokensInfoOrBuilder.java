@@ -36,6 +36,7 @@ public interface TokensInfoOrBuilder
    * @return A list containing the tokens.
    */
   java.util.List<com.google.protobuf.ByteString> getTokensList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TokensInfoOrBuilder
    * @return The count of tokens.
    */
   int getTokensCount();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface TokensInfoOrBuilder
    * @return A list containing the tokenIds.
    */
   java.util.List<java.lang.Long> getTokenIdsList();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface TokensInfoOrBuilder
    * @return The count of tokenIds.
    */
   int getTokenIdsCount();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface TokensInfoOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.SearchTripsRequest)
     SearchTripsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchTripsRequest.newBuilder() to construct.
   private SearchTripsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.v1.RequestHeader header_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.maps.fleetengine.v1.RequestHeader.getDefaultInstance()
         : header_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vehicleId_ = "";
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ACTIVE_TRIPS_ONLY_FIELD_NUMBER = 5;
   private boolean activeTripsOnly_ = false;
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 6;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -301,6 +312,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -328,6 +340,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int MINIMUM_STALENESS_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration minimumStaleness_;
+
   /**
    *
    *
@@ -344,6 +357,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasMinimumStaleness() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Duration.getDefaultInstance()
         : minimumStaleness_;
   }
+
   /**
    *
    *
@@ -602,6 +617,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -897,6 +913,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
             com.google.maps.fleetengine.v1.RequestHeader.Builder,
             com.google.maps.fleetengine.v1.RequestHeaderOrBuilder>
         headerBuilder_;
+
     /**
      *
      *
@@ -911,6 +928,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -931,6 +949,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         return headerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -953,6 +972,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1020,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1040,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1055,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1050,6 +1074,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
             : header_;
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1102,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1102,6 +1128,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1127,6 +1154,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1151,6 +1179,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1200,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1198,6 +1228,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object vehicleId_ = "";
+
     /**
      *
      *
@@ -1226,6 +1257,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1254,6 +1286,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1281,6 +1314,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1338,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1369,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean activeTripsOnly_;
+
     /**
      *
      *
@@ -1350,6 +1386,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     public boolean getActiveTripsOnly() {
       return activeTripsOnly_;
     }
+
     /**
      *
      *
@@ -1370,6 +1407,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1428,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1405,6 +1444,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1424,6 +1464,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1484,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1466,6 +1508,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1489,6 +1532,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1555,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1574,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1605,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         minimumStalenessBuilder_;
+
     /**
      *
      *
@@ -1574,6 +1621,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasMinimumStaleness() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1595,6 +1643,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
         return minimumStalenessBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1618,6 +1667,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1688,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1666,6 +1717,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1738,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1701,6 +1754,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getMinimumStalenessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1720,6 +1774,7 @@ public final class SearchTripsRequest extends com.google.protobuf.GeneratedMessa
             : minimumStaleness_;
       }
     }
+
     /**
      *
      *

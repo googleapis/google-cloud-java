@@ -34,6 +34,7 @@ public interface PipelineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Action actions = 1;</code>
    */
   java.util.List<com.google.cloud.lifesciences.v2beta.Action> getActionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface PipelineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Action actions = 1;</code>
    */
   com.google.cloud.lifesciences.v2beta.Action getActions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface PipelineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Action actions = 1;</code>
    */
   int getActionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface PipelineOrBuilder
    */
   java.util.List<? extends com.google.cloud.lifesciences.v2beta.ActionOrBuilder>
       getActionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface PipelineOrBuilder
    * @return Whether the resources field is set.
    */
   boolean hasResources();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface PipelineOrBuilder
    * @return The resources.
    */
   com.google.cloud.lifesciences.v2beta.Resources getResources();
+
   /**
    *
    *
@@ -123,6 +129,7 @@ public interface PipelineOrBuilder
    * <code>map&lt;string, string&gt; environment = 3;</code>
    */
   int getEnvironmentCount();
+
   /**
    *
    *
@@ -135,9 +142,11 @@ public interface PipelineOrBuilder
    * <code>map&lt;string, string&gt; environment = 3;</code>
    */
   boolean containsEnvironment(java.lang.String key);
+
   /** Use {@link #getEnvironmentMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironment();
+
   /**
    *
    *
@@ -150,6 +159,7 @@ public interface PipelineOrBuilder
    * <code>map&lt;string, string&gt; environment = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentMap();
+
   /**
    *
    *
@@ -166,6 +176,7 @@ public interface PipelineOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -197,6 +208,7 @@ public interface PipelineOrBuilder
    * @return Whether the encryptedEnvironment field is set.
    */
   boolean hasEncryptedEnvironment();
+
   /**
    *
    *
@@ -215,6 +227,7 @@ public interface PipelineOrBuilder
    * @return The encryptedEnvironment.
    */
   com.google.cloud.lifesciences.v2beta.Secret getEncryptedEnvironment();
+
   /**
    *
    *
@@ -249,6 +262,7 @@ public interface PipelineOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -266,6 +280,7 @@ public interface PipelineOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *

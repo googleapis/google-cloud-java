@@ -48,6 +48,7 @@ public interface FindDirectMessageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

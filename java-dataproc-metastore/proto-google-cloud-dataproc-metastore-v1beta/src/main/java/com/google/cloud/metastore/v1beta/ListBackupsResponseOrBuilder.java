@@ -34,6 +34,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1beta.Backup backups = 1;</code>
    */
   java.util.List<com.google.cloud.metastore.v1beta.Backup> getBackupsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1beta.Backup backups = 1;</code>
    */
   com.google.cloud.metastore.v1beta.Backup getBackups(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1beta.Backup backups = 1;</code>
    */
   int getBackupsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListBackupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.metastore.v1beta.BackupOrBuilder>
       getBackupsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListBackupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListBackupsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListBackupsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListBackupsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

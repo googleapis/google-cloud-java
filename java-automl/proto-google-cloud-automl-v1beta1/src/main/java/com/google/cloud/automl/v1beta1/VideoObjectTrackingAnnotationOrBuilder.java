@@ -42,6 +42,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * @return The boundingBox.
    */
   com.google.cloud.automl.v1beta1.BoundingPoly getBoundingBox();
+
   /**
    *
    *

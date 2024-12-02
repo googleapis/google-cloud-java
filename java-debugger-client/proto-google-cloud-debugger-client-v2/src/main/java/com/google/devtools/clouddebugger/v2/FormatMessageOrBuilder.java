@@ -44,6 +44,7 @@ public interface FormatMessageOrBuilder
    * @return The format.
    */
   java.lang.String getFormat();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface FormatMessageOrBuilder
    * @return A list containing the parameters.
    */
   java.util.List<java.lang.String> getParametersList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface FormatMessageOrBuilder
    * @return The count of parameters.
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface FormatMessageOrBuilder
    * @return The parameters at the given index.
    */
   java.lang.String getParameters(int index);
+
   /**
    *
    *

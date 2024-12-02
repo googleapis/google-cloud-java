@@ -154,6 +154,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_UNSPECIFIED = 0;</code>
    */
   public static final int AUDIO_ENCODING_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -164,6 +165,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_LINEAR_16 = 1;</code>
    */
   public static final int AUDIO_ENCODING_LINEAR_16_VALUE = 1;
+
   /**
    *
    *
@@ -178,6 +180,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_FLAC = 2;</code>
    */
   public static final int AUDIO_ENCODING_FLAC_VALUE = 2;
+
   /**
    *
    *
@@ -188,6 +191,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_MULAW = 3;</code>
    */
   public static final int AUDIO_ENCODING_MULAW_VALUE = 3;
+
   /**
    *
    *
@@ -198,6 +202,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_AMR = 4;</code>
    */
   public static final int AUDIO_ENCODING_AMR_VALUE = 4;
+
   /**
    *
    *
@@ -208,6 +213,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_AMR_WB = 5;</code>
    */
   public static final int AUDIO_ENCODING_AMR_WB_VALUE = 5;
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_OGG_OPUS = 6;</code>
    */
   public static final int AUDIO_ENCODING_OGG_OPUS_VALUE = 6;
+
   /**
    *
    *
@@ -242,6 +249,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 7;</code>
    */
   public static final int AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE_VALUE = 7;
+
   /**
    *
    *

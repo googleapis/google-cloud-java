@@ -38,6 +38,7 @@ public interface GetAnalysisRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface VersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface VersionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface VersionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface VersionOrBuilder
    * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface VersionOrBuilder
    * @return The documentation.
    */
   com.google.cloud.apihub.v1.Documentation getDocumentation();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface VersionOrBuilder
    * @return A list containing the specs.
    */
   java.util.List<java.lang.String> getSpecsList();
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public interface VersionOrBuilder
    * @return The count of specs.
    */
   int getSpecsCount();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface VersionOrBuilder
    * @return The specs at the given index.
    */
   java.lang.String getSpecs(int index);
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public interface VersionOrBuilder
    * @return A list containing the apiOperations.
    */
   java.util.List<java.lang.String> getApiOperationsList();
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public interface VersionOrBuilder
    * @return The count of apiOperations.
    */
   int getApiOperationsCount();
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public interface VersionOrBuilder
    * @return The apiOperations at the given index.
    */
   java.lang.String getApiOperations(int index);
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public interface VersionOrBuilder
    * @return A list containing the definitions.
    */
   java.util.List<java.lang.String> getDefinitionsList();
+
   /**
    *
    *
@@ -322,6 +334,7 @@ public interface VersionOrBuilder
    * @return The count of definitions.
    */
   int getDefinitionsCount();
+
   /**
    *
    *
@@ -340,6 +353,7 @@ public interface VersionOrBuilder
    * @return The definitions at the given index.
    */
   java.lang.String getDefinitions(int index);
+
   /**
    *
    *
@@ -377,6 +391,7 @@ public interface VersionOrBuilder
    * @return A list containing the deployments.
    */
   java.util.List<java.lang.String> getDeploymentsList();
+
   /**
    *
    *
@@ -395,6 +410,7 @@ public interface VersionOrBuilder
    * @return The count of deployments.
    */
   int getDeploymentsCount();
+
   /**
    *
    *
@@ -414,6 +430,7 @@ public interface VersionOrBuilder
    * @return The deployments at the given index.
    */
   java.lang.String getDeployments(int index);
+
   /**
    *
    *
@@ -447,6 +464,7 @@ public interface VersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -460,6 +478,7 @@ public interface VersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -485,6 +504,7 @@ public interface VersionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -498,6 +518,7 @@ public interface VersionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -531,6 +552,7 @@ public interface VersionOrBuilder
    * @return Whether the lifecycle field is set.
    */
   boolean hasLifecycle();
+
   /**
    *
    *
@@ -552,6 +574,7 @@ public interface VersionOrBuilder
    * @return The lifecycle.
    */
   com.google.cloud.apihub.v1.AttributeValues getLifecycle();
+
   /**
    *
    *
@@ -593,6 +616,7 @@ public interface VersionOrBuilder
    * @return Whether the compliance field is set.
    */
   boolean hasCompliance();
+
   /**
    *
    *
@@ -614,6 +638,7 @@ public interface VersionOrBuilder
    * @return The compliance.
    */
   com.google.cloud.apihub.v1.AttributeValues getCompliance();
+
   /**
    *
    *
@@ -655,6 +680,7 @@ public interface VersionOrBuilder
    * @return Whether the accreditation field is set.
    */
   boolean hasAccreditation();
+
   /**
    *
    *
@@ -676,6 +702,7 @@ public interface VersionOrBuilder
    * @return The accreditation.
    */
   com.google.cloud.apihub.v1.AttributeValues getAccreditation();
+
   /**
    *
    *
@@ -711,6 +738,7 @@ public interface VersionOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -726,9 +754,11 @@ public interface VersionOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributes();
+
   /**
    *
    *
@@ -744,6 +774,7 @@ public interface VersionOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributesMap();
+
   /**
    *
    *
@@ -763,6 +794,7 @@ public interface VersionOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.apihub.v1.AttributeValues defaultValue);
+
   /**
    *
    *
@@ -797,6 +829,7 @@ public interface VersionOrBuilder
    * @return The selectedDeployment.
    */
   java.lang.String getSelectedDeployment();
+
   /**
    *
    *

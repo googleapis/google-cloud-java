@@ -32,6 +32,7 @@ public interface DeleteBranchRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }

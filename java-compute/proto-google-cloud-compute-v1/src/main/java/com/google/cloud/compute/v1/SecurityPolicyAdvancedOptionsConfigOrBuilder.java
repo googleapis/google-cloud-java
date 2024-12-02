@@ -38,6 +38,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return Whether the jsonCustomConfig field is set.
    */
   boolean hasJsonCustomConfig();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
       getJsonCustomConfig();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return Whether the jsonParsing field is set.
    */
   boolean hasJsonParsing();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return The jsonParsing.
    */
   java.lang.String getJsonParsing();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return Whether the logLevel field is set.
    */
   boolean hasLogLevel();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return The logLevel.
    */
   java.lang.String getLogLevel();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return A list containing the userIpRequestHeaders.
    */
   java.util.List<java.lang.String> getUserIpRequestHeadersList();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return The count of userIpRequestHeaders.
    */
   int getUserIpRequestHeadersCount();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return The userIpRequestHeaders at the given index.
    */
   java.lang.String getUserIpRequestHeaders(int index);
+
   /**
    *
    *

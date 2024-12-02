@@ -33,6 +33,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1.LoggingComponentConfig)
     LoggingComponentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LoggingComponentConfig.newBuilder() to construct.
   private LoggingComponentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -166,6 +167,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>COMPONENT_UNSPECIFIED = 0;</code>
      */
     public static final int COMPONENT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -176,6 +178,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>SYSTEM_COMPONENTS = 1;</code>
      */
     public static final int SYSTEM_COMPONENTS_VALUE = 1;
+
     /**
      *
      *
@@ -186,6 +189,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>WORKLOADS = 2;</code>
      */
     public static final int WORKLOADS_VALUE = 2;
+
     /**
      *
      *
@@ -196,6 +200,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>APISERVER = 3;</code>
      */
     public static final int APISERVER_VALUE = 3;
+
     /**
      *
      *
@@ -206,6 +211,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>SCHEDULER = 4;</code>
      */
     public static final int SCHEDULER_VALUE = 4;
+
     /**
      *
      *
@@ -216,6 +222,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>CONTROLLER_MANAGER = 5;</code>
      */
     public static final int CONTROLLER_MANAGER_VALUE = 5;
+
     /**
      *
      *
@@ -226,6 +233,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>KCP_SSHD = 7;</code>
      */
     public static final int KCP_SSHD_VALUE = 7;
+
     /**
      *
      *
@@ -349,6 +357,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
                   : result;
             }
           };
+
   /**
    *
    *
@@ -368,6 +377,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
         java.lang.Integer, com.google.container.v1.LoggingComponentConfig.Component>(
         enableComponents_, enableComponents_converter_);
   }
+
   /**
    *
    *
@@ -384,6 +394,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
   public int getEnableComponentsCount() {
     return enableComponents_.size();
   }
+
   /**
    *
    *
@@ -401,6 +412,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
   public com.google.container.v1.LoggingComponentConfig.Component getEnableComponents(int index) {
     return enableComponents_converter_.convert(enableComponents_.get(index));
   }
+
   /**
    *
    *
@@ -417,6 +429,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
   public java.util.List<java.lang.Integer> getEnableComponentsValueList() {
     return enableComponents_;
   }
+
   /**
    *
    *
@@ -613,6 +626,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -828,6 +842,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -846,6 +861,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
           java.lang.Integer, com.google.container.v1.LoggingComponentConfig.Component>(
           enableComponents_, enableComponents_converter_);
     }
+
     /**
      *
      *
@@ -861,6 +877,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     public int getEnableComponentsCount() {
       return enableComponents_.size();
     }
+
     /**
      *
      *
@@ -877,6 +894,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     public com.google.container.v1.LoggingComponentConfig.Component getEnableComponents(int index) {
       return enableComponents_converter_.convert(enableComponents_.get(index));
     }
+
     /**
      *
      *
@@ -901,6 +919,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +943,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +967,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +986,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1002,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     public java.util.List<java.lang.Integer> getEnableComponentsValueList() {
       return java.util.Collections.unmodifiableList(enableComponents_);
     }
+
     /**
      *
      *
@@ -996,6 +1019,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     public int getEnableComponentsValue(int index) {
       return enableComponents_.get(index);
     }
+
     /**
      *
      *
@@ -1016,6 +1040,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1060,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -41,6 +41,7 @@ public interface PythonPackageSpecOrBuilder
    * @return The executorImageUri.
    */
   java.lang.String getExecutorImageUri();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface PythonPackageSpecOrBuilder
    * @return A list containing the packageUris.
    */
   java.util.List<java.lang.String> getPackageUrisList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface PythonPackageSpecOrBuilder
    * @return The count of packageUris.
    */
   int getPackageUrisCount();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface PythonPackageSpecOrBuilder
    * @return The packageUris at the given index.
    */
   java.lang.String getPackageUris(int index);
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface PythonPackageSpecOrBuilder
    * @return The pythonModule.
    */
   java.lang.String getPythonModule();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface PythonPackageSpecOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface PythonPackageSpecOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface PythonPackageSpecOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface PythonPackageSpecOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> getEnvList();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface PythonPackageSpecOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
    */
   com.google.cloud.aiplatform.v1beta1.EnvVar getEnv(int index);
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface PythonPackageSpecOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
    */
   int getEnvCount();
+
   /**
    *
    *
@@ -239,6 +250,7 @@ public interface PythonPackageSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>
       getEnvOrBuilderList();
+
   /**
    *
    *

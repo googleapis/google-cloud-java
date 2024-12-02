@@ -33,6 +33,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.DirectoryServicesConfig)
     DirectoryServicesConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DirectoryServicesConfig.newBuilder() to construct.
   private DirectoryServicesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
     private ConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
   }
 
   public static final int MANAGED_ACTIVE_DIRECTORY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
   public boolean hasManagedActiveDirectory() {
     return configCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
     }
     return com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -342,6 +347,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +568,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
             com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.Builder,
             com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfigOrBuilder>
         managedActiveDirectoryBuilder_;
+
     /**
      *
      *
@@ -579,6 +586,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
     public boolean hasManagedActiveDirectory() {
       return configCase_ == 1;
     }
+
     /**
      *
      *
@@ -607,6 +615,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
         return com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -632,6 +641,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
       configCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
       configCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
       configCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +730,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
         getManagedActiveDirectoryBuilder() {
       return getManagedActiveDirectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class DirectoryServicesConfig extends com.google.protobuf.Generated
         return com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *

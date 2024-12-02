@@ -40,6 +40,7 @@ public interface ReservationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -112,6 +113,7 @@ public interface ReservationOrBuilder
    * @return Whether the autoscale field is set.
    */
   boolean hasAutoscale();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface ReservationOrBuilder
    * @return The autoscale.
    */
   com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale getAutoscale();
+
   /**
    *
    *
@@ -171,6 +174,7 @@ public interface ReservationOrBuilder
    * @return Whether the creationTime field is set.
    */
   boolean hasCreationTime();
+
   /**
    *
    *
@@ -185,6 +189,7 @@ public interface ReservationOrBuilder
    * @return The creationTime.
    */
   com.google.protobuf.Timestamp getCreationTime();
+
   /**
    *
    *
@@ -211,6 +216,7 @@ public interface ReservationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public interface ReservationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -269,6 +276,7 @@ public interface ReservationOrBuilder
    * @return The enum numeric value on the wire for edition.
    */
   int getEditionValue();
+
   /**
    *
    *

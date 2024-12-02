@@ -41,6 +41,7 @@ public interface AccessTupleOrBuilder
    * @return The principal.
    */
   java.lang.String getPrincipal();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface AccessTupleOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface AccessTupleOrBuilder
    * @return The permission.
    */
   java.lang.String getPermission();
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public interface AccessTupleOrBuilder
    * @return The permissionFqdn.
    */
   java.lang.String getPermissionFqdn();
+
   /**
    *
    *
@@ -180,6 +184,7 @@ public interface AccessTupleOrBuilder
    * @return Whether the conditionContext field is set.
    */
   boolean hasConditionContext();
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public interface AccessTupleOrBuilder
    * @return The conditionContext.
    */
   com.google.cloud.policytroubleshooter.iam.v3.ConditionContext getConditionContext();
+
   /**
    *
    *

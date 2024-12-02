@@ -34,6 +34,7 @@ public interface ListPurchasableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PurchasableSku purchasable_skus = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.PurchasableSku> getPurchasableSkusList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPurchasableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PurchasableSku purchasable_skus = 1;</code>
    */
   com.google.cloud.channel.v1.PurchasableSku getPurchasableSkus(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPurchasableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PurchasableSku purchasable_skus = 1;</code>
    */
   int getPurchasableSkusCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPurchasableSkusResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.PurchasableSkuOrBuilder>
       getPurchasableSkusOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListPurchasableSkusResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.AnswerQueryResponse)
     AnswerQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnswerQueryResponse.newBuilder() to construct.
   private AnswerQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int ANSWER_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1.Answer answer_;
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
   public boolean hasAnswer() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.discoveryengine.v1.Answer.getDefaultInstance()
         : answer_;
   }
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
 
   public static final int SESSION_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1.Session session_;
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
   public boolean hasSession() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.discoveryengine.v1.Session.getDefaultInstance()
         : session_;
   }
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerQueryToken_ = "";
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -435,6 +444,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -674,6 +684,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1.Answer.Builder,
             com.google.cloud.discoveryengine.v1.AnswerOrBuilder>
         answerBuilder_;
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     public boolean hasAnswer() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -722,6 +734,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         return answerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -751,6 +764,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +853,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAnswerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -883,6 +901,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
             : answer_;
       }
     }
+
     /**
      *
      *
@@ -922,6 +941,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1.Session.Builder,
             com.google.cloud.discoveryengine.v1.SessionOrBuilder>
         sessionBuilder_;
+
     /**
      *
      *
@@ -939,6 +959,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     public boolean hasSession() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -962,6 +983,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         return sessionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -987,6 +1009,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1032,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1063,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1086,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1104,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSessionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1099,6 +1126,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
             : session_;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1157,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object answerQueryToken_ = "";
+
     /**
      *
      *
@@ -1151,6 +1180,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1203,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1194,6 +1225,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1243,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

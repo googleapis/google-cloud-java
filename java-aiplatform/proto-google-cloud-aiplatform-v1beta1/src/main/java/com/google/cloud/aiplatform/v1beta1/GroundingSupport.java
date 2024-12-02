@@ -33,6 +33,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundingSupport)
     GroundingSupportOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GroundingSupport.newBuilder() to construct.
   private GroundingSupport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int SEGMENT_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Segment segment_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
   public boolean hasSegment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.aiplatform.v1beta1.Segment.getDefaultInstance()
         : segment_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList groundingChunkIndices_ = emptyIntList();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getGroundingChunkIndicesList() {
     return groundingChunkIndices_;
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
   public int getGroundingChunkIndicesCount() {
     return groundingChunkIndices_.size();
   }
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList confidenceScores_ = emptyFloatList();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Float> getConfidenceScoresList() {
     return confidenceScores_;
   }
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
   public int getConfidenceScoresCount() {
     return confidenceScores_.size();
   }
+
   /**
    *
    *
@@ -445,6 +455,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -717,6 +728,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.Segment.Builder,
             com.google.cloud.aiplatform.v1beta1.SegmentOrBuilder>
         segmentBuilder_;
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
     public boolean hasSegment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -751,6 +764,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
         return segmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -773,6 +787,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +835,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +855,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
             : segment_;
       }
     }
+
     /**
      *
      *
@@ -904,6 +924,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       groundingChunkIndices_.makeImmutable();
       return groundingChunkIndices_;
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
     public int getGroundingChunkIndicesCount() {
       return groundingChunkIndices_.size();
     }
+
     /**
      *
      *
@@ -957,6 +980,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
     public int getGroundingChunkIndices(int index) {
       return groundingChunkIndices_.getInt(index);
     }
+
     /**
      *
      *
@@ -981,6 +1005,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1090,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1080,6 +1108,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       confidenceScores_.makeImmutable();
       return confidenceScores_;
     }
+
     /**
      *
      *
@@ -1096,6 +1125,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
     public int getConfidenceScoresCount() {
       return confidenceScores_.size();
     }
+
     /**
      *
      *
@@ -1113,6 +1143,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
     public float getConfidenceScores(int index) {
       return confidenceScores_.getFloat(index);
     }
+
     /**
      *
      *
@@ -1136,6 +1167,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1190,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1212,7 @@ public final class GroundingSupport extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

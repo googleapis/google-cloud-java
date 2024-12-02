@@ -36,6 +36,7 @@ public final class UndeployConversationModelOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata)
     UndeployConversationModelOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UndeployConversationModelOperationMetadata.newBuilder() to construct.
   private UndeployConversationModelOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class UndeployConversationModelOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationModel_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class UndeployConversationModelOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class UndeployConversationModelOperationMetadata
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class UndeployConversationModelOperationMetadata
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class UndeployConversationModelOperationMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -347,6 +353,7 @@ public final class UndeployConversationModelOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +580,7 @@ public final class UndeployConversationModelOperationMetadata
     private int bitField0_;
 
     private java.lang.Object conversationModel_ = "";
+
     /**
      *
      *
@@ -596,6 +604,7 @@ public final class UndeployConversationModelOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class UndeployConversationModelOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class UndeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +670,7 @@ public final class UndeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class UndeployConversationModelOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class UndeployConversationModelOperationMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class UndeployConversationModelOperationMetadata
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class UndeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +784,7 @@ public final class UndeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class UndeployConversationModelOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class UndeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class UndeployConversationModelOperationMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -850,6 +870,7 @@ public final class UndeployConversationModelOperationMetadata
             : createTime_;
       }
     }
+
     /**
      *
      *

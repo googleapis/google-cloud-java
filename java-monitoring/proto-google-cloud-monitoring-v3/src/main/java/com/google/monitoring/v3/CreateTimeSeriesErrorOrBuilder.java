@@ -39,6 +39,7 @@ public interface CreateTimeSeriesErrorOrBuilder
    */
   @java.lang.Deprecated
   boolean hasTimeSeries();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CreateTimeSeriesErrorOrBuilder
    */
   @java.lang.Deprecated
   com.google.monitoring.v3.TimeSeries getTimeSeries();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateTimeSeriesErrorOrBuilder
    */
   @java.lang.Deprecated
   boolean hasStatus();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface CreateTimeSeriesErrorOrBuilder
    */
   @java.lang.Deprecated
   com.google.rpc.Status getStatus();
+
   /**
    *
    *

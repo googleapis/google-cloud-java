@@ -36,6 +36,7 @@ public interface TransformSummaryOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TransformSummaryOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface TransformSummaryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface TransformSummaryOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DisplayData display_data = 4;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.DisplayData> getDisplayDataList();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface TransformSummaryOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DisplayData display_data = 4;</code>
    */
   com.google.dataflow.v1beta3.DisplayData getDisplayData(int index);
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface TransformSummaryOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DisplayData display_data = 4;</code>
    */
   int getDisplayDataCount();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface TransformSummaryOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.DisplayDataOrBuilder>
       getDisplayDataOrBuilderList();
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface TransformSummaryOrBuilder
    * @return A list containing the outputCollectionName.
    */
   java.util.List<java.lang.String> getOutputCollectionNameList();
+
   /**
    *
    *
@@ -175,6 +183,7 @@ public interface TransformSummaryOrBuilder
    * @return The count of outputCollectionName.
    */
   int getOutputCollectionNameCount();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface TransformSummaryOrBuilder
    * @return The outputCollectionName at the given index.
    */
   java.lang.String getOutputCollectionName(int index);
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public interface TransformSummaryOrBuilder
    * @return A list containing the inputCollectionName.
    */
   java.util.List<java.lang.String> getInputCollectionNameList();
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface TransformSummaryOrBuilder
    * @return The count of inputCollectionName.
    */
   int getInputCollectionNameCount();
+
   /**
    *
    *
@@ -239,6 +251,7 @@ public interface TransformSummaryOrBuilder
    * @return The inputCollectionName at the given index.
    */
   java.lang.String getInputCollectionName(int index);
+
   /**
    *
    *

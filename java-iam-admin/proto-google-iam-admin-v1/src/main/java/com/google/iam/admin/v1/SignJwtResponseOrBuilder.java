@@ -42,6 +42,7 @@ public interface SignJwtResponseOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getKeyId();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SignJwtResponseOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getSignedJwt();
+
   /**
    *
    *

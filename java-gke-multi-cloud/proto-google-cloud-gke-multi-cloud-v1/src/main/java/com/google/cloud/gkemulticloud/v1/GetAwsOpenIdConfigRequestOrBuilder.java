@@ -40,6 +40,7 @@ public interface GetAwsOpenIdConfigRequestOrBuilder
    * @return The awsCluster.
    */
   java.lang.String getAwsCluster();
+
   /**
    *
    *

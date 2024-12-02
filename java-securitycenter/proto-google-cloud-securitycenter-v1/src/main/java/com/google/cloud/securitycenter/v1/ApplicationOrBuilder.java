@@ -37,6 +37,7 @@ public interface ApplicationOrBuilder
    * @return The baseUri.
    */
   java.lang.String getBaseUri();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ApplicationOrBuilder
    * @return The fullUri.
    */
   java.lang.String getFullUri();
+
   /**
    *
    *

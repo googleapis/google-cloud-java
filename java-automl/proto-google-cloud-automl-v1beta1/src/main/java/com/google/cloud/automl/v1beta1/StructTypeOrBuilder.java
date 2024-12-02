@@ -36,6 +36,7 @@ public interface StructTypeOrBuilder
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -48,9 +49,11 @@ public interface StructTypeOrBuilder
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
    */
   boolean containsFields(java.lang.String key);
+
   /** Use {@link #getFieldsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataType> getFields();
+
   /**
    *
    *
@@ -63,6 +66,7 @@ public interface StructTypeOrBuilder
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataType> getFieldsMap();
+
   /**
    *
    *
@@ -79,6 +83,7 @@ public interface StructTypeOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.automl.v1beta1.DataType defaultValue);
+
   /**
    *
    *

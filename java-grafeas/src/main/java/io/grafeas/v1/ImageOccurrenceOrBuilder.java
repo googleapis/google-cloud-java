@@ -37,6 +37,7 @@ public interface ImageOccurrenceOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ImageOccurrenceOrBuilder
    * @return The fingerprint.
    */
   io.grafeas.v1.Fingerprint getFingerprint();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ImageOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
   java.util.List<io.grafeas.v1.Layer> getLayerInfoList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ImageOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
   io.grafeas.v1.Layer getLayerInfo(int index);
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ImageOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
   int getLayerInfoCount();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ImageOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
   java.util.List<? extends io.grafeas.v1.LayerOrBuilder> getLayerInfoOrBuilderList();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface ImageOccurrenceOrBuilder
    * @return The baseResourceUrl.
    */
   java.lang.String getBaseResourceUrl();
+
   /**
    *
    *

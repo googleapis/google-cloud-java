@@ -37,6 +37,7 @@ public interface ApplyResultsOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ApplyResultsOrBuilder
    * @return The artifacts.
    */
   java.lang.String getArtifacts();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ApplyResultsOrBuilder
    * <code>map&lt;string, .google.cloud.config.v1.TerraformOutput&gt; outputs = 3;</code>
    */
   int getOutputsCount();
+
   /**
    *
    *
@@ -98,9 +101,11 @@ public interface ApplyResultsOrBuilder
    * <code>map&lt;string, .google.cloud.config.v1.TerraformOutput&gt; outputs = 3;</code>
    */
   boolean containsOutputs(java.lang.String key);
+
   /** Use {@link #getOutputsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.config.v1.TerraformOutput> getOutputs();
+
   /**
    *
    *
@@ -111,6 +116,7 @@ public interface ApplyResultsOrBuilder
    * <code>map&lt;string, .google.cloud.config.v1.TerraformOutput&gt; outputs = 3;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.config.v1.TerraformOutput> getOutputsMap();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ApplyResultsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.config.v1.TerraformOutput defaultValue);
+
   /**
    *
    *

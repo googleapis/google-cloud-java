@@ -41,6 +41,7 @@ public interface AclConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface AclConfigOrBuilder
    * @return Whether the idpConfig field is set.
    */
   boolean hasIdpConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface AclConfigOrBuilder
    * @return The idpConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.IdpConfig getIdpConfig();
+
   /**
    *
    *

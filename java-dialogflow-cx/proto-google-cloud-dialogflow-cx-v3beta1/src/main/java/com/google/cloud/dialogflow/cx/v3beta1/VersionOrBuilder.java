@@ -39,6 +39,7 @@ public interface VersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface VersionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface VersionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface VersionOrBuilder
    * @return Whether the nluSettings field is set.
    */
   boolean hasNluSettings();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface VersionOrBuilder
    * @return The nluSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.NluSettings getNluSettings();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface VersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface VersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface VersionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

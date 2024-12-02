@@ -37,6 +37,7 @@ public interface QueryWorkflowInvocationActionsResponseOrBuilder
    */
   java.util.List<com.google.cloud.dataform.v1alpha2.WorkflowInvocationAction>
       getWorkflowInvocationActionsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface QueryWorkflowInvocationActionsResponseOrBuilder
    */
   com.google.cloud.dataform.v1alpha2.WorkflowInvocationAction getWorkflowInvocationActions(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface QueryWorkflowInvocationActionsResponseOrBuilder
    * </code>
    */
   int getWorkflowInvocationActionsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface QueryWorkflowInvocationActionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1alpha2.WorkflowInvocationActionOrBuilder>
       getWorkflowInvocationActionsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface QueryWorkflowInvocationActionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

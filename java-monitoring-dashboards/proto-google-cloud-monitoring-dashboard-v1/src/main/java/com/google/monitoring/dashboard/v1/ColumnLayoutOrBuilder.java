@@ -34,6 +34,7 @@ public interface ColumnLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.ColumnLayout.Column columns = 1;</code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.ColumnLayout.Column> getColumnsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ColumnLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.ColumnLayout.Column columns = 1;</code>
    */
   com.google.monitoring.dashboard.v1.ColumnLayout.Column getColumns(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ColumnLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.ColumnLayout.Column columns = 1;</code>
    */
   int getColumnsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ColumnLayoutOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.ColumnLayout.ColumnOrBuilder>
       getColumnsOrBuilderList();
+
   /**
    *
    *

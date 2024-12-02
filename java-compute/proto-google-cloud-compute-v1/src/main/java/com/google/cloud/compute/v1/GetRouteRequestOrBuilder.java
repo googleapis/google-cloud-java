@@ -36,6 +36,7 @@ public interface GetRouteRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetRouteRequestOrBuilder
    * @return The route.
    */
   java.lang.String getRoute();
+
   /**
    *
    *

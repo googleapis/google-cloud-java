@@ -33,6 +33,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.GoogleCdnKey)
     GoogleCdnKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GoogleCdnKey.newBuilder() to construct.
   private GoogleCdnKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIVATE_KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString privateKey_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyName_ = "";
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -301,6 +305,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -498,6 +503,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString privateKey_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -513,6 +519,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPrivateKey() {
       return privateKey_;
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keyName_ = "";
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -618,6 +629,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -635,6 +647,7 @@ public final class GoogleCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

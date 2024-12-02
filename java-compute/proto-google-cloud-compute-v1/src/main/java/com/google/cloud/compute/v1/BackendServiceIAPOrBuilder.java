@@ -36,6 +36,7 @@ public interface BackendServiceIAPOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BackendServiceIAPOrBuilder
    * @return Whether the oauth2ClientId field is set.
    */
   boolean hasOauth2ClientId();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface BackendServiceIAPOrBuilder
    * @return The oauth2ClientId.
    */
   java.lang.String getOauth2ClientId();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface BackendServiceIAPOrBuilder
    * @return Whether the oauth2ClientSecret field is set.
    */
   boolean hasOauth2ClientSecret();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface BackendServiceIAPOrBuilder
    * @return The oauth2ClientSecret.
    */
   java.lang.String getOauth2ClientSecret();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface BackendServiceIAPOrBuilder
    * @return Whether the oauth2ClientSecretSha256 field is set.
    */
   boolean hasOauth2ClientSecretSha256();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface BackendServiceIAPOrBuilder
    * @return The oauth2ClientSecretSha256.
    */
   java.lang.String getOauth2ClientSecretSha256();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy)
     ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ManagedInstancePropertiesFromFlexibilityPolicy.newBuilder() to construct.
   private ManagedInstancePropertiesFromFlexibilityPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
   public boolean hasMachineType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +308,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -501,6 +506,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
     private int bitField0_;
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -515,6 +521,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
     public boolean hasMachineType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -537,6 +544,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -580,6 +589,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *

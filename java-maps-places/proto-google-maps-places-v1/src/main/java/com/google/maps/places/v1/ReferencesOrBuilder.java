@@ -34,6 +34,7 @@ public interface ReferencesOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
    */
   java.util.List<com.google.maps.places.v1.Review> getReviewsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ReferencesOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
    */
   com.google.maps.places.v1.Review getReviews(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ReferencesOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
    */
   int getReviewsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ReferencesOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
    */
   java.util.List<? extends com.google.maps.places.v1.ReviewOrBuilder> getReviewsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ReferencesOrBuilder
    * @return A list containing the places.
    */
   java.util.List<java.lang.String> getPlacesList();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface ReferencesOrBuilder
    * @return The count of places.
    */
   int getPlacesCount();
+
   /**
    *
    *
@@ -115,6 +121,7 @@ public interface ReferencesOrBuilder
    * @return The places at the given index.
    */
   java.lang.String getPlaces(int index);
+
   /**
    *
    *

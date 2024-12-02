@@ -39,6 +39,7 @@ public interface QueryParametersOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface QueryParametersOrBuilder
    * @return Whether the geoLocation field is set.
    */
   boolean hasGeoLocation();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface QueryParametersOrBuilder
    * @return The geoLocation.
    */
   com.google.type.LatLng getGeoLocation();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface QueryParametersOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.SessionEntityType> getSessionEntityTypesList();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface QueryParametersOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.SessionEntityType getSessionEntityTypes(int index);
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface QueryParametersOrBuilder
    * </code>
    */
   int getSessionEntityTypesCount();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface QueryParametersOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface QueryParametersOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public interface QueryParametersOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public interface QueryParametersOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
+
   /**
    *
    *
@@ -291,6 +301,7 @@ public interface QueryParametersOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
+
   /**
    *
    *
@@ -345,6 +356,7 @@ public interface QueryParametersOrBuilder
    * @return The currentPage.
    */
   java.lang.String getCurrentPage();
+
   /**
    *
    *
@@ -414,6 +426,7 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
    */
   int getWebhookHeadersCount();
+
   /**
    *
    *
@@ -431,9 +444,11 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
    */
   boolean containsWebhookHeaders(java.lang.String key);
+
   /** Use {@link #getWebhookHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders();
+
   /**
    *
    *
@@ -451,6 +466,7 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap();
+
   /**
    *
    *
@@ -472,6 +488,7 @@ public interface QueryParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -509,6 +526,7 @@ public interface QueryParametersOrBuilder
    * @return A list containing the flowVersions.
    */
   java.util.List<java.lang.String> getFlowVersionsList();
+
   /**
    *
    *
@@ -528,6 +546,7 @@ public interface QueryParametersOrBuilder
    * @return The count of flowVersions.
    */
   int getFlowVersionsCount();
+
   /**
    *
    *
@@ -548,6 +567,7 @@ public interface QueryParametersOrBuilder
    * @return The flowVersions at the given index.
    */
   java.lang.String getFlowVersions(int index);
+
   /**
    *
    *
@@ -593,6 +613,7 @@ public interface QueryParametersOrBuilder
    * @return The channel.
    */
   java.lang.String getChannel();
+
   /**
    *
    *
@@ -634,6 +655,7 @@ public interface QueryParametersOrBuilder
    * @return Whether the sessionTtl field is set.
    */
   boolean hasSessionTtl();
+
   /**
    *
    *
@@ -650,6 +672,7 @@ public interface QueryParametersOrBuilder
    * @return The sessionTtl.
    */
   com.google.protobuf.Duration getSessionTtl();
+
   /**
    *
    *
@@ -694,6 +717,7 @@ public interface QueryParametersOrBuilder
    * @return Whether the endUserMetadata field is set.
    */
   boolean hasEndUserMetadata();
+
   /**
    *
    *
@@ -723,6 +747,7 @@ public interface QueryParametersOrBuilder
    * @return The endUserMetadata.
    */
   com.google.protobuf.Struct getEndUserMetadata();
+
   /**
    *
    *
@@ -765,6 +790,7 @@ public interface QueryParametersOrBuilder
    * @return Whether the searchConfig field is set.
    */
   boolean hasSearchConfig();
+
   /**
    *
    *
@@ -779,6 +805,7 @@ public interface QueryParametersOrBuilder
    * @return The searchConfig.
    */
   com.google.cloud.dialogflow.cx.v3.SearchConfig getSearchConfig();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface RagCorpusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RagCorpusOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface RagCorpusOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the ragEmbeddingModelConfig field is set.
    */
   boolean hasRagEmbeddingModelConfig();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface RagCorpusOrBuilder
    * @return The ragEmbeddingModelConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig getRagEmbeddingModelConfig();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the ragVectorDbConfig field is set.
    */
   boolean hasRagVectorDbConfig();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface RagCorpusOrBuilder
    * @return The ragVectorDbConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public interface RagCorpusOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public interface RagCorpusOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the corpusStatus field is set.
    */
   boolean hasCorpusStatus();
+
   /**
    *
    *
@@ -290,6 +302,7 @@ public interface RagCorpusOrBuilder
    * @return The corpusStatus.
    */
   com.google.cloud.aiplatform.v1beta1.CorpusStatus getCorpusStatus();
+
   /**
    *
    *

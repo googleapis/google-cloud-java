@@ -302,6 +302,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -312,6 +313,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>ACCOUNT = 1;</code>
    */
   public static final int ACCOUNT_VALUE = 1;
+
   /**
    *
    *
@@ -322,6 +324,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>PROPERTY = 2;</code>
    */
   public static final int PROPERTY_VALUE = 2;
+
   /**
    *
    *
@@ -332,6 +335,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>FIREBASE_LINK = 6;</code>
    */
   public static final int FIREBASE_LINK_VALUE = 6;
+
   /**
    *
    *
@@ -342,6 +346,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>GOOGLE_ADS_LINK = 7;</code>
    */
   public static final int GOOGLE_ADS_LINK_VALUE = 7;
+
   /**
    *
    *
@@ -352,6 +357,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>GOOGLE_SIGNALS_SETTINGS = 8;</code>
    */
   public static final int GOOGLE_SIGNALS_SETTINGS_VALUE = 8;
+
   /**
    *
    *
@@ -362,6 +368,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CONVERSION_EVENT = 9;</code>
    */
   public static final int CONVERSION_EVENT_VALUE = 9;
+
   /**
    *
    *
@@ -372,6 +379,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>MEASUREMENT_PROTOCOL_SECRET = 10;</code>
    */
   public static final int MEASUREMENT_PROTOCOL_SECRET_VALUE = 10;
+
   /**
    *
    *
@@ -382,6 +390,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CUSTOM_DIMENSION = 11;</code>
    */
   public static final int CUSTOM_DIMENSION_VALUE = 11;
+
   /**
    *
    *
@@ -392,6 +401,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CUSTOM_METRIC = 12;</code>
    */
   public static final int CUSTOM_METRIC_VALUE = 12;
+
   /**
    *
    *
@@ -402,6 +412,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DATA_RETENTION_SETTINGS = 13;</code>
    */
   public static final int DATA_RETENTION_SETTINGS_VALUE = 13;
+
   /**
    *
    *
@@ -412,6 +423,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DISPLAY_VIDEO_360_ADVERTISER_LINK = 14;</code>
    */
   public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_VALUE = 14;
+
   /**
    *
    *
@@ -422,6 +434,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL = 15;</code>
    */
   public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL_VALUE = 15;
+
   /**
    *
    *
@@ -432,6 +445,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>SEARCH_ADS_360_LINK = 16;</code>
    */
   public static final int SEARCH_ADS_360_LINK_VALUE = 16;
+
   /**
    *
    *
@@ -442,6 +456,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DATA_STREAM = 18;</code>
    */
   public static final int DATA_STREAM_VALUE = 18;
+
   /**
    *
    *
@@ -452,6 +467,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>ATTRIBUTION_SETTINGS = 20;</code>
    */
   public static final int ATTRIBUTION_SETTINGS_VALUE = 20;
+
   /**
    *
    *
@@ -462,6 +478,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>EXPANDED_DATA_SET = 21;</code>
    */
   public static final int EXPANDED_DATA_SET_VALUE = 21;
+
   /**
    *
    *
@@ -472,6 +489,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CHANNEL_GROUP = 22;</code>
    */
   public static final int CHANNEL_GROUP_VALUE = 22;
+
   /**
    *
    *
@@ -482,6 +500,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>BIGQUERY_LINK = 23;</code>
    */
   public static final int BIGQUERY_LINK_VALUE = 23;
+
   /**
    *
    *
@@ -492,6 +511,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>ENHANCED_MEASUREMENT_SETTINGS = 24;</code>
    */
   public static final int ENHANCED_MEASUREMENT_SETTINGS_VALUE = 24;
+
   /**
    *
    *
@@ -502,6 +522,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DATA_REDACTION_SETTINGS = 25;</code>
    */
   public static final int DATA_REDACTION_SETTINGS_VALUE = 25;
+
   /**
    *
    *
@@ -512,6 +533,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>SKADNETWORK_CONVERSION_VALUE_SCHEMA = 26;</code>
    */
   public static final int SKADNETWORK_CONVERSION_VALUE_SCHEMA_VALUE = 26;
+
   /**
    *
    *
@@ -522,6 +544,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>ADSENSE_LINK = 27;</code>
    */
   public static final int ADSENSE_LINK_VALUE = 27;
+
   /**
    *
    *
@@ -532,6 +555,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>AUDIENCE = 28;</code>
    */
   public static final int AUDIENCE_VALUE = 28;
+
   /**
    *
    *
@@ -542,6 +566,7 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>EVENT_CREATE_RULE = 29;</code>
    */
   public static final int EVENT_CREATE_RULE_VALUE = 29;
+
   /**
    *
    *

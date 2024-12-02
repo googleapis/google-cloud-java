@@ -37,6 +37,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the advertiseMode field is set.
    */
   boolean hasAdvertiseMode();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The advertiseMode.
    */
   java.lang.String getAdvertiseMode();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface RouterBgpPeerOrBuilder
    * @return A list containing the advertisedGroups.
    */
   java.util.List<java.lang.String> getAdvertisedGroupsList();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The count of advertisedGroups.
    */
   int getAdvertisedGroupsCount();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The advertisedGroups at the given index.
    */
   java.lang.String getAdvertisedGroups(int index);
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface RouterBgpPeerOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterAdvertisedIpRange> getAdvertisedIpRangesList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface RouterBgpPeerOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.RouterAdvertisedIpRange getAdvertisedIpRanges(int index);
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface RouterBgpPeerOrBuilder
    * </code>
    */
   int getAdvertisedIpRangesCount();
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public interface RouterBgpPeerOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterAdvertisedIpRangeOrBuilder>
       getAdvertisedIpRangesOrBuilderList();
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the advertisedRoutePriority field is set.
    */
   boolean hasAdvertisedRoutePriority();
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the bfd field is set.
    */
   boolean hasBfd();
+
   /**
    *
    *
@@ -231,6 +242,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The bfd.
    */
   com.google.cloud.compute.v1.RouterBgpPeerBfd getBfd();
+
   /**
    *
    *
@@ -255,6 +267,7 @@ public interface RouterBgpPeerOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange>
       getCustomLearnedIpRangesList();
+
   /**
    *
    *
@@ -267,6 +280,7 @@ public interface RouterBgpPeerOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange getCustomLearnedIpRanges(int index);
+
   /**
    *
    *
@@ -279,6 +293,7 @@ public interface RouterBgpPeerOrBuilder
    * </code>
    */
   int getCustomLearnedIpRangesCount();
+
   /**
    *
    *
@@ -292,6 +307,7 @@ public interface RouterBgpPeerOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder>
       getCustomLearnedIpRangesOrBuilderList();
+
   /**
    *
    *
@@ -318,6 +334,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the customLearnedRoutePriority field is set.
    */
   boolean hasCustomLearnedRoutePriority();
+
   /**
    *
    *
@@ -344,6 +361,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
+
   /**
    *
    *
@@ -357,6 +375,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The enable.
    */
   java.lang.String getEnable();
+
   /**
    *
    *
@@ -383,6 +402,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the enableIpv4 field is set.
    */
   boolean hasEnableIpv4();
+
   /**
    *
    *
@@ -408,6 +428,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the enableIpv6 field is set.
    */
   boolean hasEnableIpv6();
+
   /**
    *
    *
@@ -433,6 +454,7 @@ public interface RouterBgpPeerOrBuilder
    * @return A list containing the exportPolicies.
    */
   java.util.List<java.lang.String> getExportPoliciesList();
+
   /**
    *
    *
@@ -445,6 +467,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The count of exportPolicies.
    */
   int getExportPoliciesCount();
+
   /**
    *
    *
@@ -458,6 +481,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The exportPolicies at the given index.
    */
   java.lang.String getExportPolicies(int index);
+
   /**
    *
    *
@@ -484,6 +508,7 @@ public interface RouterBgpPeerOrBuilder
    * @return A list containing the importPolicies.
    */
   java.util.List<java.lang.String> getImportPoliciesList();
+
   /**
    *
    *
@@ -496,6 +521,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The count of importPolicies.
    */
   int getImportPoliciesCount();
+
   /**
    *
    *
@@ -509,6 +535,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The importPolicies at the given index.
    */
   java.lang.String getImportPolicies(int index);
+
   /**
    *
    *
@@ -535,6 +562,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the interfaceName field is set.
    */
   boolean hasInterfaceName();
+
   /**
    *
    *
@@ -547,6 +575,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The interfaceName.
    */
   java.lang.String getInterfaceName();
+
   /**
    *
    *
@@ -572,6 +601,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
+
   /**
    *
    *
@@ -584,6 +614,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -609,6 +640,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the ipv4NexthopAddress field is set.
    */
   boolean hasIpv4NexthopAddress();
+
   /**
    *
    *
@@ -621,6 +653,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The ipv4NexthopAddress.
    */
   java.lang.String getIpv4NexthopAddress();
+
   /**
    *
    *
@@ -646,6 +679,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the ipv6NexthopAddress field is set.
    */
   boolean hasIpv6NexthopAddress();
+
   /**
    *
    *
@@ -658,6 +692,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The ipv6NexthopAddress.
    */
   java.lang.String getIpv6NexthopAddress();
+
   /**
    *
    *
@@ -684,6 +719,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the managementType field is set.
    */
   boolean hasManagementType();
+
   /**
    *
    *
@@ -697,6 +733,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The managementType.
    */
   java.lang.String getManagementType();
+
   /**
    *
    *
@@ -723,6 +760,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the md5AuthenticationKeyName field is set.
    */
   boolean hasMd5AuthenticationKeyName();
+
   /**
    *
    *
@@ -735,6 +773,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The md5AuthenticationKeyName.
    */
   java.lang.String getMd5AuthenticationKeyName();
+
   /**
    *
    *
@@ -760,6 +799,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -772,6 +812,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -797,6 +838,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the peerAsn field is set.
    */
   boolean hasPeerAsn();
+
   /**
    *
    *
@@ -822,6 +864,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the peerIpAddress field is set.
    */
   boolean hasPeerIpAddress();
+
   /**
    *
    *
@@ -834,6 +877,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The peerIpAddress.
    */
   java.lang.String getPeerIpAddress();
+
   /**
    *
    *
@@ -859,6 +903,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the peerIpv4NexthopAddress field is set.
    */
   boolean hasPeerIpv4NexthopAddress();
+
   /**
    *
    *
@@ -871,6 +916,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The peerIpv4NexthopAddress.
    */
   java.lang.String getPeerIpv4NexthopAddress();
+
   /**
    *
    *
@@ -896,6 +942,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the peerIpv6NexthopAddress field is set.
    */
   boolean hasPeerIpv6NexthopAddress();
+
   /**
    *
    *
@@ -908,6 +955,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The peerIpv6NexthopAddress.
    */
   java.lang.String getPeerIpv6NexthopAddress();
+
   /**
    *
    *
@@ -933,6 +981,7 @@ public interface RouterBgpPeerOrBuilder
    * @return Whether the routerApplianceInstance field is set.
    */
   boolean hasRouterApplianceInstance();
+
   /**
    *
    *
@@ -945,6 +994,7 @@ public interface RouterBgpPeerOrBuilder
    * @return The routerApplianceInstance.
    */
   java.lang.String getRouterApplianceInstance();
+
   /**
    *
    *

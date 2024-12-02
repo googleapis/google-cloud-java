@@ -41,6 +41,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TableSpec)
     TableSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TableSpec.newBuilder() to construct.
   private TableSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeColumnSpecId_ = "";
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROW_COUNT_FIELD_NUMBER = 3;
   private long rowCount_ = 0L;
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALID_ROW_COUNT_FIELD_NUMBER = 4;
   private long validRowCount_ = 0L;
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COLUMN_COUNT_FIELD_NUMBER = 7;
   private long columnCount_ = 0L;
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.InputConfig> inputConfigs_;
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.automl.v1beta1.InputConfig> getInputConfigsList() {
     return inputConfigs_;
   }
+
   /**
    *
    *
@@ -285,6 +295,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       getInputConfigsOrBuilderList() {
     return inputConfigs_;
   }
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
   public int getInputConfigsCount() {
     return inputConfigs_.size();
   }
+
   /**
    *
    *
@@ -313,6 +325,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.automl.v1beta1.InputConfig getInputConfigs(int index) {
     return inputConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -356,6 +370,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -596,6 +611,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -916,6 +932,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -941,6 +958,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -966,6 +984,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1009,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1030,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1058,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object timeColumnSpecId_ = "";
+
     /**
      *
      *
@@ -1066,6 +1088,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1118,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1123,6 +1147,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1172,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1204,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long rowCount_;
+
     /**
      *
      *
@@ -1193,6 +1220,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     public long getRowCount() {
       return rowCount_;
     }
+
     /**
      *
      *
@@ -1212,6 +1240,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1260,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long validRowCount_;
+
     /**
      *
      *
@@ -1247,6 +1277,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     public long getValidRowCount() {
       return validRowCount_;
     }
+
     /**
      *
      *
@@ -1267,6 +1298,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1319,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long columnCount_;
+
     /**
      *
      *
@@ -1303,6 +1336,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     public long getColumnCount() {
       return columnCount_;
     }
+
     /**
      *
      *
@@ -1323,6 +1357,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1411,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return inputConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1429,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return inputConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1410,6 +1447,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return inputConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1433,6 +1471,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1493,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1477,6 +1517,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1541,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1521,6 +1563,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1585,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1607,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1583,6 +1628,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1603,6 +1649,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1663,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.InputConfig.Builder getInputConfigsBuilder(int index) {
       return getInputConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1634,6 +1682,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return inputConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1652,6 +1701,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(inputConfigs_);
       }
     }
+
     /**
      *
      *
@@ -1666,6 +1716,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       return getInputConfigsFieldBuilder()
           .addBuilder(com.google.cloud.automl.v1beta1.InputConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1680,6 +1731,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       return getInputConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.automl.v1beta1.InputConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1713,6 +1765,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -1736,6 +1789,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1759,6 +1813,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1781,6 +1836,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1799,6 +1855,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

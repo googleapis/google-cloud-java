@@ -32,6 +32,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SSLHealthCheck)
     SSLHealthCheckOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SSLHealthCheck.newBuilder() to construct.
   private SSLHealthCheck(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PORT_SPECIFICATION = 0;</code>
      */
     public static final int UNDEFINED_PORT_SPECIFICATION_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>USE_FIXED_PORT = 190235748;</code>
      */
     public static final int USE_FIXED_PORT_VALUE = 190235748;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>USE_NAMED_PORT = 349300671;</code>
      */
     public static final int USE_NAMED_PORT_VALUE = 349300671;
+
     /**
      *
      *
@@ -285,8 +289,10 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROXY_HEADER = 0;</code>
      */
     public static final int UNDEFINED_PROXY_HEADER_VALUE = 0;
+
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
+
     /** <code>PROXY_V1 = 334352940;</code> */
     public static final int PROXY_V1_VALUE = 334352940;
 
@@ -376,6 +382,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_ = 0;
+
   /**
    *
    *
@@ -391,6 +398,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPort() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -411,6 +419,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object portName_ = "";
+
   /**
    *
    *
@@ -426,6 +435,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPortName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -449,6 +459,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -477,6 +488,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object portSpecification_ = "";
+
   /**
    *
    *
@@ -493,6 +505,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPortSpecification() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -517,6 +530,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -546,6 +560,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object proxyHeader_ = "";
+
   /**
    *
    *
@@ -562,6 +577,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProxyHeader() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -586,6 +602,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -615,6 +632,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object request_ = "";
+
   /**
    *
    *
@@ -630,6 +648,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequest() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -653,6 +672,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -681,6 +701,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object response_ = "";
+
   /**
    *
    *
@@ -696,6 +717,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResponse() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -719,6 +741,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -978,6 +1001,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1241,6 +1265,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int port_;
+
     /**
      *
      *
@@ -1256,6 +1281,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPort() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1271,6 +1297,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public int getPort() {
       return port_;
     }
+
     /**
      *
      *
@@ -1290,6 +1317,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1337,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object portName_ = "";
+
     /**
      *
      *
@@ -1323,6 +1352,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPortName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1345,6 +1375,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1367,6 +1398,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1388,6 +1420,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1405,6 +1438,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1429,6 +1463,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object portSpecification_ = "";
+
     /**
      *
      *
@@ -1444,6 +1479,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPortSpecification() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1467,6 +1503,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1490,6 +1527,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1512,6 +1550,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1569,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1555,6 +1595,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object proxyHeader_ = "";
+
     /**
      *
      *
@@ -1570,6 +1611,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProxyHeader() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1593,6 +1635,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1616,6 +1659,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1638,6 +1682,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1701,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1681,6 +1727,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object request_ = "";
+
     /**
      *
      *
@@ -1695,6 +1742,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1717,6 +1765,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1739,6 +1788,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1760,6 +1810,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1828,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1801,6 +1853,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object response_ = "";
+
     /**
      *
      *
@@ -1815,6 +1868,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResponse() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1837,6 +1891,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1859,6 +1914,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1880,6 +1936,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1897,6 +1954,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

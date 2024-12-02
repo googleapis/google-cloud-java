@@ -35,6 +35,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.PublicKey)
     PublicKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublicKey.newBuilder() to construct.
   private PublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pem_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALGORITHM_FIELD_NUMBER = 2;
   private int algorithm_ = 0;
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   public int getAlgorithmValue() {
     return algorithm_;
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PEM_CRC32C_FIELD_NUMBER = 3;
   private com.google.protobuf.Int64Value pemCrc32C_;
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPemCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Int64Value getPemCrc32C() {
     return pemCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : pemCrc32C_;
   }
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -285,6 +294,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -315,6 +325,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 5;
   private int protectionLevel_ = 0;
+
   /**
    *
    *
@@ -331,6 +342,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
+
   /**
    *
    *
@@ -556,6 +568,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -810,6 +823,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object pem_ = "";
+
     /**
      *
      *
@@ -836,6 +850,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +877,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -887,6 +903,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +925,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +954,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int algorithm_ = 0;
+
     /**
      *
      *
@@ -953,6 +972,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     public int getAlgorithmValue() {
       return algorithm_;
     }
+
     /**
      *
      *
@@ -973,6 +993,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1015,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1018,6 +1040,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1067,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         pemCrc32CBuilder_;
+
     /**
      *
      *
@@ -1071,6 +1095,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPemCrc32C() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         return pemCrc32CBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1139,6 +1165,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1198,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1239,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1272,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1300,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPemCrc32CFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1301,6 +1332,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
             : pemCrc32C_;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1373,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1367,6 +1400,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1427,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1418,6 +1453,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1475,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1504,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int protectionLevel_ = 0;
+
     /**
      *
      *
@@ -1483,6 +1521,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
+
     /**
      *
      *
@@ -1502,6 +1541,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1520,6 +1560,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1542,6 +1583,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

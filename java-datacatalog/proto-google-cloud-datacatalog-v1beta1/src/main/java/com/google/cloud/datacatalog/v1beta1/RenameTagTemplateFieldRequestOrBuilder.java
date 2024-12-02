@@ -40,6 +40,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    * @return The newTagTemplateFieldId.
    */
   java.lang.String getNewTagTemplateFieldId();
+
   /**
    *
    *

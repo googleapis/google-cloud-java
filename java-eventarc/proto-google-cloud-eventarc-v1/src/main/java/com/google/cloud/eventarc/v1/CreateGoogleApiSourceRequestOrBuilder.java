@@ -38,6 +38,7 @@ public interface CreateGoogleApiSourceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateGoogleApiSourceRequestOrBuilder
    * @return Whether the googleApiSource field is set.
    */
   boolean hasGoogleApiSource();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateGoogleApiSourceRequestOrBuilder
    * @return The googleApiSource.
    */
   com.google.cloud.eventarc.v1.GoogleApiSource getGoogleApiSource();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface CreateGoogleApiSourceRequestOrBuilder
    * @return The googleApiSourceId.
    */
   java.lang.String getGoogleApiSourceId();
+
   /**
    *
    *

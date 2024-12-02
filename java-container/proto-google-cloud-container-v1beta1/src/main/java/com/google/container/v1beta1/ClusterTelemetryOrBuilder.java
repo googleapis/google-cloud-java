@@ -36,6 +36,7 @@ public interface ClusterTelemetryOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

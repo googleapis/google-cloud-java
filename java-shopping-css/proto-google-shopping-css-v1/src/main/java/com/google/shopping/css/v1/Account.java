@@ -33,6 +33,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.Account)
     AccountOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Account.newBuilder() to construct.
   private Account(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -183,6 +184,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCOUNT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACCOUNT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -193,6 +195,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      * <code>CSS_GROUP = 1;</code>
      */
     public static final int CSS_GROUP_VALUE = 1;
+
     /**
      *
      *
@@ -203,6 +206,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      * <code>CSS_DOMAIN = 2;</code>
      */
     public static final int CSS_DOMAIN_VALUE = 2;
+
     /**
      *
      *
@@ -213,6 +217,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      * <code>MC_PRIMARY_CSS_MCA = 3;</code>
      */
     public static final int MC_PRIMARY_CSS_MCA_VALUE = 3;
+
     /**
      *
      *
@@ -223,6 +228,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      * <code>MC_CSS_MCA = 4;</code>
      */
     public static final int MC_CSS_MCA_VALUE = 4;
+
     /**
      *
      *
@@ -233,6 +239,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      * <code>MC_MARKETPLACE_MCA = 5;</code>
      */
     public static final int MC_MARKETPLACE_MCA_VALUE = 5;
+
     /**
      *
      *
@@ -243,6 +250,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      * <code>MC_OTHER_MCA = 6;</code>
      */
     public static final int MC_OTHER_MCA_VALUE = 6;
+
     /**
      *
      *
@@ -253,6 +261,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      * <code>MC_STANDALONE = 7;</code>
      */
     public static final int MC_STANDALONE_VALUE = 7;
+
     /**
      *
      *
@@ -364,6 +373,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -388,6 +398,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -417,6 +428,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fullName_ = "";
+
   /**
    *
    *
@@ -442,6 +454,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -472,6 +485,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -487,6 +501,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDisplayName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -510,6 +525,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -538,6 +554,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object homepageUri_ = "";
+
   /**
    *
    *
@@ -555,6 +572,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHomepageUri() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -580,6 +598,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -610,6 +629,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -627,6 +647,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public boolean hasParent() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -652,6 +673,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -682,6 +704,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList labelIds_ = emptyLongList();
+
   /**
    *
    *
@@ -698,6 +721,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Long> getLabelIdsList() {
     return labelIds_;
   }
+
   /**
    *
    *
@@ -713,6 +737,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public int getLabelIdsCount() {
     return labelIds_.size();
   }
+
   /**
    *
    *
@@ -736,6 +761,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList automaticLabelIds_ = emptyLongList();
+
   /**
    *
    *
@@ -752,6 +778,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Long> getAutomaticLabelIdsList() {
     return automaticLabelIds_;
   }
+
   /**
    *
    *
@@ -767,6 +794,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public int getAutomaticLabelIdsCount() {
     return automaticLabelIds_.size();
   }
+
   /**
    *
    *
@@ -788,6 +816,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCOUNT_TYPE_FIELD_NUMBER = 8;
   private int accountType_ = 0;
+
   /**
    *
    *
@@ -805,6 +834,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public int getAccountTypeValue() {
     return accountType_;
   }
+
   /**
    *
    *
@@ -1096,6 +1126,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1424,6 +1455,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1447,6 +1479,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1470,6 +1503,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1492,6 +1526,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1510,6 +1545,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1535,6 +1571,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fullName_ = "";
+
     /**
      *
      *
@@ -1559,6 +1596,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1583,6 +1621,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1606,6 +1645,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1665,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1692,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1665,6 +1707,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDisplayName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1687,6 +1730,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1709,6 +1753,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1730,6 +1775,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1793,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1818,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object homepageUri_ = "";
+
     /**
      *
      *
@@ -1787,6 +1835,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHomepageUri() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1811,6 +1860,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1835,6 +1885,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1858,6 +1909,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1877,6 +1929,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1903,6 +1956,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1919,6 +1973,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public boolean hasParent() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1943,6 +1998,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1967,6 +2023,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1990,6 +2047,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2009,6 +2067,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2101,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2058,6 +2118,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       labelIds_.makeImmutable();
       return labelIds_;
     }
+
     /**
      *
      *
@@ -2073,6 +2134,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public int getLabelIdsCount() {
       return labelIds_.size();
     }
+
     /**
      *
      *
@@ -2089,6 +2151,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public long getLabelIds(int index) {
       return labelIds_.getLong(index);
     }
+
     /**
      *
      *
@@ -2111,6 +2174,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2132,6 +2196,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2152,6 +2217,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2245,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2195,6 +2262,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       automaticLabelIds_.makeImmutable();
       return automaticLabelIds_;
     }
+
     /**
      *
      *
@@ -2210,6 +2278,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public int getAutomaticLabelIdsCount() {
       return automaticLabelIds_.size();
     }
+
     /**
      *
      *
@@ -2226,6 +2295,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public long getAutomaticLabelIds(int index) {
       return automaticLabelIds_.getLong(index);
     }
+
     /**
      *
      *
@@ -2248,6 +2318,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2269,6 +2340,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2289,6 +2361,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2309,6 +2382,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int accountType_ = 0;
+
     /**
      *
      *
@@ -2326,6 +2400,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public int getAccountTypeValue() {
       return accountType_;
     }
+
     /**
      *
      *
@@ -2346,6 +2421,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2365,6 +2441,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
           com.google.shopping.css.v1.Account.AccountType.forNumber(accountType_);
       return result == null ? com.google.shopping.css.v1.Account.AccountType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2388,6 +2465,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

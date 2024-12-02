@@ -33,6 +33,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1.ContainerdConfig)
     ContainerdConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContainerdConfig.newBuilder() to construct.
   private ContainerdConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,6 +95,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
                 .CertificateAuthorityDomainConfig>
         getCertificateAuthorityDomainConfigList();
+
     /**
      *
      *
@@ -108,6 +110,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
             .CertificateAuthorityDomainConfig
         getCertificateAuthorityDomainConfig(int index);
+
     /**
      *
      *
@@ -120,6 +123,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     int getCertificateAuthorityDomainConfigCount();
+
     /**
      *
      *
@@ -136,6 +140,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
                 com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
                     .CertificateAuthorityDomainConfigOrBuilder>
         getCertificateAuthorityDomainConfigOrBuilderList();
+
     /**
      *
      *
@@ -151,6 +156,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             .CertificateAuthorityDomainConfigOrBuilder
         getCertificateAuthorityDomainConfigOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig)
       PrivateRegistryAccessConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PrivateRegistryAccessConfig.newBuilder() to construct.
     private PrivateRegistryAccessConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -219,6 +226,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * @return A list containing the fqdns.
        */
       java.util.List<java.lang.String> getFqdnsList();
+
       /**
        *
        *
@@ -236,6 +244,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * @return The count of fqdns.
        */
       int getFqdnsCount();
+
       /**
        *
        *
@@ -254,6 +263,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * @return The fqdns at the given index.
        */
       java.lang.String getFqdns(int index);
+
       /**
        *
        *
@@ -287,6 +297,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * @return Whether the gcpSecretManagerCertificateConfig field is set.
        */
       boolean hasGcpSecretManagerCertificateConfig();
+
       /**
        *
        *
@@ -303,6 +314,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
               .CertificateAuthorityDomainConfig.GCPSecretManagerCertificateConfig
           getGcpSecretManagerCertificateConfig();
+
       /**
        *
        *
@@ -322,6 +334,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
               .CertificateAuthorityDomainConfig.CertificateConfigCase
           getCertificateConfigCase();
     }
+
     /**
      *
      *
@@ -339,6 +352,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig.CertificateAuthorityDomainConfig)
         CertificateAuthorityDomainConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CertificateAuthorityDomainConfig.newBuilder() to construct.
       private CertificateAuthorityDomainConfig(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -391,6 +405,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * @return The secretUri.
          */
         java.lang.String getSecretUri();
+
         /**
          *
          *
@@ -406,6 +421,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          */
         com.google.protobuf.ByteString getSecretUriBytes();
       }
+
       /**
        *
        *
@@ -423,6 +439,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           // @@protoc_insertion_point(message_implements:google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig.CertificateAuthorityDomainConfig.GCPSecretManagerCertificateConfig)
           GCPSecretManagerCertificateConfigOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use GCPSecretManagerCertificateConfig.newBuilder() to construct.
         private GCPSecretManagerCertificateConfig(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -461,6 +478,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object secretUri_ = "";
+
         /**
          *
          *
@@ -486,6 +504,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             return s;
           }
         }
+
         /**
          *
          *
@@ -705,6 +724,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -926,6 +946,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           private int bitField0_;
 
           private java.lang.Object secretUri_ = "";
+
           /**
            *
            *
@@ -950,6 +971,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -974,6 +996,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -997,6 +1020,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1016,6 +1040,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1129,6 +1154,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         private CertificateConfigCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -1164,6 +1190,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList fqdns_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -1183,6 +1210,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ProtocolStringList getFqdnsList() {
         return fqdns_;
       }
+
       /**
        *
        *
@@ -1202,6 +1230,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       public int getFqdnsCount() {
         return fqdns_.size();
       }
+
       /**
        *
        *
@@ -1222,6 +1251,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       public java.lang.String getFqdns(int index) {
         return fqdns_.get(index);
       }
+
       /**
        *
        *
@@ -1244,6 +1274,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       }
 
       public static final int GCP_SECRET_MANAGER_CERTIFICATE_CONFIG_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -1261,6 +1292,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       public boolean hasGcpSecretManagerCertificateConfig() {
         return certificateConfigCase_ == 2;
       }
+
       /**
        *
        *
@@ -1287,6 +1319,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             .CertificateAuthorityDomainConfig.GCPSecretManagerCertificateConfig
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -1541,6 +1574,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1825,6 +1859,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           }
           bitField0_ |= 0x00000001;
         }
+
         /**
          *
          *
@@ -1845,6 +1880,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           fqdns_.makeImmutable();
           return fqdns_;
         }
+
         /**
          *
          *
@@ -1864,6 +1900,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         public int getFqdnsCount() {
           return fqdns_.size();
         }
+
         /**
          *
          *
@@ -1884,6 +1921,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         public java.lang.String getFqdns(int index) {
           return fqdns_.get(index);
         }
+
         /**
          *
          *
@@ -1904,6 +1942,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         public com.google.protobuf.ByteString getFqdnsBytes(int index) {
           return fqdns_.getByteString(index);
         }
+
         /**
          *
          *
@@ -1932,6 +1971,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1959,6 +1999,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1983,6 +2024,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2006,6 +2048,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2043,6 +2086,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
                 com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
                     .CertificateAuthorityDomainConfig.GCPSecretManagerCertificateConfigOrBuilder>
             gcpSecretManagerCertificateConfigBuilder_;
+
         /**
          *
          *
@@ -2060,6 +2104,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         public boolean hasGcpSecretManagerCertificateConfig() {
           return certificateConfigCase_ == 2;
         }
+
         /**
          *
          *
@@ -2095,6 +2140,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2122,6 +2168,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           certificateConfigCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -2146,6 +2193,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           certificateConfigCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -2191,6 +2239,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           certificateConfigCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -2218,6 +2267,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           }
           return this;
         }
+
         /**
          *
          *
@@ -2234,6 +2284,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             getGcpSecretManagerCertificateConfigBuilder() {
           return getGcpSecretManagerCertificateConfigFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2263,6 +2314,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2384,6 +2436,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
 
     public static final int ENABLED_FIELD_NUMBER = 1;
     private boolean enabled_ = false;
+
     /**
      *
      *
@@ -2407,6 +2460,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
                 .CertificateAuthorityDomainConfig>
         certificateAuthorityDomainConfig_;
+
     /**
      *
      *
@@ -2425,6 +2479,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         getCertificateAuthorityDomainConfigList() {
       return certificateAuthorityDomainConfig_;
     }
+
     /**
      *
      *
@@ -2444,6 +2499,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         getCertificateAuthorityDomainConfigOrBuilderList() {
       return certificateAuthorityDomainConfig_;
     }
+
     /**
      *
      *
@@ -2459,6 +2515,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     public int getCertificateAuthorityDomainConfigCount() {
       return certificateAuthorityDomainConfig_.size();
     }
+
     /**
      *
      *
@@ -2476,6 +2533,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         getCertificateAuthorityDomainConfig(int index) {
       return certificateAuthorityDomainConfig_.get(index);
     }
+
     /**
      *
      *
@@ -2670,6 +2728,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2932,6 +2991,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private boolean enabled_;
+
       /**
        *
        *
@@ -2947,6 +3007,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       public boolean getEnabled() {
         return enabled_;
       }
+
       /**
        *
        *
@@ -2966,6 +3027,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3029,6 +3091,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           return certificateAuthorityDomainConfigBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3047,6 +3110,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           return certificateAuthorityDomainConfigBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3067,6 +3131,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           return certificateAuthorityDomainConfigBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3095,6 +3160,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3120,6 +3186,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3147,6 +3214,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3175,6 +3243,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3199,6 +3268,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3224,6 +3294,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3251,6 +3322,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3272,6 +3344,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3293,6 +3366,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3309,6 +3383,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           getCertificateAuthorityDomainConfigBuilder(int index) {
         return getCertificateAuthorityDomainConfigFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3329,6 +3404,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           return certificateAuthorityDomainConfigBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3351,6 +3427,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
           return java.util.Collections.unmodifiableList(certificateAuthorityDomainConfig_);
         }
       }
+
       /**
        *
        *
@@ -3370,6 +3447,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
                 com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
                     .CertificateAuthorityDomainConfig.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3390,6 +3468,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
                 com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
                     .CertificateAuthorityDomainConfig.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3505,6 +3584,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
   public static final int PRIVATE_REGISTRY_ACCESS_CONFIG_FIELD_NUMBER = 1;
   private com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig
       privateRegistryAccessConfig_;
+
   /**
    *
    *
@@ -3523,6 +3603,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasPrivateRegistryAccessConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3544,6 +3625,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig.getDefaultInstance()
         : privateRegistryAccessConfig_;
   }
+
   /**
    *
    *
@@ -3730,6 +3812,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3937,6 +4020,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfig.Builder,
             com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfigOrBuilder>
         privateRegistryAccessConfigBuilder_;
+
     /**
      *
      *
@@ -3954,6 +4038,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasPrivateRegistryAccessConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3979,6 +4064,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         return privateRegistryAccessConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4005,6 +4091,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4029,6 +4116,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4062,6 +4150,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4084,6 +4173,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4102,6 +4192,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPrivateRegistryAccessConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4125,6 +4216,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
             : privateRegistryAccessConfig_;
       }
     }
+
     /**
      *
      *

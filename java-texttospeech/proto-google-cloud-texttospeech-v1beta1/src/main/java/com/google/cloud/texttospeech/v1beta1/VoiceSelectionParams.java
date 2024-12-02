@@ -33,6 +33,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.VoiceSelectionParams)
     VoiceSelectionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VoiceSelectionParams.newBuilder() to construct.
   private VoiceSelectionParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
 
   public static final int SSML_GENDER_FIELD_NUMBER = 3;
   private int ssmlGender_ = 0;
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
   public int getSsmlGenderValue() {
     return ssmlGender_;
   }
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
 
   public static final int CUSTOM_VOICE_FIELD_NUMBER = 4;
   private com.google.cloud.texttospeech.v1beta1.CustomVoiceParams customVoice_;
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
   public boolean hasCustomVoice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.getDefaultInstance()
         : customVoice_;
   }
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
 
   public static final int VOICE_CLONE_FIELD_NUMBER = 5;
   private com.google.cloud.texttospeech.v1beta1.VoiceCloneParams voiceClone_;
+
   /**
    *
    *
@@ -315,6 +326,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
   public boolean hasVoiceClone() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -336,6 +348,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.texttospeech.v1beta1.VoiceCloneParams.getDefaultInstance()
         : voiceClone_;
   }
+
   /**
    *
    *
@@ -566,6 +579,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -827,6 +841,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -859,6 +874,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -891,6 +907,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -922,6 +939,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +967,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1002,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1007,6 +1027,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1052,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1076,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1096,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1123,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     }
 
     private int ssmlGender_ = 0;
+
     /**
      *
      *
@@ -1118,6 +1143,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     public int getSsmlGenderValue() {
       return ssmlGender_;
     }
+
     /**
      *
      *
@@ -1140,6 +1166,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1190,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.texttospeech.v1beta1.SsmlVoiceGender.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1188,6 +1216,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1245,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
             com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.Builder,
             com.google.cloud.texttospeech.v1beta1.CustomVoiceParamsOrBuilder>
         customVoiceBuilder_;
+
     /**
      *
      *
@@ -1232,6 +1262,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     public boolean hasCustomVoice() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1254,6 +1285,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         return customVoiceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1310,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1333,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1364,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1386,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1403,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCustomVoiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1388,6 +1425,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
             : customVoice_;
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1460,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
             com.google.cloud.texttospeech.v1beta1.VoiceCloneParams.Builder,
             com.google.cloud.texttospeech.v1beta1.VoiceCloneParamsOrBuilder>
         voiceCloneBuilder_;
+
     /**
      *
      *
@@ -1440,6 +1479,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     public boolean hasVoiceClone() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1464,6 +1504,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         return voiceCloneBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1490,6 +1531,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1514,6 +1556,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1546,6 +1589,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1569,6 +1613,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1587,6 +1632,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       onChanged();
       return getVoiceCloneFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1610,6 +1656,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
             : voiceClone_;
       }
     }
+
     /**
      *
      *

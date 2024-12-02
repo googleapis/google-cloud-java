@@ -36,6 +36,7 @@ public interface BigQueryFieldOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BigQueryFieldOrBuilder
    * @return The table.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface BigQueryFieldOrBuilder
    * @return Whether the field field is set.
    */
   boolean hasField();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface BigQueryFieldOrBuilder
    * @return The field.
    */
   com.google.privacy.dlp.v2.FieldId getField();
+
   /**
    *
    *

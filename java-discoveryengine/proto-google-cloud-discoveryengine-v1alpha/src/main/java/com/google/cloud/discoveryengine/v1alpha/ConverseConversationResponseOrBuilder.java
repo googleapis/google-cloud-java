@@ -36,6 +36,7 @@ public interface ConverseConversationResponseOrBuilder
    * @return Whether the reply field is set.
    */
   boolean hasReply();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConverseConversationResponseOrBuilder
    * @return The reply.
    */
   com.google.cloud.discoveryengine.v1alpha.Reply getReply();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ConverseConversationResponseOrBuilder
    * @return Whether the conversation field is set.
    */
   boolean hasConversation();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ConverseConversationResponseOrBuilder
    * @return The conversation.
    */
   com.google.cloud.discoveryengine.v1alpha.Conversation getConversation();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ConverseConversationResponseOrBuilder
    * @return A list containing the relatedQuestions.
    */
   java.util.List<java.lang.String> getRelatedQuestionsList();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ConverseConversationResponseOrBuilder
    * @return The count of relatedQuestions.
    */
   int getRelatedQuestionsCount();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface ConverseConversationResponseOrBuilder
    * @return The relatedQuestions at the given index.
    */
   java.lang.String getRelatedQuestions(int index);
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface ConverseConversationResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.SearchResponse.SearchResult>
       getSearchResultsList();
+
   /**
    *
    *
@@ -170,6 +178,7 @@ public interface ConverseConversationResponseOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1alpha.SearchResponse.SearchResult getSearchResults(int index);
+
   /**
    *
    *
@@ -182,6 +191,7 @@ public interface ConverseConversationResponseOrBuilder
    * </code>
    */
   int getSearchResultsCount();
+
   /**
    *
    *
@@ -196,6 +206,7 @@ public interface ConverseConversationResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.discoveryengine.v1alpha.SearchResponse.SearchResultOrBuilder>
       getSearchResultsOrBuilderList();
+
   /**
    *
    *

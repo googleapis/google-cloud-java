@@ -36,6 +36,7 @@ public interface TestIamPermissionsNetworkAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TestIamPermissionsNetworkAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface TestIamPermissionsNetworkAttachmentRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface TestIamPermissionsNetworkAttachmentRequestOrBuilder
    * @return Whether the testPermissionsRequestResource field is set.
    */
   boolean hasTestPermissionsRequestResource();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface TestIamPermissionsNetworkAttachmentRequestOrBuilder
    * @return The testPermissionsRequestResource.
    */
   com.google.cloud.compute.v1.TestPermissionsRequest getTestPermissionsRequestResource();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ToolCallValidResults)
     ToolCallValidResultsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ToolCallValidResults.newBuilder() to construct.
   private ToolCallValidResults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ToolCallValidMetricValue>
       toolCallValidMetricValues_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       getToolCallValidMetricValuesList() {
     return toolCallValidMetricValues_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       getToolCallValidMetricValuesOrBuilderList() {
     return toolCallValidMetricValues_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
   public int getToolCallValidMetricValuesCount() {
     return toolCallValidMetricValues_.size();
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       int index) {
     return toolCallValidMetricValues_.get(index);
   }
+
   /**
    *
    *
@@ -314,6 +320,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +589,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
         return toolCallValidMetricValuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
         return toolCallValidMetricValuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
         return toolCallValidMetricValuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
         getToolCallValidMetricValuesBuilder(int index) {
       return getToolCallValidMetricValuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
         return toolCallValidMetricValuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -881,6 +902,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(toolCallValidMetricValues_);
       }
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.ToolCallValidMetricValue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -916,6 +939,7 @@ public final class ToolCallValidResults extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.aiplatform.v1beta1.ToolCallValidMetricValue.getDefaultInstance());
     }
+
     /**
      *
      *

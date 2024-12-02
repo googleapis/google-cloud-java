@@ -41,6 +41,7 @@ public interface GetDataRetentionSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

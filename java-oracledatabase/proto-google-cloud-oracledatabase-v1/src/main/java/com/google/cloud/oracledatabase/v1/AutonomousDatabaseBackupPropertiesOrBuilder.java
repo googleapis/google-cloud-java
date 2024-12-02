@@ -37,6 +37,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The ocid.
    */
   java.lang.String getOcid();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The compartmentId.
    */
   java.lang.String getCompartmentId();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The dbVersion.
    */
   java.lang.String getDbVersion();
+
   /**
    *
    *
@@ -179,6 +182,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The keyStoreId.
    */
   java.lang.String getKeyStoreId();
+
   /**
    *
    *
@@ -204,6 +208,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The keyStoreWallet.
    */
   java.lang.String getKeyStoreWallet();
+
   /**
    *
    *
@@ -230,6 +235,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The kmsKeyId.
    */
   java.lang.String getKmsKeyId();
+
   /**
    *
    *
@@ -261,6 +267,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The kmsKeyVersionId.
    */
   java.lang.String getKmsKeyVersionId();
+
   /**
    *
    *
@@ -291,6 +298,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The lifecycleDetails.
    */
   java.lang.String getLifecycleDetails();
+
   /**
    *
    *
@@ -318,6 +326,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The enum numeric value on the wire for lifecycleState.
    */
   int getLifecycleStateValue();
+
   /**
    *
    *
@@ -360,6 +369,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return Whether the availableTillTime field is set.
    */
   boolean hasAvailableTillTime();
+
   /**
    *
    *
@@ -374,6 +384,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The availableTillTime.
    */
   com.google.protobuf.Timestamp getAvailableTillTime();
+
   /**
    *
    *
@@ -400,6 +411,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -413,6 +425,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -438,6 +451,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -451,6 +465,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -477,6 +492,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -504,6 +520,7 @@ public interface AutonomousDatabaseBackupPropertiesOrBuilder
    * @return The vaultId.
    */
   java.lang.String getVaultId();
+
   /**
    *
    *

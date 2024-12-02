@@ -305,7 +305,8 @@ public class SecretVersionName implements ResourceName {
     private Builder(SecretVersionName secretVersionName) {
       Preconditions.checkArgument(
           Objects.equals(secretVersionName.pathTemplate, PROJECT_SECRET_SECRET_VERSION),
-          "toBuilder is only supported when SecretVersionName has the pattern of projects/{project}/secrets/{secret}/versions/{secret_version}");
+          "toBuilder is only supported when SecretVersionName has the pattern of"
+              + " projects/{project}/secrets/{secret}/versions/{secret_version}");
       this.project = secretVersionName.project;
       this.secret = secretVersionName.secret;
       this.secretVersion = secretVersionName.secretVersion;

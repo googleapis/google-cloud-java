@@ -33,6 +33,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1.HydrationStatus)
     HydrationStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HydrationStatus.newBuilder() to construct.
   private HydrationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SITE_VERSION_FIELD_NUMBER = 1;
   private com.google.cloud.telcoautomation.v1.SiteVersion siteVersion_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
   public boolean hasSiteVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.telcoautomation.v1.SiteVersion.getDefaultInstance()
         : siteVersion_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +570,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.telcoautomation.v1.SiteVersion.Builder,
             com.google.cloud.telcoautomation.v1.SiteVersionOrBuilder>
         siteVersionBuilder_;
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
     public boolean hasSiteVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
         return siteVersionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -647,6 +658,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +689,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSiteVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
             : siteVersion_;
       }
     }
+
     /**
      *
      *
@@ -763,6 +779,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -785,6 +802,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -807,6 +825,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +847,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class HydrationStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

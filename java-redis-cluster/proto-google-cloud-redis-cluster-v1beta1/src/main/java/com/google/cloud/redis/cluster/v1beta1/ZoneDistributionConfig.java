@@ -33,6 +33,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.ZoneDistributionConfig)
     ZoneDistributionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ZoneDistributionConfig.newBuilder() to construct.
   private ZoneDistributionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,6 +124,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
      * <code>ZONE_DISTRIBUTION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int ZONE_DISTRIBUTION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -134,6 +136,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
      * <code>MULTI_ZONE = 1;</code>
      */
     public static final int MULTI_ZONE_VALUE = 1;
+
     /**
      *
      *
@@ -236,6 +239,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
 
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -254,6 +258,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -284,6 +289,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -510,6 +517,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -710,6 +718,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -728,6 +737,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -749,6 +759,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +785,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -799,6 +811,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +834,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -845,6 +859,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -869,6 +884,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +908,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +928,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

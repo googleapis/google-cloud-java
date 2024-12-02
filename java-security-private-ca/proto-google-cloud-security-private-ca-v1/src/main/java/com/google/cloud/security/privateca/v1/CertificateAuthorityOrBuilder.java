@@ -38,6 +38,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The config.
    */
   com.google.cloud.security.privateca.v1.CertificateConfig getConfig();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the lifetime field is set.
    */
   boolean hasLifetime();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The lifetime.
    */
   com.google.protobuf.Duration getLifetime();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the keySpec field is set.
    */
   boolean hasKeySpec();
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The keySpec.
    */
   com.google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec getKeySpec();
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the subordinateConfig field is set.
    */
   boolean hasSubordinateConfig();
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The subordinateConfig.
    */
   com.google.cloud.security.privateca.v1.SubordinateConfig getSubordinateConfig();
+
   /**
    *
    *
@@ -309,6 +319,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The enum numeric value on the wire for tier.
    */
   int getTierValue();
+
   /**
    *
    *
@@ -344,6 +355,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -383,6 +395,7 @@ public interface CertificateAuthorityOrBuilder
    * @return A list containing the pemCaCertificates.
    */
   java.util.List<java.lang.String> getPemCaCertificatesList();
+
   /**
    *
    *
@@ -404,6 +417,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The count of pemCaCertificates.
    */
   int getPemCaCertificatesCount();
+
   /**
    *
    *
@@ -426,6 +440,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The pemCaCertificates at the given index.
    */
   java.lang.String getPemCaCertificates(int index);
+
   /**
    *
    *
@@ -464,6 +479,7 @@ public interface CertificateAuthorityOrBuilder
    */
   java.util.List<com.google.cloud.security.privateca.v1.CertificateDescription>
       getCaCertificateDescriptionsList();
+
   /**
    *
    *
@@ -479,6 +495,7 @@ public interface CertificateAuthorityOrBuilder
    */
   com.google.cloud.security.privateca.v1.CertificateDescription getCaCertificateDescriptions(
       int index);
+
   /**
    *
    *
@@ -493,6 +510,7 @@ public interface CertificateAuthorityOrBuilder
    * </code>
    */
   int getCaCertificateDescriptionsCount();
+
   /**
    *
    *
@@ -508,6 +526,7 @@ public interface CertificateAuthorityOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1.CertificateDescriptionOrBuilder>
       getCaCertificateDescriptionsOrBuilderList();
+
   /**
    *
    *
@@ -542,6 +561,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The gcsBucket.
    */
   java.lang.String getGcsBucket();
+
   /**
    *
    *
@@ -576,6 +596,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the accessUrls field is set.
    */
   boolean hasAccessUrls();
+
   /**
    *
    *
@@ -591,6 +612,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The accessUrls.
    */
   com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls getAccessUrls();
+
   /**
    *
    *
@@ -621,6 +643,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -636,6 +659,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -665,6 +689,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -680,6 +705,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -711,6 +737,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -728,6 +755,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -761,6 +789,7 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -778,6 +807,7 @@ public interface CertificateAuthorityOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -804,6 +834,7 @@ public interface CertificateAuthorityOrBuilder
    * <code>map&lt;string, string&gt; labels = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -814,9 +845,11 @@ public interface CertificateAuthorityOrBuilder
    * <code>map&lt;string, string&gt; labels = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -827,6 +860,7 @@ public interface CertificateAuthorityOrBuilder
    * <code>map&lt;string, string&gt; labels = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -841,6 +875,7 @@ public interface CertificateAuthorityOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

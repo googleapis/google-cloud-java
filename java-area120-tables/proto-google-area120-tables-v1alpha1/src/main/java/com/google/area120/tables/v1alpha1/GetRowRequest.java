@@ -33,6 +33,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.GetRowRequest)
     GetRowRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetRowRequest.newBuilder() to construct.
   private GetRowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -328,6 +333,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -525,6 +531,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -550,6 +557,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -575,6 +583,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -685,6 +698,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +719,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.area120.tables.v1alpha1.View.forNumber(view_);
       return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -729,6 +744,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface PluginOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface PluginOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface PluginOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface PluginOrBuilder
    * @return The type.
    */
   com.google.cloud.apihub.v1.AttributeValues getType();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface PluginOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface PluginOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

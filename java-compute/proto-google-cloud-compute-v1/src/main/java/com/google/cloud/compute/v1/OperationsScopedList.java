@@ -32,6 +32,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.OperationsScopedList)
     OperationsScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OperationsScopedList.newBuilder() to construct.
   private OperationsScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Operation> operations_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.compute.v1.Operation> getOperationsList() {
     return operations_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       getOperationsOrBuilderList() {
     return operations_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
   public int getOperationsCount() {
     return operations_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.Operation getOperations(int index) {
     return operations_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -355,6 +364,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -645,6 +655,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
         return operationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
         return operationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -677,6 +689,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
         return operationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +756,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +779,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +799,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +820,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +841,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +861,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +881,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +894,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.Operation.Builder getOperationsBuilder(int index) {
       return getOperationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -888,6 +911,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
         return operationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -905,6 +929,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(operations_);
       }
     }
+
     /**
      *
      *
@@ -918,6 +943,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       return getOperationsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Operation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -931,6 +957,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       return getOperationsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Operation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -968,6 +995,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -982,6 +1010,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1002,6 +1031,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1054,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1074,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1102,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1122,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1137,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1121,6 +1156,7 @@ public final class OperationsScopedList extends com.google.protobuf.GeneratedMes
             : warning_;
       }
     }
+
     /**
      *
      *

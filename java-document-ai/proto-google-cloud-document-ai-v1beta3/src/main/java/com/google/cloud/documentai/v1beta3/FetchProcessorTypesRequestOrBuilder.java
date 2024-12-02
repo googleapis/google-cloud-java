@@ -39,6 +39,7 @@ public interface FetchProcessorTypesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

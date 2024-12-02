@@ -26,6 +26,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:grafeas.v1.DSSEAttestationNote)
     DSSEAttestationNoteOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DSSEAttestationNote.newBuilder() to construct.
   private DSSEAttestationNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
      * @return The humanReadableName.
      */
     java.lang.String getHumanReadableName();
+
     /**
      *
      *
@@ -85,6 +87,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getHumanReadableNameBytes();
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:grafeas.v1.DSSEAttestationNote.DSSEHint)
       DSSEHintOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DSSEHint.newBuilder() to construct.
     private DSSEHint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -139,6 +143,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object humanReadableName_ = "";
+
     /**
      *
      *
@@ -163,6 +168,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -348,6 +354,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -540,6 +547,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object humanReadableName_ = "";
+
       /**
        *
        *
@@ -563,6 +571,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -586,6 +595,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -608,6 +618,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -626,6 +637,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -717,6 +729,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int HINT_FIELD_NUMBER = 1;
   private io.grafeas.v1.DSSEAttestationNote.DSSEHint hint_;
+
   /**
    *
    *
@@ -732,6 +745,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
   public boolean hasHint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -747,6 +761,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
   public io.grafeas.v1.DSSEAttestationNote.DSSEHint getHint() {
     return hint_ == null ? io.grafeas.v1.DSSEAttestationNote.DSSEHint.getDefaultInstance() : hint_;
   }
+
   /**
    *
    *
@@ -923,6 +938,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code grafeas.v1.DSSEAttestationNote} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1116,6 +1132,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
             io.grafeas.v1.DSSEAttestationNote.DSSEHint.Builder,
             io.grafeas.v1.DSSEAttestationNote.DSSEHintOrBuilder>
         hintBuilder_;
+
     /**
      *
      *
@@ -1130,6 +1147,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
     public boolean hasHint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1150,6 +1168,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
         return hintBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1191,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1211,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1239,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1259,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1274,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
       onChanged();
       return getHintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1269,6 +1293,7 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
             : hint_;
       }
     }
+
     /**
      *
      *

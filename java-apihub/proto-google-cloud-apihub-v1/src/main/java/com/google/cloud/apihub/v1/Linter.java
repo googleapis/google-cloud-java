@@ -72,6 +72,7 @@ public enum Linter implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LINTER_UNSPECIFIED = 0;</code>
    */
   public static final int LINTER_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum Linter implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SPECTRAL = 1;</code>
    */
   public static final int SPECTRAL_VALUE = 1;
+
   /**
    *
    *

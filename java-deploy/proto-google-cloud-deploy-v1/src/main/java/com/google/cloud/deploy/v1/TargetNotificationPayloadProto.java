@@ -41,15 +41,15 @@ public final class TargetNotificationPayloadProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n8google/cloud/deploy/v1/target_notifica"
-          + "tion_payload.proto\022\026google.cloud.deploy."
-          + "v1\032&google/cloud/deploy/v1/log_enums.pro"
-          + "to\"f\n\027TargetNotificationEvent\022\017\n\007message"
-          + "\030\001 \001(\t\022\016\n\006target\030\002 \001(\t\022*\n\004type\030\003 \001(\0162\034.g"
-          + "oogle.cloud.deploy.v1.TypeBr\n\032com.google"
-          + ".cloud.deploy.v1B\036TargetNotificationPayl"
-          + "oadProtoP\001Z2cloud.google.com/go/deploy/a"
-          + "piv1/deploypb;deploypbb\006proto3"
+      "\n"
+          + "8google/cloud/deploy/v1/target_notification_payload.proto\022\026google.cloud.deploy."
+          + "v1\032&google/cloud/deploy/v1/log_enums.proto\"f\n"
+          + "\027TargetNotificationEvent\022\017\n"
+          + "\007message\030\001 \001(\t\022\016\n"
+          + "\006target\030\002 \001(\t\022*\n"
+          + "\004type\030\003 \001(\0162\034.google.cloud.deploy.v1.TypeBr\n"
+          + "\032com.google.cloud.deploy.v1B\036TargetNotificationPayl"
+          + "oadProtoP\001Z2cloud.google.com/go/deploy/apiv1/deploypb;deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

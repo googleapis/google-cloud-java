@@ -36,6 +36,7 @@ public interface DataProfileLocationOrBuilder
    * @return Whether the organizationId field is set.
    */
   boolean hasOrganizationId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DataProfileLocationOrBuilder
    * @return Whether the folderId field is set.
    */
   boolean hasFolderId();
+
   /**
    *
    *

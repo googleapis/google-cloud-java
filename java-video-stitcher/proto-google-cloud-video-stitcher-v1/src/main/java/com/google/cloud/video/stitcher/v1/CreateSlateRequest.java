@@ -33,6 +33,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.CreateSlateRequest)
     CreateSlateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSlateRequest.newBuilder() to construct.
   private CreateSlateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object slateId_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int SLATE_FIELD_NUMBER = 3;
   private com.google.cloud.video.stitcher.v1.Slate slate_;
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSlate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.video.stitcher.v1.Slate getSlate() {
     return slate_ == null ? com.google.cloud.video.stitcher.v1.Slate.getDefaultInstance() : slate_;
   }
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -499,6 +509,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -742,6 +753,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -767,6 +779,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +805,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -816,6 +830,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +851,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object slateId_ = "";
+
     /**
      *
      *
@@ -888,6 +905,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -913,6 +931,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -937,6 +956,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +977,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1010,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.video.stitcher.v1.Slate.Builder,
             com.google.cloud.video.stitcher.v1.SlateOrBuilder>
         slateBuilder_;
+
     /**
      *
      *
@@ -1005,6 +1027,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSlate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1027,6 +1050,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         return slateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1075,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1097,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1127,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1149,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1166,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSlateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1158,6 +1187,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
             : slate_;
       }
     }
+
     /**
      *
      *
@@ -1187,6 +1217,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1221,6 +1252,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1287,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1288,6 +1321,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1351,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

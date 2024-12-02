@@ -36,6 +36,7 @@ public interface AdRequestOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AdRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AdRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.video.stitcher.v1.RequestMetadata getRequestMetadata();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface AdRequestOrBuilder
    * @return Whether the responseMetadata field is set.
    */
   boolean hasResponseMetadata();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface AdRequestOrBuilder
    * @return The responseMetadata.
    */
   com.google.cloud.video.stitcher.v1.ResponseMetadata getResponseMetadata();
+
   /**
    *
    *

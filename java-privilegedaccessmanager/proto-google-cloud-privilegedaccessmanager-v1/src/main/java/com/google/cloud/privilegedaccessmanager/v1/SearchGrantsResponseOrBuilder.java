@@ -34,6 +34,7 @@ public interface SearchGrantsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Grant grants = 1;</code>
    */
   java.util.List<com.google.cloud.privilegedaccessmanager.v1.Grant> getGrantsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchGrantsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Grant grants = 1;</code>
    */
   com.google.cloud.privilegedaccessmanager.v1.Grant getGrants(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchGrantsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Grant grants = 1;</code>
    */
   int getGrantsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchGrantsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.privilegedaccessmanager.v1.GrantOrBuilder>
       getGrantsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface SearchGrantsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

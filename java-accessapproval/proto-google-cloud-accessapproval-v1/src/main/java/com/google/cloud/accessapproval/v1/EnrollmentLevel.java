@@ -62,6 +62,7 @@ public enum EnrollmentLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENROLLMENT_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int ENROLLMENT_LEVEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

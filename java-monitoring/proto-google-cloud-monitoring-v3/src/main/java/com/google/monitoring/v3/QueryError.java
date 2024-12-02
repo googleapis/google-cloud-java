@@ -33,6 +33,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.QueryError)
     QueryErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryError.newBuilder() to construct.
   private QueryError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LOCATOR_FIELD_NUMBER = 1;
   private com.google.monitoring.v3.TextLocator locator_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocator() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.v3.TextLocator getLocator() {
     return locator_ == null ? com.google.monitoring.v3.TextLocator.getDefaultInstance() : locator_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -335,6 +341,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +558,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.v3.TextLocator.Builder,
             com.google.monitoring.v3.TextLocatorOrBuilder>
         locatorBuilder_;
+
     /**
      *
      *
@@ -566,6 +574,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocator() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
         return locatorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +670,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +707,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocatorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
             : locator_;
       }
     }
+
     /**
      *
      *
@@ -740,6 +756,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +802,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -805,6 +824,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +842,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

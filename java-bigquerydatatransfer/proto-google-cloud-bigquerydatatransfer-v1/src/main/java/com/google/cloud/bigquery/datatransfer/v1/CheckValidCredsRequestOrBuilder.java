@@ -40,6 +40,7 @@ public interface CheckValidCredsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

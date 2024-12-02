@@ -36,6 +36,7 @@ public interface LocalizedMessageOrBuilder
    * @return Whether the locale field is set.
    */
   boolean hasLocale();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LocalizedMessageOrBuilder
    * @return The locale.
    */
   java.lang.String getLocale();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface LocalizedMessageOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface LocalizedMessageOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *

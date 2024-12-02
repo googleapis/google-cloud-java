@@ -34,6 +34,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.LookupStreamObjectRequest)
     LookupStreamObjectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LookupStreamObjectRequest.newBuilder() to construct.
   private LookupStreamObjectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
 
   public static final int SOURCE_OBJECT_IDENTIFIER_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1.SourceObjectIdentifier sourceObjectIdentifier_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
   public boolean hasSourceObjectIdentifier() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
         ? com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance()
         : sourceObjectIdentifier_;
   }
+
   /**
    *
    *
@@ -352,6 +358,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +577,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -594,6 +602,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -618,6 +627,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +671,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder,
             com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder>
         sourceObjectIdentifierBuilder_;
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
     public boolean hasSourceObjectIdentifier() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -729,6 +743,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
         return sourceObjectIdentifierBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       onChanged();
       return getSourceObjectIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -866,6 +886,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
             : sourceObjectIdentifier_;
       }
     }
+
     /**
      *
      *

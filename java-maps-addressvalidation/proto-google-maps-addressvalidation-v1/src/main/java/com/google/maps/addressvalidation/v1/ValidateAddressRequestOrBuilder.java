@@ -53,6 +53,7 @@ public interface ValidateAddressRequestOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface ValidateAddressRequestOrBuilder
    * @return The address.
    */
   com.google.type.PostalAddress getAddress();
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public interface ValidateAddressRequestOrBuilder
    * @return The previousResponseId.
    */
   java.lang.String getPreviousResponseId();
+
   /**
    *
    *
@@ -202,6 +205,7 @@ public interface ValidateAddressRequestOrBuilder
    * @return The sessionToken.
    */
   java.lang.String getSessionToken();
+
   /**
    *
    *

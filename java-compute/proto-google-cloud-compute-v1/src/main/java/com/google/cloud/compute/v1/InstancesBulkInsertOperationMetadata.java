@@ -33,6 +33,7 @@ public final class InstancesBulkInsertOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesBulkInsertOperationMetadata)
     InstancesBulkInsertOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstancesBulkInsertOperationMetadata.newBuilder() to construct.
   private InstancesBulkInsertOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -109,6 +110,7 @@ public final class InstancesBulkInsertOperationMetadata
   public int getPerLocationStatusCount() {
     return internalGetPerLocationStatus().getMap().size();
   }
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public final class InstancesBulkInsertOperationMetadata
     }
     return internalGetPerLocationStatus().getMap().containsKey(key);
   }
+
   /** Use {@link #getPerLocationStatusMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -134,6 +137,7 @@ public final class InstancesBulkInsertOperationMetadata
       getPerLocationStatus() {
     return getPerLocationStatusMap();
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class InstancesBulkInsertOperationMetadata
       getPerLocationStatusMap() {
     return internalGetPerLocationStatus().getMap();
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class InstancesBulkInsertOperationMetadata
         internalGetPerLocationStatus().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -374,6 +380,7 @@ public final class InstancesBulkInsertOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -608,7 +615,8 @@ public final class InstancesBulkInsertOperationMetadata
           defaultEntry() {
         return PerLocationStatusDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final PerLocationStatusConverter perLocationStatusConverter =
         new PerLocationStatusConverter();
@@ -649,6 +657,7 @@ public final class InstancesBulkInsertOperationMetadata
     public int getPerLocationStatusCount() {
       return internalGetPerLocationStatus().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -667,6 +676,7 @@ public final class InstancesBulkInsertOperationMetadata
       }
       return internalGetPerLocationStatus().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPerLocationStatusMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -674,6 +684,7 @@ public final class InstancesBulkInsertOperationMetadata
         getPerLocationStatus() {
       return getPerLocationStatusMap();
     }
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class InstancesBulkInsertOperationMetadata
         getPerLocationStatusMap() {
       return internalGetPerLocationStatus().getImmutableMap();
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class InstancesBulkInsertOperationMetadata
           map = internalGetMutablePerLocationStatus().ensureBuilderMap();
       return map.containsKey(key) ? perLocationStatusConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class InstancesBulkInsertOperationMetadata
       internalGetMutablePerLocationStatus().clear();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class InstancesBulkInsertOperationMetadata
       internalGetMutablePerLocationStatus().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.BulkInsertOperationStatus>
@@ -771,6 +786,7 @@ public final class InstancesBulkInsertOperationMetadata
       bitField0_ |= 0x00000001;
       return internalGetMutablePerLocationStatus().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class InstancesBulkInsertOperationMetadata
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class InstancesBulkInsertOperationMetadata
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

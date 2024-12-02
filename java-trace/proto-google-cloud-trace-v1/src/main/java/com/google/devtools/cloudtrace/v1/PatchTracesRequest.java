@@ -33,6 +33,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v1.PatchTracesRequest)
     PatchTracesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchTracesRequest.newBuilder() to construct.
   private PatchTracesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int TRACES_FIELD_NUMBER = 2;
   private com.google.devtools.cloudtrace.v1.Traces traces_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasTraces() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.devtools.cloudtrace.v1.Traces.getDefaultInstance()
         : traces_;
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -557,6 +564,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -622,6 +632,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +650,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
             com.google.devtools.cloudtrace.v1.Traces.Builder,
             com.google.devtools.cloudtrace.v1.TracesOrBuilder>
         tracesBuilder_;
+
     /**
      *
      *
@@ -684,6 +697,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasTraces() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
         return tracesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -730,6 +745,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +797,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +819,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getTracesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -837,6 +857,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
             : traces_;
       }
     }
+
     /**
      *
      *

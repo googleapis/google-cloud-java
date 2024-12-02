@@ -33,6 +33,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.RemoveAssetsFromGroupRequest)
     RemoveAssetsFromGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveAssetsFromGroupRequest.newBuilder() to construct.
   private RemoveAssetsFromGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object group_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
 
   public static final int ASSETS_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.AssetList assets_;
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
   public boolean hasAssets() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
         ? com.google.cloud.migrationcenter.v1.AssetList.getDefaultInstance()
         : assets_;
   }
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -471,6 +480,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -716,6 +726,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object group_ = "";
+
     /**
      *
      *
@@ -740,6 +751,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +776,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -787,6 +800,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +820,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +847,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -866,6 +882,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -900,6 +917,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -933,6 +951,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +981,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1023,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
             com.google.cloud.migrationcenter.v1.AssetList.Builder,
             com.google.cloud.migrationcenter.v1.AssetListOrBuilder>
         assetsBuilder_;
+
     /**
      *
      *
@@ -1021,6 +1042,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
     public boolean hasAssets() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1045,6 +1067,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
         return assetsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1071,6 +1094,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1119,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1151,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1175,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1194,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return getAssetsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1189,6 +1217,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
             : assets_;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1249,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -1239,6 +1269,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -1262,6 +1293,7 @@ public final class RemoveAssetsFromGroupRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

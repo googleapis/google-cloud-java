@@ -36,6 +36,7 @@ public interface LatLongRectOrBuilder
    * @return Whether the minLatLng field is set.
    */
   boolean hasMinLatLng();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LatLongRectOrBuilder
    * @return The minLatLng.
    */
   com.google.type.LatLng getMinLatLng();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface LatLongRectOrBuilder
    * @return Whether the maxLatLng field is set.
    */
   boolean hasMaxLatLng();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface LatLongRectOrBuilder
    * @return The maxLatLng.
    */
   com.google.type.LatLng getMaxLatLng();
+
   /**
    *
    *

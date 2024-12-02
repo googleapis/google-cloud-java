@@ -39,6 +39,7 @@ public interface LookupDiscoveredWorkloadRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface LookupDiscoveredWorkloadRequestOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

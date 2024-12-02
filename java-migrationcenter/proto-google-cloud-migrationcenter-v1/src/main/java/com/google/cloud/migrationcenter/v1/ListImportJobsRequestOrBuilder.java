@@ -38,6 +38,7 @@ public interface ListImportJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface ListImportJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface ListImportJobsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface ListImportJobsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface ListImportJobsRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface UpdateSettingRequestOrBuilder
    * @return Whether the setting field is set.
    */
   boolean hasSetting();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateSettingRequestOrBuilder
    * @return The setting.
    */
   com.google.cloud.resourcesettings.v1.Setting getSetting();
+
   /**
    *
    *

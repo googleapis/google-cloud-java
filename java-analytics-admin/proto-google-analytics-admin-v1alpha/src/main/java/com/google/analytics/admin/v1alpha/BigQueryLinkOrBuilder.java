@@ -38,6 +38,7 @@ public interface BigQueryLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface BigQueryLinkOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface BigQueryLinkOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface BigQueryLinkOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -194,6 +198,7 @@ public interface BigQueryLinkOrBuilder
    * @return A list containing the exportStreams.
    */
   java.util.List<java.lang.String> getExportStreamsList();
+
   /**
    *
    *
@@ -209,6 +214,7 @@ public interface BigQueryLinkOrBuilder
    * @return The count of exportStreams.
    */
   int getExportStreamsCount();
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public interface BigQueryLinkOrBuilder
    * @return The exportStreams at the given index.
    */
   java.lang.String getExportStreams(int index);
+
   /**
    *
    *
@@ -254,6 +261,7 @@ public interface BigQueryLinkOrBuilder
    * @return A list containing the excludedEvents.
    */
   java.util.List<java.lang.String> getExcludedEventsList();
+
   /**
    *
    *
@@ -266,6 +274,7 @@ public interface BigQueryLinkOrBuilder
    * @return The count of excludedEvents.
    */
   int getExcludedEventsCount();
+
   /**
    *
    *
@@ -279,6 +288,7 @@ public interface BigQueryLinkOrBuilder
    * @return The excludedEvents at the given index.
    */
   java.lang.String getExcludedEvents(int index);
+
   /**
    *
    *
@@ -309,6 +319,7 @@ public interface BigQueryLinkOrBuilder
    * @return The datasetLocation.
    */
   java.lang.String getDatasetLocation();
+
   /**
    *
    *

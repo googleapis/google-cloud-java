@@ -38,6 +38,7 @@ public interface CreateConversationModelEvaluationOperationMetadataOrBuilder
    * @return The conversationModelEvaluation.
    */
   java.lang.String getConversationModelEvaluation();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateConversationModelEvaluationOperationMetadataOrBuilder
    * @return The conversationModel.
    */
   java.lang.String getConversationModel();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateConversationModelEvaluationOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface CreateConversationModelEvaluationOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface CreateConversationModelEvaluationOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface EntryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface EntryOrBuilder
    * @return The entryType.
    */
   java.lang.String getEntryType();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface EntryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface EntryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface EntryOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface EntryOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface EntryOrBuilder
    * </code>
    */
   int getAspectsCount();
+
   /**
    *
    *
@@ -198,9 +205,11 @@ public interface EntryOrBuilder
    * </code>
    */
   boolean containsAspects(java.lang.String key);
+
   /** Use {@link #getAspectsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> getAspects();
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public interface EntryOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> getAspectsMap();
+
   /**
    *
    *
@@ -243,6 +253,7 @@ public interface EntryOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.dataplex.v1.Aspect defaultValue);
+
   /**
    *
    *
@@ -277,6 +288,7 @@ public interface EntryOrBuilder
    * @return The parentEntry.
    */
   java.lang.String getParentEntry();
+
   /**
    *
    *
@@ -307,6 +319,7 @@ public interface EntryOrBuilder
    * @return The fullyQualifiedName.
    */
   java.lang.String getFullyQualifiedName();
+
   /**
    *
    *
@@ -338,6 +351,7 @@ public interface EntryOrBuilder
    * @return Whether the entrySource field is set.
    */
   boolean hasEntrySource();
+
   /**
    *
    *
@@ -353,6 +367,7 @@ public interface EntryOrBuilder
    * @return The entrySource.
    */
   com.google.cloud.dataplex.v1.EntrySource getEntrySource();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.EnumerateLicensedUsersResponse)
     EnumerateLicensedUsersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EnumerateLicensedUsersResponse.newBuilder() to construct.
   private EnumerateLicensedUsersResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.commerce.consumer.procurement.v1.LicensedUser>
       licensedUsers_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       getLicensedUsersList() {
     return licensedUsers_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       getLicensedUsersOrBuilderList() {
     return licensedUsers_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
   public int getLicensedUsersCount() {
     return licensedUsers_.size();
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       int index) {
     return licensedUsers_.get(index);
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -381,6 +389,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -681,6 +690,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
         return licensedUsersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -699,6 +709,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
         return licensedUsersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -718,6 +729,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
         return licensedUsersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -743,6 +755,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +831,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +854,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +924,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +946,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +962,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
         getLicensedUsersBuilder(int index) {
       return getLicensedUsersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -960,6 +982,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
         return licensedUsersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -980,6 +1003,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(licensedUsers_);
       }
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
           .addBuilder(
               com.google.cloud.commerce.consumer.procurement.v1.LicensedUser.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1015,6 +1040,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
               index,
               com.google.cloud.commerce.consumer.procurement.v1.LicensedUser.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1052,6 +1078,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1075,6 +1102,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1098,6 +1126,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1120,6 +1149,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1168,7 @@ public final class EnumerateLicensedUsersResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

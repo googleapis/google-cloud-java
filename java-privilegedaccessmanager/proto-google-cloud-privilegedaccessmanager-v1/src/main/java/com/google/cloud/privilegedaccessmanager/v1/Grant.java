@@ -34,6 +34,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant)
     GrantOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Grant.newBuilder() to construct.
   private Grant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -206,6 +207,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -217,6 +219,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>APPROVAL_AWAITED = 1;</code>
      */
     public static final int APPROVAL_AWAITED_VALUE = 1;
+
     /**
      *
      *
@@ -228,6 +231,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>DENIED = 3;</code>
      */
     public static final int DENIED_VALUE = 3;
+
     /**
      *
      *
@@ -239,6 +243,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEDULED = 4;</code>
      */
     public static final int SCHEDULED_VALUE = 4;
+
     /**
      *
      *
@@ -249,6 +254,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVATING = 5;</code>
      */
     public static final int ACTIVATING_VALUE = 5;
+
     /**
      *
      *
@@ -259,6 +265,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 6;</code>
      */
     public static final int ACTIVE_VALUE = 6;
+
     /**
      *
      *
@@ -270,6 +277,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVATION_FAILED = 7;</code>
      */
     public static final int ACTIVATION_FAILED_VALUE = 7;
+
     /**
      *
      *
@@ -281,6 +289,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPIRED = 8;</code>
      */
     public static final int EXPIRED_VALUE = 8;
+
     /**
      *
      *
@@ -291,6 +300,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>REVOKING = 9;</code>
      */
     public static final int REVOKING_VALUE = 9;
+
     /**
      *
      *
@@ -301,6 +311,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>REVOKED = 10;</code>
      */
     public static final int REVOKED_VALUE = 10;
+
     /**
      *
      *
@@ -435,6 +446,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event>
         getEventsList();
+
     /**
      *
      *
@@ -450,6 +462,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event getEvents(int index);
+
     /**
      *
      *
@@ -465,6 +478,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getEventsCount();
+
     /**
      *
      *
@@ -482,6 +496,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.EventOrBuilder>
         getEventsOrBuilderList();
+
     /**
      *
      *
@@ -499,6 +514,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.EventOrBuilder getEventsOrBuilder(
         int index);
   }
+
   /**
    *
    *
@@ -513,6 +529,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline)
       TimelineOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Timeline.newBuilder() to construct.
     private Timeline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -562,6 +579,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the requested field is set.
        */
       boolean hasRequested();
+
       /**
        *
        *
@@ -576,6 +594,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The requested.
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Requested getRequested();
+
       /**
        *
        *
@@ -603,6 +622,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the approved field is set.
        */
       boolean hasApproved();
+
       /**
        *
        *
@@ -616,6 +636,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The approved.
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Approved getApproved();
+
       /**
        *
        *
@@ -642,6 +663,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the denied field is set.
        */
       boolean hasDenied();
+
       /**
        *
        *
@@ -655,6 +677,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The denied.
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Denied getDenied();
+
       /**
        *
        *
@@ -681,6 +704,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the revoked field is set.
        */
       boolean hasRevoked();
+
       /**
        *
        *
@@ -694,6 +718,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The revoked.
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Revoked getRevoked();
+
       /**
        *
        *
@@ -721,6 +746,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the scheduled field is set.
        */
       boolean hasScheduled();
+
       /**
        *
        *
@@ -735,6 +761,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The scheduled.
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Scheduled getScheduled();
+
       /**
        *
        *
@@ -763,6 +790,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the activated field is set.
        */
       boolean hasActivated();
+
       /**
        *
        *
@@ -777,6 +805,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The activated.
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Activated getActivated();
+
       /**
        *
        *
@@ -805,6 +834,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the activationFailed field is set.
        */
       boolean hasActivationFailed();
+
       /**
        *
        *
@@ -820,6 +850,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ActivationFailed
           getActivationFailed();
+
       /**
        *
        *
@@ -848,6 +879,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the expired field is set.
        */
       boolean hasExpired();
+
       /**
        *
        *
@@ -862,6 +894,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The expired.
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Expired getExpired();
+
       /**
        *
        *
@@ -890,6 +923,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the ended field is set.
        */
       boolean hasEnded();
+
       /**
        *
        *
@@ -904,6 +938,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The ended.
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Ended getEnded();
+
       /**
        *
        *
@@ -932,6 +967,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the externallyModified field is set.
        */
       boolean hasExternallyModified();
+
       /**
        *
        *
@@ -947,6 +983,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExternallyModified
           getExternallyModified();
+
       /**
        *
        *
@@ -975,6 +1012,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the eventTime field is set.
        */
       boolean hasEventTime();
+
       /**
        *
        *
@@ -989,6 +1027,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        * @return The eventTime.
        */
       com.google.protobuf.Timestamp getEventTime();
+
       /**
        *
        *
@@ -1004,6 +1043,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.EventCase getEventCase();
     }
+
     /**
      *
      *
@@ -1018,6 +1058,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event)
         EventOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Event.newBuilder() to construct.
       private Event(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1066,6 +1107,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the expireTime field is set.
          */
         boolean hasExpireTime();
+
         /**
          *
          *
@@ -1081,6 +1123,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The expireTime.
          */
         com.google.protobuf.Timestamp getExpireTime();
+
         /**
          *
          *
@@ -1095,6 +1138,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
       }
+
       /**
        *
        *
@@ -1110,6 +1154,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Requested)
           RequestedOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Requested.newBuilder() to construct.
         private Requested(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -1142,6 +1187,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
         public static final int EXPIRE_TIME_FIELD_NUMBER = 1;
         private com.google.protobuf.Timestamp expireTime_;
+
         /**
          *
          *
@@ -1160,6 +1206,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasExpireTime() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -1180,6 +1227,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               ? com.google.protobuf.Timestamp.getDefaultInstance()
               : expireTime_;
         }
+
         /**
          *
          *
@@ -1378,6 +1426,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -1603,6 +1652,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.Timestamp.Builder,
                   com.google.protobuf.TimestampOrBuilder>
               expireTimeBuilder_;
+
           /**
            *
            *
@@ -1620,6 +1670,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           public boolean hasExpireTime() {
             return ((bitField0_ & 0x00000001) != 0);
           }
+
           /**
            *
            *
@@ -1643,6 +1694,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return expireTimeBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -1668,6 +1720,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1690,6 +1743,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1720,6 +1774,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -1742,6 +1797,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1759,6 +1815,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return getExpireTimeFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -1780,6 +1837,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                   : expireTime_;
             }
           }
+
           /**
            *
            *
@@ -1896,6 +1954,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The reason.
          */
         java.lang.String getReason();
+
         /**
          *
          *
@@ -1922,6 +1981,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The actor.
          */
         java.lang.String getActor();
+
         /**
          *
          *
@@ -1935,6 +1995,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getActorBytes();
       }
+
       /**
        *
        *
@@ -1949,6 +2010,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Approved)
           ApprovedOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Approved.newBuilder() to construct.
         private Approved(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -1985,6 +2047,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object reason_ = "";
+
         /**
          *
          *
@@ -2009,6 +2072,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -2038,6 +2102,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object actor_ = "";
+
         /**
          *
          *
@@ -2061,6 +2126,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -2268,6 +2334,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -2484,6 +2551,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private java.lang.Object reason_ = "";
+
           /**
            *
            *
@@ -2507,6 +2575,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -2530,6 +2599,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -2552,6 +2622,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2570,6 +2641,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2595,6 +2667,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
 
           private java.lang.Object actor_ = "";
+
           /**
            *
            *
@@ -2617,6 +2690,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -2639,6 +2713,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -2660,6 +2735,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2677,6 +2753,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2787,6 +2864,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The reason.
          */
         java.lang.String getReason();
+
         /**
          *
          *
@@ -2813,6 +2891,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The actor.
          */
         java.lang.String getActor();
+
         /**
          *
          *
@@ -2826,6 +2905,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getActorBytes();
       }
+
       /**
        *
        *
@@ -2840,6 +2920,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Denied)
           DeniedOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Denied.newBuilder() to construct.
         private Denied(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -2876,6 +2957,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object reason_ = "";
+
         /**
          *
          *
@@ -2900,6 +2982,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -2929,6 +3012,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object actor_ = "";
+
         /**
          *
          *
@@ -2952,6 +3036,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -3158,6 +3243,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -3372,6 +3458,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private java.lang.Object reason_ = "";
+
           /**
            *
            *
@@ -3395,6 +3482,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -3418,6 +3506,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -3440,6 +3529,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3458,6 +3548,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3483,6 +3574,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
 
           private java.lang.Object actor_ = "";
+
           /**
            *
            *
@@ -3505,6 +3597,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -3527,6 +3620,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -3548,6 +3642,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3565,6 +3660,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3673,6 +3769,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The reason.
          */
         java.lang.String getReason();
+
         /**
          *
          *
@@ -3698,6 +3795,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The actor.
          */
         java.lang.String getActor();
+
         /**
          *
          *
@@ -3711,6 +3809,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getActorBytes();
       }
+
       /**
        *
        *
@@ -3725,6 +3824,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Revoked)
           RevokedOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Revoked.newBuilder() to construct.
         private Revoked(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -3761,6 +3861,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object reason_ = "";
+
         /**
          *
          *
@@ -3784,6 +3885,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -3812,6 +3914,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object actor_ = "";
+
         /**
          *
          *
@@ -3835,6 +3938,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -4042,6 +4146,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -4257,6 +4362,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private java.lang.Object reason_ = "";
+
           /**
            *
            *
@@ -4279,6 +4385,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -4301,6 +4408,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -4322,6 +4430,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -4339,6 +4448,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -4363,6 +4473,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
 
           private java.lang.Object actor_ = "";
+
           /**
            *
            *
@@ -4385,6 +4496,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -4407,6 +4519,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -4428,6 +4541,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -4445,6 +4559,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -4556,6 +4671,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the scheduledActivationTime field is set.
          */
         boolean hasScheduledActivationTime();
+
         /**
          *
          *
@@ -4570,6 +4686,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The scheduledActivationTime.
          */
         com.google.protobuf.Timestamp getScheduledActivationTime();
+
         /**
          *
          *
@@ -4583,6 +4700,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.TimestampOrBuilder getScheduledActivationTimeOrBuilder();
       }
+
       /**
        *
        *
@@ -4599,6 +4717,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Scheduled)
           ScheduledOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Scheduled.newBuilder() to construct.
         private Scheduled(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -4631,6 +4750,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
         public static final int SCHEDULED_ACTIVATION_TIME_FIELD_NUMBER = 1;
         private com.google.protobuf.Timestamp scheduledActivationTime_;
+
         /**
          *
          *
@@ -4648,6 +4768,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasScheduledActivationTime() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -4667,6 +4788,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               ? com.google.protobuf.Timestamp.getDefaultInstance()
               : scheduledActivationTime_;
         }
+
         /**
          *
          *
@@ -4867,6 +4989,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -5095,6 +5218,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.Timestamp.Builder,
                   com.google.protobuf.TimestampOrBuilder>
               scheduledActivationTimeBuilder_;
+
           /**
            *
            *
@@ -5111,6 +5235,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           public boolean hasScheduledActivationTime() {
             return ((bitField0_ & 0x00000001) != 0);
           }
+
           /**
            *
            *
@@ -5133,6 +5258,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return scheduledActivationTimeBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -5157,6 +5283,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5179,6 +5306,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5209,6 +5337,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -5230,6 +5359,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5246,6 +5376,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return getScheduledActivationTimeFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -5266,6 +5397,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                   : scheduledActivationTime_;
             }
           }
+
           /**
            *
            *
@@ -5367,6 +5499,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Activated)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -5383,6 +5516,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Activated)
           ActivatedOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Activated.newBuilder() to construct.
         private Activated(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -5577,6 +5711,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -5841,6 +5976,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the error field is set.
          */
         boolean hasError();
+
         /**
          *
          *
@@ -5853,6 +5989,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return The error.
          */
         com.google.rpc.Status getError();
+
         /**
          *
          *
@@ -5864,6 +6001,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.rpc.StatusOrBuilder getErrorOrBuilder();
       }
+
       /**
        *
        *
@@ -5879,6 +6017,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ActivationFailed)
           ActivationFailedOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use ActivationFailed.newBuilder() to construct.
         private ActivationFailed(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -5912,6 +6051,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
         public static final int ERROR_FIELD_NUMBER = 1;
         private com.google.rpc.Status error_;
+
         /**
          *
          *
@@ -5927,6 +6067,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasError() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -5942,6 +6083,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public com.google.rpc.Status getError() {
           return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
         }
+
         /**
          *
          *
@@ -6149,6 +6291,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -6377,6 +6520,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                   com.google.rpc.Status.Builder,
                   com.google.rpc.StatusOrBuilder>
               errorBuilder_;
+
           /**
            *
            *
@@ -6391,6 +6535,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           public boolean hasError() {
             return ((bitField0_ & 0x00000001) != 0);
           }
+
           /**
            *
            *
@@ -6409,6 +6554,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return errorBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -6431,6 +6577,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -6450,6 +6597,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -6477,6 +6625,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -6496,6 +6645,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -6510,6 +6660,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return getErrorFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -6526,6 +6677,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
             }
           }
+
           /**
            *
            *
@@ -6627,6 +6779,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Expired)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -6641,6 +6794,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Expired)
           ExpiredOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Expired.newBuilder() to construct.
         private Expired(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -6835,6 +6989,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -7081,6 +7236,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Ended)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -7095,6 +7251,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Ended)
           EndedOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Ended.newBuilder() to construct.
         private Ended(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -7288,6 +7445,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -7531,6 +7689,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExternallyModified)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -7547,6 +7706,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExternallyModified)
           ExternallyModifiedOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use ExternallyModified.newBuilder() to construct.
         private ExternallyModified(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -7759,6 +7919,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -8039,6 +8200,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         private EventCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -8088,6 +8250,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int REQUESTED_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -8105,6 +8268,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRequested() {
         return eventCase_ == 2;
       }
+
       /**
        *
        *
@@ -8128,6 +8292,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Requested
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8151,6 +8316,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int APPROVED_FIELD_NUMBER = 3;
+
       /**
        *
        *
@@ -8167,6 +8333,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasApproved() {
         return eventCase_ == 3;
       }
+
       /**
        *
        *
@@ -8188,6 +8355,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Approved
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8209,6 +8377,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DENIED_FIELD_NUMBER = 4;
+
       /**
        *
        *
@@ -8225,6 +8394,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDenied() {
         return eventCase_ == 4;
       }
+
       /**
        *
        *
@@ -8245,6 +8415,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Denied
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8266,6 +8437,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int REVOKED_FIELD_NUMBER = 5;
+
       /**
        *
        *
@@ -8282,6 +8454,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRevoked() {
         return eventCase_ == 5;
       }
+
       /**
        *
        *
@@ -8302,6 +8475,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Revoked
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8323,6 +8497,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SCHEDULED_FIELD_NUMBER = 6;
+
       /**
        *
        *
@@ -8340,6 +8515,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasScheduled() {
         return eventCase_ == 6;
       }
+
       /**
        *
        *
@@ -8363,6 +8539,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Scheduled
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8386,6 +8563,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ACTIVATED_FIELD_NUMBER = 7;
+
       /**
        *
        *
@@ -8403,6 +8581,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasActivated() {
         return eventCase_ == 7;
       }
+
       /**
        *
        *
@@ -8426,6 +8605,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Activated
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8449,6 +8629,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ACTIVATION_FAILED_FIELD_NUMBER = 8;
+
       /**
        *
        *
@@ -8466,6 +8647,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasActivationFailed() {
         return eventCase_ == 8;
       }
+
       /**
        *
        *
@@ -8489,6 +8671,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ActivationFailed
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8513,6 +8696,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int EXPIRED_FIELD_NUMBER = 10;
+
       /**
        *
        *
@@ -8530,6 +8714,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasExpired() {
         return eventCase_ == 10;
       }
+
       /**
        *
        *
@@ -8551,6 +8736,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Expired
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8573,6 +8759,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ENDED_FIELD_NUMBER = 11;
+
       /**
        *
        *
@@ -8590,6 +8777,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEnded() {
         return eventCase_ == 11;
       }
+
       /**
        *
        *
@@ -8611,6 +8799,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Ended
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8633,6 +8822,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int EXTERNALLY_MODIFIED_FIELD_NUMBER = 12;
+
       /**
        *
        *
@@ -8650,6 +8840,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasExternallyModified() {
         return eventCase_ == 12;
       }
+
       /**
        *
        *
@@ -8674,6 +8865,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExternallyModified
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -8700,6 +8892,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
       public static final int EVENT_TIME_FIELD_NUMBER = 1;
       private com.google.protobuf.Timestamp eventTime_;
+
       /**
        *
        *
@@ -8717,6 +8910,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEventTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -8734,6 +8928,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Timestamp getEventTime() {
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
+
       /**
        *
        *
@@ -9116,6 +9311,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -9529,6 +9725,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Requested.Builder,
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.RequestedOrBuilder>
             requestedBuilder_;
+
         /**
          *
          *
@@ -9546,6 +9743,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasRequested() {
           return eventCase_ == 2;
         }
+
         /**
          *
          *
@@ -9577,6 +9775,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -9602,6 +9801,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -9625,6 +9825,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -9665,6 +9866,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -9692,6 +9894,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9707,6 +9910,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getRequestedBuilder() {
           return getRequestedFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -9732,6 +9936,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -9777,6 +9982,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Approved.Builder,
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ApprovedOrBuilder>
             approvedBuilder_;
+
         /**
          *
          *
@@ -9794,6 +10000,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasApproved() {
           return eventCase_ == 3;
         }
+
         /**
          *
          *
@@ -9825,6 +10032,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -9850,6 +10058,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -9873,6 +10082,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -9913,6 +10123,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -9940,6 +10151,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -9955,6 +10167,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getApprovedBuilder() {
           return getApprovedFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -9980,6 +10193,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10025,6 +10239,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Denied.Builder,
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.DeniedOrBuilder>
             deniedBuilder_;
+
         /**
          *
          *
@@ -10041,6 +10256,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasDenied() {
           return eventCase_ == 4;
         }
+
         /**
          *
          *
@@ -10070,6 +10286,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10094,6 +10311,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 4;
           return this;
         }
+
         /**
          *
          *
@@ -10116,6 +10334,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 4;
           return this;
         }
+
         /**
          *
          *
@@ -10154,6 +10373,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 4;
           return this;
         }
+
         /**
          *
          *
@@ -10180,6 +10400,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10194,6 +10415,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getDeniedBuilder() {
           return getDeniedFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -10218,6 +10440,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10261,6 +10484,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Revoked.Builder,
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.RevokedOrBuilder>
             revokedBuilder_;
+
         /**
          *
          *
@@ -10277,6 +10501,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasRevoked() {
           return eventCase_ == 5;
         }
+
         /**
          *
          *
@@ -10307,6 +10532,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10331,6 +10557,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 5;
           return this;
         }
+
         /**
          *
          *
@@ -10353,6 +10580,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 5;
           return this;
         }
+
         /**
          *
          *
@@ -10391,6 +10619,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 5;
           return this;
         }
+
         /**
          *
          *
@@ -10417,6 +10646,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10431,6 +10661,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getRevokedBuilder() {
           return getRevokedFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -10455,6 +10686,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10499,6 +10731,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Scheduled.Builder,
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ScheduledOrBuilder>
             scheduledBuilder_;
+
         /**
          *
          *
@@ -10516,6 +10749,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasScheduled() {
           return eventCase_ == 6;
         }
+
         /**
          *
          *
@@ -10547,6 +10781,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10572,6 +10807,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 6;
           return this;
         }
+
         /**
          *
          *
@@ -10595,6 +10831,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 6;
           return this;
         }
+
         /**
          *
          *
@@ -10635,6 +10872,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 6;
           return this;
         }
+
         /**
          *
          *
@@ -10662,6 +10900,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10677,6 +10916,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getScheduledBuilder() {
           return getScheduledFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -10702,6 +10942,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10747,6 +10988,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Activated.Builder,
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ActivatedOrBuilder>
             activatedBuilder_;
+
         /**
          *
          *
@@ -10764,6 +11006,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasActivated() {
           return eventCase_ == 7;
         }
+
         /**
          *
          *
@@ -10795,6 +11038,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10820,6 +11064,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 7;
           return this;
         }
+
         /**
          *
          *
@@ -10843,6 +11088,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 7;
           return this;
         }
+
         /**
          *
          *
@@ -10883,6 +11129,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 7;
           return this;
         }
+
         /**
          *
          *
@@ -10910,6 +11157,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10925,6 +11173,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getActivatedBuilder() {
           return getActivatedFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -10950,6 +11199,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10997,6 +11247,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event
                     .ActivationFailedOrBuilder>
             activationFailedBuilder_;
+
         /**
          *
          *
@@ -11014,6 +11265,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasActivationFailed() {
           return eventCase_ == 8;
         }
+
         /**
          *
          *
@@ -11046,6 +11298,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -11072,6 +11325,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 8;
           return this;
         }
+
         /**
          *
          *
@@ -11096,6 +11350,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 8;
           return this;
         }
+
         /**
          *
          *
@@ -11137,6 +11392,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 8;
           return this;
         }
+
         /**
          *
          *
@@ -11164,6 +11420,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -11180,6 +11437,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getActivationFailedBuilder() {
           return getActivationFailedFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -11207,6 +11465,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -11256,6 +11515,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Expired.Builder,
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExpiredOrBuilder>
             expiredBuilder_;
+
         /**
          *
          *
@@ -11273,6 +11533,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasExpired() {
           return eventCase_ == 10;
         }
+
         /**
          *
          *
@@ -11304,6 +11565,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -11329,6 +11591,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 10;
           return this;
         }
+
         /**
          *
          *
@@ -11352,6 +11615,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 10;
           return this;
         }
+
         /**
          *
          *
@@ -11391,6 +11655,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 10;
           return this;
         }
+
         /**
          *
          *
@@ -11418,6 +11683,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -11433,6 +11699,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getExpiredBuilder() {
           return getExpiredFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -11458,6 +11725,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -11503,6 +11771,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Ended.Builder,
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.EndedOrBuilder>
             endedBuilder_;
+
         /**
          *
          *
@@ -11520,6 +11789,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasEnded() {
           return eventCase_ == 11;
         }
+
         /**
          *
          *
@@ -11550,6 +11820,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -11575,6 +11846,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 11;
           return this;
         }
+
         /**
          *
          *
@@ -11598,6 +11870,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 11;
           return this;
         }
+
         /**
          *
          *
@@ -11636,6 +11909,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 11;
           return this;
         }
+
         /**
          *
          *
@@ -11663,6 +11937,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -11678,6 +11953,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getEndedBuilder() {
           return getEndedFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -11703,6 +11979,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -11748,6 +12025,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event
                     .ExternallyModifiedOrBuilder>
             externallyModifiedBuilder_;
+
         /**
          *
          *
@@ -11765,6 +12043,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasExternallyModified() {
           return eventCase_ == 12;
         }
+
         /**
          *
          *
@@ -11797,6 +12076,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .ExternallyModified.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -11823,6 +12103,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 12;
           return this;
         }
+
         /**
          *
          *
@@ -11847,6 +12128,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 12;
           return this;
         }
+
         /**
          *
          *
@@ -11888,6 +12170,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           eventCase_ = 12;
           return this;
         }
+
         /**
          *
          *
@@ -11915,6 +12198,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -11931,6 +12215,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             getExternallyModifiedBuilder() {
           return getExternallyModifiedFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -11958,6 +12243,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 .ExternallyModified.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -12008,6 +12294,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             eventTimeBuilder_;
+
         /**
          *
          *
@@ -12024,6 +12311,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         public boolean hasEventTime() {
           return ((bitField0_ & 0x00000400) != 0);
         }
+
         /**
          *
          *
@@ -12046,6 +12334,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             return eventTimeBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -12070,6 +12359,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12091,6 +12381,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12120,6 +12411,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -12141,6 +12433,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12157,6 +12450,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getEventTimeFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -12177,6 +12471,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 : eventTime_;
           }
         }
+
         /**
          *
          *
@@ -12277,6 +12572,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event>
         events_;
+
     /**
      *
      *
@@ -12296,6 +12592,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         getEventsList() {
       return events_;
     }
+
     /**
      *
      *
@@ -12316,6 +12613,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         getEventsOrBuilderList() {
       return events_;
     }
+
     /**
      *
      *
@@ -12334,6 +12632,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public int getEventsCount() {
       return events_.size();
     }
+
     /**
      *
      *
@@ -12352,6 +12651,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event getEvents(int index) {
       return events_.get(index);
     }
+
     /**
      *
      *
@@ -12535,6 +12835,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -12811,6 +13112,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return eventsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -12832,6 +13134,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return eventsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -12853,6 +13156,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return eventsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -12881,6 +13185,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12908,6 +13213,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12936,6 +13242,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12964,6 +13271,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -12990,6 +13298,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -13017,6 +13326,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -13044,6 +13354,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -13068,6 +13379,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -13092,6 +13404,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -13110,6 +13423,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           getEventsBuilder(int index) {
         return getEventsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -13132,6 +13446,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return eventsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -13155,6 +13470,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(events_);
         }
       }
+
       /**
        *
        *
@@ -13176,6 +13492,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -13198,6 +13515,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -13319,6 +13637,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the accessGrantTime field is set.
      */
     boolean hasAccessGrantTime();
+
     /**
      *
      *
@@ -13333,6 +13652,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * @return The accessGrantTime.
      */
     com.google.protobuf.Timestamp getAccessGrantTime();
+
     /**
      *
      *
@@ -13363,6 +13683,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the accessRemoveTime field is set.
      */
     boolean hasAccessRemoveTime();
+
     /**
      *
      *
@@ -13380,6 +13701,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * @return The accessRemoveTime.
      */
     com.google.protobuf.Timestamp getAccessRemoveTime();
+
     /**
      *
      *
@@ -13396,6 +13718,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getAccessRemoveTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -13410,6 +13733,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.AuditTrail)
       AuditTrailOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AuditTrail.newBuilder() to construct.
     private AuditTrail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13441,6 +13765,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ACCESS_GRANT_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp accessGrantTime_;
+
     /**
      *
      *
@@ -13458,6 +13783,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessGrantTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -13477,6 +13803,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : accessGrantTime_;
     }
+
     /**
      *
      *
@@ -13497,6 +13824,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ACCESS_REMOVE_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp accessRemoveTime_;
+
     /**
      *
      *
@@ -13517,6 +13845,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessRemoveTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -13539,6 +13868,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : accessRemoveTime_;
     }
+
     /**
      *
      *
@@ -13740,6 +14070,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -13974,6 +14305,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           accessGrantTimeBuilder_;
+
       /**
        *
        *
@@ -13990,6 +14322,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAccessGrantTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -14012,6 +14345,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return accessGrantTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -14036,6 +14370,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14057,6 +14392,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14086,6 +14422,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -14107,6 +14444,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14123,6 +14461,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAccessGrantTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -14143,6 +14482,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               : accessGrantTime_;
         }
       }
+
       /**
        *
        *
@@ -14177,6 +14517,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           accessRemoveTimeBuilder_;
+
       /**
        *
        *
@@ -14196,6 +14537,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAccessRemoveTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -14221,6 +14563,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return accessRemoveTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -14248,6 +14591,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14272,6 +14616,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14304,6 +14649,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -14328,6 +14674,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -14347,6 +14694,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAccessRemoveTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -14370,6 +14718,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               : accessRemoveTime_;
         }
       }
+
       /**
        *
        *
@@ -14473,6 +14822,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -14503,6 +14853,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -14536,6 +14887,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -14552,6 +14904,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -14568,6 +14921,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -14585,6 +14939,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -14601,6 +14956,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -14617,6 +14973,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -14636,6 +14993,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requester_ = "";
+
   /**
    *
    *
@@ -14659,6 +15017,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -14685,6 +15044,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUESTED_DURATION_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration requestedDuration_;
+
   /**
    *
    *
@@ -14703,6 +15063,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequestedDuration() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -14723,6 +15084,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : requestedDuration_;
   }
+
   /**
    *
    *
@@ -14744,6 +15106,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int JUSTIFICATION_FIELD_NUMBER = 6;
   private com.google.cloud.privilegedaccessmanager.v1.Justification justification_;
+
   /**
    *
    *
@@ -14761,6 +15124,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasJustification() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -14780,6 +15144,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.privilegedaccessmanager.v1.Justification.getDefaultInstance()
         : justification_;
   }
+
   /**
    *
    *
@@ -14801,6 +15166,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
+
   /**
    *
    *
@@ -14818,6 +15184,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -14842,6 +15209,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMELINE_FIELD_NUMBER = 8;
   private com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline timeline_;
+
   /**
    *
    *
@@ -14859,6 +15227,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeline() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -14878,6 +15247,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.getDefaultInstance()
         : timeline_;
   }
+
   /**
    *
    *
@@ -14899,6 +15269,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIVILEGED_ACCESS_FIELD_NUMBER = 9;
   private com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess privilegedAccess_;
+
   /**
    *
    *
@@ -14916,6 +15287,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrivilegedAccess() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -14935,6 +15307,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.getDefaultInstance()
         : privilegedAccess_;
   }
+
   /**
    *
    *
@@ -14956,6 +15329,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUDIT_TRAIL_FIELD_NUMBER = 10;
   private com.google.cloud.privilegedaccessmanager.v1.Grant.AuditTrail auditTrail_;
+
   /**
    *
    *
@@ -14974,6 +15348,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuditTrail() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -14994,6 +15369,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.privilegedaccessmanager.v1.Grant.AuditTrail.getDefaultInstance()
         : auditTrail_;
   }
+
   /**
    *
    *
@@ -15019,6 +15395,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalEmailRecipients_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -15036,6 +15413,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAdditionalEmailRecipientsList() {
     return additionalEmailRecipients_;
   }
+
   /**
    *
    *
@@ -15053,6 +15431,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public int getAdditionalEmailRecipientsCount() {
     return additionalEmailRecipients_.size();
   }
+
   /**
    *
    *
@@ -15071,6 +15450,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAdditionalEmailRecipients(int index) {
     return additionalEmailRecipients_.get(index);
   }
+
   /**
    *
    *
@@ -15092,6 +15472,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXTERNALLY_MODIFIED_FIELD_NUMBER = 12;
   private boolean externallyModified_ = false;
+
   /**
    *
    *
@@ -15417,6 +15798,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -15815,6 +16197,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -15844,6 +16227,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -15873,6 +16257,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -15901,6 +16286,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15925,6 +16311,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15961,6 +16348,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -15977,6 +16365,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -15999,6 +16388,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -16023,6 +16413,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16044,6 +16435,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16073,6 +16465,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -16094,6 +16487,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16110,6 +16504,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -16130,6 +16525,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -16164,6 +16560,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -16180,6 +16577,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -16202,6 +16600,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -16226,6 +16625,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16247,6 +16647,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16276,6 +16677,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -16297,6 +16699,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16313,6 +16716,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -16333,6 +16737,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -16362,6 +16767,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object requester_ = "";
+
     /**
      *
      *
@@ -16384,6 +16790,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -16406,6 +16813,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -16427,6 +16835,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16444,6 +16853,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16473,6 +16883,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         requestedDurationBuilder_;
+
     /**
      *
      *
@@ -16490,6 +16901,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequestedDuration() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -16513,6 +16925,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return requestedDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -16538,6 +16951,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16560,6 +16974,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16590,6 +17005,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -16612,6 +17028,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16629,6 +17046,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRequestedDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -16650,6 +17068,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             : requestedDuration_;
       }
     }
+
     /**
      *
      *
@@ -16685,6 +17104,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.Justification.Builder,
             com.google.cloud.privilegedaccessmanager.v1.JustificationOrBuilder>
         justificationBuilder_;
+
     /**
      *
      *
@@ -16701,6 +17121,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJustification() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -16723,6 +17144,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return justificationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -16748,6 +17170,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16770,6 +17193,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16801,6 +17225,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -16822,6 +17247,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16839,6 +17265,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getJustificationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -16860,6 +17287,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             : justification_;
       }
     }
+
     /**
      *
      *
@@ -16889,6 +17317,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -16906,6 +17335,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -16926,6 +17356,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16947,6 +17378,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.privilegedaccessmanager.v1.Grant.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -16970,6 +17402,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16996,6 +17429,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Builder,
             com.google.cloud.privilegedaccessmanager.v1.Grant.TimelineOrBuilder>
         timelineBuilder_;
+
     /**
      *
      *
@@ -17012,6 +17446,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeline() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -17034,6 +17469,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return timelineBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -17058,6 +17494,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17080,6 +17517,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17111,6 +17549,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -17132,6 +17571,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17148,6 +17588,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimelineFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -17169,6 +17610,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             : timeline_;
       }
     }
+
     /**
      *
      *
@@ -17203,6 +17645,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.Builder,
             com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccessOrBuilder>
         privilegedAccessBuilder_;
+
     /**
      *
      *
@@ -17219,6 +17662,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrivilegedAccess() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -17241,6 +17685,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return privilegedAccessBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -17266,6 +17711,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17288,6 +17734,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17320,6 +17767,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -17341,6 +17789,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17358,6 +17807,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPrivilegedAccessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -17379,6 +17829,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             : privilegedAccess_;
       }
     }
+
     /**
      *
      *
@@ -17413,6 +17864,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.Grant.AuditTrail.Builder,
             com.google.cloud.privilegedaccessmanager.v1.Grant.AuditTrailOrBuilder>
         auditTrailBuilder_;
+
     /**
      *
      *
@@ -17430,6 +17882,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuditTrail() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -17453,6 +17906,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         return auditTrailBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -17479,6 +17933,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17502,6 +17957,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17535,6 +17991,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -17557,6 +18014,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17575,6 +18033,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAuditTrailFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -17597,6 +18056,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             : auditTrail_;
       }
     }
+
     /**
      *
      *
@@ -17636,6 +18096,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000400;
     }
+
     /**
      *
      *
@@ -17654,6 +18115,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       additionalEmailRecipients_.makeImmutable();
       return additionalEmailRecipients_;
     }
+
     /**
      *
      *
@@ -17671,6 +18133,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public int getAdditionalEmailRecipientsCount() {
       return additionalEmailRecipients_.size();
     }
+
     /**
      *
      *
@@ -17689,6 +18152,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAdditionalEmailRecipients(int index) {
       return additionalEmailRecipients_.get(index);
     }
+
     /**
      *
      *
@@ -17707,6 +18171,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAdditionalEmailRecipientsBytes(int index) {
       return additionalEmailRecipients_.getByteString(index);
     }
+
     /**
      *
      *
@@ -17733,6 +18198,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17758,6 +18224,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17780,6 +18247,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17801,6 +18269,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -17829,6 +18298,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean externallyModified_;
+
     /**
      *
      *
@@ -17849,6 +18319,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
     public boolean getExternallyModified() {
       return externallyModified_;
     }
+
     /**
      *
      *
@@ -17873,6 +18344,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

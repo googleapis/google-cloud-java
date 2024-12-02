@@ -38,6 +38,7 @@ public interface DiscoveryCloudStorageFilterOrBuilder
    * @return Whether the collection field is set.
    */
   boolean hasCollection();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DiscoveryCloudStorageFilterOrBuilder
    * @return The collection.
    */
   com.google.privacy.dlp.v2.FileStoreCollection getCollection();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface DiscoveryCloudStorageFilterOrBuilder
    * @return Whether the cloudStorageResourceReference field is set.
    */
   boolean hasCloudStorageResourceReference();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface DiscoveryCloudStorageFilterOrBuilder
    * @return The cloudStorageResourceReference.
    */
   com.google.privacy.dlp.v2.CloudStorageResourceReference getCloudStorageResourceReference();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DiscoveryCloudStorageFilterOrBuilder
    * @return Whether the others field is set.
    */
   boolean hasOthers();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface DiscoveryCloudStorageFilterOrBuilder
    * @return The others.
    */
   com.google.privacy.dlp.v2.AllOtherResources getOthers();
+
   /**
    *
    *

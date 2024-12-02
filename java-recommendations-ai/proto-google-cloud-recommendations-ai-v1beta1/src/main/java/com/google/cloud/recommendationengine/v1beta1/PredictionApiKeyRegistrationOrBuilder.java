@@ -36,6 +36,7 @@ public interface PredictionApiKeyRegistrationOrBuilder
    * @return The apiKey.
    */
   java.lang.String getApiKey();
+
   /**
    *
    *

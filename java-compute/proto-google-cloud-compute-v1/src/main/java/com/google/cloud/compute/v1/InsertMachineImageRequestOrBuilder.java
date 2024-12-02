@@ -38,6 +38,7 @@ public interface InsertMachineImageRequestOrBuilder
    * @return Whether the machineImageResource field is set.
    */
   boolean hasMachineImageResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertMachineImageRequestOrBuilder
    * @return The machineImageResource.
    */
   com.google.cloud.compute.v1.MachineImage getMachineImageResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertMachineImageRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface InsertMachineImageRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertMachineImageRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface InsertMachineImageRequestOrBuilder
    * @return Whether the sourceInstance field is set.
    */
   boolean hasSourceInstance();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface InsertMachineImageRequestOrBuilder
    * @return The sourceInstance.
    */
   java.lang.String getSourceInstance();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListRolesResponse)
     ListRolesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListRolesResponse.newBuilder() to construct.
   private ListRolesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Role> roles_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.ads.admanager.v1.Role> getRolesList() {
     return roles_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       getRolesOrBuilderList() {
     return roles_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
   public int getRolesCount() {
     return roles_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
   public com.google.ads.admanager.v1.Role getRoles(int index) {
     return roles_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -395,6 +404,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -681,6 +691,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
         return rolesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -697,6 +708,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
         return rolesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
         return rolesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +834,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +915,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
     public com.google.ads.admanager.v1.Role.Builder getRolesBuilder(int index) {
       return getRolesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -922,6 +945,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
         return rolesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -939,6 +963,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(roles_);
       }
     }
+
     /**
      *
      *
@@ -952,6 +977,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       return getRolesFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Role.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -965,6 +991,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       return getRolesFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Role.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -996,6 +1023,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1019,6 +1047,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1071,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1094,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1113,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1139,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1132,6 +1165,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1161,6 +1195,7 @@ public final class ListRolesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

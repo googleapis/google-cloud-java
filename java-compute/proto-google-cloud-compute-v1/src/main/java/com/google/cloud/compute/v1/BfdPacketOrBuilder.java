@@ -36,6 +36,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the authenticationPresent field is set.
    */
   boolean hasAuthenticationPresent();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the controlPlaneIndependent field is set.
    */
   boolean hasControlPlaneIndependent();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the demand field is set.
    */
   boolean hasDemand();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the diagnostic field is set.
    */
   boolean hasDiagnostic();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface BfdPacketOrBuilder
    * @return The diagnostic.
    */
   java.lang.String getDiagnostic();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the final field is set.
    */
   boolean hasFinal();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the length field is set.
    */
   boolean hasLength();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the minEchoRxIntervalMs field is set.
    */
   boolean hasMinEchoRxIntervalMs();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the minRxIntervalMs field is set.
    */
   boolean hasMinRxIntervalMs();
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the minTxIntervalMs field is set.
    */
   boolean hasMinTxIntervalMs();
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the multiplier field is set.
    */
   boolean hasMultiplier();
+
   /**
    *
    *
@@ -301,6 +312,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the multipoint field is set.
    */
   boolean hasMultipoint();
+
   /**
    *
    *
@@ -326,6 +338,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the myDiscriminator field is set.
    */
   boolean hasMyDiscriminator();
+
   /**
    *
    *
@@ -351,6 +364,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the poll field is set.
    */
   boolean hasPoll();
+
   /**
    *
    *
@@ -377,6 +391,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -390,6 +405,7 @@ public interface BfdPacketOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *
@@ -416,6 +432,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -441,6 +458,7 @@ public interface BfdPacketOrBuilder
    * @return Whether the yourDiscriminator field is set.
    */
   boolean hasYourDiscriminator();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DocumentSchemaOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DocumentSchemaOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface DocumentSchemaOrBuilder
    * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType entity_types = 3;</code>
    */
   java.util.List<com.google.cloud.documentai.v1.DocumentSchema.EntityType> getEntityTypesList();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface DocumentSchemaOrBuilder
    * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType entity_types = 3;</code>
    */
   com.google.cloud.documentai.v1.DocumentSchema.EntityType getEntityTypes(int index);
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface DocumentSchemaOrBuilder
    * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType entity_types = 3;</code>
    */
   int getEntityTypesCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface DocumentSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1.DocumentSchema.EntityTypeOrBuilder>
       getEntityTypesOrBuilderList();
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface DocumentSchemaOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public interface DocumentSchemaOrBuilder
    * @return The metadata.
    */
   com.google.cloud.documentai.v1.DocumentSchema.Metadata getMetadata();
+
   /**
    *
    *

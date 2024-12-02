@@ -33,6 +33,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.publishing.v1.PublishRequest)
     PublishRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublishRequest.newBuilder() to construct.
   private PublishRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     private FormatCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object messageBus_ = "";
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROTO_MESSAGE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProtoMessage() {
     return formatCase_ == 2;
   }
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.eventarc.publishing.v1.CloudEvent.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JSON_MESSAGE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasJsonMessage() {
     return formatCase_ == 3;
   }
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -302,6 +312,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVRO_MESSAGE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -319,6 +330,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAvroMessage() {
     return formatCase_ == 4;
   }
+
   /**
    *
    *
@@ -552,6 +564,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -806,6 +819,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object messageBus_ = "";
+
     /**
      *
      *
@@ -829,6 +843,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -852,6 +867,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -874,6 +890,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +939,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.publishing.v1.CloudEvent.Builder,
             com.google.cloud.eventarc.publishing.v1.CloudEventOrBuilder>
         protoMessageBuilder_;
+
     /**
      *
      *
@@ -938,6 +957,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProtoMessage() {
       return formatCase_ == 2;
     }
+
     /**
      *
      *
@@ -965,6 +985,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.publishing.v1.CloudEvent.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -989,6 +1010,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       formatCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       formatCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1068,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       formatCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1096,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1111,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.publishing.v1.CloudEvent.Builder getProtoMessageBuilder() {
       return getProtoMessageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1108,6 +1134,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.publishing.v1.CloudEvent.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1187,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJsonMessage() {
       return formatCase_ == 3;
     }
+
     /**
      *
      *
@@ -1190,6 +1218,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1249,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1273,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1295,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1337,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAvroMessage() {
       return formatCase_ == 4;
     }
+
     /**
      *
      *
@@ -1324,6 +1357,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -1347,6 +1381,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ParallelstoreCsiDriverConfig extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.container.v1.ParallelstoreCsiDriverConfig)
     ParallelstoreCsiDriverConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ParallelstoreCsiDriverConfig.newBuilder() to construct.
   private ParallelstoreCsiDriverConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ParallelstoreCsiDriverConfig extends com.google.protobuf.Gene
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class ParallelstoreCsiDriverConfig extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -421,6 +424,7 @@ public final class ParallelstoreCsiDriverConfig extends com.google.protobuf.Gene
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -437,6 +441,7 @@ public final class ParallelstoreCsiDriverConfig extends com.google.protobuf.Gene
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -457,6 +462,7 @@ public final class ParallelstoreCsiDriverConfig extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

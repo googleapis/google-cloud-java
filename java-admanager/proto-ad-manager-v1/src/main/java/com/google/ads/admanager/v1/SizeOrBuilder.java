@@ -71,6 +71,7 @@ public interface SizeOrBuilder
    * @return The enum numeric value on the wire for sizeType.
    */
   int getSizeTypeValue();
+
   /**
    *
    *

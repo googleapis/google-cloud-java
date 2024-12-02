@@ -38,6 +38,7 @@ public interface DeleteFileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

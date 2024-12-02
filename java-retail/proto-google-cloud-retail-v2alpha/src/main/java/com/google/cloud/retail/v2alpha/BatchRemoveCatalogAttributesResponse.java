@@ -35,6 +35,7 @@ public final class BatchRemoveCatalogAttributesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse)
     BatchRemoveCatalogAttributesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchRemoveCatalogAttributesResponse.newBuilder() to construct.
   private BatchRemoveCatalogAttributesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class BatchRemoveCatalogAttributesResponse
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList deletedCatalogAttributes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class BatchRemoveCatalogAttributesResponse
   public com.google.protobuf.ProtocolStringList getDeletedCatalogAttributesList() {
     return deletedCatalogAttributes_;
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class BatchRemoveCatalogAttributesResponse
   public int getDeletedCatalogAttributesCount() {
     return deletedCatalogAttributes_.size();
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class BatchRemoveCatalogAttributesResponse
   public java.lang.String getDeletedCatalogAttributes(int index) {
     return deletedCatalogAttributes_.get(index);
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class BatchRemoveCatalogAttributesResponse
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resetCatalogAttributes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class BatchRemoveCatalogAttributesResponse
   public com.google.protobuf.ProtocolStringList getResetCatalogAttributesList() {
     return resetCatalogAttributes_;
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class BatchRemoveCatalogAttributesResponse
   public int getResetCatalogAttributesCount() {
     return resetCatalogAttributes_.size();
   }
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public final class BatchRemoveCatalogAttributesResponse
   public java.lang.String getResetCatalogAttributes(int index) {
     return resetCatalogAttributes_.get(index);
   }
+
   /**
    *
    *
@@ -415,6 +424,7 @@ public final class BatchRemoveCatalogAttributesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -645,6 +655,7 @@ public final class BatchRemoveCatalogAttributesResponse
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class BatchRemoveCatalogAttributesResponse
       deletedCatalogAttributes_.makeImmutable();
       return deletedCatalogAttributes_;
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class BatchRemoveCatalogAttributesResponse
     public int getDeletedCatalogAttributesCount() {
       return deletedCatalogAttributes_.size();
     }
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class BatchRemoveCatalogAttributesResponse
     public java.lang.String getDeletedCatalogAttributes(int index) {
       return deletedCatalogAttributes_.get(index);
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class BatchRemoveCatalogAttributesResponse
     public com.google.protobuf.ByteString getDeletedCatalogAttributesBytes(int index) {
       return deletedCatalogAttributes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -747,6 +762,7 @@ public final class BatchRemoveCatalogAttributesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class BatchRemoveCatalogAttributesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class BatchRemoveCatalogAttributesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +836,7 @@ public final class BatchRemoveCatalogAttributesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class BatchRemoveCatalogAttributesResponse
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class BatchRemoveCatalogAttributesResponse
       resetCatalogAttributes_.makeImmutable();
       return resetCatalogAttributes_;
     }
+
     /**
      *
      *
@@ -893,6 +914,7 @@ public final class BatchRemoveCatalogAttributesResponse
     public int getResetCatalogAttributesCount() {
       return resetCatalogAttributes_.size();
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class BatchRemoveCatalogAttributesResponse
     public java.lang.String getResetCatalogAttributes(int index) {
       return resetCatalogAttributes_.get(index);
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class BatchRemoveCatalogAttributesResponse
     public com.google.protobuf.ByteString getResetCatalogAttributesBytes(int index) {
       return resetCatalogAttributes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -958,6 +982,7 @@ public final class BatchRemoveCatalogAttributesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1009,7 @@ public final class BatchRemoveCatalogAttributesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1033,7 @@ public final class BatchRemoveCatalogAttributesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1056,7 @@ public final class BatchRemoveCatalogAttributesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

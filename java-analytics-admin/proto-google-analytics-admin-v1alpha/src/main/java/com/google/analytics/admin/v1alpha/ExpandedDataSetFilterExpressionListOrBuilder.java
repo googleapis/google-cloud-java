@@ -37,6 +37,7 @@ public interface ExpandedDataSetFilterExpressionListOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.ExpandedDataSetFilterExpression>
       getFilterExpressionsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ExpandedDataSetFilterExpressionListOrBuilder
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSetFilterExpression getFilterExpressions(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ExpandedDataSetFilterExpressionListOrBuilder
    * </code>
    */
   int getFilterExpressionsCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface ExpandedDataSetFilterExpressionListOrBuilder
   java.util.List<
           ? extends com.google.analytics.admin.v1alpha.ExpandedDataSetFilterExpressionOrBuilder>
       getFilterExpressionsOrBuilderList();
+
   /**
    *
    *

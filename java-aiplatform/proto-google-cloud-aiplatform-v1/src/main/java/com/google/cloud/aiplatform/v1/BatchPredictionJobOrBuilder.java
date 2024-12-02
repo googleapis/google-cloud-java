@@ -36,6 +36,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The modelVersionId.
    */
   java.lang.String getModelVersionId();
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the unmanagedContainerModel field is set.
    */
   boolean hasUnmanagedContainerModel();
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The unmanagedContainerModel.
    */
   com.google.cloud.aiplatform.v1.UnmanagedContainerModel getUnmanagedContainerModel();
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig getInputConfig();
+
   /**
    *
    *
@@ -270,6 +278,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the instanceConfig field is set.
    */
   boolean hasInstanceConfig();
+
   /**
    *
    *
@@ -284,6 +293,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The instanceConfig.
    */
   com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig getInstanceConfig();
+
   /**
    *
    *
@@ -314,6 +324,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the modelParameters field is set.
    */
   boolean hasModelParameters();
+
   /**
    *
    *
@@ -330,6 +341,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The modelParameters.
    */
   com.google.protobuf.Value getModelParameters();
+
   /**
    *
    *
@@ -366,6 +378,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -387,6 +400,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig getOutputConfig();
+
   /**
    *
    *
@@ -425,6 +439,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the dedicatedResources field is set.
    */
   boolean hasDedicatedResources();
+
   /**
    *
    *
@@ -442,6 +457,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The dedicatedResources.
    */
   com.google.cloud.aiplatform.v1.BatchDedicatedResources getDedicatedResources();
+
   /**
    *
    *
@@ -476,6 +492,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -512,6 +529,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the manualBatchTuningParameters field is set.
    */
   boolean hasManualBatchTuningParameters();
+
   /**
    *
    *
@@ -529,6 +547,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The manualBatchTuningParameters.
    */
   com.google.cloud.aiplatform.v1.ManualBatchTuningParameters getManualBatchTuningParameters();
+
   /**
    *
    *
@@ -604,6 +623,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the explanationSpec field is set.
    */
   boolean hasExplanationSpec();
+
   /**
    *
    *
@@ -629,6 +649,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The explanationSpec.
    */
   com.google.cloud.aiplatform.v1.ExplanationSpec getExplanationSpec();
+
   /**
    *
    *
@@ -667,6 +688,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the outputInfo field is set.
    */
   boolean hasOutputInfo();
+
   /**
    *
    *
@@ -681,6 +703,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The outputInfo.
    */
   com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo getOutputInfo();
+
   /**
    *
    *
@@ -708,6 +731,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -736,6 +760,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -749,6 +774,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -776,6 +802,7 @@ public interface BatchPredictionJobOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Status> getPartialFailuresList();
+
   /**
    *
    *
@@ -791,6 +818,7 @@ public interface BatchPredictionJobOrBuilder
    * </code>
    */
   com.google.rpc.Status getPartialFailures(int index);
+
   /**
    *
    *
@@ -806,6 +834,7 @@ public interface BatchPredictionJobOrBuilder
    * </code>
    */
   int getPartialFailuresCount();
+
   /**
    *
    *
@@ -821,6 +850,7 @@ public interface BatchPredictionJobOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
+
   /**
    *
    *
@@ -856,6 +886,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the resourcesConsumed field is set.
    */
   boolean hasResourcesConsumed();
+
   /**
    *
    *
@@ -875,6 +906,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The resourcesConsumed.
    */
   com.google.cloud.aiplatform.v1.ResourcesConsumed getResourcesConsumed();
+
   /**
    *
    *
@@ -907,6 +939,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the completionStats field is set.
    */
   boolean hasCompletionStats();
+
   /**
    *
    *
@@ -921,6 +954,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The completionStats.
    */
   com.google.cloud.aiplatform.v1.CompletionStats getCompletionStats();
+
   /**
    *
    *
@@ -947,6 +981,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -960,6 +995,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -986,6 +1022,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -1000,6 +1037,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -1027,6 +1065,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -1041,6 +1080,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -1067,6 +1107,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -1080,6 +1121,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -1108,6 +1150,7 @@ public interface BatchPredictionJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 19;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -1124,9 +1167,11 @@ public interface BatchPredictionJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 19;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -1143,6 +1188,7 @@ public interface BatchPredictionJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 19;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -1163,6 +1209,7 @@ public interface BatchPredictionJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -1194,6 +1241,7 @@ public interface BatchPredictionJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -1208,6 +1256,7 @@ public interface BatchPredictionJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface TextSegmentOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *

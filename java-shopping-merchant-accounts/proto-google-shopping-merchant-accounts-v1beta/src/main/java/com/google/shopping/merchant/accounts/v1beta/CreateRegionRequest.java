@@ -33,6 +33,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.CreateRegionRequest)
     CreateRegionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateRegionRequest.newBuilder() to construct.
   private CreateRegionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionId_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
 
   public static final int REGION_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.accounts.v1beta.Region region_;
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
         ? com.google.shopping.merchant.accounts.v1beta.Region.getDefaultInstance()
         : region_;
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -720,6 +732,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +753,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object regionId_ = "";
+
     /**
      *
      *
@@ -790,6 +805,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
             com.google.shopping.merchant.accounts.v1beta.Region.Builder,
             com.google.shopping.merchant.accounts.v1beta.RegionOrBuilder>
         regionBuilder_;
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
         return regionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1043,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRegionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1081,7 @@ public final class CreateRegionRequest extends com.google.protobuf.GeneratedMess
             : region_;
       }
     }
+
     /**
      *
      *

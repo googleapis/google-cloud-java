@@ -34,6 +34,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.AllowedDomainsSettings)
     AllowedDomainsSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AllowedDomainsSettings.newBuilder() to construct.
   private AllowedDomainsSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 1;
   private boolean enable_ = false;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList domains_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getDomainsList() {
     return domains_;
   }
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   public int getDomainsCount() {
     return domains_.size();
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   public java.lang.String getDomains(int index) {
     return domains_.get(index);
   }
+
   /**
    *
    *
@@ -342,6 +349,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -549,6 +557,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean enable_;
+
     /**
      *
      *
@@ -564,6 +573,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -579,6 +589,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public boolean getEnable() {
       return enable_;
     }
+
     /**
      *
      *
@@ -598,6 +609,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -625,6 +637,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -640,6 +653,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       domains_.makeImmutable();
       return domains_;
     }
+
     /**
      *
      *
@@ -654,6 +668,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public int getDomainsCount() {
       return domains_.size();
     }
+
     /**
      *
      *
@@ -669,6 +684,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public java.lang.String getDomains(int index) {
       return domains_.get(index);
     }
+
     /**
      *
      *
@@ -684,6 +700,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getDomainsBytes(int index) {
       return domains_.getByteString(index);
     }
+
     /**
      *
      *
@@ -707,6 +724,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +747,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +767,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +786,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

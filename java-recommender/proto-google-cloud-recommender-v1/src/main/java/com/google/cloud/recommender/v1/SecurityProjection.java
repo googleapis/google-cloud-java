@@ -33,6 +33,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.SecurityProjection)
     SecurityProjectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityProjection.newBuilder() to construct.
   private SecurityProjection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int DETAILS_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct details_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
   public boolean hasDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Struct getDetails() {
     return details_ == null ? com.google.protobuf.Struct.getDefaultInstance() : details_;
   }
+
   /**
    *
    *
@@ -272,6 +276,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -475,6 +480,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         detailsBuilder_;
+
     /**
      *
      *
@@ -489,6 +495,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
     public boolean hasDetails() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -507,6 +514,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
         return detailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -548,6 +557,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -575,6 +585,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +605,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +620,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -624,6 +637,7 @@ public final class SecurityProjection extends com.google.protobuf.GeneratedMessa
         return details_ == null ? com.google.protobuf.Struct.getDefaultInstance() : details_;
       }
     }
+
     /**
      *
      *

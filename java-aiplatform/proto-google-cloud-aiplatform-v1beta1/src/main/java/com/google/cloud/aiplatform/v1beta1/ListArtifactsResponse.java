@@ -34,6 +34,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListArtifactsResponse)
     ListArtifactsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListArtifactsResponse.newBuilder() to construct.
   private ListArtifactsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Artifact> artifacts_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Artifact> getArtifactsList() {
     return artifacts_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       getArtifactsOrBuilderList() {
     return artifacts_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
   public int getArtifactsCount() {
     return artifacts_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.aiplatform.v1beta1.Artifact getArtifacts(int index) {
     return artifacts_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +651,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
         return artifactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
         return artifactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
         return artifactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +891,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.Artifact.Builder getArtifactsBuilder(int index) {
       return getArtifactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -886,6 +908,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
         return artifactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -903,6 +926,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(artifacts_);
       }
     }
+
     /**
      *
      *
@@ -916,6 +940,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       return getArtifactsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Artifact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -929,6 +954,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       return getArtifactsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Artifact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -961,6 +987,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -986,6 +1013,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1039,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1064,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1085,7 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

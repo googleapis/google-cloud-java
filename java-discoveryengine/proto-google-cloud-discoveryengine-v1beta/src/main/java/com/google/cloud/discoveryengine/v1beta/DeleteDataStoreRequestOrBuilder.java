@@ -47,6 +47,7 @@ public interface DeleteDataStoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

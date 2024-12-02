@@ -38,6 +38,7 @@ public interface DeploymentResourcePoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface DeploymentResourcePoolOrBuilder
    * @return Whether the dedicatedResources field is set.
    */
   boolean hasDedicatedResources();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface DeploymentResourcePoolOrBuilder
    * @return The dedicatedResources.
    */
   com.google.cloud.aiplatform.v1.DedicatedResources getDedicatedResources();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DeploymentResourcePoolOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface DeploymentResourcePoolOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface DeploymentResourcePoolOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface DeploymentResourcePoolOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public interface DeploymentResourcePoolOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

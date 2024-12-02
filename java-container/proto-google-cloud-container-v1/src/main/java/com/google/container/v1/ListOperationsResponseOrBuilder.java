@@ -34,6 +34,7 @@ public interface ListOperationsResponseOrBuilder
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
   java.util.List<com.google.container.v1.Operation> getOperationsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListOperationsResponseOrBuilder
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
   com.google.container.v1.Operation getOperations(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListOperationsResponseOrBuilder
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
   int getOperationsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListOperationsResponseOrBuilder
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
   java.util.List<? extends com.google.container.v1.OperationOrBuilder> getOperationsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListOperationsResponseOrBuilder
    * @return A list containing the missingZones.
    */
   java.util.List<java.lang.String> getMissingZonesList();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface ListOperationsResponseOrBuilder
    * @return The count of missingZones.
    */
   int getMissingZonesCount();
+
   /**
    *
    *
@@ -115,6 +121,7 @@ public interface ListOperationsResponseOrBuilder
    * @return The missingZones at the given index.
    */
   java.lang.String getMissingZones(int index);
+
   /**
    *
    *

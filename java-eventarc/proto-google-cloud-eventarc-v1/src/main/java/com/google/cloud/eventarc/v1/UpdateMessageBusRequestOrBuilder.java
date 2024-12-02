@@ -38,6 +38,7 @@ public interface UpdateMessageBusRequestOrBuilder
    * @return Whether the messageBus field is set.
    */
   boolean hasMessageBus();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateMessageBusRequestOrBuilder
    * @return The messageBus.
    */
   com.google.cloud.eventarc.v1.MessageBus getMessageBus();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateMessageBusRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateMessageBusRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.policytroubleshooter.iam.v3.DenyPolicyExplanation)
     DenyPolicyExplanationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DenyPolicyExplanation.newBuilder() to construct.
   private DenyPolicyExplanation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
 
   public static final int DENY_ACCESS_STATE_FIELD_NUMBER = 1;
   private int denyAccessState_ = 0;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
   public int getDenyAccessStateValue() {
     return denyAccessState_;
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.policytroubleshooter.iam.v3.ExplainedDenyResource>
       explainedResources_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       getExplainedResourcesList() {
     return explainedResources_;
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       getExplainedResourcesOrBuilderList() {
     return explainedResources_;
   }
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
   public int getExplainedResourcesCount() {
     return explainedResources_.size();
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       int index) {
     return explainedResources_.get(index);
   }
+
   /**
    *
    *
@@ -250,6 +258,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
 
   public static final int RELEVANCE_FIELD_NUMBER = 3;
   private int relevance_ = 0;
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
   public int getRelevanceValue() {
     return relevance_;
   }
+
   /**
    *
    *
@@ -287,6 +297,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
 
   public static final int PERMISSION_DENIABLE_FIELD_NUMBER = 4;
   private boolean permissionDeniable_ = false;
+
   /**
    *
    *
@@ -507,6 +518,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -785,6 +797,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int denyAccessState_ = 0;
+
     /**
      *
      *
@@ -802,6 +815,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
     public int getDenyAccessStateValue() {
       return denyAccessState_;
     }
+
     /**
      *
      *
@@ -822,6 +836,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +858,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.policytroubleshooter.iam.v3.DenyAccessState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +953,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
         return explainedResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -965,6 +983,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
         return explainedResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -995,6 +1014,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
         return explainedResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1051,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1087,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1124,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1161,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1196,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1232,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1268,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1301,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1334,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1361,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
         getExplainedResourcesBuilder(int index) {
       return getExplainedResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1362,6 +1392,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
         return explainedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1424,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(explainedResources_);
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1454,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
               com.google.cloud.policytroubleshooter.iam.v3.ExplainedDenyResource
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1452,6 +1485,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
               com.google.cloud.policytroubleshooter.iam.v3.ExplainedDenyResource
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1501,6 +1535,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
     }
 
     private int relevance_ = 0;
+
     /**
      *
      *
@@ -1516,6 +1551,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
     public int getRelevanceValue() {
       return relevance_;
     }
+
     /**
      *
      *
@@ -1534,6 +1570,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1553,6 +1590,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.policytroubleshooter.iam.v3.HeuristicRelevance.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1575,6 +1613,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1594,6 +1633,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
     }
 
     private boolean permissionDeniable_;
+
     /**
      *
      *
@@ -1610,6 +1650,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
     public boolean getPermissionDeniable() {
       return permissionDeniable_;
     }
+
     /**
      *
      *
@@ -1630,6 +1671,7 @@ public final class DenyPolicyExplanation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

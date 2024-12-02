@@ -36,6 +36,7 @@ public interface XssOrBuilder
    * @return A list containing the stackTraces.
    */
   java.util.List<java.lang.String> getStackTracesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface XssOrBuilder
    * @return The count of stackTraces.
    */
   int getStackTracesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface XssOrBuilder
    * @return The stackTraces at the given index.
    */
   java.lang.String getStackTraces(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface XssOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface XssOrBuilder
    * @return The enum numeric value on the wire for attackVector.
    */
   int getAttackVectorValue();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface XssOrBuilder
    * @return The storedXssSeedingUrl.
    */
   java.lang.String getStoredXssSeedingUrl();
+
   /**
    *
    *

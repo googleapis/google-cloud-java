@@ -34,6 +34,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.FailurePolicy)
     FailurePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FailurePolicy.newBuilder() to construct.
   private FailurePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.functions.v1.FailurePolicy.Retry)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.FailurePolicy.Retry)
       RetryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Retry.newBuilder() to construct.
     private Retry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -263,6 +266,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -508,6 +512,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
     private ActionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -539,6 +544,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETRY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -554,6 +560,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetry() {
     return actionCase_ == 1;
   }
+
   /**
    *
    *
@@ -572,6 +579,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.functions.v1.FailurePolicy.Retry.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -763,6 +771,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -981,6 +990,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.FailurePolicy.Retry.Builder,
             com.google.cloud.functions.v1.FailurePolicy.RetryOrBuilder>
         retryBuilder_;
+
     /**
      *
      *
@@ -996,6 +1006,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetry() {
       return actionCase_ == 1;
     }
+
     /**
      *
      *
@@ -1021,6 +1032,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.functions.v1.FailurePolicy.Retry.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1055,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1076,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1109,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1135,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1148,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.FailurePolicy.Retry.Builder getRetryBuilder() {
       return getRetryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1152,6 +1169,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.functions.v1.FailurePolicy.Retry.getDefaultInstance();
       }
     }
+
     /**
      *
      *

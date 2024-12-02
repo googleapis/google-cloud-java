@@ -36,6 +36,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.lfp.v1beta.LfpStore)
     LfpStoreOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LfpStore.newBuilder() to construct.
   private LfpStore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
      * <code>STORE_MATCHING_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STORE_MATCHING_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
      * <code>STORE_MATCHING_STATE_MATCHED = 1;</code>
      */
     public static final int STORE_MATCHING_STATE_MATCHED_VALUE = 1;
+
     /**
      *
      *
@@ -242,6 +245,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -268,6 +272,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +302,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_ACCOUNT_FIELD_NUMBER = 2;
   private long targetAccount_ = 0L;
+
   /**
    *
    *
@@ -317,6 +323,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storeCode_ = "";
+
   /**
    *
    *
@@ -343,6 +350,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -374,6 +382,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storeAddress_ = "";
+
   /**
    *
    *
@@ -398,6 +407,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -427,6 +437,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storeName_ = "";
+
   /**
    *
    *
@@ -442,6 +453,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStoreName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -465,6 +477,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -493,6 +506,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phoneNumber_ = "";
+
   /**
    *
    *
@@ -510,6 +524,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPhoneNumber() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -535,6 +550,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -565,6 +581,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object websiteUri_ = "";
+
   /**
    *
    *
@@ -580,6 +597,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWebsiteUri() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -603,6 +621,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -632,6 +651,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList gcidCategory_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -647,6 +667,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getGcidCategoryList() {
     return gcidCategory_;
   }
+
   /**
    *
    *
@@ -662,6 +683,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public int getGcidCategoryCount() {
     return gcidCategory_.size();
   }
+
   /**
    *
    *
@@ -678,6 +700,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getGcidCategory(int index) {
     return gcidCategory_.get(index);
   }
+
   /**
    *
    *
@@ -699,6 +722,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object placeId_ = "";
+
   /**
    *
    *
@@ -716,6 +740,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPlaceId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -741,6 +766,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -769,6 +795,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MATCHING_STATE_FIELD_NUMBER = 10;
   private int matchingState_ = 0;
+
   /**
    *
    *
@@ -789,6 +816,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public int getMatchingStateValue() {
     return matchingState_;
   }
+
   /**
    *
    *
@@ -819,6 +847,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object matchingStateHint_ = "";
+
   /**
    *
    *
@@ -853,6 +882,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMatchingStateHint() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -895,6 +925,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1225,6 +1256,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1572,6 +1604,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1597,6 +1630,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1622,6 +1656,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1646,6 +1681,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1666,6 +1702,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1693,6 +1730,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long targetAccount_;
+
     /**
      *
      *
@@ -1708,6 +1746,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public long getTargetAccount() {
       return targetAccount_;
     }
+
     /**
      *
      *
@@ -1727,6 +1766,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +1786,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storeCode_ = "";
+
     /**
      *
      *
@@ -1771,6 +1812,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1796,6 +1838,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1820,6 +1863,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1884,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1867,6 +1912,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storeAddress_ = "";
+
     /**
      *
      *
@@ -1890,6 +1936,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1913,6 +1960,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1935,6 +1983,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1953,6 +2002,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1978,6 +2028,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storeName_ = "";
+
     /**
      *
      *
@@ -1992,6 +2043,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStoreName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2014,6 +2066,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2036,6 +2089,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2057,6 +2111,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2074,6 +2129,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2098,6 +2154,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object phoneNumber_ = "";
+
     /**
      *
      *
@@ -2114,6 +2171,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPhoneNumber() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2138,6 +2196,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2162,6 +2221,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2185,6 +2245,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2204,6 +2265,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2230,6 +2292,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object websiteUri_ = "";
+
     /**
      *
      *
@@ -2244,6 +2307,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWebsiteUri() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2266,6 +2330,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2288,6 +2353,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2309,6 +2375,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2393,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2358,6 +2426,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2374,6 +2443,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       gcidCategory_.makeImmutable();
       return gcidCategory_;
     }
+
     /**
      *
      *
@@ -2389,6 +2459,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public int getGcidCategoryCount() {
       return gcidCategory_.size();
     }
+
     /**
      *
      *
@@ -2405,6 +2476,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getGcidCategory(int index) {
       return gcidCategory_.get(index);
     }
+
     /**
      *
      *
@@ -2421,6 +2493,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getGcidCategoryBytes(int index) {
       return gcidCategory_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2445,6 +2518,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2468,6 +2542,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2488,6 +2563,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2507,6 +2583,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2533,6 +2610,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object placeId_ = "";
+
     /**
      *
      *
@@ -2549,6 +2627,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPlaceId() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2573,6 +2652,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2597,6 +2677,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2620,6 +2701,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2639,6 +2721,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2665,6 +2748,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int matchingState_ = 0;
+
     /**
      *
      *
@@ -2685,6 +2769,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public int getMatchingStateValue() {
       return matchingState_;
     }
+
     /**
      *
      *
@@ -2708,6 +2793,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2733,6 +2819,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.lfp.v1beta.LfpStore.StoreMatchingState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2760,6 +2847,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2784,6 +2872,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object matchingStateHint_ = "";
+
     /**
      *
      *
@@ -2817,6 +2906,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMatchingStateHint() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2858,6 +2948,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2899,6 +2990,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2939,6 +3031,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2975,6 +3068,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

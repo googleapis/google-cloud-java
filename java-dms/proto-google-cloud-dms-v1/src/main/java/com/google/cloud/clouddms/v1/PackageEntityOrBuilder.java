@@ -36,6 +36,7 @@ public interface PackageEntityOrBuilder
    * @return The packageSqlCode.
    */
   java.lang.String getPackageSqlCode();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface PackageEntityOrBuilder
    * @return The packageBody.
    */
   java.lang.String getPackageBody();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface PackageEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface PackageEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
+
   /**
    *
    *

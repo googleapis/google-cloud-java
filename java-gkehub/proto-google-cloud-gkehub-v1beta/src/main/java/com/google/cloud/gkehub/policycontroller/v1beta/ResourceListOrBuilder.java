@@ -36,6 +36,7 @@ public interface ResourceListOrBuilder
    * @return Whether the memory field is set.
    */
   boolean hasMemory();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResourceListOrBuilder
    * @return The memory.
    */
   java.lang.String getMemory();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ResourceListOrBuilder
    * @return Whether the cpu field is set.
    */
   boolean hasCpu();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ResourceListOrBuilder
    * @return The cpu.
    */
   java.lang.String getCpu();
+
   /**
    *
    *

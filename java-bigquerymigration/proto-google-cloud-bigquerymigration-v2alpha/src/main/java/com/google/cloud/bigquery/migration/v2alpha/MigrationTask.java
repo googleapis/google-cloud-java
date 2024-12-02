@@ -34,6 +34,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.MigrationTask)
     MigrationTaskOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrationTask.newBuilder() to construct.
   private MigrationTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -160,6 +161,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -170,6 +172,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -180,6 +183,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>ORCHESTRATING = 2;</code>
      */
     public static final int ORCHESTRATING_VALUE = 2;
+
     /**
      *
      *
@@ -190,6 +194,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 3;</code>
      */
     public static final int RUNNING_VALUE = 3;
+
     /**
      *
      *
@@ -201,6 +206,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 4;</code>
      */
     public static final int PAUSED_VALUE = 4;
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 5;</code>
      */
     public static final int SUCCEEDED_VALUE = 5;
+
     /**
      *
      *
@@ -333,6 +340,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     private TaskDetailsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -366,6 +374,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSESSMENT_TASK_DETAILS_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -383,6 +392,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAssessmentTaskDetails() {
     return taskDetailsCase_ == 12;
   }
+
   /**
    *
    *
@@ -404,6 +414,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -425,6 +436,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSLATION_TASK_DETAILS_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -442,6 +454,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTranslationTaskDetails() {
     return taskDetailsCase_ == 13;
   }
+
   /**
    *
    *
@@ -463,6 +476,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -487,6 +501,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -512,6 +527,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -542,6 +558,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -565,6 +582,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -591,6 +609,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DETAILS_FIELD_NUMBER = 3;
   private com.google.protobuf.Any details_;
+
   /**
    *
    *
@@ -608,6 +627,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -625,6 +645,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Any getDetails() {
     return details_ == null ? com.google.protobuf.Any.getDefaultInstance() : details_;
   }
+
   /**
    *
    *
@@ -643,6 +664,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -660,6 +682,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -684,6 +707,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROCESSING_ERROR_FIELD_NUMBER = 5;
   private com.google.rpc.ErrorInfo processingError_;
+
   /**
    *
    *
@@ -700,6 +724,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProcessingError() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -718,6 +743,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         ? com.google.rpc.ErrorInfo.getDefaultInstance()
         : processingError_;
   }
+
   /**
    *
    *
@@ -737,6 +763,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -752,6 +779,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -767,6 +795,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -783,6 +812,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp lastUpdateTime_;
+
   /**
    *
    *
@@ -798,6 +828,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -815,6 +846,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateTime_;
   }
+
   /**
    *
    *
@@ -834,6 +866,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public static final int ORCHESTRATION_RESULT_FIELD_NUMBER = 10;
   private com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
       orchestrationResult_;
+
   /**
    *
    *
@@ -851,6 +884,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOrchestrationResult() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -872,6 +906,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : orchestrationResult_;
   }
+
   /**
    *
    *
@@ -1187,6 +1222,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1580,6 +1616,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.Builder,
             com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetailsOrBuilder>
         assessmentTaskDetailsBuilder_;
+
     /**
      *
      *
@@ -1597,6 +1634,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAssessmentTaskDetails() {
       return taskDetailsCase_ == 12;
     }
+
     /**
      *
      *
@@ -1627,6 +1665,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1652,6 +1691,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       taskDetailsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -1674,6 +1714,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       taskDetailsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1753,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       taskDetailsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -1739,6 +1781,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1797,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         getAssessmentTaskDetailsBuilder() {
       return getAssessmentTaskDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1778,6 +1822,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1820,6 +1865,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.Builder,
             com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetailsOrBuilder>
         translationTaskDetailsBuilder_;
+
     /**
      *
      *
@@ -1837,6 +1883,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTranslationTaskDetails() {
       return taskDetailsCase_ == 13;
     }
+
     /**
      *
      *
@@ -1867,6 +1914,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1892,6 +1940,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       taskDetailsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -1915,6 +1964,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       taskDetailsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -1953,6 +2003,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       taskDetailsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -1980,6 +2031,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1995,6 +2047,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         getTranslationTaskDetailsBuilder() {
       return getTranslationTaskDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2019,6 +2072,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2057,6 +2111,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -2081,6 +2136,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2105,6 +2161,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2128,6 +2185,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2147,6 +2205,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2173,6 +2232,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -2195,6 +2255,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2217,6 +2278,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2238,6 +2300,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2255,6 +2318,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2284,6 +2348,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         detailsBuilder_;
+
     /**
      *
      *
@@ -2300,6 +2365,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDetails() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2320,6 +2386,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2344,6 +2411,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2365,6 +2433,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2394,6 +2463,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2415,6 +2485,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2502,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2449,6 +2521,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return details_ == null ? com.google.protobuf.Any.getDefaultInstance() : details_;
       }
     }
+
     /**
      *
      *
@@ -2477,6 +2550,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2494,6 +2568,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2514,6 +2589,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2535,6 +2611,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2558,6 +2635,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2584,6 +2662,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             com.google.rpc.ErrorInfo.Builder,
             com.google.rpc.ErrorInfoOrBuilder>
         processingErrorBuilder_;
+
     /**
      *
      *
@@ -2600,6 +2679,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProcessingError() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2622,6 +2702,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return processingErrorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2646,6 +2727,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2667,6 +2749,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2696,6 +2779,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2717,6 +2801,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2733,6 +2818,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProcessingErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2753,6 +2839,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             : processingError_;
       }
     }
+
     /**
      *
      *
@@ -2787,6 +2874,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2801,6 +2889,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2821,6 +2910,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2843,6 +2933,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2862,6 +2953,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2889,6 +2981,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2908,6 +3001,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2922,6 +3016,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2940,6 +3035,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2972,6 +3068,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -2986,6 +3083,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3006,6 +3104,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return lastUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3028,6 +3127,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3047,6 +3147,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3074,6 +3175,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3093,6 +3195,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3107,6 +3210,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3125,6 +3229,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             : lastUpdateTime_;
       }
     }
+
     /**
      *
      *
@@ -3158,6 +3263,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.Builder,
             com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResultOrBuilder>
         orchestrationResultBuilder_;
+
     /**
      *
      *
@@ -3174,6 +3280,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOrchestrationResult() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3198,6 +3305,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return orchestrationResultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3223,6 +3331,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3246,6 +3355,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3278,6 +3388,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3299,6 +3410,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3316,6 +3428,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOrchestrationResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3338,6 +3451,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             : orchestrationResult_;
       }
     }
+
     /**
      *
      *

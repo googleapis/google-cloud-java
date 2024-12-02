@@ -35,6 +35,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.FetchReportResultsRequest)
     FetchReportResultsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchReportResultsRequest.newBuilder() to construct.
   private FetchReportResultsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reportJob_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList partitionKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getPartitionKeysList() {
     return partitionKeys_;
   }
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
   public int getPartitionKeysCount() {
     return partitionKeys_.size();
   }
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
   public java.lang.String getPartitionKeys(int index) {
     return partitionKeys_.get(index);
   }
+
   /**
    *
    *
@@ -474,6 +484,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -709,6 +720,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object reportJob_ = "";
+
     /**
      *
      *
@@ -736,6 +748,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -789,6 +803,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -962,6 +983,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -988,6 +1010,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1033,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1071,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       partitionKeys_.makeImmutable();
       return partitionKeys_;
     }
+
     /**
      *
      *
@@ -1078,6 +1104,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     public int getPartitionKeysCount() {
       return partitionKeys_.size();
     }
+
     /**
      *
      *
@@ -1094,6 +1121,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     public java.lang.String getPartitionKeys(int index) {
       return partitionKeys_.get(index);
     }
+
     /**
      *
      *
@@ -1110,6 +1138,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getPartitionKeysBytes(int index) {
       return partitionKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1134,6 +1163,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1187,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1208,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1228,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

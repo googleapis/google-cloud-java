@@ -46,6 +46,7 @@ public interface AudienceOrBuilder
    * @return A list containing the genders.
    */
   java.util.List<java.lang.String> getGendersList();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface AudienceOrBuilder
    * @return The count of genders.
    */
   int getGendersCount();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface AudienceOrBuilder
    * @return The genders at the given index.
    */
   java.lang.String getGenders(int index);
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public interface AudienceOrBuilder
    * @return A list containing the ageGroups.
    */
   java.util.List<java.lang.String> getAgeGroupsList();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public interface AudienceOrBuilder
    * @return The count of ageGroups.
    */
   int getAgeGroupsCount();
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public interface AudienceOrBuilder
    * @return The ageGroups at the given index.
    */
   java.lang.String getAgeGroups(int index);
+
   /**
    *
    *

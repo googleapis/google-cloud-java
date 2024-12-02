@@ -39,6 +39,7 @@ public interface PurgeQueueRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

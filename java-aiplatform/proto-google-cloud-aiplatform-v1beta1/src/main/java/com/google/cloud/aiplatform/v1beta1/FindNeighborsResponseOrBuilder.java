@@ -37,6 +37,7 @@ public interface FindNeighborsResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NearestNeighbors>
       getNearestNeighborsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface FindNeighborsResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NearestNeighbors getNearestNeighbors(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface FindNeighborsResponseOrBuilder
    * </code>
    */
   int getNearestNeighborsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface FindNeighborsResponseOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NearestNeighborsOrBuilder>
       getNearestNeighborsOrBuilderList();
+
   /**
    *
    *

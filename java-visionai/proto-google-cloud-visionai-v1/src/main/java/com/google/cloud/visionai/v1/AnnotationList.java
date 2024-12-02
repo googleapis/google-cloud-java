@@ -33,6 +33,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AnnotationList)
     AnnotationListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotationList.newBuilder() to construct.
   private AnnotationList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.AnnotationValue> values_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.visionai.v1.AnnotationValue> getValuesList() {
     return values_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       getValuesOrBuilderList() {
     return values_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.AnnotationValue getValues(int index) {
     return values_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -554,6 +561,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -570,6 +578,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -586,6 +595,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -608,6 +618,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +662,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +685,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +705,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +726,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +747,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +767,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +787,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +800,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.AnnotationValue.Builder getValuesBuilder(int index) {
       return getValuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -797,6 +817,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -814,6 +835,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(values_);
       }
     }
+
     /**
      *
      *
@@ -827,6 +849,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       return getValuesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.AnnotationValue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -840,6 +863,7 @@ public final class AnnotationList extends com.google.protobuf.GeneratedMessageV3
       return getValuesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.AnnotationValue.getDefaultInstance());
     }
+
     /**
      *
      *

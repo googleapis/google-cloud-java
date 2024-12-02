@@ -34,6 +34,7 @@ public interface ListZonesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Zone zones = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Zone> getZonesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListZonesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Zone zones = 1;</code>
    */
   com.google.cloud.dataplex.v1.Zone getZones(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListZonesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Zone zones = 1;</code>
    */
   int getZonesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListZonesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Zone zones = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.ZoneOrBuilder> getZonesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListZonesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

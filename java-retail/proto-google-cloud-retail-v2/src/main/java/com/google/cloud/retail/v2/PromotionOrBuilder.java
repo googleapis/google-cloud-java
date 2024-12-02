@@ -44,6 +44,7 @@ public interface PromotionOrBuilder
    * @return The promotionId.
    */
   java.lang.String getPromotionId();
+
   /**
    *
    *

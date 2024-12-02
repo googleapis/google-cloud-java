@@ -33,6 +33,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.NormalizedResolution)
     NormalizedResolutionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NormalizedResolution.newBuilder() to construct.
   private NormalizedResolution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
 
   public static final int W_FIELD_NUMBER = 1;
   private double w_ = 0D;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
 
   public static final int H_FIELD_NUMBER = 2;
   private double h_ = 0D;
+
   /**
    *
    *
@@ -272,6 +275,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -467,6 +471,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private double w_;
+
     /**
      *
      *
@@ -482,6 +487,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
     public double getW() {
       return w_;
     }
+
     /**
      *
      *
@@ -501,6 +507,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -520,6 +527,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
     }
 
     private double h_;
+
     /**
      *
      *
@@ -535,6 +543,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
     public double getH() {
       return h_;
     }
+
     /**
      *
      *
@@ -554,6 +563,7 @@ public final class NormalizedResolution extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

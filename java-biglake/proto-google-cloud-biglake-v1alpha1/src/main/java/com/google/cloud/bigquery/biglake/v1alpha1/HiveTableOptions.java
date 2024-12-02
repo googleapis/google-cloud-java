@@ -33,6 +33,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions)
     HiveTableOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HiveTableOptions.newBuilder() to construct.
   private HiveTableOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
      * @return The serializationLib.
      */
     java.lang.String getSerializationLib();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getSerializationLibBytes();
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.SerDeInfo)
       SerDeInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SerDeInfo.newBuilder() to construct.
     private SerDeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -153,6 +157,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serializationLib_ = "";
+
     /**
      *
      *
@@ -176,6 +181,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -362,6 +368,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -559,6 +566,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object serializationLib_ = "";
+
       /**
        *
        *
@@ -581,6 +589,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -603,6 +612,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -624,6 +634,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -641,6 +652,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -750,6 +762,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
      * @return The locationUri.
      */
     java.lang.String getLocationUri();
+
     /**
      *
      *
@@ -776,6 +789,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
      * @return The inputFormat.
      */
     java.lang.String getInputFormat();
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
      * @return The outputFormat.
      */
     java.lang.String getOutputFormat();
+
     /**
      *
      *
@@ -827,6 +842,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
      * @return Whether the serdeInfo field is set.
      */
     boolean hasSerdeInfo();
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
      * @return The serdeInfo.
      */
     com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.SerDeInfo getSerdeInfo();
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.SerDeInfoOrBuilder
         getSerdeInfoOrBuilder();
   }
+
   /**
    *
    *
@@ -867,6 +885,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.StorageDescriptor)
       StorageDescriptorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StorageDescriptor.newBuilder() to construct.
     private StorageDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -905,6 +924,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object locationUri_ = "";
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -958,6 +979,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object inputFormat_ = "";
+
     /**
      *
      *
@@ -981,6 +1003,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1032,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object outputFormat_ = "";
+
     /**
      *
      *
@@ -1032,6 +1056,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1083,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
 
     public static final int SERDE_INFO_FIELD_NUMBER = 4;
     private com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.SerDeInfo serdeInfo_;
+
     /**
      *
      *
@@ -1074,6 +1100,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     public boolean hasSerdeInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1093,6 +1120,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
               .getDefaultInstance()
           : serdeInfo_;
     }
+
     /**
      *
      *
@@ -1313,6 +1341,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1573,6 +1602,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object locationUri_ = "";
+
       /**
        *
        *
@@ -1596,6 +1626,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1619,6 +1650,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1641,6 +1673,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1659,6 +1692,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1684,6 +1718,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object inputFormat_ = "";
+
       /**
        *
        *
@@ -1706,6 +1741,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1728,6 +1764,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1749,6 +1786,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1766,6 +1804,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1790,6 +1829,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object outputFormat_ = "";
+
       /**
        *
        *
@@ -1812,6 +1852,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1834,6 +1875,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1855,6 +1897,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1872,6 +1915,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1901,6 +1945,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
               com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.SerDeInfo.Builder,
               com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.SerDeInfoOrBuilder>
           serdeInfoBuilder_;
+
       /**
        *
        *
@@ -1916,6 +1961,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       public boolean hasSerdeInfo() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -1938,6 +1984,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
           return serdeInfoBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1962,6 +2009,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1984,6 +2032,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2015,6 +2064,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2035,6 +2085,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2051,6 +2102,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getSerdeInfoFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2072,6 +2124,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
               : serdeInfo_;
         }
       }
+
       /**
        *
        *
@@ -2195,6 +2248,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
   public int getParametersCount() {
     return internalGetParameters().getMap().size();
   }
+
   /**
    *
    *
@@ -2211,12 +2265,14 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     }
     return internalGetParameters().getMap().containsKey(key);
   }
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
   }
+
   /**
    *
    *
@@ -2230,6 +2286,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
+
   /**
    *
    *
@@ -2250,6 +2307,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -2275,6 +2333,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableType_ = "";
+
   /**
    *
    *
@@ -2298,6 +2357,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -2325,6 +2385,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
   public static final int STORAGE_DESCRIPTOR_FIELD_NUMBER = 3;
   private com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.StorageDescriptor
       storageDescriptor_;
+
   /**
    *
    *
@@ -2342,6 +2403,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
   public boolean hasStorageDescriptor() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2363,6 +2425,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : storageDescriptor_;
   }
+
   /**
    *
    *
@@ -2574,6 +2637,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2859,6 +2923,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
+
     /**
      *
      *
@@ -2875,12 +2940,14 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       }
       return internalGetParameters().getMap().containsKey(key);
     }
+
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
+
     /**
      *
      *
@@ -2894,6 +2961,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
+
     /**
      *
      *
@@ -2914,6 +2982,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2940,6 +3009,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2956,12 +3026,14 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
       bitField0_ |= 0x00000001;
       return internalGetMutableParameters().getMutableMap();
     }
+
     /**
      *
      *
@@ -2982,6 +3054,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -2998,6 +3071,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object tableType_ = "";
+
     /**
      *
      *
@@ -3020,6 +3094,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3042,6 +3117,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3063,6 +3139,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3080,6 +3157,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3110,6 +3188,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.StorageDescriptor.Builder,
             com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.StorageDescriptorOrBuilder>
         storageDescriptorBuilder_;
+
     /**
      *
      *
@@ -3126,6 +3205,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
     public boolean hasStorageDescriptor() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3150,6 +3230,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
         return storageDescriptorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3175,6 +3256,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3198,6 +3280,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3230,6 +3313,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3251,6 +3335,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3268,6 +3353,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStorageDescriptorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3290,6 +3376,7 @@ public final class HiveTableOptions extends com.google.protobuf.GeneratedMessage
             : storageDescriptor_;
       }
     }
+
     /**
      *
      *

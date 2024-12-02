@@ -33,6 +33,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PointwiseMetricResult)
     PointwiseMetricResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PointwiseMetricResult.newBuilder() to construct.
   private PointwiseMetricResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object explanation_ = "";
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -323,6 +328,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -523,6 +529,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -572,6 +581,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -591,6 +601,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object explanation_ = "";
+
     /**
      *
      *
@@ -613,6 +624,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -635,6 +647,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +687,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface AllocationAggregateReservationOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo>
       getInUseResourcesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AllocationAggregateReservationOrBuilder
    */
   com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo getInUseResources(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface AllocationAggregateReservationOrBuilder
    * </code>
    */
   int getInUseResourcesCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface AllocationAggregateReservationOrBuilder
               com.google.cloud.compute.v1
                   .AllocationAggregateReservationReservedResourceInfoOrBuilder>
       getInUseResourcesOrBuilderList();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface AllocationAggregateReservationOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo>
       getReservedResourcesList();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface AllocationAggregateReservationOrBuilder
    */
   com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo
       getReservedResources(int index);
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface AllocationAggregateReservationOrBuilder
    * </code>
    */
   int getReservedResourcesCount();
+
   /**
    *
    *
@@ -146,6 +153,7 @@ public interface AllocationAggregateReservationOrBuilder
               com.google.cloud.compute.v1
                   .AllocationAggregateReservationReservedResourceInfoOrBuilder>
       getReservedResourcesOrBuilderList();
+
   /**
    *
    *
@@ -173,6 +181,7 @@ public interface AllocationAggregateReservationOrBuilder
    * @return Whether the vmFamily field is set.
    */
   boolean hasVmFamily();
+
   /**
    *
    *
@@ -186,6 +195,7 @@ public interface AllocationAggregateReservationOrBuilder
    * @return The vmFamily.
    */
   java.lang.String getVmFamily();
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public interface AllocationAggregateReservationOrBuilder
    * @return Whether the workloadType field is set.
    */
   boolean hasWorkloadType();
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface AllocationAggregateReservationOrBuilder
    * @return The workloadType.
    */
   java.lang.String getWorkloadType();
+
   /**
    *
    *

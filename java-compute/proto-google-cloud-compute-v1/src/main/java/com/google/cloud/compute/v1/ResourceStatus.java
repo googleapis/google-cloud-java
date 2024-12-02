@@ -33,6 +33,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourceStatus)
     ResourceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceStatus.newBuilder() to construct.
   private ResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object physicalHost_ = "";
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPhysicalHost() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEDULING_FIELD_NUMBER = 386688404;
   private com.google.cloud.compute.v1.ResourceStatusScheduling scheduling_;
+
   /**
    * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
    *
@@ -141,6 +146,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScheduling() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
    *
@@ -152,6 +158,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.ResourceStatusScheduling.getDefaultInstance()
         : scheduling_;
   }
+
   /**
    * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
    */
@@ -164,6 +171,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPCOMING_MAINTENANCE_FIELD_NUMBER = 227348592;
   private com.google.cloud.compute.v1.UpcomingMaintenance upcomingMaintenance_;
+
   /**
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
    * </code>
@@ -174,6 +182,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpcomingMaintenance() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
    * </code>
@@ -186,6 +195,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()
         : upcomingMaintenance_;
   }
+
   /**
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
    * </code>
@@ -392,6 +402,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -628,6 +639,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object physicalHost_ = "";
+
     /**
      *
      *
@@ -642,6 +654,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPhysicalHost() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -664,6 +677,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -686,6 +700,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +722,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +740,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +770,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.ResourceStatusScheduling.Builder,
             com.google.cloud.compute.v1.ResourceStatusSchedulingOrBuilder>
         schedulingBuilder_;
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -762,6 +780,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheduling() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -777,6 +796,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return schedulingBuilder_.getMessage();
       }
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -794,6 +814,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -809,6 +830,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -832,6 +854,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -846,6 +869,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -855,6 +879,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -868,6 +893,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
             : scheduling_;
       }
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
      * </code>
@@ -895,6 +921,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.UpcomingMaintenance.Builder,
             com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder>
         upcomingMaintenanceBuilder_;
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>
@@ -904,6 +931,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpcomingMaintenance() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>
@@ -919,6 +947,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return upcomingMaintenanceBuilder_.getMessage();
       }
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>
@@ -936,6 +965,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>
@@ -951,6 +981,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>
@@ -974,6 +1005,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>
@@ -988,6 +1020,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>
@@ -997,6 +1030,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpcomingMaintenanceFieldBuilder().getBuilder();
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>
@@ -1011,6 +1045,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
             : upcomingMaintenance_;
       }
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
      * </code>

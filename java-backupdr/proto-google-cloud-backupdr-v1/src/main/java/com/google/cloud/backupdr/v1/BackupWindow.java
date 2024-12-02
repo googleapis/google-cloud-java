@@ -33,6 +33,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.BackupWindow)
     BackupWindowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackupWindow.newBuilder() to construct.
   private BackupWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_HOUR_OF_DAY_FIELD_NUMBER = 1;
   private int startHourOfDay_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_HOUR_OF_DAY_FIELD_NUMBER = 2;
   private int endHourOfDay_ = 0;
+
   /**
    *
    *
@@ -273,6 +276,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -467,6 +471,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int startHourOfDay_;
+
     /**
      *
      *
@@ -483,6 +488,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
     public int getStartHourOfDay() {
       return startHourOfDay_;
     }
+
     /**
      *
      *
@@ -503,6 +509,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -523,6 +530,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int endHourOfDay_;
+
     /**
      *
      *
@@ -545,6 +553,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
     public int getEndHourOfDay() {
       return endHourOfDay_;
     }
+
     /**
      *
      *
@@ -571,6 +580,7 @@ public final class BackupWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

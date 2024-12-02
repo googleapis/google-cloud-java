@@ -39,6 +39,7 @@ public interface ListTranscriptEntriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface ListTranscriptEntriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

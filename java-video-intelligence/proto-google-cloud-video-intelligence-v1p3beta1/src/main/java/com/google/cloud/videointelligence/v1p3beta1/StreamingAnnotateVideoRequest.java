@@ -36,6 +36,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest)
     StreamingAnnotateVideoRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingAnnotateVideoRequest.newBuilder() to construct.
   private StreamingAnnotateVideoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     private StreamingRequestCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
   }
 
   public static final int VIDEO_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
   public boolean hasVideoConfig() {
     return streamingRequestCase_ == 1;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     }
     return com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
   }
 
   public static final int INPUT_CONTENT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
   public boolean hasInputContent() {
     return streamingRequestCase_ == 2;
   }
+
   /**
    *
    *
@@ -419,6 +426,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -663,6 +671,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
             com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig.Builder,
             com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfigOrBuilder>
         videoConfigBuilder_;
+
     /**
      *
      *
@@ -680,6 +689,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     public boolean hasVideoConfig() {
       return streamingRequestCase_ == 1;
     }
+
     /**
      *
      *
@@ -710,6 +720,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -735,6 +746,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       streamingRequestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +769,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       streamingRequestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +808,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       streamingRequestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +836,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
         getVideoConfigBuilder() {
       return getVideoConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -862,6 +878,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -920,6 +937,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     public boolean hasInputContent() {
       return streamingRequestCase_ == 2;
     }
+
     /**
      *
      *
@@ -943,6 +961,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -970,6 +989,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

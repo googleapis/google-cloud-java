@@ -38,6 +38,7 @@ public interface TransactionEventOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TransactionEventOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface TransactionEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface TransactionEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *

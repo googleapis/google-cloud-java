@@ -76,6 +76,7 @@ public enum RecommendationsFilteringOption implements com.google.protobuf.Protoc
    * <code>RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED = 0;</code>
    */
   public static final int RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum RecommendationsFilteringOption implements com.google.protobuf.Protoc
    * <code>RECOMMENDATIONS_FILTERING_DISABLED = 1;</code>
    */
   public static final int RECOMMENDATIONS_FILTERING_DISABLED_VALUE = 1;
+
   /**
    *
    *

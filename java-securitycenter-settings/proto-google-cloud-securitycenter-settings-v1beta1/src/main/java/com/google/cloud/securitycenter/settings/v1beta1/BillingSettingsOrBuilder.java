@@ -38,6 +38,7 @@ public interface BillingSettingsOrBuilder
    * @return The enum numeric value on the wire for billingTier.
    */
   int getBillingTierValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface BillingSettingsOrBuilder
    * @return The enum numeric value on the wire for billingType.
    */
   int getBillingTypeValue();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface BillingSettingsOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface BillingSettingsOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface BillingSettingsOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface BillingSettingsOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *

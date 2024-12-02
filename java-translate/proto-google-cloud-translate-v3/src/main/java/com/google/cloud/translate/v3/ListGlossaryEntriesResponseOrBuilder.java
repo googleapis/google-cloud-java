@@ -36,6 +36,7 @@ public interface ListGlossaryEntriesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3.GlossaryEntry> getGlossaryEntriesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListGlossaryEntriesResponseOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3.GlossaryEntry getGlossaryEntries(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListGlossaryEntriesResponseOrBuilder
    * </code>
    */
   int getGlossaryEntriesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListGlossaryEntriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.GlossaryEntryOrBuilder>
       getGlossaryEntriesOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ListGlossaryEntriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

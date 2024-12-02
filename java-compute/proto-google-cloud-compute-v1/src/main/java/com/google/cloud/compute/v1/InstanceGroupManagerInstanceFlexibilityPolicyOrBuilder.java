@@ -36,6 +36,7 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
    * </code>
    */
   int getInstanceSelectionsCount();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
    * </code>
    */
   boolean containsInstanceSelections(java.lang.String key);
+
   /** Use {@link #getInstanceSelectionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
@@ -55,6 +57,7 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
           com.google.cloud.compute.v1
               .InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection>
       getInstanceSelections();
+
   /**
    *
    *
@@ -71,6 +74,7 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
           com.google.cloud.compute.v1
               .InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection>
       getInstanceSelectionsMap();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
           /* nullable */
           com.google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection
               defaultValue);
+
   /**
    *
    *

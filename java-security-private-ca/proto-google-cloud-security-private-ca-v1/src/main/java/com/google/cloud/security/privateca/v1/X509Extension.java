@@ -35,6 +35,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.X509Extension)
     X509ExtensionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use X509Extension.newBuilder() to construct.
   private X509Extension(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int OBJECT_ID_FIELD_NUMBER = 1;
   private com.google.cloud.security.privateca.v1.ObjectId objectId_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
   public boolean hasObjectId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.security.privateca.v1.ObjectId.getDefaultInstance()
         : objectId_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CRITICAL_FIELD_NUMBER = 2;
   private boolean critical_ = false;
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -342,6 +348,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +580,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.security.privateca.v1.ObjectId.Builder,
             com.google.cloud.security.privateca.v1.ObjectIdOrBuilder>
         objectIdBuilder_;
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     public boolean hasObjectId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -611,6 +620,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
         return objectIdBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +737,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getObjectIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -743,6 +758,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
             : objectId_;
       }
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean critical_;
+
     /**
      *
      *
@@ -789,6 +806,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     public boolean getCritical() {
       return critical_;
     }
+
     /**
      *
      *
@@ -810,6 +828,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -846,6 +866,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -867,6 +888,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

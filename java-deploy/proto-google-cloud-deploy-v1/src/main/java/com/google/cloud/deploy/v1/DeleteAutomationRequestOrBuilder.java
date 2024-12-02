@@ -39,6 +39,7 @@ public interface DeleteAutomationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface DeleteAutomationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -147,6 +149,7 @@ public interface DeleteAutomationRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

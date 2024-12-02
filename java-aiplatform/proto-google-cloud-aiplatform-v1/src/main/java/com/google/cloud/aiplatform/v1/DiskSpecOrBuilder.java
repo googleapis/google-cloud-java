@@ -38,6 +38,7 @@ public interface DiskSpecOrBuilder
    * @return The bootDiskType.
    */
   java.lang.String getBootDiskType();
+
   /**
    *
    *

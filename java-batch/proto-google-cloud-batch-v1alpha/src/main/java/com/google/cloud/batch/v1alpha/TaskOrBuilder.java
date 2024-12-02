@@ -39,6 +39,7 @@ public interface TaskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TaskOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface TaskOrBuilder
    * @return The status.
    */
   com.google.cloud.batch.v1alpha.TaskStatus getStatus();
+
   /**
    *
    *

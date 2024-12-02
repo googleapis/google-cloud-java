@@ -38,6 +38,7 @@ public interface BackupSourceOrBuilder
    * @return The backupUid.
    */
   java.lang.String getBackupUid();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface BackupSourceOrBuilder
    * @return The backupName.
    */
   java.lang.String getBackupName();
+
   /**
    *
    *

@@ -32,6 +32,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyUserDefinedField)
     SecurityPolicyUserDefinedFieldOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyUserDefinedField.newBuilder() to construct.
   private SecurityPolicyUserDefinedField(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -106,12 +107,16 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
      * <code>UNDEFINED_BASE = 0;</code>
      */
     public static final int UNDEFINED_BASE_VALUE = 0;
+
     /** <code>IPV4 = 2254341;</code> */
     public static final int IPV4_VALUE = 2254341;
+
     /** <code>IPV6 = 2254343;</code> */
     public static final int IPV6_VALUE = 2254343;
+
     /** <code>TCP = 82881;</code> */
     public static final int TCP_VALUE = 82881;
+
     /** <code>UDP = 83873;</code> */
     public static final int UDP_VALUE = 83873;
 
@@ -209,6 +214,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object base_ = "";
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
   public boolean hasBase() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -249,6 +256,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +286,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mask_ = "";
+
   /**
    *
    *
@@ -293,6 +302,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
   public boolean hasMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -316,6 +326,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -344,6 +355,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -359,6 +371,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
   public boolean hasName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -382,6 +395,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -408,6 +422,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
 
   public static final int OFFSET_FIELD_NUMBER = 53961875;
   private int offset_ = 0;
+
   /**
    *
    *
@@ -423,6 +438,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
   public boolean hasOffset() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -441,6 +457,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
 
   public static final int SIZE_FIELD_NUMBER = 3530753;
   private int size_ = 0;
+
   /**
    *
    *
@@ -456,6 +473,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
   public boolean hasSize() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -693,6 +711,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -939,6 +958,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object base_ = "";
+
     /**
      *
      *
@@ -954,6 +974,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     public boolean hasBase() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1022,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1064,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1090,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     }
 
     private java.lang.Object mask_ = "";
+
     /**
      *
      *
@@ -1079,6 +1105,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     public boolean hasMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1123,6 +1151,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1173,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1191,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1216,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1199,6 +1231,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     public boolean hasName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1221,6 +1254,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1277,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1264,6 +1299,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1317,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1342,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     }
 
     private int offset_;
+
     /**
      *
      *
@@ -1320,6 +1358,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     public boolean hasOffset() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1335,6 +1374,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     public int getOffset() {
       return offset_;
     }
+
     /**
      *
      *
@@ -1354,6 +1394,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1414,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     }
 
     private int size_;
+
     /**
      *
      *
@@ -1388,6 +1430,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     public boolean hasSize() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1403,6 +1446,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
     public int getSize() {
       return size_;
     }
+
     /**
      *
      *
@@ -1422,6 +1466,7 @@ public final class SecurityPolicyUserDefinedField extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface EventInputOrBuilder
    * @return The event.
    */
   java.lang.String getEvent();
+
   /**
    *
    *

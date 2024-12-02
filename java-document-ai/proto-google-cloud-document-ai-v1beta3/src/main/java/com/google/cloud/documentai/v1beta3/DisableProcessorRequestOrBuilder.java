@@ -38,6 +38,7 @@ public interface DisableProcessorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

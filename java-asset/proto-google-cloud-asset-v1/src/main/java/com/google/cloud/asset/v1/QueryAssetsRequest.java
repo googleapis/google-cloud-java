@@ -33,6 +33,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.QueryAssetsRequest)
     QueryAssetsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryAssetsRequest.newBuilder() to construct.
   private QueryAssetsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     private QueryCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -131,6 +133,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     private TimeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -167,6 +170,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -197,6 +201,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -229,6 +234,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STATEMENT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -244,6 +250,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasStatement() {
     return queryCase_ == 2;
   }
+
   /**
    *
    *
@@ -272,6 +279,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -302,6 +310,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int JOB_REFERENCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -317,6 +326,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasJobReference() {
     return queryCase_ == 3;
   }
+
   /**
    *
    *
@@ -345,6 +355,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -376,6 +387,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -402,6 +414,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -427,6 +440,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -455,6 +469,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int TIMEOUT_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration timeout_;
+
   /**
    *
    *
@@ -482,6 +497,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -509,6 +525,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
+
   /**
    *
    *
@@ -536,6 +553,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int READ_TIME_WINDOW_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -555,6 +573,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasReadTimeWindow() {
     return timeCase_ == 7;
   }
+
   /**
    *
    *
@@ -577,6 +596,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.asset.v1.TimeWindow.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -599,6 +619,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -616,6 +637,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasReadTime() {
     return timeCase_ == 8;
   }
+
   /**
    *
    *
@@ -636,6 +658,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -657,6 +680,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.asset.v1.QueryAssetsOutputConfig outputConfig_;
+
   /**
    *
    *
@@ -682,6 +706,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -709,6 +734,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.asset.v1.QueryAssetsOutputConfig.getDefaultInstance()
         : outputConfig_;
   }
+
   /**
    *
    *
@@ -1014,6 +1040,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1388,6 +1415,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1417,6 +1445,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1446,6 +1475,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1474,6 +1504,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1529,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1544,6 +1576,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasStatement() {
       return queryCase_ == 2;
     }
+
     /**
      *
      *
@@ -1573,6 +1606,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1602,6 +1636,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1624,6 +1659,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1644,6 +1680,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1721,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasJobReference() {
       return queryCase_ == 3;
     }
+
     /**
      *
      *
@@ -1713,6 +1751,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1742,6 +1781,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1764,6 +1804,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1825,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1809,6 +1851,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1830,6 +1873,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1855,6 +1899,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1880,6 +1925,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1904,6 +1950,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1928,6 +1975,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1951,6 +1999,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2019,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2001,6 +2051,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeoutBuilder_;
+
     /**
      *
      *
@@ -2027,6 +2078,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasTimeout() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2057,6 +2109,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return timeoutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2091,6 +2144,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2122,6 +2176,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2161,6 +2216,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2192,6 +2248,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2218,6 +2275,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2246,6 +2304,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
       }
     }
+
     /**
      *
      *
@@ -2289,6 +2348,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.asset.v1.TimeWindow.Builder,
             com.google.cloud.asset.v1.TimeWindowOrBuilder>
         readTimeWindowBuilder_;
+
     /**
      *
      *
@@ -2308,6 +2368,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasReadTimeWindow() {
       return timeCase_ == 7;
     }
+
     /**
      *
      *
@@ -2337,6 +2398,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.asset.v1.TimeWindow.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2363,6 +2425,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       timeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2386,6 +2449,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       timeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2421,6 +2485,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       timeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2450,6 +2515,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2466,6 +2532,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.asset.v1.TimeWindow.Builder getReadTimeWindowBuilder() {
       return getReadTimeWindowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2490,6 +2557,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.asset.v1.TimeWindow.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2530,6 +2598,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -2547,6 +2616,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasReadTime() {
       return timeCase_ == 8;
     }
+
     /**
      *
      *
@@ -2574,6 +2644,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2598,6 +2669,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       timeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2619,6 +2691,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       timeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2651,6 +2724,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       timeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2678,6 +2752,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2692,6 +2767,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2714,6 +2790,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2753,6 +2830,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.asset.v1.QueryAssetsOutputConfig.Builder,
             com.google.cloud.asset.v1.QueryAssetsOutputConfigOrBuilder>
         outputConfigBuilder_;
+
     /**
      *
      *
@@ -2777,6 +2855,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2807,6 +2886,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         return outputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2839,6 +2919,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2869,6 +2950,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2907,6 +2989,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2936,6 +3019,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2960,6 +3044,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2988,6 +3073,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
             : outputConfig_;
       }
     }
+
     /**
      *
      *

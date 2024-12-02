@@ -34,6 +34,7 @@ public final class ListAutonomousDatabaseBackupsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse)
     ListAutonomousDatabaseBackupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAutonomousDatabaseBackupsResponse.newBuilder() to construct.
   private ListAutonomousDatabaseBackupsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListAutonomousDatabaseBackupsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackup>
       autonomousDatabaseBackups_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       getAutonomousDatabaseBackupsList() {
     return autonomousDatabaseBackups_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       getAutonomousDatabaseBackupsOrBuilderList() {
     return autonomousDatabaseBackups_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class ListAutonomousDatabaseBackupsResponse
   public int getAutonomousDatabaseBackupsCount() {
     return autonomousDatabaseBackups_.size();
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       int index) {
     return autonomousDatabaseBackups_.get(index);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class ListAutonomousDatabaseBackupsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -379,6 +387,7 @@ public final class ListAutonomousDatabaseBackupsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -672,6 +681,7 @@ public final class ListAutonomousDatabaseBackupsResponse
         return autonomousDatabaseBackupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -690,6 +700,7 @@ public final class ListAutonomousDatabaseBackupsResponse
         return autonomousDatabaseBackupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -709,6 +720,7 @@ public final class ListAutonomousDatabaseBackupsResponse
         return autonomousDatabaseBackupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +822,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +869,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +915,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +953,7 @@ public final class ListAutonomousDatabaseBackupsResponse
         getAutonomousDatabaseBackupsBuilder(int index) {
       return getAutonomousDatabaseBackupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -951,6 +973,7 @@ public final class ListAutonomousDatabaseBackupsResponse
         return autonomousDatabaseBackupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -971,6 +994,7 @@ public final class ListAutonomousDatabaseBackupsResponse
         return java.util.Collections.unmodifiableList(autonomousDatabaseBackups_);
       }
     }
+
     /**
      *
      *
@@ -988,6 +1012,7 @@ public final class ListAutonomousDatabaseBackupsResponse
           .addBuilder(
               com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1006,6 +1031,7 @@ public final class ListAutonomousDatabaseBackupsResponse
               index,
               com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1043,6 +1069,7 @@ public final class ListAutonomousDatabaseBackupsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1065,6 +1092,7 @@ public final class ListAutonomousDatabaseBackupsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1115,7 @@ public final class ListAutonomousDatabaseBackupsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1155,7 @@ public final class ListAutonomousDatabaseBackupsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

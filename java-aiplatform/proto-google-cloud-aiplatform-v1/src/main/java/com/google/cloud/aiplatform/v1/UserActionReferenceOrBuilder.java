@@ -39,6 +39,7 @@ public interface UserActionReferenceOrBuilder
    * @return Whether the operation field is set.
    */
   boolean hasOperation();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UserActionReferenceOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UserActionReferenceOrBuilder
    * @return Whether the dataLabelingJob field is set.
    */
   boolean hasDataLabelingJob();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UserActionReferenceOrBuilder
    * @return The dataLabelingJob.
    */
   java.lang.String getDataLabelingJob();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface UserActionReferenceOrBuilder
    * @return The method.
    */
   java.lang.String getMethod();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse)
     AcceptHubSpokeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AcceptHubSpokeResponse.newBuilder() to construct.
   private AcceptHubSpokeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int SPOKE_FIELD_NUMBER = 1;
   private com.google.cloud.networkconnectivity.v1.Spoke spoke_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
   public boolean hasSpoke() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
         ? com.google.cloud.networkconnectivity.v1.Spoke.getDefaultInstance()
         : spoke_;
   }
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -485,6 +490,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.networkconnectivity.v1.Spoke.Builder,
             com.google.cloud.networkconnectivity.v1.SpokeOrBuilder>
         spokeBuilder_;
+
     /**
      *
      *
@@ -499,6 +505,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
     public boolean hasSpoke() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -519,6 +526,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
         return spokeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -560,6 +569,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +617,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -620,6 +632,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getSpokeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -638,6 +651,7 @@ public final class AcceptHubSpokeResponse extends com.google.protobuf.GeneratedM
             : spoke_;
       }
     }
+
     /**
      *
      *

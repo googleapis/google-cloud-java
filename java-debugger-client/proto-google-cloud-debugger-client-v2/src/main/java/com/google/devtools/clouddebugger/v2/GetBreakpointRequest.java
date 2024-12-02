@@ -33,6 +33,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.GetBreakpointRequest)
     GetBreakpointRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetBreakpointRequest.newBuilder() to construct.
   private GetBreakpointRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object debuggeeId_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object breakpointId_ = "";
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientVersion_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -398,6 +405,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -612,6 +620,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object debuggeeId_ = "";
+
     /**
      *
      *
@@ -634,6 +643,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object breakpointId_ = "";
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -762,6 +777,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -783,6 +799,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object clientVersion_ = "";
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +913,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +932,7 @@ public final class GetBreakpointRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

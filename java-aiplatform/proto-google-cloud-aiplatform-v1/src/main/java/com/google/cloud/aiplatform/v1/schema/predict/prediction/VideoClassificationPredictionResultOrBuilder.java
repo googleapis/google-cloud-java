@@ -36,6 +36,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return Whether the timeSegmentStart field is set.
    */
   boolean hasTimeSegmentStart();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return The timeSegmentStart.
    */
   com.google.protobuf.Duration getTimeSegmentStart();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return Whether the timeSegmentEnd field is set.
    */
   boolean hasTimeSegmentEnd();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return The timeSegmentEnd.
    */
   com.google.protobuf.Duration getTimeSegmentEnd();
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return Whether the confidence field is set.
    */
   boolean hasConfidence();
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public interface VideoClassificationPredictionResultOrBuilder
    * @return The confidence.
    */
   com.google.protobuf.FloatValue getConfidence();
+
   /**
    *
    *

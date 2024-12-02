@@ -41,6 +41,7 @@ public interface GetDataSharingSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

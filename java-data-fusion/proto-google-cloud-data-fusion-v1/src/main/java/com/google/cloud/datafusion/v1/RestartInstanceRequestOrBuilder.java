@@ -39,6 +39,7 @@ public interface RestartInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

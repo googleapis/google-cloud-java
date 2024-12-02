@@ -37,6 +37,7 @@ public interface ImportEntriesResponseOrBuilder
    * @return Whether the upsertedEntriesCount field is set.
    */
   boolean hasUpsertedEntriesCount();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ImportEntriesResponseOrBuilder
    * @return Whether the deletedEntriesCount field is set.
    */
   boolean hasDeletedEntriesCount();
+
   /**
    *
    *

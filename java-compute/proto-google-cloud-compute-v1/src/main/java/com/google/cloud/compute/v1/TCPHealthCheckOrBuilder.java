@@ -36,6 +36,7 @@ public interface TCPHealthCheckOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TCPHealthCheckOrBuilder
    * @return Whether the portName field is set.
    */
   boolean hasPortName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TCPHealthCheckOrBuilder
    * @return The portName.
    */
   java.lang.String getPortName();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface TCPHealthCheckOrBuilder
    * @return Whether the portSpecification field is set.
    */
   boolean hasPortSpecification();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface TCPHealthCheckOrBuilder
    * @return The portSpecification.
    */
   java.lang.String getPortSpecification();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface TCPHealthCheckOrBuilder
    * @return Whether the proxyHeader field is set.
    */
   boolean hasProxyHeader();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface TCPHealthCheckOrBuilder
    * @return The proxyHeader.
    */
   java.lang.String getProxyHeader();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface TCPHealthCheckOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public interface TCPHealthCheckOrBuilder
    * @return The request.
    */
   java.lang.String getRequest();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface TCPHealthCheckOrBuilder
    * @return Whether the response field is set.
    */
   boolean hasResponse();
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface TCPHealthCheckOrBuilder
    * @return The response.
    */
   java.lang.String getResponse();
+
   /**
    *
    *

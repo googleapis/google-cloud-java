@@ -36,6 +36,7 @@ public interface TrainingPipelineOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TrainingPipelineOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the inputDataConfig field is set.
    */
   boolean hasInputDataConfig();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface TrainingPipelineOrBuilder
    * @return The inputDataConfig.
    */
   com.google.cloud.aiplatform.v1.InputDataConfig getInputDataConfig();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface TrainingPipelineOrBuilder
    * @return The trainingTaskDefinition.
    */
   java.lang.String getTrainingTaskDefinition();
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the trainingTaskInputs field is set.
    */
   boolean hasTrainingTaskInputs();
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public interface TrainingPipelineOrBuilder
    * @return The trainingTaskInputs.
    */
   com.google.protobuf.Value getTrainingTaskInputs();
+
   /**
    *
    *
@@ -240,6 +247,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the trainingTaskMetadata field is set.
    */
   boolean hasTrainingTaskMetadata();
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public interface TrainingPipelineOrBuilder
    * @return The trainingTaskMetadata.
    */
   com.google.protobuf.Value getTrainingTaskMetadata();
+
   /**
    *
    *
@@ -308,6 +317,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the modelToUpload field is set.
    */
   boolean hasModelToUpload();
+
   /**
    *
    *
@@ -335,6 +345,7 @@ public interface TrainingPipelineOrBuilder
    * @return The modelToUpload.
    */
   com.google.cloud.aiplatform.v1.Model getModelToUpload();
+
   /**
    *
    *
@@ -377,6 +388,7 @@ public interface TrainingPipelineOrBuilder
    * @return The modelId.
    */
   java.lang.String getModelId();
+
   /**
    *
    *
@@ -408,6 +420,7 @@ public interface TrainingPipelineOrBuilder
    * @return The parentModel.
    */
   java.lang.String getParentModel();
+
   /**
    *
    *
@@ -437,6 +450,7 @@ public interface TrainingPipelineOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -465,6 +479,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -478,6 +493,7 @@ public interface TrainingPipelineOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -503,6 +519,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -516,6 +533,7 @@ public interface TrainingPipelineOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -542,6 +560,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -556,6 +575,7 @@ public interface TrainingPipelineOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -584,6 +604,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -599,6 +620,7 @@ public interface TrainingPipelineOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -626,6 +648,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -639,6 +662,7 @@ public interface TrainingPipelineOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -667,6 +691,7 @@ public interface TrainingPipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -683,9 +708,11 @@ public interface TrainingPipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -702,6 +729,7 @@ public interface TrainingPipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -722,6 +750,7 @@ public interface TrainingPipelineOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -756,6 +785,7 @@ public interface TrainingPipelineOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -773,6 +803,7 @@ public interface TrainingPipelineOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *

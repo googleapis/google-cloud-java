@@ -42,6 +42,7 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

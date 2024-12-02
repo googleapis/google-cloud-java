@@ -41,6 +41,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNodePoolId();
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * @return Whether the autoscaling field is set.
    */
   boolean hasAutoscaling();
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * @return The autoscaling.
    */
   com.google.container.v1.NodePoolAutoscaling getAutoscaling();
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

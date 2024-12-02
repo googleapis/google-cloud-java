@@ -33,6 +33,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpoint)
     NetworkEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkEndpoint.newBuilder() to construct.
   private NetworkEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
+
   /**
    *
    *
@@ -122,12 +124,14 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   public static final int CLIENT_DESTINATION_PORT_FIELD_NUMBER = 123765766;
   private int clientDestinationPort_ = 0;
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   public boolean hasClientDestinationPort() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fqdn_ = "";
+
   /**
    *
    *
@@ -234,6 +243,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   public boolean hasFqdn() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -257,6 +267,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -351,6 +365,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -366,6 +381,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   public boolean hasIpAddress() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -389,6 +405,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -417,6 +434,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6Address_ = "";
+
   /**
    *
    *
@@ -432,6 +450,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   public boolean hasIpv6Address() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -455,6 +474,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -481,6 +501,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_ = 0;
+
   /**
    *
    *
@@ -496,6 +517,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   public boolean hasPort() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -764,6 +786,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1094,6 +1117,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /**
      *
      *
@@ -1110,12 +1134,14 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /**
      *
      *
@@ -1129,6 +1155,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /**
      *
      *
@@ -1149,6 +1176,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1175,6 +1203,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1191,12 +1220,14 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000001;
       return internalGetMutableAnnotations().getMutableMap();
     }
+
     /**
      *
      *
@@ -1217,6 +1248,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1265,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
 
     private int clientDestinationPort_;
+
     /**
      *
      *
@@ -1248,6 +1281,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public boolean hasClientDestinationPort() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1263,6 +1297,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public int getClientDestinationPort() {
       return clientDestinationPort_;
     }
+
     /**
      *
      *
@@ -1282,6 +1317,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1337,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object fqdn_ = "";
+
     /**
      *
      *
@@ -1315,6 +1352,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public boolean hasFqdn() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1337,6 +1375,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1359,6 +1398,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1380,6 +1420,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1438,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1421,6 +1463,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -1435,6 +1478,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1457,6 +1501,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1479,6 +1524,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1546,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1564,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1589,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -1555,6 +1604,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public boolean hasIpAddress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1577,6 +1627,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1599,6 +1650,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1620,6 +1672,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1690,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1715,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object ipv6Address_ = "";
+
     /**
      *
      *
@@ -1675,6 +1730,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public boolean hasIpv6Address() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1697,6 +1753,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1719,6 +1776,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1740,6 +1798,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1816,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1841,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
 
     private int port_;
+
     /**
      *
      *
@@ -1796,6 +1857,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public boolean hasPort() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1811,6 +1873,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public int getPort() {
       return port_;
     }
+
     /**
      *
      *
@@ -1830,6 +1893,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

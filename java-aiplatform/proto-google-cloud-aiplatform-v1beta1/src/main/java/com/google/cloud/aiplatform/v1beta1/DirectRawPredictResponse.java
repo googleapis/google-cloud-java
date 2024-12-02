@@ -34,6 +34,7 @@ public final class DirectRawPredictResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DirectRawPredictResponse)
     DirectRawPredictResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DirectRawPredictResponse.newBuilder() to construct.
   private DirectRawPredictResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DirectRawPredictResponse extends com.google.protobuf.Generate
 
   public static final int OUTPUT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString output_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -242,6 +244,7 @@ public final class DirectRawPredictResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -428,6 +431,7 @@ public final class DirectRawPredictResponse extends com.google.protobuf.Generate
     private int bitField0_;
 
     private com.google.protobuf.ByteString output_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -443,6 +447,7 @@ public final class DirectRawPredictResponse extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getOutput() {
       return output_;
     }
+
     /**
      *
      *
@@ -464,6 +469,7 @@ public final class DirectRawPredictResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

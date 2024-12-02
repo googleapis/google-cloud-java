@@ -33,6 +33,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.MoveAnalysis)
     MoveAnalysisOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MoveAnalysis.newBuilder() to construct.
   private MoveAnalysis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     private ResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,6 +118,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANALYSIS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnalysis() {
     return resultCase_ == 2;
   }
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.asset.v1.MoveAnalysisResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
   public boolean hasError() {
     return resultCase_ == 3;
   }
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.rpc.Status.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -464,6 +474,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -709,6 +720,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -732,6 +744,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +840,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1.MoveAnalysisResult.Builder,
             com.google.cloud.asset.v1.MoveAnalysisResultOrBuilder>
         analysisBuilder_;
+
     /**
      *
      *
@@ -839,6 +856,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnalysis() {
       return resultCase_ == 2;
     }
+
     /**
      *
      *
@@ -864,6 +882,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.asset.v1.MoveAnalysisResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +985,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.MoveAnalysisResult.Builder getAnalysisBuilder() {
       return getAnalysisFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.asset.v1.MoveAnalysisResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -1046,6 +1072,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     public boolean hasError() {
       return resultCase_ == 3;
     }
+
     /**
      *
      *
@@ -1071,6 +1098,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1121,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1141,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1172,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1198,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1211,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     public com.google.rpc.Status.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1199,6 +1232,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *

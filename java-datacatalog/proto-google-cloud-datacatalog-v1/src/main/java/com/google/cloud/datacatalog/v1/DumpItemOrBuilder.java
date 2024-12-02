@@ -36,6 +36,7 @@ public interface DumpItemOrBuilder
    * @return Whether the taggedEntry field is set.
    */
   boolean hasTaggedEntry();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DumpItemOrBuilder
    * @return The taggedEntry.
    */
   com.google.cloud.datacatalog.v1.TaggedEntry getTaggedEntry();
+
   /**
    *
    *

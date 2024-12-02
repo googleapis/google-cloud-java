@@ -36,6 +36,7 @@ public interface LicenseResourceRequirementsOrBuilder
    * @return Whether the minGuestCpuCount field is set.
    */
   boolean hasMinGuestCpuCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LicenseResourceRequirementsOrBuilder
    * @return Whether the minMemoryMb field is set.
    */
   boolean hasMinMemoryMb();
+
   /**
    *
    *

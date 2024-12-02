@@ -38,6 +38,7 @@ public interface TriggerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TriggerOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface TriggerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface TriggerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface TriggerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface TriggerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface TriggerOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.eventarc.v1.EventFilter> getEventFiltersList();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface TriggerOrBuilder
    * </code>
    */
   com.google.cloud.eventarc.v1.EventFilter getEventFilters(int index);
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface TriggerOrBuilder
    * </code>
    */
   int getEventFiltersCount();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface TriggerOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.EventFilterOrBuilder>
       getEventFiltersOrBuilderList();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface TriggerOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -287,6 +298,7 @@ public interface TriggerOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public interface TriggerOrBuilder
    * @return The destination.
    */
   com.google.cloud.eventarc.v1.Destination getDestination();
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public interface TriggerOrBuilder
    * @return Whether the transport field is set.
    */
   boolean hasTransport();
+
   /**
    *
    *
@@ -348,6 +362,7 @@ public interface TriggerOrBuilder
    * @return The transport.
    */
   com.google.cloud.eventarc.v1.Transport getTransport();
+
   /**
    *
    *
@@ -375,6 +390,7 @@ public interface TriggerOrBuilder
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -386,9 +402,11 @@ public interface TriggerOrBuilder
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -400,6 +418,7 @@ public interface TriggerOrBuilder
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -415,6 +434,7 @@ public interface TriggerOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -441,6 +461,7 @@ public interface TriggerOrBuilder
    * @return The channel.
    */
   java.lang.String getChannel();
+
   /**
    *
    *
@@ -468,6 +489,7 @@ public interface TriggerOrBuilder
    * </code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -480,9 +502,11 @@ public interface TriggerOrBuilder
    * </code>
    */
   boolean containsConditions(java.lang.String key);
+
   /** Use {@link #getConditionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.eventarc.v1.StateCondition> getConditions();
+
   /**
    *
    *
@@ -495,6 +519,7 @@ public interface TriggerOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.eventarc.v1.StateCondition> getConditionsMap();
+
   /**
    *
    *
@@ -511,6 +536,7 @@ public interface TriggerOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.eventarc.v1.StateCondition defaultValue);
+
   /**
    *
    *
@@ -538,6 +564,7 @@ public interface TriggerOrBuilder
    * @return The eventDataContentType.
    */
   java.lang.String getEventDataContentType();
+
   /**
    *
    *
@@ -581,6 +608,7 @@ public interface TriggerOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface BatchRecognizeRequestOrBuilder
    * @return The recognizer.
    */
   java.lang.String getRecognizer();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface BatchRecognizeRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface BatchRecognizeRequestOrBuilder
    * @return The config.
    */
   com.google.cloud.speech.v2.RecognitionConfig getConfig();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface BatchRecognizeRequestOrBuilder
    * @return Whether the configMask field is set.
    */
   boolean hasConfigMask();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface BatchRecognizeRequestOrBuilder
    * @return The configMask.
    */
   com.google.protobuf.FieldMask getConfigMask();
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public interface BatchRecognizeRequestOrBuilder
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
    */
   java.util.List<com.google.cloud.speech.v2.BatchRecognizeFileMetadata> getFilesList();
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public interface BatchRecognizeRequestOrBuilder
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
    */
   com.google.cloud.speech.v2.BatchRecognizeFileMetadata getFiles(int index);
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface BatchRecognizeRequestOrBuilder
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
    */
   int getFilesCount();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface BatchRecognizeRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.BatchRecognizeFileMetadataOrBuilder>
       getFilesOrBuilderList();
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public interface BatchRecognizeRequestOrBuilder
    * @return Whether the recognitionOutputConfig field is set.
    */
   boolean hasRecognitionOutputConfig();
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface BatchRecognizeRequestOrBuilder
    * @return The recognitionOutputConfig.
    */
   com.google.cloud.speech.v2.RecognitionOutputConfig getRecognitionOutputConfig();
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public interface BatchRecognizeRequestOrBuilder
    * @return The enum numeric value on the wire for processingStrategy.
    */
   int getProcessingStrategyValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class InitializeZoneResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.InitializeZoneResponse)
     InitializeZoneResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InitializeZoneResponse.newBuilder() to construct.
   private InitializeZoneResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class InitializeZoneResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

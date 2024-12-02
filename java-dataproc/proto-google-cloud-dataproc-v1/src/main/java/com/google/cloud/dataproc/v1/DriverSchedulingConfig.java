@@ -33,6 +33,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.DriverSchedulingConfig)
     DriverSchedulingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DriverSchedulingConfig.newBuilder() to construct.
   private DriverSchedulingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
 
   public static final int MEMORY_MB_FIELD_NUMBER = 1;
   private int memoryMb_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
 
   public static final int VCORES_FIELD_NUMBER = 2;
   private int vcores_ = 0;
+
   /**
    *
    *
@@ -265,6 +268,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -460,6 +464,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int memoryMb_;
+
     /**
      *
      *
@@ -475,6 +480,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     public int getMemoryMb() {
       return memoryMb_;
     }
+
     /**
      *
      *
@@ -494,6 +500,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     }
 
     private int vcores_;
+
     /**
      *
      *
@@ -528,6 +536,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     public int getVcores() {
       return vcores_;
     }
+
     /**
      *
      *
@@ -547,6 +556,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

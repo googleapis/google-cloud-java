@@ -39,6 +39,7 @@ public interface ConfigureDnsSettingsRequestOrBuilder
    * @return The registration.
    */
   java.lang.String getRegistration();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ConfigureDnsSettingsRequestOrBuilder
    * @return Whether the dnsSettings field is set.
    */
   boolean hasDnsSettings();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ConfigureDnsSettingsRequestOrBuilder
    * @return The dnsSettings.
    */
   com.google.cloud.domains.v1.DnsSettings getDnsSettings();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ConfigureDnsSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface ConfigureDnsSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKey)
     InterconnectMacsecConfigPreSharedKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectMacsecConfigPreSharedKey.newBuilder() to construct.
   private InterconnectMacsecConfigPreSharedKey(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class InterconnectMacsecConfigPreSharedKey
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cak_ = "";
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class InterconnectMacsecConfigPreSharedKey
   public boolean hasCak() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class InterconnectMacsecConfigPreSharedKey
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ckn_ = "";
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class InterconnectMacsecConfigPreSharedKey
   public boolean hasCkn() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       return s;
     }
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class InterconnectMacsecConfigPreSharedKey
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class InterconnectMacsecConfigPreSharedKey
   public boolean hasName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       return s;
     }
   }
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public final class InterconnectMacsecConfigPreSharedKey
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startTime_ = "";
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public final class InterconnectMacsecConfigPreSharedKey
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -309,6 +321,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       return s;
     }
   }
+
   /**
    *
    *
@@ -540,6 +553,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -779,6 +793,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     private int bitField0_;
 
     private java.lang.Object cak_ = "";
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     public boolean hasCak() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -815,6 +831,7 @@ public final class InterconnectMacsecConfigPreSharedKey
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -837,6 +854,7 @@ public final class InterconnectMacsecConfigPreSharedKey
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +894,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     }
 
     private java.lang.Object ckn_ = "";
+
     /**
      *
      *
@@ -913,6 +934,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     public boolean hasCkn() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -935,6 +957,7 @@ public final class InterconnectMacsecConfigPreSharedKey
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -957,6 +980,7 @@ public final class InterconnectMacsecConfigPreSharedKey
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -978,6 +1002,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1020,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1045,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     public boolean hasName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1055,6 +1083,7 @@ public final class InterconnectMacsecConfigPreSharedKey
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1106,7 @@ public final class InterconnectMacsecConfigPreSharedKey
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1098,6 +1128,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1146,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1171,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     }
 
     private java.lang.Object startTime_ = "";
+
     /**
      *
      *
@@ -1153,6 +1186,7 @@ public final class InterconnectMacsecConfigPreSharedKey
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1175,6 +1209,7 @@ public final class InterconnectMacsecConfigPreSharedKey
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1197,6 +1232,7 @@ public final class InterconnectMacsecConfigPreSharedKey
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1218,6 +1254,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1272,7 @@ public final class InterconnectMacsecConfigPreSharedKey
       onChanged();
       return this;
     }
+
     /**
      *
      *

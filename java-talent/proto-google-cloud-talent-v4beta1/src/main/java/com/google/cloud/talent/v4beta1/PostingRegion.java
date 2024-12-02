@@ -102,6 +102,7 @@ public enum PostingRegion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSTING_REGION_UNSPECIFIED = 0;</code>
    */
   public static final int POSTING_REGION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -121,6 +122,7 @@ public enum PostingRegion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ADMINISTRATIVE_AREA = 1;</code>
    */
   public static final int ADMINISTRATIVE_AREA_VALUE = 1;
+
   /**
    *
    *
@@ -136,6 +138,7 @@ public enum PostingRegion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NATION = 2;</code>
    */
   public static final int NATION_VALUE = 2;
+
   /**
    *
    *

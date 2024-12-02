@@ -37,6 +37,7 @@ public interface RoofSegmentSummaryOrBuilder
    * @return Whether the pitchDegrees field is set.
    */
   boolean hasPitchDegrees();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface RoofSegmentSummaryOrBuilder
    * @return Whether the azimuthDegrees field is set.
    */
   boolean hasAzimuthDegrees();
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface RoofSegmentSummaryOrBuilder
    * @return Whether the segmentIndex field is set.
    */
   boolean hasSegmentIndex();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface ListSkusRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ListSkusRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface ListSkusRequestOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface ListSkusRequestOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface ListSkusRequestOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public interface ListSkusRequestOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public interface ListSkusRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

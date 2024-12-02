@@ -37,6 +37,7 @@ public interface CloudRepoSourceContextOrBuilder
    * @return Whether the repoId field is set.
    */
   boolean hasRepoId();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface CloudRepoSourceContextOrBuilder
    * @return The repoId.
    */
   io.grafeas.v1.RepoId getRepoId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface CloudRepoSourceContextOrBuilder
    * @return Whether the revisionId field is set.
    */
   boolean hasRevisionId();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface CloudRepoSourceContextOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface CloudRepoSourceContextOrBuilder
    * @return Whether the aliasContext field is set.
    */
   boolean hasAliasContext();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface CloudRepoSourceContextOrBuilder
    * @return The aliasContext.
    */
   io.grafeas.v1.AliasContext getAliasContext();
+
   /**
    *
    *

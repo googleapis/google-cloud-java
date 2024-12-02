@@ -30,6 +30,7 @@ public interface AggregationInfoOrBuilder
    * @return The enum numeric value on the wire for aggregationLevel.
    */
   int getAggregationLevelValue();
+
   /**
    * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
    *
@@ -44,6 +45,7 @@ public interface AggregationInfoOrBuilder
    * @return The enum numeric value on the wire for aggregationInterval.
    */
   int getAggregationIntervalValue();
+
   /**
    * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
    * </code>

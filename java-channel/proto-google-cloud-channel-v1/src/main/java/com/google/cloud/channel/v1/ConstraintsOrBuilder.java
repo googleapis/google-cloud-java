@@ -36,6 +36,7 @@ public interface ConstraintsOrBuilder
    * @return Whether the customerConstraints field is set.
    */
   boolean hasCustomerConstraints();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConstraintsOrBuilder
    * @return The customerConstraints.
    */
   com.google.cloud.channel.v1.CustomerConstraints getCustomerConstraints();
+
   /**
    *
    *

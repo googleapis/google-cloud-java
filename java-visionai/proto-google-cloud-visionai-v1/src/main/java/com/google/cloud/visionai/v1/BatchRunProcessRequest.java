@@ -33,6 +33,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.BatchRunProcessRequest)
     BatchRunProcessRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchRunProcessRequest.newBuilder() to construct.
   private BatchRunProcessRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -96,6 +97,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
      */
     int getBatchSize();
   }
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.BatchRunProcessRequest.BatchRunProcessOptions)
       BatchRunProcessOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BatchRunProcessOptions.newBuilder() to construct.
     private BatchRunProcessOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -141,6 +144,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
 
     public static final int RETRY_COUNT_FIELD_NUMBER = 1;
     private int retryCount_ = 0;
+
     /**
      *
      *
@@ -159,6 +163,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
 
     public static final int BATCH_SIZE_FIELD_NUMBER = 2;
     private int batchSize_ = 0;
+
     /**
      *
      *
@@ -352,6 +357,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -561,6 +567,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private int retryCount_;
+
       /**
        *
        *
@@ -576,6 +583,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       public int getRetryCount() {
         return retryCount_;
       }
+
       /**
        *
        *
@@ -595,6 +603,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -614,6 +623,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
 
       private int batchSize_;
+
       /**
        *
        *
@@ -629,6 +639,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       public int getBatchSize() {
         return batchSize_;
       }
+
       /**
        *
        *
@@ -648,6 +659,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -739,6 +751,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -764,6 +777,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -794,6 +808,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.CreateProcessRequest> requests_;
+
   /**
    *
    *
@@ -809,6 +824,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.visionai.v1.CreateProcessRequest> getRequestsList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -825,6 +841,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       getRequestsOrBuilderList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -840,6 +857,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
   public int getRequestsCount() {
     return requests_.size();
   }
+
   /**
    *
    *
@@ -855,6 +873,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
   public com.google.cloud.visionai.v1.CreateProcessRequest getRequests(int index) {
     return requests_.get(index);
   }
+
   /**
    *
    *
@@ -874,6 +893,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
 
   public static final int OPTIONS_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.BatchRunProcessRequest.BatchRunProcessOptions options_;
+
   /**
    *
    *
@@ -891,6 +911,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
   public boolean hasOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -911,6 +932,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : options_;
   }
+
   /**
    *
    *
@@ -935,6 +957,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object batchId_ = "";
+
   /**
    *
    *
@@ -958,6 +981,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -1175,6 +1199,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1466,6 +1491,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1490,6 +1516,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1514,6 +1541,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1537,6 +1565,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1585,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1646,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return requestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1665,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return requestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1652,6 +1684,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return requestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1676,6 +1709,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1698,6 +1732,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1757,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +1782,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1768,6 +1805,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1828,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1812,6 +1851,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1833,6 +1873,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1854,6 +1895,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1868,6 +1910,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.visionai.v1.CreateProcessRequest.Builder getRequestsBuilder(int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1887,6 +1930,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1906,6 +1950,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
+
     /**
      *
      *
@@ -1921,6 +1966,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       return getRequestsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.CreateProcessRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1937,6 +1983,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.visionai.v1.CreateProcessRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1976,6 +2023,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.visionai.v1.BatchRunProcessRequest.BatchRunProcessOptions.Builder,
             com.google.cloud.visionai.v1.BatchRunProcessRequest.BatchRunProcessOptionsOrBuilder>
         optionsBuilder_;
+
     /**
      *
      *
@@ -1992,6 +2040,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
     public boolean hasOptions() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2015,6 +2064,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return optionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2040,6 +2090,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2063,6 +2114,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2095,6 +2147,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2116,6 +2169,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2133,6 +2187,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2155,6 +2210,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
             : options_;
       }
     }
+
     /**
      *
      *
@@ -2185,6 +2241,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object batchId_ = "";
+
     /**
      *
      *
@@ -2207,6 +2264,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2229,6 +2287,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2250,6 +2309,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2267,6 +2327,7 @@ public final class BatchRunProcessRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

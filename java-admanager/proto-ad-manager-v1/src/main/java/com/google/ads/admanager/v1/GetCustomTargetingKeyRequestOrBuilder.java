@@ -40,6 +40,7 @@ public interface GetCustomTargetingKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

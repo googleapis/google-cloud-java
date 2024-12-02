@@ -36,6 +36,7 @@ public interface UpdateCustomDimensionRequestOrBuilder
    * @return Whether the customDimension field is set.
    */
   boolean hasCustomDimension();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateCustomDimensionRequestOrBuilder
    * @return The customDimension.
    */
   com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface UpdateCustomDimensionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateCustomDimensionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

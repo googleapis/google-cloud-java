@@ -72,6 +72,7 @@ public enum CompressionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPRESSION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int COMPRESSION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum CompressionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RAW = 1;</code>
    */
   public static final int RAW_VALUE = 1;
+
   /**
    *
    *

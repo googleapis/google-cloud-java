@@ -36,6 +36,7 @@ public interface CompleteImportSpaceResponseOrBuilder
    * @return Whether the space field is set.
    */
   boolean hasSpace();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CompleteImportSpaceResponseOrBuilder
    * @return The space.
    */
   com.google.chat.v1.Space getSpace();
+
   /**
    *
    *

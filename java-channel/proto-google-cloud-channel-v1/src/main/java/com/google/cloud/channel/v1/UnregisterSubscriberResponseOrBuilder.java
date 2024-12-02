@@ -36,6 +36,7 @@ public interface UnregisterSubscriberResponseOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *

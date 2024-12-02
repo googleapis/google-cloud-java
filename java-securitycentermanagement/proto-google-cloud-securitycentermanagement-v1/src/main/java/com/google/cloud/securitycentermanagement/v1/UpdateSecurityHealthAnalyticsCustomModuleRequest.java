@@ -36,6 +36,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest)
     UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateSecurityHealthAnalyticsCustomModuleRequest.newBuilder() to construct.
   private UpdateSecurityHealthAnalyticsCustomModuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
   public static final int SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE_FIELD_NUMBER = 2;
   private com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
       securityHealthAnalyticsCustomModule_;
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
   public boolean hasSecurityHealthAnalyticsCustomModule() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
             .getDefaultInstance()
         : securityHealthAnalyticsCustomModule_;
   }
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -443,6 +451,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -712,6 +721,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -733,6 +743,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -760,6 +771,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -789,6 +801,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +828,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +863,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +890,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +912,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -921,6 +938,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -963,6 +981,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
             com.google.cloud.securitycentermanagement.v1
                 .SecurityHealthAnalyticsCustomModuleOrBuilder>
         securityHealthAnalyticsCustomModuleBuilder_;
+
     /**
      *
      *
@@ -979,6 +998,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
     public boolean hasSecurityHealthAnalyticsCustomModule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1003,6 +1023,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
         return securityHealthAnalyticsCustomModuleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1049,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1073,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1106,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1128,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1146,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return getSecurityHealthAnalyticsCustomModuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1143,6 +1169,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
             : securityHealthAnalyticsCustomModule_;
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1203,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1203,6 +1231,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1234,6 +1263,7 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

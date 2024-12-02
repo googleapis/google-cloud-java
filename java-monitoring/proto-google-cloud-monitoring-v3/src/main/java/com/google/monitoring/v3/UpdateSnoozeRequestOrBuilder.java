@@ -36,6 +36,7 @@ public interface UpdateSnoozeRequestOrBuilder
    * @return Whether the snooze field is set.
    */
   boolean hasSnooze();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateSnoozeRequestOrBuilder
    * @return The snooze.
    */
   com.google.monitoring.v3.Snooze getSnooze();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface UpdateSnoozeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface UpdateSnoozeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

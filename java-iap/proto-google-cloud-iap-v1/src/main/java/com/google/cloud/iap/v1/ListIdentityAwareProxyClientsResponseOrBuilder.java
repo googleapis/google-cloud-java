@@ -36,6 +36,7 @@ public interface ListIdentityAwareProxyClientsResponseOrBuilder
    */
   java.util.List<com.google.cloud.iap.v1.IdentityAwareProxyClient>
       getIdentityAwareProxyClientsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListIdentityAwareProxyClientsResponseOrBuilder
    * </code>
    */
   com.google.cloud.iap.v1.IdentityAwareProxyClient getIdentityAwareProxyClients(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListIdentityAwareProxyClientsResponseOrBuilder
    * </code>
    */
   int getIdentityAwareProxyClientsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListIdentityAwareProxyClientsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.iap.v1.IdentityAwareProxyClientOrBuilder>
       getIdentityAwareProxyClientsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface ListIdentityAwareProxyClientsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

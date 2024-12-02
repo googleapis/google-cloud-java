@@ -35,6 +35,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.ImportCatalogItemsResponse)
     ImportCatalogItemsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportCatalogItemsResponse.newBuilder() to construct.
   private ImportCatalogItemsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
 
   public static final int ERRORS_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig errorsConfig_;
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
   public boolean hasErrorsConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -170,6 +178,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
         ? com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.getDefaultInstance()
         : errorsConfig_;
   }
+
   /**
    *
    *
@@ -365,6 +374,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -665,6 +675,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
         return errorSamplesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
         return errorSamplesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
         return errorSamplesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +775,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -905,6 +928,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -921,6 +945,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
+
     /**
      *
      *
@@ -933,6 +958,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -946,6 +972,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -980,6 +1007,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
             com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.Builder,
             com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfigOrBuilder>
         errorsConfigBuilder_;
+
     /**
      *
      *
@@ -994,6 +1022,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
     public boolean hasErrorsConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1014,6 +1043,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
         return errorsConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1067,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1088,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1119,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1139,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1155,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
       onChanged();
       return getErrorsConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1140,6 +1175,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
             : errorsConfig_;
       }
     }
+
     /**
      *
      *

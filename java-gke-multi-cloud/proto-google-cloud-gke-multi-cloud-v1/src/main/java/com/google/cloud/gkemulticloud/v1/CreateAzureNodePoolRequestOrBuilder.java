@@ -45,6 +45,7 @@ public interface CreateAzureNodePoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface CreateAzureNodePoolRequestOrBuilder
    * @return Whether the azureNodePool field is set.
    */
   boolean hasAzureNodePool();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface CreateAzureNodePoolRequestOrBuilder
    * @return The azureNodePool.
    */
   com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePool();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface CreateAzureNodePoolRequestOrBuilder
    * @return The azureNodePoolId.
    */
   java.lang.String getAzureNodePoolId();
+
   /**
    *
    *

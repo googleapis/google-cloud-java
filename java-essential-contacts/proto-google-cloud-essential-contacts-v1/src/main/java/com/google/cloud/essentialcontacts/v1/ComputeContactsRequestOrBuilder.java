@@ -40,6 +40,7 @@ public interface ComputeContactsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface ComputeContactsRequestOrBuilder
    */
   java.util.List<com.google.cloud.essentialcontacts.v1.NotificationCategory>
       getNotificationCategoriesList();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ComputeContactsRequestOrBuilder
    * @return The count of notificationCategories.
    */
   int getNotificationCategoriesCount();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface ComputeContactsRequestOrBuilder
    * @return The notificationCategories at the given index.
    */
   com.google.cloud.essentialcontacts.v1.NotificationCategory getNotificationCategories(int index);
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ComputeContactsRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for notificationCategories.
    */
   java.util.List<java.lang.Integer> getNotificationCategoriesValueList();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface ComputeContactsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

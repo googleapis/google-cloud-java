@@ -55,6 +55,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
+
   /**
    *
    *
@@ -133,6 +134,7 @@ public interface ModelContainerSpecOrBuilder
    * @return A list containing the command.
    */
   java.util.List<java.lang.String> getCommandList();
+
   /**
    *
    *
@@ -179,6 +181,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The count of command.
    */
   int getCommandCount();
+
   /**
    *
    *
@@ -226,6 +229,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The command at the given index.
    */
   java.lang.String getCommand(int index);
+
   /**
    *
    *
@@ -319,6 +323,7 @@ public interface ModelContainerSpecOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
+
   /**
    *
    *
@@ -364,6 +369,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
+
   /**
    *
    *
@@ -410,6 +416,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
+
   /**
    *
    *
@@ -498,6 +505,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.EnvVar> getEnvList();
+
   /**
    *
    *
@@ -539,6 +547,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.EnvVar getEnv(int index);
+
   /**
    *
    *
@@ -580,6 +589,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   int getEnvCount();
+
   /**
    *
    *
@@ -621,6 +631,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.EnvVarOrBuilder> getEnvOrBuilderList();
+
   /**
    *
    *
@@ -695,6 +706,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Port> getPortsList();
+
   /**
    *
    *
@@ -727,6 +739,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Port getPorts(int index);
+
   /**
    *
    *
@@ -759,6 +772,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   int getPortsCount();
+
   /**
    *
    *
@@ -791,6 +805,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.PortOrBuilder> getPortsOrBuilderList();
+
   /**
    *
    *
@@ -865,6 +880,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The predictRoute.
    */
   java.lang.String getPredictRoute();
+
   /**
    *
    *
@@ -947,6 +963,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The healthRoute.
    */
   java.lang.String getHealthRoute();
+
   /**
    *
    *
@@ -1008,6 +1025,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Port> getGrpcPortsList();
+
   /**
    *
    *
@@ -1028,6 +1046,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Port getGrpcPorts(int index);
+
   /**
    *
    *
@@ -1048,6 +1067,7 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   int getGrpcPortsCount();
+
   /**
    *
    *
@@ -1069,6 +1089,7 @@ public interface ModelContainerSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.PortOrBuilder>
       getGrpcPortsOrBuilderList();
+
   /**
    *
    *
@@ -1105,6 +1126,7 @@ public interface ModelContainerSpecOrBuilder
    * @return Whether the deploymentTimeout field is set.
    */
   boolean hasDeploymentTimeout();
+
   /**
    *
    *
@@ -1120,6 +1142,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The deploymentTimeout.
    */
   com.google.protobuf.Duration getDeploymentTimeout();
+
   /**
    *
    *
@@ -1162,6 +1185,7 @@ public interface ModelContainerSpecOrBuilder
    * @return Whether the startupProbe field is set.
    */
   boolean hasStartupProbe();
+
   /**
    *
    *
@@ -1176,6 +1200,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The startupProbe.
    */
   com.google.cloud.aiplatform.v1.Probe getStartupProbe();
+
   /**
    *
    *
@@ -1203,6 +1228,7 @@ public interface ModelContainerSpecOrBuilder
    * @return Whether the healthProbe field is set.
    */
   boolean hasHealthProbe();
+
   /**
    *
    *
@@ -1217,6 +1243,7 @@ public interface ModelContainerSpecOrBuilder
    * @return The healthProbe.
    */
   com.google.cloud.aiplatform.v1.Probe getHealthProbe();
+
   /**
    *
    *

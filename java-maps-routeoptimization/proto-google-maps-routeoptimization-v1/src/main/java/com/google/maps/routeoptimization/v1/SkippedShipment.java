@@ -35,6 +35,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.SkippedShipment)
     SkippedShipmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SkippedShipment.newBuilder() to construct.
   private SkippedShipment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for code.
      */
     int getCodeValue();
+
     /**
      *
      *
@@ -109,6 +111,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      * @return Whether the exampleVehicleIndex field is set.
      */
     boolean hasExampleVehicleIndex();
+
     /**
      *
      *
@@ -136,6 +139,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      * @return The exampleExceededCapacityType.
      */
     java.lang.String getExampleExceededCapacityType();
+
     /**
      *
      *
@@ -150,6 +154,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getExampleExceededCapacityTypeBytes();
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.SkippedShipment.Reason)
       ReasonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Reason.newBuilder() to construct.
     private Reason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -341,6 +347,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * <code>CODE_UNSPECIFIED = 0;</code>
        */
       public static final int CODE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -351,6 +358,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * <code>NO_VEHICLE = 1;</code>
        */
       public static final int NO_VEHICLE_VALUE = 1;
+
       /**
        *
        *
@@ -362,6 +370,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * <code>DEMAND_EXCEEDS_VEHICLE_CAPACITY = 2;</code>
        */
       public static final int DEMAND_EXCEEDS_VEHICLE_CAPACITY_VALUE = 2;
+
       /**
        *
        *
@@ -377,6 +386,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * <code>CANNOT_BE_PERFORMED_WITHIN_VEHICLE_DISTANCE_LIMIT = 3;</code>
        */
       public static final int CANNOT_BE_PERFORMED_WITHIN_VEHICLE_DISTANCE_LIMIT_VALUE = 3;
+
       /**
        *
        *
@@ -392,6 +402,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * <code>CANNOT_BE_PERFORMED_WITHIN_VEHICLE_DURATION_LIMIT = 4;</code>
        */
       public static final int CANNOT_BE_PERFORMED_WITHIN_VEHICLE_DURATION_LIMIT_VALUE = 4;
+
       /**
        *
        *
@@ -403,6 +414,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * <code>CANNOT_BE_PERFORMED_WITHIN_VEHICLE_TRAVEL_DURATION_LIMIT = 5;</code>
        */
       public static final int CANNOT_BE_PERFORMED_WITHIN_VEHICLE_TRAVEL_DURATION_LIMIT_VALUE = 5;
+
       /**
        *
        *
@@ -416,6 +428,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * <code>CANNOT_BE_PERFORMED_WITHIN_VEHICLE_TIME_WINDOWS = 6;</code>
        */
       public static final int CANNOT_BE_PERFORMED_WITHIN_VEHICLE_TIME_WINDOWS_VALUE = 6;
+
       /**
        *
        *
@@ -526,6 +539,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int CODE_FIELD_NUMBER = 1;
     private int code_ = 0;
+
     /**
      *
      *
@@ -541,6 +555,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -563,6 +578,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
     public static final int EXAMPLE_VEHICLE_INDEX_FIELD_NUMBER = 2;
     private int exampleVehicleIndex_ = 0;
+
     /**
      *
      *
@@ -579,6 +595,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     public boolean hasExampleVehicleIndex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -600,6 +617,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object exampleExceededCapacityType_ = "";
+
     /**
      *
      *
@@ -624,6 +642,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1084,6 +1104,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int code_ = 0;
+
       /**
        *
        *
@@ -1099,6 +1120,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       public int getCodeValue() {
         return code_;
       }
+
       /**
        *
        *
@@ -1117,6 +1139,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1136,6 +1159,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
             ? com.google.maps.routeoptimization.v1.SkippedShipment.Reason.Code.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1158,6 +1182,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1177,6 +1202,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
 
       private int exampleVehicleIndex_;
+
       /**
        *
        *
@@ -1193,6 +1219,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       public boolean hasExampleVehicleIndex() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1209,6 +1236,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       public int getExampleVehicleIndex() {
         return exampleVehicleIndex_;
       }
+
       /**
        *
        *
@@ -1229,6 +1257,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1249,6 +1278,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object exampleExceededCapacityType_ = "";
+
       /**
        *
        *
@@ -1272,6 +1302,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1295,6 +1326,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1317,6 +1349,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1335,6 +1368,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1426,6 +1460,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
   public static final int INDEX_FIELD_NUMBER = 1;
   private int index_ = 0;
+
   /**
    *
    *
@@ -1447,6 +1482,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object label_ = "";
+
   /**
    *
    *
@@ -1472,6 +1508,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1502,6 +1539,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.SkippedShipment.Reason> reasons_;
+
   /**
    *
    *
@@ -1518,6 +1556,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       getReasonsList() {
     return reasons_;
   }
+
   /**
    *
    *
@@ -1535,6 +1574,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       getReasonsOrBuilderList() {
     return reasons_;
   }
+
   /**
    *
    *
@@ -1550,6 +1590,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
   public int getReasonsCount() {
     return reasons_.size();
   }
+
   /**
    *
    *
@@ -1565,6 +1606,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
   public com.google.maps.routeoptimization.v1.SkippedShipment.Reason getReasons(int index) {
     return reasons_.get(index);
   }
+
   /**
    *
    *
@@ -1761,6 +1803,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2022,6 +2065,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int index_;
+
     /**
      *
      *
@@ -2038,6 +2082,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     public int getIndex() {
       return index_;
     }
+
     /**
      *
      *
@@ -2058,6 +2103,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2078,6 +2124,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object label_ = "";
+
     /**
      *
      *
@@ -2102,6 +2149,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2126,6 +2174,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2149,6 +2198,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2168,6 +2218,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2230,6 +2281,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return reasonsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2248,6 +2300,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return reasonsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2266,6 +2319,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return reasonsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2291,6 +2345,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2314,6 +2369,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2338,6 +2394,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2363,6 +2420,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2385,6 +2443,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2408,6 +2467,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2491,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2452,6 +2513,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2473,6 +2535,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2488,6 +2551,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getReasonsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2507,6 +2571,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return reasonsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2527,6 +2592,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(reasons_);
       }
     }
+
     /**
      *
      *
@@ -2543,6 +2609,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.maps.routeoptimization.v1.SkippedShipment.Reason.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2561,6 +2628,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.maps.routeoptimization.v1.SkippedShipment.Reason.getDefaultInstance());
     }
+
     /**
      *
      *

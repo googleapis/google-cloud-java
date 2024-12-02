@@ -33,6 +33,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Node)
     NodeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Node.newBuilder() to construct.
   private Node(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return The parentNode.
      */
     java.lang.String getParentNode();
+
     /**
      *
      *
@@ -109,6 +111,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return The parentOutputChannel.
      */
     java.lang.String getParentOutputChannel();
+
     /**
      *
      *
@@ -136,6 +139,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return The connectedInputChannel.
      */
     java.lang.String getConnectedInputChannel();
+
     /**
      *
      *
@@ -150,6 +154,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getConnectedInputChannelBytes();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Node.InputEdge)
       InputEdgeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InputEdge.newBuilder() to construct.
     private InputEdge(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -200,6 +206,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parentNode_ = "";
+
     /**
      *
      *
@@ -223,6 +230,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -251,6 +259,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parentOutputChannel_ = "";
+
     /**
      *
      *
@@ -275,6 +284,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -304,6 +314,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object connectedInputChannel_ = "";
+
     /**
      *
      *
@@ -328,6 +339,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -531,6 +543,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object parentNode_ = "";
+
       /**
        *
        *
@@ -769,6 +783,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -791,6 +806,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -812,6 +828,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -829,6 +846,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -853,6 +871,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object parentOutputChannel_ = "";
+
       /**
        *
        *
@@ -876,6 +895,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -899,6 +919,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -921,6 +942,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -939,6 +961,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -964,6 +987,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object connectedInputChannel_ = "";
+
       /**
        *
        *
@@ -987,6 +1011,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1010,6 +1035,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1032,6 +1058,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1050,6 +1077,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1155,6 +1183,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     private StreamOutputConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1186,6 +1215,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OUTPUT_ALL_OUTPUT_CHANNELS_TO_STREAM_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -1217,6 +1247,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOutputAllOutputChannelsToStream() {
     return streamOutputConfigCase_ == 6;
   }
+
   /**
    *
    *
@@ -1256,6 +1287,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1279,6 +1311,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1307,6 +1340,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1330,6 +1364,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1356,6 +1391,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NODE_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.ProcessorConfig nodeConfig_;
+
   /**
    *
    *
@@ -1371,6 +1407,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNodeConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1388,6 +1425,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.ProcessorConfig.getDefaultInstance()
         : nodeConfig_;
   }
+
   /**
    *
    *
@@ -1408,6 +1446,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object processor_ = "";
+
   /**
    *
    *
@@ -1431,6 +1470,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1459,6 +1499,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Node.InputEdge> parents_;
+
   /**
    *
    *
@@ -1474,6 +1515,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.visionai.v1.Node.InputEdge> getParentsList() {
     return parents_;
   }
+
   /**
    *
    *
@@ -1490,6 +1532,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       getParentsOrBuilderList() {
     return parents_;
   }
+
   /**
    *
    *
@@ -1505,6 +1548,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   public int getParentsCount() {
     return parents_.size();
   }
+
   /**
    *
    *
@@ -1520,6 +1564,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.Node.InputEdge getParents(int index) {
     return parents_.get(index);
   }
+
   /**
    *
    *
@@ -1763,6 +1808,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2133,6 +2179,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOutputAllOutputChannelsToStream() {
       return streamOutputConfigCase_ == 6;
     }
+
     /**
      *
      *
@@ -2166,6 +2213,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -2201,6 +2249,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2238,6 +2287,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2260,6 +2310,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2282,6 +2333,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2303,6 +2355,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2320,6 +2373,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2344,6 +2398,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2366,6 +2421,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2388,6 +2444,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2409,6 +2466,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2426,6 +2484,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2455,6 +2514,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.ProcessorConfig.Builder,
             com.google.cloud.visionai.v1.ProcessorConfigOrBuilder>
         nodeConfigBuilder_;
+
     /**
      *
      *
@@ -2469,6 +2529,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNodeConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2489,6 +2550,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return nodeConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2511,6 +2573,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2531,6 +2594,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2558,6 +2622,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2577,6 +2642,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2591,6 +2657,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNodeConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2609,6 +2676,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             : nodeConfig_;
       }
     }
+
     /**
      *
      *
@@ -2636,6 +2704,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object processor_ = "";
+
     /**
      *
      *
@@ -2658,6 +2727,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2680,6 +2750,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2701,6 +2772,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2718,6 +2790,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2775,6 +2848,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return parentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2793,6 +2867,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return parentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2811,6 +2886,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return parentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2835,6 +2911,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2857,6 +2934,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2881,6 +2959,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2905,6 +2984,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2926,6 +3006,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2948,6 +3029,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2970,6 +3052,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2991,6 +3074,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3012,6 +3096,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3026,6 +3111,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.Node.InputEdge.Builder getParentsBuilder(int index) {
       return getParentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3044,6 +3130,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return parentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3063,6 +3150,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(parents_);
       }
     }
+
     /**
      *
      *
@@ -3078,6 +3166,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       return getParentsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Node.InputEdge.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3093,6 +3182,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       return getParentsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.Node.InputEdge.getDefaultInstance());
     }
+
     /**
      *
      *

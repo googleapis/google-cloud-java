@@ -39,6 +39,7 @@ public interface GetApiSpecRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface EntitlementOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface EntitlementOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface EntitlementOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface EntitlementOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface EntitlementOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface EntitlementOrBuilder
    * @return The offer.
    */
   java.lang.String getOffer();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface EntitlementOrBuilder
    * @return Whether the commitmentSettings field is set.
    */
   boolean hasCommitmentSettings();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface EntitlementOrBuilder
    * @return The commitmentSettings.
    */
   com.google.cloud.channel.v1.CommitmentSettings getCommitmentSettings();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface EntitlementOrBuilder
    * @return The enum numeric value on the wire for provisioningState.
    */
   int getProvisioningStateValue();
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public interface EntitlementOrBuilder
    * @return Whether the provisionedService field is set.
    */
   boolean hasProvisionedService();
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public interface EntitlementOrBuilder
    * @return The provisionedService.
    */
   com.google.cloud.channel.v1.ProvisionedService getProvisionedService();
+
   /**
    *
    *
@@ -282,6 +293,7 @@ public interface EntitlementOrBuilder
    */
   java.util.List<com.google.cloud.channel.v1.Entitlement.SuspensionReason>
       getSuspensionReasonsList();
+
   /**
    *
    *
@@ -297,6 +309,7 @@ public interface EntitlementOrBuilder
    * @return The count of suspensionReasons.
    */
   int getSuspensionReasonsCount();
+
   /**
    *
    *
@@ -313,6 +326,7 @@ public interface EntitlementOrBuilder
    * @return The suspensionReasons at the given index.
    */
   com.google.cloud.channel.v1.Entitlement.SuspensionReason getSuspensionReasons(int index);
+
   /**
    *
    *
@@ -328,6 +342,7 @@ public interface EntitlementOrBuilder
    * @return A list containing the enum numeric values on the wire for suspensionReasons.
    */
   java.util.List<java.lang.Integer> getSuspensionReasonsValueList();
+
   /**
    *
    *
@@ -361,6 +376,7 @@ public interface EntitlementOrBuilder
    * @return The purchaseOrderId.
    */
   java.lang.String getPurchaseOrderId();
+
   /**
    *
    *
@@ -392,6 +408,7 @@ public interface EntitlementOrBuilder
    * @return Whether the trialSettings field is set.
    */
   boolean hasTrialSettings();
+
   /**
    *
    *
@@ -406,6 +423,7 @@ public interface EntitlementOrBuilder
    * @return The trialSettings.
    */
   com.google.cloud.channel.v1.TrialSettings getTrialSettings();
+
   /**
    *
    *
@@ -431,6 +449,7 @@ public interface EntitlementOrBuilder
    * @return Whether the associationInfo field is set.
    */
   boolean hasAssociationInfo();
+
   /**
    *
    *
@@ -443,6 +462,7 @@ public interface EntitlementOrBuilder
    * @return The associationInfo.
    */
   com.google.cloud.channel.v1.AssociationInfo getAssociationInfo();
+
   /**
    *
    *
@@ -483,6 +503,7 @@ public interface EntitlementOrBuilder
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 26;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Parameter> getParametersList();
+
   /**
    *
    *
@@ -512,6 +533,7 @@ public interface EntitlementOrBuilder
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 26;</code>
    */
   com.google.cloud.channel.v1.Parameter getParameters(int index);
+
   /**
    *
    *
@@ -541,6 +563,7 @@ public interface EntitlementOrBuilder
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 26;</code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -571,6 +594,7 @@ public interface EntitlementOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ParameterOrBuilder>
       getParametersOrBuilderList();
+
   /**
    *
    *
@@ -614,6 +638,7 @@ public interface EntitlementOrBuilder
    * @return The billingAccount.
    */
   java.lang.String getBillingAccount();
+
   /**
    *
    *

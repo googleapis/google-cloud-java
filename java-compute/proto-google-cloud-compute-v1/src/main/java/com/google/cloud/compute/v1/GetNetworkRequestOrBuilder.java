@@ -36,6 +36,7 @@ public interface GetNetworkRequestOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetNetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface StackFrameOrBuilder
    * @return The function.
    */
   java.lang.String getFunction();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StackFrameOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface StackFrameOrBuilder
    * @return The location.
    */
   com.google.devtools.clouddebugger.v2.SourceLocation getLocation();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface StackFrameOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable arguments = 3;</code>
    */
   java.util.List<com.google.devtools.clouddebugger.v2.Variable> getArgumentsList();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface StackFrameOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable arguments = 3;</code>
    */
   com.google.devtools.clouddebugger.v2.Variable getArguments(int index);
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface StackFrameOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable arguments = 3;</code>
    */
   int getArgumentsCount();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface StackFrameOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouddebugger.v2.VariableOrBuilder>
       getArgumentsOrBuilderList();
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public interface StackFrameOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable locals = 4;</code>
    */
   java.util.List<com.google.devtools.clouddebugger.v2.Variable> getLocalsList();
+
   /**
    *
    *
@@ -163,6 +171,7 @@ public interface StackFrameOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable locals = 4;</code>
    */
   com.google.devtools.clouddebugger.v2.Variable getLocals(int index);
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface StackFrameOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Variable locals = 4;</code>
    */
   int getLocalsCount();
+
   /**
    *
    *
@@ -186,6 +196,7 @@ public interface StackFrameOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouddebugger.v2.VariableOrBuilder>
       getLocalsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.BootDiskConfig)
     BootDiskConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BootDiskConfig.newBuilder() to construct.
   private BootDiskConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CUSTOMER_ENCRYPTION_KEY_FIELD_NUMBER = 1;
   private com.google.cloud.tpu.v2alpha1.CustomerEncryptionKey customerEncryptionKey_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomerEncryptionKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tpu.v2alpha1.CustomerEncryptionKey.getDefaultInstance()
         : customerEncryptionKey_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER = 2;
   private boolean enableConfidentialCompute_ = false;
+
   /**
    *
    *
@@ -312,6 +317,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -531,6 +537,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tpu.v2alpha1.CustomerEncryptionKey.Builder,
             com.google.cloud.tpu.v2alpha1.CustomerEncryptionKeyOrBuilder>
         customerEncryptionKeyBuilder_;
+
     /**
      *
      *
@@ -547,6 +554,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerEncryptionKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
         return customerEncryptionKeyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -647,6 +658,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +698,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomerEncryptionKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
             : customerEncryptionKey_;
       }
     }
+
     /**
      *
      *
@@ -735,6 +750,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableConfidentialCompute_;
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableConfidentialCompute() {
       return enableConfidentialCompute_;
     }
+
     /**
      *
      *
@@ -771,6 +788,7 @@ public final class BootDiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface NFSVolumeSourceOrBuilder
    * @return The server.
    */
   java.lang.String getServer();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NFSVolumeSourceOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

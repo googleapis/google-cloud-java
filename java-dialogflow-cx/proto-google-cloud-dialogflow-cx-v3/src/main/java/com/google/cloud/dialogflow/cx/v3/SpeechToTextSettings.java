@@ -33,6 +33,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.SpeechToTextSettings)
     SpeechToTextSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeechToTextSettings.newBuilder() to construct.
   private SpeechToTextSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_SPEECH_ADAPTATION_FIELD_NUMBER = 1;
   private boolean enableSpeechAdaptation_ = false;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -421,6 +424,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enableSpeechAdaptation_;
+
     /**
      *
      *
@@ -436,6 +440,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
     public boolean getEnableSpeechAdaptation() {
       return enableSpeechAdaptation_;
     }
+
     /**
      *
      *
@@ -455,6 +460,7 @@ public final class SpeechToTextSettings extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

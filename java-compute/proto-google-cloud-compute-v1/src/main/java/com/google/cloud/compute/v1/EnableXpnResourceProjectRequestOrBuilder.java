@@ -38,6 +38,7 @@ public interface EnableXpnResourceProjectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface EnableXpnResourceProjectRequestOrBuilder
    * @return Whether the projectsEnableXpnResourceRequestResource field is set.
    */
   boolean hasProjectsEnableXpnResourceRequestResource();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface EnableXpnResourceProjectRequestOrBuilder
    */
   com.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest
       getProjectsEnableXpnResourceRequestResource();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface EnableXpnResourceProjectRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface EnableXpnResourceProjectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

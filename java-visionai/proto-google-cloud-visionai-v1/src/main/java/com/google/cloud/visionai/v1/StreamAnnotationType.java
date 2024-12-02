@@ -77,6 +77,7 @@ public enum StreamAnnotationType implements com.google.protobuf.ProtocolMessageE
    * <code>STREAM_ANNOTATION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int STREAM_ANNOTATION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public enum StreamAnnotationType implements com.google.protobuf.ProtocolMessageE
    * <code>STREAM_ANNOTATION_TYPE_ACTIVE_ZONE = 1;</code>
    */
   public static final int STREAM_ANNOTATION_TYPE_ACTIVE_ZONE_VALUE = 1;
+
   /**
    *
    *

@@ -86,6 +86,7 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGERY_QUALITY_UNSPECIFIED = 0;</code>
    */
   public static final int IMAGERY_QUALITY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HIGH = 1;</code>
    */
   public static final int HIGH_VALUE = 1;
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MEDIUM = 2;</code>
    */
   public static final int MEDIUM_VALUE = 2;
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface GetSnoozeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

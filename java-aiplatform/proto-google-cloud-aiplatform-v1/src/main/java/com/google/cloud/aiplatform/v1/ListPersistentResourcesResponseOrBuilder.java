@@ -28,19 +28,23 @@ public interface ListPersistentResourcesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.PersistentResource> getPersistentResourcesList();
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
   com.google.cloud.aiplatform.v1.PersistentResource getPersistentResources(int index);
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
   int getPersistentResourcesCount();
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.PersistentResourceOrBuilder>
       getPersistentResourcesOrBuilderList();
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
@@ -62,6 +66,7 @@ public interface ListPersistentResourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

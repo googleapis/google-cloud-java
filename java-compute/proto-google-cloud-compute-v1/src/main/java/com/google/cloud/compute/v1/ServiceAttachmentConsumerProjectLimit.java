@@ -33,6 +33,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ServiceAttachmentConsumerProjectLimit)
     ServiceAttachmentConsumerProjectLimitOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceAttachmentConsumerProjectLimit.newBuilder() to construct.
   private ServiceAttachmentConsumerProjectLimit(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class ServiceAttachmentConsumerProjectLimit
   private int bitField0_;
   public static final int CONNECTION_LIMIT_FIELD_NUMBER = 131403546;
   private int connectionLimit_ = 0;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ServiceAttachmentConsumerProjectLimit
   public boolean hasConnectionLimit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class ServiceAttachmentConsumerProjectLimit
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkUrl_ = "";
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ServiceAttachmentConsumerProjectLimit
   public boolean hasNetworkUrl() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       return s;
     }
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class ServiceAttachmentConsumerProjectLimit
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectIdOrNum_ = "";
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class ServiceAttachmentConsumerProjectLimit
   public boolean hasProjectIdOrNum() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       return s;
     }
   }
+
   /**
    *
    *
@@ -425,6 +434,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +656,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     private int bitField0_;
 
     private int connectionLimit_;
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     public boolean hasConnectionLimit() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     public int getConnectionLimit() {
       return connectionLimit_;
     }
+
     /**
      *
      *
@@ -695,6 +708,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     }
 
     private java.lang.Object networkUrl_ = "";
+
     /**
      *
      *
@@ -728,6 +743,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     public boolean hasNetworkUrl() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -750,6 +766,7 @@ public final class ServiceAttachmentConsumerProjectLimit
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class ServiceAttachmentConsumerProjectLimit
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -793,6 +811,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +829,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +854,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     }
 
     private java.lang.Object projectIdOrNum_ = "";
+
     /**
      *
      *
@@ -848,6 +869,7 @@ public final class ServiceAttachmentConsumerProjectLimit
     public boolean hasProjectIdOrNum() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -870,6 +892,7 @@ public final class ServiceAttachmentConsumerProjectLimit
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +915,7 @@ public final class ServiceAttachmentConsumerProjectLimit
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -913,6 +937,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +955,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       onChanged();
       return this;
     }
+
     /**
      *
      *

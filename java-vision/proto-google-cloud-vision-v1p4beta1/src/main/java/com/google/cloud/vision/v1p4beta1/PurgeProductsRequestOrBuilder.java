@@ -36,6 +36,7 @@ public interface PurgeProductsRequestOrBuilder
    * @return Whether the productSetPurgeConfig field is set.
    */
   boolean hasProductSetPurgeConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PurgeProductsRequestOrBuilder
    * @return The productSetPurgeConfig.
    */
   com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig getProductSetPurgeConfig();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PurgeProductsRequestOrBuilder
    * @return Whether the deleteOrphanProducts field is set.
    */
   boolean hasDeleteOrphanProducts();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface PurgeProductsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

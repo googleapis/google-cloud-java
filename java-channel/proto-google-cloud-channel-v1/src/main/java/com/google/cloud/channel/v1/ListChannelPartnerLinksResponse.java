@@ -34,6 +34,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListChannelPartnerLinksResponse)
     ListChannelPartnerLinksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListChannelPartnerLinksResponse.newBuilder() to construct.
   private ListChannelPartnerLinksResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.ChannelPartnerLink> channelPartnerLinks_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       getChannelPartnerLinksList() {
     return channelPartnerLinks_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       getChannelPartnerLinksOrBuilderList() {
     return channelPartnerLinks_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
   public int getChannelPartnerLinksCount() {
     return channelPartnerLinks_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
   public com.google.cloud.channel.v1.ChannelPartnerLink getChannelPartnerLinks(int index) {
     return channelPartnerLinks_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
         return channelPartnerLinksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
         return channelPartnerLinksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
         return channelPartnerLinksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -703,6 +715,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +886,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
         int index) {
       return getChannelPartnerLinksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -896,6 +918,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
         return channelPartnerLinksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -913,6 +936,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(channelPartnerLinks_);
       }
     }
+
     /**
      *
      *
@@ -926,6 +950,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       return getChannelPartnerLinksFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.ChannelPartnerLink.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -940,6 +965,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       return getChannelPartnerLinksFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.ChannelPartnerLink.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1000,6 +1027,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1078,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1099,7 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

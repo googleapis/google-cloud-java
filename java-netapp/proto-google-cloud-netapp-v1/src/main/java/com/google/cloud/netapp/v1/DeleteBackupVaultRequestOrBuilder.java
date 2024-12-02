@@ -39,6 +39,7 @@ public interface DeleteBackupVaultRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

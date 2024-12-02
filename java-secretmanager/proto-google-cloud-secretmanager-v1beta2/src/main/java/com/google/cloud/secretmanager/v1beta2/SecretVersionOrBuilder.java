@@ -42,6 +42,7 @@ public interface SecretVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface SecretVersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface SecretVersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface SecretVersionOrBuilder
    * @return Whether the destroyTime field is set.
    */
   boolean hasDestroyTime();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface SecretVersionOrBuilder
    * @return The destroyTime.
    */
   com.google.protobuf.Timestamp getDestroyTime();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface SecretVersionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public interface SecretVersionOrBuilder
    * @return Whether the replicationStatus field is set.
    */
   boolean hasReplicationStatus();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface SecretVersionOrBuilder
    * @return The replicationStatus.
    */
   com.google.cloud.secretmanager.v1beta2.ReplicationStatus getReplicationStatus();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface SecretVersionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -288,6 +297,7 @@ public interface SecretVersionOrBuilder
    * @return Whether the scheduledDestroyTime field is set.
    */
   boolean hasScheduledDestroyTime();
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public interface SecretVersionOrBuilder
    * @return The scheduledDestroyTime.
    */
   com.google.protobuf.Timestamp getScheduledDestroyTime();
+
   /**
    *
    *
@@ -341,6 +352,7 @@ public interface SecretVersionOrBuilder
    * @return Whether the customerManagedEncryption field is set.
    */
   boolean hasCustomerManagedEncryption();
+
   /**
    *
    *
@@ -360,6 +372,7 @@ public interface SecretVersionOrBuilder
    */
   com.google.cloud.secretmanager.v1beta2.CustomerManagedEncryptionStatus
       getCustomerManagedEncryption();
+
   /**
    *
    *

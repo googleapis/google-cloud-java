@@ -38,6 +38,7 @@ public interface ConversationEventOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ConversationEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ConversationEventOrBuilder
    * @return Whether the errorStatus field is set.
    */
   boolean hasErrorStatus();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ConversationEventOrBuilder
    * @return The errorStatus.
    */
   com.google.rpc.Status getErrorStatus();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface ConversationEventOrBuilder
    * @return Whether the newMessagePayload field is set.
    */
   boolean hasNewMessagePayload();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface ConversationEventOrBuilder
    * @return The newMessagePayload.
    */
   com.google.cloud.dialogflow.v2beta1.Message getNewMessagePayload();
+
   /**
    *
    *

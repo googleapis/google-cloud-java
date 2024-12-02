@@ -33,6 +33,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.TestingOptions)
     TestingOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TestingOptions.newBuilder() to construct.
   private TestingOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>TESTING_CHALLENGE_UNSPECIFIED = 0;</code>
      */
     public static final int TESTING_CHALLENGE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -132,6 +134,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>NOCAPTCHA = 1;</code>
      */
     public static final int NOCAPTCHA_VALUE = 1;
+
     /**
      *
      *
@@ -231,6 +234,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TESTING_SCORE_FIELD_NUMBER = 1;
   private float testingScore_ = 0F;
+
   /**
    *
    *
@@ -250,6 +254,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TESTING_CHALLENGE_FIELD_NUMBER = 2;
   private int testingChallenge_ = 0;
+
   /**
    *
    *
@@ -269,6 +274,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
   public int getTestingChallengeValue() {
     return testingChallenge_;
   }
+
   /**
    *
    *
@@ -469,6 +475,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -664,6 +671,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float testingScore_;
+
     /**
      *
      *
@@ -680,6 +688,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     public float getTestingScore() {
       return testingScore_;
     }
+
     /**
      *
      *
@@ -700,6 +709,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +730,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int testingChallenge_ = 0;
+
     /**
      *
      *
@@ -739,6 +750,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
     public int getTestingChallengeValue() {
       return testingChallenge_;
     }
+
     /**
      *
      *
@@ -761,6 +773,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +798,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
           ? com.google.recaptchaenterprise.v1.TestingOptions.TestingChallenge.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -811,6 +825,7 @@ public final class TestingOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

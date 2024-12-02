@@ -35,6 +35,7 @@ public final class AssignNotebookRuntimeOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.AssignNotebookRuntimeOperationMetadata)
     AssignNotebookRuntimeOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AssignNotebookRuntimeOperationMetadata.newBuilder() to construct.
   private AssignNotebookRuntimeOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class AssignNotebookRuntimeOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class AssignNotebookRuntimeOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class AssignNotebookRuntimeOperationMetadata
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class AssignNotebookRuntimeOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object progressMessage_ = "";
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public final class AssignNotebookRuntimeOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -346,6 +352,7 @@ public final class AssignNotebookRuntimeOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +580,7 @@ public final class AssignNotebookRuntimeOperationMetadata
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class AssignNotebookRuntimeOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class AssignNotebookRuntimeOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class AssignNotebookRuntimeOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +661,7 @@ public final class AssignNotebookRuntimeOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class AssignNotebookRuntimeOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class AssignNotebookRuntimeOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class AssignNotebookRuntimeOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -732,6 +747,7 @@ public final class AssignNotebookRuntimeOperationMetadata
             : genericMetadata_;
       }
     }
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class AssignNotebookRuntimeOperationMetadata
     }
 
     private java.lang.Object progressMessage_ = "";
+
     /**
      *
      *
@@ -782,6 +799,7 @@ public final class AssignNotebookRuntimeOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -805,6 +823,7 @@ public final class AssignNotebookRuntimeOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +846,7 @@ public final class AssignNotebookRuntimeOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class AssignNotebookRuntimeOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *

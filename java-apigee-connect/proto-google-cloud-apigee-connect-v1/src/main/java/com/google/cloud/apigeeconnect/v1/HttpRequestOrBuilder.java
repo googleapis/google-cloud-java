@@ -36,6 +36,7 @@ public interface HttpRequestOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface HttpRequestOrBuilder
    * @return The method.
    */
   java.lang.String getMethod();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface HttpRequestOrBuilder
    * @return Whether the url field is set.
    */
   boolean hasUrl();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface HttpRequestOrBuilder
    * @return The url.
    */
   com.google.cloud.apigeeconnect.v1.Url getUrl();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface HttpRequestOrBuilder
    * <code>repeated .google.cloud.apigeeconnect.v1.Header headers = 4;</code>
    */
   java.util.List<com.google.cloud.apigeeconnect.v1.Header> getHeadersList();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface HttpRequestOrBuilder
    * <code>repeated .google.cloud.apigeeconnect.v1.Header headers = 4;</code>
    */
   com.google.cloud.apigeeconnect.v1.Header getHeaders(int index);
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface HttpRequestOrBuilder
    * <code>repeated .google.cloud.apigeeconnect.v1.Header headers = 4;</code>
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public interface HttpRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.apigeeconnect.v1.HeaderOrBuilder>
       getHeadersOrBuilderList();
+
   /**
    *
    *

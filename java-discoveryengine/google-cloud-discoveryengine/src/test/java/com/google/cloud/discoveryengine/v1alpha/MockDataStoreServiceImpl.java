@@ -179,7 +179,8 @@ public class MockDataStoreServiceImpl extends DataStoreServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDocumentProcessingConfig, expected %s or %s",
+                  "Unrecognized response type %s for method GetDocumentProcessingConfig, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DocumentProcessingConfig.class.getName(),
                   Exception.class.getName())));
@@ -201,7 +202,8 @@ public class MockDataStoreServiceImpl extends DataStoreServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDocumentProcessingConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDocumentProcessingConfig,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DocumentProcessingConfig.class.getName(),
                   Exception.class.getName())));

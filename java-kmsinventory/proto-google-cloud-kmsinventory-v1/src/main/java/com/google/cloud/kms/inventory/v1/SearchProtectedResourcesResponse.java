@@ -34,6 +34,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.kms.inventory.v1.SearchProtectedResourcesResponse)
     SearchProtectedResourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchProtectedResourcesResponse.newBuilder() to construct.
   private SearchProtectedResourcesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.kms.inventory.v1.ProtectedResource> protectedResources_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       getProtectedResourcesList() {
     return protectedResources_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       getProtectedResourcesOrBuilderList() {
     return protectedResources_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
   public int getProtectedResourcesCount() {
     return protectedResources_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
   public com.google.cloud.kms.inventory.v1.ProtectedResource getProtectedResources(int index) {
     return protectedResources_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +373,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +663,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
         return protectedResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
         return protectedResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -688,6 +699,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
         return protectedResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -712,6 +724,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +771,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +919,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
         int index) {
       return getProtectedResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -916,6 +938,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
         return protectedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(protectedResources_);
       }
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       return getProtectedResourcesFieldBuilder()
           .addBuilder(com.google.cloud.kms.inventory.v1.ProtectedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
           .addBuilder(
               index, com.google.cloud.kms.inventory.v1.ProtectedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1001,6 +1027,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1024,6 +1051,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1075,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1098,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1117,7 @@ public final class SearchProtectedResourcesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

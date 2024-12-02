@@ -41,6 +41,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Dimension> getDimensionsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   com.google.analytics.data.v1beta.Dimension getDimensions(int index);
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface CheckCompatibilityRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Metric> getMetricsList();
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   com.google.analytics.data.v1beta.Metric getMetrics(int index);
+
   /**
    *
    *
@@ -149,6 +156,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -161,6 +169,7 @@ public interface CheckCompatibilityRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MetricOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -186,6 +195,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * @return Whether the dimensionFilter field is set.
    */
   boolean hasDimensionFilter();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * @return The dimensionFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getDimensionFilter();
+
   /**
    *
    *
@@ -224,6 +235,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * @return Whether the metricFilter field is set.
    */
   boolean hasMetricFilter();
+
   /**
    *
    *
@@ -237,6 +249,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * @return The metricFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getMetricFilter();
+
   /**
    *
    *
@@ -263,6 +276,7 @@ public interface CheckCompatibilityRequestOrBuilder
    * @return The enum numeric value on the wire for compatibilityFilter.
    */
   int getCompatibilityFilterValue();
+
   /**
    *
    *

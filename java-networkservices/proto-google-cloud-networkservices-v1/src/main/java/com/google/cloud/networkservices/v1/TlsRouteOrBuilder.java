@@ -37,6 +37,7 @@ public interface TlsRouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TlsRouteOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface TlsRouteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface TlsRouteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface TlsRouteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface TlsRouteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface TlsRouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface TlsRouteOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networkservices.v1.TlsRoute.RouteRule> getRulesList();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface TlsRouteOrBuilder
    * </code>
    */
   com.google.cloud.networkservices.v1.TlsRoute.RouteRule getRules(int index);
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface TlsRouteOrBuilder
    * </code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public interface TlsRouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.TlsRoute.RouteRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *
@@ -271,6 +282,7 @@ public interface TlsRouteOrBuilder
    * @return A list containing the meshes.
    */
   java.util.List<java.lang.String> getMeshesList();
+
   /**
    *
    *
@@ -291,6 +303,7 @@ public interface TlsRouteOrBuilder
    * @return The count of meshes.
    */
   int getMeshesCount();
+
   /**
    *
    *
@@ -312,6 +325,7 @@ public interface TlsRouteOrBuilder
    * @return The meshes at the given index.
    */
   java.lang.String getMeshes(int index);
+
   /**
    *
    *
@@ -352,6 +366,7 @@ public interface TlsRouteOrBuilder
    * @return A list containing the gateways.
    */
   java.util.List<java.lang.String> getGatewaysList();
+
   /**
    *
    *
@@ -370,6 +385,7 @@ public interface TlsRouteOrBuilder
    * @return The count of gateways.
    */
   int getGatewaysCount();
+
   /**
    *
    *
@@ -389,6 +405,7 @@ public interface TlsRouteOrBuilder
    * @return The gateways at the given index.
    */
   java.lang.String getGateways(int index);
+
   /**
    *
    *

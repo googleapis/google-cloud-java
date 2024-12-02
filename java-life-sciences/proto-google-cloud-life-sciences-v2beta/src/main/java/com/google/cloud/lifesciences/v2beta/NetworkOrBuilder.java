@@ -40,6 +40,7 @@ public interface NetworkOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface NetworkOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *

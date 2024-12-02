@@ -37,6 +37,7 @@ public interface ImageOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ImageOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ImageOrBuilder
    * @return Whether the archiveSizeBytes field is set.
    */
   boolean hasArchiveSizeBytes();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface ImageOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ImageOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ImageOrBuilder
    * @return Whether the deprecated field is set.
    */
   boolean hasDeprecated();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface ImageOrBuilder
    * @return The deprecated.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecated();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface ImageOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface ImageOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -210,6 +219,7 @@ public interface ImageOrBuilder
    * @return Whether the diskSizeGb field is set.
    */
   boolean hasDiskSizeGb();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface ImageOrBuilder
    * @return Whether the enableConfidentialCompute field is set.
    */
   boolean hasEnableConfidentialCompute();
+
   /**
    *
    *
@@ -260,6 +271,7 @@ public interface ImageOrBuilder
    * @return Whether the family field is set.
    */
   boolean hasFamily();
+
   /**
    *
    *
@@ -272,6 +284,7 @@ public interface ImageOrBuilder
    * @return The family.
    */
   java.lang.String getFamily();
+
   /**
    *
    *
@@ -295,6 +308,7 @@ public interface ImageOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   java.util.List<com.google.cloud.compute.v1.GuestOsFeature> getGuestOsFeaturesList();
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface ImageOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   com.google.cloud.compute.v1.GuestOsFeature getGuestOsFeatures(int index);
+
   /**
    *
    *
@@ -315,6 +330,7 @@ public interface ImageOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   int getGuestOsFeaturesCount();
+
   /**
    *
    *
@@ -326,6 +342,7 @@ public interface ImageOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.GuestOsFeatureOrBuilder>
       getGuestOsFeaturesOrBuilderList();
+
   /**
    *
    *
@@ -349,6 +366,7 @@ public interface ImageOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -375,6 +393,7 @@ public interface ImageOrBuilder
    * @return Whether the imageEncryptionKey field is set.
    */
   boolean hasImageEncryptionKey();
+
   /**
    *
    *
@@ -388,6 +407,7 @@ public interface ImageOrBuilder
    * @return The imageEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getImageEncryptionKey();
+
   /**
    *
    *
@@ -412,6 +432,7 @@ public interface ImageOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -424,6 +445,7 @@ public interface ImageOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -449,6 +471,7 @@ public interface ImageOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -461,6 +484,7 @@ public interface ImageOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -484,6 +508,7 @@ public interface ImageOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -494,9 +519,11 @@ public interface ImageOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -507,6 +534,7 @@ public interface ImageOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -521,6 +549,7 @@ public interface ImageOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -544,6 +573,7 @@ public interface ImageOrBuilder
    * @return A list containing the licenseCodes.
    */
   java.util.List<java.lang.Long> getLicenseCodesList();
+
   /**
    *
    *
@@ -556,6 +586,7 @@ public interface ImageOrBuilder
    * @return The count of licenseCodes.
    */
   int getLicenseCodesCount();
+
   /**
    *
    *
@@ -582,6 +613,7 @@ public interface ImageOrBuilder
    * @return A list containing the licenses.
    */
   java.util.List<java.lang.String> getLicensesList();
+
   /**
    *
    *
@@ -594,6 +626,7 @@ public interface ImageOrBuilder
    * @return The count of licenses.
    */
   int getLicensesCount();
+
   /**
    *
    *
@@ -607,6 +640,7 @@ public interface ImageOrBuilder
    * @return The licenses at the given index.
    */
   java.lang.String getLicenses(int index);
+
   /**
    *
    *
@@ -633,6 +667,7 @@ public interface ImageOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -645,6 +680,7 @@ public interface ImageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -670,6 +706,7 @@ public interface ImageOrBuilder
    * @return Whether the rawDisk field is set.
    */
   boolean hasRawDisk();
+
   /**
    *
    *
@@ -682,6 +719,7 @@ public interface ImageOrBuilder
    * @return The rawDisk.
    */
   com.google.cloud.compute.v1.RawDisk getRawDisk();
+
   /**
    *
    *
@@ -705,6 +743,7 @@ public interface ImageOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *
@@ -730,6 +769,7 @@ public interface ImageOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -755,6 +795,7 @@ public interface ImageOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -767,6 +808,7 @@ public interface ImageOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -794,6 +836,7 @@ public interface ImageOrBuilder
    * @return Whether the shieldedInstanceInitialState field is set.
    */
   boolean hasShieldedInstanceInitialState();
+
   /**
    *
    *
@@ -808,6 +851,7 @@ public interface ImageOrBuilder
    * @return The shieldedInstanceInitialState.
    */
   com.google.cloud.compute.v1.InitialStateConfig getShieldedInstanceInitialState();
+
   /**
    *
    *
@@ -834,6 +878,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceDisk field is set.
    */
   boolean hasSourceDisk();
+
   /**
    *
    *
@@ -846,6 +891,7 @@ public interface ImageOrBuilder
    * @return The sourceDisk.
    */
   java.lang.String getSourceDisk();
+
   /**
    *
    *
@@ -873,6 +919,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceDiskEncryptionKey field is set.
    */
   boolean hasSourceDiskEncryptionKey();
+
   /**
    *
    *
@@ -887,6 +934,7 @@ public interface ImageOrBuilder
    * @return The sourceDiskEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceDiskEncryptionKey();
+
   /**
    *
    *
@@ -912,6 +960,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceDiskId field is set.
    */
   boolean hasSourceDiskId();
+
   /**
    *
    *
@@ -924,6 +973,7 @@ public interface ImageOrBuilder
    * @return The sourceDiskId.
    */
   java.lang.String getSourceDiskId();
+
   /**
    *
    *
@@ -949,6 +999,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceImage field is set.
    */
   boolean hasSourceImage();
+
   /**
    *
    *
@@ -961,6 +1012,7 @@ public interface ImageOrBuilder
    * @return The sourceImage.
    */
   java.lang.String getSourceImage();
+
   /**
    *
    *
@@ -988,6 +1040,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceImageEncryptionKey field is set.
    */
   boolean hasSourceImageEncryptionKey();
+
   /**
    *
    *
@@ -1002,6 +1055,7 @@ public interface ImageOrBuilder
    * @return The sourceImageEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceImageEncryptionKey();
+
   /**
    *
    *
@@ -1027,6 +1081,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceImageId field is set.
    */
   boolean hasSourceImageId();
+
   /**
    *
    *
@@ -1039,6 +1094,7 @@ public interface ImageOrBuilder
    * @return The sourceImageId.
    */
   java.lang.String getSourceImageId();
+
   /**
    *
    *
@@ -1064,6 +1120,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceSnapshot field is set.
    */
   boolean hasSourceSnapshot();
+
   /**
    *
    *
@@ -1076,6 +1133,7 @@ public interface ImageOrBuilder
    * @return The sourceSnapshot.
    */
   java.lang.String getSourceSnapshot();
+
   /**
    *
    *
@@ -1103,6 +1161,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceSnapshotEncryptionKey field is set.
    */
   boolean hasSourceSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -1117,6 +1176,7 @@ public interface ImageOrBuilder
    * @return The sourceSnapshotEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -1143,6 +1203,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceSnapshotId field is set.
    */
   boolean hasSourceSnapshotId();
+
   /**
    *
    *
@@ -1155,6 +1216,7 @@ public interface ImageOrBuilder
    * @return The sourceSnapshotId.
    */
   java.lang.String getSourceSnapshotId();
+
   /**
    *
    *
@@ -1181,6 +1243,7 @@ public interface ImageOrBuilder
    * @return Whether the sourceType field is set.
    */
   boolean hasSourceType();
+
   /**
    *
    *
@@ -1194,6 +1257,7 @@ public interface ImageOrBuilder
    * @return The sourceType.
    */
   java.lang.String getSourceType();
+
   /**
    *
    *
@@ -1221,6 +1285,7 @@ public interface ImageOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -1234,6 +1299,7 @@ public interface ImageOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -1260,6 +1326,7 @@ public interface ImageOrBuilder
    * @return A list containing the storageLocations.
    */
   java.util.List<java.lang.String> getStorageLocationsList();
+
   /**
    *
    *
@@ -1272,6 +1339,7 @@ public interface ImageOrBuilder
    * @return The count of storageLocations.
    */
   int getStorageLocationsCount();
+
   /**
    *
    *
@@ -1285,6 +1353,7 @@ public interface ImageOrBuilder
    * @return The storageLocations at the given index.
    */
   java.lang.String getStorageLocations(int index);
+
   /**
    *
    *

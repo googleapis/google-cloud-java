@@ -36,6 +36,7 @@ public interface ModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ModelOrBuilder
    * @return The versionId.
    */
   java.lang.String getVersionId();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface ModelOrBuilder
    * @return A list containing the versionAliases.
    */
   java.util.List<java.lang.String> getVersionAliasesList();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface ModelOrBuilder
    * @return The count of versionAliases.
    */
   int getVersionAliasesCount();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface ModelOrBuilder
    * @return The versionAliases at the given index.
    */
   java.lang.String getVersionAliases(int index);
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface ModelOrBuilder
    * @return Whether the versionCreateTime field is set.
    */
   boolean hasVersionCreateTime();
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public interface ModelOrBuilder
    * @return The versionCreateTime.
    */
   com.google.protobuf.Timestamp getVersionCreateTime();
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public interface ModelOrBuilder
    * @return Whether the versionUpdateTime field is set.
    */
   boolean hasVersionUpdateTime();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface ModelOrBuilder
    * @return The versionUpdateTime.
    */
   com.google.protobuf.Timestamp getVersionUpdateTime();
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public interface ModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public interface ModelOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -315,6 +326,7 @@ public interface ModelOrBuilder
    * @return The versionDescription.
    */
   java.lang.String getVersionDescription();
+
   /**
    *
    *
@@ -344,6 +356,7 @@ public interface ModelOrBuilder
    * @return Whether the predictSchemata field is set.
    */
   boolean hasPredictSchemata();
+
   /**
    *
    *
@@ -360,6 +373,7 @@ public interface ModelOrBuilder
    * @return The predictSchemata.
    */
   com.google.cloud.aiplatform.v1beta1.PredictSchemata getPredictSchemata();
+
   /**
    *
    *
@@ -396,6 +410,7 @@ public interface ModelOrBuilder
    * @return The metadataSchemaUri.
    */
   java.lang.String getMetadataSchemaUri();
+
   /**
    *
    *
@@ -433,6 +448,7 @@ public interface ModelOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -448,6 +464,7 @@ public interface ModelOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Value getMetadata();
+
   /**
    *
    *
@@ -476,6 +493,7 @@ public interface ModelOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Model.ExportFormat>
       getSupportedExportFormatsList();
+
   /**
    *
    *
@@ -489,6 +507,7 @@ public interface ModelOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Model.ExportFormat getSupportedExportFormats(int index);
+
   /**
    *
    *
@@ -502,6 +521,7 @@ public interface ModelOrBuilder
    * </code>
    */
   int getSupportedExportFormatsCount();
+
   /**
    *
    *
@@ -516,6 +536,7 @@ public interface ModelOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.Model.ExportFormatOrBuilder>
       getSupportedExportFormatsOrBuilderList();
+
   /**
    *
    *
@@ -546,6 +567,7 @@ public interface ModelOrBuilder
    * @return The trainingPipeline.
    */
   java.lang.String getTrainingPipeline();
+
   /**
    *
    *
@@ -580,6 +602,7 @@ public interface ModelOrBuilder
    * @return Whether the containerSpec field is set.
    */
   boolean hasContainerSpec();
+
   /**
    *
    *
@@ -598,6 +621,7 @@ public interface ModelOrBuilder
    * @return The containerSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ModelContainerSpec getContainerSpec();
+
   /**
    *
    *
@@ -628,6 +652,7 @@ public interface ModelOrBuilder
    * @return The artifactUri.
    */
   java.lang.String getArtifactUri();
+
   /**
    *
    *
@@ -673,6 +698,7 @@ public interface ModelOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Model.DeploymentResourcesType>
       getSupportedDeploymentResourcesTypesList();
+
   /**
    *
    *
@@ -703,6 +729,7 @@ public interface ModelOrBuilder
    * @return The count of supportedDeploymentResourcesTypes.
    */
   int getSupportedDeploymentResourcesTypesCount();
+
   /**
    *
    *
@@ -735,6 +762,7 @@ public interface ModelOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.Model.DeploymentResourcesType
       getSupportedDeploymentResourcesTypes(int index);
+
   /**
    *
    *
@@ -766,6 +794,7 @@ public interface ModelOrBuilder
    *     supportedDeploymentResourcesTypes.
    */
   java.util.List<java.lang.Integer> getSupportedDeploymentResourcesTypesValueList();
+
   /**
    *
    *
@@ -859,6 +888,7 @@ public interface ModelOrBuilder
    * @return A list containing the supportedInputStorageFormats.
    */
   java.util.List<java.lang.String> getSupportedInputStorageFormatsList();
+
   /**
    *
    *
@@ -919,6 +949,7 @@ public interface ModelOrBuilder
    * @return The count of supportedInputStorageFormats.
    */
   int getSupportedInputStorageFormatsCount();
+
   /**
    *
    *
@@ -980,6 +1011,7 @@ public interface ModelOrBuilder
    * @return The supportedInputStorageFormats at the given index.
    */
   java.lang.String getSupportedInputStorageFormats(int index);
+
   /**
    *
    *
@@ -1092,6 +1124,7 @@ public interface ModelOrBuilder
    * @return A list containing the supportedOutputStorageFormats.
    */
   java.util.List<java.lang.String> getSupportedOutputStorageFormatsList();
+
   /**
    *
    *
@@ -1142,6 +1175,7 @@ public interface ModelOrBuilder
    * @return The count of supportedOutputStorageFormats.
    */
   int getSupportedOutputStorageFormatsCount();
+
   /**
    *
    *
@@ -1193,6 +1227,7 @@ public interface ModelOrBuilder
    * @return The supportedOutputStorageFormats at the given index.
    */
   java.lang.String getSupportedOutputStorageFormats(int index);
+
   /**
    *
    *
@@ -1258,6 +1293,7 @@ public interface ModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -1271,6 +1307,7 @@ public interface ModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -1296,6 +1333,7 @@ public interface ModelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -1309,6 +1347,7 @@ public interface ModelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -1334,6 +1373,7 @@ public interface ModelOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.DeployedModelRef> getDeployedModelsList();
+
   /**
    *
    *
@@ -1347,6 +1387,7 @@ public interface ModelOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.DeployedModelRef getDeployedModels(int index);
+
   /**
    *
    *
@@ -1360,6 +1401,7 @@ public interface ModelOrBuilder
    * </code>
    */
   int getDeployedModelsCount();
+
   /**
    *
    *
@@ -1374,6 +1416,7 @@ public interface ModelOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.DeployedModelRefOrBuilder>
       getDeployedModelsOrBuilderList();
+
   /**
    *
    *
@@ -1434,6 +1477,7 @@ public interface ModelOrBuilder
    * @return Whether the explanationSpec field is set.
    */
   boolean hasExplanationSpec();
+
   /**
    *
    *
@@ -1479,6 +1523,7 @@ public interface ModelOrBuilder
    * @return The explanationSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec();
+
   /**
    *
    *
@@ -1536,6 +1581,7 @@ public interface ModelOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -1566,6 +1612,7 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -1582,9 +1629,11 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -1601,6 +1650,7 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -1621,6 +1671,7 @@ public interface ModelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -1651,6 +1702,7 @@ public interface ModelOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -1664,6 +1716,7 @@ public interface ModelOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *
@@ -1692,6 +1745,7 @@ public interface ModelOrBuilder
    * @return Whether the modelSourceInfo field is set.
    */
   boolean hasModelSourceInfo();
+
   /**
    *
    *
@@ -1708,6 +1762,7 @@ public interface ModelOrBuilder
    * @return The modelSourceInfo.
    */
   com.google.cloud.aiplatform.v1beta1.ModelSourceInfo getModelSourceInfo();
+
   /**
    *
    *
@@ -1738,6 +1793,7 @@ public interface ModelOrBuilder
    * @return Whether the originalModelInfo field is set.
    */
   boolean hasOriginalModelInfo();
+
   /**
    *
    *
@@ -1753,6 +1809,7 @@ public interface ModelOrBuilder
    * @return The originalModelInfo.
    */
   com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo getOriginalModelInfo();
+
   /**
    *
    *
@@ -1783,6 +1840,7 @@ public interface ModelOrBuilder
    * @return The metadataArtifact.
    */
   java.lang.String getMetadataArtifact();
+
   /**
    *
    *
@@ -1814,6 +1872,7 @@ public interface ModelOrBuilder
    * @return Whether the baseModelSource field is set.
    */
   boolean hasBaseModelSource();
+
   /**
    *
    *
@@ -1829,6 +1888,7 @@ public interface ModelOrBuilder
    * @return The baseModelSource.
    */
   com.google.cloud.aiplatform.v1beta1.Model.BaseModelSource getBaseModelSource();
+
   /**
    *
    *

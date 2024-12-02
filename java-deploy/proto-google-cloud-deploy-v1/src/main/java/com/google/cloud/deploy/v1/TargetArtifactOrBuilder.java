@@ -38,6 +38,7 @@ public interface TargetArtifactOrBuilder
    * @return Whether the artifactUri field is set.
    */
   boolean hasArtifactUri();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TargetArtifactOrBuilder
    * @return The artifactUri.
    */
   java.lang.String getArtifactUri();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface TargetArtifactOrBuilder
    * @return The skaffoldConfigPath.
    */
   java.lang.String getSkaffoldConfigPath();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface TargetArtifactOrBuilder
    * @return The manifestPath.
    */
   java.lang.String getManifestPath();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface TargetArtifactOrBuilder
    * </code>
    */
   int getPhaseArtifactsCount();
+
   /**
    *
    *
@@ -143,10 +148,12 @@ public interface TargetArtifactOrBuilder
    * </code>
    */
   boolean containsPhaseArtifacts(java.lang.String key);
+
   /** Use {@link #getPhaseArtifactsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact>
       getPhaseArtifacts();
+
   /**
    *
    *
@@ -160,6 +167,7 @@ public interface TargetArtifactOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact>
       getPhaseArtifactsMap();
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public interface TargetArtifactOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact defaultValue);
+
   /**
    *
    *

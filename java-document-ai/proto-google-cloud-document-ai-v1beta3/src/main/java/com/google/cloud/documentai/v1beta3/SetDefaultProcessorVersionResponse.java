@@ -35,6 +35,7 @@ public final class SetDefaultProcessorVersionResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.SetDefaultProcessorVersionResponse)
     SetDefaultProcessorVersionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetDefaultProcessorVersionResponse.newBuilder() to construct.
   private SetDefaultProcessorVersionResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class SetDefaultProcessorVersionResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

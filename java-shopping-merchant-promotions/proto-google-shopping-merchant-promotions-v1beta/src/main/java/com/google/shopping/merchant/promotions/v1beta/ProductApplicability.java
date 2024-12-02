@@ -72,6 +72,7 @@ public enum ProductApplicability implements com.google.protobuf.ProtocolMessageE
    * <code>PRODUCT_APPLICABILITY_UNSPECIFIED = 0;</code>
    */
   public static final int PRODUCT_APPLICABILITY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ProductApplicability implements com.google.protobuf.ProtocolMessageE
    * <code>ALL_PRODUCTS = 1;</code>
    */
   public static final int ALL_PRODUCTS_VALUE = 1;
+
   /**
    *
    *

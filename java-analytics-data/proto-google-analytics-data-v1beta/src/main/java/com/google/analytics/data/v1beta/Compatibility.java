@@ -74,6 +74,7 @@ public enum Compatibility implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPATIBILITY_UNSPECIFIED = 0;</code>
    */
   public static final int COMPATIBILITY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum Compatibility implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPATIBLE = 1;</code>
    */
   public static final int COMPATIBLE_VALUE = 1;
+
   /**
    *
    *

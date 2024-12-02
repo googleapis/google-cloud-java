@@ -36,6 +36,7 @@ public interface PyPiRepositoryConfigOrBuilder
    * @return The pypiRepository.
    */
   java.lang.String getPypiRepository();
+
   /**
    *
    *

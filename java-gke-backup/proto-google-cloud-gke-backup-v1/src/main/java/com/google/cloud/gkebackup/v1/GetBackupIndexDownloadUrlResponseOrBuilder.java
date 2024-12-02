@@ -30,6 +30,7 @@ public interface GetBackupIndexDownloadUrlResponseOrBuilder
    * @return The signedUrl.
    */
   java.lang.String getSignedUrl();
+
   /**
    * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *

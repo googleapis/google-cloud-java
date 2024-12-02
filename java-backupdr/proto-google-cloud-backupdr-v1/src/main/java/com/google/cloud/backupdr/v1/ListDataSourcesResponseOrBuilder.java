@@ -41,6 +41,7 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.DataSource data_sources = 1;</code>
    */
   java.util.List<com.google.cloud.backupdr.v1.DataSource> getDataSourcesList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.DataSource data_sources = 1;</code>
    */
   com.google.cloud.backupdr.v1.DataSource getDataSources(int index);
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.DataSource data_sources = 1;</code>
    */
   int getDataSourcesCount();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface ListDataSourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.DataSourceOrBuilder>
       getDataSourcesOrBuilderList();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ListDataSourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface ListDataSourcesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface ListDataSourcesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface ListDataSourcesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

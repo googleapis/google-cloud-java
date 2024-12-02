@@ -33,6 +33,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.OutputResult)
     OutputResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OutputResult.newBuilder() to construct.
   private OutputResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     private ResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_RESULT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsResult() {
     return resultCase_ == 1;
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.asset.v1.GcsOutputResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -331,6 +336,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -548,6 +554,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1.GcsOutputResult.Builder,
             com.google.cloud.asset.v1.GcsOutputResultOrBuilder>
         gcsResultBuilder_;
+
     /**
      *
      *
@@ -563,6 +570,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsResult() {
       return resultCase_ == 1;
     }
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.asset.v1.GcsOutputResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.GcsOutputResult.Builder getGcsResultBuilder() {
       return getGcsResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.asset.v1.GcsOutputResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *

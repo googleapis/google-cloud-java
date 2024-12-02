@@ -33,6 +33,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.AuditData)
     AuditDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AuditData.newBuilder() to construct.
   private AuditData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     private MethodCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UPDATE_SERVICE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateService() {
     return methodCase_ == 1;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.appengine.v1.UpdateServiceMethod.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATE_VERSION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateVersion() {
     return methodCase_ == 2;
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.appengine.v1.CreateVersionMethod.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -399,6 +407,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -632,6 +641,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
             com.google.appengine.v1.UpdateServiceMethod.Builder,
             com.google.appengine.v1.UpdateServiceMethodOrBuilder>
         updateServiceBuilder_;
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateService() {
       return methodCase_ == 1;
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.UpdateServiceMethod.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       methodCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       methodCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       methodCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +799,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.UpdateServiceMethod.Builder getUpdateServiceBuilder() {
       return getUpdateServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.UpdateServiceMethod.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -841,6 +859,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
             com.google.appengine.v1.CreateVersionMethod.Builder,
             com.google.appengine.v1.CreateVersionMethodOrBuilder>
         createVersionBuilder_;
+
     /**
      *
      *
@@ -856,6 +875,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateVersion() {
       return methodCase_ == 2;
     }
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.CreateVersionMethod.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       methodCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +945,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       methodCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       methodCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1004,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1017,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.CreateVersionMethod.Builder getCreateVersionBuilder() {
       return getCreateVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1012,6 +1038,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.CreateVersionMethod.getDefaultInstance();
       }
     }
+
     /**
      *
      *

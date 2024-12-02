@@ -32,6 +32,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetInstanceAggregatedList)
     TargetInstanceAggregatedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TargetInstanceAggregatedList.newBuilder() to construct.
   private TargetInstanceAggregatedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +183,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     }
     return internalGetItems().getMap().containsKey(key);
   }
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -203,6 +209,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       getItems() {
     return getItemsMap();
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       getItemsMap() {
     return internalGetItems().getMap();
   }
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -349,6 +362,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -372,6 +386,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -400,6 +415,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -415,6 +431,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -438,6 +455,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -467,6 +485,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachables_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -481,6 +500,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getUnreachablesList() {
     return unreachables_;
   }
+
   /**
    *
    *
@@ -495,6 +515,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public int getUnreachablesCount() {
     return unreachables_.size();
   }
+
   /**
    *
    *
@@ -510,6 +531,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public java.lang.String getUnreachables(int index) {
     return unreachables_.get(index);
   }
+
   /**
    *
    *
@@ -528,6 +550,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -543,6 +566,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -558,6 +582,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -830,6 +855,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1155,6 +1181,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1169,6 +1196,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1191,6 +1219,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1213,6 +1242,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1234,6 +1264,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1282,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1294,7 +1326,8 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 
@@ -1334,6 +1367,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public int getItemsCount() {
       return internalGetItems().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1352,6 +1386,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       }
       return internalGetItems().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1359,6 +1394,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         getItems() {
       return getItemsMap();
     }
+
     /**
      *
      *
@@ -1375,6 +1411,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         getItemsMap() {
       return internalGetItems().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1399,6 +1436,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
           map = internalGetMutableItems().ensureBuilderMap();
       return map.containsKey(key) ? itemsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1430,6 +1468,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       internalGetMutableItems().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1448,6 +1487,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       internalGetMutableItems().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetInstancesScopedList>
@@ -1455,6 +1495,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       bitField0_ |= 0x00000002;
       return internalGetMutableItems().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1478,6 +1519,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1545,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1532,6 +1575,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1546,6 +1590,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1568,6 +1613,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1590,6 +1636,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1611,6 +1658,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1628,6 +1676,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1701,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1666,6 +1716,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1688,6 +1739,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1710,6 +1762,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1731,6 +1784,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1802,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1827,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1786,6 +1842,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1808,6 +1865,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1830,6 +1888,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1851,6 +1910,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1868,6 +1928,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1900,6 +1961,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1915,6 +1977,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       unreachables_.makeImmutable();
       return unreachables_;
     }
+
     /**
      *
      *
@@ -1929,6 +1992,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public int getUnreachablesCount() {
       return unreachables_.size();
     }
+
     /**
      *
      *
@@ -1944,6 +2008,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public java.lang.String getUnreachables(int index) {
       return unreachables_.get(index);
     }
+
     /**
      *
      *
@@ -1959,6 +2024,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getUnreachablesBytes(int index) {
       return unreachables_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1982,6 +2048,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2004,6 +2071,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2023,6 +2091,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2041,6 +2110,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2071,6 +2141,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -2085,6 +2156,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2105,6 +2177,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2127,6 +2200,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2146,6 +2220,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2173,6 +2248,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -2192,6 +2268,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2206,6 +2283,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2224,6 +2302,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
             : warning_;
       }
     }
+
     /**
      *
      *

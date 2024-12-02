@@ -36,6 +36,7 @@ public interface SignJwtResponseOrBuilder
    * @return The keyId.
    */
   java.lang.String getKeyId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SignJwtResponseOrBuilder
    * @return The signedJwt.
    */
   java.lang.String getSignedJwt();
+
   /**
    *
    *

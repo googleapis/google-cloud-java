@@ -36,6 +36,7 @@ public interface AllocationAggregateReservationReservedResourceInfoAcceleratorOr
    * @return Whether the acceleratorCount field is set.
    */
   boolean hasAcceleratorCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AllocationAggregateReservationReservedResourceInfoAcceleratorOr
    * @return Whether the acceleratorType field is set.
    */
   boolean hasAcceleratorType();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AllocationAggregateReservationReservedResourceInfoAcceleratorOr
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
+
   /**
    *
    *

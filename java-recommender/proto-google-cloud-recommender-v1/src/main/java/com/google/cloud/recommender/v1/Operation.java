@@ -41,6 +41,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.Operation)
     OperationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Operation.newBuilder() to construct.
   private Operation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,6 +108,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     private PathValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -143,6 +145,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
+
   /**
    *
    *
@@ -168,6 +171,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -198,6 +202,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceType_ = "";
+
   /**
    *
    *
@@ -223,6 +228,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -253,6 +259,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -277,6 +284,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -306,6 +314,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
+
   /**
    *
    *
@@ -330,6 +339,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +369,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceResource_ = "";
+
   /**
    *
    *
@@ -386,6 +397,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -418,6 +430,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourcePath_ = "";
+
   /**
    *
    *
@@ -442,6 +455,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -468,6 +482,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -485,6 +500,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValue() {
     return pathValueCase_ == 7;
   }
+
   /**
    *
    *
@@ -505,6 +521,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Value.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -525,6 +542,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_MATCHER_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -541,6 +559,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValueMatcher() {
     return pathValueCase_ == 10;
   }
+
   /**
    *
    *
@@ -560,6 +579,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.recommender.v1.ValueMatcher.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -607,6 +627,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   public int getPathFiltersCount() {
     return internalGetPathFilters().getMap().size();
   }
+
   /**
    *
    *
@@ -651,12 +672,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetPathFilters().getMap().containsKey(key);
   }
+
   /** Use {@link #getPathFiltersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFilters() {
     return getPathFiltersMap();
   }
+
   /**
    *
    *
@@ -698,6 +721,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFiltersMap() {
     return internalGetPathFilters().getMap();
   }
+
   /**
    *
    *
@@ -747,6 +771,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         internalGetPathFilters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -831,6 +856,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   public int getPathValueMatchersCount() {
     return internalGetPathValueMatchers().getMap().size();
   }
+
   /**
    *
    *
@@ -852,6 +878,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetPathValueMatchers().getMap().containsKey(key);
   }
+
   /** Use {@link #getPathValueMatchersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -859,6 +886,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       getPathValueMatchers() {
     return getPathValueMatchersMap();
   }
+
   /**
    *
    *
@@ -878,6 +906,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       getPathValueMatchersMap() {
     return internalGetPathValueMatchers().getMap();
   }
+
   /**
    *
    *
@@ -904,6 +933,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         internalGetPathValueMatchers().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1213,6 +1243,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1608,6 +1639,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object action_ = "";
+
     /**
      *
      *
@@ -1632,6 +1664,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1656,6 +1689,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1679,6 +1713,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1698,6 +1733,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1724,6 +1760,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceType_ = "";
+
     /**
      *
      *
@@ -1748,6 +1785,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1772,6 +1810,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1795,6 +1834,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1814,6 +1854,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1881,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -1863,6 +1905,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1886,6 +1929,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1908,6 +1952,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1926,6 +1971,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1951,6 +1997,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -1974,6 +2021,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1997,6 +2045,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2019,6 +2068,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2037,6 +2087,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2062,6 +2113,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceResource_ = "";
+
     /**
      *
      *
@@ -2088,6 +2140,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2114,6 +2167,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2139,6 +2193,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2160,6 +2215,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +2244,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourcePath_ = "";
+
     /**
      *
      *
@@ -2211,6 +2268,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2234,6 +2292,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2256,6 +2315,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2274,6 +2334,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2303,6 +2364,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         valueBuilder_;
+
     /**
      *
      *
@@ -2320,6 +2382,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValue() {
       return pathValueCase_ == 7;
     }
+
     /**
      *
      *
@@ -2347,6 +2410,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Value.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2371,6 +2435,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       pathValueCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2392,6 +2457,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       pathValueCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2424,6 +2490,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       pathValueCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2451,6 +2518,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2465,6 +2533,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value.Builder getValueBuilder() {
       return getValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2487,6 +2556,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Value.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2525,6 +2595,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommender.v1.ValueMatcher.Builder,
             com.google.cloud.recommender.v1.ValueMatcherOrBuilder>
         valueMatcherBuilder_;
+
     /**
      *
      *
@@ -2541,6 +2612,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValueMatcher() {
       return pathValueCase_ == 10;
     }
+
     /**
      *
      *
@@ -2567,6 +2639,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.ValueMatcher.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2590,6 +2663,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       pathValueCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2611,6 +2685,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       pathValueCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2644,6 +2719,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       pathValueCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2670,6 +2746,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2683,6 +2760,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1.ValueMatcher.Builder getValueMatcherBuilder() {
       return getValueMatcherFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2704,6 +2782,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.recommender.v1.ValueMatcher.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2754,7 +2833,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PathFiltersDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final PathFiltersConverter pathFiltersConverter = new PathFiltersConverter();
 
@@ -2794,6 +2874,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public int getPathFiltersCount() {
       return internalGetPathFilters().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2838,12 +2919,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetPathFilters().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPathFiltersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFilters() {
       return getPathFiltersMap();
     }
+
     /**
      *
      *
@@ -2885,6 +2968,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFiltersMap() {
       return internalGetPathFilters().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2934,6 +3018,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           internalGetMutablePathFilters().ensureBuilderMap();
       return map.containsKey(key) ? pathFiltersConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -2989,6 +3074,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePathFilters().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3033,12 +3119,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePathFilters().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutablePathFilters() {
       bitField0_ |= 0x00000100;
       return internalGetMutablePathFilters().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3087,6 +3175,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return this;
     }
+
     /**
      *
      *
@@ -3135,6 +3224,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return this;
     }
+
     /**
      *
      *
@@ -3207,7 +3297,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PathValueMatchersDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final PathValueMatchersConverter pathValueMatchersConverter =
         new PathValueMatchersConverter();
@@ -3248,6 +3339,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public int getPathValueMatchersCount() {
       return internalGetPathValueMatchers().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3269,6 +3361,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetPathValueMatchers().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPathValueMatchersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3276,6 +3369,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         getPathValueMatchers() {
       return getPathValueMatchersMap();
     }
+
     /**
      *
      *
@@ -3295,6 +3389,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         getPathValueMatchersMap() {
       return internalGetPathValueMatchers().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3322,6 +3417,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           internalGetMutablePathValueMatchers().ensureBuilderMap();
       return map.containsKey(key) ? pathValueMatchersConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -3355,6 +3451,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePathValueMatchers().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3376,6 +3473,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePathValueMatchers().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher>
@@ -3383,6 +3481,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return internalGetMutablePathValueMatchers().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3409,6 +3508,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -3435,6 +3535,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *

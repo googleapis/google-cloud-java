@@ -34,6 +34,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteModifiers)
     RouteModifiersOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouteModifiers.newBuilder() to construct.
   private RouteModifiers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AVOID_TOLLS_FIELD_NUMBER = 1;
   private boolean avoidTolls_ = false;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVOID_HIGHWAYS_FIELD_NUMBER = 2;
   private boolean avoidHighways_ = false;
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVOID_FERRIES_FIELD_NUMBER = 3;
   private boolean avoidFerries_ = false;
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVOID_INDOOR_FIELD_NUMBER = 4;
   private boolean avoidIndoor_ = false;
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_INFO_FIELD_NUMBER = 5;
   private com.google.maps.routing.v2.VehicleInfo vehicleInfo_;
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVehicleInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routing.v2.VehicleInfo.getDefaultInstance()
         : vehicleInfo_;
   }
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
               return result == null ? com.google.maps.routing.v2.TollPass.UNRECOGNIZED : result;
             }
           };
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.maps.routing.v2.TollPass>(tollPasses_, tollPasses_converter_);
   }
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   public int getTollPassesCount() {
     return tollPasses_.size();
   }
+
   /**
    *
    *
@@ -273,6 +284,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.routing.v2.TollPass getTollPasses(int index) {
     return tollPasses_converter_.convert(tollPasses_.get(index));
   }
+
   /**
    *
    *
@@ -293,6 +305,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getTollPassesValueList() {
     return tollPasses_;
   }
+
   /**
    *
    *
@@ -542,6 +555,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -833,6 +847,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean avoidTolls_;
+
     /**
      *
      *
@@ -850,6 +865,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean getAvoidTolls() {
       return avoidTolls_;
     }
+
     /**
      *
      *
@@ -871,6 +887,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean avoidHighways_;
+
     /**
      *
      *
@@ -909,6 +927,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean getAvoidHighways() {
       return avoidHighways_;
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +971,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean avoidFerries_;
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean getAvoidFerries() {
       return avoidFerries_;
     }
+
     /**
      *
      *
@@ -989,6 +1011,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1033,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean avoidIndoor_;
+
     /**
      *
      *
@@ -1027,6 +1051,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean getAvoidIndoor() {
       return avoidIndoor_;
     }
+
     /**
      *
      *
@@ -1048,6 +1073,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1100,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.VehicleInfo.Builder,
             com.google.maps.routing.v2.VehicleInfoOrBuilder>
         vehicleInfoBuilder_;
+
     /**
      *
      *
@@ -1088,6 +1115,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVehicleInfo() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1108,6 +1136,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
         return vehicleInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1130,6 +1159,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1179,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1207,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1242,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVehicleInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1227,6 +1261,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
             : vehicleInfo_;
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1296,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
       }
     }
+
     /**
      *
      *
@@ -1282,6 +1318,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.maps.routing.v2.TollPass>(
           tollPasses_, tollPasses_converter_);
     }
+
     /**
      *
      *
@@ -1301,6 +1338,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public int getTollPassesCount() {
       return tollPasses_.size();
     }
+
     /**
      *
      *
@@ -1321,6 +1359,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.routing.v2.TollPass getTollPasses(int index) {
       return tollPasses_converter_.convert(tollPasses_.get(index));
     }
+
     /**
      *
      *
@@ -1348,6 +1387,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1414,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1441,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1464,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1484,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getTollPassesValueList() {
       return java.util.Collections.unmodifiableList(tollPasses_);
     }
+
     /**
      *
      *
@@ -1461,6 +1505,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public int getTollPassesValue(int index) {
       return tollPasses_.get(index);
     }
+
     /**
      *
      *
@@ -1485,6 +1530,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1554,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

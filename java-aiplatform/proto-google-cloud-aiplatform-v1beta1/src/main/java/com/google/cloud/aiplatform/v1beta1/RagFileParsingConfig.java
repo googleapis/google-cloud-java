@@ -33,6 +33,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagFileParsingConfig)
     RagFileParsingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagFileParsingConfig.newBuilder() to construct.
   private RagFileParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
 
   public static final int USE_ADVANCED_PDF_PARSING_FIELD_NUMBER = 2;
   private boolean useAdvancedPdfParsing_ = false;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -421,6 +424,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean useAdvancedPdfParsing_;
+
     /**
      *
      *
@@ -436,6 +440,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     public boolean getUseAdvancedPdfParsing() {
       return useAdvancedPdfParsing_;
     }
+
     /**
      *
      *
@@ -455,6 +460,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

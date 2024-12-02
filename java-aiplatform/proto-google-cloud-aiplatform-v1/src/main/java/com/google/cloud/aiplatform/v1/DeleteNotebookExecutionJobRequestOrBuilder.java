@@ -38,6 +38,7 @@ public interface DeleteNotebookExecutionJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.ConnectionProfile>
       getConnectionProfilesList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    * </code>
    */
   com.google.cloud.datastream.v1alpha1.ConnectionProfile getConnectionProfiles(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    * </code>
    */
   int getConnectionProfilesCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.ConnectionProfileOrBuilder>
       getConnectionProfilesOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -134,6 +140,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

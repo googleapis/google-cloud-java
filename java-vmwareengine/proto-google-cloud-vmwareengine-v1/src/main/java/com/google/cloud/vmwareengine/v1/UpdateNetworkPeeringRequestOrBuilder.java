@@ -38,6 +38,7 @@ public interface UpdateNetworkPeeringRequestOrBuilder
    * @return Whether the networkPeering field is set.
    */
   boolean hasNetworkPeering();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateNetworkPeeringRequestOrBuilder
    * @return The networkPeering.
    */
   com.google.cloud.vmwareengine.v1.NetworkPeering getNetworkPeering();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateNetworkPeeringRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateNetworkPeeringRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdateNetworkPeeringRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

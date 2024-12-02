@@ -40,6 +40,7 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * @return Whether the featurestore field is set.
    */
   boolean hasFeaturestore();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * @return The featurestore.
    */
   com.google.cloud.aiplatform.v1.Featurestore getFeaturestore();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

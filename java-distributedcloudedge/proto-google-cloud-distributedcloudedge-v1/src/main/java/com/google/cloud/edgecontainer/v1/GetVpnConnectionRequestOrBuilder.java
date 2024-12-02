@@ -38,6 +38,7 @@ public interface GetVpnConnectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

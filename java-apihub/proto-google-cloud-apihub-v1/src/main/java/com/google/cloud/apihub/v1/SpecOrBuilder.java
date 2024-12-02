@@ -39,6 +39,7 @@ public interface SpecOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface SpecOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface SpecOrBuilder
    * @return Whether the specType field is set.
    */
   boolean hasSpecType();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface SpecOrBuilder
    * @return The specType.
    */
   com.google.cloud.apihub.v1.AttributeValues getSpecType();
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface SpecOrBuilder
    * @return Whether the contents field is set.
    */
   boolean hasContents();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface SpecOrBuilder
    * @return The contents.
    */
   com.google.cloud.apihub.v1.SpecContents getContents();
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public interface SpecOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface SpecOrBuilder
    * @return The details.
    */
   com.google.cloud.apihub.v1.SpecDetails getDetails();
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public interface SpecOrBuilder
    * @return The sourceUri.
    */
   java.lang.String getSourceUri();
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public interface SpecOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public interface SpecOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public interface SpecOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public interface SpecOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -346,6 +359,7 @@ public interface SpecOrBuilder
    * @return Whether the lintResponse field is set.
    */
   boolean hasLintResponse();
+
   /**
    *
    *
@@ -360,6 +374,7 @@ public interface SpecOrBuilder
    * @return The lintResponse.
    */
   com.google.cloud.apihub.v1.LintResponse getLintResponse();
+
   /**
    *
    *
@@ -388,6 +403,7 @@ public interface SpecOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -403,9 +419,11 @@ public interface SpecOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributes();
+
   /**
    *
    *
@@ -421,6 +439,7 @@ public interface SpecOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributesMap();
+
   /**
    *
    *
@@ -440,6 +459,7 @@ public interface SpecOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.apihub.v1.AttributeValues defaultValue);
+
   /**
    *
    *
@@ -472,6 +492,7 @@ public interface SpecOrBuilder
    * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
+
   /**
    *
    *
@@ -488,6 +509,7 @@ public interface SpecOrBuilder
    * @return The documentation.
    */
   com.google.cloud.apihub.v1.Documentation getDocumentation();
+
   /**
    *
    *
@@ -518,6 +540,7 @@ public interface SpecOrBuilder
    * @return The enum numeric value on the wire for parsingMode.
    */
   int getParsingModeValue();
+
   /**
    *
    *

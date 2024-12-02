@@ -33,6 +33,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.AutopilotConversionStatus)
     AutopilotConversionStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutopilotConversionStatus.newBuilder() to construct.
   private AutopilotConversionStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,6 +108,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -204,6 +206,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -221,6 +224,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -407,6 +411,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -589,6 +594,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -606,6 +612,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -626,6 +633,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -647,6 +655,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
           ? com.google.container.v1beta1.AutopilotConversionStatus.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -670,6 +679,7 @@ public final class AutopilotConversionStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

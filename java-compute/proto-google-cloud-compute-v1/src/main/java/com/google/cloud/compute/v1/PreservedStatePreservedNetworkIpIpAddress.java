@@ -33,6 +33,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PreservedStatePreservedNetworkIpIpAddress)
     PreservedStatePreservedNetworkIpIpAddressOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PreservedStatePreservedNetworkIpIpAddress.newBuilder() to construct.
   private PreservedStatePreservedNetworkIpIpAddress(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object address_ = "";
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
   public boolean hasAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object literal_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
   public boolean hasLiteral() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
       return s;
     }
   }
+
   /**
    *
    *
@@ -378,6 +385,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -587,6 +595,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
     private int bitField0_;
 
     private java.lang.Object address_ = "";
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -645,6 +656,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -666,6 +678,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +721,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
     }
 
     private java.lang.Object literal_ = "";
+
     /**
      *
      *
@@ -721,6 +736,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
     public boolean hasLiteral() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -743,6 +759,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -765,6 +782,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -786,6 +804,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +822,7 @@ public final class PreservedStatePreservedNetworkIpIpAddress
       onChanged();
       return this;
     }
+
     /**
      *
      *

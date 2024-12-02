@@ -41,6 +41,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return Whether the dataSource field is set.
    */
   boolean hasDataSource();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return The dataSource.
    */
   com.google.cloud.backupdr.v1.DataSource getDataSource();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

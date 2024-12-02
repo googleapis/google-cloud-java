@@ -33,6 +33,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest)
     UpdateGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateGroupRequest.newBuilder() to construct.
   private UpdateGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int GROUP_FIELD_NUMBER = 1;
   private com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasGroup() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()
         : group_;
   }
+
   /**
    *
    *
@@ -284,6 +288,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -494,6 +499,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
             com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder>
         groupBuilder_;
+
     /**
      *
      *
@@ -510,6 +516,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasGroup() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -532,6 +539,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
         return groupBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -556,6 +564,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -578,6 +587,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGroupFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
             : group_;
       }
     }
+
     /**
      *
      *

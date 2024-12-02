@@ -40,6 +40,7 @@ public interface TerminalPointIdOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPlaceId();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface TerminalPointIdOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPlaceId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface TerminalPointIdOrBuilder
    */
   @java.lang.Deprecated
   boolean hasGeneratedId();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface TerminalPointIdOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getGeneratedId();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface TerminalPointIdOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getValue();
+
   /**
    *
    *

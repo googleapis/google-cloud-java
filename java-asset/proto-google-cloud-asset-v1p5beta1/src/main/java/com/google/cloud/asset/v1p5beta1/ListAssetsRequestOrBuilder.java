@@ -41,6 +41,7 @@ public interface ListAssetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface ListAssetsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ListAssetsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface ListAssetsRequestOrBuilder
    * @return A list containing the assetTypes.
    */
   java.util.List<java.lang.String> getAssetTypesList();
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public interface ListAssetsRequestOrBuilder
    * @return The count of assetTypes.
    */
   int getAssetTypesCount();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface ListAssetsRequestOrBuilder
    * @return The assetTypes at the given index.
    */
   java.lang.String getAssetTypes(int index);
+
   /**
    *
    *
@@ -238,6 +244,7 @@ public interface ListAssetsRequestOrBuilder
    * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
+
   /**
    *
    *
@@ -280,6 +287,7 @@ public interface ListAssetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

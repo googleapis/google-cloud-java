@@ -33,6 +33,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.LabelSegment)
     LabelSegmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LabelSegment.newBuilder() to construct.
   private LabelSegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SEGMENT_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1.VideoSegment segment_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSegment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance()
         : segment_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -304,6 +309,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -520,6 +526,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.VideoSegment.Builder,
             com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
         segmentBuilder_;
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSegment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -554,6 +562,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
         return segmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -576,6 +585,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -596,6 +606,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +655,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +670,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -675,6 +689,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
             : segment_;
       }
     }
+
     /**
      *
      *
@@ -702,6 +717,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -717,6 +733,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -736,6 +753,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

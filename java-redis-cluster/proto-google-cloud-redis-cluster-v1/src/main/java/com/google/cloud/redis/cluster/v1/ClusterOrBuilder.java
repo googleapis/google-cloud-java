@@ -38,6 +38,7 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface ClusterOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface ClusterOrBuilder
    * @return Whether the replicaCount field is set.
    */
   boolean hasReplicaCount();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for authorizationMode.
    */
   int getAuthorizationModeValue();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for transitEncryptionMode.
    */
   int getTransitEncryptionModeValue();
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public interface ClusterOrBuilder
    * @return Whether the sizeGb field is set.
    */
   boolean hasSizeGb();
+
   /**
    *
    *
@@ -273,6 +282,7 @@ public interface ClusterOrBuilder
    * @return Whether the shardCount field is set.
    */
   boolean hasShardCount();
+
   /**
    *
    *
@@ -300,6 +310,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1.PscConfig> getPscConfigsList();
+
   /**
    *
    *
@@ -314,6 +325,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.PscConfig getPscConfigs(int index);
+
   /**
    *
    *
@@ -328,6 +340,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getPscConfigsCount();
+
   /**
    *
    *
@@ -343,6 +356,7 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.PscConfigOrBuilder>
       getPscConfigsOrBuilderList();
+
   /**
    *
    *
@@ -371,6 +385,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1.DiscoveryEndpoint> getDiscoveryEndpointsList();
+
   /**
    *
    *
@@ -384,6 +399,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.DiscoveryEndpoint getDiscoveryEndpoints(int index);
+
   /**
    *
    *
@@ -397,6 +413,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getDiscoveryEndpointsCount();
+
   /**
    *
    *
@@ -411,6 +428,7 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.DiscoveryEndpointOrBuilder>
       getDiscoveryEndpointsOrBuilderList();
+
   /**
    *
    *
@@ -439,6 +457,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1.PscConnection> getPscConnectionsList();
+
   /**
    *
    *
@@ -452,6 +471,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.PscConnection getPscConnections(int index);
+
   /**
    *
    *
@@ -465,6 +485,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getPscConnectionsCount();
+
   /**
    *
    *
@@ -479,6 +500,7 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.PscConnectionOrBuilder>
       getPscConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -507,6 +529,7 @@ public interface ClusterOrBuilder
    * @return Whether the stateInfo field is set.
    */
   boolean hasStateInfo();
+
   /**
    *
    *
@@ -521,6 +544,7 @@ public interface ClusterOrBuilder
    * @return The stateInfo.
    */
   com.google.cloud.redis.cluster.v1.Cluster.StateInfo getStateInfo();
+
   /**
    *
    *
@@ -549,6 +573,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for nodeType.
    */
   int getNodeTypeValue();
+
   /**
    *
    *
@@ -579,6 +604,7 @@ public interface ClusterOrBuilder
    * @return Whether the persistenceConfig field is set.
    */
   boolean hasPersistenceConfig();
+
   /**
    *
    *
@@ -593,6 +619,7 @@ public interface ClusterOrBuilder
    * @return The persistenceConfig.
    */
   com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig getPersistenceConfig();
+
   /**
    *
    *
@@ -618,6 +645,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getRedisConfigsCount();
+
   /**
    *
    *
@@ -629,9 +657,11 @@ public interface ClusterOrBuilder
    * </code>
    */
   boolean containsRedisConfigs(java.lang.String key);
+
   /** Use {@link #getRedisConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getRedisConfigs();
+
   /**
    *
    *
@@ -643,6 +673,7 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap();
+
   /**
    *
    *
@@ -658,6 +689,7 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -683,6 +715,7 @@ public interface ClusterOrBuilder
    * @return Whether the preciseSizeGb field is set.
    */
   boolean hasPreciseSizeGb();
+
   /**
    *
    *
@@ -712,6 +745,7 @@ public interface ClusterOrBuilder
    * @return Whether the zoneDistributionConfig field is set.
    */
   boolean hasZoneDistributionConfig();
+
   /**
    *
    *
@@ -727,6 +761,7 @@ public interface ClusterOrBuilder
    * @return The zoneDistributionConfig.
    */
   com.google.cloud.redis.cluster.v1.ZoneDistributionConfig getZoneDistributionConfig();
+
   /**
    *
    *
@@ -755,6 +790,7 @@ public interface ClusterOrBuilder
    * @return Whether the deletionProtectionEnabled field is set.
    */
   boolean hasDeletionProtectionEnabled();
+
   /**
    *
    *

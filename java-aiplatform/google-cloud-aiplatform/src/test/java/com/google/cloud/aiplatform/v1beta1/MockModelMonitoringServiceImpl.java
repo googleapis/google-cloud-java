@@ -180,7 +180,8 @@ public class MockModelMonitoringServiceImpl extends ModelMonitoringServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateModelMonitoringJob, expected %s or %s",
+                  "Unrecognized response type %s for method CreateModelMonitoringJob, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ModelMonitoringJob.class.getName(),
                   Exception.class.getName())));
@@ -201,7 +202,8 @@ public class MockModelMonitoringServiceImpl extends ModelMonitoringServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetModelMonitoringJob, expected %s or %s",
+                  "Unrecognized response type %s for method GetModelMonitoringJob, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ModelMonitoringJob.class.getName(),
                   Exception.class.getName())));
@@ -223,7 +225,8 @@ public class MockModelMonitoringServiceImpl extends ModelMonitoringServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListModelMonitoringJobs, expected %s or %s",
+                  "Unrecognized response type %s for method ListModelMonitoringJobs, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListModelMonitoringJobsResponse.class.getName(),
                   Exception.class.getName())));
@@ -244,7 +247,8 @@ public class MockModelMonitoringServiceImpl extends ModelMonitoringServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteModelMonitoringJob, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteModelMonitoringJob, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -266,7 +270,8 @@ public class MockModelMonitoringServiceImpl extends ModelMonitoringServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchModelMonitoringStats, expected %s or %s",
+                  "Unrecognized response type %s for method SearchModelMonitoringStats, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchModelMonitoringStatsResponse.class.getName(),
                   Exception.class.getName())));
@@ -288,7 +293,8 @@ public class MockModelMonitoringServiceImpl extends ModelMonitoringServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchModelMonitoringAlerts, expected %s or %s",
+                  "Unrecognized response type %s for method SearchModelMonitoringAlerts, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchModelMonitoringAlertsResponse.class.getName(),
                   Exception.class.getName())));

@@ -36,6 +36,7 @@ public interface QaAnswerOrBuilder
    * @return The qaQuestion.
    */
   java.lang.String getQaQuestion();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface QaAnswerOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface QaAnswerOrBuilder
    * @return The questionBody.
    */
   java.lang.String getQuestionBody();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface QaAnswerOrBuilder
    * @return Whether the answerValue field is set.
    */
   boolean hasAnswerValue();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface QaAnswerOrBuilder
    * @return The answerValue.
    */
   com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue getAnswerValue();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface QaAnswerOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface QaAnswerOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface QaAnswerOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface QaAnswerOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerSource>
       getAnswerSourcesList();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface QaAnswerOrBuilder
    * </code>
    */
   com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerSource getAnswerSources(int index);
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface QaAnswerOrBuilder
    * </code>
    */
   int getAnswerSourcesCount();
+
   /**
    *
    *
@@ -239,6 +250,7 @@ public interface QaAnswerOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerSourceOrBuilder>
       getAnswerSourcesOrBuilderList();
+
   /**
    *
    *

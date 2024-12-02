@@ -50,6 +50,7 @@ public interface RawDocumentOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface RawDocumentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

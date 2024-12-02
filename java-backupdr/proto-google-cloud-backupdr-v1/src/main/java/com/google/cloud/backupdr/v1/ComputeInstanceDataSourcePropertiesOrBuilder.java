@@ -36,6 +36,7 @@ public interface ComputeInstanceDataSourcePropertiesOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ComputeInstanceDataSourcePropertiesOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ComputeInstanceDataSourcePropertiesOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *

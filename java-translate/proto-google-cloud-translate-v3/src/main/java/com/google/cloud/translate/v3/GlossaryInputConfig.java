@@ -33,6 +33,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.GlossaryInputConfig)
     GlossaryInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GlossaryInputConfig.newBuilder() to construct.
   private GlossaryInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.translate.v3.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -392,6 +397,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -610,6 +616,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.translate.v3.GcsSource.Builder,
             com.google.cloud.translate.v3.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -645,6 +652,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -690,6 +698,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
         return com.google.cloud.translate.v3.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -732,6 +741,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +781,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +834,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +880,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +913,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.translate.v3.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -940,6 +954,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
         return com.google.cloud.translate.v3.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *

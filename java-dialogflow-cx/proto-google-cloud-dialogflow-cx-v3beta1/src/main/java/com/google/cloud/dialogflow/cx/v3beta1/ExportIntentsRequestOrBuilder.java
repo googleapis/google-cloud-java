@@ -39,6 +39,7 @@ public interface ExportIntentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ExportIntentsRequestOrBuilder
    * @return A list containing the intents.
    */
   java.util.List<java.lang.String> getIntentsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ExportIntentsRequestOrBuilder
    * @return The count of intents.
    */
   int getIntentsCount();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ExportIntentsRequestOrBuilder
    * @return The intents at the given index.
    */
   java.lang.String getIntents(int index);
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface ExportIntentsRequestOrBuilder
    * @return Whether the intentsUri field is set.
    */
   boolean hasIntentsUri();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface ExportIntentsRequestOrBuilder
    * @return The intentsUri.
    */
   java.lang.String getIntentsUri();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface ExportIntentsRequestOrBuilder
    * @return Whether the intentsContentInline field is set.
    */
   boolean hasIntentsContentInline();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface ExportIntentsRequestOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
+
   /**
    *
    *

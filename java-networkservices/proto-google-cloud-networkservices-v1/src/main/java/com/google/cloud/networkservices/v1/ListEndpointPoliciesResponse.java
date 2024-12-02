@@ -33,6 +33,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.ListEndpointPoliciesResponse)
     ListEndpointPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListEndpointPoliciesResponse.newBuilder() to construct.
   private ListEndpointPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkservices.v1.EndpointPolicy> endpointPolicies_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       getEndpointPoliciesList() {
     return endpointPolicies_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       getEndpointPoliciesOrBuilderList() {
     return endpointPolicies_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
   public int getEndpointPoliciesCount() {
     return endpointPolicies_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
   public com.google.cloud.networkservices.v1.EndpointPolicy getEndpointPolicies(int index) {
     return endpointPolicies_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -363,6 +371,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +656,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
         return endpointPoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
         return endpointPoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
         return endpointPoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +735,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +865,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +899,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
         int index) {
       return getEndpointPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -895,6 +917,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
         return endpointPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(endpointPolicies_);
       }
     }
+
     /**
      *
      *
@@ -925,6 +949,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       return getEndpointPoliciesFieldBuilder()
           .addBuilder(com.google.cloud.networkservices.v1.EndpointPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -940,6 +965,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.networkservices.v1.EndpointPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -999,6 +1026,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1051,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1075,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1095,7 @@ public final class ListEndpointPoliciesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

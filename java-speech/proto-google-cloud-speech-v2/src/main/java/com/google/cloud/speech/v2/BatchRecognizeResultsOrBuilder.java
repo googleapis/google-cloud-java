@@ -35,6 +35,7 @@ public interface BatchRecognizeResultsOrBuilder
    * <code>repeated .google.cloud.speech.v2.SpeechRecognitionResult results = 1;</code>
    */
   java.util.List<com.google.cloud.speech.v2.SpeechRecognitionResult> getResultsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface BatchRecognizeResultsOrBuilder
    * <code>repeated .google.cloud.speech.v2.SpeechRecognitionResult results = 1;</code>
    */
   com.google.cloud.speech.v2.SpeechRecognitionResult getResults(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface BatchRecognizeResultsOrBuilder
    * <code>repeated .google.cloud.speech.v2.SpeechRecognitionResult results = 1;</code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface BatchRecognizeResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.SpeechRecognitionResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface BatchRecognizeResultsOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -105,6 +110,7 @@ public interface BatchRecognizeResultsOrBuilder
    * @return The metadata.
    */
   com.google.cloud.speech.v2.RecognitionResponseMetadata getMetadata();
+
   /**
    *
    *

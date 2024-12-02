@@ -34,6 +34,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.DataSource)
     DataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataSource.newBuilder() to construct.
   private DataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,6 +151,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>INPUT_UNSPECIFIED = 0;</code>
      */
     public static final int INPUT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -161,6 +163,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>API = 1;</code>
      */
     public static final int API_VALUE = 1;
+
     /**
      *
      *
@@ -172,6 +175,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>FILE = 2;</code>
      */
     public static final int FILE_VALUE = 2;
+
     /**
      *
      *
@@ -187,6 +191,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>UI = 3;</code>
      */
     public static final int UI_VALUE = 3;
+
     /**
      *
      *
@@ -311,6 +316,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -350,6 +356,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIMARY_PRODUCT_DATA_SOURCE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -369,6 +376,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrimaryProductDataSource() {
     return typeCase_ == 4;
   }
+
   /**
    *
    *
@@ -393,6 +401,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     return com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -417,6 +426,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUPPLEMENTAL_PRODUCT_DATA_SOURCE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -436,6 +446,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSupplementalProductDataSource() {
     return typeCase_ == 5;
   }
+
   /**
    *
    *
@@ -460,6 +471,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     return com.google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -484,6 +496,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCAL_INVENTORY_DATA_SOURCE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -503,6 +516,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocalInventoryDataSource() {
     return typeCase_ == 6;
   }
+
   /**
    *
    *
@@ -527,6 +541,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     return com.google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -551,6 +566,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGIONAL_INVENTORY_DATA_SOURCE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -570,6 +586,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegionalInventoryDataSource() {
     return typeCase_ == 7;
   }
+
   /**
    *
    *
@@ -594,6 +611,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     return com.google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -618,6 +636,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROMOTION_DATA_SOURCE_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -637,6 +656,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPromotionDataSource() {
     return typeCase_ == 8;
   }
+
   /**
    *
    *
@@ -660,6 +680,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.shopping.merchant.datasources.v1beta.PromotionDataSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -686,6 +707,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -711,6 +733,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -739,6 +762,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_SOURCE_ID_FIELD_NUMBER = 2;
   private long dataSourceId_ = 0L;
+
   /**
    *
    *
@@ -759,6 +783,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -782,6 +807,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -808,6 +834,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INPUT_FIELD_NUMBER = 10;
   private int input_ = 0;
+
   /**
    *
    *
@@ -827,6 +854,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public int getInputValue() {
     return input_;
   }
+
   /**
    *
    *
@@ -853,6 +881,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILE_INPUT_FIELD_NUMBER = 11;
   private com.google.shopping.merchant.datasources.v1beta.FileInput fileInput_;
+
   /**
    *
    *
@@ -870,6 +899,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFileInput() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -889,6 +919,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.datasources.v1beta.FileInput.getDefaultInstance()
         : fileInput_;
   }
+
   /**
    *
    *
@@ -1209,6 +1240,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1587,6 +1619,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Builder,
             com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSourceOrBuilder>
         primaryProductDataSourceBuilder_;
+
     /**
      *
      *
@@ -1606,6 +1639,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrimaryProductDataSource() {
       return typeCase_ == 4;
     }
+
     /**
      *
      *
@@ -1638,6 +1672,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1665,6 +1700,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1690,6 +1726,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1730,6 +1767,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1759,6 +1797,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1776,6 +1815,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         getPrimaryProductDataSourceBuilder() {
       return getPrimaryProductDataSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1802,6 +1842,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1846,6 +1887,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource.Builder,
             com.google.shopping.merchant.datasources.v1beta.SupplementalProductDataSourceOrBuilder>
         supplementalProductDataSourceBuilder_;
+
     /**
      *
      *
@@ -1865,6 +1907,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSupplementalProductDataSource() {
       return typeCase_ == 5;
     }
+
     /**
      *
      *
@@ -1898,6 +1941,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1925,6 +1969,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1950,6 +1995,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1992,6 +2038,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2068,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2038,6 +2086,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         getSupplementalProductDataSourceBuilder() {
       return getSupplementalProductDataSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2065,6 +2114,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2112,6 +2162,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource.Builder,
             com.google.shopping.merchant.datasources.v1beta.LocalInventoryDataSourceOrBuilder>
         localInventoryDataSourceBuilder_;
+
     /**
      *
      *
@@ -2131,6 +2182,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocalInventoryDataSource() {
       return typeCase_ == 6;
     }
+
     /**
      *
      *
@@ -2163,6 +2215,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2190,6 +2243,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2215,6 +2269,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2255,6 +2310,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2284,6 +2340,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2358,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         getLocalInventoryDataSourceBuilder() {
       return getLocalInventoryDataSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2327,6 +2385,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2371,6 +2430,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource.Builder,
             com.google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSourceOrBuilder>
         regionalInventoryDataSourceBuilder_;
+
     /**
      *
      *
@@ -2390,6 +2450,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegionalInventoryDataSource() {
       return typeCase_ == 7;
     }
+
     /**
      *
      *
@@ -2423,6 +2484,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2450,6 +2512,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2475,6 +2538,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2516,6 +2580,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2545,6 +2610,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2562,6 +2628,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         getRegionalInventoryDataSourceBuilder() {
       return getRegionalInventoryDataSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2589,6 +2656,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2634,6 +2702,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.datasources.v1beta.PromotionDataSource.Builder,
             com.google.shopping.merchant.datasources.v1beta.PromotionDataSourceOrBuilder>
         promotionDataSourceBuilder_;
+
     /**
      *
      *
@@ -2653,6 +2722,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPromotionDataSource() {
       return typeCase_ == 8;
     }
+
     /**
      *
      *
@@ -2685,6 +2755,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2712,6 +2783,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2737,6 +2809,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2776,6 +2849,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2805,6 +2879,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2822,6 +2897,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         getPromotionDataSourceBuilder() {
       return getPromotionDataSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2848,6 +2924,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2888,6 +2965,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2912,6 +2990,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2936,6 +3015,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2959,6 +3039,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2978,6 +3059,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3004,6 +3086,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long dataSourceId_;
+
     /**
      *
      *
@@ -3019,6 +3102,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public long getDataSourceId() {
       return dataSourceId_;
     }
+
     /**
      *
      *
@@ -3038,6 +3122,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3057,6 +3142,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3079,6 +3165,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3101,6 +3188,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3122,6 +3210,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3139,6 +3228,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3163,6 +3253,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int input_ = 0;
+
     /**
      *
      *
@@ -3182,6 +3273,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public int getInputValue() {
       return input_;
     }
+
     /**
      *
      *
@@ -3204,6 +3296,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3227,6 +3320,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.datasources.v1beta.DataSource.Input.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3253,6 +3347,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3281,6 +3376,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.datasources.v1beta.FileInput.Builder,
             com.google.shopping.merchant.datasources.v1beta.FileInputOrBuilder>
         fileInputBuilder_;
+
     /**
      *
      *
@@ -3297,6 +3393,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFileInput() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3319,6 +3416,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return fileInputBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3343,6 +3441,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3365,6 +3464,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3395,6 +3495,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3416,6 +3517,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3432,6 +3534,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFileInputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3453,6 +3556,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             : fileInput_;
       }
     }
+
     /**
      *
      *

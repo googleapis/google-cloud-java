@@ -41,6 +41,7 @@ public interface UpdateNetworkRequestOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateNetworkRequestOrBuilder
    * @return The network.
    */
   com.google.cloud.baremetalsolution.v2.Network getNetwork();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateNetworkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateNetworkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

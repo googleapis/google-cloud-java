@@ -40,6 +40,7 @@ public interface DeleteBatchRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

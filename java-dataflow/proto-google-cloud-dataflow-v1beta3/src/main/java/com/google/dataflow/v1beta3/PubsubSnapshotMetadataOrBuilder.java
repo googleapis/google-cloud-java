@@ -36,6 +36,7 @@ public interface PubsubSnapshotMetadataOrBuilder
    * @return The topicName.
    */
   java.lang.String getTopicName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PubsubSnapshotMetadataOrBuilder
    * @return The snapshotName.
    */
   java.lang.String getSnapshotName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface PubsubSnapshotMetadataOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface PubsubSnapshotMetadataOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *

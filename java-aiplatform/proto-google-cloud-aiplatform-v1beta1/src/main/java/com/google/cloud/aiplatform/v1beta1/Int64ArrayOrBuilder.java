@@ -36,6 +36,7 @@ public interface Int64ArrayOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.Long> getValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface Int64ArrayOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse)
     SuggestConversationSummaryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SuggestConversationSummaryResponse.newBuilder() to construct.
   private SuggestConversationSummaryResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,6 +83,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * @return The text.
      */
     java.lang.String getText();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <code>map&lt;string, string&gt; text_sections = 4;</code>
      */
     int getTextSectionsCount();
+
     /**
      *
      *
@@ -119,9 +122,11 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <code>map&lt;string, string&gt; text_sections = 4;</code>
      */
     boolean containsTextSections(java.lang.String key);
+
     /** Use {@link #getTextSectionsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getTextSections();
+
     /**
      *
      *
@@ -134,6 +139,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <code>map&lt;string, string&gt; text_sections = 4;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap();
+
     /**
      *
      *
@@ -150,6 +156,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /**
      *
      *
@@ -176,6 +183,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * @return The answerRecord.
      */
     java.lang.String getAnswerRecord();
+
     /**
      *
      *
@@ -203,6 +211,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * @return The baselineModelVersion.
      */
     java.lang.String getBaselineModelVersion();
+
     /**
      *
      *
@@ -217,6 +226,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      */
     com.google.protobuf.ByteString getBaselineModelVersionBytes();
   }
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary)
       SummaryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Summary.newBuilder() to construct.
     private Summary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -281,6 +292,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -304,6 +316,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         return s;
       }
     }
+
     /**
      *
      *
@@ -356,6 +369,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     public int getTextSectionsCount() {
       return internalGetTextSections().getMap().size();
     }
+
     /**
      *
      *
@@ -374,12 +388,14 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       }
       return internalGetTextSections().getMap().containsKey(key);
     }
+
     /** Use {@link #getTextSectionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTextSections() {
       return getTextSectionsMap();
     }
+
     /**
      *
      *
@@ -395,6 +411,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     public java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap() {
       return internalGetTextSections().getMap();
     }
+
     /**
      *
      *
@@ -417,6 +434,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -444,6 +462,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answerRecord_ = "";
+
     /**
      *
      *
@@ -468,6 +487,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         return s;
       }
     }
+
     /**
      *
      *
@@ -497,6 +517,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object baselineModelVersion_ = "";
+
     /**
      *
      *
@@ -521,6 +542,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         return s;
       }
     }
+
     /**
      *
      *
@@ -750,6 +772,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1025,6 +1048,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       private int bitField0_;
 
       private java.lang.Object text_ = "";
+
       /**
        *
        *
@@ -1047,6 +1071,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1069,6 +1094,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1090,6 +1116,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1107,6 +1134,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1158,6 +1186,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       public int getTextSectionsCount() {
         return internalGetTextSections().getMap().size();
       }
+
       /**
        *
        *
@@ -1176,12 +1205,14 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         }
         return internalGetTextSections().getMap().containsKey(key);
       }
+
       /** Use {@link #getTextSectionsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getTextSections() {
         return getTextSectionsMap();
       }
+
       /**
        *
        *
@@ -1197,6 +1228,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       public java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap() {
         return internalGetTextSections().getMap();
       }
+
       /**
        *
        *
@@ -1219,6 +1251,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -1247,6 +1280,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         internalGetMutableTextSections().getMutableMap().clear();
         return this;
       }
+
       /**
        *
        *
@@ -1265,12 +1299,14 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         internalGetMutableTextSections().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableTextSections() {
         bitField0_ |= 0x00000002;
         return internalGetMutableTextSections().getMutableMap();
       }
+
       /**
        *
        *
@@ -1293,6 +1329,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         bitField0_ |= 0x00000002;
         return this;
       }
+
       /**
        *
        *
@@ -1311,6 +1348,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       }
 
       private java.lang.Object answerRecord_ = "";
+
       /**
        *
        *
@@ -1334,6 +1372,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1357,6 +1396,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1379,6 +1419,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1397,6 +1438,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1422,6 +1464,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       }
 
       private java.lang.Object baselineModelVersion_ = "";
+
       /**
        *
        *
@@ -1445,6 +1488,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1468,6 +1512,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1490,6 +1535,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1508,6 +1554,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1604,6 +1651,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
   private int bitField0_;
   public static final int SUMMARY_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary summary_;
+
   /**
    *
    *
@@ -1620,6 +1668,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
   public boolean hasSummary() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1640,6 +1689,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
             .getDefaultInstance()
         : summary_;
   }
+
   /**
    *
    *
@@ -1663,6 +1713,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
+
   /**
    *
    *
@@ -1690,6 +1741,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -1720,6 +1772,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
   private int contextSize_ = 0;
+
   /**
    *
    *
@@ -1923,6 +1976,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2163,6 +2217,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
             com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary.Builder,
             com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.SummaryOrBuilder>
         summaryBuilder_;
+
     /**
      *
      *
@@ -2179,6 +2234,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     public boolean hasSummary() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2203,6 +2259,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         return summaryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2228,6 +2285,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2251,6 +2309,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2283,6 +2342,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2304,6 +2364,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2321,6 +2382,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       onChanged();
       return getSummaryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2343,6 +2405,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
             : summary_;
       }
     }
+
     /**
      *
      *
@@ -2373,6 +2436,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     }
 
     private java.lang.Object latestMessage_ = "";
+
     /**
      *
      *
@@ -2399,6 +2463,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2425,6 +2490,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2450,6 +2516,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2471,6 +2538,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2499,6 +2567,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     }
 
     private int contextSize_;
+
     /**
      *
      *
@@ -2517,6 +2586,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     public int getContextSize() {
       return contextSize_;
     }
+
     /**
      *
      *
@@ -2539,6 +2609,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

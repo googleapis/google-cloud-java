@@ -33,6 +33,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AttackPath)
     AttackPathOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AttackPath.newBuilder() to construct.
   private AttackPath(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * @return The resource.
      */
     java.lang.String getResource();
+
     /**
      *
      *
@@ -114,6 +116,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceType.
      */
     java.lang.String getResourceType();
+
     /**
      *
      *
@@ -140,6 +143,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -167,6 +171,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.PathNodeAssociatedFinding>
         getAssociatedFindingsList();
+
     /**
      *
      *
@@ -180,6 +185,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.PathNodeAssociatedFinding
         getAssociatedFindings(int index);
+
     /**
      *
      *
@@ -192,6 +198,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getAssociatedFindingsCount();
+
     /**
      *
      *
@@ -208,6 +215,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode
                     .PathNodeAssociatedFindingOrBuilder>
         getAssociatedFindingsOrBuilderList();
+
     /**
      *
      *
@@ -234,6 +242,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * @return The uuid.
      */
     java.lang.String getUuid();
+
     /**
      *
      *
@@ -260,6 +269,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.AttackStepNode>
         getAttackStepsList();
+
     /**
      *
      *
@@ -273,6 +283,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.AttackStepNode getAttackSteps(
         int index);
+
     /**
      *
      *
@@ -285,6 +296,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getAttackStepsCount();
+
     /**
      *
      *
@@ -301,6 +313,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode
                     .AttackStepNodeOrBuilder>
         getAttackStepsOrBuilderList();
+
     /**
      *
      *
@@ -315,6 +328,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.AttackStepNodeOrBuilder
         getAttackStepsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AttackPath.AttackPathNode)
       AttackPathNodeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AttackPathNode.newBuilder() to construct.
     private AttackPathNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -437,6 +452,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * <code>NODE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int NODE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -447,6 +463,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * <code>NODE_TYPE_AND = 1;</code>
        */
       public static final int NODE_TYPE_AND_VALUE = 1;
+
       /**
        *
        *
@@ -457,6 +474,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * <code>NODE_TYPE_OR = 2;</code>
        */
       public static final int NODE_TYPE_OR_VALUE = 2;
+
       /**
        *
        *
@@ -467,6 +485,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * <code>NODE_TYPE_DEFENSE = 3;</code>
        */
       public static final int NODE_TYPE_DEFENSE_VALUE = 3;
+
       /**
        *
        *
@@ -585,6 +604,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * @return The canonicalFinding.
        */
       java.lang.String getCanonicalFinding();
+
       /**
        *
        *
@@ -611,6 +631,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * @return The findingCategory.
        */
       java.lang.String getFindingCategory();
+
       /**
        *
        *
@@ -636,6 +657,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * @return The name.
        */
       java.lang.String getName();
+
       /**
        *
        *
@@ -649,6 +671,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getNameBytes();
     }
+
     /**
      *
      *
@@ -665,6 +688,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AttackPath.AttackPathNode.PathNodeAssociatedFinding)
         PathNodeAssociatedFindingOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use PathNodeAssociatedFinding.newBuilder() to construct.
       private PathNodeAssociatedFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -703,6 +727,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object canonicalFinding_ = "";
+
       /**
        *
        *
@@ -727,6 +752,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -756,6 +782,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object findingCategory_ = "";
+
       /**
        *
        *
@@ -779,6 +806,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -807,6 +835,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -830,6 +859,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1060,6 +1090,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1303,6 +1334,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object canonicalFinding_ = "";
+
         /**
          *
          *
@@ -1326,6 +1358,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1349,6 +1382,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1371,6 +1405,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1389,6 +1424,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1414,6 +1450,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object findingCategory_ = "";
+
         /**
          *
          *
@@ -1436,6 +1473,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1458,6 +1496,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1479,6 +1518,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1496,6 +1536,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1520,6 +1561,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object name_ = "";
+
         /**
          *
          *
@@ -1542,6 +1584,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1564,6 +1607,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1585,6 +1629,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1602,6 +1647,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1713,6 +1759,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * @return The uuid.
        */
       java.lang.String getUuid();
+
       /**
        *
        *
@@ -1738,6 +1785,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for type.
        */
       int getTypeValue();
+
       /**
        *
        *
@@ -1763,6 +1811,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * @return The displayName.
        */
       java.lang.String getDisplayName();
+
       /**
        *
        *
@@ -1786,6 +1835,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, string&gt; labels = 4;</code>
        */
       int getLabelsCount();
+
       /**
        *
        *
@@ -1796,9 +1846,11 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, string&gt; labels = 4;</code>
        */
       boolean containsLabels(java.lang.String key);
+
       /** Use {@link #getLabelsMap()} instead. */
       @java.lang.Deprecated
       java.util.Map<java.lang.String, java.lang.String> getLabels();
+
       /**
        *
        *
@@ -1809,6 +1861,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, string&gt; labels = 4;</code>
        */
       java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
       /**
        *
        *
@@ -1823,6 +1876,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           /* nullable */
           java.lang.String defaultValue);
+
       /**
        *
        *
@@ -1846,6 +1900,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * @return The description.
        */
       java.lang.String getDescription();
+
       /**
        *
        *
@@ -1859,6 +1914,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getDescriptionBytes();
     }
+
     /**
      *
      *
@@ -1873,6 +1929,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AttackPath.AttackPathNode.AttackStepNode)
         AttackStepNodeOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use AttackStepNode.newBuilder() to construct.
       private AttackStepNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1923,6 +1980,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uuid_ = "";
+
       /**
        *
        *
@@ -1946,6 +2004,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1972,6 +2031,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
       public static final int TYPE_FIELD_NUMBER = 2;
       private int type_ = 0;
+
       /**
        *
        *
@@ -1987,6 +2047,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -2011,6 +2072,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -2034,6 +2096,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -2084,6 +2147,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       public int getLabelsCount() {
         return internalGetLabels().getMap().size();
       }
+
       /**
        *
        *
@@ -2100,12 +2164,14 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetLabels().getMap().containsKey(key);
       }
+
       /** Use {@link #getLabelsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getLabels() {
         return getLabelsMap();
       }
+
       /**
        *
        *
@@ -2119,6 +2185,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
         return internalGetLabels().getMap();
       }
+
       /**
        *
        *
@@ -2139,6 +2206,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -2164,6 +2232,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -2187,6 +2256,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -2432,6 +2502,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2717,6 +2788,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object uuid_ = "";
+
         /**
          *
          *
@@ -2739,6 +2811,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2761,6 +2834,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2782,6 +2856,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2799,6 +2874,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2823,6 +2899,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int type_ = 0;
+
         /**
          *
          *
@@ -2838,6 +2915,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         public int getTypeValue() {
           return type_;
         }
+
         /**
          *
          *
@@ -2856,6 +2934,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2876,6 +2955,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
               ? com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.NodeType.UNRECOGNIZED
               : result;
         }
+
         /**
          *
          *
@@ -2898,6 +2978,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2917,6 +2998,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object displayName_ = "";
+
         /**
          *
          *
@@ -2939,6 +3021,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2961,6 +3044,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2982,6 +3066,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2999,6 +3084,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3050,6 +3136,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         public int getLabelsCount() {
           return internalGetLabels().getMap().size();
         }
+
         /**
          *
          *
@@ -3066,12 +3153,14 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           }
           return internalGetLabels().getMap().containsKey(key);
         }
+
         /** Use {@link #getLabelsMap()} instead. */
         @java.lang.Override
         @java.lang.Deprecated
         public java.util.Map<java.lang.String, java.lang.String> getLabels() {
           return getLabelsMap();
         }
+
         /**
          *
          *
@@ -3085,6 +3174,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
           return internalGetLabels().getMap();
         }
+
         /**
          *
          *
@@ -3105,6 +3195,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
+
         /**
          *
          *
@@ -3131,6 +3222,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableLabels().getMutableMap().clear();
           return this;
         }
+
         /**
          *
          *
@@ -3147,12 +3239,14 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableLabels().getMutableMap().remove(key);
           return this;
         }
+
         /** Use alternate mutation accessors instead. */
         @java.lang.Deprecated
         public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
           bitField0_ |= 0x00000008;
           return internalGetMutableLabels().getMutableMap();
         }
+
         /**
          *
          *
@@ -3173,6 +3267,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000008;
           return this;
         }
+
         /**
          *
          *
@@ -3189,6 +3284,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object description_ = "";
+
         /**
          *
          *
@@ -3211,6 +3307,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -3233,6 +3330,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -3254,6 +3352,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3271,6 +3370,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3367,6 +3467,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -3393,6 +3494,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3424,6 +3526,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceType_ = "";
+
     /**
      *
      *
@@ -3448,6 +3551,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3477,6 +3581,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3500,6 +3605,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3530,6 +3636,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.PathNodeAssociatedFinding>
         associatedFindings_;
+
     /**
      *
      *
@@ -3547,6 +3654,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         getAssociatedFindingsList() {
       return associatedFindings_;
     }
+
     /**
      *
      *
@@ -3566,6 +3674,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         getAssociatedFindingsOrBuilderList() {
       return associatedFindings_;
     }
+
     /**
      *
      *
@@ -3581,6 +3690,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     public int getAssociatedFindingsCount() {
       return associatedFindings_.size();
     }
+
     /**
      *
      *
@@ -3597,6 +3707,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         getAssociatedFindings(int index) {
       return associatedFindings_.get(index);
     }
+
     /**
      *
      *
@@ -3619,6 +3730,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uuid_ = "";
+
     /**
      *
      *
@@ -3642,6 +3754,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3672,6 +3785,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.AttackStepNode>
         attackSteps_;
+
     /**
      *
      *
@@ -3689,6 +3803,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         getAttackStepsList() {
       return attackSteps_;
     }
+
     /**
      *
      *
@@ -3708,6 +3823,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         getAttackStepsOrBuilderList() {
       return attackSteps_;
     }
+
     /**
      *
      *
@@ -3723,6 +3839,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     public int getAttackStepsCount() {
       return attackSteps_.size();
     }
+
     /**
      *
      *
@@ -3739,6 +3856,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         getAttackSteps(int index) {
       return attackSteps_.get(index);
     }
+
     /**
      *
      *
@@ -3967,6 +4085,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4325,6 +4444,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object resource_ = "";
+
       /**
        *
        *
@@ -4350,6 +4470,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4375,6 +4496,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4399,6 +4521,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4419,6 +4542,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4446,6 +4570,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceType_ = "";
+
       /**
        *
        *
@@ -4469,6 +4594,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4492,6 +4618,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4514,6 +4641,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4532,6 +4660,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4557,6 +4686,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -4579,6 +4709,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4601,6 +4732,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4622,6 +4754,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4639,6 +4772,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4707,6 +4841,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return associatedFindingsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4725,6 +4860,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return associatedFindingsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4744,6 +4880,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return associatedFindingsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4771,6 +4908,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4796,6 +4934,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4822,6 +4961,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4849,6 +4989,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4873,6 +5014,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4898,6 +5040,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4924,6 +5067,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4945,6 +5089,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4966,6 +5111,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4982,6 +5128,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           getAssociatedFindingsBuilder(int index) {
         return getAssociatedFindingsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -5002,6 +5149,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return associatedFindingsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -5024,6 +5172,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(associatedFindings_);
         }
       }
+
       /**
        *
        *
@@ -5043,6 +5192,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode
                     .PathNodeAssociatedFinding.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5063,6 +5213,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode
                     .PathNodeAssociatedFinding.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5108,6 +5259,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object uuid_ = "";
+
       /**
        *
        *
@@ -5130,6 +5282,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5152,6 +5305,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5173,6 +5327,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5190,6 +5345,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5253,6 +5409,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return attackStepsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -5271,6 +5428,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return attackStepsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -5290,6 +5448,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return attackStepsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -5316,6 +5475,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5340,6 +5500,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5365,6 +5526,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5391,6 +5553,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5414,6 +5577,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5438,6 +5602,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5463,6 +5628,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5484,6 +5650,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5505,6 +5672,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5520,6 +5688,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           getAttackStepsBuilder(int index) {
         return getAttackStepsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -5539,6 +5708,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return attackStepsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -5561,6 +5731,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(attackSteps_);
         }
       }
+
       /**
        *
        *
@@ -5579,6 +5750,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.AttackStepNode
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5598,6 +5770,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.AttackStepNode
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5721,6 +5894,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * @return The source.
      */
     java.lang.String getSource();
+
     /**
      *
      *
@@ -5746,6 +5920,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * @return The destination.
      */
     java.lang.String getDestination();
+
     /**
      *
      *
@@ -5759,6 +5934,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDestinationBytes();
   }
+
   /**
    *
    *
@@ -5774,6 +5950,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AttackPath.AttackPathEdge)
       AttackPathEdgeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AttackPathEdge.newBuilder() to construct.
     private AttackPathEdge(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5809,6 +5986,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object source_ = "";
+
     /**
      *
      *
@@ -5832,6 +6010,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5860,6 +6039,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object destination_ = "";
+
     /**
      *
      *
@@ -5883,6 +6063,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -6077,6 +6258,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6283,6 +6465,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object source_ = "";
+
       /**
        *
        *
@@ -6305,6 +6488,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6327,6 +6511,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6348,6 +6533,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6365,6 +6551,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6389,6 +6576,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object destination_ = "";
+
       /**
        *
        *
@@ -6411,6 +6599,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6433,6 +6622,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6454,6 +6644,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6471,6 +6662,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6565,6 +6757,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -6589,6 +6782,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -6618,6 +6812,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode> pathNodes_;
+
   /**
    *
    *
@@ -6632,6 +6827,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       getPathNodesList() {
     return pathNodes_;
   }
+
   /**
    *
    *
@@ -6647,6 +6843,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       getPathNodesOrBuilderList() {
     return pathNodes_;
   }
+
   /**
    *
    *
@@ -6660,6 +6857,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
   public int getPathNodesCount() {
     return pathNodes_.size();
   }
+
   /**
    *
    *
@@ -6673,6 +6871,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode getPathNodes(int index) {
     return pathNodes_.get(index);
   }
+
   /**
    *
    *
@@ -6692,6 +6891,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.AttackPath.AttackPathEdge> edges_;
+
   /**
    *
    *
@@ -6706,6 +6906,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       getEdgesList() {
     return edges_;
   }
+
   /**
    *
    *
@@ -6721,6 +6922,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       getEdgesOrBuilderList() {
     return edges_;
   }
+
   /**
    *
    *
@@ -6734,6 +6936,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
   public int getEdgesCount() {
     return edges_.size();
   }
+
   /**
    *
    *
@@ -6747,6 +6950,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.AttackPath.AttackPathEdge getEdges(int index) {
     return edges_.get(index);
   }
+
   /**
    *
    *
@@ -6943,6 +7147,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7244,6 +7449,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -7267,6 +7473,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7290,6 +7497,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7312,6 +7520,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7330,6 +7539,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7390,6 +7600,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return pathNodesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7407,6 +7618,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return pathNodesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7424,6 +7636,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return pathNodesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7448,6 +7661,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7470,6 +7684,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7494,6 +7709,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7518,6 +7734,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7539,6 +7756,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7561,6 +7779,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7583,6 +7802,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7603,6 +7823,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7623,6 +7844,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7637,6 +7859,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getPathNodesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -7655,6 +7878,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return pathNodesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -7674,6 +7898,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pathNodes_);
       }
     }
+
     /**
      *
      *
@@ -7690,6 +7915,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7707,6 +7933,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7774,6 +8001,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return edgesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7790,6 +8018,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return edgesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7806,6 +8035,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return edgesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7829,6 +8059,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7850,6 +8081,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7872,6 +8104,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7895,6 +8128,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7915,6 +8149,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7936,6 +8171,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7957,6 +8193,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7976,6 +8213,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7995,6 +8233,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8008,6 +8247,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getEdgesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8025,6 +8265,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return edgesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8043,6 +8284,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(edges_);
       }
     }
+
     /**
      *
      *
@@ -8057,6 +8299,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.securitycenter.v2.AttackPath.AttackPathEdge.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8073,6 +8316,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.securitycenter.v2.AttackPath.AttackPathEdge.getDefaultInstance());
     }
+
     /**
      *
      *

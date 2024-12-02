@@ -35,6 +35,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.OpenApiSpecDetails)
     OpenApiSpecDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OpenApiSpecDetails.newBuilder() to construct.
   private OpenApiSpecDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
      * <code>FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
      * <code>OPEN_API_SPEC_2_0 = 1;</code>
      */
     public static final int OPEN_API_SPEC_2_0_VALUE = 1;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
      * <code>OPEN_API_SPEC_3_0 = 2;</code>
      */
     public static final int OPEN_API_SPEC_3_0_VALUE = 2;
+
     /**
      *
      *
@@ -248,6 +252,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int FORMAT_FIELD_NUMBER = 1;
   private int format_ = 0;
+
   /**
    *
    *
@@ -265,6 +270,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
   public int getFormatValue() {
     return format_;
   }
+
   /**
    *
    *
@@ -291,6 +297,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -315,6 +322,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -342,6 +350,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int OWNER_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.Owner owner_;
+
   /**
    *
    *
@@ -359,6 +368,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
   public boolean hasOwner() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.apihub.v1.Owner getOwner() {
     return owner_ == null ? com.google.cloud.apihub.v1.Owner.getDefaultInstance() : owner_;
   }
+
   /**
    *
    *
@@ -576,6 +587,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -803,6 +815,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int format_ = 0;
+
     /**
      *
      *
@@ -820,6 +833,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
     public int getFormatValue() {
       return format_;
     }
+
     /**
      *
      *
@@ -840,6 +854,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +876,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.apihub.v1.OpenApiSpecDetails.Format.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -884,6 +900,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +922,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -928,6 +946,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -951,6 +970,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -973,6 +993,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1012,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1043,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
             com.google.cloud.apihub.v1.Owner.Builder,
             com.google.cloud.apihub.v1.OwnerOrBuilder>
         ownerBuilder_;
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
     public boolean hasOwner() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1057,6 +1081,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
         return ownerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1106,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1128,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1158,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1180,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1197,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getOwnerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1186,6 +1216,7 @@ public final class OpenApiSpecDetails extends com.google.protobuf.GeneratedMessa
         return owner_ == null ? com.google.cloud.apihub.v1.Owner.getDefaultInstance() : owner_;
       }
     }
+
     /**
      *
      *

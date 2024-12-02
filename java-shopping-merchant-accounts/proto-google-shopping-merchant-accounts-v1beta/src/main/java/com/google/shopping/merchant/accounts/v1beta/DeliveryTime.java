@@ -33,6 +33,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.DeliveryTime)
     DeliveryTimeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeliveryTime.newBuilder() to construct.
   private DeliveryTime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MIN_TRANSIT_DAYS_FIELD_NUMBER = 1;
   private int minTransitDays_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinTransitDays() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_TRANSIT_DAYS_FIELD_NUMBER = 2;
   private int maxTransitDays_ = 0;
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxTransitDays() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUTOFF_TIME_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.accounts.v1beta.CutoffTime cutoffTime_;
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCutoffTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.CutoffTime.getDefaultInstance()
         : cutoffTime_;
   }
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_HANDLING_DAYS_FIELD_NUMBER = 4;
   private int minHandlingDays_ = 0;
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinHandlingDays() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_HANDLING_DAYS_FIELD_NUMBER = 5;
   private int maxHandlingDays_ = 0;
+
   /**
    *
    *
@@ -253,6 +264,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxHandlingDays() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSIT_TIME_TABLE_FIELD_NUMBER = 6;
   private com.google.shopping.merchant.accounts.v1beta.TransitTable transitTimeTable_;
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransitTimeTable() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.TransitTable.getDefaultInstance()
         : transitTimeTable_;
   }
+
   /**
    *
    *
@@ -335,6 +350,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HANDLING_BUSINESS_DAY_CONFIG_FIELD_NUMBER = 7;
   private com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig handlingBusinessDayConfig_;
+
   /**
    *
    *
@@ -353,6 +369,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHandlingBusinessDayConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -374,6 +391,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.getDefaultInstance()
         : handlingBusinessDayConfig_;
   }
+
   /**
    *
    *
@@ -396,6 +414,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSIT_BUSINESS_DAY_CONFIG_FIELD_NUMBER = 8;
   private com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig transitBusinessDayConfig_;
+
   /**
    *
    *
@@ -414,6 +433,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransitBusinessDayConfig() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -435,6 +455,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.getDefaultInstance()
         : transitBusinessDayConfig_;
   }
+
   /**
    *
    *
@@ -460,6 +481,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.WarehouseBasedDeliveryTime>
       warehouseBasedDeliveryTimes_;
+
   /**
    *
    *
@@ -480,6 +502,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       getWarehouseBasedDeliveryTimesList() {
     return warehouseBasedDeliveryTimes_;
   }
+
   /**
    *
    *
@@ -502,6 +525,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       getWarehouseBasedDeliveryTimesOrBuilderList() {
     return warehouseBasedDeliveryTimes_;
   }
+
   /**
    *
    *
@@ -521,6 +545,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
   public int getWarehouseBasedDeliveryTimesCount() {
     return warehouseBasedDeliveryTimes_.size();
   }
+
   /**
    *
    *
@@ -541,6 +566,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       getWarehouseBasedDeliveryTimes(int index) {
     return warehouseBasedDeliveryTimes_.get(index);
   }
+
   /**
    *
    *
@@ -844,6 +870,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1230,6 +1257,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int minTransitDays_;
+
     /**
      *
      *
@@ -1248,6 +1276,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinTransitDays() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1266,6 +1295,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public int getMinTransitDays() {
       return minTransitDays_;
     }
+
     /**
      *
      *
@@ -1288,6 +1318,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1341,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxTransitDays_;
+
     /**
      *
      *
@@ -1327,6 +1359,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxTransitDays() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1344,6 +1377,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public int getMaxTransitDays() {
       return maxTransitDays_;
     }
+
     /**
      *
      *
@@ -1365,6 +1399,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1391,6 +1426,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.CutoffTime.Builder,
             com.google.shopping.merchant.accounts.v1beta.CutoffTimeOrBuilder>
         cutoffTimeBuilder_;
+
     /**
      *
      *
@@ -1406,6 +1442,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCutoffTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1427,6 +1464,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return cutoffTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1450,6 +1488,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1510,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1540,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1520,6 +1561,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1535,6 +1577,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCutoffTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1555,6 +1598,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
             : cutoffTime_;
       }
     }
+
     /**
      *
      *
@@ -1583,6 +1627,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minHandlingDays_;
+
     /**
      *
      *
@@ -1601,6 +1646,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinHandlingDays() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1619,6 +1665,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public int getMinHandlingDays() {
       return minHandlingDays_;
     }
+
     /**
      *
      *
@@ -1641,6 +1688,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1663,6 +1711,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxHandlingDays_;
+
     /**
      *
      *
@@ -1682,6 +1731,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxHandlingDays() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1701,6 +1751,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public int getMaxHandlingDays() {
       return maxHandlingDays_;
     }
+
     /**
      *
      *
@@ -1724,6 +1775,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1804,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.TransitTable.Builder,
             com.google.shopping.merchant.accounts.v1beta.TransitTableOrBuilder>
         transitTimeTableBuilder_;
+
     /**
      *
      *
@@ -1769,6 +1822,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransitTimeTable() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1792,6 +1846,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return transitTimeTableBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1818,6 +1873,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1841,6 +1897,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1873,6 +1930,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1895,6 +1953,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1913,6 +1972,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTransitTimeTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1935,6 +1995,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
             : transitTimeTable_;
       }
     }
+
     /**
      *
      *
@@ -1971,6 +2032,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.Builder,
             com.google.shopping.merchant.accounts.v1beta.BusinessDayConfigOrBuilder>
         handlingBusinessDayConfigBuilder_;
+
     /**
      *
      *
@@ -1988,6 +2050,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHandlingBusinessDayConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2012,6 +2075,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return handlingBusinessDayConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2038,6 +2102,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2061,6 +2126,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2094,6 +2160,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2116,6 +2183,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2134,6 +2202,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHandlingBusinessDayConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2156,6 +2225,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
             : handlingBusinessDayConfig_;
       }
     }
+
     /**
      *
      *
@@ -2192,6 +2262,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.Builder,
             com.google.shopping.merchant.accounts.v1beta.BusinessDayConfigOrBuilder>
         transitBusinessDayConfigBuilder_;
+
     /**
      *
      *
@@ -2209,6 +2280,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransitBusinessDayConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2233,6 +2305,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return transitBusinessDayConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2259,6 +2332,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2282,6 +2356,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2315,6 +2390,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2337,6 +2413,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2355,6 +2432,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTransitBusinessDayConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2377,6 +2455,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
             : transitBusinessDayConfig_;
       }
     }
+
     /**
      *
      *
@@ -2448,6 +2527,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return warehouseBasedDeliveryTimesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2470,6 +2550,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return warehouseBasedDeliveryTimesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2493,6 +2574,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return warehouseBasedDeliveryTimesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2522,6 +2604,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2550,6 +2633,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2579,6 +2663,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2608,6 +2693,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2635,6 +2721,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2663,6 +2750,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2692,6 +2780,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2717,6 +2806,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2742,6 +2832,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2761,6 +2852,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         getWarehouseBasedDeliveryTimesBuilder(int index) {
       return getWarehouseBasedDeliveryTimesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2784,6 +2876,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return warehouseBasedDeliveryTimesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2809,6 +2902,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(warehouseBasedDeliveryTimes_);
       }
     }
+
     /**
      *
      *
@@ -2831,6 +2925,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.WarehouseBasedDeliveryTime
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2854,6 +2949,7 @@ public final class DeliveryTime extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.WarehouseBasedDeliveryTime
                   .getDefaultInstance());
     }
+
     /**
      *
      *

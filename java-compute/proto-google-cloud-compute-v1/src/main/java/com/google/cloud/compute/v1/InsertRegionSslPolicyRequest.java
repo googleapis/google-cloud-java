@@ -33,6 +33,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionSslPolicyRequest)
     InsertRegionSslPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertRegionSslPolicyRequest.newBuilder() to construct.
   private InsertRegionSslPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
 
   public static final int SSL_POLICY_RESOURCE_FIELD_NUMBER = 274891848;
   private com.google.cloud.compute.v1.SslPolicy sslPolicyResource_;
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
   public boolean hasSslPolicyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.SslPolicy.getDefaultInstance()
         : sslPolicyResource_;
   }
+
   /**
    *
    *
@@ -497,6 +508,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -745,6 +757,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -769,6 +782,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -816,6 +831,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -885,6 +903,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -909,6 +928,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -932,6 +952,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +999,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1060,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1082,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1100,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.SslPolicy.Builder,
             com.google.cloud.compute.v1.SslPolicyOrBuilder>
         sslPolicyResourceBuilder_;
+
     /**
      *
      *
@@ -1118,6 +1147,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     public boolean hasSslPolicyResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1140,6 +1170,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         return sslPolicyResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1195,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1218,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1248,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1270,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1287,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return getSslPolicyResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1272,6 +1308,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
             : sslPolicyResource_;
       }
     }
+
     /**
      *
      *

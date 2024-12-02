@@ -39,6 +39,7 @@ public interface TableSpecOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface TableSpecOrBuilder
    * @return The timeColumnSpecId.
    */
   java.lang.String getTimeColumnSpecId();
+
   /**
    *
    *
@@ -146,6 +148,7 @@ public interface TableSpecOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.InputConfig input_configs = 5;</code>
    */
   java.util.List<com.google.cloud.automl.v1beta1.InputConfig> getInputConfigsList();
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public interface TableSpecOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.InputConfig input_configs = 5;</code>
    */
   com.google.cloud.automl.v1beta1.InputConfig getInputConfigs(int index);
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface TableSpecOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.InputConfig input_configs = 5;</code>
    */
   int getInputConfigsCount();
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public interface TableSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.InputConfigOrBuilder>
       getInputConfigsOrBuilderList();
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public interface TableSpecOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

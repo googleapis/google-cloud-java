@@ -34,6 +34,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.OrderStatusEnum)
     OrderStatusEnumOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OrderStatusEnum.newBuilder() to construct.
   private OrderStatusEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -168,6 +169,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
      * <code>ORDER_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int ORDER_STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -179,6 +181,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
      * <code>DRAFT = 2;</code>
      */
     public static final int DRAFT_VALUE = 2;
+
     /**
      *
      *
@@ -189,6 +192,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
      * <code>PENDING_APPROVAL = 3;</code>
      */
     public static final int PENDING_APPROVAL_VALUE = 3;
+
     /**
      *
      *
@@ -199,6 +203,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
      * <code>APPROVED = 4;</code>
      */
     public static final int APPROVED_VALUE = 4;
+
     /**
      *
      *
@@ -210,6 +215,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
      * <code>DISAPPROVED = 5;</code>
      */
     public static final int DISAPPROVED_VALUE = 5;
+
     /**
      *
      *
@@ -221,6 +227,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
      * <code>PAUSED = 6;</code>
      */
     public static final int PAUSED_VALUE = 6;
+
     /**
      *
      *
@@ -231,6 +238,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
      * <code>CANCELED = 7;</code>
      */
     public static final int CANCELED_VALUE = 7;
+
     /**
      *
      *
@@ -485,6 +493,7 @@ public final class OrderStatusEnum extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

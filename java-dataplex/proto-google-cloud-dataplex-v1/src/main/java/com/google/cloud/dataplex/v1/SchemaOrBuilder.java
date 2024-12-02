@@ -62,6 +62,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Schema.SchemaField> getFieldsList();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.Schema.SchemaField getFields(int index);
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.Schema.SchemaFieldOrBuilder>
       getFieldsOrBuilderList();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Schema.PartitionField> getPartitionFieldsList();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.Schema.PartitionField getPartitionFields(int index);
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   int getPartitionFieldsCount();
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public interface SchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.Schema.PartitionFieldOrBuilder>
       getPartitionFieldsOrBuilderList();
+
   /**
    *
    *
@@ -199,6 +207,7 @@ public interface SchemaOrBuilder
    * @return The enum numeric value on the wire for partitionStyle.
    */
   int getPartitionStyleValue();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface DocumentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface DocumentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DocumentOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface DocumentOrBuilder
    * @return A list containing the knowledgeTypes.
    */
   java.util.List<com.google.cloud.dialogflow.v2.Document.KnowledgeType> getKnowledgeTypesList();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface DocumentOrBuilder
    * @return The count of knowledgeTypes.
    */
   int getKnowledgeTypesCount();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface DocumentOrBuilder
    * @return The knowledgeTypes at the given index.
    */
   com.google.cloud.dialogflow.v2.Document.KnowledgeType getKnowledgeTypes(int index);
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface DocumentOrBuilder
    * @return A list containing the enum numeric values on the wire for knowledgeTypes.
    */
   java.util.List<java.lang.Integer> getKnowledgeTypesValueList();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface DocumentOrBuilder
    * @return Whether the contentUri field is set.
    */
   boolean hasContentUri();
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public interface DocumentOrBuilder
    * @return The contentUri.
    */
   java.lang.String getContentUri();
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public interface DocumentOrBuilder
    * @return Whether the rawContent field is set.
    */
   boolean hasRawContent();
+
   /**
    *
    *
@@ -312,6 +322,7 @@ public interface DocumentOrBuilder
    * @return Whether the latestReloadStatus field is set.
    */
   boolean hasLatestReloadStatus();
+
   /**
    *
    *
@@ -328,6 +339,7 @@ public interface DocumentOrBuilder
    * @return The latestReloadStatus.
    */
   com.google.cloud.dialogflow.v2.Document.ReloadStatus getLatestReloadStatus();
+
   /**
    *
    *
@@ -356,6 +368,7 @@ public interface DocumentOrBuilder
    * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -369,9 +382,11 @@ public interface DocumentOrBuilder
    * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -385,6 +400,7 @@ public interface DocumentOrBuilder
    * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -402,6 +418,7 @@ public interface DocumentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -430,6 +447,7 @@ public interface DocumentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

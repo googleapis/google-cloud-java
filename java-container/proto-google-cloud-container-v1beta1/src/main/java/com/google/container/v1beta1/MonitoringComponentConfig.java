@@ -33,6 +33,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.MonitoringComponentConfig)
     MonitoringComponentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MonitoringComponentConfig.newBuilder() to construct.
   private MonitoringComponentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -237,6 +238,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>COMPONENT_UNSPECIFIED = 0;</code>
      */
     public static final int COMPONENT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -247,6 +249,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>SYSTEM_COMPONENTS = 1;</code>
      */
     public static final int SYSTEM_COMPONENTS_VALUE = 1;
+
     /**
      *
      *
@@ -257,6 +260,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>WORKLOADS = 2 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int WORKLOADS_VALUE = 2;
+
     /**
      *
      *
@@ -267,6 +271,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>APISERVER = 3;</code>
      */
     public static final int APISERVER_VALUE = 3;
+
     /**
      *
      *
@@ -277,6 +282,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>SCHEDULER = 4;</code>
      */
     public static final int SCHEDULER_VALUE = 4;
+
     /**
      *
      *
@@ -287,6 +293,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>CONTROLLER_MANAGER = 5;</code>
      */
     public static final int CONTROLLER_MANAGER_VALUE = 5;
+
     /**
      *
      *
@@ -297,6 +304,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>STORAGE = 7;</code>
      */
     public static final int STORAGE_VALUE = 7;
+
     /**
      *
      *
@@ -307,6 +315,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>HPA = 8;</code>
      */
     public static final int HPA_VALUE = 8;
+
     /**
      *
      *
@@ -317,6 +326,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>POD = 9;</code>
      */
     public static final int POD_VALUE = 9;
+
     /**
      *
      *
@@ -327,6 +337,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>DAEMONSET = 10;</code>
      */
     public static final int DAEMONSET_VALUE = 10;
+
     /**
      *
      *
@@ -337,6 +348,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>DEPLOYMENT = 11;</code>
      */
     public static final int DEPLOYMENT_VALUE = 11;
+
     /**
      *
      *
@@ -347,6 +359,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>STATEFULSET = 12;</code>
      */
     public static final int STATEFULSET_VALUE = 12;
+
     /**
      *
      *
@@ -357,6 +370,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>CADVISOR = 13;</code>
      */
     public static final int CADVISOR_VALUE = 13;
+
     /**
      *
      *
@@ -367,6 +381,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>KUBELET = 14;</code>
      */
     public static final int KUBELET_VALUE = 14;
+
     /**
      *
      *
@@ -507,6 +522,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
                   : result;
             }
           };
+
   /**
    *
    *
@@ -528,6 +544,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
         java.lang.Integer, com.google.container.v1beta1.MonitoringComponentConfig.Component>(
         enableComponents_, enableComponents_converter_);
   }
+
   /**
    *
    *
@@ -546,6 +563,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
   public int getEnableComponentsCount() {
     return enableComponents_.size();
   }
+
   /**
    *
    *
@@ -566,6 +584,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
       int index) {
     return enableComponents_converter_.convert(enableComponents_.get(index));
   }
+
   /**
    *
    *
@@ -584,6 +603,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
   public java.util.List<java.lang.Integer> getEnableComponentsValueList() {
     return enableComponents_;
   }
+
   /**
    *
    *
@@ -783,6 +803,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1000,6 +1021,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1042,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
           java.lang.Integer, com.google.container.v1beta1.MonitoringComponentConfig.Component>(
           enableComponents_, enableComponents_converter_);
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
     public int getEnableComponentsCount() {
       return enableComponents_.size();
     }
+
     /**
      *
      *
@@ -1056,6 +1080,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
         int index) {
       return enableComponents_converter_.convert(enableComponents_.get(index));
     }
+
     /**
      *
      *
@@ -1082,6 +1107,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1133,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1160,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1181,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1199,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
     public java.util.List<java.lang.Integer> getEnableComponentsValueList() {
       return java.util.Collections.unmodifiableList(enableComponents_);
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
     public int getEnableComponentsValue(int index) {
       return enableComponents_.get(index);
     }
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1263,7 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

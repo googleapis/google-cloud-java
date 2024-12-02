@@ -35,6 +35,7 @@ public interface GenerateConnectManifestResponseOrBuilder
    * <code>repeated .google.cloud.gkehub.v1.ConnectAgentResource manifest = 1;</code>
    */
   java.util.List<com.google.cloud.gkehub.v1.ConnectAgentResource> getManifestList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface GenerateConnectManifestResponseOrBuilder
    * <code>repeated .google.cloud.gkehub.v1.ConnectAgentResource manifest = 1;</code>
    */
   com.google.cloud.gkehub.v1.ConnectAgentResource getManifest(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface GenerateConnectManifestResponseOrBuilder
    * <code>repeated .google.cloud.gkehub.v1.ConnectAgentResource manifest = 1;</code>
    */
   int getManifestCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface GenerateConnectManifestResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.v1.ConnectAgentResourceOrBuilder>
       getManifestOrBuilderList();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface CreateConversationDatasetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateConversationDatasetRequestOrBuilder
    * @return Whether the conversationDataset field is set.
    */
   boolean hasConversationDataset();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CreateConversationDatasetRequestOrBuilder
    * @return The conversationDataset.
    */
   com.google.cloud.dialogflow.v2.ConversationDataset getConversationDataset();
+
   /**
    *
    *

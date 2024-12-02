@@ -38,6 +38,7 @@ public interface HttpRouteRuleOrBuilder
    * @return Whether the customErrorResponsePolicy field is set.
    */
   boolean hasCustomErrorResponsePolicy();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface HttpRouteRuleOrBuilder
    * @return The customErrorResponsePolicy.
    */
   com.google.cloud.compute.v1.CustomErrorResponsePolicy getCustomErrorResponsePolicy();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface HttpRouteRuleOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface HttpRouteRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface HttpRouteRuleOrBuilder
    * @return Whether the headerAction field is set.
    */
   boolean hasHeaderAction();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface HttpRouteRuleOrBuilder
    * @return The headerAction.
    */
   com.google.cloud.compute.v1.HttpHeaderAction getHeaderAction();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface HttpRouteRuleOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 376200701;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpRouteRuleMatch> getMatchRulesList();
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface HttpRouteRuleOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 376200701;</code>
    */
   com.google.cloud.compute.v1.HttpRouteRuleMatch getMatchRules(int index);
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public interface HttpRouteRuleOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 376200701;</code>
    */
   int getMatchRulesCount();
+
   /**
    *
    *
@@ -179,6 +188,7 @@ public interface HttpRouteRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpRouteRuleMatchOrBuilder>
       getMatchRulesOrBuilderList();
+
   /**
    *
    *
@@ -202,6 +212,7 @@ public interface HttpRouteRuleOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
+
   /**
    *
    *
@@ -227,6 +238,7 @@ public interface HttpRouteRuleOrBuilder
    * @return Whether the routeAction field is set.
    */
   boolean hasRouteAction();
+
   /**
    *
    *
@@ -239,6 +251,7 @@ public interface HttpRouteRuleOrBuilder
    * @return The routeAction.
    */
   com.google.cloud.compute.v1.HttpRouteAction getRouteAction();
+
   /**
    *
    *
@@ -262,6 +275,7 @@ public interface HttpRouteRuleOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -274,6 +288,7 @@ public interface HttpRouteRuleOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -299,6 +314,7 @@ public interface HttpRouteRuleOrBuilder
    * @return Whether the urlRedirect field is set.
    */
   boolean hasUrlRedirect();
+
   /**
    *
    *
@@ -311,6 +327,7 @@ public interface HttpRouteRuleOrBuilder
    * @return The urlRedirect.
    */
   com.google.cloud.compute.v1.HttpRedirectAction getUrlRedirect();
+
   /**
    *
    *

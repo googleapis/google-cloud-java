@@ -33,6 +33,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ConversationLevelSilence)
     ConversationLevelSilenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversationLevelSilence.newBuilder() to construct.
   private ConversationLevelSilence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int SILENCE_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration silenceDuration_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
   public boolean hasSilenceDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
         ? com.google.protobuf.Duration.getDefaultInstance()
         : silenceDuration_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
 
   public static final int SILENCE_PERCENTAGE_FIELD_NUMBER = 2;
   private float silencePercentage_ = 0F;
+
   /**
    *
    *
@@ -306,6 +311,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -530,6 +536,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         silenceDurationBuilder_;
+
     /**
      *
      *
@@ -544,6 +551,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
     public boolean hasSilenceDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -564,6 +572,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
         return silenceDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -586,6 +595,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +615,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +678,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
       onChanged();
       return getSilenceDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -683,6 +697,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
             : silenceDuration_;
       }
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
     }
 
     private float silencePercentage_;
+
     /**
      *
      *
@@ -725,6 +741,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
     public float getSilencePercentage() {
       return silencePercentage_;
     }
+
     /**
      *
      *
@@ -744,6 +761,7 @@ public final class ConversationLevelSilence extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

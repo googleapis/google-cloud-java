@@ -35,6 +35,7 @@ public final class GenerateStatelessSuggestionResponse
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionResponse)
     GenerateStatelessSuggestionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateStatelessSuggestionResponse.newBuilder() to construct.
   private GenerateStatelessSuggestionResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class GenerateStatelessSuggestionResponse
   private int bitField0_;
   public static final int GENERATOR_SUGGESTION_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.GeneratorSuggestion generatorSuggestion_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class GenerateStatelessSuggestionResponse
   public boolean hasGeneratorSuggestion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class GenerateStatelessSuggestionResponse
         ? com.google.cloud.dialogflow.v2beta1.GeneratorSuggestion.getDefaultInstance()
         : generatorSuggestion_;
   }
+
   /**
    *
    *
@@ -288,6 +292,7 @@ public final class GenerateStatelessSuggestionResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -506,6 +511,7 @@ public final class GenerateStatelessSuggestionResponse
             com.google.cloud.dialogflow.v2beta1.GeneratorSuggestion.Builder,
             com.google.cloud.dialogflow.v2beta1.GeneratorSuggestionOrBuilder>
         generatorSuggestionBuilder_;
+
     /**
      *
      *
@@ -522,6 +528,7 @@ public final class GenerateStatelessSuggestionResponse
     public boolean hasGeneratorSuggestion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -544,6 +551,7 @@ public final class GenerateStatelessSuggestionResponse
         return generatorSuggestionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class GenerateStatelessSuggestionResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -591,6 +600,7 @@ public final class GenerateStatelessSuggestionResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +632,7 @@ public final class GenerateStatelessSuggestionResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class GenerateStatelessSuggestionResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class GenerateStatelessSuggestionResponse
       onChanged();
       return getGeneratorSuggestionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class GenerateStatelessSuggestionResponse
             : generatorSuggestion_;
       }
     }
+
     /**
      *
      *

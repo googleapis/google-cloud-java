@@ -37,6 +37,7 @@ public interface KeyUsageOrBuilder
    * @return Whether the baseKeyUsage field is set.
    */
   boolean hasBaseKeyUsage();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface KeyUsageOrBuilder
    * @return The baseKeyUsage.
    */
   com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions getBaseKeyUsage();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface KeyUsageOrBuilder
    * @return Whether the extendedKeyUsage field is set.
    */
   boolean hasExtendedKeyUsage();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface KeyUsageOrBuilder
    */
   com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions
       getExtendedKeyUsage();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface KeyUsageOrBuilder
    */
   java.util.List<com.google.cloud.security.privateca.v1beta1.ObjectId>
       getUnknownExtendedKeyUsagesList();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface KeyUsageOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1beta1.ObjectId getUnknownExtendedKeyUsages(int index);
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface KeyUsageOrBuilder
    * </code>
    */
   int getUnknownExtendedKeyUsagesCount();
+
   /**
    *
    *
@@ -160,6 +167,7 @@ public interface KeyUsageOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1beta1.ObjectIdOrBuilder>
       getUnknownExtendedKeyUsagesOrBuilderList();
+
   /**
    *
    *

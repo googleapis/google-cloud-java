@@ -33,6 +33,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchSubnetworkRequest)
     PatchSubnetworkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchSubnetworkRequest.newBuilder() to construct.
   private PatchSubnetworkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int DRAIN_TIMEOUT_SECONDS_FIELD_NUMBER = 357707098;
   private int drainTimeoutSeconds_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
   public boolean hasDrainTimeoutSeconds() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
 
   public static final int SUBNETWORK_RESOURCE_FIELD_NUMBER = 42233151;
   private com.google.cloud.compute.v1.Subnetwork subnetworkResource_;
+
   /**
    *
    *
@@ -346,6 +359,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
   public boolean hasSubnetworkResource() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -365,6 +379,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.compute.v1.Subnetwork.getDefaultInstance()
         : subnetworkResource_;
   }
+
   /**
    *
    *
@@ -605,6 +620,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -882,6 +898,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int drainTimeoutSeconds_;
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     public boolean hasDrainTimeoutSeconds() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -912,6 +930,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     public int getDrainTimeoutSeconds() {
       return drainTimeoutSeconds_;
     }
+
     /**
      *
      *
@@ -931,6 +950,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1064,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1141,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1137,6 +1165,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1185,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1212,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1196,6 +1227,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1218,6 +1250,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1273,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1295,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1313,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1338,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object subnetwork_ = "";
+
     /**
      *
      *
@@ -1324,6 +1361,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1346,6 +1384,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1367,6 +1406,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1424,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1454,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.Subnetwork.Builder,
             com.google.cloud.compute.v1.SubnetworkOrBuilder>
         subnetworkResourceBuilder_;
+
     /**
      *
      *
@@ -1429,6 +1471,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     public boolean hasSubnetworkResource() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1451,6 +1494,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         return subnetworkResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1519,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1497,6 +1542,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1526,6 +1572,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1547,6 +1594,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1611,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getSubnetworkResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1583,6 +1632,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
             : subnetworkResource_;
       }
     }
+
     /**
      *
      *

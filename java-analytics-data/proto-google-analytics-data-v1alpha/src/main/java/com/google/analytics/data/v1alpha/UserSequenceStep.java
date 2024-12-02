@@ -34,6 +34,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.UserSequenceStep)
     UserSequenceStepOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserSequenceStep.newBuilder() to construct.
   private UserSequenceStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int IS_DIRECTLY_FOLLOWED_BY_FIELD_NUMBER = 1;
   private boolean isDirectlyFollowedBy_ = false;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
 
   public static final int STEP_SCOPING_FIELD_NUMBER = 2;
   private int stepScoping_ = 0;
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
   public int getStepScopingValue() {
     return stepScoping_;
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
 
   public static final int SEGMENT_FILTER_EXPRESSION_FIELD_NUMBER = 3;
   private com.google.analytics.data.v1alpha.SegmentFilterExpression segmentFilterExpression_;
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
   public boolean hasSegmentFilterExpression() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
         ? com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance()
         : segmentFilterExpression_;
   }
+
   /**
    *
    *
@@ -387,6 +394,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -616,6 +624,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean isDirectlyFollowedBy_;
+
     /**
      *
      *
@@ -635,6 +644,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     public boolean getIsDirectlyFollowedBy() {
       return isDirectlyFollowedBy_;
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     }
 
     private int stepScoping_ = 0;
+
     /**
      *
      *
@@ -704,6 +716,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     public int getStepScopingValue() {
       return stepScoping_;
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +771,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
           ? com.google.analytics.data.v1alpha.UserCriteriaScoping.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -786,6 +801,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
             com.google.analytics.data.v1alpha.SegmentFilterExpression.Builder,
             com.google.analytics.data.v1alpha.SegmentFilterExpressionOrBuilder>
         segmentFilterExpressionBuilder_;
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     public boolean hasSegmentFilterExpression() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
         return segmentFilterExpressionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -884,6 +903,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +960,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +983,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSegmentFilterExpressionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1001,6 +1025,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
             : segmentFilterExpression_;
       }
     }
+
     /**
      *
      *

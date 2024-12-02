@@ -38,6 +38,7 @@ public interface PairwiseSummarizationQualityInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PairwiseSummarizationQualityInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1.PairwiseSummarizationQualitySpec getMetricSpec();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface PairwiseSummarizationQualityInputOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface PairwiseSummarizationQualityInputOrBuilder
    * @return The instance.
    */
   com.google.cloud.aiplatform.v1.PairwiseSummarizationQualityInstance getInstance();
+
   /**
    *
    *

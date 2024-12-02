@@ -34,6 +34,7 @@ public interface ListFeatureViewSyncsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FeatureViewSync feature_view_syncs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.FeatureViewSync> getFeatureViewSyncsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFeatureViewSyncsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FeatureViewSync feature_view_syncs = 1;</code>
    */
   com.google.cloud.aiplatform.v1.FeatureViewSync getFeatureViewSyncs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFeatureViewSyncsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FeatureViewSync feature_view_syncs = 1;</code>
    */
   int getFeatureViewSyncsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFeatureViewSyncsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.FeatureViewSyncOrBuilder>
       getFeatureViewSyncsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListFeatureViewSyncsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

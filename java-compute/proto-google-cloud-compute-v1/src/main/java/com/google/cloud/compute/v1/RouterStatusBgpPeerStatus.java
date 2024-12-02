@@ -32,6 +32,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterStatusBgpPeerStatus)
     RouterStatusBgpPeerStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouterStatusBgpPeerStatus.newBuilder() to construct.
   private RouterStatusBgpPeerStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,10 +116,13 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
+
     /** <code>DOWN = 2104482;</code> */
     public static final int DOWN_VALUE = 2104482;
+
     /** <code>UNKNOWN = 433141802;</code> */
     public static final int UNKNOWN_VALUE = 433141802;
+
     /** <code>UP = 2715;</code> */
     public static final int UP_VALUE = 2715;
 
@@ -274,6 +278,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * <code>UNDEFINED_STATUS_REASON = 0;</code>
      */
     public static final int UNDEFINED_STATUS_REASON_VALUE = 0;
+
     /**
      *
      *
@@ -284,6 +289,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * <code>IPV4_PEER_ON_IPV6_ONLY_CONNECTION = 435936662;</code>
      */
     public static final int IPV4_PEER_ON_IPV6_ONLY_CONNECTION_VALUE = 435936662;
+
     /**
      *
      *
@@ -294,6 +300,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * <code>IPV6_PEER_ON_IPV4_ONLY_CONNECTION = 436304082;</code>
      */
     public static final int IPV6_PEER_ON_IPV4_ONLY_CONNECTION_VALUE = 436304082;
+
     /**
      *
      *
@@ -304,6 +311,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * <code>MD5_AUTH_INTERNAL_PROBLEM = 140462259;</code>
      */
     public static final int MD5_AUTH_INTERNAL_PROBLEM_VALUE = 140462259;
+
     /** <code>STATUS_REASON_UNSPECIFIED = 394331913;</code> */
     public static final int STATUS_REASON_UNSPECIFIED_VALUE = 394331913;
 
@@ -401,6 +409,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Route> advertisedRoutes_;
+
   /**
    *
    *
@@ -414,6 +423,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.compute.v1.Route> getAdvertisedRoutesList() {
     return advertisedRoutes_;
   }
+
   /**
    *
    *
@@ -428,6 +438,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       getAdvertisedRoutesOrBuilderList() {
     return advertisedRoutes_;
   }
+
   /**
    *
    *
@@ -441,6 +452,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public int getAdvertisedRoutesCount() {
     return advertisedRoutes_.size();
   }
+
   /**
    *
    *
@@ -454,6 +466,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public com.google.cloud.compute.v1.Route getAdvertisedRoutes(int index) {
     return advertisedRoutes_.get(index);
   }
+
   /**
    *
    *
@@ -470,6 +483,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   public static final int BFD_STATUS_FIELD_NUMBER = 395631729;
   private com.google.cloud.compute.v1.BfdStatus bfdStatus_;
+
   /**
    * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
    *
@@ -479,6 +493,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasBfdStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
    *
@@ -490,6 +505,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         ? com.google.cloud.compute.v1.BfdStatus.getDefaultInstance()
         : bfdStatus_;
   }
+
   /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.BfdStatusOrBuilder getBfdStatusOrBuilder() {
@@ -500,6 +516,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   public static final int ENABLE_IPV4_FIELD_NUMBER = 181467937;
   private boolean enableIpv4_ = false;
+
   /**
    *
    *
@@ -515,6 +532,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasEnableIpv4() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -533,6 +551,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   public static final int ENABLE_IPV6_FIELD_NUMBER = 181467939;
   private boolean enableIpv6_ = false;
+
   /**
    *
    *
@@ -548,6 +567,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasEnableIpv6() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -568,6 +588,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -583,6 +604,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasIpAddress() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -606,6 +628,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -634,6 +657,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv4NexthopAddress_ = "";
+
   /**
    *
    *
@@ -649,6 +673,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasIpv4NexthopAddress() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -672,6 +697,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -700,6 +726,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6NexthopAddress_ = "";
+
   /**
    *
    *
@@ -715,6 +742,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasIpv6NexthopAddress() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -738,6 +766,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -766,6 +795,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object linkedVpnTunnel_ = "";
+
   /**
    *
    *
@@ -781,6 +811,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasLinkedVpnTunnel() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -804,6 +835,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -830,6 +862,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   public static final int MD5_AUTH_ENABLED_FIELD_NUMBER = 451152075;
   private boolean md5AuthEnabled_ = false;
+
   /**
    *
    *
@@ -845,6 +878,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasMd5AuthEnabled() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -865,6 +899,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -880,6 +915,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasName() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -903,6 +939,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -929,6 +966,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   public static final int NUM_LEARNED_ROUTES_FIELD_NUMBER = 135457535;
   private int numLearnedRoutes_ = 0;
+
   /**
    *
    *
@@ -944,6 +982,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasNumLearnedRoutes() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -964,6 +1003,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peerIpAddress_ = "";
+
   /**
    *
    *
@@ -979,6 +1019,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasPeerIpAddress() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -1002,6 +1043,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1030,6 +1072,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peerIpv4NexthopAddress_ = "";
+
   /**
    *
    *
@@ -1045,6 +1088,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasPeerIpv4NexthopAddress() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -1068,6 +1112,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1096,6 +1141,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peerIpv6NexthopAddress_ = "";
+
   /**
    *
    *
@@ -1111,6 +1157,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasPeerIpv6NexthopAddress() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -1134,6 +1181,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1162,6 +1210,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object routerApplianceInstance_ = "";
+
   /**
    *
    *
@@ -1177,6 +1226,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasRouterApplianceInstance() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -1200,6 +1250,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1228,6 +1279,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -1243,6 +1295,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasState() {
     return ((bitField0_ & 0x00004000) != 0);
   }
+
   /**
    *
    *
@@ -1266,6 +1319,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1294,6 +1348,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -1310,6 +1365,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasStatus() {
     return ((bitField0_ & 0x00008000) != 0);
   }
+
   /**
    *
    *
@@ -1334,6 +1390,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1363,6 +1420,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statusReason_ = "";
+
   /**
    *
    *
@@ -1379,6 +1437,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasStatusReason() {
     return ((bitField0_ & 0x00010000) != 0);
   }
+
   /**
    *
    *
@@ -1403,6 +1462,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1432,6 +1492,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uptime_ = "";
+
   /**
    *
    *
@@ -1447,6 +1508,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasUptime() {
     return ((bitField0_ & 0x00020000) != 0);
   }
+
   /**
    *
    *
@@ -1470,6 +1532,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -1498,6 +1561,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uptimeSeconds_ = "";
+
   /**
    *
    *
@@ -1513,6 +1577,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
   public boolean hasUptimeSeconds() {
     return ((bitField0_ & 0x00040000) != 0);
   }
+
   /**
    *
    *
@@ -1536,6 +1601,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -2001,6 +2067,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2572,6 +2639,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return advertisedRoutesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2588,6 +2656,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return advertisedRoutesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2604,6 +2673,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return advertisedRoutesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2626,6 +2696,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2646,6 +2717,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2668,6 +2740,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2690,6 +2763,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2709,6 +2783,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2729,6 +2804,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2749,6 +2825,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2768,6 +2845,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2787,6 +2865,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2799,6 +2878,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.Route.Builder getAdvertisedRoutesBuilder(int index) {
       return getAdvertisedRoutesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2815,6 +2895,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return advertisedRoutesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2832,6 +2913,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(advertisedRoutes_);
       }
     }
+
     /**
      *
      *
@@ -2845,6 +2927,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return getAdvertisedRoutesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Route.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2858,6 +2941,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return getAdvertisedRoutesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Route.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2898,6 +2982,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.BfdStatus.Builder,
             com.google.cloud.compute.v1.BfdStatusOrBuilder>
         bfdStatusBuilder_;
+
     /**
      * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
      *
@@ -2906,6 +2991,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasBfdStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
      *
@@ -2920,6 +3006,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return bfdStatusBuilder_.getMessage();
       }
     }
+
     /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
     public Builder setBfdStatus(com.google.cloud.compute.v1.BfdStatus value) {
       if (bfdStatusBuilder_ == null) {
@@ -2934,6 +3021,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
     public Builder setBfdStatus(com.google.cloud.compute.v1.BfdStatus.Builder builderForValue) {
       if (bfdStatusBuilder_ == null) {
@@ -2945,6 +3033,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
     public Builder mergeBfdStatus(com.google.cloud.compute.v1.BfdStatus value) {
       if (bfdStatusBuilder_ == null) {
@@ -2964,6 +3053,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
     public Builder clearBfdStatus() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -2975,12 +3065,14 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
     public com.google.cloud.compute.v1.BfdStatus.Builder getBfdStatusBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getBfdStatusFieldBuilder().getBuilder();
     }
+
     /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
     public com.google.cloud.compute.v1.BfdStatusOrBuilder getBfdStatusOrBuilder() {
       if (bfdStatusBuilder_ != null) {
@@ -2991,6 +3083,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
             : bfdStatus_;
       }
     }
+
     /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BfdStatus,
@@ -3010,6 +3103,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private boolean enableIpv4_;
+
     /**
      *
      *
@@ -3025,6 +3119,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasEnableIpv4() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3040,6 +3135,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean getEnableIpv4() {
       return enableIpv4_;
     }
+
     /**
      *
      *
@@ -3059,6 +3155,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3078,6 +3175,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private boolean enableIpv6_;
+
     /**
      *
      *
@@ -3093,6 +3191,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasEnableIpv6() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3108,6 +3207,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean getEnableIpv6() {
       return enableIpv6_;
     }
+
     /**
      *
      *
@@ -3127,6 +3227,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3146,6 +3247,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -3160,6 +3262,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasIpAddress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3182,6 +3285,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3204,6 +3308,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3225,6 +3330,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3242,6 +3348,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3266,6 +3373,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object ipv4NexthopAddress_ = "";
+
     /**
      *
      *
@@ -3280,6 +3388,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasIpv4NexthopAddress() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3302,6 +3411,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3324,6 +3434,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3345,6 +3456,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3362,6 +3474,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3386,6 +3499,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object ipv6NexthopAddress_ = "";
+
     /**
      *
      *
@@ -3400,6 +3514,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasIpv6NexthopAddress() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3422,6 +3537,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3444,6 +3560,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3465,6 +3582,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3482,6 +3600,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3506,6 +3625,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object linkedVpnTunnel_ = "";
+
     /**
      *
      *
@@ -3520,6 +3640,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasLinkedVpnTunnel() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3542,6 +3663,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3564,6 +3686,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3585,6 +3708,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3602,6 +3726,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3626,6 +3751,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private boolean md5AuthEnabled_;
+
     /**
      *
      *
@@ -3641,6 +3767,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasMd5AuthEnabled() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3656,6 +3783,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean getMd5AuthEnabled() {
       return md5AuthEnabled_;
     }
+
     /**
      *
      *
@@ -3675,6 +3803,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3694,6 +3823,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3708,6 +3838,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasName() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3730,6 +3861,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3752,6 +3884,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3773,6 +3906,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3790,6 +3924,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3814,6 +3949,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private int numLearnedRoutes_;
+
     /**
      *
      *
@@ -3829,6 +3965,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasNumLearnedRoutes() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3844,6 +3981,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public int getNumLearnedRoutes() {
       return numLearnedRoutes_;
     }
+
     /**
      *
      *
@@ -3863,6 +4001,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3882,6 +4021,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object peerIpAddress_ = "";
+
     /**
      *
      *
@@ -3896,6 +4036,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasPeerIpAddress() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3918,6 +4059,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3940,6 +4082,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3961,6 +4104,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3978,6 +4122,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4002,6 +4147,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object peerIpv4NexthopAddress_ = "";
+
     /**
      *
      *
@@ -4016,6 +4162,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasPeerIpv4NexthopAddress() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4038,6 +4185,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4060,6 +4208,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4081,6 +4230,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4098,6 +4248,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4122,6 +4273,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object peerIpv6NexthopAddress_ = "";
+
     /**
      *
      *
@@ -4136,6 +4288,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasPeerIpv6NexthopAddress() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -4158,6 +4311,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4180,6 +4334,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4201,6 +4356,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4218,6 +4374,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4242,6 +4399,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object routerApplianceInstance_ = "";
+
     /**
      *
      *
@@ -4256,6 +4414,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasRouterApplianceInstance() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -4278,6 +4437,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4300,6 +4460,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4321,6 +4482,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4338,6 +4500,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4362,6 +4525,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -4376,6 +4540,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasState() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -4398,6 +4563,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4420,6 +4586,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4441,6 +4608,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4458,6 +4626,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4482,6 +4651,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -4497,6 +4667,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasStatus() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -4520,6 +4691,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4543,6 +4715,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4565,6 +4738,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4583,6 +4757,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4608,6 +4783,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object statusReason_ = "";
+
     /**
      *
      *
@@ -4623,6 +4799,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasStatusReason() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -4646,6 +4823,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4669,6 +4847,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4691,6 +4870,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4709,6 +4889,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4734,6 +4915,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object uptime_ = "";
+
     /**
      *
      *
@@ -4748,6 +4930,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasUptime() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -4770,6 +4953,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4792,6 +4976,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4813,6 +4998,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4830,6 +5016,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4854,6 +5041,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object uptimeSeconds_ = "";
+
     /**
      *
      *
@@ -4868,6 +5056,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     public boolean hasUptimeSeconds() {
       return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -4890,6 +5079,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4912,6 +5102,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4933,6 +5124,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4950,6 +5142,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

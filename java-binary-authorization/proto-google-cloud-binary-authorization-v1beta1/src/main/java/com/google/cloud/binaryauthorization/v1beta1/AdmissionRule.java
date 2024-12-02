@@ -39,6 +39,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.AdmissionRule)
     AdmissionRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdmissionRule.newBuilder() to construct.
   private AdmissionRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * <code>EVALUATION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int EVALUATION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * <code>ALWAYS_ALLOW = 1;</code>
      */
     public static final int ALWAYS_ALLOW_VALUE = 1;
+
     /**
      *
      *
@@ -150,6 +153,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * <code>REQUIRE_ATTESTATION = 2;</code>
      */
     public static final int REQUIRE_ATTESTATION_VALUE = 2;
+
     /**
      *
      *
@@ -303,6 +307,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * <code>ENFORCEMENT_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int ENFORCEMENT_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -313,6 +318,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * <code>ENFORCED_BLOCK_AND_AUDIT_LOG = 1;</code>
      */
     public static final int ENFORCED_BLOCK_AND_AUDIT_LOG_VALUE = 1;
+
     /**
      *
      *
@@ -414,6 +420,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVALUATION_MODE_FIELD_NUMBER = 1;
   private int evaluationMode_ = 0;
+
   /**
    *
    *
@@ -431,6 +438,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   public int getEvaluationModeValue() {
     return evaluationMode_;
   }
+
   /**
    *
    *
@@ -460,6 +468,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList requireAttestationsBy_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -482,6 +491,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRequireAttestationsByList() {
     return requireAttestationsBy_;
   }
+
   /**
    *
    *
@@ -504,6 +514,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   public int getRequireAttestationsByCount() {
     return requireAttestationsBy_.size();
   }
+
   /**
    *
    *
@@ -527,6 +538,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRequireAttestationsBy(int index) {
     return requireAttestationsBy_.get(index);
   }
+
   /**
    *
    *
@@ -553,6 +565,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENFORCEMENT_MODE_FIELD_NUMBER = 3;
   private int enforcementMode_ = 0;
+
   /**
    *
    *
@@ -570,6 +583,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   public int getEnforcementModeValue() {
     return enforcementMode_;
   }
+
   /**
    *
    *
@@ -792,6 +806,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1015,6 +1030,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int evaluationMode_ = 0;
+
     /**
      *
      *
@@ -1032,6 +1048,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     public int getEvaluationModeValue() {
       return evaluationMode_;
     }
+
     /**
      *
      *
@@ -1052,6 +1069,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1093,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1099,6 +1118,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1149,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1152,6 +1173,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       requireAttestationsBy_.makeImmutable();
       return requireAttestationsBy_;
     }
+
     /**
      *
      *
@@ -1174,6 +1196,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     public int getRequireAttestationsByCount() {
       return requireAttestationsBy_.size();
     }
+
     /**
      *
      *
@@ -1197,6 +1220,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRequireAttestationsBy(int index) {
       return requireAttestationsBy_.get(index);
     }
+
     /**
      *
      *
@@ -1220,6 +1244,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRequireAttestationsByBytes(int index) {
       return requireAttestationsBy_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1251,6 +1276,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1307,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1335,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1362,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1396,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int enforcementMode_ = 0;
+
     /**
      *
      *
@@ -1384,6 +1414,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     public int getEnforcementModeValue() {
       return enforcementMode_;
     }
+
     /**
      *
      *
@@ -1404,6 +1435,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1427,6 +1459,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1451,6 +1484,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

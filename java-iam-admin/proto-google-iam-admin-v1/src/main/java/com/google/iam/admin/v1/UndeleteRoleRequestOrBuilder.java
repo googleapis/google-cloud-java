@@ -58,6 +58,7 @@ public interface UndeleteRoleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

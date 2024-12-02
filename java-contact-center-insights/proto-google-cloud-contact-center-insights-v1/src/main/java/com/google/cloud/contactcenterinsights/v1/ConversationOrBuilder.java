@@ -37,6 +37,7 @@ public interface ConversationOrBuilder
    * @return Whether the callMetadata field is set.
    */
   boolean hasCallMetadata();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ConversationOrBuilder
    * @return The callMetadata.
    */
   com.google.cloud.contactcenterinsights.v1.Conversation.CallMetadata getCallMetadata();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ConversationOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ConversationOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ConversationOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface ConversationOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface ConversationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface ConversationOrBuilder
    * @return Whether the dataSource field is set.
    */
   boolean hasDataSource();
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public interface ConversationOrBuilder
    * @return The dataSource.
    */
   com.google.cloud.contactcenterinsights.v1.ConversationDataSource getDataSource();
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public interface ConversationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface ConversationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public interface ConversationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -268,6 +280,7 @@ public interface ConversationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public interface ConversationOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -304,6 +318,7 @@ public interface ConversationOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -327,6 +342,7 @@ public interface ConversationOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -353,6 +369,7 @@ public interface ConversationOrBuilder
    * @return The agentId.
    */
   java.lang.String getAgentId();
+
   /**
    *
    *
@@ -378,6 +395,7 @@ public interface ConversationOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -389,9 +407,11 @@ public interface ConversationOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -403,6 +423,7 @@ public interface ConversationOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -418,6 +439,7 @@ public interface ConversationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -444,6 +466,7 @@ public interface ConversationOrBuilder
    * @return Whether the qualityMetadata field is set.
    */
   boolean hasQualityMetadata();
+
   /**
    *
    *
@@ -458,6 +481,7 @@ public interface ConversationOrBuilder
    * @return The qualityMetadata.
    */
   com.google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata getQualityMetadata();
+
   /**
    *
    *
@@ -486,6 +510,7 @@ public interface ConversationOrBuilder
    * @return The metadataJson.
    */
   java.lang.String getMetadataJson();
+
   /**
    *
    *
@@ -515,6 +540,7 @@ public interface ConversationOrBuilder
    * @return Whether the transcript field is set.
    */
   boolean hasTranscript();
+
   /**
    *
    *
@@ -529,6 +555,7 @@ public interface ConversationOrBuilder
    * @return The transcript.
    */
   com.google.cloud.contactcenterinsights.v1.Conversation.Transcript getTranscript();
+
   /**
    *
    *
@@ -558,6 +585,7 @@ public interface ConversationOrBuilder
    * @return The enum numeric value on the wire for medium.
    */
   int getMediumValue();
+
   /**
    *
    *
@@ -587,6 +615,7 @@ public interface ConversationOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -600,6 +629,7 @@ public interface ConversationOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -639,6 +669,7 @@ public interface ConversationOrBuilder
    * @return Whether the latestAnalysis field is set.
    */
   boolean hasLatestAnalysis();
+
   /**
    *
    *
@@ -653,6 +684,7 @@ public interface ConversationOrBuilder
    * @return The latestAnalysis.
    */
   com.google.cloud.contactcenterinsights.v1.Analysis getLatestAnalysis();
+
   /**
    *
    *
@@ -680,6 +712,7 @@ public interface ConversationOrBuilder
    * @return Whether the latestSummary field is set.
    */
   boolean hasLatestSummary();
+
   /**
    *
    *
@@ -695,6 +728,7 @@ public interface ConversationOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
       getLatestSummary();
+
   /**
    *
    *
@@ -723,6 +757,7 @@ public interface ConversationOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation>
       getRuntimeAnnotationsList();
+
   /**
    *
    *
@@ -736,6 +771,7 @@ public interface ConversationOrBuilder
    * </code>
    */
   com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation getRuntimeAnnotations(int index);
+
   /**
    *
    *
@@ -749,6 +785,7 @@ public interface ConversationOrBuilder
    * </code>
    */
   int getRuntimeAnnotationsCount();
+
   /**
    *
    *
@@ -763,6 +800,7 @@ public interface ConversationOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.RuntimeAnnotationOrBuilder>
       getRuntimeAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -792,6 +830,7 @@ public interface ConversationOrBuilder
    * </code>
    */
   int getDialogflowIntentsCount();
+
   /**
    *
    *
@@ -806,10 +845,12 @@ public interface ConversationOrBuilder
    * </code>
    */
   boolean containsDialogflowIntents(java.lang.String key);
+
   /** Use {@link #getDialogflowIntentsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
       getDialogflowIntents();
+
   /**
    *
    *
@@ -825,6 +866,7 @@ public interface ConversationOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
       getDialogflowIntentsMap();
+
   /**
    *
    *
@@ -843,6 +885,7 @@ public interface ConversationOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.contactcenterinsights.v1.DialogflowIntent defaultValue);
+
   /**
    *
    *
@@ -871,6 +914,7 @@ public interface ConversationOrBuilder
    * @return The obfuscatedUserId.
    */
   java.lang.String getObfuscatedUserId();
+
   /**
    *
    *

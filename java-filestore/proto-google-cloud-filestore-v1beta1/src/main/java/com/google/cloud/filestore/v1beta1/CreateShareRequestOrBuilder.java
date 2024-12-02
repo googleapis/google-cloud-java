@@ -39,6 +39,7 @@ public interface CreateShareRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateShareRequestOrBuilder
    * @return The shareId.
    */
   java.lang.String getShareId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateShareRequestOrBuilder
    * @return Whether the share field is set.
    */
   boolean hasShare();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateShareRequestOrBuilder
    * @return The share.
    */
   com.google.cloud.filestore.v1beta1.Share getShare();
+
   /**
    *
    *

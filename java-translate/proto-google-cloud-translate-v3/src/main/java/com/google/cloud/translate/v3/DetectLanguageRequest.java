@@ -33,6 +33,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.DetectLanguageRequest)
     DetectLanguageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DetectLanguageRequest.newBuilder() to construct.
   private DetectLanguageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,6 +94,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -127,6 +129,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -162,6 +165,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -202,6 +206,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -233,6 +238,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -266,6 +272,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -280,6 +287,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
   public boolean hasContent() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -307,6 +315,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -339,6 +348,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -363,6 +373,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -414,6 +425,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -438,12 +450,14 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -465,6 +479,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -493,6 +508,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -738,6 +754,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1035,6 +1052,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1069,6 +1087,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1103,6 +1122,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1156,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1186,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1223,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -1231,6 +1254,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1285,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1315,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1341,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1388,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     public boolean hasContent() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -1389,6 +1417,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1417,6 +1446,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1468,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1488,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1481,6 +1513,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -1504,6 +1537,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1527,6 +1561,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1584,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1567,6 +1603,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1653,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1640,12 +1678,14 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1667,6 +1707,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1695,6 +1736,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1729,6 +1771,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1753,12 +1796,14 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1787,6 +1832,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *

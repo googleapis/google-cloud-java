@@ -36,6 +36,7 @@ public interface InstanceConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface InstanceConfigOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface InstanceConfigOrBuilder
    * @return The instanceType.
    */
   java.lang.String getInstanceType();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface InstanceConfigOrBuilder
    * @return The osImage.
    */
   java.lang.String getOsImage();
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public interface InstanceConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasClientNetwork();
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface InstanceConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.baremetalsolution.v2.InstanceConfig.NetworkAddress getClientNetwork();
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public interface InstanceConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPrivateNetwork();
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public interface InstanceConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.baremetalsolution.v2.InstanceConfig.NetworkAddress getPrivateNetwork();
+
   /**
    *
    *
@@ -261,6 +269,7 @@ public interface InstanceConfigOrBuilder
    * @return The userNote.
    */
   java.lang.String getUserNote();
+
   /**
    *
    *
@@ -301,6 +310,7 @@ public interface InstanceConfigOrBuilder
    * @return The enum numeric value on the wire for networkConfig.
    */
   int getNetworkConfigValue();
+
   /**
    *
    *
@@ -328,6 +338,7 @@ public interface InstanceConfigOrBuilder
    * @return The networkTemplate.
    */
   java.lang.String getNetworkTemplate();
+
   /**
    *
    *
@@ -355,6 +366,7 @@ public interface InstanceConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.LogicalInterface> getLogicalInterfacesList();
+
   /**
    *
    *
@@ -368,6 +380,7 @@ public interface InstanceConfigOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.LogicalInterface getLogicalInterfaces(int index);
+
   /**
    *
    *
@@ -381,6 +394,7 @@ public interface InstanceConfigOrBuilder
    * </code>
    */
   int getLogicalInterfacesCount();
+
   /**
    *
    *
@@ -395,6 +409,7 @@ public interface InstanceConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.LogicalInterfaceOrBuilder>
       getLogicalInterfacesOrBuilderList();
+
   /**
    *
    *
@@ -422,6 +437,7 @@ public interface InstanceConfigOrBuilder
    * @return A list containing the sshKeyNames.
    */
   java.util.List<java.lang.String> getSshKeyNamesList();
+
   /**
    *
    *
@@ -434,6 +450,7 @@ public interface InstanceConfigOrBuilder
    * @return The count of sshKeyNames.
    */
   int getSshKeyNamesCount();
+
   /**
    *
    *
@@ -447,6 +464,7 @@ public interface InstanceConfigOrBuilder
    * @return The sshKeyNames at the given index.
    */
   java.lang.String getSshKeyNames(int index);
+
   /**
    *
    *

@@ -26,13 +26,17 @@ public interface ConfusionMatrixOrBuilder
 
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
   java.util.List<com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row> getRowList();
+
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
   com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row getRow(int index);
+
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
   int getRowCount();
+
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.RowOrBuilder>
       getRowOrBuilderList();
+
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
   com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.RowOrBuilder getRowOrBuilder(int index);
 }

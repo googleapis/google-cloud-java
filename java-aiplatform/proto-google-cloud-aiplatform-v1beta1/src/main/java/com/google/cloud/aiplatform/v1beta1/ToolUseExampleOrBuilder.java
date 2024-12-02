@@ -38,6 +38,7 @@ public interface ToolUseExampleOrBuilder
    * @return Whether the extensionOperation field is set.
    */
   boolean hasExtensionOperation();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ToolUseExampleOrBuilder
    * @return The extensionOperation.
    */
   com.google.cloud.aiplatform.v1beta1.ToolUseExample.ExtensionOperation getExtensionOperation();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ToolUseExampleOrBuilder
    * @return Whether the functionName field is set.
    */
   boolean hasFunctionName();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface ToolUseExampleOrBuilder
    * @return The functionName.
    */
   java.lang.String getFunctionName();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ToolUseExampleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface ToolUseExampleOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface ToolUseExampleOrBuilder
    * @return Whether the requestParams field is set.
    */
   boolean hasRequestParams();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface ToolUseExampleOrBuilder
    * @return The requestParams.
    */
   com.google.protobuf.Struct getRequestParams();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface ToolUseExampleOrBuilder
    * @return Whether the responseParams field is set.
    */
   boolean hasResponseParams();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface ToolUseExampleOrBuilder
    * @return The responseParams.
    */
   com.google.protobuf.Struct getResponseParams();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface ToolUseExampleOrBuilder
    * @return The responseSummary.
    */
   java.lang.String getResponseSummary();
+
   /**
    *
    *

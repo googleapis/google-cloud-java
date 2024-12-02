@@ -39,6 +39,7 @@ public interface GetCompletionConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

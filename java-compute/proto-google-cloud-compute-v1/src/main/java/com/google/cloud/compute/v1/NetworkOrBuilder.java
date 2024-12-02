@@ -36,6 +36,7 @@ public interface NetworkOrBuilder
    * @return Whether the iPv4Range field is set.
    */
   boolean hasIPv4Range();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkOrBuilder
    * @return The iPv4Range.
    */
   java.lang.String getIPv4Range();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NetworkOrBuilder
    * @return Whether the autoCreateSubnetworks field is set.
    */
   boolean hasAutoCreateSubnetworks();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface NetworkOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface NetworkOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface NetworkOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface NetworkOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface NetworkOrBuilder
    * @return Whether the enableUlaInternalIpv6 field is set.
    */
   boolean hasEnableUlaInternalIpv6();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface NetworkOrBuilder
    * @return Whether the firewallPolicy field is set.
    */
   boolean hasFirewallPolicy();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public interface NetworkOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public interface NetworkOrBuilder
    * @return Whether the gatewayIPv4 field is set.
    */
   boolean hasGatewayIPv4();
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public interface NetworkOrBuilder
    * @return The gatewayIPv4.
    */
   java.lang.String getGatewayIPv4();
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public interface NetworkOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -296,6 +309,7 @@ public interface NetworkOrBuilder
    * @return Whether the internalIpv6Range field is set.
    */
   boolean hasInternalIpv6Range();
+
   /**
    *
    *
@@ -308,6 +322,7 @@ public interface NetworkOrBuilder
    * @return The internalIpv6Range.
    */
   java.lang.String getInternalIpv6Range();
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public interface NetworkOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -345,6 +361,7 @@ public interface NetworkOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -370,6 +387,7 @@ public interface NetworkOrBuilder
    * @return Whether the mtu field is set.
    */
   boolean hasMtu();
+
   /**
    *
    *
@@ -395,6 +413,7 @@ public interface NetworkOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -407,6 +426,7 @@ public interface NetworkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -433,6 +453,7 @@ public interface NetworkOrBuilder
    * @return Whether the networkFirewallPolicyEnforcementOrder field is set.
    */
   boolean hasNetworkFirewallPolicyEnforcementOrder();
+
   /**
    *
    *
@@ -446,6 +467,7 @@ public interface NetworkOrBuilder
    * @return The networkFirewallPolicyEnforcementOrder.
    */
   java.lang.String getNetworkFirewallPolicyEnforcementOrder();
+
   /**
    *
    *
@@ -470,6 +492,7 @@ public interface NetworkOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkPeering peerings = 69883187;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NetworkPeering> getPeeringsList();
+
   /**
    *
    *
@@ -480,6 +503,7 @@ public interface NetworkOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkPeering peerings = 69883187;</code>
    */
   com.google.cloud.compute.v1.NetworkPeering getPeerings(int index);
+
   /**
    *
    *
@@ -490,6 +514,7 @@ public interface NetworkOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkPeering peerings = 69883187;</code>
    */
   int getPeeringsCount();
+
   /**
    *
    *
@@ -501,6 +526,7 @@ public interface NetworkOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkPeeringOrBuilder>
       getPeeringsOrBuilderList();
+
   /**
    *
    *
@@ -524,6 +550,7 @@ public interface NetworkOrBuilder
    * @return Whether the routingConfig field is set.
    */
   boolean hasRoutingConfig();
+
   /**
    *
    *
@@ -536,6 +563,7 @@ public interface NetworkOrBuilder
    * @return The routingConfig.
    */
   com.google.cloud.compute.v1.NetworkRoutingConfig getRoutingConfig();
+
   /**
    *
    *
@@ -559,6 +587,7 @@ public interface NetworkOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -571,6 +600,7 @@ public interface NetworkOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -596,6 +626,7 @@ public interface NetworkOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
+
   /**
    *
    *
@@ -608,6 +639,7 @@ public interface NetworkOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
+
   /**
    *
    *
@@ -633,6 +665,7 @@ public interface NetworkOrBuilder
    * @return A list containing the subnetworks.
    */
   java.util.List<java.lang.String> getSubnetworksList();
+
   /**
    *
    *
@@ -645,6 +678,7 @@ public interface NetworkOrBuilder
    * @return The count of subnetworks.
    */
   int getSubnetworksCount();
+
   /**
    *
    *
@@ -658,6 +692,7 @@ public interface NetworkOrBuilder
    * @return The subnetworks at the given index.
    */
   java.lang.String getSubnetworks(int index);
+
   /**
    *
    *

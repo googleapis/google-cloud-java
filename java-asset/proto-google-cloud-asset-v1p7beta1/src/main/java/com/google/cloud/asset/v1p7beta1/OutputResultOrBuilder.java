@@ -36,6 +36,7 @@ public interface OutputResultOrBuilder
    * @return Whether the gcsResult field is set.
    */
   boolean hasGcsResult();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OutputResultOrBuilder
    * @return The gcsResult.
    */
   com.google.cloud.asset.v1p7beta1.GcsOutputResult getGcsResult();
+
   /**
    *
    *

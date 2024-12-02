@@ -38,6 +38,7 @@ public interface CreateServiceConfigRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateServiceConfigRequestOrBuilder
    * @return Whether the serviceConfig field is set.
    */
   boolean hasServiceConfig();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface CreateServiceConfigRequestOrBuilder
    * @return The serviceConfig.
    */
   com.google.api.Service getServiceConfig();
+
   /**
    *
    *

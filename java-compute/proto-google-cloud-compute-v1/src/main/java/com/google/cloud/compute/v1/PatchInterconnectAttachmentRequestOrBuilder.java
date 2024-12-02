@@ -37,6 +37,7 @@ public interface PatchInterconnectAttachmentRequestOrBuilder
    * @return The interconnectAttachment.
    */
   java.lang.String getInterconnectAttachment();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PatchInterconnectAttachmentRequestOrBuilder
    * @return Whether the interconnectAttachmentResource field is set.
    */
   boolean hasInterconnectAttachmentResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface PatchInterconnectAttachmentRequestOrBuilder
    * @return The interconnectAttachmentResource.
    */
   com.google.cloud.compute.v1.InterconnectAttachment getInterconnectAttachmentResource();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface PatchInterconnectAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface PatchInterconnectAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface PatchInterconnectAttachmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface PatchInterconnectAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

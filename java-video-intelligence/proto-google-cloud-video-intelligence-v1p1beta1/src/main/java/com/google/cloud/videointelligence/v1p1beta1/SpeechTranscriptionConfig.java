@@ -33,6 +33,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig)
     SpeechTranscriptionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeechTranscriptionConfig.newBuilder() to construct.
   private SpeechTranscriptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
 
   public static final int MAX_ALTERNATIVES_FIELD_NUMBER = 2;
   private int maxAlternatives_ = 0;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
 
   public static final int FILTER_PROFANITY_FIELD_NUMBER = 3;
   private boolean filterProfanity_ = false;
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>
       speechContexts_;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       getSpeechContextsList() {
     return speechContexts_;
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       getSpeechContextsOrBuilderList() {
     return speechContexts_;
   }
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   public int getSpeechContextsCount() {
     return speechContexts_.size();
   }
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   public com.google.cloud.videointelligence.v1p1beta1.SpeechContext getSpeechContexts(int index) {
     return speechContexts_.get(index);
   }
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
 
   public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 5;
   private boolean enableAutomaticPunctuation_ = false;
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList audioTracks_ = emptyIntList();
+
   /**
    *
    *
@@ -295,6 +307,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   public java.util.List<java.lang.Integer> getAudioTracksList() {
     return audioTracks_;
   }
+
   /**
    *
    *
@@ -310,6 +323,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   public int getAudioTracksCount() {
     return audioTracks_.size();
   }
+
   /**
    *
    *
@@ -554,6 +568,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -881,6 +896,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -907,6 +923,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -933,6 +950,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -958,6 +976,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +998,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1027,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     }
 
     private int maxAlternatives_;
+
     /**
      *
      *
@@ -1026,6 +1047,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public int getMaxAlternatives() {
       return maxAlternatives_;
     }
+
     /**
      *
      *
@@ -1049,6 +1071,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1095,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     }
 
     private boolean filterProfanity_;
+
     /**
      *
      *
@@ -1090,6 +1114,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public boolean getFilterProfanity() {
       return filterProfanity_;
     }
+
     /**
      *
      *
@@ -1112,6 +1137,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1196,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         return speechContextsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1215,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         return speechContextsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1206,6 +1234,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         return speechContextsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1231,6 +1260,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1284,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1310,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1336,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1359,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1383,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1407,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1429,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1451,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1429,6 +1467,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         getSpeechContextsBuilder(int index) {
       return getSpeechContextsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1448,6 +1487,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         return speechContextsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1468,6 +1508,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(speechContexts_);
       }
     }
+
     /**
      *
      *
@@ -1485,6 +1526,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
           .addBuilder(
               com.google.cloud.videointelligence.v1p1beta1.SpeechContext.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1503,6 +1545,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
               index,
               com.google.cloud.videointelligence.v1p1beta1.SpeechContext.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1540,6 +1583,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     }
 
     private boolean enableAutomaticPunctuation_;
+
     /**
      *
      *
@@ -1560,6 +1604,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public boolean getEnableAutomaticPunctuation() {
       return enableAutomaticPunctuation_;
     }
+
     /**
      *
      *
@@ -1584,6 +1629,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1615,6 +1661,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1631,6 +1678,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       audioTracks_.makeImmutable();
       return audioTracks_;
     }
+
     /**
      *
      *
@@ -1646,6 +1694,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public int getAudioTracksCount() {
       return audioTracks_.size();
     }
+
     /**
      *
      *
@@ -1662,6 +1711,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public int getAudioTracks(int index) {
       return audioTracks_.getInt(index);
     }
+
     /**
      *
      *
@@ -1684,6 +1734,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1705,6 +1756,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1777,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

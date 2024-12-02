@@ -36,6 +36,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the diskCount field is set.
    */
   boolean hasDiskCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the lastResizeTimestamp field is set.
    */
   boolean hasLastResizeTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return The lastResizeTimestamp.
    */
   java.lang.String getLastResizeTimestamp();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the maxTotalProvisionedDiskCapacityGb field is set.
    */
   boolean hasMaxTotalProvisionedDiskCapacityGb();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the poolUsedCapacityBytes field is set.
    */
   boolean hasPoolUsedCapacityBytes();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the poolUsedIops field is set.
    */
   boolean hasPoolUsedIops();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the poolUsedThroughput field is set.
    */
   boolean hasPoolUsedThroughput();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the poolUserWrittenBytes field is set.
    */
   boolean hasPoolUserWrittenBytes();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the totalProvisionedDiskCapacityGb field is set.
    */
   boolean hasTotalProvisionedDiskCapacityGb();
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the totalProvisionedDiskIops field is set.
    */
   boolean hasTotalProvisionedDiskIops();
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return Whether the totalProvisionedDiskThroughput field is set.
    */
   boolean hasTotalProvisionedDiskThroughput();
+
   /**
    *
    *

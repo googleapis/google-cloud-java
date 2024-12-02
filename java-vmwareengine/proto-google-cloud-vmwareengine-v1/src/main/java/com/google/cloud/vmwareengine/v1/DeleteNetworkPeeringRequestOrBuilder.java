@@ -42,6 +42,7 @@ public interface DeleteNetworkPeeringRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface DeleteNetworkPeeringRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

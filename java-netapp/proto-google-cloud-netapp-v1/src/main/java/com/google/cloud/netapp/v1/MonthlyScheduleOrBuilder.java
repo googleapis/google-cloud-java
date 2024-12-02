@@ -36,6 +36,7 @@ public interface MonthlyScheduleOrBuilder
    * @return Whether the snapshotsToKeep field is set.
    */
   boolean hasSnapshotsToKeep();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface MonthlyScheduleOrBuilder
    * @return Whether the minute field is set.
    */
   boolean hasMinute();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface MonthlyScheduleOrBuilder
    * @return Whether the hour field is set.
    */
   boolean hasHour();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface MonthlyScheduleOrBuilder
    * @return Whether the daysOfMonth field is set.
    */
   boolean hasDaysOfMonth();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface MonthlyScheduleOrBuilder
    * @return The daysOfMonth.
    */
   java.lang.String getDaysOfMonth();
+
   /**
    *
    *

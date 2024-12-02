@@ -37,6 +37,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return Whether the modelMonitoringSpec field is set.
    */
   boolean hasModelMonitoringSpec();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The modelMonitoringSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringSpec getModelMonitoringSpec();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
+
   /**
    *
    *
@@ -291,6 +301,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return Whether the jobExecutionDetail field is set.
    */
   boolean hasJobExecutionDetail();
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The jobExecutionDetail.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringJobExecutionDetail getJobExecutionDetail();
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
+
   /**
    *
    *
@@ -349,6 +362,7 @@ public interface ModelMonitoringJobOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
+
   /**
    *
    *

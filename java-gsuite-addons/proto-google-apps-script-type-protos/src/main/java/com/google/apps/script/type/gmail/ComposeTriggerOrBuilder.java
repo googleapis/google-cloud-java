@@ -35,6 +35,7 @@ public interface ComposeTriggerOrBuilder
    * <code>repeated .google.apps.script.type.MenuItemExtensionPoint actions = 5;</code>
    */
   java.util.List<com.google.apps.script.type.MenuItemExtensionPoint> getActionsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ComposeTriggerOrBuilder
    * <code>repeated .google.apps.script.type.MenuItemExtensionPoint actions = 5;</code>
    */
   com.google.apps.script.type.MenuItemExtensionPoint getActions(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ComposeTriggerOrBuilder
    * <code>repeated .google.apps.script.type.MenuItemExtensionPoint actions = 5;</code>
    */
   int getActionsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ComposeTriggerOrBuilder
    */
   java.util.List<? extends com.google.apps.script.type.MenuItemExtensionPointOrBuilder>
       getActionsOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface ComposeTriggerOrBuilder
    * @return The enum numeric value on the wire for draftAccess.
    */
   int getDraftAccessValue();
+
   /**
    *
    *

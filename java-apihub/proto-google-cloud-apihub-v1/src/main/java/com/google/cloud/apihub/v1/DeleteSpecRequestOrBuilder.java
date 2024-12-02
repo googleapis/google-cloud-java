@@ -40,6 +40,7 @@ public interface DeleteSpecRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

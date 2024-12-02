@@ -39,6 +39,7 @@ public interface ListPredictionApiKeyRegistrationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface ListPredictionApiKeyRegistrationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ProvisionProjectMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.ProvisionProjectMetadata)
     ProvisionProjectMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProvisionProjectMetadata.newBuilder() to construct.
   private ProvisionProjectMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class ProvisionProjectMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

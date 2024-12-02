@@ -89,6 +89,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * @return A list containing the effectsProfileId.
    */
   java.util.List<java.lang.String> getEffectsProfileIdList();
+
   /**
    *
    *
@@ -103,6 +104,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * @return The count of effectsProfileId.
    */
   int getEffectsProfileIdCount();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * @return The effectsProfileId at the given index.
    */
   java.lang.String getEffectsProfileId(int index);
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * @return Whether the voice field is set.
    */
   boolean hasVoice();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * @return The voice.
    */
   com.google.cloud.dialogflow.v2.VoiceSelectionParams getVoice();
+
   /**
    *
    *

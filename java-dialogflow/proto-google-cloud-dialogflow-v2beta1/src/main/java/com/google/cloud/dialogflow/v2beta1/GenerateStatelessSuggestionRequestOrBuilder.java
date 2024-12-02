@@ -39,6 +39,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return Whether the generator field is set.
    */
   boolean hasGenerator();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return The generator.
    */
   com.google.cloud.dialogflow.v2beta1.Generator getGenerator();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return Whether the generatorName field is set.
    */
   boolean hasGeneratorName();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return The generatorName.
    */
   java.lang.String getGeneratorName();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return Whether the conversationContext field is set.
    */
   boolean hasConversationContext();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return The conversationContext.
    */
   com.google.cloud.dialogflow.v2beta1.ConversationContext getConversationContext();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return A list containing the triggerEvents.
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.TriggerEvent> getTriggerEventsList();
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return The count of triggerEvents.
    */
   int getTriggerEventsCount();
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return The triggerEvents at the given index.
    */
   com.google.cloud.dialogflow.v2beta1.TriggerEvent getTriggerEvents(int index);
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for triggerEvents.
    */
   java.util.List<java.lang.Integer> getTriggerEventsValueList();
+
   /**
    *
    *

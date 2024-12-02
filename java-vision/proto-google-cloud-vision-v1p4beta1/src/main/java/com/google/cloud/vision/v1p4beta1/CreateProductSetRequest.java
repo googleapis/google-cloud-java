@@ -33,6 +33,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.CreateProductSetRequest)
     CreateProductSetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateProductSetRequest.newBuilder() to construct.
   private CreateProductSetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
 
   public static final int PRODUCT_SET_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1p4beta1.ProductSet productSet_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
   public boolean hasProductSet() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         ? com.google.cloud.vision.v1p4beta1.ProductSet.getDefaultInstance()
         : productSet_;
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productSetId_ = "";
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -420,6 +428,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -674,6 +684,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -725,6 +737,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
             com.google.cloud.vision.v1p4beta1.ProductSet.Builder,
             com.google.cloud.vision.v1p4beta1.ProductSetOrBuilder>
         productSetBuilder_;
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
     public boolean hasProductSet() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         return productSetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +881,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       onChanged();
       return getProductSetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -949,6 +971,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
             : productSet_;
       }
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object productSetId_ = "";
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1078,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

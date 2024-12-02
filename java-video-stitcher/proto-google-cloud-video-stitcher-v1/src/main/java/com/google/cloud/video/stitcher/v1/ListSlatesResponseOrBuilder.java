@@ -34,6 +34,7 @@ public interface ListSlatesResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Slate slates = 1;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.Slate> getSlatesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSlatesResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Slate slates = 1;</code>
    */
   com.google.cloud.video.stitcher.v1.Slate getSlates(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSlatesResponseOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Slate slates = 1;</code>
    */
   int getSlatesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSlatesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.SlateOrBuilder>
       getSlatesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSlatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListSlatesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListSlatesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListSlatesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

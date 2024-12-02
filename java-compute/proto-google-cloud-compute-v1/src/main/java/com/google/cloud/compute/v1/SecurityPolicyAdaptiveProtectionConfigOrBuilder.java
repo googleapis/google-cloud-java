@@ -38,6 +38,7 @@ public interface SecurityPolicyAdaptiveProtectionConfigOrBuilder
    * @return Whether the layer7DdosDefenseConfig field is set.
    */
   boolean hasLayer7DdosDefenseConfig();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface SecurityPolicyAdaptiveProtectionConfigOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       getLayer7DdosDefenseConfig();
+
   /**
    *
    *

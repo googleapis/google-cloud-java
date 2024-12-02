@@ -34,6 +34,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings)
     SecurityHealthAnalyticsSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityHealthAnalyticsSettings.newBuilder() to construct.
   private SecurityHealthAnalyticsSettings(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -91,6 +92,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * @return A list containing the approvedIdentities.
      */
     java.util.List<java.lang.String> getApprovedIdentitiesList();
+
     /**
      *
      *
@@ -113,6 +115,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * @return The count of approvedIdentities.
      */
     int getApprovedIdentitiesCount();
+
     /**
      *
      *
@@ -136,6 +139,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * @return The approvedIdentities at the given index.
      */
     java.lang.String getApprovedIdentities(int index);
+
     /**
      *
      *
@@ -160,6 +164,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      */
     com.google.protobuf.ByteString getApprovedIdentitiesBytes(int index);
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.NonOrgIamMemberSettings)
       NonOrgIamMemberSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NonOrgIamMemberSettings.newBuilder() to construct.
     private NonOrgIamMemberSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -212,6 +218,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList approvedIdentities_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -236,6 +243,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public com.google.protobuf.ProtocolStringList getApprovedIdentitiesList() {
       return approvedIdentities_;
     }
+
     /**
      *
      *
@@ -260,6 +268,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public int getApprovedIdentitiesCount() {
       return approvedIdentities_.size();
     }
+
     /**
      *
      *
@@ -285,6 +294,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public java.lang.String getApprovedIdentities(int index) {
       return approvedIdentities_.get(index);
     }
+
     /**
      *
      *
@@ -507,6 +517,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -739,6 +750,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -764,6 +776,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         approvedIdentities_.makeImmutable();
         return approvedIdentities_;
       }
+
       /**
        *
        *
@@ -788,6 +801,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public int getApprovedIdentitiesCount() {
         return approvedIdentities_.size();
       }
+
       /**
        *
        *
@@ -813,6 +827,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public java.lang.String getApprovedIdentities(int index) {
         return approvedIdentities_.get(index);
       }
+
       /**
        *
        *
@@ -838,6 +853,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public com.google.protobuf.ByteString getApprovedIdentitiesBytes(int index) {
         return approvedIdentities_.getByteString(index);
       }
+
       /**
        *
        *
@@ -871,6 +887,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -903,6 +920,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -932,6 +950,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -960,6 +979,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1092,6 +1112,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * @return A list containing the approvedIdentities.
      */
     java.util.List<java.lang.String> getApprovedIdentitiesList();
+
     /**
      *
      *
@@ -1113,6 +1134,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * @return The count of approvedIdentities.
      */
     int getApprovedIdentitiesCount();
+
     /**
      *
      *
@@ -1135,6 +1157,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * @return The approvedIdentities at the given index.
      */
     java.lang.String getApprovedIdentities(int index);
+
     /**
      *
      *
@@ -1158,6 +1181,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      */
     com.google.protobuf.ByteString getApprovedIdentitiesBytes(int index);
   }
+
   /**
    *
    *
@@ -1174,6 +1198,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.AdminServiceAccountSettings)
       AdminServiceAccountSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AdminServiceAccountSettings.newBuilder() to construct.
     private AdminServiceAccountSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1211,6 +1236,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList approvedIdentities_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1234,6 +1260,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public com.google.protobuf.ProtocolStringList getApprovedIdentitiesList() {
       return approvedIdentities_;
     }
+
     /**
      *
      *
@@ -1257,6 +1284,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public int getApprovedIdentitiesCount() {
       return approvedIdentities_.size();
     }
+
     /**
      *
      *
@@ -1281,6 +1309,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public java.lang.String getApprovedIdentities(int index) {
       return approvedIdentities_.get(index);
     }
+
     /**
      *
      *
@@ -1502,6 +1531,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1734,6 +1764,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1758,6 +1789,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         approvedIdentities_.makeImmutable();
         return approvedIdentities_;
       }
+
       /**
        *
        *
@@ -1781,6 +1813,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public int getApprovedIdentitiesCount() {
         return approvedIdentities_.size();
       }
+
       /**
        *
        *
@@ -1805,6 +1838,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public java.lang.String getApprovedIdentities(int index) {
         return approvedIdentities_.get(index);
       }
+
       /**
        *
        *
@@ -1829,6 +1863,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public com.google.protobuf.ByteString getApprovedIdentitiesBytes(int index) {
         return approvedIdentities_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1861,6 +1896,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1892,6 +1928,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1920,6 +1957,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1947,6 +1985,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2057,6 +2096,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
   private com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .NonOrgIamMemberSettings
       nonOrgIamMemberSettings_;
+
   /**
    *
    *
@@ -2074,6 +2114,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
   public boolean hasNonOrgIamMemberSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2096,6 +2137,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             .NonOrgIamMemberSettings.getDefaultInstance()
         : nonOrgIamMemberSettings_;
   }
+
   /**
    *
    *
@@ -2121,6 +2163,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
   private com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .AdminServiceAccountSettings
       adminServiceAccountSettings_;
+
   /**
    *
    *
@@ -2138,6 +2181,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
   public boolean hasAdminServiceAccountSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2160,6 +2204,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             .AdminServiceAccountSettings.getDefaultInstance()
         : adminServiceAccountSettings_;
   }
+
   /**
    *
    *
@@ -2372,6 +2417,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2624,6 +2670,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
                 .NonOrgIamMemberSettingsOrBuilder>
         nonOrgIamMemberSettingsBuilder_;
+
     /**
      *
      *
@@ -2640,6 +2687,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public boolean hasNonOrgIamMemberSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2665,6 +2713,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         return nonOrgIamMemberSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2692,6 +2741,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2716,6 +2766,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2750,6 +2801,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2771,6 +2823,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2789,6 +2842,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       onChanged();
       return getNonOrgIamMemberSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2812,6 +2866,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             : nonOrgIamMemberSettings_;
       }
     }
+
     /**
      *
      *
@@ -2857,6 +2912,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
                 .AdminServiceAccountSettingsOrBuilder>
         adminServiceAccountSettingsBuilder_;
+
     /**
      *
      *
@@ -2873,6 +2929,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public boolean hasAdminServiceAccountSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2898,6 +2955,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         return adminServiceAccountSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2925,6 +2983,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2949,6 +3008,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2983,6 +3043,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -3004,6 +3065,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3022,6 +3084,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       onChanged();
       return getAdminServiceAccountSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3045,6 +3108,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             : adminServiceAccountSettings_;
       }
     }
+
     /**
      *
      *

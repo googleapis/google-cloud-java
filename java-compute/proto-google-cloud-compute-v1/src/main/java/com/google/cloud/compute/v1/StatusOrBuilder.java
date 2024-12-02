@@ -36,6 +36,7 @@ public interface StatusOrBuilder
    * @return Whether the code field is set.
    */
   boolean hasCode();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface StatusOrBuilder
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
    */
   java.util.List<com.google.protobuf.Any> getDetailsList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface StatusOrBuilder
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
    */
   com.google.protobuf.Any getDetails(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface StatusOrBuilder
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
    */
   int getDetailsCount();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface StatusOrBuilder
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
    */
   java.util.List<? extends com.google.protobuf.AnyOrBuilder> getDetailsOrBuilderList();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface StatusOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface StatusOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *

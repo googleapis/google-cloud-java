@@ -38,6 +38,7 @@ public interface TranslateTextRequestOrBuilder
    * @return A list containing the contents.
    */
   java.util.List<java.lang.String> getContentsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The count of contents.
    */
   int getContentsCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The contents at the given index.
    */
   java.lang.String getContents(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -254,6 +261,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -300,6 +308,7 @@ public interface TranslateTextRequestOrBuilder
    * @return Whether the glossaryConfig field is set.
    */
   boolean hasGlossaryConfig();
+
   /**
    *
    *
@@ -316,6 +325,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The glossaryConfig.
    */
   com.google.cloud.translate.v3.TranslateTextGlossaryConfig getGlossaryConfig();
+
   /**
    *
    *
@@ -345,6 +355,7 @@ public interface TranslateTextRequestOrBuilder
    * @return Whether the transliterationConfig field is set.
    */
   boolean hasTransliterationConfig();
+
   /**
    *
    *
@@ -359,6 +370,7 @@ public interface TranslateTextRequestOrBuilder
    * @return The transliterationConfig.
    */
   com.google.cloud.translate.v3.TransliterationConfig getTransliterationConfig();
+
   /**
    *
    *
@@ -390,6 +402,7 @@ public interface TranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -408,9 +421,11 @@ public interface TranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -429,6 +444,7 @@ public interface TranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -451,6 +467,7 @@ public interface TranslateTextRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

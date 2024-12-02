@@ -38,6 +38,7 @@ public interface DeleteVolumeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

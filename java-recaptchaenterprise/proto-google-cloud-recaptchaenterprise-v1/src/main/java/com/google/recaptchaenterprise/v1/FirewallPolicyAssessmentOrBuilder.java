@@ -37,6 +37,7 @@ public interface FirewallPolicyAssessmentOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface FirewallPolicyAssessmentOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface FirewallPolicyAssessmentOrBuilder
    * @return Whether the firewallPolicy field is set.
    */
   boolean hasFirewallPolicy();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface FirewallPolicyAssessmentOrBuilder
    * @return The firewallPolicy.
    */
   com.google.recaptchaenterprise.v1.FirewallPolicy getFirewallPolicy();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class MarketingMethod extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.MarketingMethod)
     MarketingMethodOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MarketingMethod.newBuilder() to construct.
   private MarketingMethod(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class MarketingMethod extends com.google.protobuf.GeneratedMessageV
      * <code>MARKETING_METHOD_ENUM_UNSPECIFIED = 0;</code>
      */
     public static final int MARKETING_METHOD_ENUM_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class MarketingMethod extends com.google.protobuf.GeneratedMessageV
      * <code>ORGANIC = 1;</code>
      */
     public static final int ORGANIC_VALUE = 1;
+
     /**
      *
      *
@@ -376,6 +379,7 @@ public final class MarketingMethod extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

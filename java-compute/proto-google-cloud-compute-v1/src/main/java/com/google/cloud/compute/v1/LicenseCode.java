@@ -33,6 +33,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LicenseCode)
     LicenseCodeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LicenseCode.newBuilder() to construct.
   private LicenseCode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -144,6 +145,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -154,6 +156,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 516696700;</code>
      */
     public static final int DISABLED_VALUE = 516696700;
+
     /**
      *
      *
@@ -164,6 +167,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 182130465;</code>
      */
     public static final int ENABLED_VALUE = 182130465;
+
     /**
      *
      *
@@ -174,8 +178,10 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTRICTED = 261551195;</code>
      */
     public static final int RESTRICTED_VALUE = 261551195;
+
     /** <code>STATE_UNSPECIFIED = 470755401;</code> */
     public static final int STATE_UNSPECIFIED_VALUE = 470755401;
+
     /**
      *
      *
@@ -281,6 +287,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -296,6 +303,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -319,6 +327,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -347,6 +356,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -362,6 +372,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -385,6 +396,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -411,6 +423,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -426,6 +439,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -446,6 +460,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -461,6 +476,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -484,6 +500,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -512,6 +529,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.LicenseCodeLicenseAlias> licenseAlias_;
+
   /**
    *
    *
@@ -526,6 +544,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.LicenseCodeLicenseAlias> getLicenseAliasList() {
     return licenseAlias_;
   }
+
   /**
    *
    *
@@ -541,6 +560,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       getLicenseAliasOrBuilderList() {
     return licenseAlias_;
   }
+
   /**
    *
    *
@@ -555,6 +575,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public int getLicenseAliasCount() {
     return licenseAlias_.size();
   }
+
   /**
    *
    *
@@ -569,6 +590,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.LicenseCodeLicenseAlias getLicenseAlias(int index) {
     return licenseAlias_.get(index);
   }
+
   /**
    *
    *
@@ -589,6 +611,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -604,6 +627,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -627,6 +651,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -655,6 +680,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -670,6 +696,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -693,6 +720,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -721,6 +749,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -737,6 +766,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public boolean hasState() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -761,6 +791,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -788,6 +819,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSFERABLE_FIELD_NUMBER = 4349893;
   private boolean transferable_ = false;
+
   /**
    *
    *
@@ -803,6 +835,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransferable() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1093,6 +1126,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1448,6 +1482,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -1462,6 +1497,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1484,6 +1520,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1506,6 +1543,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1527,6 +1565,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1544,6 +1583,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1568,6 +1608,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1582,6 +1623,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1604,6 +1646,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1626,6 +1669,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1647,6 +1691,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1709,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1734,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
+
     /**
      *
      *
@@ -1703,6 +1750,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1718,6 +1766,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -1737,6 +1786,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1756,6 +1806,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1770,6 +1821,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1792,6 +1844,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1814,6 +1867,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1835,6 +1889,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1852,6 +1907,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1911,6 +1967,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return licenseAliasBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1928,6 +1985,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return licenseAliasBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1945,6 +2003,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return licenseAliasBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1969,6 +2028,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1990,6 +2050,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2013,6 +2074,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2037,6 +2099,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2058,6 +2121,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2079,6 +2143,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2100,6 +2165,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2120,6 +2186,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2140,6 +2207,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2154,6 +2222,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getLicenseAliasFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2172,6 +2241,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return licenseAliasBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2190,6 +2260,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(licenseAlias_);
       }
     }
+
     /**
      *
      *
@@ -2204,6 +2275,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       return getLicenseAliasFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.LicenseCodeLicenseAlias.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2220,6 +2292,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.compute.v1.LicenseCodeLicenseAlias.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2253,6 +2326,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2267,6 +2341,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2289,6 +2364,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2311,6 +2387,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2332,6 +2409,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2349,6 +2427,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2373,6 +2452,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -2387,6 +2467,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2409,6 +2490,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2431,6 +2513,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2452,6 +2535,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2469,6 +2553,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2493,6 +2578,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -2508,6 +2594,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean hasState() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2531,6 +2618,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2554,6 +2642,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2576,6 +2665,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2594,6 +2684,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2619,6 +2710,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean transferable_;
+
     /**
      *
      *
@@ -2634,6 +2726,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransferable() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2649,6 +2742,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     public boolean getTransferable() {
       return transferable_;
     }
+
     /**
      *
      *
@@ -2668,6 +2762,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

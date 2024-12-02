@@ -33,6 +33,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BulkInsertRegionDiskRequest)
     BulkInsertRegionDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BulkInsertRegionDiskRequest.newBuilder() to construct.
   private BulkInsertRegionDiskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int BULK_INSERT_DISK_RESOURCE_RESOURCE_FIELD_NUMBER = 289799382;
   private com.google.cloud.compute.v1.BulkInsertDiskResource bulkInsertDiskResourceResource_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
   public boolean hasBulkInsertDiskResourceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.BulkInsertDiskResource.getDefaultInstance()
         : bulkInsertDiskResourceResource_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -500,6 +511,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -754,6 +766,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.BulkInsertDiskResource.Builder,
             com.google.cloud.compute.v1.BulkInsertDiskResourceOrBuilder>
         bulkInsertDiskResourceResourceBuilder_;
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
     public boolean hasBulkInsertDiskResourceResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -792,6 +806,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
         return bulkInsertDiskResourceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -817,6 +832,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +887,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +909,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return getBulkInsertDiskResourceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
             : bulkInsertDiskResourceResource_;
       }
     }
+
     /**
      *
      *
@@ -958,6 +979,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1006,6 +1029,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1053,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1073,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1100,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1098,6 +1125,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1150,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1174,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1194,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1221,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1204,6 +1236,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1226,6 +1259,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1248,6 +1282,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1269,6 +1304,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1322,7 @@ public final class BulkInsertRegionDiskRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

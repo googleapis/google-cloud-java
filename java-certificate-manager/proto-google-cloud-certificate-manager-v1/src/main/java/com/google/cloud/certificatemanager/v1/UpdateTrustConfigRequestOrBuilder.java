@@ -38,6 +38,7 @@ public interface UpdateTrustConfigRequestOrBuilder
    * @return Whether the trustConfig field is set.
    */
   boolean hasTrustConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateTrustConfigRequestOrBuilder
    * @return The trustConfig.
    */
   com.google.cloud.certificatemanager.v1.TrustConfig getTrustConfig();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateTrustConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateTrustConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

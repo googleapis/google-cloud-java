@@ -37,6 +37,7 @@ public interface TagsOrBuilder
    * @return A list containing the items.
    */
   java.util.List<java.lang.String> getItemsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TagsOrBuilder
    * @return The count of items.
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface TagsOrBuilder
    * @return The items at the given index.
    */
   java.lang.String getItems(int index);
+
   /**
    *
    *

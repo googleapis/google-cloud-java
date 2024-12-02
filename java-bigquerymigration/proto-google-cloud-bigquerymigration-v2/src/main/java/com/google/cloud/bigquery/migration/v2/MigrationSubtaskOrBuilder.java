@@ -41,6 +41,7 @@ public interface MigrationSubtaskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface MigrationSubtaskOrBuilder
    * @return The taskId.
    */
   java.lang.String getTaskId();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface MigrationSubtaskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface MigrationSubtaskOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public interface MigrationSubtaskOrBuilder
    * @return Whether the processingError field is set.
    */
   boolean hasProcessingError();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface MigrationSubtaskOrBuilder
    * @return The processingError.
    */
   com.google.rpc.ErrorInfo getProcessingError();
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface MigrationSubtaskOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.ResourceErrorDetail>
       getResourceErrorDetailsList();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface MigrationSubtaskOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2.ResourceErrorDetail getResourceErrorDetails(int index);
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public interface MigrationSubtaskOrBuilder
    * </code>
    */
   int getResourceErrorDetailsCount();
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public interface MigrationSubtaskOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.ResourceErrorDetailOrBuilder>
       getResourceErrorDetailsOrBuilderList();
+
   /**
    *
    *
@@ -287,6 +297,7 @@ public interface MigrationSubtaskOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public interface MigrationSubtaskOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -322,6 +334,7 @@ public interface MigrationSubtaskOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
+
   /**
    *
    *
@@ -334,6 +347,7 @@ public interface MigrationSubtaskOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
+
   /**
    *
    *
@@ -355,6 +369,7 @@ public interface MigrationSubtaskOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList();
+
   /**
    *
    *
@@ -365,6 +380,7 @@ public interface MigrationSubtaskOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
    */
   com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index);
+
   /**
    *
    *
@@ -375,6 +391,7 @@ public interface MigrationSubtaskOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -386,6 +403,7 @@ public interface MigrationSubtaskOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *

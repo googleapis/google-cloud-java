@@ -34,6 +34,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetIamPolicyNetworkAttachmentRequest)
     GetIamPolicyNetworkAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetIamPolicyNetworkAttachmentRequest.newBuilder() to construct.
   private GetIamPolicyNetworkAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
   private int bitField0_;
   public static final int OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER = 499220029;
   private int optionsRequestedPolicyVersion_ = 0;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
   public boolean hasOptionsRequestedPolicyVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -450,6 +459,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +694,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
     private int bitField0_;
 
     private int optionsRequestedPolicyVersion_;
+
     /**
      *
      *
@@ -699,6 +710,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
     public boolean hasOptionsRequestedPolicyVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -714,6 +726,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
     public int getOptionsRequestedPolicyVersion() {
       return optionsRequestedPolicyVersion_;
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +834,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +852,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +923,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -923,6 +945,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +988,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -986,6 +1011,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1056,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1074,7 @@ public final class GetIamPolicyNetworkAttachmentRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

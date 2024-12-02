@@ -56,6 +56,7 @@ public interface TaskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -108,6 +109,7 @@ public interface TaskOrBuilder
    * @return Whether the appEngineHttpRequest field is set.
    */
   boolean hasAppEngineHttpRequest();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface TaskOrBuilder
    * @return The appEngineHttpRequest.
    */
   com.google.cloud.tasks.v2beta2.AppEngineHttpRequest getAppEngineHttpRequest();
+
   /**
    *
    *
@@ -163,6 +166,7 @@ public interface TaskOrBuilder
    * @return Whether the pullMessage field is set.
    */
   boolean hasPullMessage();
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public interface TaskOrBuilder
    * @return The pullMessage.
    */
   com.google.cloud.tasks.v2beta2.PullMessage getPullMessage();
+
   /**
    *
    *
@@ -213,6 +218,7 @@ public interface TaskOrBuilder
    * @return Whether the httpRequest field is set.
    */
   boolean hasHttpRequest();
+
   /**
    *
    *
@@ -228,6 +234,7 @@ public interface TaskOrBuilder
    * @return The httpRequest.
    */
   com.google.cloud.tasks.v2beta2.HttpRequest getHttpRequest();
+
   /**
    *
    *
@@ -264,6 +271,7 @@ public interface TaskOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
+
   /**
    *
    *
@@ -286,6 +294,7 @@ public interface TaskOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
+
   /**
    *
    *
@@ -321,6 +330,7 @@ public interface TaskOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -335,6 +345,7 @@ public interface TaskOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -360,6 +371,7 @@ public interface TaskOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -372,6 +384,7 @@ public interface TaskOrBuilder
    * @return The status.
    */
   com.google.cloud.tasks.v2beta2.TaskStatus getStatus();
+
   /**
    *
    *
@@ -396,6 +409,7 @@ public interface TaskOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *

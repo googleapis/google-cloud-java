@@ -39,6 +39,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * @return The osPolicyAssignment.
    */
   java.lang.String getOsPolicyAssignment();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    */
   java.util.List<com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance>
       getOsPolicyCompliancesList();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    */
   com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance getOsPolicyCompliances(
       int index);
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * </code>
    */
   int getOsPolicyCompliancesCount();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface OSPolicyAssignmentReportOrBuilder
           ? extends
               com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyComplianceOrBuilder>
       getOsPolicyCompliancesOrBuilderList();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -233,6 +242,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * @return The lastRunId.
    */
   java.lang.String getLastRunId();
+
   /**
    *
    *

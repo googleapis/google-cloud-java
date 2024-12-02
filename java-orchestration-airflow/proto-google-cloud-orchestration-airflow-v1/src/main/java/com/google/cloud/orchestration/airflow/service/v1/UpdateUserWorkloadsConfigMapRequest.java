@@ -35,6 +35,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest)
     UpdateUserWorkloadsConfigMapRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateUserWorkloadsConfigMapRequest.newBuilder() to construct.
   private UpdateUserWorkloadsConfigMapRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
   public static final int USER_WORKLOADS_CONFIG_MAP_FIELD_NUMBER = 1;
   private com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap
       userWorkloadsConfigMap_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
   public boolean hasUserWorkloadsConfigMap() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
             .getDefaultInstance()
         : userWorkloadsConfigMap_;
   }
+
   /**
    *
    *
@@ -315,6 +319,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -543,6 +548,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
             com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap.Builder,
             com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMapOrBuilder>
         userWorkloadsConfigMapBuilder_;
+
     /**
      *
      *
@@ -559,6 +565,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
     public boolean hasUserWorkloadsConfigMap() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -583,6 +590,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
         return userWorkloadsConfigMapBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -608,6 +616,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +640,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
       onChanged();
       return getUserWorkloadsConfigMapFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class UpdateUserWorkloadsConfigMapRequest
             : userWorkloadsConfigMap_;
       }
     }
+
     /**
      *
      *

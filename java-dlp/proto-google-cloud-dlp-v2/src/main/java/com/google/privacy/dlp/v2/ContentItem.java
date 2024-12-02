@@ -33,6 +33,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ContentItem)
     ContentItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContentItem.newBuilder() to construct.
   private ContentItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     private DataItemCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValue() {
     return dataItemCase_ == 3;
   }
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TABLE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTable() {
     return dataItemCase_ == 4;
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.Table.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BYTE_ITEM_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasByteItem() {
     return dataItemCase_ == 5;
   }
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.ByteContentItem.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -491,6 +502,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -749,6 +761,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValue() {
       return dataItemCase_ == 3;
     }
+
     /**
      *
      *
@@ -777,6 +790,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -805,6 +819,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -826,6 +841,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +861,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +890,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Table.Builder,
             com.google.privacy.dlp.v2.TableOrBuilder>
         tableBuilder_;
+
     /**
      *
      *
@@ -890,6 +908,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTable() {
       return dataItemCase_ == 4;
     }
+
     /**
      *
      *
@@ -917,6 +936,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Table.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -941,6 +961,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       dataItemCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +983,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       dataItemCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1018,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       dataItemCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1046,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1061,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Table.Builder getTableBuilder() {
       return getTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1059,6 +1084,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Table.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.ByteContentItem.Builder,
             com.google.privacy.dlp.v2.ByteContentItemOrBuilder>
         byteItemBuilder_;
+
     /**
      *
      *
@@ -1112,6 +1139,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasByteItem() {
       return dataItemCase_ == 5;
     }
+
     /**
      *
      *
@@ -1137,6 +1165,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.ByteContentItem.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1188,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       dataItemCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1208,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       dataItemCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       dataItemCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1267,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1280,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.ByteContentItem.Builder getByteItemBuilder() {
       return getByteItemFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1267,6 +1301,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.ByteContentItem.getDefaultInstance();
       }
     }
+
     /**
      *
      *

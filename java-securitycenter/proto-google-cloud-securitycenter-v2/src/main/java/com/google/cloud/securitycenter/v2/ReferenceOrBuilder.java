@@ -36,6 +36,7 @@ public interface ReferenceOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ReferenceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

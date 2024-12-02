@@ -38,6 +38,7 @@ public interface CreateDocumentSchemaRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateDocumentSchemaRequestOrBuilder
    * @return Whether the documentSchema field is set.
    */
   boolean hasDocumentSchema();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateDocumentSchemaRequestOrBuilder
    * @return The documentSchema.
    */
   com.google.cloud.contentwarehouse.v1.DocumentSchema getDocumentSchema();
+
   /**
    *
    *

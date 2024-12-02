@@ -44,6 +44,7 @@ public interface SslSettingsOrBuilder
    * @return The certificateId.
    */
   java.lang.String getCertificateId();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SslSettingsOrBuilder
    * @return The enum numeric value on the wire for sslManagementType.
    */
   int getSslManagementTypeValue();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface SslSettingsOrBuilder
    * @return The pendingManagedCertificateId.
    */
   java.lang.String getPendingManagedCertificateId();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ExecuteSqlResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.SqlResult sql_results = 1;</code>
    */
   java.util.List<com.google.cloud.alloydb.v1alpha.SqlResult> getSqlResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ExecuteSqlResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.SqlResult sql_results = 1;</code>
    */
   com.google.cloud.alloydb.v1alpha.SqlResult getSqlResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ExecuteSqlResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.SqlResult sql_results = 1;</code>
    */
   int getSqlResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ExecuteSqlResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.alloydb.v1alpha.SqlResultOrBuilder>
       getSqlResultsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ExecuteSqlResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface ExecuteSqlResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.alloydb.v1alpha.ExecuteSqlMetadata getMetadata();
+
   /**
    *
    *

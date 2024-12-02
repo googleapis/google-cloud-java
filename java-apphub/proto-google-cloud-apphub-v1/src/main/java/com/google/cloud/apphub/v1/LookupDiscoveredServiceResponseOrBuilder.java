@@ -36,6 +36,7 @@ public interface LookupDiscoveredServiceResponseOrBuilder
    * @return Whether the discoveredService field is set.
    */
   boolean hasDiscoveredService();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LookupDiscoveredServiceResponseOrBuilder
    * @return The discoveredService.
    */
   com.google.cloud.apphub.v1.DiscoveredService getDiscoveredService();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MutateDeployedModelRequest)
     MutateDeployedModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MutateDeployedModelRequest.newBuilder() to construct.
   private MutateDeployedModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
 
   public static final int DEPLOYED_MODEL_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.DeployedModel deployedModel_;
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
   public boolean hasDeployedModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
         ? com.google.cloud.aiplatform.v1beta1.DeployedModel.getDefaultInstance()
         : deployedModel_;
   }
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -453,6 +462,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -690,6 +700,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -716,6 +727,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +754,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -767,6 +780,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +836,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.DeployedModel.Builder,
             com.google.cloud.aiplatform.v1beta1.DeployedModelOrBuilder>
         deployedModelBuilder_;
+
     /**
      *
      *
@@ -848,6 +864,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
     public boolean hasDeployedModel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -881,6 +898,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
         return deployedModelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -916,6 +934,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1010,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1043,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1071,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return getDeployedModelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1080,6 +1103,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
             : deployedModel_;
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1149,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1141,6 +1166,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1163,6 +1189,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1187,6 +1214,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1236,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1266,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1288,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1305,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1294,6 +1326,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
+
     /**
      *
      *

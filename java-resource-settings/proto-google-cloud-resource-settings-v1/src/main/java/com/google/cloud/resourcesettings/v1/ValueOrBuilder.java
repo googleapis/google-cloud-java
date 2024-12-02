@@ -36,6 +36,7 @@ public interface ValueOrBuilder
    * @return Whether the booleanValue field is set.
    */
   boolean hasBooleanValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ValueOrBuilder
    * @return Whether the stringSetValue field is set.
    */
   boolean hasStringSetValue();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ValueOrBuilder
    * @return The stringSetValue.
    */
   com.google.cloud.resourcesettings.v1.Value.StringSet getStringSetValue();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ValueOrBuilder
    * @return Whether the enumValue field is set.
    */
   boolean hasEnumValue();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface ValueOrBuilder
    * @return The enumValue.
    */
   com.google.cloud.resourcesettings.v1.Value.EnumValue getEnumValue();
+
   /**
    *
    *

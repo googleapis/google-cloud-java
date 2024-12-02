@@ -40,6 +40,7 @@ public interface GetServiceProjectAttachmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

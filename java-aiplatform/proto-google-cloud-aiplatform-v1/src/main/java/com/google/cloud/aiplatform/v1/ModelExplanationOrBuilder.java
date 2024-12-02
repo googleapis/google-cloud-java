@@ -57,6 +57,7 @@ public interface ModelExplanationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Attribution> getMeanAttributionsList();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface ModelExplanationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Attribution getMeanAttributions(int index);
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface ModelExplanationOrBuilder
    * </code>
    */
   int getMeanAttributionsCount();
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public interface ModelExplanationOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.AttributionOrBuilder>
       getMeanAttributionsOrBuilderList();
+
   /**
    *
    *

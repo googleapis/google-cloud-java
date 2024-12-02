@@ -33,6 +33,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectResult)
     InspectResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InspectResult.newBuilder() to construct.
   private InspectResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Finding> findings_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.privacy.dlp.v2.Finding> getFindingsList() {
     return findings_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       getFindingsOrBuilderList() {
     return findings_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
   public int getFindingsCount() {
     return findings_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.Finding getFindings(int index) {
     return findings_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FINDINGS_TRUNCATED_FIELD_NUMBER = 2;
   private boolean findingsTruncated_ = false;
+
   /**
    *
    *
@@ -326,6 +333,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -598,6 +606,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
         return findingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
         return findingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
         return findingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -652,6 +663,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +684,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +730,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +750,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +771,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +792,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +812,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +832,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +845,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Finding.Builder getFindingsBuilder(int index) {
       return getFindingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -841,6 +862,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
         return findingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -858,6 +880,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(findings_);
       }
     }
+
     /**
      *
      *
@@ -871,6 +894,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       return getFindingsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Finding.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -884,6 +908,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       return getFindingsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Finding.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -915,6 +940,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean findingsTruncated_;
+
     /**
      *
      *
@@ -935,6 +961,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
     public boolean getFindingsTruncated() {
       return findingsTruncated_;
     }
+
     /**
      *
      *
@@ -959,6 +986,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

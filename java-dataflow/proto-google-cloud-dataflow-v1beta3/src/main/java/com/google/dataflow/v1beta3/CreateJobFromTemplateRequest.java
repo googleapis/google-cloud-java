@@ -33,6 +33,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.CreateJobFromTemplateRequest)
     CreateJobFromTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateJobFromTemplateRequest.newBuilder() to construct.
   private CreateJobFromTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,6 +95,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     private TemplateCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -128,6 +130,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -151,6 +154,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +183,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobName_ = "";
+
   /**
    *
    *
@@ -202,6 +207,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -227,6 +233,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
   }
 
   public static final int GCS_PATH_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -243,6 +250,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
   public boolean hasGcsPath() {
     return templateCase_ == 2;
   }
+
   /**
    *
    *
@@ -272,6 +280,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -328,6 +337,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
   public int getParametersCount() {
     return internalGetParameters().getMap().size();
   }
+
   /**
    *
    *
@@ -344,12 +354,14 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     }
     return internalGetParameters().getMap().containsKey(key);
   }
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
   }
+
   /**
    *
    *
@@ -363,6 +375,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
+
   /**
    *
    *
@@ -383,6 +396,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -406,6 +420,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 5;
   private com.google.dataflow.v1beta3.RuntimeEnvironment environment_;
+
   /**
    *
    *
@@ -421,6 +436,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -438,6 +454,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         ? com.google.dataflow.v1beta3.RuntimeEnvironment.getDefaultInstance()
         : environment_;
   }
+
   /**
    *
    *
@@ -458,6 +475,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -483,6 +501,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -740,6 +759,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1068,6 +1088,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1090,6 +1111,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1134,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1156,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1174,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1199,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object jobName_ = "";
+
     /**
      *
      *
@@ -1196,6 +1222,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1218,6 +1245,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1239,6 +1267,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1285,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1326,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     public boolean hasGcsPath() {
       return templateCase_ == 2;
     }
+
     /**
      *
      *
@@ -1326,6 +1357,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1356,6 +1388,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1379,6 +1412,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1434,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1453,6 +1488,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
+
     /**
      *
      *
@@ -1469,12 +1505,14 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       }
       return internalGetParameters().getMap().containsKey(key);
     }
+
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
+
     /**
      *
      *
@@ -1488,6 +1526,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
+
     /**
      *
      *
@@ -1508,6 +1547,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1534,6 +1574,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1550,12 +1591,14 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
       bitField0_ |= 0x00000008;
       return internalGetMutableParameters().getMutableMap();
     }
+
     /**
      *
      *
@@ -1576,6 +1619,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1641,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
             com.google.dataflow.v1beta3.RuntimeEnvironment.Builder,
             com.google.dataflow.v1beta3.RuntimeEnvironmentOrBuilder>
         environmentBuilder_;
+
     /**
      *
      *
@@ -1611,6 +1656,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1631,6 +1677,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return environmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1653,6 +1700,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1721,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1701,6 +1750,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1720,6 +1770,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1734,6 +1785,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1752,6 +1804,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
             : environment_;
       }
     }
+
     /**
      *
      *
@@ -1779,6 +1832,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -1803,6 +1857,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1827,6 +1882,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1850,6 +1906,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1926,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

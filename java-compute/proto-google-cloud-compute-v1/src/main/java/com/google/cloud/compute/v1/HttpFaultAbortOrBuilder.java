@@ -36,6 +36,7 @@ public interface HttpFaultAbortOrBuilder
    * @return Whether the httpStatus field is set.
    */
   boolean hasHttpStatus();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface HttpFaultAbortOrBuilder
    * @return Whether the percentage field is set.
    */
   boolean hasPercentage();
+
   /**
    *
    *

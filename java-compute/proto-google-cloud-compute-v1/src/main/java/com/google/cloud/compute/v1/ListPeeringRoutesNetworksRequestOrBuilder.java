@@ -37,6 +37,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return Whether the direction field is set.
    */
   boolean hasDirection();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return The direction.
    */
   java.lang.String getDirection();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return Whether the peeringName field is set.
    */
   boolean hasPeeringName();
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return The peeringName.
    */
   java.lang.String getPeeringName();
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -311,6 +325,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -336,6 +351,7 @@ public interface ListPeeringRoutesNetworksRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
+
   /**
    *
    *

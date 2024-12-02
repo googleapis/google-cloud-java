@@ -39,6 +39,7 @@ public interface SegmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SegmentOrBuilder
    * @return Whether the userSegment field is set.
    */
   boolean hasUserSegment();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SegmentOrBuilder
    * @return The userSegment.
    */
   com.google.analytics.data.v1alpha.UserSegment getUserSegment();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface SegmentOrBuilder
    * @return Whether the sessionSegment field is set.
    */
   boolean hasSessionSegment();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface SegmentOrBuilder
    * @return The sessionSegment.
    */
   com.google.analytics.data.v1alpha.SessionSegment getSessionSegment();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface SegmentOrBuilder
    * @return Whether the eventSegment field is set.
    */
   boolean hasEventSegment();
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public interface SegmentOrBuilder
    * @return The eventSegment.
    */
   com.google.analytics.data.v1alpha.EventSegment getEventSegment();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.StaticOverlay)
     StaticOverlayOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StaticOverlay.newBuilder() to construct.
   private StaticOverlay(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object asset_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOLUTION_FIELD_NUMBER = 2;
   private com.google.cloud.video.livestream.v1.NormalizedResolution resolution_;
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResolution() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.livestream.v1.NormalizedResolution.getDefaultInstance()
         : resolution_;
   }
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POSITION_FIELD_NUMBER = 3;
   private com.google.cloud.video.livestream.v1.NormalizedCoordinate position_;
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPosition() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.livestream.v1.NormalizedCoordinate.getDefaultInstance()
         : position_;
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OPACITY_FIELD_NUMBER = 4;
   private double opacity_ = 0D;
+
   /**
    *
    *
@@ -476,6 +486,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -721,6 +732,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object asset_ = "";
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -775,6 +788,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +838,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +873,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.NormalizedResolution.Builder,
             com.google.cloud.video.livestream.v1.NormalizedResolutionOrBuilder>
         resolutionBuilder_;
+
     /**
      *
      *
@@ -876,6 +893,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResolution() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -901,6 +919,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
         return resolutionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -928,6 +947,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1008,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1054,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResolutionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1055,6 +1079,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
             : resolution_;
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1117,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.NormalizedCoordinate.Builder,
             com.google.cloud.video.livestream.v1.NormalizedCoordinateOrBuilder>
         positionBuilder_;
+
     /**
      *
      *
@@ -1111,6 +1137,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPosition() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1136,6 +1163,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
         return positionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1191,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1217,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1251,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1276,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1296,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPositionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1288,6 +1321,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
             : position_;
       }
     }
+
     /**
      *
      *
@@ -1320,6 +1354,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double opacity_;
+
     /**
      *
      *
@@ -1337,6 +1372,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
     public double getOpacity() {
       return opacity_;
     }
+
     /**
      *
      *
@@ -1358,6 +1394,7 @@ public final class StaticOverlay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

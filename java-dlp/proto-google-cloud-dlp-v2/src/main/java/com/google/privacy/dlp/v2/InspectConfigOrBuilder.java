@@ -44,6 +44,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
   com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
   int getInfoTypesCount();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> getInfoTypesOrBuilderList();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface InspectConfigOrBuilder
    * @return The enum numeric value on the wire for minLikelihood.
    */
   int getMinLikelihoodValue();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface InspectConfigOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood>
       getMinLikelihoodPerInfoTypeList();
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public interface InspectConfigOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood getMinLikelihoodPerInfoType(int index);
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface InspectConfigOrBuilder
    * </code>
    */
   int getMinLikelihoodPerInfoTypeCount();
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public interface InspectConfigOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder>
       getMinLikelihoodPerInfoTypeOrBuilderList();
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public interface InspectConfigOrBuilder
    * @return Whether the limits field is set.
    */
   boolean hasLimits();
+
   /**
    *
    *
@@ -293,6 +303,7 @@ public interface InspectConfigOrBuilder
    * @return The limits.
    */
   com.google.privacy.dlp.v2.InspectConfig.FindingLimits getLimits();
+
   /**
    *
    *
@@ -360,6 +371,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.CustomInfoType> getCustomInfoTypesList();
+
   /**
    *
    *
@@ -372,6 +384,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
   com.google.privacy.dlp.v2.CustomInfoType getCustomInfoTypes(int index);
+
   /**
    *
    *
@@ -384,6 +397,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
   int getCustomInfoTypesCount();
+
   /**
    *
    *
@@ -397,6 +411,7 @@ public interface InspectConfigOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder>
       getCustomInfoTypesOrBuilderList();
+
   /**
    *
    *
@@ -422,6 +437,7 @@ public interface InspectConfigOrBuilder
    * @return A list containing the contentOptions.
    */
   java.util.List<com.google.privacy.dlp.v2.ContentOption> getContentOptionsList();
+
   /**
    *
    *
@@ -434,6 +450,7 @@ public interface InspectConfigOrBuilder
    * @return The count of contentOptions.
    */
   int getContentOptionsCount();
+
   /**
    *
    *
@@ -447,6 +464,7 @@ public interface InspectConfigOrBuilder
    * @return The contentOptions at the given index.
    */
   com.google.privacy.dlp.v2.ContentOption getContentOptions(int index);
+
   /**
    *
    *
@@ -459,6 +477,7 @@ public interface InspectConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for contentOptions.
    */
   java.util.List<java.lang.Integer> getContentOptionsValueList();
+
   /**
    *
    *
@@ -485,6 +504,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> getRuleSetList();
+
   /**
    *
    *
@@ -497,6 +517,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
   com.google.privacy.dlp.v2.InspectionRuleSet getRuleSet(int index);
+
   /**
    *
    *
@@ -509,6 +530,7 @@ public interface InspectConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
   int getRuleSetCount();
+
   /**
    *
    *
@@ -522,6 +544,7 @@ public interface InspectConfigOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder>
       getRuleSetOrBuilderList();
+
   /**
    *
    *

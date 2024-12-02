@@ -50,6 +50,7 @@ public interface TerraformOutputOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface TerraformOutputOrBuilder
    * @return The value.
    */
   com.google.protobuf.Value getValue();
+
   /**
    *
    *

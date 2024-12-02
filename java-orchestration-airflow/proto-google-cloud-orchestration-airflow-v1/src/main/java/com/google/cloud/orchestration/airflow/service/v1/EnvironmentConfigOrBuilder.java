@@ -36,6 +36,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The gkeCluster.
    */
   java.lang.String getGkeCluster();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The dagGcsPrefix.
    */
   java.lang.String getDagGcsPrefix();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the softwareConfig field is set.
    */
   boolean hasSoftwareConfig();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The softwareConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig getSoftwareConfig();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the nodeConfig field is set.
    */
   boolean hasNodeConfig();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The nodeConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.NodeConfig getNodeConfig();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the privateEnvironmentConfig field is set.
    */
   boolean hasPrivateEnvironmentConfig();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface EnvironmentConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig
       getPrivateEnvironmentConfig();
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the webServerNetworkAccessControl field is set.
    */
   boolean hasWebServerNetworkAccessControl();
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public interface EnvironmentConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.WebServerNetworkAccessControl
       getWebServerNetworkAccessControl();
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the databaseConfig field is set.
    */
   boolean hasDatabaseConfig();
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The databaseConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.DatabaseConfig getDatabaseConfig();
+
   /**
    *
    *
@@ -322,6 +334,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the webServerConfig field is set.
    */
   boolean hasWebServerConfig();
+
   /**
    *
    *
@@ -337,6 +350,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The webServerConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.WebServerConfig getWebServerConfig();
+
   /**
    *
    *
@@ -367,6 +381,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -382,6 +397,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *
@@ -425,6 +441,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the maintenanceWindow field is set.
    */
   boolean hasMaintenanceWindow();
+
   /**
    *
    *
@@ -453,6 +470,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The maintenanceWindow.
    */
   com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow getMaintenanceWindow();
+
   /**
    *
    *
@@ -500,6 +518,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the workloadsConfig field is set.
    */
   boolean hasWorkloadsConfig();
+
   /**
    *
    *
@@ -519,6 +538,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The workloadsConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig getWorkloadsConfig();
+
   /**
    *
    *
@@ -555,6 +575,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The enum numeric value on the wire for environmentSize.
    */
   int getEnvironmentSizeValue();
+
   /**
    *
    *
@@ -588,6 +609,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The airflowUri.
    */
   java.lang.String getAirflowUri();
+
   /**
    *
    *
@@ -619,6 +641,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The airflowByoidUri.
    */
   java.lang.String getAirflowByoidUri();
+
   /**
    *
    *
@@ -654,6 +677,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
   boolean hasMasterAuthorizedNetworksConfig();
+
   /**
    *
    *
@@ -673,6 +697,7 @@ public interface EnvironmentConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
       getMasterAuthorizedNetworksConfig();
+
   /**
    *
    *
@@ -708,6 +733,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the recoveryConfig field is set.
    */
   boolean hasRecoveryConfig();
+
   /**
    *
    *
@@ -725,6 +751,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The recoveryConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig getRecoveryConfig();
+
   /**
    *
    *
@@ -759,6 +786,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The enum numeric value on the wire for resilienceMode.
    */
   int getResilienceModeValue();
+
   /**
    *
    *
@@ -793,6 +821,7 @@ public interface EnvironmentConfigOrBuilder
    * @return Whether the dataRetentionConfig field is set.
    */
   boolean hasDataRetentionConfig();
+
   /**
    *
    *
@@ -808,6 +837,7 @@ public interface EnvironmentConfigOrBuilder
    * @return The dataRetentionConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig getDataRetentionConfig();
+
   /**
    *
    *

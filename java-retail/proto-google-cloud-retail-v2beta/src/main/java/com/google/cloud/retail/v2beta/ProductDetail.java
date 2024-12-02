@@ -33,6 +33,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ProductDetail)
     ProductDetailOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductDetail.newBuilder() to construct.
   private ProductDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PRODUCT_FIELD_NUMBER = 1;
   private com.google.cloud.retail.v2beta.Product product_;
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProduct() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2beta.Product.getDefaultInstance()
         : product_;
   }
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUANTITY_FIELD_NUMBER = 2;
   private com.google.protobuf.Int32Value quantity_;
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuantity() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Int32Value getQuantity() {
     return quantity_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : quantity_;
   }
+
   /**
    *
    *
@@ -402,6 +409,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -623,6 +631,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2beta.Product.Builder,
             com.google.cloud.retail.v2beta.ProductOrBuilder>
         productBuilder_;
+
     /**
      *
      *
@@ -655,6 +664,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProduct() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -693,6 +703,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
         return productBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -733,6 +744,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +782,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +828,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +866,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +899,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -920,6 +936,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
             : product_;
       }
     }
+
     /**
      *
      *
@@ -970,6 +987,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         quantityBuilder_;
+
     /**
      *
      *
@@ -988,6 +1006,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuantity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1010,6 +1029,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
         return quantityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1056,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1080,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1112,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1136,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1155,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getQuantityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1151,6 +1176,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
         return quantity_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : quantity_;
       }
     }
+
     /**
      *
      *

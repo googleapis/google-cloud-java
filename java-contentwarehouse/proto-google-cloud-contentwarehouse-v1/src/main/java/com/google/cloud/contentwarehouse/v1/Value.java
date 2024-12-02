@@ -36,6 +36,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.Value)
     ValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Value.newBuilder() to construct.
   private Value(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     private KindCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -129,6 +131,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLOAT_VALUE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFloatValue() {
     return kindCase_ == 1;
   }
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INT_VALUE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIntValue() {
     return kindCase_ == 2;
   }
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return kindCase_ == 3;
   }
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENUM_VALUE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -284,6 +294,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnumValue() {
     return kindCase_ == 4;
   }
+
   /**
    *
    *
@@ -302,6 +313,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.EnumValue.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATETIME_VALUE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -335,6 +348,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDatetimeValue() {
     return kindCase_ == 5;
   }
+
   /**
    *
    *
@@ -353,6 +367,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.DateTime.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -371,6 +386,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMESTAMP_VALUE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -386,6 +402,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestampValue() {
     return kindCase_ == 6;
   }
+
   /**
    *
    *
@@ -404,6 +421,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.TimestampValue.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -422,6 +440,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOLEAN_VALUE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -437,6 +456,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBooleanValue() {
     return kindCase_ == 7;
   }
+
   /**
    *
    *
@@ -719,6 +739,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1029,6 +1050,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFloatValue() {
       return kindCase_ == 1;
     }
+
     /**
      *
      *
@@ -1046,6 +1068,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return 0F;
     }
+
     /**
      *
      *
@@ -1065,6 +1088,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1123,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIntValue() {
       return kindCase_ == 2;
     }
+
     /**
      *
      *
@@ -1116,6 +1141,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -1135,6 +1161,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1197,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return kindCase_ == 3;
     }
+
     /**
      *
      *
@@ -1198,6 +1226,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1226,6 +1255,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1277,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1297,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1326,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.EnumValue.Builder,
             com.google.cloud.contentwarehouse.v1.EnumValueOrBuilder>
         enumValueBuilder_;
+
     /**
      *
      *
@@ -1309,6 +1342,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnumValue() {
       return kindCase_ == 4;
     }
+
     /**
      *
      *
@@ -1334,6 +1368,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.EnumValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1356,6 +1391,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1412,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1445,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1433,6 +1471,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1445,6 +1484,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.EnumValue.Builder getEnumValueBuilder() {
       return getEnumValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1465,6 +1505,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.EnumValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1503,6 +1544,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.type.DateTime.Builder,
             com.google.type.DateTimeOrBuilder>
         datetimeValueBuilder_;
+
     /**
      *
      *
@@ -1518,6 +1560,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDatetimeValue() {
       return kindCase_ == 5;
     }
+
     /**
      *
      *
@@ -1543,6 +1586,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.DateTime.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1565,6 +1609,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1584,6 +1629,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1614,6 +1660,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1686,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1699,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.DateTime.Builder getDatetimeValueBuilder() {
       return getDatetimeValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1671,6 +1720,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.DateTime.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1707,6 +1757,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.TimestampValue.Builder,
             com.google.cloud.contentwarehouse.v1.TimestampValueOrBuilder>
         timestampValueBuilder_;
+
     /**
      *
      *
@@ -1722,6 +1773,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestampValue() {
       return kindCase_ == 6;
     }
+
     /**
      *
      *
@@ -1747,6 +1799,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.TimestampValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1769,6 +1822,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1789,6 +1843,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1821,6 +1876,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1846,6 +1902,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1858,6 +1915,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.TimestampValue.Builder getTimestampValueBuilder() {
       return getTimestampValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1879,6 +1937,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.TimestampValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1926,6 +1985,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBooleanValue() {
       return kindCase_ == 7;
     }
+
     /**
      *
      *
@@ -1943,6 +2003,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -1962,6 +2023,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

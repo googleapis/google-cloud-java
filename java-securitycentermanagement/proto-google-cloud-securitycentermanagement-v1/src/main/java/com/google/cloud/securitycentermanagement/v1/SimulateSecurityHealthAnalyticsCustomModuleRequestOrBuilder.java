@@ -39,6 +39,7 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return Whether the customConfig field is set.
    */
   boolean hasCustomConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return The customConfig.
    */
   com.google.cloud.securitycentermanagement.v1.CustomConfig getCustomConfig();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
   com.google.cloud.securitycentermanagement.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
           .SimulatedResource
       getResource();
+
   /**
    *
    *

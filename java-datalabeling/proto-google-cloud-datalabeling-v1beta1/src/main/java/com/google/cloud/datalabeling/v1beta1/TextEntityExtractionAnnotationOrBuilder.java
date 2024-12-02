@@ -36,6 +36,7 @@ public interface TextEntityExtractionAnnotationOrBuilder
    * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TextEntityExtractionAnnotationOrBuilder
    * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TextEntityExtractionAnnotationOrBuilder
    * @return Whether the sequentialSegment field is set.
    */
   boolean hasSequentialSegment();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface TextEntityExtractionAnnotationOrBuilder
    * @return The sequentialSegment.
    */
   com.google.cloud.datalabeling.v1beta1.SequentialSegment getSequentialSegment();
+
   /**
    *
    *

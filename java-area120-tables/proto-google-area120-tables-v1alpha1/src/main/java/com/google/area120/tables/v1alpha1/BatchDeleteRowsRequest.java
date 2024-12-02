@@ -33,6 +33,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.BatchDeleteRowsRequest)
     BatchDeleteRowsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDeleteRowsRequest.newBuilder() to construct.
   private BatchDeleteRowsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
   public int getNamesCount() {
     return names_.size();
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
+
   /**
    *
    *
@@ -381,6 +388,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -587,6 +595,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -612,6 +621,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       names_.makeImmutable();
       return names_;
     }
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
     public int getNamesCount() {
       return names_.size();
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +918,7 @@ public final class BatchDeleteRowsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

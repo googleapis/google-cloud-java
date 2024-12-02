@@ -33,6 +33,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.DeviceConfig)
     DeviceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeviceConfig.newBuilder() to construct.
   private DeviceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int VERSION_FIELD_NUMBER = 1;
   private long version_ = 0L;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLOUD_UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp cloudUpdateTime_;
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : cloudUpdateTime_;
   }
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEVICE_ACK_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp deviceAckTime_;
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeviceAckTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : deviceAckTime_;
   }
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BINARY_DATA_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -424,6 +433,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -667,6 +677,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long version_;
+
     /**
      *
      *
@@ -685,6 +696,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     public long getVersion() {
       return version_;
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +747,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         cloudUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
         return cloudUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +859,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +880,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -895,6 +916,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
             : cloudUpdateTime_;
       }
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deviceAckTimeBuilder_;
+
     /**
      *
      *
@@ -950,6 +973,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeviceAckTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -978,6 +1002,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
         return deviceAckTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1097,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeviceAckTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1145,6 +1175,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
             : deviceAckTime_;
       }
     }
+
     /**
      *
      *
@@ -1180,6 +1211,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
     }
+
     /**
      *
      *
@@ -1216,6 +1249,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

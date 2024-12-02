@@ -40,6 +40,7 @@ public interface RetryConfigOrBuilder
    * @return Whether the maxAttempts field is set.
    */
   boolean hasMaxAttempts();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface RetryConfigOrBuilder
    * @return Whether the unlimitedAttempts field is set.
    */
   boolean hasUnlimitedAttempts();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface RetryConfigOrBuilder
    * @return Whether the maxRetryDuration field is set.
    */
   boolean hasMaxRetryDuration();
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public interface RetryConfigOrBuilder
    * @return The maxRetryDuration.
    */
   com.google.protobuf.Duration getMaxRetryDuration();
+
   /**
    *
    *
@@ -208,6 +212,7 @@ public interface RetryConfigOrBuilder
    * @return Whether the minBackoff field is set.
    */
   boolean hasMinBackoff();
+
   /**
    *
    *
@@ -239,6 +244,7 @@ public interface RetryConfigOrBuilder
    * @return The minBackoff.
    */
   com.google.protobuf.Duration getMinBackoff();
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public interface RetryConfigOrBuilder
    * @return Whether the maxBackoff field is set.
    */
   boolean hasMaxBackoff();
+
   /**
    *
    *
@@ -331,6 +338,7 @@ public interface RetryConfigOrBuilder
    * @return The maxBackoff.
    */
   com.google.protobuf.Duration getMaxBackoff();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.TransformSummary)
     TransformSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransformSummary.newBuilder() to construct.
   private TransformSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
 
   public static final int KIND_FIELD_NUMBER = 1;
   private int kind_ = 0;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public int getKindValue() {
     return kind_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.DisplayData> displayData_;
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.dataflow.v1beta3.DisplayData> getDisplayDataList() {
     return displayData_;
   }
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       getDisplayDataOrBuilderList() {
     return displayData_;
   }
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public int getDisplayDataCount() {
     return displayData_.size();
   }
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public com.google.dataflow.v1beta3.DisplayData getDisplayData(int index) {
     return displayData_.get(index);
   }
+
   /**
    *
    *
@@ -281,6 +293,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList outputCollectionName_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -295,6 +308,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getOutputCollectionNameList() {
     return outputCollectionName_;
   }
+
   /**
    *
    *
@@ -309,6 +323,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public int getOutputCollectionNameCount() {
     return outputCollectionName_.size();
   }
+
   /**
    *
    *
@@ -324,6 +339,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public java.lang.String getOutputCollectionName(int index) {
     return outputCollectionName_.get(index);
   }
+
   /**
    *
    *
@@ -345,6 +361,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList inputCollectionName_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -359,6 +376,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getInputCollectionNameList() {
     return inputCollectionName_;
   }
+
   /**
    *
    *
@@ -373,6 +391,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public int getInputCollectionNameCount() {
     return inputCollectionName_.size();
   }
+
   /**
    *
    *
@@ -388,6 +407,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public java.lang.String getInputCollectionName(int index) {
     return inputCollectionName_.get(index);
   }
+
   /**
    *
    *
@@ -625,6 +645,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -940,6 +961,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int kind_ = 0;
+
     /**
      *
      *
@@ -955,6 +977,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public int getKindValue() {
       return kind_;
     }
+
     /**
      *
      *
@@ -973,6 +996,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
           com.google.dataflow.v1beta3.KindType.forNumber(kind_);
       return result == null ? com.google.dataflow.v1beta3.KindType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1011,6 +1036,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1056,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1052,6 +1079,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1102,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1124,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1142,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1167,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1158,6 +1190,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1180,6 +1213,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1201,6 +1235,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1253,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1310,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return displayDataBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1327,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return displayDataBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1344,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return displayDataBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1328,6 +1367,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1388,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1411,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1434,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1411,6 +1454,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1475,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1451,6 +1496,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1516,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1536,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1549,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.DisplayData.Builder getDisplayDataBuilder(int index) {
       return getDisplayDataFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1517,6 +1566,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return displayDataBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1534,6 +1584,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(displayData_);
       }
     }
+
     /**
      *
      *
@@ -1547,6 +1598,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       return getDisplayDataFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.DisplayData.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1560,6 +1612,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       return getDisplayDataFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.DisplayData.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1600,6 +1653,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1615,6 +1669,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       outputCollectionName_.makeImmutable();
       return outputCollectionName_;
     }
+
     /**
      *
      *
@@ -1629,6 +1684,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public int getOutputCollectionNameCount() {
       return outputCollectionName_.size();
     }
+
     /**
      *
      *
@@ -1644,6 +1700,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public java.lang.String getOutputCollectionName(int index) {
       return outputCollectionName_.get(index);
     }
+
     /**
      *
      *
@@ -1659,6 +1716,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getOutputCollectionNameBytes(int index) {
       return outputCollectionName_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1682,6 +1740,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1763,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1723,6 +1783,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1741,6 +1802,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1836,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1789,6 +1852,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       inputCollectionName_.makeImmutable();
       return inputCollectionName_;
     }
+
     /**
      *
      *
@@ -1803,6 +1867,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public int getInputCollectionNameCount() {
       return inputCollectionName_.size();
     }
+
     /**
      *
      *
@@ -1818,6 +1883,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public java.lang.String getInputCollectionName(int index) {
       return inputCollectionName_.get(index);
     }
+
     /**
      *
      *
@@ -1833,6 +1899,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getInputCollectionNameBytes(int index) {
       return inputCollectionName_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1856,6 +1923,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1878,6 +1946,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1897,6 +1966,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1915,6 +1985,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

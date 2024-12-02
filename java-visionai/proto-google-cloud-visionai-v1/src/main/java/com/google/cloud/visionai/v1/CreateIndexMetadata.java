@@ -33,6 +33,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CreateIndexMetadata)
     CreateIndexMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateIndexMetadata.newBuilder() to construct.
   private CreateIndexMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int OPERATION_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.OperationMetadata operationMetadata_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasOperationMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.visionai.v1.OperationMetadata.getDefaultInstance()
         : operationMetadata_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -483,6 +488,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
             com.google.cloud.visionai.v1.OperationMetadata.Builder,
             com.google.cloud.visionai.v1.OperationMetadataOrBuilder>
         operationMetadataBuilder_;
+
     /**
      *
      *
@@ -497,6 +503,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasOperationMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -517,6 +524,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
         return operationMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -539,6 +547,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -559,6 +568,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +617,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -620,6 +632,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOperationMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -638,6 +651,7 @@ public final class CreateIndexMetadata extends com.google.protobuf.GeneratedMess
             : operationMetadata_;
       }
     }
+
     /**
      *
      *

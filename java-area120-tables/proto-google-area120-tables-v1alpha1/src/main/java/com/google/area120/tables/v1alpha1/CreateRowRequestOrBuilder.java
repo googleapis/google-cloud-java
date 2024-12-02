@@ -37,6 +37,7 @@ public interface CreateRowRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CreateRowRequestOrBuilder
    * @return Whether the row field is set.
    */
   boolean hasRow();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface CreateRowRequestOrBuilder
    * @return The row.
    */
   com.google.area120.tables.v1alpha1.Row getRow();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface CreateRowRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *

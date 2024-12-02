@@ -38,6 +38,7 @@ public interface DatasetReferenceOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DatasetReferenceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *

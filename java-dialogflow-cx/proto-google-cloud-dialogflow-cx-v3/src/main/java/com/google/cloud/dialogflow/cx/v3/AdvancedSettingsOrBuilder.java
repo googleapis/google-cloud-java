@@ -40,6 +40,7 @@ public interface AdvancedSettingsOrBuilder
    * @return Whether the audioExportGcsDestination field is set.
    */
   boolean hasAudioExportGcsDestination();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface AdvancedSettingsOrBuilder
    * @return The audioExportGcsDestination.
    */
   com.google.cloud.dialogflow.cx.v3.GcsDestination getAudioExportGcsDestination();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface AdvancedSettingsOrBuilder
    * @return Whether the speechSettings field is set.
    */
   boolean hasSpeechSettings();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface AdvancedSettingsOrBuilder
    * @return The speechSettings.
    */
   com.google.cloud.dialogflow.cx.v3.AdvancedSettings.SpeechSettings getSpeechSettings();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface AdvancedSettingsOrBuilder
    * @return Whether the dtmfSettings field is set.
    */
   boolean hasDtmfSettings();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface AdvancedSettingsOrBuilder
    * @return The dtmfSettings.
    */
   com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings getDtmfSettings();
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public interface AdvancedSettingsOrBuilder
    * @return Whether the loggingSettings field is set.
    */
   boolean hasLoggingSettings();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface AdvancedSettingsOrBuilder
    * @return The loggingSettings.
    */
   com.google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings getLoggingSettings();
+
   /**
    *
    *

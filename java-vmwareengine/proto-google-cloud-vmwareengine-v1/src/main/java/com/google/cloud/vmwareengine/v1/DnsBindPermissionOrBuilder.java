@@ -42,6 +42,7 @@ public interface DnsBindPermissionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface DnsBindPermissionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.Principal> getPrincipalsList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface DnsBindPermissionOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.Principal getPrincipals(int index);
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface DnsBindPermissionOrBuilder
    * </code>
    */
   int getPrincipalsCount();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface DnsBindPermissionOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.PrincipalOrBuilder>
       getPrincipalsOrBuilderList();
+
   /**
    *
    *

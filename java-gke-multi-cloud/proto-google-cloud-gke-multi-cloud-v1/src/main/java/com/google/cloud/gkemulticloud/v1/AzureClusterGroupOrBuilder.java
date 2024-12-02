@@ -36,6 +36,7 @@ public interface AzureClusterGroupOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
+
   /**
    *
    *

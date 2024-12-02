@@ -36,6 +36,7 @@ public interface RuntimeConfigOrBuilder
    * @return Whether the kubernetes field is set.
    */
   boolean hasKubernetes();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RuntimeConfigOrBuilder
    * @return The kubernetes.
    */
   com.google.cloud.deploy.v1.KubernetesConfig getKubernetes();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RuntimeConfigOrBuilder
    * @return Whether the cloudRun field is set.
    */
   boolean hasCloudRun();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RuntimeConfigOrBuilder
    * @return The cloudRun.
    */
   com.google.cloud.deploy.v1.CloudRunConfig getCloudRun();
+
   /**
    *
    *

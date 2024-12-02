@@ -33,6 +33,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.FacetProperty)
     FacetPropertyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FacetProperty.newBuilder() to construct.
   private FacetProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bucketStart field is set.
      */
     boolean hasBucketStart();
+
     /**
      *
      *
@@ -96,6 +98,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      * @return The bucketStart.
      */
     com.google.cloud.visionai.v1.FacetValue getBucketStart();
+
     /**
      *
      *
@@ -121,6 +124,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bucketGranularity field is set.
      */
     boolean hasBucketGranularity();
+
     /**
      *
      *
@@ -134,6 +138,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      * @return The bucketGranularity.
      */
     com.google.cloud.visionai.v1.FacetValue getBucketGranularity();
+
     /**
      *
      *
@@ -159,6 +164,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      */
     int getBucketCount();
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.FacetProperty.FixedRangeBucketSpec)
       FixedRangeBucketSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FixedRangeBucketSpec.newBuilder() to construct.
     private FixedRangeBucketSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -210,6 +217,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int BUCKET_START_FIELD_NUMBER = 1;
     private com.google.cloud.visionai.v1.FacetValue bucketStart_;
+
     /**
      *
      *
@@ -226,6 +234,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBucketStart() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -244,6 +253,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.visionai.v1.FacetValue.getDefaultInstance()
           : bucketStart_;
     }
+
     /**
      *
      *
@@ -263,6 +273,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BUCKET_GRANULARITY_FIELD_NUMBER = 2;
     private com.google.cloud.visionai.v1.FacetValue bucketGranularity_;
+
     /**
      *
      *
@@ -279,6 +290,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBucketGranularity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -297,6 +309,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.visionai.v1.FacetValue.getDefaultInstance()
           : bucketGranularity_;
     }
+
     /**
      *
      *
@@ -316,6 +329,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BUCKET_COUNT_FIELD_NUMBER = 3;
     private int bucketCount_ = 0;
+
     /**
      *
      *
@@ -522,6 +536,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.visionai.v1.FacetValue.Builder,
               com.google.cloud.visionai.v1.FacetValueOrBuilder>
           bucketStartBuilder_;
+
       /**
        *
        *
@@ -791,6 +807,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBucketStart() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -812,6 +829,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           return bucketStartBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -835,6 +853,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -856,6 +875,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -884,6 +904,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -904,6 +925,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -919,6 +941,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getBucketStartFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -938,6 +961,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
               : bucketStart_;
         }
       }
+
       /**
        *
        *
@@ -971,6 +995,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.visionai.v1.FacetValue.Builder,
               com.google.cloud.visionai.v1.FacetValueOrBuilder>
           bucketGranularityBuilder_;
+
       /**
        *
        *
@@ -986,6 +1011,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBucketGranularity() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1007,6 +1033,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           return bucketGranularityBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1030,6 +1057,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1051,6 +1079,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1080,6 +1109,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1100,6 +1130,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1115,6 +1146,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getBucketGranularityFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1134,6 +1166,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
               : bucketGranularity_;
         }
       }
+
       /**
        *
        *
@@ -1162,6 +1195,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bucketCount_;
+
       /**
        *
        *
@@ -1177,6 +1211,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       public int getBucketCount() {
         return bucketCount_;
       }
+
       /**
        *
        *
@@ -1196,6 +1231,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1296,6 +1332,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.visionai.v1.FacetValue endpoints = 1;</code>
      */
     java.util.List<com.google.cloud.visionai.v1.FacetValue> getEndpointsList();
+
     /**
      *
      *
@@ -1306,6 +1343,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.visionai.v1.FacetValue endpoints = 1;</code>
      */
     com.google.cloud.visionai.v1.FacetValue getEndpoints(int index);
+
     /**
      *
      *
@@ -1316,6 +1354,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.visionai.v1.FacetValue endpoints = 1;</code>
      */
     int getEndpointsCount();
+
     /**
      *
      *
@@ -1327,6 +1366,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.visionai.v1.FacetValueOrBuilder>
         getEndpointsOrBuilderList();
+
     /**
      *
      *
@@ -1338,6 +1378,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.visionai.v1.FacetValueOrBuilder getEndpointsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -1359,6 +1400,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.FacetProperty.CustomRangeBucketSpec)
       CustomRangeBucketSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CustomRangeBucketSpec.newBuilder() to construct.
     private CustomRangeBucketSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1393,6 +1435,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.visionai.v1.FacetValue> endpoints_;
+
     /**
      *
      *
@@ -1406,6 +1449,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.visionai.v1.FacetValue> getEndpointsList() {
       return endpoints_;
     }
+
     /**
      *
      *
@@ -1420,6 +1464,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         getEndpointsOrBuilderList() {
       return endpoints_;
     }
+
     /**
      *
      *
@@ -1433,6 +1478,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public int getEndpointsCount() {
       return endpoints_.size();
     }
+
     /**
      *
      *
@@ -1446,6 +1492,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.FacetValue getEndpoints(int index) {
       return endpoints_.get(index);
     }
+
     /**
      *
      *
@@ -1624,6 +1671,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1902,6 +1950,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           return endpointsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1918,6 +1967,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           return endpointsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1934,6 +1984,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           return endpointsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1956,6 +2007,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1976,6 +2028,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1998,6 +2051,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2020,6 +2074,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2039,6 +2094,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2059,6 +2115,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2079,6 +2136,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2098,6 +2156,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2117,6 +2176,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2129,6 +2189,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.visionai.v1.FacetValue.Builder getEndpointsBuilder(int index) {
         return getEndpointsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2145,6 +2206,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           return endpointsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2162,6 +2224,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(endpoints_);
         }
       }
+
       /**
        *
        *
@@ -2175,6 +2238,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         return getEndpointsFieldBuilder()
             .addBuilder(com.google.cloud.visionai.v1.FacetValue.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2188,6 +2252,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         return getEndpointsFieldBuilder()
             .addBuilder(index, com.google.cloud.visionai.v1.FacetValue.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2304,6 +2369,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for granularity.
      */
     int getGranularityValue();
+
     /**
      *
      *
@@ -2318,6 +2384,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpec.Granularity getGranularity();
   }
+
   /**
    *
    *
@@ -2332,6 +2399,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpec)
       DateTimeBucketSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DateTimeBucketSpec.newBuilder() to construct.
     private DateTimeBucketSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2425,6 +2493,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
        * <code>GRANULARITY_UNSPECIFIED = 0;</code>
        */
       public static final int GRANULARITY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2435,6 +2504,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
        * <code>YEAR = 1;</code>
        */
       public static final int YEAR_VALUE = 1;
+
       /**
        *
        *
@@ -2445,6 +2515,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
        * <code>MONTH = 2;</code>
        */
       public static final int MONTH_VALUE = 2;
+
       /**
        *
        *
@@ -2545,6 +2616,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
 
     public static final int GRANULARITY_FIELD_NUMBER = 1;
     private int granularity_ = 0;
+
     /**
      *
      *
@@ -2561,6 +2633,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public int getGranularityValue() {
       return granularity_;
     }
+
     /**
      *
      *
@@ -2751,6 +2824,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2940,6 +3014,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int granularity_ = 0;
+
       /**
        *
        *
@@ -2957,6 +3032,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       public int getGranularityValue() {
         return granularity_;
       }
+
       /**
        *
        *
@@ -2977,6 +3053,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3000,6 +3077,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpec.Granularity.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3024,6 +3102,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3129,6 +3208,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     private RangeFacetConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3164,6 +3244,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIXED_RANGE_BUCKET_SPEC_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -3180,6 +3261,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFixedRangeBucketSpec() {
     return rangeFacetConfigCase_ == 5;
   }
+
   /**
    *
    *
@@ -3199,6 +3281,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.FacetProperty.FixedRangeBucketSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3219,6 +3302,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_RANGE_BUCKET_SPEC_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -3236,6 +3320,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomRangeBucketSpec() {
     return rangeFacetConfigCase_ == 6;
   }
+
   /**
    *
    *
@@ -3257,6 +3342,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.FacetProperty.CustomRangeBucketSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3278,6 +3364,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATETIME_BUCKET_SPEC_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -3294,6 +3381,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDatetimeBucketSpec() {
     return rangeFacetConfigCase_ == 7;
   }
+
   /**
    *
    *
@@ -3313,6 +3401,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3337,6 +3426,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList mappedFields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -3363,6 +3453,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMappedFieldsList() {
     return mappedFields_;
   }
+
   /**
    *
    *
@@ -3389,6 +3480,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   public int getMappedFieldsCount() {
     return mappedFields_.size();
   }
+
   /**
    *
    *
@@ -3416,6 +3508,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMappedFields(int index) {
     return mappedFields_.get(index);
   }
+
   /**
    *
    *
@@ -3448,6 +3541,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -3471,6 +3565,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3497,6 +3592,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESULT_SIZE_FIELD_NUMBER = 3;
   private long resultSize_ = 0L;
+
   /**
    *
    *
@@ -3518,6 +3614,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BUCKET_TYPE_FIELD_NUMBER = 4;
   private int bucketType_ = 0;
+
   /**
    *
    *
@@ -3533,6 +3630,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
   public int getBucketTypeValue() {
     return bucketType_;
   }
+
   /**
    *
    *
@@ -3805,6 +3903,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4122,6 +4221,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.FacetProperty.FixedRangeBucketSpec.Builder,
             com.google.cloud.visionai.v1.FacetProperty.FixedRangeBucketSpecOrBuilder>
         fixedRangeBucketSpecBuilder_;
+
     /**
      *
      *
@@ -4139,6 +4239,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFixedRangeBucketSpec() {
       return rangeFacetConfigCase_ == 5;
     }
+
     /**
      *
      *
@@ -4168,6 +4269,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.FacetProperty.FixedRangeBucketSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4193,6 +4295,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4215,6 +4318,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4253,6 +4357,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4280,6 +4385,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4295,6 +4401,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         getFixedRangeBucketSpecBuilder() {
       return getFixedRangeBucketSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4319,6 +4426,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.FacetProperty.FixedRangeBucketSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4360,6 +4468,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.FacetProperty.CustomRangeBucketSpec.Builder,
             com.google.cloud.visionai.v1.FacetProperty.CustomRangeBucketSpecOrBuilder>
         customRangeBucketSpecBuilder_;
+
     /**
      *
      *
@@ -4377,6 +4486,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomRangeBucketSpec() {
       return rangeFacetConfigCase_ == 6;
     }
+
     /**
      *
      *
@@ -4408,6 +4518,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4433,6 +4544,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4455,6 +4567,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4493,6 +4606,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4520,6 +4634,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4535,6 +4650,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         getCustomRangeBucketSpecBuilder() {
       return getCustomRangeBucketSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4560,6 +4676,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4602,6 +4719,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpec.Builder,
             com.google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpecOrBuilder>
         datetimeBucketSpecBuilder_;
+
     /**
      *
      *
@@ -4618,6 +4736,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDatetimeBucketSpec() {
       return rangeFacetConfigCase_ == 7;
     }
+
     /**
      *
      *
@@ -4644,6 +4763,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4668,6 +4788,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -4689,6 +4810,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -4726,6 +4848,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       rangeFacetConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -4752,6 +4875,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4766,6 +4890,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         getDatetimeBucketSpecBuilder() {
       return getDatetimeBucketSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4788,6 +4913,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.FacetProperty.DateTimeBucketSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4832,6 +4958,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -4859,6 +4986,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       mappedFields_.makeImmutable();
       return mappedFields_;
     }
+
     /**
      *
      *
@@ -4885,6 +5013,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public int getMappedFieldsCount() {
       return mappedFields_.size();
     }
+
     /**
      *
      *
@@ -4912,6 +5041,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMappedFields(int index) {
       return mappedFields_.get(index);
     }
+
     /**
      *
      *
@@ -4939,6 +5069,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMappedFieldsBytes(int index) {
       return mappedFields_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4974,6 +5105,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5008,6 +5140,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5039,6 +5172,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5069,6 +5203,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5106,6 +5241,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -5128,6 +5264,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5150,6 +5287,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5171,6 +5309,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5188,6 +5327,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5212,6 +5352,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long resultSize_;
+
     /**
      *
      *
@@ -5230,6 +5371,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public long getResultSize() {
       return resultSize_;
     }
+
     /**
      *
      *
@@ -5252,6 +5394,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5274,6 +5417,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bucketType_ = 0;
+
     /**
      *
      *
@@ -5289,6 +5433,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
     public int getBucketTypeValue() {
       return bucketType_;
     }
+
     /**
      *
      *
@@ -5307,6 +5452,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5324,6 +5470,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.visionai.v1.FacetBucketType.forNumber(bucketType_);
       return result == null ? com.google.cloud.visionai.v1.FacetBucketType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -5345,6 +5492,7 @@ public final class FacetProperty extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

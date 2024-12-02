@@ -38,6 +38,7 @@ public interface SetSslCertificatesTargetHttpsProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SetSslCertificatesTargetHttpsProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SetSslCertificatesTargetHttpsProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface SetSslCertificatesTargetHttpsProxyRequestOrBuilder
    * @return Whether the targetHttpsProxiesSetSslCertificatesRequestResource field is set.
    */
   boolean hasTargetHttpsProxiesSetSslCertificatesRequestResource();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface SetSslCertificatesTargetHttpsProxyRequestOrBuilder
    */
   com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest
       getTargetHttpsProxiesSetSslCertificatesRequestResource();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface SetSslCertificatesTargetHttpsProxyRequestOrBuilder
    * @return The targetHttpsProxy.
    */
   java.lang.String getTargetHttpsProxy();
+
   /**
    *
    *

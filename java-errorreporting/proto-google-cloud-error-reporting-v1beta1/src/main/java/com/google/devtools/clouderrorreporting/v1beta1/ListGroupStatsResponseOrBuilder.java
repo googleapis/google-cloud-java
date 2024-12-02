@@ -37,6 +37,7 @@ public interface ListGroupStatsResponseOrBuilder
    */
   java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
       getErrorGroupStatsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListGroupStatsResponseOrBuilder
    * </code>
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getErrorGroupStats(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListGroupStatsResponseOrBuilder
    * </code>
    */
   int getErrorGroupStatsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListGroupStatsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>
       getErrorGroupStatsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListGroupStatsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface ListGroupStatsResponseOrBuilder
    * @return Whether the timeRangeBegin field is set.
    */
   boolean hasTimeRangeBegin();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface ListGroupStatsResponseOrBuilder
    * @return The timeRangeBegin.
    */
   com.google.protobuf.Timestamp getTimeRangeBegin();
+
   /**
    *
    *

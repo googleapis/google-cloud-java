@@ -35,6 +35,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.DialogAction)
     DialogActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DialogAction.newBuilder() to construct.
   private DialogAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
     private ActionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -109,6 +111,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIALOG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDialog() {
     return actionCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.Dialog.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTION_STATUS_FIELD_NUMBER = 2;
   private com.google.chat.v1.ActionStatus actionStatus_;
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasActionStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
         ? com.google.chat.v1.ActionStatus.getDefaultInstance()
         : actionStatus_;
   }
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -661,6 +670,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.Dialog.Builder,
             com.google.chat.v1.DialogOrBuilder>
         dialogBuilder_;
+
     /**
      *
      *
@@ -678,6 +688,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDialog() {
       return actionCase_ == 1;
     }
+
     /**
      *
      *
@@ -705,6 +716,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.Dialog.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -729,6 +741,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +763,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.Dialog.Builder getDialogBuilder() {
       return getDialogFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.Dialog.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.ActionStatus.Builder,
             com.google.chat.v1.ActionStatusOrBuilder>
         actionStatusBuilder_;
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasActionStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -928,6 +948,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
         return actionStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -955,6 +976,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1001,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1034,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1059,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1079,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getActionStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
             : actionStatus_;
       }
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface ListAccountTaxRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface ListAccountTaxRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

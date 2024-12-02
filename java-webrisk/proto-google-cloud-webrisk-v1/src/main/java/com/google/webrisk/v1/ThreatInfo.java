@@ -35,6 +35,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.ThreatInfo)
     ThreatInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ThreatInfo.newBuilder() to construct.
   private ThreatInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ABUSE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ABUSE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>MALWARE = 1;</code>
      */
     public static final int MALWARE_VALUE = 1;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOCIAL_ENGINEERING = 2;</code>
      */
     public static final int SOCIAL_ENGINEERING_VALUE = 2;
+
     /**
      *
      *
@@ -262,6 +266,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the score field is set.
      */
     boolean hasScore();
+
     /**
      *
      *
@@ -289,6 +294,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the level field is set.
      */
     boolean hasLevel();
+
     /**
      *
      *
@@ -301,6 +307,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for level.
      */
     int getLevelValue();
+
     /**
      *
      *
@@ -316,6 +323,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
 
     com.google.webrisk.v1.ThreatInfo.Confidence.ValueCase getValueCase();
   }
+
   /**
    *
    *
@@ -330,6 +338,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.ThreatInfo.Confidence)
       ConfidenceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Confidence.newBuilder() to construct.
     private Confidence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -421,6 +430,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>CONFIDENCE_LEVEL_UNSPECIFIED = 0;</code>
        */
       public static final int CONFIDENCE_LEVEL_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -431,6 +441,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>LOW = 1;</code>
        */
       public static final int LOW_VALUE = 1;
+
       /**
        *
        *
@@ -441,6 +452,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>MEDIUM = 2;</code>
        */
       public static final int MEDIUM_VALUE = 2;
+
       /**
        *
        *
@@ -557,6 +569,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       private ValueCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -590,6 +603,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SCORE_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -607,6 +621,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScore() {
       return valueCase_ == 1;
     }
+
     /**
      *
      *
@@ -629,6 +644,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LEVEL_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -643,6 +659,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLevel() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -660,6 +677,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1111,6 +1130,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public boolean hasScore() {
         return valueCase_ == 1;
       }
+
       /**
        *
        *
@@ -1130,6 +1150,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         }
         return 0F;
       }
+
       /**
        *
        *
@@ -1151,6 +1172,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1188,6 +1210,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLevel() {
         return valueCase_ == 2;
       }
+
       /**
        *
        *
@@ -1206,6 +1229,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
+
       /**
        *
        *
@@ -1224,6 +1248,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1248,6 +1273,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         return com.google.webrisk.v1.ThreatInfo.Confidence.ConfidenceLevel
             .CONFIDENCE_LEVEL_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -1269,6 +1295,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1373,6 +1400,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.webrisk.v1.ThreatInfo.ThreatJustification.JustificationLabel>
         getLabelsList();
+
     /**
      *
      *
@@ -1387,6 +1415,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return The count of labels.
      */
     int getLabelsCount();
+
     /**
      *
      *
@@ -1402,6 +1431,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return The labels at the given index.
      */
     com.google.webrisk.v1.ThreatInfo.ThreatJustification.JustificationLabel getLabels(int index);
+
     /**
      *
      *
@@ -1416,6 +1446,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enum numeric values on the wire for labels.
      */
     java.util.List<java.lang.Integer> getLabelsValueList();
+
     /**
      *
      *
@@ -1444,6 +1475,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the comments.
      */
     java.util.List<java.lang.String> getCommentsList();
+
     /**
      *
      *
@@ -1456,6 +1488,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return The count of comments.
      */
     int getCommentsCount();
+
     /**
      *
      *
@@ -1469,6 +1502,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      * @return The comments at the given index.
      */
     java.lang.String getComments(int index);
+
     /**
      *
      *
@@ -1483,6 +1517,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCommentsBytes(int index);
   }
+
   /**
    *
    *
@@ -1497,6 +1532,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.ThreatInfo.ThreatJustification)
       ThreatJustificationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ThreatJustification.newBuilder() to construct.
     private ThreatJustification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1592,6 +1628,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>JUSTIFICATION_LABEL_UNSPECIFIED = 0;</code>
        */
       public static final int JUSTIFICATION_LABEL_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -1602,6 +1639,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>MANUAL_VERIFICATION = 1;</code>
        */
       public static final int MANUAL_VERIFICATION_VALUE = 1;
+
       /**
        *
        *
@@ -1612,6 +1650,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
        * <code>USER_REPORT = 2;</code>
        */
       public static final int USER_REPORT_VALUE = 2;
+
       /**
        *
        *
@@ -1736,6 +1775,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
                     : result;
               }
             };
+
     /**
      *
      *
@@ -1757,6 +1797,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.webrisk.v1.ThreatInfo.ThreatJustification.JustificationLabel>(
           labels_, labels_converter_);
     }
+
     /**
      *
      *
@@ -1774,6 +1815,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return labels_.size();
     }
+
     /**
      *
      *
@@ -1793,6 +1835,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return labels_converter_.convert(labels_.get(index));
     }
+
     /**
      *
      *
@@ -1810,6 +1853,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getLabelsValueList() {
       return labels_;
     }
+
     /**
      *
      *
@@ -1836,6 +1880,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList comments_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1850,6 +1895,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getCommentsList() {
       return comments_;
     }
+
     /**
      *
      *
@@ -1864,6 +1910,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public int getCommentsCount() {
       return comments_.size();
     }
+
     /**
      *
      *
@@ -1879,6 +1926,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getComments(int index) {
       return comments_.get(index);
     }
+
     /**
      *
      *
@@ -2088,6 +2136,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2330,6 +2379,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
         }
       }
+
       /**
        *
        *
@@ -2350,6 +2400,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.webrisk.v1.ThreatInfo.ThreatJustification.JustificationLabel>(
             labels_, labels_converter_);
       }
+
       /**
        *
        *
@@ -2366,6 +2417,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public int getLabelsCount() {
         return labels_.size();
       }
+
       /**
        *
        *
@@ -2384,6 +2436,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return labels_converter_.convert(labels_.get(index));
       }
+
       /**
        *
        *
@@ -2410,6 +2463,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2434,6 +2488,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2460,6 +2515,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2479,6 +2535,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2495,6 +2552,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Integer> getLabelsValueList() {
         return java.util.Collections.unmodifiableList(labels_);
       }
+
       /**
        *
        *
@@ -2512,6 +2570,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public int getLabelsValue(int index) {
         return labels_.get(index);
       }
+
       /**
        *
        *
@@ -2533,6 +2592,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2553,6 +2613,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2585,6 +2646,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -2600,6 +2662,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         comments_.makeImmutable();
         return comments_;
       }
+
       /**
        *
        *
@@ -2614,6 +2677,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public int getCommentsCount() {
         return comments_.size();
       }
+
       /**
        *
        *
@@ -2629,6 +2693,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getComments(int index) {
         return comments_.get(index);
       }
+
       /**
        *
        *
@@ -2644,6 +2709,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getCommentsBytes(int index) {
         return comments_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2667,6 +2733,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2689,6 +2756,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2708,6 +2776,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2726,6 +2795,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2817,6 +2887,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ABUSE_TYPE_FIELD_NUMBER = 1;
   private int abuseType_ = 0;
+
   /**
    *
    *
@@ -2832,6 +2903,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
   public int getAbuseTypeValue() {
     return abuseType_;
   }
+
   /**
    *
    *
@@ -2852,6 +2924,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int THREAT_CONFIDENCE_FIELD_NUMBER = 2;
   private com.google.webrisk.v1.ThreatInfo.Confidence threatConfidence_;
+
   /**
    *
    *
@@ -2867,6 +2940,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasThreatConfidence() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2884,6 +2958,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.webrisk.v1.ThreatInfo.Confidence.getDefaultInstance()
         : threatConfidence_;
   }
+
   /**
    *
    *
@@ -2902,6 +2977,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int THREAT_JUSTIFICATION_FIELD_NUMBER = 3;
   private com.google.webrisk.v1.ThreatInfo.ThreatJustification threatJustification_;
+
   /**
    *
    *
@@ -2917,6 +2993,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasThreatJustification() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2934,6 +3011,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.webrisk.v1.ThreatInfo.ThreatJustification.getDefaultInstance()
         : threatJustification_;
   }
+
   /**
    *
    *
@@ -3138,6 +3216,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3374,6 +3453,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int abuseType_ = 0;
+
     /**
      *
      *
@@ -3389,6 +3469,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public int getAbuseTypeValue() {
       return abuseType_;
     }
+
     /**
      *
      *
@@ -3407,6 +3488,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3424,6 +3506,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.webrisk.v1.ThreatInfo.AbuseType.forNumber(abuseType_);
       return result == null ? com.google.webrisk.v1.ThreatInfo.AbuseType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3445,6 +3528,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3469,6 +3553,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.webrisk.v1.ThreatInfo.Confidence.Builder,
             com.google.webrisk.v1.ThreatInfo.ConfidenceOrBuilder>
         threatConfidenceBuilder_;
+
     /**
      *
      *
@@ -3483,6 +3568,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasThreatConfidence() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3503,6 +3589,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         return threatConfidenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3525,6 +3612,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3545,6 +3633,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3573,6 +3662,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3592,6 +3682,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3606,6 +3697,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getThreatConfidenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3624,6 +3716,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
             : threatConfidence_;
       }
     }
+
     /**
      *
      *
@@ -3656,6 +3749,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.webrisk.v1.ThreatInfo.ThreatJustification.Builder,
             com.google.webrisk.v1.ThreatInfo.ThreatJustificationOrBuilder>
         threatJustificationBuilder_;
+
     /**
      *
      *
@@ -3671,6 +3765,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasThreatJustification() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3692,6 +3787,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         return threatJustificationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3716,6 +3812,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3737,6 +3834,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3767,6 +3865,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3787,6 +3886,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3803,6 +3903,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getThreatJustificationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3823,6 +3924,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
             : threatJustification_;
       }
     }
+
     /**
      *
      *

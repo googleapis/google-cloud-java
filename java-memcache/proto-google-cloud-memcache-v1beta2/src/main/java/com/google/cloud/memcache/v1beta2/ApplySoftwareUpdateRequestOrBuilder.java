@@ -39,6 +39,7 @@ public interface ApplySoftwareUpdateRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ApplySoftwareUpdateRequestOrBuilder
    * @return A list containing the nodeIds.
    */
   java.util.List<java.lang.String> getNodeIdsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ApplySoftwareUpdateRequestOrBuilder
    * @return The count of nodeIds.
    */
   int getNodeIdsCount();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface ApplySoftwareUpdateRequestOrBuilder
    * @return The nodeIds at the given index.
    */
   java.lang.String getNodeIds(int index);
+
   /**
    *
    *

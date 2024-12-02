@@ -34,6 +34,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1.Workload)
     WorkloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Workload.newBuilder() to construct.
   private Workload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -241,6 +242,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPLIANCE_REGIME_UNSPECIFIED = 0;</code>
      */
     public static final int COMPLIANCE_REGIME_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -251,6 +253,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>IL4 = 1;</code>
      */
     public static final int IL4_VALUE = 1;
+
     /**
      *
      *
@@ -261,6 +264,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>CJIS = 2;</code>
      */
     public static final int CJIS_VALUE = 2;
+
     /**
      *
      *
@@ -271,6 +275,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>FEDRAMP_HIGH = 3;</code>
      */
     public static final int FEDRAMP_HIGH_VALUE = 3;
+
     /**
      *
      *
@@ -281,6 +286,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>FEDRAMP_MODERATE = 4;</code>
      */
     public static final int FEDRAMP_MODERATE_VALUE = 4;
+
     /**
      *
      *
@@ -291,6 +297,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>US_REGIONAL_ACCESS = 5;</code>
      */
     public static final int US_REGIONAL_ACCESS_VALUE = 5;
+
     /**
      *
      *
@@ -301,6 +308,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>HIPAA = 6;</code>
      */
     public static final int HIPAA_VALUE = 6;
+
     /**
      *
      *
@@ -311,6 +319,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>HITRUST = 7;</code>
      */
     public static final int HITRUST_VALUE = 7;
+
     /**
      *
      *
@@ -321,6 +330,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>EU_REGIONS_AND_SUPPORT = 8;</code>
      */
     public static final int EU_REGIONS_AND_SUPPORT_VALUE = 8;
+
     /**
      *
      *
@@ -331,6 +341,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>CA_REGIONS_AND_SUPPORT = 9;</code>
      */
     public static final int CA_REGIONS_AND_SUPPORT_VALUE = 9;
+
     /**
      *
      *
@@ -341,6 +352,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>ITAR = 10;</code>
      */
     public static final int ITAR_VALUE = 10;
+
     /**
      *
      *
@@ -353,6 +365,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>AU_REGIONS_AND_US_SUPPORT = 11;</code>
      */
     public static final int AU_REGIONS_AND_US_SUPPORT_VALUE = 11;
+
     /**
      *
      *
@@ -522,6 +535,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>KAJ_ENROLLMENT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int KAJ_ENROLLMENT_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -532,6 +546,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>KAJ_ENROLLMENT_STATE_PENDING = 1;</code>
      */
     public static final int KAJ_ENROLLMENT_STATE_PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -672,6 +687,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTNER_UNSPECIFIED = 0;</code>
      */
     public static final int PARTNER_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for resourceType.
      */
     int getResourceTypeValue();
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo.ResourceType getResourceType();
   }
+
   /**
    *
    *
@@ -824,6 +842,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1.Workload.ResourceInfo)
       ResourceInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResourceInfo.newBuilder() to construct.
     private ResourceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -932,6 +951,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>RESOURCE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -946,6 +966,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>CONSUMER_PROJECT = 1 [deprecated = true];</code>
        */
       @java.lang.Deprecated public static final int CONSUMER_PROJECT_VALUE = 1;
+
       /**
        *
        *
@@ -956,6 +977,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>CONSUMER_FOLDER = 4;</code>
        */
       public static final int CONSUMER_FOLDER_VALUE = 4;
+
       /**
        *
        *
@@ -966,6 +988,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>ENCRYPTION_KEYS_PROJECT = 2;</code>
        */
       public static final int ENCRYPTION_KEYS_PROJECT_VALUE = 2;
+
       /**
        *
        *
@@ -1068,6 +1091,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESOURCE_ID_FIELD_NUMBER = 1;
     private long resourceId_ = 0L;
+
     /**
      *
      *
@@ -1087,6 +1111,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
     private int resourceType_ = 0;
+
     /**
      *
      *
@@ -1103,6 +1128,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getResourceTypeValue() {
       return resourceType_;
     }
+
     /**
      *
      *
@@ -1302,6 +1328,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1503,6 +1530,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long resourceId_;
+
       /**
        *
        *
@@ -1519,6 +1547,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public long getResourceId() {
         return resourceId_;
       }
+
       /**
        *
        *
@@ -1539,6 +1568,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1559,6 +1589,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int resourceType_ = 0;
+
       /**
        *
        *
@@ -1576,6 +1607,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public int getResourceTypeValue() {
         return resourceType_;
       }
+
       /**
        *
        *
@@ -1596,6 +1628,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1619,6 +1652,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo.ResourceType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1643,6 +1677,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1749,6 +1784,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextRotationTime field is set.
      */
     boolean hasNextRotationTime();
+
     /**
      *
      *
@@ -1764,6 +1800,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return The nextRotationTime.
      */
     com.google.protobuf.Timestamp getNextRotationTime();
+
     /**
      *
      *
@@ -1794,6 +1831,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rotationPeriod field is set.
      */
     boolean hasRotationPeriod();
+
     /**
      *
      *
@@ -1810,6 +1848,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return The rotationPeriod.
      */
     com.google.protobuf.Duration getRotationPeriod();
+
     /**
      *
      *
@@ -1825,6 +1864,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getRotationPeriodOrBuilder();
   }
+
   /**
    *
    *
@@ -1843,6 +1883,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1.Workload.KMSSettings)
       KMSSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use KMSSettings.newBuilder() to construct.
     private KMSSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1874,6 +1915,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int NEXT_ROTATION_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp nextRotationTime_;
+
     /**
      *
      *
@@ -1892,6 +1934,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNextRotationTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1912,6 +1955,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : nextRotationTime_;
     }
+
     /**
      *
      *
@@ -1933,6 +1977,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ROTATION_PERIOD_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration rotationPeriod_;
+
     /**
      *
      *
@@ -1952,6 +1997,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRotationPeriod() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1973,6 +2019,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : rotationPeriod_;
     }
+
     /**
      *
      *
@@ -2173,6 +2220,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2407,6 +2455,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           nextRotationTimeBuilder_;
+
       /**
        *
        *
@@ -2424,6 +2473,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNextRotationTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2447,6 +2497,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return nextRotationTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2472,6 +2523,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2494,6 +2546,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2524,6 +2577,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2546,6 +2600,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2563,6 +2618,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getNextRotationTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2584,6 +2640,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               : nextRotationTime_;
         }
       }
+
       /**
        *
        *
@@ -2619,6 +2676,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           rotationPeriodBuilder_;
+
       /**
        *
        *
@@ -2637,6 +2695,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRotationPeriod() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2661,6 +2720,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return rotationPeriodBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2687,6 +2747,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2710,6 +2771,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2741,6 +2803,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2764,6 +2827,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2782,6 +2846,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getRotationPeriodFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2804,6 +2869,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               : rotationPeriod_;
         }
       }
+
       /**
        *
        *
@@ -2919,6 +2985,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceId.
      */
     java.lang.String getResourceId();
+
     /**
      *
      *
@@ -2951,6 +3018,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for resourceType.
      */
     int getResourceTypeValue();
+
     /**
      *
      *
@@ -2981,6 +3049,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -2996,6 +3065,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
   }
+
   /**
    *
    *
@@ -3010,6 +3080,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1.Workload.ResourceSettings)
       ResourceSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResourceSettings.newBuilder() to construct.
     private ResourceSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3046,6 +3117,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceId_ = "";
+
     /**
      *
      *
@@ -3073,6 +3145,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3103,6 +3176,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
     private int resourceType_ = 0;
+
     /**
      *
      *
@@ -3121,6 +3195,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getResourceTypeValue() {
       return resourceType_;
     }
+
     /**
      *
      *
@@ -3150,6 +3225,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3175,6 +3251,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3386,6 +3463,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3605,6 +3683,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object resourceId_ = "";
+
       /**
        *
        *
@@ -3631,6 +3710,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3657,6 +3737,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3682,6 +3763,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3703,6 +3785,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3731,6 +3814,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int resourceType_ = 0;
+
       /**
        *
        *
@@ -3750,6 +3834,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public int getResourceTypeValue() {
         return resourceType_;
       }
+
       /**
        *
        *
@@ -3772,6 +3857,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3797,6 +3883,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo.ResourceType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3823,6 +3910,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3846,6 +3934,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -3870,6 +3959,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3894,6 +3984,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3917,6 +4008,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3936,6 +4028,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4047,6 +4140,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the setupStatus field is set.
      */
     boolean hasSetupStatus();
+
     /**
      *
      *
@@ -4061,6 +4155,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for setupStatus.
      */
     int getSetupStatusValue();
+
     /**
      *
      *
@@ -4091,6 +4186,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.SetupError>
         getSetupErrorsList();
+
     /**
      *
      *
@@ -4105,6 +4201,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return The count of setupErrors.
      */
     int getSetupErrorsCount();
+
     /**
      *
      *
@@ -4121,6 +4218,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.SetupError getSetupErrors(
         int index);
+
     /**
      *
      *
@@ -4135,6 +4233,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enum numeric values on the wire for setupErrors.
      */
     java.util.List<java.lang.Integer> getSetupErrorsValueList();
+
     /**
      *
      *
@@ -4151,6 +4250,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     int getSetupErrorsValue(int index);
   }
+
   /**
    *
    *
@@ -4165,6 +4265,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse)
       SaaEnrollmentResponseOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SaaEnrollmentResponse.newBuilder() to construct.
     private SaaEnrollmentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4250,6 +4351,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>SETUP_STATE_UNSPECIFIED = 0;</code>
        */
       public static final int SETUP_STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -4260,6 +4362,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>STATUS_PENDING = 1;</code>
        */
       public static final int STATUS_PENDING_VALUE = 1;
+
       /**
        *
        *
@@ -4433,6 +4536,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>SETUP_ERROR_UNSPECIFIED = 0;</code>
        */
       public static final int SETUP_ERROR_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -4444,6 +4548,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>ERROR_INVALID_BASE_SETUP = 1;</code>
        */
       public static final int ERROR_INVALID_BASE_SETUP_VALUE = 1;
+
       /**
        *
        *
@@ -4454,6 +4559,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>ERROR_MISSING_EXTERNAL_SIGNING_KEY = 2;</code>
        */
       public static final int ERROR_MISSING_EXTERNAL_SIGNING_KEY_VALUE = 2;
+
       /**
        *
        *
@@ -4465,6 +4571,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * <code>ERROR_NOT_ALL_SERVICES_ENROLLED = 3;</code>
        */
       public static final int ERROR_NOT_ALL_SERVICES_ENROLLED_VALUE = 3;
+
       /**
        *
        *
@@ -4569,6 +4676,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SETUP_STATUS_FIELD_NUMBER = 1;
     private int setupStatus_ = 0;
+
     /**
      *
      *
@@ -4586,6 +4694,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSetupStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4603,6 +4712,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getSetupStatusValue() {
       return setupStatus_;
     }
+
     /**
      *
      *
@@ -4652,6 +4762,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                     : result;
               }
             };
+
     /**
      *
      *
@@ -4674,6 +4785,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.SetupError>(
           setupErrors_, setupErrors_converter_);
     }
+
     /**
      *
      *
@@ -4691,6 +4803,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getSetupErrorsCount() {
       return setupErrors_.size();
     }
+
     /**
      *
      *
@@ -4710,6 +4823,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         getSetupErrors(int index) {
       return setupErrors_converter_.convert(setupErrors_.get(index));
     }
+
     /**
      *
      *
@@ -4727,6 +4841,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSetupErrorsValueList() {
       return setupErrors_;
     }
+
     /**
      *
      *
@@ -4941,6 +5056,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5177,6 +5293,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int setupStatus_ = 0;
+
       /**
        *
        *
@@ -5194,6 +5311,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSetupStatus() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5211,6 +5329,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public int getSetupStatusValue() {
         return setupStatus_;
       }
+
       /**
        *
        *
@@ -5231,6 +5350,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5255,6 +5375,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -5279,6 +5400,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5307,6 +5429,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
         }
       }
+
       /**
        *
        *
@@ -5328,6 +5451,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.SetupError>(
             setupErrors_, setupErrors_converter_);
       }
+
       /**
        *
        *
@@ -5344,6 +5468,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public int getSetupErrorsCount() {
         return setupErrors_.size();
       }
+
       /**
        *
        *
@@ -5362,6 +5487,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           getSetupErrors(int index) {
         return setupErrors_converter_.convert(setupErrors_.get(index));
       }
+
       /**
        *
        *
@@ -5388,6 +5514,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5412,6 +5539,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5440,6 +5568,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5459,6 +5588,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5475,6 +5605,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Integer> getSetupErrorsValueList() {
         return java.util.Collections.unmodifiableList(setupErrors_);
       }
+
       /**
        *
        *
@@ -5492,6 +5623,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public int getSetupErrorsValue(int index) {
         return setupErrors_.get(index);
       }
+
       /**
        *
        *
@@ -5513,6 +5645,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5533,6 +5666,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5628,6 +5762,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -5655,6 +5790,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5687,6 +5823,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -5715,6 +5852,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5748,6 +5886,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo> resources_;
+
   /**
    *
    *
@@ -5767,6 +5906,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       getResourcesList() {
     return resources_;
   }
+
   /**
    *
    *
@@ -5787,6 +5927,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       getResourcesOrBuilderList() {
     return resources_;
   }
+
   /**
    *
    *
@@ -5805,6 +5946,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public int getResourcesCount() {
     return resources_.size();
   }
+
   /**
    *
    *
@@ -5823,6 +5965,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo getResources(int index) {
     return resources_.get(index);
   }
+
   /**
    *
    *
@@ -5845,6 +5988,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPLIANCE_REGIME_FIELD_NUMBER = 4;
   private int complianceRegime_ = 0;
+
   /**
    *
    *
@@ -5862,6 +6006,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public int getComplianceRegimeValue() {
     return complianceRegime_;
   }
+
   /**
    *
    *
@@ -5886,6 +6031,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -5903,6 +6049,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5920,6 +6067,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -5940,6 +6088,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object billingAccount_ = "";
+
   /**
    *
    *
@@ -5970,6 +6119,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -6005,6 +6155,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -6029,6 +6180,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -6080,6 +6232,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -6096,12 +6249,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -6115,6 +6270,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -6135,6 +6291,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -6160,6 +6317,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object provisionedResourcesParent_ = "";
+
   /**
    *
    *
@@ -6189,6 +6347,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -6221,6 +6380,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KMS_SETTINGS_FIELD_NUMBER = 14;
   private com.google.cloud.assuredworkloads.v1.Workload.KMSSettings kmsSettings_;
+
   /**
    *
    *
@@ -6245,6 +6405,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKmsSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -6271,6 +6432,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.assuredworkloads.v1.Workload.KMSSettings.getDefaultInstance()
         : kmsSettings_;
   }
+
   /**
    *
    *
@@ -6300,6 +6462,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings>
       resourceSettings_;
+
   /**
    *
    *
@@ -6318,6 +6481,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       getResourceSettingsList() {
     return resourceSettings_;
   }
+
   /**
    *
    *
@@ -6337,6 +6501,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       getResourceSettingsOrBuilderList() {
     return resourceSettings_;
   }
+
   /**
    *
    *
@@ -6354,6 +6519,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public int getResourceSettingsCount() {
     return resourceSettings_.size();
   }
+
   /**
    *
    *
@@ -6372,6 +6538,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return resourceSettings_.get(index);
   }
+
   /**
    *
    *
@@ -6393,6 +6560,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KAJ_ENROLLMENT_STATE_FIELD_NUMBER = 17;
   private int kajEnrollmentState_ = 0;
+
   /**
    *
    *
@@ -6410,6 +6578,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public int getKajEnrollmentStateValue() {
     return kajEnrollmentState_;
   }
+
   /**
    *
    *
@@ -6435,6 +6604,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_SOVEREIGN_CONTROLS_FIELD_NUMBER = 18;
   private boolean enableSovereignControls_ = false;
+
   /**
    *
    *
@@ -6455,6 +6625,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public static final int SAA_ENROLLMENT_RESPONSE_FIELD_NUMBER = 20;
   private com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse
       saaEnrollmentResponse_;
+
   /**
    *
    *
@@ -6474,6 +6645,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSaaEnrollmentResponse() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -6496,6 +6668,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.getDefaultInstance()
         : saaEnrollmentResponse_;
   }
+
   /**
    *
    *
@@ -6522,6 +6695,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList compliantButDisallowedServices_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -6541,6 +6715,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getCompliantButDisallowedServicesList() {
     return compliantButDisallowedServices_;
   }
+
   /**
    *
    *
@@ -6560,6 +6735,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public int getCompliantButDisallowedServicesCount() {
     return compliantButDisallowedServices_.size();
   }
+
   /**
    *
    *
@@ -6580,6 +6756,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getCompliantButDisallowedServices(int index) {
     return compliantButDisallowedServices_.get(index);
   }
+
   /**
    *
    *
@@ -6603,6 +6780,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARTNER_FIELD_NUMBER = 25;
   private int partner_ = 0;
+
   /**
    *
    *
@@ -6620,6 +6798,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public int getPartnerValue() {
     return partner_;
   }
+
   /**
    *
    *
@@ -6990,6 +7169,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7541,6 +7721,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -7567,6 +7748,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7593,6 +7775,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7618,6 +7801,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7639,6 +7823,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7667,6 +7852,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -7694,6 +7880,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7721,6 +7908,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7747,6 +7935,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7769,6 +7958,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7837,6 +8027,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return resourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7858,6 +8049,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return resourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7879,6 +8071,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return resourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7907,6 +8100,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7933,6 +8127,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7960,6 +8155,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7988,6 +8184,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8013,6 +8210,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8039,6 +8237,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8065,6 +8264,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8089,6 +8289,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8113,6 +8314,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8131,6 +8333,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8153,6 +8356,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return resourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8176,6 +8380,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(resources_);
       }
     }
+
     /**
      *
      *
@@ -8196,6 +8401,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8217,6 +8423,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8254,6 +8461,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int complianceRegime_ = 0;
+
     /**
      *
      *
@@ -8271,6 +8479,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getComplianceRegimeValue() {
       return complianceRegime_;
     }
+
     /**
      *
      *
@@ -8291,6 +8500,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8313,6 +8523,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8337,6 +8548,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8363,6 +8575,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -8379,6 +8592,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -8401,6 +8615,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8425,6 +8640,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8446,6 +8662,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8475,6 +8692,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8496,6 +8714,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8512,6 +8731,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8532,6 +8752,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -8561,6 +8782,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object billingAccount_ = "";
+
     /**
      *
      *
@@ -8590,6 +8812,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8619,6 +8842,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8647,6 +8871,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8671,6 +8896,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8702,6 +8928,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -8725,6 +8952,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8748,6 +8976,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8770,6 +8999,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8788,6 +9018,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8837,6 +9068,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -8853,12 +9085,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -8872,6 +9106,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -8892,6 +9127,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -8918,6 +9154,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -8934,12 +9171,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -8960,6 +9199,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       return this;
     }
+
     /**
      *
      *
@@ -8976,6 +9216,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object provisionedResourcesParent_ = "";
+
     /**
      *
      *
@@ -9004,6 +9245,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9032,6 +9274,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9059,6 +9302,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9082,6 +9326,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9117,6 +9362,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.assuredworkloads.v1.Workload.KMSSettings.Builder,
             com.google.cloud.assuredworkloads.v1.Workload.KMSSettingsOrBuilder>
         kmsSettingsBuilder_;
+
     /**
      *
      *
@@ -9140,6 +9386,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKmsSettings() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -9169,6 +9416,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return kmsSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9198,6 +9446,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9225,6 +9474,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9261,6 +9511,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9287,6 +9538,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9309,6 +9561,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getKmsSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9335,6 +9588,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             : kmsSettings_;
       }
     }
+
     /**
      *
      *
@@ -9406,6 +9660,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return resourceSettingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -9426,6 +9681,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return resourceSettingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -9447,6 +9703,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return resourceSettingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -9474,6 +9731,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9499,6 +9757,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9526,6 +9785,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9553,6 +9813,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9577,6 +9838,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9602,6 +9864,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9627,6 +9890,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9650,6 +9914,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9673,6 +9938,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9690,6 +9956,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         getResourceSettingsBuilder(int index) {
       return getResourceSettingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -9711,6 +9978,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return resourceSettingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -9733,6 +10001,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(resourceSettings_);
       }
     }
+
     /**
      *
      *
@@ -9752,6 +10021,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -9772,6 +10042,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -9811,6 +10082,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int kajEnrollmentState_ = 0;
+
     /**
      *
      *
@@ -9828,6 +10100,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getKajEnrollmentStateValue() {
       return kajEnrollmentState_;
     }
+
     /**
      *
      *
@@ -9848,6 +10121,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9871,6 +10145,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.assuredworkloads.v1.Workload.KajEnrollmentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -9895,6 +10170,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9916,6 +10192,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableSovereignControls_;
+
     /**
      *
      *
@@ -9932,6 +10209,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableSovereignControls() {
       return enableSovereignControls_;
     }
+
     /**
      *
      *
@@ -9952,6 +10230,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9978,6 +10257,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.Builder,
             com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponseOrBuilder>
         saaEnrollmentResponseBuilder_;
+
     /**
      *
      *
@@ -9996,6 +10276,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSaaEnrollmentResponse() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -10022,6 +10303,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return saaEnrollmentResponseBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10049,6 +10331,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10074,6 +10357,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10108,6 +10392,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10131,6 +10416,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10150,6 +10436,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSaaEnrollmentResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10174,6 +10461,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             : saaEnrollmentResponse_;
       }
     }
+
     /**
      *
      *
@@ -10214,6 +10502,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00004000;
     }
+
     /**
      *
      *
@@ -10234,6 +10523,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       compliantButDisallowedServices_.makeImmutable();
       return compliantButDisallowedServices_;
     }
+
     /**
      *
      *
@@ -10253,6 +10543,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getCompliantButDisallowedServicesCount() {
       return compliantButDisallowedServices_.size();
     }
+
     /**
      *
      *
@@ -10273,6 +10564,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCompliantButDisallowedServices(int index) {
       return compliantButDisallowedServices_.get(index);
     }
+
     /**
      *
      *
@@ -10293,6 +10585,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCompliantButDisallowedServicesBytes(int index) {
       return compliantButDisallowedServices_.getByteString(index);
     }
+
     /**
      *
      *
@@ -10321,6 +10614,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10348,6 +10642,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10374,6 +10669,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10397,6 +10693,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10427,6 +10724,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int partner_ = 0;
+
     /**
      *
      *
@@ -10444,6 +10742,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public int getPartnerValue() {
       return partner_;
     }
+
     /**
      *
      *
@@ -10464,6 +10763,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10485,6 +10785,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.assuredworkloads.v1.Workload.Partner.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -10508,6 +10809,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

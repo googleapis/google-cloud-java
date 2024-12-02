@@ -36,6 +36,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   int getNamedPortsCount();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
+
   /**
    *
    *

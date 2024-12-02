@@ -33,6 +33,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.TrafficPolylineData)
     TrafficPolylineDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrafficPolylineData.newBuilder() to construct.
   private TrafficPolylineData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int TRAFFIC_RENDERING_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering trafficRendering_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
   public boolean hasTrafficRendering() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
         ? com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering.getDefaultInstance()
         : trafficRendering_;
   }
+
   /**
    *
    *
@@ -280,6 +284,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -485,6 +490,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
             com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering.Builder,
             com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRenderingOrBuilder>
         trafficRenderingBuilder_;
+
     /**
      *
      *
@@ -500,6 +506,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
     public boolean hasTrafficRendering() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -523,6 +530,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
         return trafficRenderingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -547,6 +555,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -569,6 +578,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -600,6 +610,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -620,6 +631,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +648,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTrafficRenderingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -657,6 +670,7 @@ public final class TrafficPolylineData extends com.google.protobuf.GeneratedMess
             : trafficRendering_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RecordSuppression)
     RecordSuppressionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecordSuppression.newBuilder() to construct.
   private RecordSuppression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int CONDITION_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.RecordCondition condition_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
         ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()
         : condition_;
   }
+
   /**
    *
    *
@@ -280,6 +284,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -483,6 +488,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
             com.google.privacy.dlp.v2.RecordCondition.Builder,
             com.google.privacy.dlp.v2.RecordConditionOrBuilder>
         conditionBuilder_;
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -519,6 +526,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
         return conditionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -542,6 +550,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -562,6 +571,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -590,6 +600,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -610,6 +621,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -625,6 +637,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -644,6 +657,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
             : condition_;
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface NetworkConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface NetworkConfigOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface NetworkConfigOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface NetworkConfigOrBuilder
    * @return The enum numeric value on the wire for bandwidth.
    */
   int getBandwidthValue();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface NetworkConfigOrBuilder
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.NetworkConfig.IntakeVlanAttachment>
       getVlanAttachmentsList();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface NetworkConfigOrBuilder
    */
   com.google.cloud.baremetalsolution.v2.NetworkConfig.IntakeVlanAttachment getVlanAttachments(
       int index);
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface NetworkConfigOrBuilder
    * </code>
    */
   int getVlanAttachmentsCount();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface NetworkConfigOrBuilder
           ? extends
               com.google.cloud.baremetalsolution.v2.NetworkConfig.IntakeVlanAttachmentOrBuilder>
       getVlanAttachmentsOrBuilderList();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface NetworkConfigOrBuilder
    * @return The cidr.
    */
   java.lang.String getCidr();
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public interface NetworkConfigOrBuilder
    * @return The enum numeric value on the wire for serviceCidr.
    */
   int getServiceCidrValue();
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface NetworkConfigOrBuilder
    * @return The userNote.
    */
   java.lang.String getUserNote();
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public interface NetworkConfigOrBuilder
    * @return The gcpService.
    */
   java.lang.String getGcpService();
+
   /**
    *
    *

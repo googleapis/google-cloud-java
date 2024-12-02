@@ -36,6 +36,7 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
    * @return Whether the shieldedInstanceIntegrityPolicyResource field is set.
    */
   boolean hasShieldedInstanceIntegrityPolicyResource();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
    */
   com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy
       getShieldedInstanceIntegrityPolicyResource();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

@@ -53,6 +53,7 @@ public interface GetThreadReadStateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

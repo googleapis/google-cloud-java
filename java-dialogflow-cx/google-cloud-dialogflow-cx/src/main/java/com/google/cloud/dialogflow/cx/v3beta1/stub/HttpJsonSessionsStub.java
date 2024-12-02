@@ -561,7 +561,8 @@ public class HttpJsonSessionsStub extends SessionsStub {
   public BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingDetectIntentCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingDetectIntentCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override

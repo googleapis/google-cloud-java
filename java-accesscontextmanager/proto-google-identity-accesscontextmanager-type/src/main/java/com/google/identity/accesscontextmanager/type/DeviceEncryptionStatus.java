@@ -82,6 +82,7 @@ public enum DeviceEncryptionStatus implements com.google.protobuf.ProtocolMessag
    * <code>ENCRYPTION_UNSPECIFIED = 0;</code>
    */
   public static final int ENCRYPTION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum DeviceEncryptionStatus implements com.google.protobuf.ProtocolMessag
    * <code>ENCRYPTION_UNSUPPORTED = 1;</code>
    */
   public static final int ENCRYPTION_UNSUPPORTED_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum DeviceEncryptionStatus implements com.google.protobuf.ProtocolMessag
    * <code>UNENCRYPTED = 2;</code>
    */
   public static final int UNENCRYPTED_VALUE = 2;
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ReceivePacketsControlResponseOrBuilder
    * @return Whether the heartbeat field is set.
    */
   boolean hasHeartbeat();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ReceivePacketsControlResponseOrBuilder
    * @return Whether the writesDoneRequest field is set.
    */
   boolean hasWritesDoneRequest();
+
   /**
    *
    *

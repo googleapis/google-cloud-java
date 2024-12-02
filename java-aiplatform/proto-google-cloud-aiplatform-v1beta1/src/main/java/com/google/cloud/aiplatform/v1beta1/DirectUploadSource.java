@@ -33,6 +33,7 @@ public final class DirectUploadSource extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DirectUploadSource)
     DirectUploadSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DirectUploadSource.newBuilder() to construct.
   private DirectUploadSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class DirectUploadSource extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

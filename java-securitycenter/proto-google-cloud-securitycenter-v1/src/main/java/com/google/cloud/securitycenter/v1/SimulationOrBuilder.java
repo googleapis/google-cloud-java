@@ -37,6 +37,7 @@ public interface SimulationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SimulationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SimulationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface SimulationOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v1.ResourceValueConfigMetadata>
       getResourceValueConfigsMetadataList();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface SimulationOrBuilder
    */
   com.google.cloud.securitycenter.v1.ResourceValueConfigMetadata getResourceValueConfigsMetadata(
       int index);
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface SimulationOrBuilder
    * </code>
    */
   int getResourceValueConfigsMetadataCount();
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface SimulationOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.ResourceValueConfigMetadataOrBuilder>
       getResourceValueConfigsMetadataOrBuilderList();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface SimulationOrBuilder
    * @return The enum numeric value on the wire for cloudProvider.
    */
   int getCloudProviderValue();
+
   /**
    *
    *

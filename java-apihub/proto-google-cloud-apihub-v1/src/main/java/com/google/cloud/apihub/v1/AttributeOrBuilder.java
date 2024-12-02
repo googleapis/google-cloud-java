@@ -39,6 +39,7 @@ public interface AttributeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AttributeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AttributeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface AttributeOrBuilder
    * @return The enum numeric value on the wire for definitionType.
    */
   int getDefinitionTypeValue();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface AttributeOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public interface AttributeOrBuilder
    * @return The enum numeric value on the wire for dataType.
    */
   int getDataTypeValue();
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public interface AttributeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.apihub.v1.Attribute.AllowedValue> getAllowedValuesList();
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public interface AttributeOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.Attribute.AllowedValue getAllowedValues(int index);
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface AttributeOrBuilder
    * </code>
    */
   int getAllowedValuesCount();
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public interface AttributeOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.Attribute.AllowedValueOrBuilder>
       getAllowedValuesOrBuilderList();
+
   /**
    *
    *
@@ -311,6 +321,7 @@ public interface AttributeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -324,6 +335,7 @@ public interface AttributeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -349,6 +361,7 @@ public interface AttributeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -362,6 +375,7 @@ public interface AttributeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

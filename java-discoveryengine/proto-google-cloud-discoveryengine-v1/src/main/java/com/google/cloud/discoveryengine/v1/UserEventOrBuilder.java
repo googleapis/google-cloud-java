@@ -54,6 +54,7 @@ public interface UserEventOrBuilder
    * @return The eventType.
    */
   java.lang.String getEventType();
+
   /**
    *
    *
@@ -113,6 +114,7 @@ public interface UserEventOrBuilder
    * @return The userPseudoId.
    */
   java.lang.String getUserPseudoId();
+
   /**
    *
    *
@@ -160,6 +162,7 @@ public interface UserEventOrBuilder
    * @return The engine.
    */
   java.lang.String getEngine();
+
   /**
    *
    *
@@ -200,6 +203,7 @@ public interface UserEventOrBuilder
    * @return The dataStore.
    */
   java.lang.String getDataStore();
+
   /**
    *
    *
@@ -236,6 +240,7 @@ public interface UserEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -250,6 +255,7 @@ public interface UserEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *
@@ -275,6 +281,7 @@ public interface UserEventOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
+
   /**
    *
    *
@@ -287,6 +294,7 @@ public interface UserEventOrBuilder
    * @return The userInfo.
    */
   com.google.cloud.discoveryengine.v1.UserInfo getUserInfo();
+
   /**
    *
    *
@@ -342,6 +350,7 @@ public interface UserEventOrBuilder
    * @return The sessionId.
    */
   java.lang.String getSessionId();
+
   /**
    *
    *
@@ -377,6 +386,7 @@ public interface UserEventOrBuilder
    * @return Whether the pageInfo field is set.
    */
   boolean hasPageInfo();
+
   /**
    *
    *
@@ -390,6 +400,7 @@ public interface UserEventOrBuilder
    * @return The pageInfo.
    */
   com.google.cloud.discoveryengine.v1.PageInfo getPageInfo();
+
   /**
    *
    *
@@ -436,6 +447,7 @@ public interface UserEventOrBuilder
    * @return The attributionToken.
    */
   java.lang.String getAttributionToken();
+
   /**
    *
    *
@@ -499,6 +511,7 @@ public interface UserEventOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -555,6 +568,7 @@ public interface UserEventOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.DocumentInfo documents = 10;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.DocumentInfo> getDocumentsList();
+
   /**
    *
    *
@@ -582,6 +596,7 @@ public interface UserEventOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.DocumentInfo documents = 10;</code>
    */
   com.google.cloud.discoveryengine.v1.DocumentInfo getDocuments(int index);
+
   /**
    *
    *
@@ -609,6 +624,7 @@ public interface UserEventOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.DocumentInfo documents = 10;</code>
    */
   int getDocumentsCount();
+
   /**
    *
    *
@@ -637,6 +653,7 @@ public interface UserEventOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.DocumentInfoOrBuilder>
       getDocumentsOrBuilderList();
+
   /**
    *
    *
@@ -677,6 +694,7 @@ public interface UserEventOrBuilder
    * @return Whether the panel field is set.
    */
   boolean hasPanel();
+
   /**
    *
    *
@@ -689,6 +707,7 @@ public interface UserEventOrBuilder
    * @return The panel.
    */
   com.google.cloud.discoveryengine.v1.PanelInfo getPanel();
+
   /**
    *
    *
@@ -715,6 +734,7 @@ public interface UserEventOrBuilder
    * @return Whether the searchInfo field is set.
    */
   boolean hasSearchInfo();
+
   /**
    *
    *
@@ -730,6 +750,7 @@ public interface UserEventOrBuilder
    * @return The searchInfo.
    */
   com.google.cloud.discoveryengine.v1.SearchInfo getSearchInfo();
+
   /**
    *
    *
@@ -760,6 +781,7 @@ public interface UserEventOrBuilder
    * @return Whether the completionInfo field is set.
    */
   boolean hasCompletionInfo();
+
   /**
    *
    *
@@ -776,6 +798,7 @@ public interface UserEventOrBuilder
    * @return The completionInfo.
    */
   com.google.cloud.discoveryengine.v1.CompletionInfo getCompletionInfo();
+
   /**
    *
    *
@@ -803,6 +826,7 @@ public interface UserEventOrBuilder
    * @return Whether the transactionInfo field is set.
    */
   boolean hasTransactionInfo();
+
   /**
    *
    *
@@ -815,6 +839,7 @@ public interface UserEventOrBuilder
    * @return The transactionInfo.
    */
   com.google.cloud.discoveryengine.v1.TransactionInfo getTransactionInfo();
+
   /**
    *
    *
@@ -840,6 +865,7 @@ public interface UserEventOrBuilder
    * @return A list containing the tagIds.
    */
   java.util.List<java.lang.String> getTagIdsList();
+
   /**
    *
    *
@@ -854,6 +880,7 @@ public interface UserEventOrBuilder
    * @return The count of tagIds.
    */
   int getTagIdsCount();
+
   /**
    *
    *
@@ -869,6 +896,7 @@ public interface UserEventOrBuilder
    * @return The tagIds at the given index.
    */
   java.lang.String getTagIds(int index);
+
   /**
    *
    *
@@ -898,6 +926,7 @@ public interface UserEventOrBuilder
    * @return A list containing the promotionIds.
    */
   java.util.List<java.lang.String> getPromotionIdsList();
+
   /**
    *
    *
@@ -911,6 +940,7 @@ public interface UserEventOrBuilder
    * @return The count of promotionIds.
    */
   int getPromotionIdsCount();
+
   /**
    *
    *
@@ -925,6 +955,7 @@ public interface UserEventOrBuilder
    * @return The promotionIds at the given index.
    */
   java.lang.String getPromotionIds(int index);
+
   /**
    *
    *
@@ -976,6 +1007,7 @@ public interface UserEventOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -1012,10 +1044,12 @@ public interface UserEventOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.CustomAttribute>
       getAttributes();
+
   /**
    *
    *
@@ -1053,6 +1087,7 @@ public interface UserEventOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.CustomAttribute>
       getAttributesMap();
+
   /**
    *
    *
@@ -1093,6 +1128,7 @@ public interface UserEventOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.discoveryengine.v1.CustomAttribute defaultValue);
+
   /**
    *
    *
@@ -1142,6 +1178,7 @@ public interface UserEventOrBuilder
    * @return Whether the mediaInfo field is set.
    */
   boolean hasMediaInfo();
+
   /**
    *
    *
@@ -1154,6 +1191,7 @@ public interface UserEventOrBuilder
    * @return The mediaInfo.
    */
   com.google.cloud.discoveryengine.v1.MediaInfo getMediaInfo();
+
   /**
    *
    *

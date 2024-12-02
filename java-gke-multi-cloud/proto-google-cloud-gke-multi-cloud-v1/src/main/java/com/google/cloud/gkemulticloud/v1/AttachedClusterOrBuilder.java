@@ -42,6 +42,7 @@ public interface AttachedClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface AttachedClusterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the oidcConfig field is set.
    */
   boolean hasOidcConfig();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface AttachedClusterOrBuilder
    * @return The oidcConfig.
    */
   com.google.cloud.gkemulticloud.v1.AttachedOidcConfig getOidcConfig();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface AttachedClusterOrBuilder
    * @return The platformVersion.
    */
   java.lang.String getPlatformVersion();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface AttachedClusterOrBuilder
    * @return The distribution.
    */
   java.lang.String getDistribution();
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public interface AttachedClusterOrBuilder
    * @return The clusterRegion.
    */
   java.lang.String getClusterRegion();
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the fleet field is set.
    */
   boolean hasFleet();
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public interface AttachedClusterOrBuilder
    * @return The fleet.
    */
   com.google.cloud.gkemulticloud.v1.Fleet getFleet();
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public interface AttachedClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -301,6 +311,7 @@ public interface AttachedClusterOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -340,6 +351,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -353,6 +365,7 @@ public interface AttachedClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -378,6 +391,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -391,6 +405,7 @@ public interface AttachedClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public interface AttachedClusterOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -448,6 +464,7 @@ public interface AttachedClusterOrBuilder
    * @return The kubernetesVersion.
    */
   java.lang.String getKubernetesVersion();
+
   /**
    *
    *
@@ -480,6 +497,7 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -499,9 +517,11 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -521,6 +541,7 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -544,6 +565,7 @@ public interface AttachedClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -578,6 +600,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the workloadIdentityConfig field is set.
    */
   boolean hasWorkloadIdentityConfig();
+
   /**
    *
    *
@@ -592,6 +615,7 @@ public interface AttachedClusterOrBuilder
    * @return The workloadIdentityConfig.
    */
   com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
   /**
    *
    *
@@ -620,6 +644,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -634,6 +659,7 @@ public interface AttachedClusterOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.gkemulticloud.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *
@@ -659,6 +685,7 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterError> getErrorsList();
+
   /**
    *
    *
@@ -671,6 +698,7 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AttachedClusterError getErrors(int index);
+
   /**
    *
    *
@@ -683,6 +711,7 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -696,6 +725,7 @@ public interface AttachedClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AttachedClusterErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -723,6 +753,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the authorization field is set.
    */
   boolean hasAuthorization();
+
   /**
    *
    *
@@ -737,6 +768,7 @@ public interface AttachedClusterOrBuilder
    * @return The authorization.
    */
   com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization getAuthorization();
+
   /**
    *
    *
@@ -765,6 +797,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the monitoringConfig field is set.
    */
   boolean hasMonitoringConfig();
+
   /**
    *
    *
@@ -779,6 +812,7 @@ public interface AttachedClusterOrBuilder
    * @return The monitoringConfig.
    */
   com.google.cloud.gkemulticloud.v1.MonitoringConfig getMonitoringConfig();
+
   /**
    *
    *
@@ -806,6 +840,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the proxyConfig field is set.
    */
   boolean hasProxyConfig();
+
   /**
    *
    *
@@ -820,6 +855,7 @@ public interface AttachedClusterOrBuilder
    * @return The proxyConfig.
    */
   com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig();
+
   /**
    *
    *
@@ -847,6 +883,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the binaryAuthorization field is set.
    */
   boolean hasBinaryAuthorization();
+
   /**
    *
    *
@@ -861,6 +898,7 @@ public interface AttachedClusterOrBuilder
    * @return The binaryAuthorization.
    */
   com.google.cloud.gkemulticloud.v1.BinaryAuthorization getBinaryAuthorization();
+
   /**
    *
    *
@@ -888,6 +926,7 @@ public interface AttachedClusterOrBuilder
    * @return Whether the securityPostureConfig field is set.
    */
   boolean hasSecurityPostureConfig();
+
   /**
    *
    *
@@ -902,6 +941,7 @@ public interface AttachedClusterOrBuilder
    * @return The securityPostureConfig.
    */
   com.google.cloud.gkemulticloud.v1.SecurityPostureConfig getSecurityPostureConfig();
+
   /**
    *
    *

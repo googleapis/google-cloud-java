@@ -33,6 +33,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.advisorynotifications.v1.Subject)
     SubjectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Subject.newBuilder() to construct.
   private Subject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TEXT_FIELD_NUMBER = 1;
   private com.google.cloud.advisorynotifications.v1.Text text_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.advisorynotifications.v1.Text.getDefaultInstance()
         : text_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -479,6 +484,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.advisorynotifications.v1.Text.Builder,
             com.google.cloud.advisorynotifications.v1.TextOrBuilder>
         textBuilder_;
+
     /**
      *
      *
@@ -493,6 +499,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         return textBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -535,6 +543,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -554,6 +563,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +591,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -600,6 +611,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +626,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -632,6 +645,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
             : text_;
       }
     }
+
     /**
      *
      *

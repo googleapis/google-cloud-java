@@ -36,6 +36,7 @@ public interface ParticipantOrBuilder
    * @return Whether the signedinUser field is set.
    */
   boolean hasSignedinUser();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ParticipantOrBuilder
    * @return The signedinUser.
    */
   com.google.apps.meet.v2beta.SignedinUser getSignedinUser();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ParticipantOrBuilder
    * @return Whether the anonymousUser field is set.
    */
   boolean hasAnonymousUser();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ParticipantOrBuilder
    * @return The anonymousUser.
    */
   com.google.apps.meet.v2beta.AnonymousUser getAnonymousUser();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ParticipantOrBuilder
    * @return Whether the phoneUser field is set.
    */
   boolean hasPhoneUser();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ParticipantOrBuilder
    * @return The phoneUser.
    */
   com.google.apps.meet.v2beta.PhoneUser getPhoneUser();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface ParticipantOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface ParticipantOrBuilder
    * @return Whether the earliestStartTime field is set.
    */
   boolean hasEarliestStartTime();
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public interface ParticipantOrBuilder
    * @return The earliestStartTime.
    */
   com.google.protobuf.Timestamp getEarliestStartTime();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface ParticipantOrBuilder
    * @return Whether the latestEndTime field is set.
    */
   boolean hasLatestEndTime();
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface ParticipantOrBuilder
    * @return The latestEndTime.
    */
   com.google.protobuf.Timestamp getLatestEndTime();
+
   /**
    *
    *

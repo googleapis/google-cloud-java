@@ -34,6 +34,7 @@ public interface ResourceAnnotationsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.StreamAnnotation application_annotations = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> getApplicationAnnotationsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ResourceAnnotationsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.StreamAnnotation application_annotations = 1;</code>
    */
   com.google.cloud.visionai.v1.StreamAnnotation getApplicationAnnotations(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ResourceAnnotationsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.StreamAnnotation application_annotations = 1;</code>
    */
   int getApplicationAnnotationsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ResourceAnnotationsOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.StreamAnnotationOrBuilder>
       getApplicationAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ResourceAnnotationsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.ApplicationNodeAnnotation node_annotations = 2;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.ApplicationNodeAnnotation> getNodeAnnotationsList();
+
   /**
    *
    *
@@ -111,6 +116,7 @@ public interface ResourceAnnotationsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.ApplicationNodeAnnotation node_annotations = 2;</code>
    */
   com.google.cloud.visionai.v1.ApplicationNodeAnnotation getNodeAnnotations(int index);
+
   /**
    *
    *
@@ -128,6 +134,7 @@ public interface ResourceAnnotationsOrBuilder
    * <code>repeated .google.cloud.visionai.v1.ApplicationNodeAnnotation node_annotations = 2;</code>
    */
   int getNodeAnnotationsCount();
+
   /**
    *
    *
@@ -146,6 +153,7 @@ public interface ResourceAnnotationsOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ApplicationNodeAnnotationOrBuilder>
       getNodeAnnotationsOrBuilderList();
+
   /**
    *
    *

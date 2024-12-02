@@ -38,6 +38,7 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    * @return Whether the organizationSettings field is set.
    */
   boolean hasOrganizationSettings();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    * @return The organizationSettings.
    */
   com.google.cloud.securitycenter.v1.OrganizationSettings getOrganizationSettings();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

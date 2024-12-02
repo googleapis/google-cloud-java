@@ -41,6 +41,7 @@ public interface RemoveContextChildrenRequestOrBuilder
    * @return The context.
    */
   java.lang.String getContext();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface RemoveContextChildrenRequestOrBuilder
    * @return A list containing the childContexts.
    */
   java.util.List<java.lang.String> getChildContextsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RemoveContextChildrenRequestOrBuilder
    * @return The count of childContexts.
    */
   int getChildContextsCount();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface RemoveContextChildrenRequestOrBuilder
    * @return The childContexts at the given index.
    */
   java.lang.String getChildContexts(int index);
+
   /**
    *
    *

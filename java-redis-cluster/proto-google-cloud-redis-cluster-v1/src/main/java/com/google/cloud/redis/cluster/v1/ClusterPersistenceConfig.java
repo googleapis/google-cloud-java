@@ -33,6 +33,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1.ClusterPersistenceConfig)
     ClusterPersistenceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClusterPersistenceConfig.newBuilder() to construct.
   private ClusterPersistenceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,6 +127,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
      * <code>PERSISTENCE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int PERSISTENCE_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -136,6 +138,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
      * <code>RDB = 2;</code>
      */
     public static final int RDB_VALUE = 2;
+
     /**
      *
      *
@@ -265,6 +269,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
      * @return The enum numeric value on the wire for rdbSnapshotPeriod.
      */
     int getRdbSnapshotPeriodValue();
+
     /**
      *
      *
@@ -297,6 +302,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
      * @return Whether the rdbSnapshotStartTime field is set.
      */
     boolean hasRdbSnapshotStartTime();
+
     /**
      *
      *
@@ -313,6 +319,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
      * @return The rdbSnapshotStartTime.
      */
     com.google.protobuf.Timestamp getRdbSnapshotStartTime();
+
     /**
      *
      *
@@ -328,6 +335,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
      */
     com.google.protobuf.TimestampOrBuilder getRdbSnapshotStartTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -342,6 +350,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1.ClusterPersistenceConfig.RDBConfig)
       RDBConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RDBConfig.newBuilder() to construct.
     private RDBConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -446,6 +455,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        * <code>SNAPSHOT_PERIOD_UNSPECIFIED = 0;</code>
        */
       public static final int SNAPSHOT_PERIOD_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -456,6 +466,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        * <code>ONE_HOUR = 1;</code>
        */
       public static final int ONE_HOUR_VALUE = 1;
+
       /**
        *
        *
@@ -466,6 +477,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        * <code>SIX_HOURS = 2;</code>
        */
       public static final int SIX_HOURS_VALUE = 2;
+
       /**
        *
        *
@@ -476,6 +488,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        * <code>TWELVE_HOURS = 3;</code>
        */
       public static final int TWELVE_HOURS_VALUE = 3;
+
       /**
        *
        *
@@ -581,6 +594,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int RDB_SNAPSHOT_PERIOD_FIELD_NUMBER = 1;
     private int rdbSnapshotPeriod_ = 0;
+
     /**
      *
      *
@@ -598,6 +612,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     public int getRdbSnapshotPeriodValue() {
       return rdbSnapshotPeriod_;
     }
+
     /**
      *
      *
@@ -625,6 +640,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
 
     public static final int RDB_SNAPSHOT_START_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp rdbSnapshotStartTime_;
+
     /**
      *
      *
@@ -644,6 +660,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     public boolean hasRdbSnapshotStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -665,6 +682,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : rdbSnapshotStartTime_;
     }
+
     /**
      *
      *
@@ -868,6 +886,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1094,6 +1113,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       private int bitField0_;
 
       private int rdbSnapshotPeriod_ = 0;
+
       /**
        *
        *
@@ -1111,6 +1131,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       public int getRdbSnapshotPeriodValue() {
         return rdbSnapshotPeriod_;
       }
+
       /**
        *
        *
@@ -1131,6 +1152,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1155,6 +1177,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1180,6 +1203,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1206,6 +1230,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           rdbSnapshotStartTimeBuilder_;
+
       /**
        *
        *
@@ -1224,6 +1249,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       public boolean hasRdbSnapshotStartTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1248,6 +1274,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
           return rdbSnapshotStartTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1274,6 +1301,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1298,6 +1326,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1329,6 +1358,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -1352,6 +1382,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1370,6 +1401,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         onChanged();
         return getRdbSnapshotStartTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1392,6 +1424,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
               : rdbSnapshotStartTime_;
         }
       }
+
       /**
        *
        *
@@ -1508,6 +1541,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
      * @return The enum numeric value on the wire for appendFsync.
      */
     int getAppendFsyncValue();
+
     /**
      *
      *
@@ -1524,6 +1558,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.AOFConfig.AppendFsync
         getAppendFsync();
   }
+
   /**
    *
    *
@@ -1538,6 +1573,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1.ClusterPersistenceConfig.AOFConfig)
       AOFConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AOFConfig.newBuilder() to construct.
     private AOFConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1635,6 +1671,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        * <code>APPEND_FSYNC_UNSPECIFIED = 0;</code>
        */
       public static final int APPEND_FSYNC_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -1646,6 +1683,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        * <code>NO = 1;</code>
        */
       public static final int NO_VALUE = 1;
+
       /**
        *
        *
@@ -1657,6 +1695,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        * <code>EVERYSEC = 2;</code>
        */
       public static final int EVERYSEC_VALUE = 2;
+
       /**
        *
        *
@@ -1758,6 +1797,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
 
     public static final int APPEND_FSYNC_FIELD_NUMBER = 1;
     private int appendFsync_ = 0;
+
     /**
      *
      *
@@ -1775,6 +1815,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     public int getAppendFsyncValue() {
       return appendFsync_;
     }
+
     /**
      *
      *
@@ -1968,6 +2009,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2161,6 +2203,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       private int bitField0_;
 
       private int appendFsync_ = 0;
+
       /**
        *
        *
@@ -2178,6 +2221,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       public int getAppendFsyncValue() {
         return appendFsync_;
       }
+
       /**
        *
        *
@@ -2198,6 +2242,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2222,6 +2267,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2246,6 +2292,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2336,6 +2383,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -2353,6 +2401,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -2377,6 +2426,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
 
   public static final int RDB_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.RDBConfig rdbConfig_;
+
   /**
    *
    *
@@ -2394,6 +2444,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
   public boolean hasRdbConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2413,6 +2464,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         ? com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.RDBConfig.getDefaultInstance()
         : rdbConfig_;
   }
+
   /**
    *
    *
@@ -2434,6 +2486,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
 
   public static final int AOF_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.AOFConfig aofConfig_;
+
   /**
    *
    *
@@ -2451,6 +2504,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
   public boolean hasAofConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2470,6 +2524,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         ? com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.AOFConfig.getDefaultInstance()
         : aofConfig_;
   }
+
   /**
    *
    *
@@ -2683,6 +2738,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2913,6 +2969,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -2930,6 +2987,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -2950,6 +3008,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2972,6 +3031,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
           ? com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.PersistenceMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2996,6 +3056,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3022,6 +3083,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
             com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.RDBConfig.Builder,
             com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.RDBConfigOrBuilder>
         rdbConfigBuilder_;
+
     /**
      *
      *
@@ -3038,6 +3100,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     public boolean hasRdbConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3061,6 +3124,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         return rdbConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3086,6 +3150,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3109,6 +3174,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3141,6 +3207,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3162,6 +3229,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3179,6 +3247,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return getRdbConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3201,6 +3270,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
             : rdbConfig_;
       }
     }
+
     /**
      *
      *
@@ -3235,6 +3305,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
             com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.AOFConfig.Builder,
             com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.AOFConfigOrBuilder>
         aofConfigBuilder_;
+
     /**
      *
      *
@@ -3251,6 +3322,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
     public boolean hasAofConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3274,6 +3346,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
         return aofConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3299,6 +3372,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3322,6 +3396,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3354,6 +3429,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3375,6 +3451,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3392,6 +3469,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
       onChanged();
       return getAofConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3414,6 +3492,7 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
             : aofConfig_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface ChangelogOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ChangelogOrBuilder
    * @return The userEmail.
    */
   java.lang.String getUserEmail();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ChangelogOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface ChangelogOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface ChangelogOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface ChangelogOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface ChangelogOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface ChangelogOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface ChangelogOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

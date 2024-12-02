@@ -33,6 +33,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.TaskLogsRetentionConfig)
     TaskLogsRetentionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TaskLogsRetentionConfig.newBuilder() to construct.
   private TaskLogsRetentionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
      * <code>TASK_LOGS_STORAGE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int TASK_LOGS_STORAGE_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
      * <code>CLOUD_LOGGING_AND_CLOUD_STORAGE = 1;</code>
      */
     public static final int CLOUD_LOGGING_AND_CLOUD_STORAGE_VALUE = 1;
+
     /**
      *
      *
@@ -232,6 +235,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
 
   public static final int STORAGE_MODE_FIELD_NUMBER = 2;
   private int storageMode_ = 0;
+
   /**
    *
    *
@@ -249,6 +253,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
   public int getStorageModeValue() {
     return storageMode_;
   }
+
   /**
    *
    *
@@ -444,6 +449,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +643,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int storageMode_ = 0;
+
     /**
      *
      *
@@ -654,6 +661,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
     public int getStorageModeValue() {
       return storageMode_;
     }
+
     /**
      *
      *
@@ -674,6 +682,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +709,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
               .TaskLogsStorageMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -726,6 +736,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

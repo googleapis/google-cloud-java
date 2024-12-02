@@ -36,6 +36,7 @@ public interface FixedOrPercentOrBuilder
    * @return Whether the calculated field is set.
    */
   boolean hasCalculated();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FixedOrPercentOrBuilder
    * @return Whether the fixed field is set.
    */
   boolean hasFixed();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface FixedOrPercentOrBuilder
    * @return Whether the percent field is set.
    */
   boolean hasPercent();
+
   /**
    *
    *

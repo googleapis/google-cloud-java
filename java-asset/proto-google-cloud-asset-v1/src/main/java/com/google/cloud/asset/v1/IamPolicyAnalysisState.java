@@ -34,6 +34,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicyAnalysisState)
     IamPolicyAnalysisStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IamPolicyAnalysisState.newBuilder() to construct.
   private IamPolicyAnalysisState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
 
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cause_ = "";
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -328,6 +333,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -526,6 +532,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -546,6 +553,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       com.google.rpc.Code result = com.google.rpc.Code.forNumber(code_);
       return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object cause_ = "";
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -684,6 +697,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -705,6 +719,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +737,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

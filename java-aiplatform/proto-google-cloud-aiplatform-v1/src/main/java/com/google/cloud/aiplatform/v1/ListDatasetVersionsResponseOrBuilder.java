@@ -34,6 +34,7 @@ public interface ListDatasetVersionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DatasetVersion dataset_versions = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.DatasetVersion> getDatasetVersionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDatasetVersionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DatasetVersion dataset_versions = 1;</code>
    */
   com.google.cloud.aiplatform.v1.DatasetVersion getDatasetVersions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDatasetVersionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DatasetVersion dataset_versions = 1;</code>
    */
   int getDatasetVersionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDatasetVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.DatasetVersionOrBuilder>
       getDatasetVersionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListDatasetVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

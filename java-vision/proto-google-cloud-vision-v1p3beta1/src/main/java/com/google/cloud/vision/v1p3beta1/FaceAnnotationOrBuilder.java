@@ -42,6 +42,7 @@ public interface FaceAnnotationOrBuilder
    * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface FaceAnnotationOrBuilder
    * @return The boundingPoly.
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface FaceAnnotationOrBuilder
    * @return Whether the fdBoundingPoly field is set.
    */
   boolean hasFdBoundingPoly();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface FaceAnnotationOrBuilder
    * @return The fdBoundingPoly.
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getFdBoundingPoly();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark> getLandmarksList();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
   com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark getLandmarks(int index);
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface FaceAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
   int getLandmarksCount();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface FaceAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotation.LandmarkOrBuilder>
       getLandmarksOrBuilderList();
+
   /**
    *
    *
@@ -262,6 +270,7 @@ public interface FaceAnnotationOrBuilder
    * @return The enum numeric value on the wire for joyLikelihood.
    */
   int getJoyLikelihoodValue();
+
   /**
    *
    *
@@ -287,6 +296,7 @@ public interface FaceAnnotationOrBuilder
    * @return The enum numeric value on the wire for sorrowLikelihood.
    */
   int getSorrowLikelihoodValue();
+
   /**
    *
    *
@@ -312,6 +322,7 @@ public interface FaceAnnotationOrBuilder
    * @return The enum numeric value on the wire for angerLikelihood.
    */
   int getAngerLikelihoodValue();
+
   /**
    *
    *
@@ -337,6 +348,7 @@ public interface FaceAnnotationOrBuilder
    * @return The enum numeric value on the wire for surpriseLikelihood.
    */
   int getSurpriseLikelihoodValue();
+
   /**
    *
    *
@@ -362,6 +374,7 @@ public interface FaceAnnotationOrBuilder
    * @return The enum numeric value on the wire for underExposedLikelihood.
    */
   int getUnderExposedLikelihoodValue();
+
   /**
    *
    *
@@ -387,6 +400,7 @@ public interface FaceAnnotationOrBuilder
    * @return The enum numeric value on the wire for blurredLikelihood.
    */
   int getBlurredLikelihoodValue();
+
   /**
    *
    *
@@ -412,6 +426,7 @@ public interface FaceAnnotationOrBuilder
    * @return The enum numeric value on the wire for headwearLikelihood.
    */
   int getHeadwearLikelihoodValue();
+
   /**
    *
    *

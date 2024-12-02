@@ -35,6 +35,7 @@ public interface AwsJsonWebKeysOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.Jwk keys = 1;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.Jwk> getKeysList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface AwsJsonWebKeysOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.Jwk keys = 1;</code>
    */
   com.google.cloud.gkemulticloud.v1.Jwk getKeys(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface AwsJsonWebKeysOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.Jwk keys = 1;</code>
    */
   int getKeysCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface AwsJsonWebKeysOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.Jwk keys = 1;</code>
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.JwkOrBuilder> getKeysOrBuilderList();
+
   /**
    *
    *

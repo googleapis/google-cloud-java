@@ -37,6 +37,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return Whether the backendService field is set.
    */
   boolean hasBackendService();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return The backendService.
    */
   com.google.cloud.compute.v1.BackendServiceReference getBackendService();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return Whether the forwardingRule field is set.
    */
   boolean hasForwardingRule();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return The forwardingRule.
    */
   com.google.cloud.compute.v1.ForwardingRuleReference getForwardingRule();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return Whether the healthCheck field is set.
    */
   boolean hasHealthCheck();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return The healthCheck.
    */
   com.google.cloud.compute.v1.HealthCheckReference getHealthCheck();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return Whether the healthCheckService field is set.
    */
   boolean hasHealthCheckService();
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return The healthCheckService.
    */
   com.google.cloud.compute.v1.HealthCheckServiceReference getHealthCheckService();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return Whether the healthState field is set.
    */
   boolean hasHealthState();
+
   /**
    *
    *
@@ -202,6 +211,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return The healthState.
    */
   java.lang.String getHealthState();
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return Whether the ipv6HealthState field is set.
    */
   boolean hasIpv6HealthState();
+
   /**
    *
    *
@@ -242,6 +253,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return The ipv6HealthState.
    */
   java.lang.String getIpv6HealthState();
+
   /**
    *
    *

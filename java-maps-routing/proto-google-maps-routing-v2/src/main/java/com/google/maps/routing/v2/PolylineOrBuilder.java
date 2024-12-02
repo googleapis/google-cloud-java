@@ -37,6 +37,7 @@ public interface PolylineOrBuilder
    * @return Whether the encodedPolyline field is set.
    */
   boolean hasEncodedPolyline();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PolylineOrBuilder
    * @return The encodedPolyline.
    */
   java.lang.String getEncodedPolyline();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PolylineOrBuilder
    * @return Whether the geoJsonLinestring field is set.
    */
   boolean hasGeoJsonLinestring();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface PolylineOrBuilder
    * @return The geoJsonLinestring.
    */
   com.google.protobuf.Struct getGeoJsonLinestring();
+
   /**
    *
    *

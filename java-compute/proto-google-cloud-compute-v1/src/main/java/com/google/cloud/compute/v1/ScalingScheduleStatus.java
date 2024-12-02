@@ -32,6 +32,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ScalingScheduleStatus)
     ScalingScheduleStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScalingScheduleStatus.newBuilder() to construct.
   private ScalingScheduleStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,6 +138,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -147,6 +149,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * <code>ACTIVE = 314733318;</code>
      */
     public static final int ACTIVE_VALUE = 314733318;
+
     /**
      *
      *
@@ -157,6 +160,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * <code>DISABLED = 516696700;</code>
      */
     public static final int DISABLED_VALUE = 516696700;
+
     /**
      *
      *
@@ -167,6 +171,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * <code>OBSOLETE = 66532761;</code>
      */
     public static final int OBSOLETE_VALUE = 66532761;
+
     /**
      *
      *
@@ -272,6 +277,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastStartTime_ = "";
+
   /**
    *
    *
@@ -287,6 +293,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
   public boolean hasLastStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -310,6 +317,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -338,6 +346,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextStartTime_ = "";
+
   /**
    *
    *
@@ -353,6 +362,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
   public boolean hasNextStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -404,6 +415,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -420,6 +432,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
   public boolean hasState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -444,6 +457,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -661,6 +675,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -879,6 +894,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object lastStartTime_ = "";
+
     /**
      *
      *
@@ -893,6 +909,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     public boolean hasLastStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -915,6 +932,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -937,6 +955,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -958,6 +977,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +995,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1020,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextStartTime_ = "";
+
     /**
      *
      *
@@ -1013,6 +1035,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     public boolean hasNextStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1035,6 +1058,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1081,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1103,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1121,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1146,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -1134,6 +1162,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     public boolean hasState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1157,6 +1186,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1180,6 +1210,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1202,6 +1233,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1252,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

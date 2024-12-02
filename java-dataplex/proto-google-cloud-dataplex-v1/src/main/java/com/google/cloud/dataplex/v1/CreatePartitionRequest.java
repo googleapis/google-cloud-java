@@ -33,6 +33,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.CreatePartitionRequest)
     CreatePartitionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreatePartitionRequest.newBuilder() to construct.
   private CreatePartitionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
 
   public static final int PARTITION_FIELD_NUMBER = 3;
   private com.google.cloud.dataplex.v1.Partition partition_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
   public boolean hasPartition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.dataplex.v1.Partition.getDefaultInstance()
         : partition_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -378,6 +385,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -604,6 +612,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -629,6 +638,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dataplex.v1.Partition.Builder,
             com.google.cloud.dataplex.v1.PartitionOrBuilder>
         partitionBuilder_;
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     public boolean hasPartition() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
         return partitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -899,6 +920,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
             : partition_;
       }
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -944,6 +967,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -964,6 +988,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

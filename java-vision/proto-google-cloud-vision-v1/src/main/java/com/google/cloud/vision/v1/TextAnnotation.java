@@ -40,6 +40,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.TextAnnotation)
     TextAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TextAnnotation.newBuilder() to construct.
   private TextAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,6 +91,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return The languageCode.
      */
     java.lang.String getLanguageCode();
+
     /**
      *
      *
@@ -118,6 +120,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     float getConfidence();
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.TextAnnotation.DetectedLanguage)
       DetectedLanguageOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DetectedLanguage.newBuilder() to construct.
     private DetectedLanguage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -166,6 +170,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -191,6 +196,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -219,6 +225,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CONFIDENCE_FIELD_NUMBER = 2;
     private float confidence_ = 0F;
+
     /**
      *
      *
@@ -406,6 +413,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -609,6 +617,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object languageCode_ = "";
+
       /**
        *
        *
@@ -633,6 +642,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -657,6 +667,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -680,6 +691,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -699,6 +711,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -725,6 +738,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float confidence_;
+
       /**
        *
        *
@@ -740,6 +754,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public float getConfidence() {
         return confidence_;
       }
+
       /**
        *
        *
@@ -759,6 +774,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -859,6 +875,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getIsPrefix();
   }
+
   /**
    *
    *
@@ -899,6 +917,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.TextAnnotation.DetectedBreak)
       DetectedBreakOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DetectedBreak.newBuilder() to construct.
     private DetectedBreak(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1013,6 +1032,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>UNKNOWN = 0;</code>
        */
       public static final int UNKNOWN_VALUE = 0;
+
       /**
        *
        *
@@ -1023,6 +1043,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>SPACE = 1;</code>
        */
       public static final int SPACE_VALUE = 1;
+
       /**
        *
        *
@@ -1033,6 +1054,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>SURE_SPACE = 2;</code>
        */
       public static final int SURE_SPACE_VALUE = 2;
+
       /**
        *
        *
@@ -1043,6 +1065,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>EOL_SURE_SPACE = 3;</code>
        */
       public static final int EOL_SURE_SPACE_VALUE = 3;
+
       /**
        *
        *
@@ -1054,6 +1077,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>HYPHEN = 4;</code>
        */
       public static final int HYPHEN_VALUE = 4;
+
       /**
        *
        *
@@ -1158,6 +1182,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -1173,6 +1198,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1195,6 +1221,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int IS_PREFIX_FIELD_NUMBER = 2;
     private boolean isPrefix_ = false;
+
     /**
      *
      *
@@ -1385,6 +1412,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1583,6 +1611,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -1598,6 +1627,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -1616,6 +1646,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1635,6 +1666,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1657,6 +1689,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1676,6 +1709,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean isPrefix_;
+
       /**
        *
        *
@@ -1691,6 +1725,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public boolean getIsPrefix() {
         return isPrefix_;
       }
+
       /**
        *
        *
@@ -1710,6 +1745,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1810,6 +1846,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage>
         getDetectedLanguagesList();
+
     /**
      *
      *
@@ -1822,6 +1859,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage getDetectedLanguages(int index);
+
     /**
      *
      *
@@ -1834,6 +1872,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getDetectedLanguagesCount();
+
     /**
      *
      *
@@ -1847,6 +1886,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.vision.v1.TextAnnotation.DetectedLanguageOrBuilder>
         getDetectedLanguagesOrBuilderList();
+
     /**
      *
      *
@@ -1873,6 +1913,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the detectedBreak field is set.
      */
     boolean hasDetectedBreak();
+
     /**
      *
      *
@@ -1885,6 +1926,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return The detectedBreak.
      */
     com.google.cloud.vision.v1.TextAnnotation.DetectedBreak getDetectedBreak();
+
     /**
      *
      *
@@ -1896,6 +1938,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.vision.v1.TextAnnotation.DetectedBreakOrBuilder getDetectedBreakOrBuilder();
   }
+
   /**
    *
    *
@@ -1910,6 +1953,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.TextAnnotation.TextProperty)
       TextPropertyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TextProperty.newBuilder() to construct.
     private TextProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1946,6 +1990,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage>
         detectedLanguages_;
+
     /**
      *
      *
@@ -1962,6 +2007,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         getDetectedLanguagesList() {
       return detectedLanguages_;
     }
+
     /**
      *
      *
@@ -1979,6 +2025,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         getDetectedLanguagesOrBuilderList() {
       return detectedLanguages_;
     }
+
     /**
      *
      *
@@ -1994,6 +2041,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getDetectedLanguagesCount() {
       return detectedLanguages_.size();
     }
+
     /**
      *
      *
@@ -2010,6 +2058,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return detectedLanguages_.get(index);
     }
+
     /**
      *
      *
@@ -2029,6 +2078,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DETECTED_BREAK_FIELD_NUMBER = 2;
     private com.google.cloud.vision.v1.TextAnnotation.DetectedBreak detectedBreak_;
+
     /**
      *
      *
@@ -2044,6 +2094,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDetectedBreak() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2061,6 +2112,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.getDefaultInstance()
           : detectedBreak_;
     }
+
     /**
      *
      *
@@ -2256,6 +2308,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2557,6 +2610,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return detectedLanguagesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2575,6 +2629,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return detectedLanguagesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2594,6 +2649,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return detectedLanguagesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2619,6 +2675,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2642,6 +2699,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2667,6 +2725,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2692,6 +2751,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2714,6 +2774,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2737,6 +2798,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2760,6 +2822,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2781,6 +2844,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2802,6 +2866,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2817,6 +2882,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           getDetectedLanguagesBuilder(int index) {
         return getDetectedLanguagesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2836,6 +2902,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return detectedLanguagesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2856,6 +2923,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(detectedLanguages_);
         }
       }
+
       /**
        *
        *
@@ -2873,6 +2941,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2891,6 +2960,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2933,6 +3003,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.Builder,
               com.google.cloud.vision.v1.TextAnnotation.DetectedBreakOrBuilder>
           detectedBreakBuilder_;
+
       /**
        *
        *
@@ -2947,6 +3018,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDetectedBreak() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2967,6 +3039,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return detectedBreakBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2990,6 +3063,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3010,6 +3084,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3039,6 +3114,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3058,6 +3134,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3073,6 +3150,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getDetectedBreakFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3092,6 +3170,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
               : detectedBreak_;
         }
       }
+
       /**
        *
        *
@@ -3186,6 +3265,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.Page> pages_;
+
   /**
    *
    *
@@ -3199,6 +3279,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vision.v1.Page> getPagesList() {
     return pages_;
   }
+
   /**
    *
    *
@@ -3213,6 +3294,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       getPagesOrBuilderList() {
     return pages_;
   }
+
   /**
    *
    *
@@ -3226,6 +3308,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getPagesCount() {
     return pages_.size();
   }
+
   /**
    *
    *
@@ -3239,6 +3322,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1.Page getPages(int index) {
     return pages_.get(index);
   }
+
   /**
    *
    *
@@ -3257,6 +3341,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object text_ = "";
+
   /**
    *
    *
@@ -3280,6 +3365,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3474,6 +3560,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3754,6 +3841,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return pagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3770,6 +3858,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return pagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3786,6 +3875,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return pagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3808,6 +3898,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3827,6 +3918,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3849,6 +3941,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3871,6 +3964,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3890,6 +3984,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3909,6 +4004,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3929,6 +4025,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3948,6 +4045,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3967,6 +4065,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3979,6 +4078,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.Page.Builder getPagesBuilder(int index) {
       return getPagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3995,6 +4095,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return pagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4012,6 +4113,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pages_);
       }
     }
+
     /**
      *
      *
@@ -4025,6 +4127,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       return getPagesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.Page.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4038,6 +4141,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       return getPagesFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.Page.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4069,6 +4173,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -4091,6 +4196,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4113,6 +4219,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4134,6 +4241,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4151,6 +4259,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

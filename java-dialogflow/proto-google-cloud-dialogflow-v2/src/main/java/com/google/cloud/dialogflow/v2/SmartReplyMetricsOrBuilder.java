@@ -50,6 +50,7 @@ public interface SmartReplyMetricsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics> getTopNMetricsList();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SmartReplyMetricsOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics getTopNMetrics(int index);
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface SmartReplyMetricsOrBuilder
    * </code>
    */
   int getTopNMetricsCount();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface SmartReplyMetricsOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetricsOrBuilder>
       getTopNMetricsOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.BundleInstallSpec)
     BundleInstallSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BundleInstallSpec.newBuilder() to construct.
   private BundleInstallSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList exemptedNamespaces_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getExemptedNamespacesList() {
     return exemptedNamespaces_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
   public int getExemptedNamespacesCount() {
     return exemptedNamespaces_.size();
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
   public java.lang.String getExemptedNamespaces(int index) {
     return exemptedNamespaces_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +301,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -501,6 +507,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
       exemptedNamespaces_.makeImmutable();
       return exemptedNamespaces_;
     }
+
     /**
      *
      *
@@ -530,6 +538,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
     public int getExemptedNamespacesCount() {
       return exemptedNamespaces_.size();
     }
+
     /**
      *
      *
@@ -545,6 +554,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
     public java.lang.String getExemptedNamespaces(int index) {
       return exemptedNamespaces_.get(index);
     }
+
     /**
      *
      *
@@ -560,6 +570,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getExemptedNamespacesBytes(int index) {
       return exemptedNamespaces_.getByteString(index);
     }
+
     /**
      *
      *
@@ -583,6 +594,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +617,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +637,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +656,7 @@ public final class BundleInstallSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

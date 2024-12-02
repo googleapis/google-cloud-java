@@ -37,6 +37,7 @@ public interface GetDefaultBranchRequestOrBuilder
    * @return The catalog.
    */
   java.lang.String getCatalog();
+
   /**
    *
    *

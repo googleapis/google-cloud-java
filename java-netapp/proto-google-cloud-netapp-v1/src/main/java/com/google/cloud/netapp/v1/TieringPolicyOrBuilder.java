@@ -39,6 +39,7 @@ public interface TieringPolicyOrBuilder
    * @return Whether the tierAction field is set.
    */
   boolean hasTierAction();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface TieringPolicyOrBuilder
    * @return The enum numeric value on the wire for tierAction.
    */
   int getTierActionValue();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface TieringPolicyOrBuilder
    * @return Whether the coolingThresholdDays field is set.
    */
   boolean hasCoolingThresholdDays();
+
   /**
    *
    *

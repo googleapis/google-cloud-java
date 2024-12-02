@@ -34,6 +34,7 @@ public interface AccessFilterExpressionListOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessFilterExpression expressions = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessFilterExpression> getExpressionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AccessFilterExpressionListOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessFilterExpression expressions = 1;</code>
    */
   com.google.analytics.admin.v1beta.AccessFilterExpression getExpressions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AccessFilterExpressionListOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessFilterExpression expressions = 1;</code>
    */
   int getExpressionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AccessFilterExpressionListOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessFilterExpressionOrBuilder>
       getExpressionsOrBuilderList();
+
   /**
    *
    *

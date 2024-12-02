@@ -38,6 +38,7 @@ public interface AddInstanceTargetPoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AddInstanceTargetPoolRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface AddInstanceTargetPoolRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface AddInstanceTargetPoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface AddInstanceTargetPoolRequestOrBuilder
    * @return The targetPool.
    */
   java.lang.String getTargetPool();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface AddInstanceTargetPoolRequestOrBuilder
    * @return Whether the targetPoolsAddInstanceRequestResource field is set.
    */
   boolean hasTargetPoolsAddInstanceRequestResource();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface AddInstanceTargetPoolRequestOrBuilder
    */
   com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest
       getTargetPoolsAddInstanceRequestResource();
+
   /**
    *
    *

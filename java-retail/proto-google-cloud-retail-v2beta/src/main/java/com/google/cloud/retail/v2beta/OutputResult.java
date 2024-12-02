@@ -34,6 +34,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.OutputResult)
     OutputResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OutputResult.newBuilder() to construct.
   private OutputResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.BigQueryOutputResult> bigqueryResult_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       getBigqueryResultList() {
     return bigqueryResult_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       getBigqueryResultOrBuilderList() {
     return bigqueryResult_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   public int getBigqueryResultCount() {
     return bigqueryResult_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2beta.BigQueryOutputResult getBigqueryResult(int index) {
     return bigqueryResult_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.GcsOutputResult> gcsResult_;
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.retail.v2beta.GcsOutputResult> getGcsResultList() {
     return gcsResult_;
   }
+
   /**
    *
    *
@@ -169,6 +177,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       getGcsResultOrBuilderList() {
     return gcsResult_;
   }
+
   /**
    *
    *
@@ -182,6 +191,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   public int getGcsResultCount() {
     return gcsResult_.size();
   }
+
   /**
    *
    *
@@ -195,6 +205,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2beta.GcsOutputResult getGcsResult(int index) {
     return gcsResult_.get(index);
   }
+
   /**
    *
    *
@@ -381,6 +392,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -701,6 +713,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return bigqueryResultBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return bigqueryResultBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -733,6 +747,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return bigqueryResultBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -756,6 +771,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +902,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +942,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +956,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getBigqueryResultFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -949,6 +974,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return bigqueryResultBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -966,6 +992,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bigqueryResult_);
       }
     }
+
     /**
      *
      *
@@ -979,6 +1006,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       return getBigqueryResultFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.BigQueryOutputResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -994,6 +1022,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.retail.v2beta.BigQueryOutputResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1061,6 +1090,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return gcsResultBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1107,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return gcsResultBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1124,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return gcsResultBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1147,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1168,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1191,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1214,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1235,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1256,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1277,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1297,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1317,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1330,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2beta.GcsOutputResult.Builder getGcsResultBuilder(int index) {
       return getGcsResultFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1306,6 +1348,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return gcsResultBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1366,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(gcsResult_);
       }
     }
+
     /**
      *
      *
@@ -1336,6 +1380,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       return getGcsResultFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.GcsOutputResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1349,6 +1394,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       return getGcsResultFieldBuilder()
           .addBuilder(index, com.google.cloud.retail.v2beta.GcsOutputResult.getDefaultInstance());
     }
+
     /**
      *
      *

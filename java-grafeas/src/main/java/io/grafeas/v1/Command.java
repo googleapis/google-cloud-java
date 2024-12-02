@@ -34,6 +34,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Command)
     CommandOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Command.newBuilder() to construct.
   private Command(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList env_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getEnvList() {
     return env_;
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public int getEnvCount() {
     return env_.size();
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getEnv(int index) {
     return env_.get(index);
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList args_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
   }
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public int getArgsCount() {
     return args_.size();
   }
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getArgs(int index) {
     return args_.get(index);
   }
+
   /**
    *
    *
@@ -251,6 +262,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dir_ = "";
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +317,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -328,6 +342,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +373,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList waitFor_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -372,6 +388,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getWaitForList() {
     return waitFor_;
   }
+
   /**
    *
    *
@@ -386,6 +403,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public int getWaitForCount() {
     return waitFor_.size();
   }
+
   /**
    *
    *
@@ -401,6 +419,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getWaitFor(int index) {
     return waitFor_.get(index);
   }
+
   /**
    *
    *
@@ -640,6 +659,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -914,6 +934,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -937,6 +958,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -960,6 +982,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1058,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1048,6 +1074,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       env_.makeImmutable();
       return env_;
     }
+
     /**
      *
      *
@@ -1062,6 +1089,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public int getEnvCount() {
       return env_.size();
     }
+
     /**
      *
      *
@@ -1077,6 +1105,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getEnv(int index) {
       return env_.get(index);
     }
+
     /**
      *
      *
@@ -1092,6 +1121,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getEnvBytes(int index) {
       return env_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1115,6 +1145,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1168,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1188,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1207,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1241,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1222,6 +1257,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       args_.makeImmutable();
       return args_;
     }
+
     /**
      *
      *
@@ -1236,6 +1272,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public int getArgsCount() {
       return args_.size();
     }
+
     /**
      *
      *
@@ -1251,6 +1288,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getArgs(int index) {
       return args_.get(index);
     }
+
     /**
      *
      *
@@ -1266,6 +1304,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1289,6 +1328,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1351,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1371,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1390,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1416,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dir_ = "";
+
     /**
      *
      *
@@ -1396,6 +1440,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1419,6 +1464,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1441,6 +1487,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1506,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1532,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1507,6 +1556,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1530,6 +1580,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1552,6 +1603,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1570,6 +1622,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1603,6 +1656,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1618,6 +1672,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       waitFor_.makeImmutable();
       return waitFor_;
     }
+
     /**
      *
      *
@@ -1632,6 +1687,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public int getWaitForCount() {
       return waitFor_.size();
     }
+
     /**
      *
      *
@@ -1647,6 +1703,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getWaitFor(int index) {
       return waitFor_.get(index);
     }
+
     /**
      *
      *
@@ -1662,6 +1719,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getWaitForBytes(int index) {
       return waitFor_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1685,6 +1743,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1766,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1726,6 +1786,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1744,6 +1805,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

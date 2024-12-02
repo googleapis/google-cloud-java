@@ -37,6 +37,7 @@ public interface PromotionStatusOrBuilder
    */
   java.util.List<com.google.shopping.merchant.promotions.v1beta.PromotionStatus.DestinationStatus>
       getDestinationStatusesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PromotionStatusOrBuilder
    */
   com.google.shopping.merchant.promotions.v1beta.PromotionStatus.DestinationStatus
       getDestinationStatuses(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface PromotionStatusOrBuilder
    * </code>
    */
   int getDestinationStatusesCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface PromotionStatusOrBuilder
               com.google.shopping.merchant.promotions.v1beta.PromotionStatus
                   .DestinationStatusOrBuilder>
       getDestinationStatusesOrBuilderList();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface PromotionStatusOrBuilder
    */
   java.util.List<com.google.shopping.merchant.promotions.v1beta.PromotionStatus.ItemLevelIssue>
       getItemLevelIssuesList();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface PromotionStatusOrBuilder
    */
   com.google.shopping.merchant.promotions.v1beta.PromotionStatus.ItemLevelIssue getItemLevelIssues(
       int index);
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface PromotionStatusOrBuilder
    * </code>
    */
   int getItemLevelIssuesCount();
+
   /**
    *
    *
@@ -146,6 +153,7 @@ public interface PromotionStatusOrBuilder
               com.google.shopping.merchant.promotions.v1beta.PromotionStatus
                   .ItemLevelIssueOrBuilder>
       getItemLevelIssuesOrBuilderList();
+
   /**
    *
    *
@@ -177,6 +185,7 @@ public interface PromotionStatusOrBuilder
    * @return Whether the creationDate field is set.
    */
   boolean hasCreationDate();
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public interface PromotionStatusOrBuilder
    * @return The creationDate.
    */
   com.google.protobuf.Timestamp getCreationDate();
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface PromotionStatusOrBuilder
    * @return Whether the lastUpdateDate field is set.
    */
   boolean hasLastUpdateDate();
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public interface PromotionStatusOrBuilder
    * @return The lastUpdateDate.
    */
   com.google.protobuf.Timestamp getLastUpdateDate();
+
   /**
    *
    *

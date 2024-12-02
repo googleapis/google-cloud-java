@@ -36,6 +36,7 @@ public interface UpdateGoogleAdsLinkRequestOrBuilder
    * @return Whether the googleAdsLink field is set.
    */
   boolean hasGoogleAdsLink();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateGoogleAdsLinkRequestOrBuilder
    * @return The googleAdsLink.
    */
   com.google.analytics.admin.v1beta.GoogleAdsLink getGoogleAdsLink();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateGoogleAdsLinkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateGoogleAdsLinkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

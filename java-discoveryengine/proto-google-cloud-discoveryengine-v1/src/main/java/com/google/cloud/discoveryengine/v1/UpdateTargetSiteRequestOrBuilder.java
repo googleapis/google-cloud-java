@@ -44,6 +44,7 @@ public interface UpdateTargetSiteRequestOrBuilder
    * @return Whether the targetSite field is set.
    */
   boolean hasTargetSite();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UpdateTargetSiteRequestOrBuilder
    * @return The targetSite.
    */
   com.google.cloud.discoveryengine.v1.TargetSite getTargetSite();
+
   /**
    *
    *

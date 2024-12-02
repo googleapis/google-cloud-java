@@ -42,6 +42,7 @@ public interface CreateCompanyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateCompanyRequestOrBuilder
    * @return Whether the company field is set.
    */
   boolean hasCompany();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CreateCompanyRequestOrBuilder
    * @return The company.
    */
   com.google.cloud.talent.v4beta1.Company getCompany();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface FindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface FindingOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface FindingOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface FindingOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public interface FindingOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public interface FindingOrBuilder
    * @return The externalUri.
    */
   java.lang.String getExternalUri();
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public interface FindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
   int getSourcePropertiesCount();
+
   /**
    *
    *
@@ -234,9 +241,11 @@ public interface FindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
   boolean containsSourceProperties(java.lang.String key);
+
   /** Use {@link #getSourcePropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getSourceProperties();
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public interface FindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getSourcePropertiesMap();
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public interface FindingOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public interface FindingOrBuilder
    * @return Whether the securityMarks field is set.
    */
   boolean hasSecurityMarks();
+
   /**
    *
    *
@@ -313,6 +325,7 @@ public interface FindingOrBuilder
    * @return The securityMarks.
    */
   com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks();
+
   /**
    *
    *
@@ -344,6 +357,7 @@ public interface FindingOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -360,6 +374,7 @@ public interface FindingOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *
@@ -387,6 +402,7 @@ public interface FindingOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -399,6 +415,7 @@ public interface FindingOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

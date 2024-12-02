@@ -38,6 +38,7 @@ public interface AuthorizeEnvironmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AuthorizeEnvironmentRequestOrBuilder
    * @return The accessToken.
    */
   java.lang.String getAccessToken();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface AuthorizeEnvironmentRequestOrBuilder
    * @return The idToken.
    */
   java.lang.String getIdToken();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface AuthorizeEnvironmentRequestOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AuthorizeEnvironmentRequestOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *

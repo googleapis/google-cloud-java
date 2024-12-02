@@ -36,6 +36,7 @@ public interface CSVOptionsOrBuilder
    * @return The recordSeparator.
    */
   java.lang.String getRecordSeparator();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CSVOptionsOrBuilder
    * @return The delimiter.
    */
   java.lang.String getDelimiter();
+
   /**
    *
    *

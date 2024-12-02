@@ -53,6 +53,7 @@ public interface GPUDriverConfigOrBuilder
    * @return The customGpuDriverPath.
    */
   java.lang.String getCustomGpuDriverPath();
+
   /**
    *
    *

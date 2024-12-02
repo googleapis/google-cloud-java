@@ -33,6 +33,7 @@ public final class RegionDisksStartAsyncReplicationRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionDisksStartAsyncReplicationRequest)
     RegionDisksStartAsyncReplicationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionDisksStartAsyncReplicationRequest.newBuilder() to construct.
   private RegionDisksStartAsyncReplicationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class RegionDisksStartAsyncReplicationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object asyncSecondaryDisk_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RegionDisksStartAsyncReplicationRequest
   public boolean hasAsyncSecondaryDisk() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class RegionDisksStartAsyncReplicationRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -298,6 +302,7 @@ public final class RegionDisksStartAsyncReplicationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -491,6 +496,7 @@ public final class RegionDisksStartAsyncReplicationRequest
     private int bitField0_;
 
     private java.lang.Object asyncSecondaryDisk_ = "";
+
     /**
      *
      *
@@ -505,6 +511,7 @@ public final class RegionDisksStartAsyncReplicationRequest
     public boolean hasAsyncSecondaryDisk() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -527,6 +534,7 @@ public final class RegionDisksStartAsyncReplicationRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class RegionDisksStartAsyncReplicationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -570,6 +579,7 @@ public final class RegionDisksStartAsyncReplicationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class RegionDisksStartAsyncReplicationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest)
     UpdateDisplayVideo360AdvertiserLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDisplayVideo360AdvertiserLinkRequest.newBuilder() to construct.
   private UpdateDisplayVideo360AdvertiserLinkRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
   public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
       displayVideo360AdvertiserLink_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
   public boolean hasDisplayVideo360AdvertiserLink() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
         ? com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.getDefaultInstance()
         : displayVideo360AdvertiserLink_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -369,6 +376,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -608,6 +616,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
             com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder,
             com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder>
         displayVideo360AdvertiserLinkBuilder_;
+
     /**
      *
      *
@@ -624,6 +633,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
     public boolean hasDisplayVideo360AdvertiserLink() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
         return displayVideo360AdvertiserLinkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return getDisplayVideo360AdvertiserLinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
             : displayVideo360AdvertiserLink_;
       }
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +958,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +981,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +999,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -996,6 +1021,7 @@ public final class UpdateDisplayVideo360AdvertiserLinkRequest
             : updateMask_;
       }
     }
+
     /**
      *
      *

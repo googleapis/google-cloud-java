@@ -36,6 +36,7 @@ public interface AudioFormatOrBuilder
    * @return The codec.
    */
   java.lang.String getCodec();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface AudioFormatOrBuilder
    * @return A list containing the channelLayout.
    */
   java.util.List<java.lang.String> getChannelLayoutList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AudioFormatOrBuilder
    * @return The count of channelLayout.
    */
   int getChannelLayoutCount();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface AudioFormatOrBuilder
    * @return The channelLayout at the given index.
    */
   java.lang.String getChannelLayout(int index);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ConditionContextOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ConditionContextOrBuilder
    * @return The resource.
    */
   com.google.cloud.policytroubleshooter.iam.v3.ConditionContext.Resource getResource();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface ConditionContextOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ConditionContextOrBuilder
    * @return The destination.
    */
   com.google.cloud.policytroubleshooter.iam.v3.ConditionContext.Peer getDestination();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface ConditionContextOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface ConditionContextOrBuilder
    * @return The request.
    */
   com.google.cloud.policytroubleshooter.iam.v3.ConditionContext.Request getRequest();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface ConditionContextOrBuilder
    */
   java.util.List<com.google.cloud.policytroubleshooter.iam.v3.ConditionContext.EffectiveTag>
       getEffectiveTagsList();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface ConditionContextOrBuilder
    */
   com.google.cloud.policytroubleshooter.iam.v3.ConditionContext.EffectiveTag getEffectiveTags(
       int index);
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface ConditionContextOrBuilder
    * </code>
    */
   int getEffectiveTagsCount();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface ConditionContextOrBuilder
           ? extends
               com.google.cloud.policytroubleshooter.iam.v3.ConditionContext.EffectiveTagOrBuilder>
       getEffectiveTagsOrBuilderList();
+
   /**
    *
    *

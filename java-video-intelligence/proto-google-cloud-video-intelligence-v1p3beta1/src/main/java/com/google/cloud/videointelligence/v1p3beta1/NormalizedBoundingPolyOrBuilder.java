@@ -34,6 +34,7 @@ public interface NormalizedBoundingPolyOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.NormalizedVertex vertices = 1;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.NormalizedVertex> getVerticesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface NormalizedBoundingPolyOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.NormalizedVertex vertices = 1;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.NormalizedVertex getVertices(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface NormalizedBoundingPolyOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.NormalizedVertex vertices = 1;</code>
    */
   int getVerticesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface NormalizedBoundingPolyOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.NormalizedVertexOrBuilder>
       getVerticesOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class CheckAutopilotCompatibilityResponse
     // @@protoc_insertion_point(message_implements:google.container.v1.CheckAutopilotCompatibilityResponse)
     CheckAutopilotCompatibilityResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckAutopilotCompatibilityResponse.newBuilder() to construct.
   private CheckAutopilotCompatibilityResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CheckAutopilotCompatibilityResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.AutopilotCompatibilityIssue> issues_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class CheckAutopilotCompatibilityResponse
   public java.util.List<com.google.container.v1.AutopilotCompatibilityIssue> getIssuesList() {
     return issues_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class CheckAutopilotCompatibilityResponse
       getIssuesOrBuilderList() {
     return issues_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class CheckAutopilotCompatibilityResponse
   public int getIssuesCount() {
     return issues_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class CheckAutopilotCompatibilityResponse
   public com.google.container.v1.AutopilotCompatibilityIssue getIssues(int index) {
     return issues_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class CheckAutopilotCompatibilityResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object summary_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class CheckAutopilotCompatibilityResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class CheckAutopilotCompatibilityResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -638,6 +647,7 @@ public final class CheckAutopilotCompatibilityResponse
         return issuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class CheckAutopilotCompatibilityResponse
         return issuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -670,6 +681,7 @@ public final class CheckAutopilotCompatibilityResponse
         return issuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +771,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class CheckAutopilotCompatibilityResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +887,7 @@ public final class CheckAutopilotCompatibilityResponse
     public com.google.container.v1.AutopilotCompatibilityIssue.Builder getIssuesBuilder(int index) {
       return getIssuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -883,6 +905,7 @@ public final class CheckAutopilotCompatibilityResponse
         return issuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -900,6 +923,7 @@ public final class CheckAutopilotCompatibilityResponse
         return java.util.Collections.unmodifiableList(issues_);
       }
     }
+
     /**
      *
      *
@@ -913,6 +937,7 @@ public final class CheckAutopilotCompatibilityResponse
       return getIssuesFieldBuilder()
           .addBuilder(com.google.container.v1.AutopilotCompatibilityIssue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -927,6 +952,7 @@ public final class CheckAutopilotCompatibilityResponse
           .addBuilder(
               index, com.google.container.v1.AutopilotCompatibilityIssue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -959,6 +985,7 @@ public final class CheckAutopilotCompatibilityResponse
     }
 
     private java.lang.Object summary_ = "";
+
     /**
      *
      *
@@ -981,6 +1008,7 @@ public final class CheckAutopilotCompatibilityResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1031,7 @@ public final class CheckAutopilotCompatibilityResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1053,7 @@ public final class CheckAutopilotCompatibilityResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1071,7 @@ public final class CheckAutopilotCompatibilityResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

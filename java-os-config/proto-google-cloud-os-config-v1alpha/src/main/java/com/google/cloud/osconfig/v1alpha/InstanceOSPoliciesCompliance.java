@@ -45,6 +45,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance)
     InstanceOSPoliciesComplianceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceOSPoliciesCompliance.newBuilder() to construct.
   private InstanceOSPoliciesCompliance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * @return The osPolicyId.
      */
     java.lang.String getOsPolicyId();
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * @return The osPolicyAssignment.
      */
     java.lang.String getOsPolicyAssignment();
+
     /**
      *
      *
@@ -157,6 +160,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -184,6 +188,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      */
     java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance>
         getOsPolicyResourceCompliancesList();
+
     /**
      *
      *
@@ -198,6 +203,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      */
     com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance getOsPolicyResourceCompliances(
         int index);
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * </code>
      */
     int getOsPolicyResourceCompliancesCount();
+
     /**
      *
      *
@@ -225,6 +232,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      */
     java.util.List<? extends com.google.cloud.osconfig.v1alpha.OSPolicyResourceComplianceOrBuilder>
         getOsPolicyResourceCompliancesOrBuilderList();
+
     /**
      *
      *
@@ -240,6 +248,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     com.google.cloud.osconfig.v1alpha.OSPolicyResourceComplianceOrBuilder
         getOsPolicyResourceCompliancesOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance)
       OSPolicyComplianceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OSPolicyCompliance.newBuilder() to construct.
     private OSPolicyCompliance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -295,6 +305,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object osPolicyId_ = "";
+
     /**
      *
      *
@@ -318,6 +329,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return s;
       }
     }
+
     /**
      *
      *
@@ -346,6 +358,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object osPolicyAssignment_ = "";
+
     /**
      *
      *
@@ -373,6 +386,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return s;
       }
     }
+
     /**
      *
      *
@@ -403,6 +417,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
     public static final int STATE_FIELD_NUMBER = 4;
     private int state_ = 0;
+
     /**
      *
      *
@@ -418,6 +433,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -443,6 +459,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance>
         osPolicyResourceCompliances_;
+
     /**
      *
      *
@@ -460,6 +477,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         getOsPolicyResourceCompliancesList() {
       return osPolicyResourceCompliances_;
     }
+
     /**
      *
      *
@@ -478,6 +496,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         getOsPolicyResourceCompliancesOrBuilderList() {
       return osPolicyResourceCompliances_;
     }
+
     /**
      *
      *
@@ -494,6 +513,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     public int getOsPolicyResourceCompliancesCount() {
       return osPolicyResourceCompliances_.size();
     }
+
     /**
      *
      *
@@ -511,6 +531,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         getOsPolicyResourceCompliances(int index) {
       return osPolicyResourceCompliances_.get(index);
     }
+
     /**
      *
      *
@@ -737,6 +758,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1035,6 +1057,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       private int bitField0_;
 
       private java.lang.Object osPolicyId_ = "";
+
       /**
        *
        *
@@ -1057,6 +1080,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1079,6 +1103,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1100,6 +1125,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1117,6 +1143,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1141,6 +1168,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
 
       private java.lang.Object osPolicyAssignment_ = "";
+
       /**
        *
        *
@@ -1167,6 +1195,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1193,6 +1222,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1218,6 +1248,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1239,6 +1270,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1267,6 +1299,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -1282,6 +1315,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -1300,6 +1334,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1319,6 +1354,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
             ? com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1340,6 +1376,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1396,6 +1433,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return osPolicyResourceCompliancesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1415,6 +1453,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return osPolicyResourceCompliancesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1435,6 +1474,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return osPolicyResourceCompliancesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1461,6 +1501,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1485,6 +1526,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1511,6 +1553,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1537,6 +1580,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1560,6 +1604,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1584,6 +1629,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1609,6 +1655,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1631,6 +1678,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1653,6 +1701,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1669,6 +1718,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           getOsPolicyResourceCompliancesBuilder(int index) {
         return getOsPolicyResourceCompliancesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1689,6 +1739,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return osPolicyResourceCompliancesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1710,6 +1761,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           return java.util.Collections.unmodifiableList(osPolicyResourceCompliances_);
         }
       }
+
       /**
        *
        *
@@ -1728,6 +1780,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
             .addBuilder(
                 com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1747,6 +1800,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
                 index,
                 com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1858,6 +1912,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1884,6 +1939,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -1915,6 +1971,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -1938,6 +1995,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -1964,6 +2022,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1981,6 +2040,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -2007,6 +2067,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object detailedState_ = "";
+
   /**
    *
    *
@@ -2043,6 +2104,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2084,6 +2146,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object detailedStateReason_ = "";
+
   /**
    *
    *
@@ -2107,6 +2170,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2137,6 +2201,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
   private java.util.List<
           com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance>
       osPolicyCompliances_;
+
   /**
    *
    *
@@ -2154,6 +2219,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       getOsPolicyCompliancesList() {
     return osPolicyCompliances_;
   }
+
   /**
    *
    *
@@ -2173,6 +2239,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       getOsPolicyCompliancesOrBuilderList() {
     return osPolicyCompliances_;
   }
+
   /**
    *
    *
@@ -2188,6 +2255,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
   public int getOsPolicyCompliancesCount() {
     return osPolicyCompliances_.size();
   }
+
   /**
    *
    *
@@ -2204,6 +2272,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       getOsPolicyCompliances(int index) {
     return osPolicyCompliances_.get(index);
   }
+
   /**
    *
    *
@@ -2223,6 +2292,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
   public static final int LAST_COMPLIANCE_CHECK_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp lastComplianceCheckTime_;
+
   /**
    *
    *
@@ -2240,6 +2310,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
   public boolean hasLastComplianceCheckTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2259,6 +2330,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastComplianceCheckTime_;
   }
+
   /**
    *
    *
@@ -2281,6 +2353,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastComplianceRunId_ = "";
+
   /**
    *
    *
@@ -2306,6 +2379,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2570,6 +2644,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2939,6 +3014,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2964,6 +3040,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2989,6 +3066,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3013,6 +3091,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3033,6 +3112,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3060,6 +3140,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     }
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -3082,6 +3163,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3104,6 +3186,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3125,6 +3208,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3142,6 +3226,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3166,6 +3251,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3183,6 +3269,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3203,6 +3290,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3224,6 +3312,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
           ? com.google.cloud.osconfig.v1alpha.OSPolicyComplianceState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3247,6 +3336,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3268,6 +3358,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     }
 
     private java.lang.Object detailedState_ = "";
+
     /**
      *
      *
@@ -3303,6 +3394,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3338,6 +3430,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3372,6 +3465,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3402,6 +3496,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3439,6 +3534,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     }
 
     private java.lang.Object detailedStateReason_ = "";
+
     /**
      *
      *
@@ -3461,6 +3557,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3483,6 +3580,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3504,6 +3602,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3521,6 +3620,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3586,6 +3686,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return osPolicyCompliancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3604,6 +3705,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return osPolicyCompliancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3623,6 +3725,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return osPolicyCompliancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3649,6 +3752,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3673,6 +3777,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3698,6 +3803,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3724,6 +3830,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3747,6 +3854,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3771,6 +3879,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3797,6 +3906,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3818,6 +3928,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3839,6 +3950,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3854,6 +3966,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         getOsPolicyCompliancesBuilder(int index) {
       return getOsPolicyCompliancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3874,6 +3987,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return osPolicyCompliancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3896,6 +4010,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(osPolicyCompliances_);
       }
     }
+
     /**
      *
      *
@@ -3914,6 +4029,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
               com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3933,6 +4049,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
               com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3981,6 +4098,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastComplianceCheckTimeBuilder_;
+
     /**
      *
      *
@@ -3997,6 +4115,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     public boolean hasLastComplianceCheckTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4019,6 +4138,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return lastComplianceCheckTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4043,6 +4163,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4065,6 +4186,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4094,6 +4216,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -4115,6 +4238,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4131,6 +4255,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return getLastComplianceCheckTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4151,6 +4276,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
             : lastComplianceCheckTime_;
       }
     }
+
     /**
      *
      *
@@ -4180,6 +4306,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
     }
 
     private java.lang.Object lastComplianceRunId_ = "";
+
     /**
      *
      *
@@ -4204,6 +4331,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4228,6 +4356,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4251,6 +4380,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4270,6 +4400,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

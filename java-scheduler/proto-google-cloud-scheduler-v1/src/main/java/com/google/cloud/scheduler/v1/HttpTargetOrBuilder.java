@@ -41,6 +41,7 @@ public interface HttpTargetOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface HttpTargetOrBuilder
    * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface HttpTargetOrBuilder
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -142,9 +145,11 @@ public interface HttpTargetOrBuilder
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
   boolean containsHeaders(java.lang.String key);
+
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHeaders();
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public interface HttpTargetOrBuilder
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface HttpTargetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -270,6 +277,7 @@ public interface HttpTargetOrBuilder
    * @return Whether the oauthToken field is set.
    */
   boolean hasOauthToken();
+
   /**
    *
    *
@@ -288,6 +296,7 @@ public interface HttpTargetOrBuilder
    * @return The oauthToken.
    */
   com.google.cloud.scheduler.v1.OAuthToken getOauthToken();
+
   /**
    *
    *
@@ -324,6 +333,7 @@ public interface HttpTargetOrBuilder
    * @return Whether the oidcToken field is set.
    */
   boolean hasOidcToken();
+
   /**
    *
    *
@@ -343,6 +353,7 @@ public interface HttpTargetOrBuilder
    * @return The oidcToken.
    */
   com.google.cloud.scheduler.v1.OidcToken getOidcToken();
+
   /**
    *
    *

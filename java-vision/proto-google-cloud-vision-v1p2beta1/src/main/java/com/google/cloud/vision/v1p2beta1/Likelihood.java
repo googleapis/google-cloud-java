@@ -103,6 +103,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN = 0;</code>
    */
   public static final int UNKNOWN_VALUE = 0;
+
   /**
    *
    *
@@ -113,6 +114,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VERY_UNLIKELY = 1;</code>
    */
   public static final int VERY_UNLIKELY_VALUE = 1;
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNLIKELY = 2;</code>
    */
   public static final int UNLIKELY_VALUE = 2;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSSIBLE = 3;</code>
    */
   public static final int POSSIBLE_VALUE = 3;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LIKELY = 4;</code>
    */
   public static final int LIKELY_VALUE = 4;
+
   /**
    *
    *

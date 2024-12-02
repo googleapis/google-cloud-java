@@ -40,6 +40,7 @@ public interface UpdatePropertyRequestOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdatePropertyRequestOrBuilder
    * @return The property.
    */
   com.google.analytics.admin.v1beta.Property getProperty();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdatePropertyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdatePropertyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

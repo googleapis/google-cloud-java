@@ -36,6 +36,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the requestedRunDuration field is set.
    */
   boolean hasRequestedRunDuration();
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The requestedRunDuration.
    */
   com.google.cloud.compute.v1.Duration getRequestedRunDuration();
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the resizeBy field is set.
    */
   boolean hasResizeBy();
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -281,6 +294,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -306,6 +320,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
+
   /**
    *
    *
@@ -318,6 +333,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
+
   /**
    *
    *
@@ -344,6 +360,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -357,6 +374,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *
@@ -385,6 +403,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -399,6 +418,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The status.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus getStatus();
+
   /**
    *
    *
@@ -424,6 +444,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -436,6 +457,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

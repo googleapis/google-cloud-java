@@ -37,6 +37,7 @@ public interface InstanceConfigOrBuilder
    * @return The notebookUpgradeSchedule.
    */
   java.lang.String getNotebookUpgradeSchedule();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListInstancesRegionInstanceGroupsRequest)
     ListInstancesRegionInstanceGroupsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListInstancesRegionInstanceGroupsRequest.newBuilder() to construct.
   private ListInstancesRegionInstanceGroupsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroup_ = "";
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -263,6 +273,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -306,6 +318,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -329,6 +342,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -357,6 +371,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -380,6 +395,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -408,6 +424,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -431,6 +448,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -459,6 +477,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       48239828;
   private com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest
       regionInstanceGroupsListInstancesRequestResource_;
+
   /**
    *
    *
@@ -476,6 +495,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
   public boolean hasRegionInstanceGroupsListInstancesRequestResource() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -496,6 +516,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         ? com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.getDefaultInstance()
         : regionInstanceGroupsListInstancesRequestResource_;
   }
+
   /**
    *
    *
@@ -517,6 +538,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
+
   /**
    *
    *
@@ -532,6 +554,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -816,6 +839,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1148,6 +1172,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1162,6 +1187,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1184,6 +1210,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1206,6 +1233,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1227,6 +1255,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1273,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1298,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     }
 
     private java.lang.Object instanceGroup_ = "";
+
     /**
      *
      *
@@ -1290,6 +1321,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1312,6 +1344,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1333,6 +1366,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1384,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1409,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     }
 
     private int maxResults_;
+
     /**
      *
      *
@@ -1389,6 +1425,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1404,6 +1441,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     public int getMaxResults() {
       return maxResults_;
     }
+
     /**
      *
      *
@@ -1423,6 +1461,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1442,6 +1481,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -1456,6 +1496,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1478,6 +1519,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1542,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1521,6 +1564,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1538,6 +1582,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1562,6 +1607,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1576,6 +1622,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1598,6 +1645,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1620,6 +1668,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1641,6 +1690,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1658,6 +1708,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1733,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1704,6 +1756,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1726,6 +1779,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1747,6 +1801,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1819,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1844,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1810,6 +1867,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1832,6 +1890,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1853,6 +1912,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1870,6 +1930,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1900,6 +1961,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
             com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.Builder,
             com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequestOrBuilder>
         regionInstanceGroupsListInstancesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1916,6 +1978,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     public boolean hasRegionInstanceGroupsListInstancesRequestResource() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1940,6 +2003,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
         return regionInstanceGroupsListInstancesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1965,6 +2029,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1989,6 +2054,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2087,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2109,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2059,6 +2127,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return getRegionInstanceGroupsListInstancesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2081,6 +2150,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
             : regionInstanceGroupsListInstancesRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -2112,6 +2182,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     }
 
     private boolean returnPartialSuccess_;
+
     /**
      *
      *
@@ -2127,6 +2198,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2142,6 +2214,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
+
     /**
      *
      *
@@ -2161,6 +2234,7 @@ public final class ListInstancesRegionInstanceGroupsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

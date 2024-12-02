@@ -40,6 +40,7 @@ public interface GetAzureOpenIdConfigRequestOrBuilder
    * @return The azureCluster.
    */
   java.lang.String getAzureCluster();
+
   /**
    *
    *

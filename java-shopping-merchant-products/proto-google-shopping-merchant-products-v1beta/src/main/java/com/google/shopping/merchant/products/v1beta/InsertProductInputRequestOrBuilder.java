@@ -39,6 +39,7 @@ public interface InsertProductInputRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface InsertProductInputRequestOrBuilder
    * @return Whether the productInput field is set.
    */
   boolean hasProductInput();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface InsertProductInputRequestOrBuilder
    * @return The productInput.
    */
   com.google.shopping.merchant.products.v1beta.ProductInput getProductInput();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface InsertProductInputRequestOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
+
   /**
    *
    *

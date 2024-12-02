@@ -39,6 +39,7 @@ public interface CreateDeliveryPipelineRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateDeliveryPipelineRequestOrBuilder
    * @return The deliveryPipelineId.
    */
   java.lang.String getDeliveryPipelineId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateDeliveryPipelineRequestOrBuilder
    * @return Whether the deliveryPipeline field is set.
    */
   boolean hasDeliveryPipeline();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateDeliveryPipelineRequestOrBuilder
    * @return The deliveryPipeline.
    */
   com.google.cloud.deploy.v1.DeliveryPipeline getDeliveryPipeline();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface CreateDeliveryPipelineRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

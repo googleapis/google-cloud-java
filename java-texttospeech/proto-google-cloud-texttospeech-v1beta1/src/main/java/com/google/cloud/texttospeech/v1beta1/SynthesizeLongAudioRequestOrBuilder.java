@@ -37,6 +37,7 @@ public interface SynthesizeLongAudioRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SynthesizeLongAudioRequestOrBuilder
    * @return Whether the input field is set.
    */
   boolean hasInput();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SynthesizeLongAudioRequestOrBuilder
    * @return The input.
    */
   com.google.cloud.texttospeech.v1beta1.SynthesisInput getInput();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SynthesizeLongAudioRequestOrBuilder
    * @return Whether the audioConfig field is set.
    */
   boolean hasAudioConfig();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface SynthesizeLongAudioRequestOrBuilder
    * @return The audioConfig.
    */
   com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface SynthesizeLongAudioRequestOrBuilder
    * @return The outputGcsUri.
    */
   java.lang.String getOutputGcsUri();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface SynthesizeLongAudioRequestOrBuilder
    * @return Whether the voice field is set.
    */
   boolean hasVoice();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface SynthesizeLongAudioRequestOrBuilder
    * @return The voice.
    */
   com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams getVoice();
+
   /**
    *
    *

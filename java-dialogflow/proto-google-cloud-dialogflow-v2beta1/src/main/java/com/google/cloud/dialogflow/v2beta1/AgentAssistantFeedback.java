@@ -33,6 +33,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.AgentAssistantFeedback)
     AgentAssistantFeedbackOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AgentAssistantFeedback.newBuilder() to construct.
   private AgentAssistantFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <code>ANSWER_RELEVANCE_UNSPECIFIED = 0;</code>
      */
     public static final int ANSWER_RELEVANCE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <code>IRRELEVANT = 1;</code>
      */
     public static final int IRRELEVANT_VALUE = 1;
+
     /**
      *
      *
@@ -280,6 +283,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <code>DOCUMENT_CORRECTNESS_UNSPECIFIED = 0;</code>
      */
     public static final int DOCUMENT_CORRECTNESS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -290,6 +294,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <code>INCORRECT = 1;</code>
      */
     public static final int INCORRECT_VALUE = 1;
+
     /**
      *
      *
@@ -442,6 +447,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <code>DOCUMENT_EFFICIENCY_UNSPECIFIED = 0;</code>
      */
     public static final int DOCUMENT_EFFICIENCY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -452,6 +458,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <code>INEFFICIENT = 1;</code>
      */
     public static final int INEFFICIENT_VALUE = 1;
+
     /**
      *
      *
@@ -568,6 +575,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return Whether the startTimestamp field is set.
      */
     boolean hasStartTimestamp();
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return The startTimestamp.
      */
     com.google.protobuf.Timestamp getStartTimestamp();
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return Whether the submitTimestamp field is set.
      */
     boolean hasSubmitTimestamp();
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return The submitTimestamp.
      */
     com.google.protobuf.Timestamp getSubmitTimestamp();
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return The summaryText.
      */
     java.lang.String getSummaryText();
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getTextSectionsCount();
+
     /**
      *
      *
@@ -673,9 +686,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * </code>
      */
     boolean containsTextSections(java.lang.String key);
+
     /** Use {@link #getTextSectionsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getTextSections();
+
     /**
      *
      *
@@ -687,6 +702,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * </code>
      */
     java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap();
+
     /**
      *
      *
@@ -702,6 +718,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /**
      *
      *
@@ -714,6 +731,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      */
     java.lang.String getTextSectionsOrThrow(java.lang.String key);
   }
+
   /**
    *
    *
@@ -729,6 +747,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback)
       SummarizationFeedbackOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SummarizationFeedback.newBuilder() to construct.
     private SummarizationFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -776,6 +795,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     private int bitField0_;
     public static final int START_TIMESTAMP_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp startTimestamp_;
+
     /**
      *
      *
@@ -791,6 +811,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public boolean hasStartTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -808,6 +829,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : startTimestamp_;
     }
+
     /**
      *
      *
@@ -826,6 +848,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
 
     public static final int SUBMIT_TIMESTAMP_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp submitTimestamp_;
+
     /**
      *
      *
@@ -841,6 +864,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public boolean hasSubmitTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -858,6 +882,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : submitTimestamp_;
     }
+
     /**
      *
      *
@@ -878,6 +903,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object summaryText_ = "";
+
     /**
      *
      *
@@ -901,6 +927,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -953,6 +980,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public int getTextSectionsCount() {
       return internalGetTextSections().getMap().size();
     }
+
     /**
      *
      *
@@ -970,12 +998,14 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
       return internalGetTextSections().getMap().containsKey(key);
     }
+
     /** Use {@link #getTextSectionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTextSections() {
       return getTextSectionsMap();
     }
+
     /**
      *
      *
@@ -990,6 +1020,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap() {
       return internalGetTextSections().getMap();
     }
+
     /**
      *
      *
@@ -1011,6 +1042,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1248,6 +1280,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1550,6 +1583,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           startTimestampBuilder_;
+
       /**
        *
        *
@@ -1564,6 +1598,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public boolean hasStartTimestamp() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1584,6 +1619,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           return startTimestampBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1606,6 +1642,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1625,6 +1662,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1652,6 +1690,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1671,6 +1710,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1685,6 +1725,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return getStartTimestampFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1703,6 +1744,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
               : startTimestamp_;
         }
       }
+
       /**
        *
        *
@@ -1735,6 +1777,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           submitTimestampBuilder_;
+
       /**
        *
        *
@@ -1749,6 +1792,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public boolean hasSubmitTimestamp() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1769,6 +1813,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           return submitTimestampBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1791,6 +1836,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1810,6 +1856,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1837,6 +1884,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1856,6 +1904,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1870,6 +1919,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return getSubmitTimestampFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1888,6 +1938,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
               : submitTimestamp_;
         }
       }
+
       /**
        *
        *
@@ -1915,6 +1966,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object summaryText_ = "";
+
       /**
        *
        *
@@ -1937,6 +1989,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1959,6 +2012,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1980,6 +2034,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1997,6 +2052,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2048,6 +2104,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public int getTextSectionsCount() {
         return internalGetTextSections().getMap().size();
       }
+
       /**
        *
        *
@@ -2066,12 +2123,14 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         }
         return internalGetTextSections().getMap().containsKey(key);
       }
+
       /** Use {@link #getTextSectionsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getTextSections() {
         return getTextSectionsMap();
       }
+
       /**
        *
        *
@@ -2087,6 +2146,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap() {
         return internalGetTextSections().getMap();
       }
+
       /**
        *
        *
@@ -2109,6 +2169,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -2137,6 +2198,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         internalGetMutableTextSections().getMutableMap().clear();
         return this;
       }
+
       /**
        *
        *
@@ -2155,12 +2217,14 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         internalGetMutableTextSections().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableTextSections() {
         bitField0_ |= 0x00000008;
         return internalGetMutableTextSections().getMutableMap();
       }
+
       /**
        *
        *
@@ -2183,6 +2247,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000008;
         return this;
       }
+
       /**
        *
        *
@@ -2306,6 +2371,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return A list containing the clickedUris.
      */
     java.util.List<java.lang.String> getClickedUrisList();
+
     /**
      *
      *
@@ -2322,6 +2388,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return The count of clickedUris.
      */
     int getClickedUrisCount();
+
     /**
      *
      *
@@ -2339,6 +2406,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return The clickedUris at the given index.
      */
     java.lang.String getClickedUris(int index);
+
     /**
      *
      *
@@ -2357,6 +2425,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getClickedUrisBytes(int index);
   }
+
   /**
    *
    *
@@ -2372,6 +2441,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback)
       KnowledgeSearchFeedbackOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use KnowledgeSearchFeedback.newBuilder() to construct.
     private KnowledgeSearchFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2406,6 +2476,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
 
     public static final int ANSWER_COPIED_FIELD_NUMBER = 1;
     private boolean answerCopied_ = false;
+
     /**
      *
      *
@@ -2430,6 +2501,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList clickedUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -2448,6 +2520,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getClickedUrisList() {
       return clickedUris_;
     }
+
     /**
      *
      *
@@ -2466,6 +2539,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public int getClickedUrisCount() {
       return clickedUris_.size();
     }
+
     /**
      *
      *
@@ -2485,6 +2559,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public java.lang.String getClickedUris(int index) {
       return clickedUris_.get(index);
     }
+
     /**
      *
      *
@@ -2691,6 +2766,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2918,6 +2994,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private boolean answerCopied_;
+
       /**
        *
        *
@@ -2936,6 +3013,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public boolean getAnswerCopied() {
         return answerCopied_;
       }
+
       /**
        *
        *
@@ -2958,6 +3036,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2988,6 +3067,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -3007,6 +3087,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         clickedUris_.makeImmutable();
         return clickedUris_;
       }
+
       /**
        *
        *
@@ -3025,6 +3106,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public int getClickedUrisCount() {
         return clickedUris_.size();
       }
+
       /**
        *
        *
@@ -3044,6 +3126,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public java.lang.String getClickedUris(int index) {
         return clickedUris_.get(index);
       }
+
       /**
        *
        *
@@ -3063,6 +3146,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getClickedUrisBytes(int index) {
         return clickedUris_.getByteString(index);
       }
+
       /**
        *
        *
@@ -3090,6 +3174,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3116,6 +3201,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3139,6 +3225,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3161,6 +3248,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3295,6 +3383,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return A list containing the clickedUris.
      */
     java.util.List<java.lang.String> getClickedUrisList();
+
     /**
      *
      *
@@ -3311,6 +3400,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return The count of clickedUris.
      */
     int getClickedUrisCount();
+
     /**
      *
      *
@@ -3328,6 +3418,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return The clickedUris at the given index.
      */
     java.lang.String getClickedUris(int index);
+
     /**
      *
      *
@@ -3346,6 +3437,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getClickedUrisBytes(int index);
   }
+
   /**
    *
    *
@@ -3361,6 +3453,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeAssistFeedback)
       KnowledgeAssistFeedbackOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use KnowledgeAssistFeedback.newBuilder() to construct.
     private KnowledgeAssistFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3395,6 +3488,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
 
     public static final int ANSWER_COPIED_FIELD_NUMBER = 1;
     private boolean answerCopied_ = false;
+
     /**
      *
      *
@@ -3419,6 +3513,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList clickedUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3437,6 +3532,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ProtocolStringList getClickedUrisList() {
       return clickedUris_;
     }
+
     /**
      *
      *
@@ -3455,6 +3551,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public int getClickedUrisCount() {
       return clickedUris_.size();
     }
+
     /**
      *
      *
@@ -3474,6 +3571,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public java.lang.String getClickedUris(int index) {
       return clickedUris_.get(index);
     }
+
     /**
      *
      *
@@ -3680,6 +3778,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3907,6 +4006,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private boolean answerCopied_;
+
       /**
        *
        *
@@ -3925,6 +4025,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public boolean getAnswerCopied() {
         return answerCopied_;
       }
+
       /**
        *
        *
@@ -3947,6 +4048,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3977,6 +4079,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -3996,6 +4099,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         clickedUris_.makeImmutable();
         return clickedUris_;
       }
+
       /**
        *
        *
@@ -4014,6 +4118,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public int getClickedUrisCount() {
         return clickedUris_.size();
       }
+
       /**
        *
        *
@@ -4033,6 +4138,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public java.lang.String getClickedUris(int index) {
         return clickedUris_.get(index);
       }
+
       /**
        *
        *
@@ -4052,6 +4158,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ByteString getClickedUrisBytes(int index) {
         return clickedUris_.getByteString(index);
       }
+
       /**
        *
        *
@@ -4079,6 +4186,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4105,6 +4213,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4128,6 +4237,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4150,6 +4260,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4250,6 +4361,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int ANSWER_RELEVANCE_FIELD_NUMBER = 1;
   private int answerRelevance_ = 0;
+
   /**
    *
    *
@@ -4274,6 +4386,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public int getAnswerRelevanceValue() {
     return answerRelevance_;
   }
+
   /**
    *
    *
@@ -4307,6 +4420,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
 
   public static final int DOCUMENT_CORRECTNESS_FIELD_NUMBER = 2;
   private int documentCorrectness_ = 0;
+
   /**
    *
    *
@@ -4332,6 +4446,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public int getDocumentCorrectnessValue() {
     return documentCorrectness_;
   }
+
   /**
    *
    *
@@ -4367,6 +4482,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
 
   public static final int DOCUMENT_EFFICIENCY_FIELD_NUMBER = 3;
   private int documentEfficiency_ = 0;
+
   /**
    *
    *
@@ -4389,6 +4505,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public int getDocumentEfficiencyValue() {
     return documentEfficiency_;
   }
+
   /**
    *
    *
@@ -4421,6 +4538,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public static final int SUMMARIZATION_FEEDBACK_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback
       summarizationFeedback_;
+
   /**
    *
    *
@@ -4438,6 +4556,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public boolean hasSummarizationFeedback() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4459,6 +4578,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : summarizationFeedback_;
   }
+
   /**
    *
    *
@@ -4482,6 +4602,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public static final int KNOWLEDGE_SEARCH_FEEDBACK_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback
       knowledgeSearchFeedback_;
+
   /**
    *
    *
@@ -4499,6 +4620,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public boolean hasKnowledgeSearchFeedback() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4520,6 +4642,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : knowledgeSearchFeedback_;
   }
+
   /**
    *
    *
@@ -4543,6 +4666,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public static final int KNOWLEDGE_ASSIST_FEEDBACK_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeAssistFeedback
       knowledgeAssistFeedback_;
+
   /**
    *
    *
@@ -4560,6 +4684,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   public boolean hasKnowledgeAssistFeedback() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -4581,6 +4706,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : knowledgeAssistFeedback_;
   }
+
   /**
    *
    *
@@ -4842,6 +4968,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5129,6 +5256,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int answerRelevance_ = 0;
+
     /**
      *
      *
@@ -5153,6 +5281,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public int getAnswerRelevanceValue() {
       return answerRelevance_;
     }
+
     /**
      *
      *
@@ -5180,6 +5309,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5210,6 +5340,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           ? com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5241,6 +5372,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5269,6 +5401,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     }
 
     private int documentCorrectness_ = 0;
+
     /**
      *
      *
@@ -5294,6 +5427,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public int getDocumentCorrectnessValue() {
       return documentCorrectness_;
     }
+
     /**
      *
      *
@@ -5322,6 +5456,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5354,6 +5489,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5386,6 +5522,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5415,6 +5552,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     }
 
     private int documentEfficiency_ = 0;
+
     /**
      *
      *
@@ -5437,6 +5575,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public int getDocumentEfficiencyValue() {
       return documentEfficiency_;
     }
+
     /**
      *
      *
@@ -5462,6 +5601,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5491,6 +5631,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5520,6 +5661,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5554,6 +5696,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback
                 .SummarizationFeedbackOrBuilder>
         summarizationFeedbackBuilder_;
+
     /**
      *
      *
@@ -5570,6 +5713,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public boolean hasSummarizationFeedback() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5594,6 +5738,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         return summarizationFeedbackBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5619,6 +5764,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5642,6 +5788,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5674,6 +5821,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5695,6 +5843,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5712,6 +5861,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return getSummarizationFeedbackFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5734,6 +5884,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             : summarizationFeedback_;
       }
     }
+
     /**
      *
      *
@@ -5775,6 +5926,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback
                 .KnowledgeSearchFeedbackOrBuilder>
         knowledgeSearchFeedbackBuilder_;
+
     /**
      *
      *
@@ -5791,6 +5943,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public boolean hasKnowledgeSearchFeedback() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -5815,6 +5968,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         return knowledgeSearchFeedbackBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5840,6 +5994,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5863,6 +6018,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5895,6 +6051,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5916,6 +6073,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5934,6 +6092,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return getKnowledgeSearchFeedbackFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5957,6 +6116,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             : knowledgeSearchFeedback_;
       }
     }
+
     /**
      *
      *
@@ -5998,6 +6158,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback
                 .KnowledgeAssistFeedbackOrBuilder>
         knowledgeAssistFeedbackBuilder_;
+
     /**
      *
      *
@@ -6014,6 +6175,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public boolean hasKnowledgeAssistFeedback() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -6038,6 +6200,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         return knowledgeAssistFeedbackBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6063,6 +6226,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6086,6 +6250,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6118,6 +6283,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6139,6 +6305,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6157,6 +6324,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       onChanged();
       return getKnowledgeAssistFeedbackFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6180,6 +6348,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             : knowledgeAssistFeedback_;
       }
     }
+
     /**
      *
      *

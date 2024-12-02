@@ -34,6 +34,7 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; variables = 1;</code>
    */
   int getVariablesCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; variables = 1;</code>
    */
   boolean containsVariables(java.lang.String key);
+
   /** Use {@link #getVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getVariables();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; variables = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getVariablesMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface EnvironmentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -94,6 +99,7 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; secret_variables = 2;</code>
    */
   int getSecretVariablesCount();
+
   /**
    *
    *
@@ -106,9 +112,11 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; secret_variables = 2;</code>
    */
   boolean containsSecretVariables(java.lang.String key);
+
   /** Use {@link #getSecretVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSecretVariables();
+
   /**
    *
    *
@@ -121,6 +129,7 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; secret_variables = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSecretVariablesMap();
+
   /**
    *
    *
@@ -137,6 +146,7 @@ public interface EnvironmentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -163,6 +173,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the encryptedVariables field is set.
    */
   boolean hasEncryptedVariables();
+
   /**
    *
    *
@@ -176,6 +187,7 @@ public interface EnvironmentOrBuilder
    * @return The encryptedVariables.
    */
   com.google.cloud.batch.v1alpha.Environment.KMSEnvMap getEncryptedVariables();
+
   /**
    *
    *

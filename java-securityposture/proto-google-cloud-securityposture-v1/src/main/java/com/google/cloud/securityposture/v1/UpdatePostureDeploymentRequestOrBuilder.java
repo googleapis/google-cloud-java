@@ -41,6 +41,7 @@ public interface UpdatePostureDeploymentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdatePostureDeploymentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdatePostureDeploymentRequestOrBuilder
    * @return Whether the postureDeployment field is set.
    */
   boolean hasPostureDeployment();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdatePostureDeploymentRequestOrBuilder
    * @return The postureDeployment.
    */
   com.google.cloud.securityposture.v1.PostureDeployment getPostureDeployment();
+
   /**
    *
    *

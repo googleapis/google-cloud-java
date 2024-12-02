@@ -40,6 +40,7 @@ public interface GetDatasetVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface GetDatasetVersionRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface GetDatasetVersionRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
+
   /**
    *
    *

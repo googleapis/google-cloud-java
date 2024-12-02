@@ -51,6 +51,7 @@ public interface GPUSharingConfigOrBuilder
    * @return Whether the gpuSharingStrategy field is set.
    */
   boolean hasGpuSharingStrategy();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface GPUSharingConfigOrBuilder
    * @return The enum numeric value on the wire for gpuSharingStrategy.
    */
   int getGpuSharingStrategyValue();
+
   /**
    *
    *

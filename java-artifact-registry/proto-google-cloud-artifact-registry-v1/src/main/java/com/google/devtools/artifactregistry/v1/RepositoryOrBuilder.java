@@ -38,6 +38,7 @@ public interface RepositoryOrBuilder
    * @return Whether the mavenConfig field is set.
    */
   boolean hasMavenConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RepositoryOrBuilder
    * @return The mavenConfig.
    */
   com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig getMavenConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface RepositoryOrBuilder
    * @return Whether the dockerConfig field is set.
    */
   boolean hasDockerConfig();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface RepositoryOrBuilder
    * @return The dockerConfig.
    */
   com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig getDockerConfig();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface RepositoryOrBuilder
    * @return Whether the virtualRepositoryConfig field is set.
    */
   boolean hasVirtualRepositoryConfig();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface RepositoryOrBuilder
    * @return The virtualRepositoryConfig.
    */
   com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig getVirtualRepositoryConfig();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface RepositoryOrBuilder
    * @return Whether the remoteRepositoryConfig field is set.
    */
   boolean hasRemoteRepositoryConfig();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface RepositoryOrBuilder
    * @return The remoteRepositoryConfig.
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig getRemoteRepositoryConfig();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface RepositoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public interface RepositoryOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
+
   /**
    *
    *
@@ -265,6 +275,7 @@ public interface RepositoryOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -306,9 +318,11 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -323,6 +337,7 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -341,6 +356,7 @@ public interface RepositoryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -369,6 +385,7 @@ public interface RepositoryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -382,6 +399,7 @@ public interface RepositoryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -407,6 +425,7 @@ public interface RepositoryOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -420,6 +439,7 @@ public interface RepositoryOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -447,6 +467,7 @@ public interface RepositoryOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -477,6 +498,7 @@ public interface RepositoryOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -507,6 +529,7 @@ public interface RepositoryOrBuilder
    * </code>
    */
   int getCleanupPoliciesCount();
+
   /**
    *
    *
@@ -522,10 +545,12 @@ public interface RepositoryOrBuilder
    * </code>
    */
   boolean containsCleanupPolicies(java.lang.String key);
+
   /** Use {@link #getCleanupPoliciesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
       getCleanupPolicies();
+
   /**
    *
    *
@@ -542,6 +567,7 @@ public interface RepositoryOrBuilder
    */
   java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
       getCleanupPoliciesMap();
+
   /**
    *
    *
@@ -561,6 +587,7 @@ public interface RepositoryOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.devtools.artifactregistry.v1.CleanupPolicy defaultValue);
+
   /**
    *
    *
@@ -635,6 +662,7 @@ public interface RepositoryOrBuilder
    * @return Whether the vulnerabilityScanningConfig field is set.
    */
   boolean hasVulnerabilityScanningConfig();
+
   /**
    *
    *
@@ -651,6 +679,7 @@ public interface RepositoryOrBuilder
    */
   com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
       getVulnerabilityScanningConfig();
+
   /**
    *
    *

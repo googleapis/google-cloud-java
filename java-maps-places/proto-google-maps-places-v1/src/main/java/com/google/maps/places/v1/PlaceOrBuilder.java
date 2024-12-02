@@ -37,6 +37,7 @@ public interface PlaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PlaceOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface PlaceOrBuilder
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface PlaceOrBuilder
    * @return The displayName.
    */
   com.google.type.LocalizedText getDisplayName();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface PlaceOrBuilder
    * @return A list containing the types.
    */
   java.util.List<java.lang.String> getTypesList();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface PlaceOrBuilder
    * @return The count of types.
    */
   int getTypesCount();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface PlaceOrBuilder
    * @return The types at the given index.
    */
   java.lang.String getTypes(int index);
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface PlaceOrBuilder
    * @return The primaryType.
    */
   java.lang.String getPrimaryType();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface PlaceOrBuilder
    * @return Whether the primaryTypeDisplayName field is set.
    */
   boolean hasPrimaryTypeDisplayName();
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public interface PlaceOrBuilder
    * @return The primaryTypeDisplayName.
    */
   com.google.type.LocalizedText getPrimaryTypeDisplayName();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface PlaceOrBuilder
    * @return The nationalPhoneNumber.
    */
   java.lang.String getNationalPhoneNumber();
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public interface PlaceOrBuilder
    * @return The internationalPhoneNumber.
    */
   java.lang.String getInternationalPhoneNumber();
+
   /**
    *
    *
@@ -316,6 +328,7 @@ public interface PlaceOrBuilder
    * @return The formattedAddress.
    */
   java.lang.String getFormattedAddress();
+
   /**
    *
    *
@@ -341,6 +354,7 @@ public interface PlaceOrBuilder
    * @return The shortFormattedAddress.
    */
   java.lang.String getShortFormattedAddress();
+
   /**
    *
    *
@@ -377,6 +391,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
    */
   java.util.List<com.google.maps.places.v1.Place.AddressComponent> getAddressComponentsList();
+
   /**
    *
    *
@@ -400,6 +415,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
    */
   com.google.maps.places.v1.Place.AddressComponent getAddressComponents(int index);
+
   /**
    *
    *
@@ -423,6 +439,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
    */
   int getAddressComponentsCount();
+
   /**
    *
    *
@@ -447,6 +464,7 @@ public interface PlaceOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.Place.AddressComponentOrBuilder>
       getAddressComponentsOrBuilderList();
+
   /**
    *
    *
@@ -484,6 +502,7 @@ public interface PlaceOrBuilder
    * @return Whether the plusCode field is set.
    */
   boolean hasPlusCode();
+
   /**
    *
    *
@@ -496,6 +515,7 @@ public interface PlaceOrBuilder
    * @return The plusCode.
    */
   com.google.maps.places.v1.Place.PlusCode getPlusCode();
+
   /**
    *
    *
@@ -519,6 +539,7 @@ public interface PlaceOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -531,6 +552,7 @@ public interface PlaceOrBuilder
    * @return The location.
    */
   com.google.type.LatLng getLocation();
+
   /**
    *
    *
@@ -556,6 +578,7 @@ public interface PlaceOrBuilder
    * @return Whether the viewport field is set.
    */
   boolean hasViewport();
+
   /**
    *
    *
@@ -570,6 +593,7 @@ public interface PlaceOrBuilder
    * @return The viewport.
    */
   com.google.geo.type.Viewport getViewport();
+
   /**
    *
    *
@@ -608,6 +632,7 @@ public interface PlaceOrBuilder
    * @return The googleMapsUri.
    */
   java.lang.String getGoogleMapsUri();
+
   /**
    *
    *
@@ -636,6 +661,7 @@ public interface PlaceOrBuilder
    * @return The websiteUri.
    */
   java.lang.String getWebsiteUri();
+
   /**
    *
    *
@@ -663,6 +689,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   java.util.List<com.google.maps.places.v1.Review> getReviewsList();
+
   /**
    *
    *
@@ -674,6 +701,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   com.google.maps.places.v1.Review getReviews(int index);
+
   /**
    *
    *
@@ -685,6 +713,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   int getReviewsCount();
+
   /**
    *
    *
@@ -696,6 +725,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   java.util.List<? extends com.google.maps.places.v1.ReviewOrBuilder> getReviewsOrBuilderList();
+
   /**
    *
    *
@@ -720,6 +750,7 @@ public interface PlaceOrBuilder
    * @return Whether the regularOpeningHours field is set.
    */
   boolean hasRegularOpeningHours();
+
   /**
    *
    *
@@ -732,6 +763,7 @@ public interface PlaceOrBuilder
    * @return The regularOpeningHours.
    */
   com.google.maps.places.v1.Place.OpeningHours getRegularOpeningHours();
+
   /**
    *
    *
@@ -757,6 +789,7 @@ public interface PlaceOrBuilder
    * @return Whether the utcOffsetMinutes field is set.
    */
   boolean hasUtcOffsetMinutes();
+
   /**
    *
    *
@@ -783,6 +816,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   java.util.List<com.google.maps.places.v1.Photo> getPhotosList();
+
   /**
    *
    *
@@ -794,6 +828,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   com.google.maps.places.v1.Photo getPhotos(int index);
+
   /**
    *
    *
@@ -805,6 +840,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   int getPhotosCount();
+
   /**
    *
    *
@@ -816,6 +852,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   java.util.List<? extends com.google.maps.places.v1.PhotoOrBuilder> getPhotosOrBuilderList();
+
   /**
    *
    *
@@ -840,6 +877,7 @@ public interface PlaceOrBuilder
    * @return The adrFormatAddress.
    */
   java.lang.String getAdrFormatAddress();
+
   /**
    *
    *
@@ -859,6 +897,7 @@ public interface PlaceOrBuilder
    * @return The enum numeric value on the wire for businessStatus.
    */
   int getBusinessStatusValue();
+
   /**
    * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
@@ -878,6 +917,7 @@ public interface PlaceOrBuilder
    * @return The enum numeric value on the wire for priceLevel.
    */
   int getPriceLevelValue();
+
   /**
    *
    *
@@ -901,6 +941,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
    */
   java.util.List<com.google.maps.places.v1.Place.Attribution> getAttributionsList();
+
   /**
    *
    *
@@ -911,6 +952,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
    */
   com.google.maps.places.v1.Place.Attribution getAttributions(int index);
+
   /**
    *
    *
@@ -921,6 +963,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
    */
   int getAttributionsCount();
+
   /**
    *
    *
@@ -932,6 +975,7 @@ public interface PlaceOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.Place.AttributionOrBuilder>
       getAttributionsOrBuilderList();
+
   /**
    *
    *
@@ -955,6 +999,7 @@ public interface PlaceOrBuilder
    * @return Whether the userRatingCount field is set.
    */
   boolean hasUserRatingCount();
+
   /**
    *
    *
@@ -981,6 +1026,7 @@ public interface PlaceOrBuilder
    * @return The iconMaskBaseUri.
    */
   java.lang.String getIconMaskBaseUri();
+
   /**
    *
    *
@@ -1007,6 +1053,7 @@ public interface PlaceOrBuilder
    * @return The iconBackgroundColor.
    */
   java.lang.String getIconBackgroundColor();
+
   /**
    *
    *
@@ -1032,6 +1079,7 @@ public interface PlaceOrBuilder
    * @return Whether the takeout field is set.
    */
   boolean hasTakeout();
+
   /**
    *
    *
@@ -1057,6 +1105,7 @@ public interface PlaceOrBuilder
    * @return Whether the delivery field is set.
    */
   boolean hasDelivery();
+
   /**
    *
    *
@@ -1082,6 +1131,7 @@ public interface PlaceOrBuilder
    * @return Whether the dineIn field is set.
    */
   boolean hasDineIn();
+
   /**
    *
    *
@@ -1107,6 +1157,7 @@ public interface PlaceOrBuilder
    * @return Whether the curbsidePickup field is set.
    */
   boolean hasCurbsidePickup();
+
   /**
    *
    *
@@ -1132,6 +1183,7 @@ public interface PlaceOrBuilder
    * @return Whether the reservable field is set.
    */
   boolean hasReservable();
+
   /**
    *
    *
@@ -1157,6 +1209,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesBreakfast field is set.
    */
   boolean hasServesBreakfast();
+
   /**
    *
    *
@@ -1182,6 +1235,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesLunch field is set.
    */
   boolean hasServesLunch();
+
   /**
    *
    *
@@ -1207,6 +1261,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesDinner field is set.
    */
   boolean hasServesDinner();
+
   /**
    *
    *
@@ -1232,6 +1287,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesBeer field is set.
    */
   boolean hasServesBeer();
+
   /**
    *
    *
@@ -1257,6 +1313,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesWine field is set.
    */
   boolean hasServesWine();
+
   /**
    *
    *
@@ -1282,6 +1339,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesBrunch field is set.
    */
   boolean hasServesBrunch();
+
   /**
    *
    *
@@ -1307,6 +1365,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesVegetarianFood field is set.
    */
   boolean hasServesVegetarianFood();
+
   /**
    *
    *
@@ -1335,6 +1394,7 @@ public interface PlaceOrBuilder
    * @return Whether the currentOpeningHours field is set.
    */
   boolean hasCurrentOpeningHours();
+
   /**
    *
    *
@@ -1350,6 +1410,7 @@ public interface PlaceOrBuilder
    * @return The currentOpeningHours.
    */
   com.google.maps.places.v1.Place.OpeningHours getCurrentOpeningHours();
+
   /**
    *
    *
@@ -1383,6 +1444,7 @@ public interface PlaceOrBuilder
    */
   java.util.List<com.google.maps.places.v1.Place.OpeningHours>
       getCurrentSecondaryOpeningHoursList();
+
   /**
    *
    *
@@ -1401,6 +1463,7 @@ public interface PlaceOrBuilder
    * </code>
    */
   com.google.maps.places.v1.Place.OpeningHours getCurrentSecondaryOpeningHours(int index);
+
   /**
    *
    *
@@ -1419,6 +1482,7 @@ public interface PlaceOrBuilder
    * </code>
    */
   int getCurrentSecondaryOpeningHoursCount();
+
   /**
    *
    *
@@ -1438,6 +1502,7 @@ public interface PlaceOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.Place.OpeningHoursOrBuilder>
       getCurrentSecondaryOpeningHoursOrBuilderList();
+
   /**
    *
    *
@@ -1475,6 +1540,7 @@ public interface PlaceOrBuilder
    */
   java.util.List<com.google.maps.places.v1.Place.OpeningHours>
       getRegularSecondaryOpeningHoursList();
+
   /**
    *
    *
@@ -1491,6 +1557,7 @@ public interface PlaceOrBuilder
    * </code>
    */
   com.google.maps.places.v1.Place.OpeningHours getRegularSecondaryOpeningHours(int index);
+
   /**
    *
    *
@@ -1507,6 +1574,7 @@ public interface PlaceOrBuilder
    * </code>
    */
   int getRegularSecondaryOpeningHoursCount();
+
   /**
    *
    *
@@ -1524,6 +1592,7 @@ public interface PlaceOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.Place.OpeningHoursOrBuilder>
       getRegularSecondaryOpeningHoursOrBuilderList();
+
   /**
    *
    *
@@ -1556,6 +1625,7 @@ public interface PlaceOrBuilder
    * @return Whether the editorialSummary field is set.
    */
   boolean hasEditorialSummary();
+
   /**
    *
    *
@@ -1570,6 +1640,7 @@ public interface PlaceOrBuilder
    * @return The editorialSummary.
    */
   com.google.type.LocalizedText getEditorialSummary();
+
   /**
    *
    *
@@ -1595,6 +1666,7 @@ public interface PlaceOrBuilder
    * @return Whether the outdoorSeating field is set.
    */
   boolean hasOutdoorSeating();
+
   /**
    *
    *
@@ -1620,6 +1692,7 @@ public interface PlaceOrBuilder
    * @return Whether the liveMusic field is set.
    */
   boolean hasLiveMusic();
+
   /**
    *
    *
@@ -1645,6 +1718,7 @@ public interface PlaceOrBuilder
    * @return Whether the menuForChildren field is set.
    */
   boolean hasMenuForChildren();
+
   /**
    *
    *
@@ -1670,6 +1744,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesCocktails field is set.
    */
   boolean hasServesCocktails();
+
   /**
    *
    *
@@ -1695,6 +1770,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesDessert field is set.
    */
   boolean hasServesDessert();
+
   /**
    *
    *
@@ -1720,6 +1796,7 @@ public interface PlaceOrBuilder
    * @return Whether the servesCoffee field is set.
    */
   boolean hasServesCoffee();
+
   /**
    *
    *
@@ -1745,6 +1822,7 @@ public interface PlaceOrBuilder
    * @return Whether the goodForChildren field is set.
    */
   boolean hasGoodForChildren();
+
   /**
    *
    *
@@ -1770,6 +1848,7 @@ public interface PlaceOrBuilder
    * @return Whether the allowsDogs field is set.
    */
   boolean hasAllowsDogs();
+
   /**
    *
    *
@@ -1795,6 +1874,7 @@ public interface PlaceOrBuilder
    * @return Whether the restroom field is set.
    */
   boolean hasRestroom();
+
   /**
    *
    *
@@ -1820,6 +1900,7 @@ public interface PlaceOrBuilder
    * @return Whether the goodForGroups field is set.
    */
   boolean hasGoodForGroups();
+
   /**
    *
    *
@@ -1845,6 +1926,7 @@ public interface PlaceOrBuilder
    * @return Whether the goodForWatchingSports field is set.
    */
   boolean hasGoodForWatchingSports();
+
   /**
    *
    *
@@ -1871,6 +1953,7 @@ public interface PlaceOrBuilder
    * @return Whether the paymentOptions field is set.
    */
   boolean hasPaymentOptions();
+
   /**
    *
    *
@@ -1884,6 +1967,7 @@ public interface PlaceOrBuilder
    * @return The paymentOptions.
    */
   com.google.maps.places.v1.Place.PaymentOptions getPaymentOptions();
+
   /**
    *
    *
@@ -1908,6 +1992,7 @@ public interface PlaceOrBuilder
    * @return Whether the parkingOptions field is set.
    */
   boolean hasParkingOptions();
+
   /**
    *
    *
@@ -1920,6 +2005,7 @@ public interface PlaceOrBuilder
    * @return The parkingOptions.
    */
   com.google.maps.places.v1.Place.ParkingOptions getParkingOptions();
+
   /**
    *
    *
@@ -1941,6 +2027,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
    */
   java.util.List<com.google.maps.places.v1.Place.SubDestination> getSubDestinationsList();
+
   /**
    *
    *
@@ -1951,6 +2038,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
    */
   com.google.maps.places.v1.Place.SubDestination getSubDestinations(int index);
+
   /**
    *
    *
@@ -1961,6 +2049,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
    */
   int getSubDestinationsCount();
+
   /**
    *
    *
@@ -1972,6 +2061,7 @@ public interface PlaceOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.Place.SubDestinationOrBuilder>
       getSubDestinationsOrBuilderList();
+
   /**
    *
    *
@@ -1996,6 +2086,7 @@ public interface PlaceOrBuilder
    * @return Whether the accessibilityOptions field is set.
    */
   boolean hasAccessibilityOptions();
+
   /**
    *
    *
@@ -2009,6 +2100,7 @@ public interface PlaceOrBuilder
    * @return The accessibilityOptions.
    */
   com.google.maps.places.v1.Place.AccessibilityOptions getAccessibilityOptions();
+
   /**
    *
    *
@@ -2034,6 +2126,7 @@ public interface PlaceOrBuilder
    * @return Whether the fuelOptions field is set.
    */
   boolean hasFuelOptions();
+
   /**
    *
    *
@@ -2047,6 +2140,7 @@ public interface PlaceOrBuilder
    * @return The fuelOptions.
    */
   com.google.maps.places.v1.FuelOptions getFuelOptions();
+
   /**
    *
    *
@@ -2071,6 +2165,7 @@ public interface PlaceOrBuilder
    * @return Whether the evChargeOptions field is set.
    */
   boolean hasEvChargeOptions();
+
   /**
    *
    *
@@ -2083,6 +2178,7 @@ public interface PlaceOrBuilder
    * @return The evChargeOptions.
    */
   com.google.maps.places.v1.EVChargeOptions getEvChargeOptions();
+
   /**
    *
    *
@@ -2110,6 +2206,7 @@ public interface PlaceOrBuilder
    * @return Whether the generativeSummary field is set.
    */
   boolean hasGenerativeSummary();
+
   /**
    *
    *
@@ -2126,6 +2223,7 @@ public interface PlaceOrBuilder
    * @return The generativeSummary.
    */
   com.google.maps.places.v1.Place.GenerativeSummary getGenerativeSummary();
+
   /**
    *
    *
@@ -2157,6 +2255,7 @@ public interface PlaceOrBuilder
    * @return Whether the areaSummary field is set.
    */
   boolean hasAreaSummary();
+
   /**
    *
    *
@@ -2173,6 +2272,7 @@ public interface PlaceOrBuilder
    * @return The areaSummary.
    */
   com.google.maps.places.v1.Place.AreaSummary getAreaSummary();
+
   /**
    *
    *
@@ -2198,6 +2298,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
    */
   java.util.List<com.google.maps.places.v1.Place.ContainingPlace> getContainingPlacesList();
+
   /**
    *
    *
@@ -2208,6 +2309,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
    */
   com.google.maps.places.v1.Place.ContainingPlace getContainingPlaces(int index);
+
   /**
    *
    *
@@ -2218,6 +2320,7 @@ public interface PlaceOrBuilder
    * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
    */
   int getContainingPlacesCount();
+
   /**
    *
    *
@@ -2229,6 +2332,7 @@ public interface PlaceOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>
       getContainingPlacesOrBuilderList();
+
   /**
    *
    *
@@ -2256,6 +2360,7 @@ public interface PlaceOrBuilder
    * @return Whether the pureServiceAreaBusiness field is set.
    */
   boolean hasPureServiceAreaBusiness();
+
   /**
    *
    *
@@ -2285,6 +2390,7 @@ public interface PlaceOrBuilder
    * @return Whether the priceRange field is set.
    */
   boolean hasPriceRange();
+
   /**
    *
    *
@@ -2297,6 +2403,7 @@ public interface PlaceOrBuilder
    * @return The priceRange.
    */
   com.google.maps.places.v1.PriceRange getPriceRange();
+
   /**
    *
    *

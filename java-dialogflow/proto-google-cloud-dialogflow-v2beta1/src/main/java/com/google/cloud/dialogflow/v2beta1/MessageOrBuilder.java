@@ -38,6 +38,7 @@ public interface MessageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface MessageOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface MessageOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.ResponseMessage> getResponseMessagesList();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface MessageOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.ResponseMessage getResponseMessages(int index);
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface MessageOrBuilder
    * </code>
    */
   int getResponseMessagesCount();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface MessageOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ResponseMessageOrBuilder>
       getResponseMessagesOrBuilderList();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface MessageOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface MessageOrBuilder
    * @return The participant.
    */
   java.lang.String getParticipant();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface MessageOrBuilder
    * @return The enum numeric value on the wire for participantRole.
    */
   int getParticipantRoleValue();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface MessageOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public interface MessageOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public interface MessageOrBuilder
    * @return Whether the sendTime field is set.
    */
   boolean hasSendTime();
+
   /**
    *
    *
@@ -288,6 +300,7 @@ public interface MessageOrBuilder
    * @return The sendTime.
    */
   com.google.protobuf.Timestamp getSendTime();
+
   /**
    *
    *
@@ -314,6 +327,7 @@ public interface MessageOrBuilder
    * @return Whether the messageAnnotation field is set.
    */
   boolean hasMessageAnnotation();
+
   /**
    *
    *
@@ -328,6 +342,7 @@ public interface MessageOrBuilder
    * @return The messageAnnotation.
    */
   com.google.cloud.dialogflow.v2beta1.MessageAnnotation getMessageAnnotation();
+
   /**
    *
    *
@@ -355,6 +370,7 @@ public interface MessageOrBuilder
    * @return Whether the sentimentAnalysis field is set.
    */
   boolean hasSentimentAnalysis();
+
   /**
    *
    *
@@ -369,6 +385,7 @@ public interface MessageOrBuilder
    * @return The sentimentAnalysis.
    */
   com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getSentimentAnalysis();
+
   /**
    *
    *

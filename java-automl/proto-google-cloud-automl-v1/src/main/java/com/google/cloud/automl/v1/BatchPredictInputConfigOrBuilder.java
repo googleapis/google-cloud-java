@@ -38,6 +38,7 @@ public interface BatchPredictInputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface BatchPredictInputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.automl.v1.GcsSource getGcsSource();
+
   /**
    *
    *

@@ -42,6 +42,7 @@ public interface FetchReportResultsRequestOrBuilder
    * @return The reportJob.
    */
   java.lang.String getReportJob();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface FetchReportResultsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -126,6 +128,7 @@ public interface FetchReportResultsRequestOrBuilder
    * @return A list containing the partitionKeys.
    */
   java.util.List<java.lang.String> getPartitionKeysList();
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public interface FetchReportResultsRequestOrBuilder
    * @return The count of partitionKeys.
    */
   int getPartitionKeysCount();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface FetchReportResultsRequestOrBuilder
    * @return The partitionKeys at the given index.
    */
   java.lang.String getPartitionKeys(int index);
+
   /**
    *
    *

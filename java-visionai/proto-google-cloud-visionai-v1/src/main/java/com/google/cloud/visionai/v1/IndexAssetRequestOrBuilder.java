@@ -40,6 +40,7 @@ public interface IndexAssetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface IndexAssetRequestOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
+
   /**
    *
    *

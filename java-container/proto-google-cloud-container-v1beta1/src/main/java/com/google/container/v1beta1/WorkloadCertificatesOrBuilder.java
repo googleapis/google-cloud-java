@@ -44,6 +44,7 @@ public interface WorkloadCertificatesOrBuilder
    * @return Whether the enableCertificates field is set.
    */
   boolean hasEnableCertificates();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface WorkloadCertificatesOrBuilder
    * @return The enableCertificates.
    */
   com.google.protobuf.BoolValue getEnableCertificates();
+
   /**
    *
    *

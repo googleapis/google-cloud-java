@@ -40,6 +40,7 @@ public interface DocumentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DocumentOrBuilder
    * @return The referenceId.
    */
   java.lang.String getReferenceId();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface DocumentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface DocumentOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface DocumentOrBuilder
    * @return The displayUri.
    */
   java.lang.String getDisplayUri();
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public interface DocumentOrBuilder
    * @return The documentSchemaName.
    */
   java.lang.String getDocumentSchemaName();
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public interface DocumentOrBuilder
    * @return Whether the plainText field is set.
    */
   boolean hasPlainText();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface DocumentOrBuilder
    * @return The plainText.
    */
   java.lang.String getPlainText();
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public interface DocumentOrBuilder
    * @return Whether the cloudAiDocument field is set.
    */
   boolean hasCloudAiDocument();
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface DocumentOrBuilder
    * @return The cloudAiDocument.
    */
   com.google.cloud.documentai.v1.Document getCloudAiDocument();
+
   /**
    *
    *
@@ -281,6 +291,7 @@ public interface DocumentOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getStructuredContentUri();
+
   /**
    *
    *
@@ -309,6 +320,7 @@ public interface DocumentOrBuilder
    * @return Whether the rawDocumentPath field is set.
    */
   boolean hasRawDocumentPath();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface DocumentOrBuilder
    * @return The rawDocumentPath.
    */
   java.lang.String getRawDocumentPath();
+
   /**
    *
    *
@@ -346,6 +359,7 @@ public interface DocumentOrBuilder
    * @return Whether the inlineRawDocument field is set.
    */
   boolean hasInlineRawDocument();
+
   /**
    *
    *
@@ -369,6 +383,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Property properties = 7;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.Property> getPropertiesList();
+
   /**
    *
    *
@@ -379,6 +394,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Property properties = 7;</code>
    */
   com.google.cloud.contentwarehouse.v1.Property getProperties(int index);
+
   /**
    *
    *
@@ -389,6 +405,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Property properties = 7;</code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -400,6 +417,7 @@ public interface DocumentOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.PropertyOrBuilder>
       getPropertiesOrBuilderList();
+
   /**
    *
    *
@@ -424,6 +442,7 @@ public interface DocumentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -437,6 +456,7 @@ public interface DocumentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -462,6 +482,7 @@ public interface DocumentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -475,6 +496,7 @@ public interface DocumentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -502,6 +524,7 @@ public interface DocumentOrBuilder
    * @return The enum numeric value on the wire for rawDocumentFileType.
    */
   int getRawDocumentFileTypeValue();
+
   /**
    *
    *
@@ -546,6 +569,7 @@ public interface DocumentOrBuilder
    * @return The enum numeric value on the wire for contentCategory.
    */
   int getContentCategoryValue();
+
   /**
    *
    *
@@ -600,6 +624,7 @@ public interface DocumentOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
+
   /**
    *
    *
@@ -625,6 +650,7 @@ public interface DocumentOrBuilder
    * @return The updater.
    */
   java.lang.String getUpdater();
+
   /**
    *
    *
@@ -653,6 +679,7 @@ public interface DocumentOrBuilder
    * @return Whether the dispositionTime field is set.
    */
   boolean hasDispositionTime();
+
   /**
    *
    *
@@ -668,6 +695,7 @@ public interface DocumentOrBuilder
    * @return The dispositionTime.
    */
   com.google.protobuf.Timestamp getDispositionTime();
+
   /**
    *
    *

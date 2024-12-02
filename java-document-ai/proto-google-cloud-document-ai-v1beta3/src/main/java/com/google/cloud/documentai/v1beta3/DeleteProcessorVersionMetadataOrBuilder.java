@@ -36,6 +36,7 @@ public interface DeleteProcessorVersionMetadataOrBuilder
    * @return Whether the commonMetadata field is set.
    */
   boolean hasCommonMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DeleteProcessorVersionMetadataOrBuilder
    * @return The commonMetadata.
    */
   com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata();
+
   /**
    *
    *

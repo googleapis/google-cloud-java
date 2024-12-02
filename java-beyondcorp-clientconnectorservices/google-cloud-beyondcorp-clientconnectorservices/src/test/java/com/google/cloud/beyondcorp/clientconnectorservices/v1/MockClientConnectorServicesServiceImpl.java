@@ -74,7 +74,8 @@ public class MockClientConnectorServicesServiceImpl extends ClientConnectorServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListClientConnectorServices, expected %s or %s",
+                  "Unrecognized response type %s for method ListClientConnectorServices, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListClientConnectorServicesResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,7 +97,8 @@ public class MockClientConnectorServicesServiceImpl extends ClientConnectorServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetClientConnectorService, expected %s or %s",
+                  "Unrecognized response type %s for method GetClientConnectorService, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ClientConnectorService.class.getName(),
                   Exception.class.getName())));
@@ -117,7 +119,8 @@ public class MockClientConnectorServicesServiceImpl extends ClientConnectorServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateClientConnectorService, expected %s or %s",
+                  "Unrecognized response type %s for method CreateClientConnectorService, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -138,7 +141,8 @@ public class MockClientConnectorServicesServiceImpl extends ClientConnectorServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateClientConnectorService, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateClientConnectorService, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -159,7 +163,8 @@ public class MockClientConnectorServicesServiceImpl extends ClientConnectorServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteClientConnectorService, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteClientConnectorService, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

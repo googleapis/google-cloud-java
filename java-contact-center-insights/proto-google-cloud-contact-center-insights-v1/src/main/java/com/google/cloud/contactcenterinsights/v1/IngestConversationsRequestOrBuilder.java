@@ -39,6 +39,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return Whether the transcriptObjectConfig field is set.
    */
   boolean hasTranscriptObjectConfig();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface IngestConversationsRequestOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.TranscriptObjectConfig
       getTranscriptObjectConfig();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return Whether the conversationConfig field is set.
    */
   boolean hasConversationConfig();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface IngestConversationsRequestOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfig
       getConversationConfig();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return Whether the redactionConfig field is set.
    */
   boolean hasRedactionConfig();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return The redactionConfig.
    */
   com.google.cloud.contactcenterinsights.v1.RedactionConfig getRedactionConfig();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return Whether the speechConfig field is set.
    */
   boolean hasSpeechConfig();
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return The speechConfig.
    */
   com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig();
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public interface IngestConversationsRequestOrBuilder
    * @return Whether the sampleSize field is set.
    */
   boolean hasSampleSize();
+
   /**
    *
    *

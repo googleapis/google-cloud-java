@@ -34,6 +34,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.DiagnoseInterconnectResponse)
     DiagnoseInterconnectResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiagnoseInterconnectResponse.newBuilder() to construct.
   private DiagnoseInterconnectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int UPDATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
 
   public static final int RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.edgenetwork.v1.InterconnectDiagnostics result_;
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
   public boolean hasResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
         ? com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.getDefaultInstance()
         : result_;
   }
+
   /**
    *
    *
@@ -338,6 +345,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -564,6 +572,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -578,6 +587,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -598,6 +608,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -620,6 +631,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +699,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +714,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -717,6 +733,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -749,6 +766,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
             com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.Builder,
             com.google.cloud.edgenetwork.v1.InterconnectDiagnosticsOrBuilder>
         resultBuilder_;
+
     /**
      *
      *
@@ -763,6 +781,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
     public boolean hasResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -783,6 +802,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
         return resultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -805,6 +825,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +846,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +875,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +895,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +910,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -904,6 +929,7 @@ public final class DiagnoseInterconnectResponse extends com.google.protobuf.Gene
             : result_;
       }
     }
+
     /**
      *
      *

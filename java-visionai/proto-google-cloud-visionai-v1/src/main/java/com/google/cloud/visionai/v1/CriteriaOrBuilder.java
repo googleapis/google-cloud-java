@@ -36,6 +36,7 @@ public interface CriteriaOrBuilder
    * @return Whether the textArray field is set.
    */
   boolean hasTextArray();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CriteriaOrBuilder
    * @return The textArray.
    */
   com.google.cloud.visionai.v1.StringArray getTextArray();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface CriteriaOrBuilder
    * @return Whether the intRangeArray field is set.
    */
   boolean hasIntRangeArray();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface CriteriaOrBuilder
    * @return The intRangeArray.
    */
   com.google.cloud.visionai.v1.IntRangeArray getIntRangeArray();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface CriteriaOrBuilder
    * @return Whether the floatRangeArray field is set.
    */
   boolean hasFloatRangeArray();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface CriteriaOrBuilder
    * @return The floatRangeArray.
    */
   com.google.cloud.visionai.v1.FloatRangeArray getFloatRangeArray();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface CriteriaOrBuilder
    * @return Whether the dateTimeRangeArray field is set.
    */
   boolean hasDateTimeRangeArray();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface CriteriaOrBuilder
    * @return The dateTimeRangeArray.
    */
   com.google.cloud.visionai.v1.DateTimeRangeArray getDateTimeRangeArray();
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public interface CriteriaOrBuilder
    * @return Whether the geoLocationArray field is set.
    */
   boolean hasGeoLocationArray();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface CriteriaOrBuilder
    * @return The geoLocationArray.
    */
   com.google.cloud.visionai.v1.GeoLocationArray getGeoLocationArray();
+
   /**
    *
    *
@@ -211,6 +221,7 @@ public interface CriteriaOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface CriteriaOrBuilder
    * @return The boolValue.
    */
   com.google.cloud.visionai.v1.BoolValue getBoolValue();
+
   /**
    *
    *
@@ -246,6 +258,7 @@ public interface CriteriaOrBuilder
    * @return The field.
    */
   java.lang.String getField();
+
   /**
    *
    *

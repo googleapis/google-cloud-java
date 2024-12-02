@@ -33,6 +33,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest)
     CreateAndConfigureAccountRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateAndConfigureAccountRequest.newBuilder() to construct.
   private CreateAndConfigureAccountRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -88,6 +89,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -120,6 +122,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
      * @return The regionCode.
      */
     java.lang.String getRegionCode();
+
     /**
      *
      *
@@ -135,6 +138,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
      */
     com.google.protobuf.ByteString getRegionCodeBytes();
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest.AcceptTermsOfService)
       AcceptTermsOfServiceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AcceptTermsOfService.newBuilder() to construct.
     private AcceptTermsOfService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -187,6 +192,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -215,6 +221,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return s;
       }
     }
+
     /**
      *
      *
@@ -248,6 +255,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -273,6 +281,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return s;
       }
     }
+
     /**
      *
      *
@@ -496,6 +505,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -728,6 +738,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -755,6 +766,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -782,6 +794,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -808,6 +821,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -830,6 +844,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -859,6 +874,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
 
       private java.lang.Object regionCode_ = "";
+
       /**
        *
        *
@@ -883,6 +899,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -907,6 +924,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -930,6 +948,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -949,6 +968,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1066,6 +1086,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
      * @return Whether the accountAggregation field is set.
      */
     boolean hasAccountAggregation();
+
     /**
      *
      *
@@ -1081,6 +1102,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
      * @return The accountAggregation.
      */
     com.google.shopping.merchant.accounts.v1beta.AccountAggregation getAccountAggregation();
+
     /**
      *
      *
@@ -1111,6 +1133,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
      * @return Whether the provider field is set.
      */
     boolean hasProvider();
+
     /**
      *
      *
@@ -1126,6 +1149,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
      * @return The provider.
      */
     java.lang.String getProvider();
+
     /**
      *
      *
@@ -1146,6 +1170,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
             .ServiceTypeCase
         getServiceTypeCase();
   }
+
   /**
    *
    *
@@ -1162,6 +1187,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest.AddAccountService)
       AddAccountServiceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AddAccountService.newBuilder() to construct.
     private AddAccountService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1211,6 +1237,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       private ServiceTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1242,6 +1269,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
     }
 
     public static final int ACCOUNT_AGGREGATION_FIELD_NUMBER = 103;
+
     /**
      *
      *
@@ -1260,6 +1288,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
     public boolean hasAccountAggregation() {
       return serviceTypeCase_ == 103;
     }
+
     /**
      *
      *
@@ -1281,6 +1310,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return com.google.shopping.merchant.accounts.v1beta.AccountAggregation.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1306,6 +1336,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object provider_ = "";
+
     /**
      *
      *
@@ -1324,6 +1355,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
     public boolean hasProvider() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1350,6 +1382,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return s;
       }
     }
+
     /**
      *
      *
@@ -1596,6 +1629,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1870,6 +1904,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
               com.google.shopping.merchant.accounts.v1beta.AccountAggregation.Builder,
               com.google.shopping.merchant.accounts.v1beta.AccountAggregationOrBuilder>
           accountAggregationBuilder_;
+
       /**
        *
        *
@@ -1889,6 +1924,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       public boolean hasAccountAggregation() {
         return serviceTypeCase_ == 103;
       }
+
       /**
        *
        *
@@ -1921,6 +1957,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1948,6 +1985,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         serviceTypeCase_ = 103;
         return this;
       }
+
       /**
        *
        *
@@ -1972,6 +2010,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         serviceTypeCase_ = 103;
         return this;
       }
+
       /**
        *
        *
@@ -2012,6 +2051,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         serviceTypeCase_ = 103;
         return this;
       }
+
       /**
        *
        *
@@ -2041,6 +2081,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         }
         return this;
       }
+
       /**
        *
        *
@@ -2058,6 +2099,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           getAccountAggregationBuilder() {
         return getAccountAggregationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2084,6 +2126,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2124,6 +2167,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
 
       private java.lang.Object provider_ = "";
+
       /**
        *
        *
@@ -2141,6 +2185,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       public boolean hasProvider() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2166,6 +2211,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2191,6 +2237,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2215,6 +2262,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2235,6 +2283,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2336,6 +2385,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
   private int bitField0_;
   public static final int ACCOUNT_FIELD_NUMBER = 1;
   private com.google.shopping.merchant.accounts.v1beta.Account account_;
+
   /**
    *
    *
@@ -2353,6 +2403,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
   public boolean hasAccount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2372,6 +2423,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         ? com.google.shopping.merchant.accounts.v1beta.Account.getDefaultInstance()
         : account_;
   }
+
   /**
    *
    *
@@ -2394,6 +2446,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.CreateUserRequest> users_;
+
   /**
    *
    *
@@ -2410,6 +2463,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       getUsersList() {
     return users_;
   }
+
   /**
    *
    *
@@ -2427,6 +2481,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       getUsersOrBuilderList() {
     return users_;
   }
+
   /**
    *
    *
@@ -2442,6 +2497,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
   public int getUsersCount() {
     return users_.size();
   }
+
   /**
    *
    *
@@ -2457,6 +2513,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
   public com.google.shopping.merchant.accounts.v1beta.CreateUserRequest getUsers(int index) {
     return users_.get(index);
   }
+
   /**
    *
    *
@@ -2478,6 +2535,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
   private com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest
           .AcceptTermsOfService
       acceptTermsOfService_;
+
   /**
    *
    *
@@ -2496,6 +2554,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
   public boolean hasAcceptTermsOfService() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2519,6 +2578,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
             .AcceptTermsOfService.getDefaultInstance()
         : acceptTermsOfService_;
   }
+
   /**
    *
    *
@@ -2548,6 +2608,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest
               .AddAccountService>
       service_;
+
   /**
    *
    *
@@ -2571,6 +2632,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       getServiceList() {
     return service_;
   }
+
   /**
    *
    *
@@ -2595,6 +2657,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       getServiceOrBuilderList() {
     return service_;
   }
+
   /**
    *
    *
@@ -2615,6 +2678,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
   public int getServiceCount() {
     return service_.size();
   }
+
   /**
    *
    *
@@ -2637,6 +2701,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       getService(int index) {
     return service_.get(index);
   }
+
   /**
    *
    *
@@ -2869,6 +2934,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3231,6 +3297,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
             com.google.shopping.merchant.accounts.v1beta.Account.Builder,
             com.google.shopping.merchant.accounts.v1beta.AccountOrBuilder>
         accountBuilder_;
+
     /**
      *
      *
@@ -3247,6 +3314,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
     public boolean hasAccount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3269,6 +3337,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return accountBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3293,6 +3362,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3315,6 +3385,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3345,6 +3416,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3366,6 +3438,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3382,6 +3455,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       onChanged();
       return getAccountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3402,6 +3476,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
             : account_;
       }
     }
+
     /**
      *
      *
@@ -3467,6 +3542,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return usersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3485,6 +3561,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return usersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3503,6 +3580,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return usersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3528,6 +3606,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3551,6 +3630,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3575,6 +3655,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3600,6 +3681,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3622,6 +3704,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3645,6 +3728,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3668,6 +3752,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3689,6 +3774,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3710,6 +3796,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3725,6 +3812,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         int index) {
       return getUsersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3744,6 +3832,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return usersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3764,6 +3853,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(users_);
       }
     }
+
     /**
      *
      *
@@ -3781,6 +3871,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
           .addBuilder(
               com.google.shopping.merchant.accounts.v1beta.CreateUserRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3799,6 +3890,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
               index,
               com.google.shopping.merchant.accounts.v1beta.CreateUserRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3843,6 +3935,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
             com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest
                 .AcceptTermsOfServiceOrBuilder>
         acceptTermsOfServiceBuilder_;
+
     /**
      *
      *
@@ -3860,6 +3953,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
     public boolean hasAcceptTermsOfService() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3886,6 +3980,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return acceptTermsOfServiceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3914,6 +4009,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3939,6 +4035,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3974,6 +4071,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -3996,6 +4094,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4015,6 +4114,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       onChanged();
       return getAcceptTermsOfServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4039,6 +4139,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
             : acceptTermsOfService_;
       }
     }
+
     /**
      *
      *
@@ -4124,6 +4225,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return serviceBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4147,6 +4249,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return serviceBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4172,6 +4275,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return serviceBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4205,6 +4309,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4235,6 +4340,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4267,6 +4373,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4300,6 +4407,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4329,6 +4437,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4359,6 +4468,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4390,6 +4500,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4416,6 +4527,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4442,6 +4554,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -4463,6 +4576,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         getServiceBuilder(int index) {
       return getServiceFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4488,6 +4602,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return serviceBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4515,6 +4630,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(service_);
       }
     }
+
     /**
      *
      *
@@ -4539,6 +4655,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
               com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest
                   .AddAccountService.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4564,6 +4681,7 @@ public final class CreateAndConfigureAccountRequest extends com.google.protobuf.
               com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest
                   .AddAccountService.getDefaultInstance());
     }
+
     /**
      *
      *

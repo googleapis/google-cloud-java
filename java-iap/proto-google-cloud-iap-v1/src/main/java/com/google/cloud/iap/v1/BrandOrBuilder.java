@@ -38,6 +38,7 @@ public interface BrandOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface BrandOrBuilder
    * @return The supportEmail.
    */
   java.lang.String getSupportEmail();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface BrandOrBuilder
    * @return The applicationTitle.
    */
   java.lang.String getApplicationTitle();
+
   /**
    *
    *

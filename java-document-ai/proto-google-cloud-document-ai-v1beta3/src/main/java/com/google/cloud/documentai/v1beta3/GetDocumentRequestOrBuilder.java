@@ -40,6 +40,7 @@ public interface GetDocumentRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface GetDocumentRequestOrBuilder
    * @return Whether the documentId field is set.
    */
   boolean hasDocumentId();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface GetDocumentRequestOrBuilder
    * @return The documentId.
    */
   com.google.cloud.documentai.v1beta3.DocumentId getDocumentId();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface GetDocumentRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface GetDocumentRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface GetDocumentRequestOrBuilder
    * @return Whether the pageRange field is set.
    */
   boolean hasPageRange();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface GetDocumentRequestOrBuilder
    * @return The pageRange.
    */
   com.google.cloud.documentai.v1beta3.DocumentPageRange getPageRange();
+
   /**
    *
    *

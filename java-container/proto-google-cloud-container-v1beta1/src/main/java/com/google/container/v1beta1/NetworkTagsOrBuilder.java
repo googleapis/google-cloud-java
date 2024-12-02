@@ -36,6 +36,7 @@ public interface NetworkTagsOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkTagsOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface NetworkTagsOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *

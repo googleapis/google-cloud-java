@@ -34,6 +34,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.ServiceScaling)
     ServiceScalingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceScaling.newBuilder() to construct.
   private ServiceScaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
      * <code>SCALING_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int SCALING_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTOMATIC = 1;</code>
      */
     public static final int AUTOMATIC_VALUE = 1;
+
     /**
      *
      *
@@ -224,6 +227,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_INSTANCE_COUNT_FIELD_NUMBER = 1;
   private int minInstanceCount_ = 0;
+
   /**
    *
    *
@@ -244,6 +248,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCALING_MODE_FIELD_NUMBER = 3;
   private int scalingMode_ = 0;
+
   /**
    *
    *
@@ -261,6 +266,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
   public int getScalingModeValue() {
     return scalingMode_;
   }
+
   /**
    *
    *
@@ -454,6 +460,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +656,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int minInstanceCount_;
+
     /**
      *
      *
@@ -666,6 +674,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     public int getMinInstanceCount() {
       return minInstanceCount_;
     }
+
     /**
      *
      *
@@ -687,6 +696,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +718,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int scalingMode_ = 0;
+
     /**
      *
      *
@@ -725,6 +736,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     public int getScalingModeValue() {
       return scalingMode_;
     }
+
     /**
      *
      *
@@ -745,6 +757,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.run.v2.ServiceScaling.ScalingMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -789,6 +803,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

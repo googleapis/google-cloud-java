@@ -40,6 +40,7 @@ public interface PurgeCompletionSuggestionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

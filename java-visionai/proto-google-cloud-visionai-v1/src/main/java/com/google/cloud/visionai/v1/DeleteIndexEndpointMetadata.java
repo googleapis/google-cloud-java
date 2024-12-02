@@ -33,6 +33,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DeleteIndexEndpointMetadata)
     DeleteIndexEndpointMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteIndexEndpointMetadata.newBuilder() to construct.
   private DeleteIndexEndpointMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int OPERATION_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.OperationMetadata operationMetadata_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
   public boolean hasOperationMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
         ? com.google.cloud.visionai.v1.OperationMetadata.getDefaultInstance()
         : operationMetadata_;
   }
+
   /**
    *
    *
@@ -277,6 +281,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -484,6 +489,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
             com.google.cloud.visionai.v1.OperationMetadata.Builder,
             com.google.cloud.visionai.v1.OperationMetadataOrBuilder>
         operationMetadataBuilder_;
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
     public boolean hasOperationMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -518,6 +525,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
         return operationMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -540,6 +548,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -560,6 +569,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -588,6 +598,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +618,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +633,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
       onChanged();
       return getOperationMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -639,6 +652,7 @@ public final class DeleteIndexEndpointMetadata extends com.google.protobuf.Gener
             : operationMetadata_;
       }
     }
+
     /**
      *
      *

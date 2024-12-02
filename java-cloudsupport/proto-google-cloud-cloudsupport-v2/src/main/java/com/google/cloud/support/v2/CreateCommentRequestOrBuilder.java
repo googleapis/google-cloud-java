@@ -38,6 +38,7 @@ public interface CreateCommentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CreateCommentRequestOrBuilder
    * @return Whether the comment field is set.
    */
   boolean hasComment();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CreateCommentRequestOrBuilder
    * @return The comment.
    */
   com.google.cloud.support.v2.Comment getComment();
+
   /**
    *
    *

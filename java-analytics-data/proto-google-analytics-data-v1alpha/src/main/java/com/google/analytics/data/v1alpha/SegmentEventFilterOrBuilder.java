@@ -37,6 +37,7 @@ public interface SegmentEventFilterOrBuilder
    * @return Whether the eventName field is set.
    */
   boolean hasEventName();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SegmentEventFilterOrBuilder
    * @return The eventName.
    */
   java.lang.String getEventName();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface SegmentEventFilterOrBuilder
    * @return Whether the segmentParameterFilterExpression field is set.
    */
   boolean hasSegmentParameterFilterExpression();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface SegmentEventFilterOrBuilder
    */
   com.google.analytics.data.v1alpha.SegmentParameterFilterExpression
       getSegmentParameterFilterExpression();
+
   /**
    *
    *

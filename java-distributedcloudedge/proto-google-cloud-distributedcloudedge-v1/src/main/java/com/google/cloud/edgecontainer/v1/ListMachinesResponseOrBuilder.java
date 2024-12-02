@@ -34,6 +34,7 @@ public interface ListMachinesResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.Machine machines = 1;</code>
    */
   java.util.List<com.google.cloud.edgecontainer.v1.Machine> getMachinesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListMachinesResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.Machine machines = 1;</code>
    */
   com.google.cloud.edgecontainer.v1.Machine getMachines(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListMachinesResponseOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.Machine machines = 1;</code>
    */
   int getMachinesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListMachinesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgecontainer.v1.MachineOrBuilder>
       getMachinesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListMachinesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListMachinesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListMachinesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListMachinesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

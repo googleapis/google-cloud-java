@@ -36,6 +36,7 @@ public interface TestFailureOrBuilder
    * @return Whether the actualOutputUrl field is set.
    */
   boolean hasActualOutputUrl();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TestFailureOrBuilder
    * @return The actualOutputUrl.
    */
   java.lang.String getActualOutputUrl();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TestFailureOrBuilder
    * @return Whether the actualRedirectResponseCode field is set.
    */
   boolean hasActualRedirectResponseCode();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface TestFailureOrBuilder
    * @return Whether the actualService field is set.
    */
   boolean hasActualService();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface TestFailureOrBuilder
    * @return The actualService.
    */
   java.lang.String getActualService();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface TestFailureOrBuilder
    * @return Whether the expectedOutputUrl field is set.
    */
   boolean hasExpectedOutputUrl();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface TestFailureOrBuilder
    * @return The expectedOutputUrl.
    */
   java.lang.String getExpectedOutputUrl();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface TestFailureOrBuilder
    * @return Whether the expectedRedirectResponseCode field is set.
    */
   boolean hasExpectedRedirectResponseCode();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface TestFailureOrBuilder
    * @return Whether the expectedService field is set.
    */
   boolean hasExpectedService();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public interface TestFailureOrBuilder
    * @return The expectedService.
    */
   java.lang.String getExpectedService();
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public interface TestFailureOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
    */
   java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> getHeadersList();
+
   /**
    *
    *
@@ -242,6 +253,7 @@ public interface TestFailureOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
    */
   com.google.cloud.compute.v1.UrlMapTestHeader getHeaders(int index);
+
   /**
    *
    *
@@ -252,6 +264,7 @@ public interface TestFailureOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -263,6 +276,7 @@ public interface TestFailureOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>
       getHeadersOrBuilderList();
+
   /**
    *
    *
@@ -286,6 +300,7 @@ public interface TestFailureOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
+
   /**
    *
    *
@@ -298,6 +313,7 @@ public interface TestFailureOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -323,6 +339,7 @@ public interface TestFailureOrBuilder
    * @return Whether the path field is set.
    */
   boolean hasPath();
+
   /**
    *
    *
@@ -335,6 +352,7 @@ public interface TestFailureOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

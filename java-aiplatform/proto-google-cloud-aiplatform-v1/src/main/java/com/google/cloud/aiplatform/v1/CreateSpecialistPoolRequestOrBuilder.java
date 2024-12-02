@@ -39,6 +39,7 @@ public interface CreateSpecialistPoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateSpecialistPoolRequestOrBuilder
    * @return Whether the specialistPool field is set.
    */
   boolean hasSpecialistPool();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateSpecialistPoolRequestOrBuilder
    * @return The specialistPool.
    */
   com.google.cloud.aiplatform.v1.SpecialistPool getSpecialistPool();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface MatchingConditionOrBuilder
    * @return The field.
    */
   java.lang.String getField();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface MatchingConditionOrBuilder
    * @return The enum numeric value on the wire for comparisonType.
    */
   int getComparisonTypeValue();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface MatchingConditionOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

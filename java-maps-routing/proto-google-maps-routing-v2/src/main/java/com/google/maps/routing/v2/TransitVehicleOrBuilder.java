@@ -36,6 +36,7 @@ public interface TransitVehicleOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TransitVehicleOrBuilder
    * @return The name.
    */
   com.google.type.LocalizedText getName();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TransitVehicleOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface TransitVehicleOrBuilder
    * @return The iconUri.
    */
   java.lang.String getIconUri();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface TransitVehicleOrBuilder
    * @return The localIconUri.
    */
   java.lang.String getLocalIconUri();
+
   /**
    *
    *

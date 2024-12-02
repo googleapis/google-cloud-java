@@ -40,6 +40,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The participant.
    */
   java.lang.String getParticipant();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the textInput field is set.
    */
   boolean hasTextInput();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The textInput.
    */
   com.google.cloud.dialogflow.v2.TextInput getTextInput();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the eventInput field is set.
    */
   boolean hasEventInput();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The eventInput.
    */
   com.google.cloud.dialogflow.v2.EventInput getEventInput();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the suggestionInput field is set.
    */
   boolean hasSuggestionInput();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The suggestionInput.
    */
   com.google.cloud.dialogflow.v2.SuggestionInput getSuggestionInput();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the replyAudioConfig field is set.
    */
   boolean hasReplyAudioConfig();
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The replyAudioConfig.
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfig getReplyAudioConfig();
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the queryParams field is set.
    */
   boolean hasQueryParams();
+
   /**
    *
    *
@@ -233,6 +243,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The queryParams.
    */
   com.google.cloud.dialogflow.v2.QueryParameters getQueryParams();
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the assistQueryParams field is set.
    */
   boolean hasAssistQueryParams();
+
   /**
    *
    *
@@ -268,6 +280,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The assistQueryParams.
    */
   com.google.cloud.dialogflow.v2.AssistQueryParameters getAssistQueryParams();
+
   /**
    *
    *
@@ -296,6 +309,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the cxParameters field is set.
    */
   boolean hasCxParameters();
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The cxParameters.
    */
   com.google.protobuf.Struct getCxParameters();
+
   /**
    *
    *
@@ -343,6 +358,7 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

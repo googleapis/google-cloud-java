@@ -33,6 +33,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.CatalogItem)
     CatalogItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CatalogItem.newBuilder() to construct.
   private CatalogItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,6 +91,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the categories.
      */
     java.util.List<java.lang.String> getCategoriesList();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return The count of categories.
      */
     int getCategoriesCount();
+
     /**
      *
      *
@@ -123,6 +126,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return The categories at the given index.
      */
     java.lang.String getCategories(int index);
+
     /**
      *
      *
@@ -141,6 +145,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCategoriesBytes(int index);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy)
       CategoryHierarchyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CategoryHierarchy.newBuilder() to construct.
     private CategoryHierarchy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -191,6 +197,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList categories_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -209,6 +216,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getCategoriesList() {
       return categories_;
     }
+
     /**
      *
      *
@@ -227,6 +235,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public int getCategoriesCount() {
       return categories_.size();
     }
+
     /**
      *
      *
@@ -246,6 +255,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCategories(int index) {
       return categories_.get(index);
     }
+
     /**
      *
      *
@@ -441,6 +451,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -655,6 +666,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -674,6 +686,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         categories_.makeImmutable();
         return categories_;
       }
+
       /**
        *
        *
@@ -692,6 +705,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       public int getCategoriesCount() {
         return categories_.size();
       }
+
       /**
        *
        *
@@ -711,6 +725,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getCategories(int index) {
         return categories_.get(index);
       }
+
       /**
        *
        *
@@ -730,6 +745,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getCategoriesBytes(int index) {
         return categories_.getByteString(index);
       }
+
       /**
        *
        *
@@ -757,6 +773,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -783,6 +800,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -806,6 +824,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -828,6 +847,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -941,6 +961,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     private RecommendationTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -975,6 +996,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -1003,6 +1025,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1038,6 +1061,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   private java.util.List<
           com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy>
       categoryHierarchies_;
+
   /**
    *
    *
@@ -1065,6 +1089,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       getCategoryHierarchiesList() {
     return categoryHierarchies_;
   }
+
   /**
    *
    *
@@ -1094,6 +1119,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       getCategoryHierarchiesOrBuilderList() {
     return categoryHierarchies_;
   }
+
   /**
    *
    *
@@ -1120,6 +1146,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   public int getCategoryHierarchiesCount() {
     return categoryHierarchies_.size();
   }
+
   /**
    *
    *
@@ -1147,6 +1174,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       getCategoryHierarchies(int index) {
     return categoryHierarchies_.get(index);
   }
+
   /**
    *
    *
@@ -1179,6 +1207,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -1203,6 +1232,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1232,6 +1262,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1256,6 +1287,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1283,6 +1315,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ITEM_ATTRIBUTES_FIELD_NUMBER = 5;
   private com.google.cloud.recommendationengine.v1beta1.FeatureMap itemAttributes_;
+
   /**
    *
    *
@@ -1304,6 +1337,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasItemAttributes() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1327,6 +1361,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance()
         : itemAttributes_;
   }
+
   /**
    *
    *
@@ -1354,6 +1389,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -1381,6 +1417,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1414,6 +1451,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1432,6 +1470,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -1450,6 +1489,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   public int getTagsCount() {
     return tags_.size();
   }
+
   /**
    *
    *
@@ -1469,6 +1509,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTags(int index) {
     return tags_.get(index);
   }
+
   /**
    *
    *
@@ -1493,6 +1534,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object itemGroupId_ = "";
+
   /**
    *
    *
@@ -1520,6 +1562,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1549,6 +1592,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRODUCT_METADATA_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -1566,6 +1610,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductMetadata() {
     return recommendationTypeCase_ == 10;
   }
+
   /**
    *
    *
@@ -1586,6 +1631,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1872,6 +1918,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2278,6 +2325,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -2305,6 +2353,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2332,6 +2381,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2358,6 +2408,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2380,6 +2431,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2459,6 +2511,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return categoryHierarchiesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2488,6 +2541,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return categoryHierarchiesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2518,6 +2572,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return categoryHierarchiesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2555,6 +2610,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2590,6 +2646,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2626,6 +2683,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2663,6 +2721,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2697,6 +2756,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2732,6 +2792,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2768,6 +2829,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2800,6 +2862,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2832,6 +2895,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2858,6 +2922,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         getCategoryHierarchiesBuilder(int index) {
       return getCategoryHierarchiesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2888,6 +2953,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return categoryHierarchiesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2921,6 +2987,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(categoryHierarchies_);
       }
     }
+
     /**
      *
      *
@@ -2950,6 +3017,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2980,6 +3048,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3030,6 +3099,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -3053,6 +3123,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3076,6 +3147,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3098,6 +3170,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3116,6 +3189,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3141,6 +3215,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3164,6 +3239,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3187,6 +3263,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3209,6 +3286,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3227,6 +3305,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3257,6 +3336,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommendationengine.v1beta1.FeatureMap.Builder,
             com.google.cloud.recommendationengine.v1beta1.FeatureMapOrBuilder>
         itemAttributesBuilder_;
+
     /**
      *
      *
@@ -3277,6 +3357,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasItemAttributes() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3303,6 +3384,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return itemAttributesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3332,6 +3414,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3358,6 +3441,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3393,6 +3477,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3418,6 +3503,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3439,6 +3525,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getItemAttributesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3464,6 +3551,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             : itemAttributes_;
       }
     }
+
     /**
      *
      *
@@ -3497,6 +3585,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -3523,6 +3612,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3549,6 +3639,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3574,6 +3665,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3595,6 +3687,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3631,6 +3724,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -3650,6 +3744,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       tags_.makeImmutable();
       return tags_;
     }
+
     /**
      *
      *
@@ -3668,6 +3763,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public int getTagsCount() {
       return tags_.size();
     }
+
     /**
      *
      *
@@ -3687,6 +3783,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
+
     /**
      *
      *
@@ -3706,6 +3803,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3733,6 +3831,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3759,6 +3858,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3782,6 +3882,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3804,6 +3905,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3833,6 +3935,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object itemGroupId_ = "";
+
     /**
      *
      *
@@ -3859,6 +3962,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3885,6 +3989,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3910,6 +4015,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3931,6 +4037,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3963,6 +4070,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.Builder,
             com.google.cloud.recommendationengine.v1beta1.ProductCatalogItemOrBuilder>
         productMetadataBuilder_;
+
     /**
      *
      *
@@ -3980,6 +4088,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductMetadata() {
       return recommendationTypeCase_ == 10;
     }
+
     /**
      *
      *
@@ -4010,6 +4119,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4035,6 +4145,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       recommendationTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -4057,6 +4168,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       recommendationTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -4095,6 +4207,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       recommendationTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -4122,6 +4235,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4137,6 +4251,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         getProductMetadataBuilder() {
       return getProductMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4162,6 +4277,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface ListAutonomousDbVersionsResponseOrBuilder
    */
   java.util.List<com.google.cloud.oracledatabase.v1.AutonomousDbVersion>
       getAutonomousDbVersionsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListAutonomousDbVersionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.oracledatabase.v1.AutonomousDbVersion getAutonomousDbVersions(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListAutonomousDbVersionsResponseOrBuilder
    * </code>
    */
   int getAutonomousDbVersionsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListAutonomousDbVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.AutonomousDbVersionOrBuilder>
       getAutonomousDbVersionsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListAutonomousDbVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

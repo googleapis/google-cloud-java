@@ -36,6 +36,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeconnect.v1.Url)
     UrlOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Url.newBuilder() to construct.
   private Url(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEME_FIELD_NUMBER = 1;
   private int scheme_ = 0;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
   public int getSchemeValue() {
     return scheme_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +387,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -594,6 +602,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int scheme_ = 0;
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     public int getSchemeValue() {
       return scheme_;
     }
+
     /**
      *
      *
@@ -627,6 +637,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apigeeconnect.v1.Scheme.forNumber(scheme_);
       return result == null ? com.google.cloud.apigeeconnect.v1.Scheme.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +697,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object host_ = "";
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -728,6 +743,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -749,6 +765,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +783,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +808,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -834,6 +854,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +876,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +894,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

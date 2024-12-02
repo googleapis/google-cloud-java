@@ -33,6 +33,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpFaultInjection)
     HttpFaultInjectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HttpFaultInjection.newBuilder() to construct.
   private HttpFaultInjection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ABORT_FIELD_NUMBER = 92611376;
   private com.google.cloud.compute.v1.HttpFaultAbort abort_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
   public boolean hasAbort() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.HttpFaultAbort.getDefaultInstance()
         : abort_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
 
   public static final int DELAY_FIELD_NUMBER = 95467907;
   private com.google.cloud.compute.v1.HttpFaultDelay delay_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
   public boolean hasDelay() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.HttpFaultDelay.getDefaultInstance()
         : delay_;
   }
+
   /**
    *
    *
@@ -340,6 +347,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +569,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.HttpFaultAbort.Builder,
             com.google.cloud.compute.v1.HttpFaultAbortOrBuilder>
         abortBuilder_;
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
     public boolean hasAbort() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -595,6 +605,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
         return abortBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -617,6 +628,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +648,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +676,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +696,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +711,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAbortFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -714,6 +730,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
             : abort_;
       }
     }
+
     /**
      *
      *
@@ -746,6 +763,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.HttpFaultDelay.Builder,
             com.google.cloud.compute.v1.HttpFaultDelayOrBuilder>
         delayBuilder_;
+
     /**
      *
      *
@@ -760,6 +778,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
     public boolean hasDelay() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -780,6 +799,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
         return delayBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -802,6 +822,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +842,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +870,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +890,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +905,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDelayFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -899,6 +924,7 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
             : delay_;
       }
     }
+
     /**
      *
      *

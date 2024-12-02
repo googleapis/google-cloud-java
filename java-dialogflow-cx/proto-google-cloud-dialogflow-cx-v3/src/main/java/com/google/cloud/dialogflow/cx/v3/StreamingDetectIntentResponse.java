@@ -60,6 +60,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse)
     StreamingDetectIntentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingDetectIntentResponse.newBuilder() to construct.
   private StreamingDetectIntentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     private ResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -139,6 +141,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   }
 
   public static final int RECOGNITION_RESULT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public boolean hasRecognitionResult() {
     return responseCase_ == 1;
   }
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     }
     return com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   }
 
   public static final int DETECT_INTENT_RESPONSE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public boolean hasDetectIntentResponse() {
     return responseCase_ == 2;
   }
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     }
     return com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   public static final int DEBUGGING_INFO_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debuggingInfo_;
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public boolean hasDebuggingInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         ? com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.getDefaultInstance()
         : debuggingInfo_;
   }
+
   /**
    *
    *
@@ -501,6 +512,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -800,6 +812,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.Builder,
             com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResultOrBuilder>
         recognitionResultBuilder_;
+
     /**
      *
      *
@@ -816,6 +829,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public boolean hasRecognitionResult() {
       return responseCase_ == 1;
     }
+
     /**
      *
      *
@@ -842,6 +856,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -866,6 +881,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +903,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +940,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +967,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +982,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         getRecognitionResultBuilder() {
       return getRecognitionResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -985,6 +1005,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return com.google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1046,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.Builder,
             com.google.cloud.dialogflow.cx.v3.DetectIntentResponseOrBuilder>
         detectIntentResponseBuilder_;
+
     /**
      *
      *
@@ -1040,6 +1062,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public boolean hasDetectIntentResponse() {
       return responseCase_ == 2;
     }
+
     /**
      *
      *
@@ -1065,6 +1088,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1112,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1133,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1168,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1194,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1208,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         getDetectIntentResponseBuilder() {
       return getDetectIntentResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1201,6 +1230,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1270,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.Builder,
             com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfoOrBuilder>
         debuggingInfoBuilder_;
+
     /**
      *
      *
@@ -1256,6 +1287,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public boolean hasDebuggingInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1278,6 +1310,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return debuggingInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1336,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1359,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1392,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1414,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1395,6 +1432,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return getDebuggingInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1416,6 +1454,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             : debuggingInfo_;
       }
     }
+
     /**
      *
      *

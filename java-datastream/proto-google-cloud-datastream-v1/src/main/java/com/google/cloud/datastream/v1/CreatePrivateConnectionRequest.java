@@ -33,6 +33,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.CreatePrivateConnectionRequest)
     CreatePrivateConnectionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreatePrivateConnectionRequest.newBuilder() to construct.
   private CreatePrivateConnectionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateConnectionId_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
 
   public static final int PRIVATE_CONNECTION_FIELD_NUMBER = 3;
   private com.google.cloud.datastream.v1.PrivateConnection privateConnection_;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
   public boolean hasPrivateConnection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
         ? com.google.cloud.datastream.v1.PrivateConnection.getDefaultInstance()
         : privateConnection_;
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
 
   public static final int FORCE_FIELD_NUMBER = 6;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -523,6 +534,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -786,6 +798,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -810,6 +823,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -834,6 +848,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -857,6 +872,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +892,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object privateConnectionId_ = "";
+
     /**
      *
      *
@@ -924,6 +942,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -946,6 +965,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -967,6 +987,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1005,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1035,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
             com.google.cloud.datastream.v1.PrivateConnection.Builder,
             com.google.cloud.datastream.v1.PrivateConnectionOrBuilder>
         privateConnectionBuilder_;
+
     /**
      *
      *
@@ -1029,6 +1052,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     public boolean hasPrivateConnection() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1051,6 +1075,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
         return privateConnectionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1154,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1176,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1193,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return getPrivateConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1185,6 +1215,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
             : privateConnection_;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1245,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1248,6 +1280,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1282,6 +1315,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1315,6 +1349,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1379,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1416,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -1395,6 +1432,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -1414,6 +1452,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

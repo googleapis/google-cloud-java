@@ -33,6 +33,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata)
     TuneQaScorecardRevisionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TuneQaScorecardRevisionMetadata.newBuilder() to construct.
   private TuneQaScorecardRevisionMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -86,6 +87,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
      * @return The question.
      */
     java.lang.String getQuestion();
+
     /**
      *
      *
@@ -118,6 +120,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
      */
     java.util.List<com.google.cloud.contactcenterinsights.v1.DatasetValidationWarning>
         getDatasetValidationWarningsList();
+
     /**
      *
      *
@@ -133,6 +136,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
      * @return The count of datasetValidationWarnings.
      */
     int getDatasetValidationWarningsCount();
+
     /**
      *
      *
@@ -150,6 +154,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
      */
     com.google.cloud.contactcenterinsights.v1.DatasetValidationWarning getDatasetValidationWarnings(
         int index);
+
     /**
      *
      *
@@ -165,6 +170,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
      * @return A list containing the enum numeric values on the wire for datasetValidationWarnings.
      */
     java.util.List<java.lang.Integer> getDatasetValidationWarningsValueList();
+
     /**
      *
      *
@@ -195,6 +201,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
      */
     int getValidFeedbackLabelsCount();
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata.QaQuestionDatasetValidationResult)
       QaQuestionDatasetValidationResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use QaQuestionDatasetValidationResult.newBuilder() to construct.
     private QaQuestionDatasetValidationResult(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -249,6 +257,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object question_ = "";
+
     /**
      *
      *
@@ -275,6 +284,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return s;
       }
     }
+
     /**
      *
      *
@@ -324,6 +334,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
                     : result;
               }
             };
+
     /**
      *
      *
@@ -345,6 +356,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           java.lang.Integer, com.google.cloud.contactcenterinsights.v1.DatasetValidationWarning>(
           datasetValidationWarnings_, datasetValidationWarnings_converter_);
     }
+
     /**
      *
      *
@@ -363,6 +375,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     public int getDatasetValidationWarningsCount() {
       return datasetValidationWarnings_.size();
     }
+
     /**
      *
      *
@@ -383,6 +396,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         getDatasetValidationWarnings(int index) {
       return datasetValidationWarnings_converter_.convert(datasetValidationWarnings_.get(index));
     }
+
     /**
      *
      *
@@ -401,6 +415,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     public java.util.List<java.lang.Integer> getDatasetValidationWarningsValueList() {
       return datasetValidationWarnings_;
     }
+
     /**
      *
      *
@@ -425,6 +440,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
 
     public static final int VALID_FEEDBACK_LABELS_COUNT_FIELD_NUMBER = 3;
     private int validFeedbackLabelsCount_ = 0;
+
     /**
      *
      *
@@ -666,6 +682,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -940,6 +957,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       private int bitField0_;
 
       private java.lang.Object question_ = "";
+
       /**
        *
        *
@@ -965,6 +983,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -990,6 +1009,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1014,6 +1034,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1034,6 +1055,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1070,6 +1092,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           bitField0_ |= 0x00000002;
         }
       }
+
       /**
        *
        *
@@ -1090,6 +1113,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
             java.lang.Integer, com.google.cloud.contactcenterinsights.v1.DatasetValidationWarning>(
             datasetValidationWarnings_, datasetValidationWarnings_converter_);
       }
+
       /**
        *
        *
@@ -1107,6 +1131,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       public int getDatasetValidationWarningsCount() {
         return datasetValidationWarnings_.size();
       }
+
       /**
        *
        *
@@ -1126,6 +1151,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           getDatasetValidationWarnings(int index) {
         return datasetValidationWarnings_converter_.convert(datasetValidationWarnings_.get(index));
       }
+
       /**
        *
        *
@@ -1152,6 +1178,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1177,6 +1204,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1203,6 +1231,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1223,6 +1252,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1241,6 +1271,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       public java.util.List<java.lang.Integer> getDatasetValidationWarningsValueList() {
         return java.util.Collections.unmodifiableList(datasetValidationWarnings_);
       }
+
       /**
        *
        *
@@ -1259,6 +1290,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       public int getDatasetValidationWarningsValue(int index) {
         return datasetValidationWarnings_.get(index);
       }
+
       /**
        *
        *
@@ -1281,6 +1313,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1302,6 +1335,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1328,6 +1362,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
 
       private int validFeedbackLabelsCount_;
+
       /**
        *
        *
@@ -1343,6 +1378,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       public int getValidFeedbackLabelsCount() {
         return validFeedbackLabelsCount_;
       }
+
       /**
        *
        *
@@ -1362,6 +1398,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1472,6 +1509,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
      * @return The question.
      */
     java.lang.String getQuestion();
+
     /**
      *
      *
@@ -1502,6 +1540,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
      * @return Whether the metrics field is set.
      */
     boolean hasMetrics();
+
     /**
      *
      *
@@ -1518,6 +1557,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
             .QaQuestionDatasetTuningMetrics.Metrics
         getMetrics();
+
     /**
      *
      *
@@ -1533,6 +1573,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
             .QaQuestionDatasetTuningMetrics.MetricsOrBuilder
         getMetricsOrBuilder();
   }
+
   /**
    *
    *
@@ -1550,6 +1591,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata.QaQuestionDatasetTuningMetrics)
       QaQuestionDatasetTuningMetricsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use QaQuestionDatasetTuningMetrics.newBuilder() to construct.
     private QaQuestionDatasetTuningMetrics(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1601,6 +1643,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
        */
       double getAccuracy();
     }
+
     /**
      *
      *
@@ -1617,6 +1660,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata.QaQuestionDatasetTuningMetrics.Metrics)
         MetricsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Metrics.newBuilder() to construct.
       private Metrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1649,6 +1693,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
 
       public static final int ACCURACY_FIELD_NUMBER = 1;
       private double accuracy_ = 0D;
+
       /**
        *
        *
@@ -1859,6 +1904,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2075,6 +2121,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         private int bitField0_;
 
         private double accuracy_;
+
         /**
          *
          *
@@ -2090,6 +2137,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         public double getAccuracy() {
           return accuracy_;
         }
+
         /**
          *
          *
@@ -2109,6 +2157,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2204,6 +2253,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object question_ = "";
+
     /**
      *
      *
@@ -2230,6 +2280,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return s;
       }
     }
+
     /**
      *
      *
@@ -2261,6 +2312,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     private com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
             .QaQuestionDatasetTuningMetrics.Metrics
         metrics_;
+
     /**
      *
      *
@@ -2278,6 +2330,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     public boolean hasMetrics() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2300,6 +2353,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
               .QaQuestionDatasetTuningMetrics.Metrics.getDefaultInstance()
           : metrics_;
     }
+
     /**
      *
      *
@@ -2523,6 +2577,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2770,6 +2825,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       private int bitField0_;
 
       private java.lang.Object question_ = "";
+
       /**
        *
        *
@@ -2795,6 +2851,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2820,6 +2877,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2844,6 +2902,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2864,6 +2923,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2901,6 +2961,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
               com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
                   .QaQuestionDatasetTuningMetrics.MetricsOrBuilder>
           metricsBuilder_;
+
       /**
        *
        *
@@ -2917,6 +2978,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       public boolean hasMetrics() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2942,6 +3004,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           return metricsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2969,6 +3032,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2993,6 +3057,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3027,6 +3092,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -3048,6 +3114,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3066,6 +3133,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         onChanged();
         return getMetricsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3089,6 +3157,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
               : metrics_;
         }
       }
+
       /**
        *
        *
@@ -3198,6 +3267,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -3214,6 +3284,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3230,6 +3301,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -3247,6 +3319,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -3263,6 +3336,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3279,6 +3353,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -3296,6 +3371,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
 
   public static final int REQUEST_FIELD_NUMBER = 3;
   private com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequest request_;
+
   /**
    *
    *
@@ -3313,6 +3389,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
   public boolean hasRequest() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3333,6 +3410,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
             .getDefaultInstance()
         : request_;
   }
+
   /**
    *
    *
@@ -3360,6 +3438,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
               .QaQuestionDatasetValidationResult>
       qaQuestionDatasetValidationResults_;
+
   /**
    *
    *
@@ -3378,6 +3457,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       getQaQuestionDatasetValidationResultsList() {
     return qaQuestionDatasetValidationResults_;
   }
+
   /**
    *
    *
@@ -3397,6 +3477,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       getQaQuestionDatasetValidationResultsOrBuilderList() {
     return qaQuestionDatasetValidationResults_;
   }
+
   /**
    *
    *
@@ -3412,6 +3493,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
   public int getQaQuestionDatasetValidationResultsCount() {
     return qaQuestionDatasetValidationResults_.size();
   }
+
   /**
    *
    *
@@ -3429,6 +3511,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       getQaQuestionDatasetValidationResults(int index) {
     return qaQuestionDatasetValidationResults_.get(index);
   }
+
   /**
    *
    *
@@ -3454,6 +3537,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
           com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
               .QaQuestionDatasetTuningMetrics>
       qaQuestionDatasetTuningMetrics_;
+
   /**
    *
    *
@@ -3473,6 +3557,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       getQaQuestionDatasetTuningMetricsList() {
     return qaQuestionDatasetTuningMetrics_;
   }
+
   /**
    *
    *
@@ -3493,6 +3578,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       getQaQuestionDatasetTuningMetricsOrBuilderList() {
     return qaQuestionDatasetTuningMetrics_;
   }
+
   /**
    *
    *
@@ -3509,6 +3595,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
   public int getQaQuestionDatasetTuningMetricsCount() {
     return qaQuestionDatasetTuningMetrics_.size();
   }
+
   /**
    *
    *
@@ -3527,6 +3614,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       getQaQuestionDatasetTuningMetrics(int index) {
     return qaQuestionDatasetTuningMetrics_.get(index);
   }
+
   /**
    *
    *
@@ -3548,6 +3636,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
 
   public static final int TUNING_COMPLETION_RATIO_FIELD_NUMBER = 6;
   private double tuningCompletionRatio_ = 0D;
+
   /**
    *
    *
@@ -3802,6 +3891,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4201,6 +4291,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -4217,6 +4308,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4239,6 +4331,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4263,6 +4356,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4284,6 +4378,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4313,6 +4408,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -4334,6 +4430,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4350,6 +4447,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4370,6 +4468,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -4404,6 +4503,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -4419,6 +4519,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4438,6 +4539,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4461,6 +4563,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4481,6 +4584,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4509,6 +4613,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -4529,6 +4634,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4544,6 +4650,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4561,6 +4668,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -4594,6 +4702,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
             com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequest.Builder,
             com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequestOrBuilder>
         requestBuilder_;
+
     /**
      *
      *
@@ -4610,6 +4719,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4633,6 +4743,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return requestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4658,6 +4769,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4681,6 +4793,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4713,6 +4826,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -4734,6 +4848,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4751,6 +4866,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4773,6 +4889,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
             : request_;
       }
     }
+
     /**
      *
      *
@@ -4846,6 +4963,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return qaQuestionDatasetValidationResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4864,6 +4982,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return qaQuestionDatasetValidationResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4884,6 +5003,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return qaQuestionDatasetValidationResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4912,6 +5032,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -4937,6 +5058,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -4964,6 +5086,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -4992,6 +5115,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5016,6 +5140,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5041,6 +5166,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5068,6 +5194,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5089,6 +5216,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5110,6 +5238,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5126,6 +5255,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         getQaQuestionDatasetValidationResultsBuilder(int index) {
       return getQaQuestionDatasetValidationResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5146,6 +5276,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return qaQuestionDatasetValidationResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5168,6 +5299,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(qaQuestionDatasetValidationResults_);
       }
     }
+
     /**
      *
      *
@@ -5187,6 +5319,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
               com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
                   .QaQuestionDatasetValidationResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5207,6 +5340,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
               com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
                   .QaQuestionDatasetValidationResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5297,6 +5431,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return qaQuestionDatasetTuningMetricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5316,6 +5451,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return qaQuestionDatasetTuningMetricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5337,6 +5473,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return qaQuestionDatasetTuningMetricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5366,6 +5503,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5392,6 +5530,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5420,6 +5559,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5449,6 +5589,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5474,6 +5615,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5500,6 +5642,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5528,6 +5671,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5550,6 +5694,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5572,6 +5717,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -5589,6 +5735,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         getQaQuestionDatasetTuningMetricsBuilder(int index) {
       return getQaQuestionDatasetTuningMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5610,6 +5757,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return qaQuestionDatasetTuningMetricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5633,6 +5781,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(qaQuestionDatasetTuningMetrics_);
       }
     }
+
     /**
      *
      *
@@ -5653,6 +5802,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
               com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
                   .QaQuestionDatasetTuningMetrics.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5674,6 +5824,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
               com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata
                   .QaQuestionDatasetTuningMetrics.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5720,6 +5871,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     }
 
     private double tuningCompletionRatio_;
+
     /**
      *
      *
@@ -5737,6 +5889,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
     public double getTuningCompletionRatio() {
       return tuningCompletionRatio_;
     }
+
     /**
      *
      *
@@ -5758,6 +5911,7 @@ public final class TuneQaScorecardRevisionMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

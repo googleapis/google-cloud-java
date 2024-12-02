@@ -33,6 +33,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.SerialPipeline)
     SerialPipelineOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SerialPipeline.newBuilder() to construct.
   private SerialPipeline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.Stage> stages_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.deploy.v1.Stage> getStagesList() {
     return stages_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       getStagesOrBuilderList() {
     return stages_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
   public int getStagesCount() {
     return stages_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.Stage getStages(int index) {
     return stages_.get(index);
   }
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
         return stagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -576,6 +584,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
         return stagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
         return stagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +716,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +737,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +759,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +780,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +801,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +815,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.Stage.Builder getStagesBuilder(int index) {
       return getStagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -813,6 +833,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
         return stagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -831,6 +852,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(stages_);
       }
     }
+
     /**
      *
      *
@@ -845,6 +867,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       return getStagesFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.Stage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -859,6 +882,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       return getStagesFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.Stage.getDefaultInstance());
     }
+
     /**
      *
      *

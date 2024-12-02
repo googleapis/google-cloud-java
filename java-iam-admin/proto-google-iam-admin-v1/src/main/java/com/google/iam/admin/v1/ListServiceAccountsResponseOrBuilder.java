@@ -34,6 +34,7 @@ public interface ListServiceAccountsResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.ServiceAccount accounts = 1;</code>
    */
   java.util.List<com.google.iam.admin.v1.ServiceAccount> getAccountsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListServiceAccountsResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.ServiceAccount accounts = 1;</code>
    */
   com.google.iam.admin.v1.ServiceAccount getAccounts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListServiceAccountsResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.ServiceAccount accounts = 1;</code>
    */
   int getAccountsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListServiceAccountsResponseOrBuilder
    */
   java.util.List<? extends com.google.iam.admin.v1.ServiceAccountOrBuilder>
       getAccountsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListServiceAccountsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

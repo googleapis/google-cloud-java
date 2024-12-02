@@ -35,6 +35,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.TrainProcessorVersionRequest)
     TrainProcessorVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrainProcessorVersionRequest.newBuilder() to construct.
   private TrainProcessorVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the trainingDocuments field is set.
      */
     boolean hasTrainingDocuments();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return The trainingDocuments.
      */
     com.google.cloud.documentai.v1.BatchDocumentsInputConfig getTrainingDocuments();
+
     /**
      *
      *
@@ -119,6 +122,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the testDocuments field is set.
      */
     boolean hasTestDocuments();
+
     /**
      *
      *
@@ -131,6 +135,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return The testDocuments.
      */
     com.google.cloud.documentai.v1.BatchDocumentsInputConfig getTestDocuments();
+
     /**
      *
      *
@@ -142,6 +147,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     com.google.cloud.documentai.v1.BatchDocumentsInputConfigOrBuilder getTestDocumentsOrBuilder();
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData)
       InputDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InputData.newBuilder() to construct.
     private InputData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,6 +195,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     private int bitField0_;
     public static final int TRAINING_DOCUMENTS_FIELD_NUMBER = 3;
     private com.google.cloud.documentai.v1.BatchDocumentsInputConfig trainingDocuments_;
+
     /**
      *
      *
@@ -203,6 +211,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public boolean hasTrainingDocuments() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -220,6 +229,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           ? com.google.cloud.documentai.v1.BatchDocumentsInputConfig.getDefaultInstance()
           : trainingDocuments_;
     }
+
     /**
      *
      *
@@ -239,6 +249,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
     public static final int TEST_DOCUMENTS_FIELD_NUMBER = 4;
     private com.google.cloud.documentai.v1.BatchDocumentsInputConfig testDocuments_;
+
     /**
      *
      *
@@ -254,6 +265,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public boolean hasTestDocuments() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -271,6 +283,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           ? com.google.cloud.documentai.v1.BatchDocumentsInputConfig.getDefaultInstance()
           : testDocuments_;
     }
+
     /**
      *
      *
@@ -469,6 +482,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -710,6 +724,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
               com.google.cloud.documentai.v1.BatchDocumentsInputConfig.Builder,
               com.google.cloud.documentai.v1.BatchDocumentsInputConfigOrBuilder>
           trainingDocumentsBuilder_;
+
       /**
        *
        *
@@ -724,6 +739,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       public boolean hasTrainingDocuments() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -744,6 +760,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           return trainingDocumentsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -767,6 +784,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -787,6 +805,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -817,6 +836,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -836,6 +856,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -851,6 +872,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return getTrainingDocumentsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -870,6 +892,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
               : trainingDocuments_;
         }
       }
+
       /**
        *
        *
@@ -902,6 +925,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
               com.google.cloud.documentai.v1.BatchDocumentsInputConfig.Builder,
               com.google.cloud.documentai.v1.BatchDocumentsInputConfigOrBuilder>
           testDocumentsBuilder_;
+
       /**
        *
        *
@@ -916,6 +940,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       public boolean hasTestDocuments() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -936,6 +961,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           return testDocumentsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -959,6 +985,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -979,6 +1006,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1009,6 +1037,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1028,6 +1057,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1043,6 +1073,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return getTestDocumentsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1062,6 +1093,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
               : testDocuments_;
         }
       }
+
       /**
        *
        *
@@ -1175,6 +1207,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return The enum numeric value on the wire for trainingMethod.
      */
     int getTrainingMethodValue();
+
     /**
      *
      *
@@ -1192,6 +1225,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             .TrainingMethod
         getTrainingMethod();
   }
+
   /**
    *
    *
@@ -1209,6 +1243,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions)
       CustomDocumentExtractionOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CustomDocumentExtractionOptions.newBuilder() to construct.
     private CustomDocumentExtractionOptions(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1265,8 +1300,10 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
       /** <code>TRAINING_METHOD_UNSPECIFIED = 0;</code> */
       public static final int TRAINING_METHOD_UNSPECIFIED_VALUE = 0;
+
       /** <code>MODEL_BASED = 1;</code> */
       public static final int MODEL_BASED_VALUE = 1;
+
       /** <code>TEMPLATE_BASED = 2;</code> */
       public static final int TEMPLATE_BASED_VALUE = 2;
 
@@ -1360,6 +1397,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
     public static final int TRAINING_METHOD_FIELD_NUMBER = 3;
     private int trainingMethod_ = 0;
+
     /**
      *
      *
@@ -1377,6 +1415,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public int getTrainingMethodValue() {
       return trainingMethod_;
     }
+
     /**
      *
      *
@@ -1597,6 +1636,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1811,6 +1851,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       private int bitField0_;
 
       private int trainingMethod_ = 0;
+
       /**
        *
        *
@@ -1828,6 +1869,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       public int getTrainingMethodValue() {
         return trainingMethod_;
       }
+
       /**
        *
        *
@@ -1848,6 +1890,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1875,6 +1918,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
                 .CustomDocumentExtractionOptions.TrainingMethod.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1901,6 +1945,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2027,6 +2072,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     float getLearningRateMultiplier();
   }
+
   /**
    *
    *
@@ -2043,6 +2089,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions)
       FoundationModelTuningOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FoundationModelTuningOptions.newBuilder() to construct.
     private FoundationModelTuningOptions(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2076,6 +2123,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
     public static final int TRAIN_STEPS_FIELD_NUMBER = 2;
     private int trainSteps_ = 0;
+
     /**
      *
      *
@@ -2095,6 +2143,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
     public static final int LEARNING_RATE_MULTIPLIER_FIELD_NUMBER = 3;
     private float learningRateMultiplier_ = 0F;
+
     /**
      *
      *
@@ -2309,6 +2358,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2533,6 +2583,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       private int bitField0_;
 
       private int trainSteps_;
+
       /**
        *
        *
@@ -2549,6 +2600,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       public int getTrainSteps() {
         return trainSteps_;
       }
+
       /**
        *
        *
@@ -2569,6 +2621,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2589,6 +2642,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
 
       private float learningRateMultiplier_;
+
       /**
        *
        *
@@ -2606,6 +2660,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       public float getLearningRateMultiplier() {
         return learningRateMultiplier_;
       }
+
       /**
        *
        *
@@ -2627,6 +2682,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2736,6 +2792,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     private ProcessorFlagsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2769,6 +2826,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   }
 
   public static final int CUSTOM_DOCUMENT_EXTRACTION_OPTIONS_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -2786,6 +2844,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   public boolean hasCustomDocumentExtractionOptions() {
     return processorFlagsCase_ == 5;
   }
+
   /**
    *
    *
@@ -2810,6 +2869,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     return com.google.cloud.documentai.v1.TrainProcessorVersionRequest
         .CustomDocumentExtractionOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2835,6 +2895,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   }
 
   public static final int FOUNDATION_MODEL_TUNING_OPTIONS_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -2852,6 +2913,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   public boolean hasFoundationModelTuningOptions() {
     return processorFlagsCase_ == 12;
   }
+
   /**
    *
    *
@@ -2876,6 +2938,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     return com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2904,6 +2967,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -2931,6 +2995,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -2961,6 +3026,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
   public static final int PROCESSOR_VERSION_FIELD_NUMBER = 2;
   private com.google.cloud.documentai.v1.ProcessorVersion processorVersion_;
+
   /**
    *
    *
@@ -2978,6 +3044,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   public boolean hasProcessorVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2997,6 +3064,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         ? com.google.cloud.documentai.v1.ProcessorVersion.getDefaultInstance()
         : processorVersion_;
   }
+
   /**
    *
    *
@@ -3017,6 +3085,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
   public static final int DOCUMENT_SCHEMA_FIELD_NUMBER = 10;
   private com.google.cloud.documentai.v1.DocumentSchema documentSchema_;
+
   /**
    *
    *
@@ -3034,6 +3103,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   public boolean hasDocumentSchema() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3053,6 +3123,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         ? com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()
         : documentSchema_;
   }
+
   /**
    *
    *
@@ -3073,6 +3144,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
   public static final int INPUT_DATA_FIELD_NUMBER = 4;
   private com.google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData inputData_;
+
   /**
    *
    *
@@ -3091,6 +3163,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   public boolean hasInputData() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3111,6 +3184,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         ? com.google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData.getDefaultInstance()
         : inputData_;
   }
+
   /**
    *
    *
@@ -3135,6 +3209,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseProcessorVersion_ = "";
+
   /**
    *
    *
@@ -3160,6 +3235,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -3451,6 +3527,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3795,6 +3872,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             com.google.cloud.documentai.v1.TrainProcessorVersionRequest
                 .CustomDocumentExtractionOptionsOrBuilder>
         customDocumentExtractionOptionsBuilder_;
+
     /**
      *
      *
@@ -3812,6 +3890,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public boolean hasCustomDocumentExtractionOptions() {
       return processorFlagsCase_ == 5;
     }
+
     /**
      *
      *
@@ -3845,6 +3924,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             .CustomDocumentExtractionOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3871,6 +3951,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       processorFlagsCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3895,6 +3976,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       processorFlagsCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3936,6 +4018,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       processorFlagsCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3963,6 +4046,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -3979,6 +4063,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         getCustomDocumentExtractionOptionsBuilder() {
       return getCustomDocumentExtractionOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4006,6 +4091,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             .CustomDocumentExtractionOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4059,6 +4145,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             com.google.cloud.documentai.v1.TrainProcessorVersionRequest
                 .FoundationModelTuningOptionsOrBuilder>
         foundationModelTuningOptionsBuilder_;
+
     /**
      *
      *
@@ -4076,6 +4163,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public boolean hasFoundationModelTuningOptions() {
       return processorFlagsCase_ == 12;
     }
+
     /**
      *
      *
@@ -4108,6 +4196,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             .FoundationModelTuningOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4134,6 +4223,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       processorFlagsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4158,6 +4248,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       processorFlagsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4199,6 +4290,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       processorFlagsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4226,6 +4318,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -4242,6 +4335,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         getFoundationModelTuningOptionsBuilder() {
       return getFoundationModelTuningOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4269,6 +4363,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             .FoundationModelTuningOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4315,6 +4410,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -4341,6 +4437,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4367,6 +4464,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4392,6 +4490,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4413,6 +4512,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4446,6 +4546,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             com.google.cloud.documentai.v1.ProcessorVersion.Builder,
             com.google.cloud.documentai.v1.ProcessorVersionOrBuilder>
         processorVersionBuilder_;
+
     /**
      *
      *
@@ -4462,6 +4563,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public boolean hasProcessorVersion() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4484,6 +4586,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return processorVersionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4508,6 +4611,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4530,6 +4634,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4560,6 +4665,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -4581,6 +4687,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4597,6 +4704,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return getProcessorVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4617,6 +4725,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             : processorVersion_;
       }
     }
+
     /**
      *
      *
@@ -4651,6 +4760,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             com.google.cloud.documentai.v1.DocumentSchema.Builder,
             com.google.cloud.documentai.v1.DocumentSchemaOrBuilder>
         documentSchemaBuilder_;
+
     /**
      *
      *
@@ -4667,6 +4777,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public boolean hasDocumentSchema() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -4689,6 +4800,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return documentSchemaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4713,6 +4825,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4735,6 +4848,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4765,6 +4879,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -4786,6 +4901,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4802,6 +4918,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4822,6 +4939,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             : documentSchema_;
       }
     }
+
     /**
      *
      *
@@ -4856,6 +4974,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             com.google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData.Builder,
             com.google.cloud.documentai.v1.TrainProcessorVersionRequest.InputDataOrBuilder>
         inputDataBuilder_;
+
     /**
      *
      *
@@ -4873,6 +4992,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public boolean hasInputData() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -4897,6 +5017,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return inputDataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4923,6 +5044,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4947,6 +5069,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4980,6 +5103,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -5002,6 +5126,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5020,6 +5145,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return getInputDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5043,6 +5169,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             : inputData_;
       }
     }
+
     /**
      *
      *
@@ -5073,6 +5200,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object baseProcessorVersion_ = "";
+
     /**
      *
      *
@@ -5097,6 +5225,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5121,6 +5250,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5144,6 +5274,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5163,6 +5294,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

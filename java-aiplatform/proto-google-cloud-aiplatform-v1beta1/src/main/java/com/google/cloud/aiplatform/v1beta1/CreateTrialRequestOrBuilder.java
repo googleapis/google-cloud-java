@@ -39,6 +39,7 @@ public interface CreateTrialRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateTrialRequestOrBuilder
    * @return Whether the trial field is set.
    */
   boolean hasTrial();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateTrialRequestOrBuilder
    * @return The trial.
    */
   com.google.cloud.aiplatform.v1beta1.Trial getTrial();
+
   /**
    *
    *

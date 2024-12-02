@@ -34,6 +34,7 @@ public interface ListQuotaInfosResponseOrBuilder
    * <code>repeated .google.api.cloudquotas.v1.QuotaInfo quota_infos = 1;</code>
    */
   java.util.List<com.google.api.cloudquotas.v1.QuotaInfo> getQuotaInfosList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListQuotaInfosResponseOrBuilder
    * <code>repeated .google.api.cloudquotas.v1.QuotaInfo quota_infos = 1;</code>
    */
   com.google.api.cloudquotas.v1.QuotaInfo getQuotaInfos(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListQuotaInfosResponseOrBuilder
    * <code>repeated .google.api.cloudquotas.v1.QuotaInfo quota_infos = 1;</code>
    */
   int getQuotaInfosCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListQuotaInfosResponseOrBuilder
    */
   java.util.List<? extends com.google.api.cloudquotas.v1.QuotaInfoOrBuilder>
       getQuotaInfosOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListQuotaInfosResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

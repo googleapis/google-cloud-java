@@ -36,6 +36,7 @@ public interface SynthesisInputOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SynthesisInputOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SynthesisInputOrBuilder
    * @return Whether the ssml field is set.
    */
   boolean hasSsml();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface SynthesisInputOrBuilder
    * @return The ssml.
    */
   java.lang.String getSsml();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface SynthesisInputOrBuilder
    * @return Whether the multiSpeakerMarkup field is set.
    */
   boolean hasMultiSpeakerMarkup();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface SynthesisInputOrBuilder
    * @return The multiSpeakerMarkup.
    */
   com.google.cloud.texttospeech.v1.MultiSpeakerMarkup getMultiSpeakerMarkup();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface SynthesisInputOrBuilder
    * @return Whether the customPronunciations field is set.
    */
   boolean hasCustomPronunciations();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface SynthesisInputOrBuilder
    * @return The customPronunciations.
    */
   com.google.cloud.texttospeech.v1.CustomPronunciations getCustomPronunciations();
+
   /**
    *
    *

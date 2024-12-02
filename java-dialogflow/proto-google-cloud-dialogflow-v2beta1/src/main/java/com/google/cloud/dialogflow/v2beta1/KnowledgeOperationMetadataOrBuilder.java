@@ -38,6 +38,7 @@ public interface KnowledgeOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface KnowledgeOperationMetadataOrBuilder
    * @return The knowledgeBase.
    */
   java.lang.String getKnowledgeBase();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface KnowledgeOperationMetadataOrBuilder
    * @return Whether the exportOperationMetadata field is set.
    */
   boolean hasExportOperationMetadata();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface KnowledgeOperationMetadataOrBuilder
    * @return The exportOperationMetadata.
    */
   com.google.cloud.dialogflow.v2beta1.ExportOperationMetadata getExportOperationMetadata();
+
   /**
    *
    *

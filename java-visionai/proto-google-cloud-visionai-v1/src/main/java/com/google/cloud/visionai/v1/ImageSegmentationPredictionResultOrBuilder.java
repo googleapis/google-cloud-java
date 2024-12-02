@@ -41,6 +41,7 @@ public interface ImageSegmentationPredictionResultOrBuilder
    * @return The categoryMask.
    */
   java.lang.String getCategoryMask();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface ImageSegmentationPredictionResultOrBuilder
    * @return The confidenceMask.
    */
   java.lang.String getConfidenceMask();
+
   /**
    *
    *

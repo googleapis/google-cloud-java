@@ -38,6 +38,7 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    * @return Whether the author field is set.
    */
   boolean hasAuthor();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    * @return The author.
    */
   com.google.cloud.dataform.v1alpha2.CommitAuthor getAuthor();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    * @return The commitMessage.
    */
   java.lang.String getCommitMessage();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    * @return A list containing the paths.
    */
   java.util.List<java.lang.String> getPathsList();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    * @return The count of paths.
    */
   int getPathsCount();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    * @return The paths at the given index.
    */
   java.lang.String getPaths(int index);
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Product products = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Product> getProductsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Product products = 1;</code>
    */
   com.google.cloud.channel.v1.Product getProducts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Product products = 1;</code>
    */
   int getProductsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListProductsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Product products = 1;</code>
    */
   java.util.List<? extends com.google.cloud.channel.v1.ProductOrBuilder> getProductsOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface ListProductsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

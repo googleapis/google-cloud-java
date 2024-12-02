@@ -38,6 +38,7 @@ public interface ListPolicyTagsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface ListPolicyTagsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

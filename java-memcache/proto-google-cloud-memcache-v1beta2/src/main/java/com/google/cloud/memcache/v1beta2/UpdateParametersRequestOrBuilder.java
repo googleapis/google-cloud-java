@@ -39,6 +39,7 @@ public interface UpdateParametersRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface UpdateParametersRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UpdateParametersRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdateParametersRequestOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface UpdateParametersRequestOrBuilder
    * @return The parameters.
    */
   com.google.cloud.memcache.v1beta2.MemcacheParameters getParameters();
+
   /**
    *
    *

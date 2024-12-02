@@ -46,6 +46,7 @@ public interface ModelExportOutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ModelExportOutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.automl.v1.GcsDestination getGcsDestination();
+
   /**
    *
    *
@@ -131,6 +133,7 @@ public interface ModelExportOutputConfigOrBuilder
    * @return The modelFormat.
    */
   java.lang.String getModelFormat();
+
   /**
    *
    *
@@ -190,6 +193,7 @@ public interface ModelExportOutputConfigOrBuilder
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
   int getParamsCount();
+
   /**
    *
    *
@@ -206,9 +210,11 @@ public interface ModelExportOutputConfigOrBuilder
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
   boolean containsParams(java.lang.String key);
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParams();
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public interface ModelExportOutputConfigOrBuilder
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParamsMap();
+
   /**
    *
    *
@@ -245,6 +252,7 @@ public interface ModelExportOutputConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

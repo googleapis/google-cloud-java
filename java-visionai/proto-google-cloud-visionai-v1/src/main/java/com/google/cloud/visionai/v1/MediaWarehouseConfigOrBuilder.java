@@ -38,6 +38,7 @@ public interface MediaWarehouseConfigOrBuilder
    * @return The corpus.
    */
   java.lang.String getCorpus();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface MediaWarehouseConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface MediaWarehouseConfigOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface MediaWarehouseConfigOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *

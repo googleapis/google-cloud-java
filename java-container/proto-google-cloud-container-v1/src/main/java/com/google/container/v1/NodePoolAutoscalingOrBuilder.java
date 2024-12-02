@@ -90,6 +90,7 @@ public interface NodePoolAutoscalingOrBuilder
    * @return The enum numeric value on the wire for locationPolicy.
    */
   int getLocationPolicyValue();
+
   /**
    *
    *

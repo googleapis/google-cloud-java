@@ -37,6 +37,7 @@ public interface InstructionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface InstructionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface InstructionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface InstructionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface InstructionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface InstructionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface InstructionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface InstructionOrBuilder
    * @return The enum numeric value on the wire for dataType.
    */
   int getDataTypeValue();
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public interface InstructionOrBuilder
    */
   @java.lang.Deprecated
   boolean hasCsvInstruction();
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public interface InstructionOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.datalabeling.v1beta1.CsvInstruction getCsvInstruction();
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public interface InstructionOrBuilder
    * @return Whether the pdfInstruction field is set.
    */
   boolean hasPdfInstruction();
+
   /**
    *
    *
@@ -287,6 +298,7 @@ public interface InstructionOrBuilder
    * @return The pdfInstruction.
    */
   com.google.cloud.datalabeling.v1beta1.PdfInstruction getPdfInstruction();
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public interface InstructionOrBuilder
    * @return A list containing the blockingResources.
    */
   java.util.List<java.lang.String> getBlockingResourcesList();
+
   /**
    *
    *
@@ -325,6 +338,7 @@ public interface InstructionOrBuilder
    * @return The count of blockingResources.
    */
   int getBlockingResourcesCount();
+
   /**
    *
    *
@@ -339,6 +353,7 @@ public interface InstructionOrBuilder
    * @return The blockingResources at the given index.
    */
   java.lang.String getBlockingResources(int index);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest)
     SubscribeListingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubscribeListingRequest.newBuilder() to construct.
   private SubscribeListingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,6 +112,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
   }
 
   public static final int DESTINATION_DATASET_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
   public boolean hasDestinationDataset() {
     return destinationCase_ == 3;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     }
     return com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -410,6 +417,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +658,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
             com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.Builder,
             com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder>
         destinationDatasetBuilder_;
+
     /**
      *
      *
@@ -667,6 +676,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     public boolean hasDestinationDataset() {
       return destinationCase_ == 3;
     }
+
     /**
      *
      *
@@ -694,6 +704,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         return com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -719,6 +730,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       destinationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +753,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       destinationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +791,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       destinationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +819,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +835,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         getDestinationDatasetBuilder() {
       return getDestinationDatasetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -843,6 +859,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         return com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -880,6 +897,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -905,6 +923,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -954,6 +974,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

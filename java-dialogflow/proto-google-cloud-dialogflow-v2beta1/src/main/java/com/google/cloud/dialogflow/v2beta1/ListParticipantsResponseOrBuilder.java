@@ -35,6 +35,7 @@ public interface ListParticipantsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Participant participants = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Participant> getParticipantsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListParticipantsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Participant participants = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Participant getParticipants(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListParticipantsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Participant participants = 1;</code>
    */
   int getParticipantsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListParticipantsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ParticipantOrBuilder>
       getParticipantsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListParticipantsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

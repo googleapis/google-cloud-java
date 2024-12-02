@@ -36,6 +36,7 @@ public interface ExecutionStageSummaryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ExecutionStageSummaryOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ExecutionStageSummaryOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ExecutionStageSummaryOrBuilder
    */
   java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource>
       getInputSourceList();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface ExecutionStageSummaryOrBuilder
    * </code>
    */
   com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource getInputSource(int index);
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ExecutionStageSummaryOrBuilder
    * </code>
    */
   int getInputSourceCount();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface ExecutionStageSummaryOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ExecutionStageSummary.StageSourceOrBuilder>
       getInputSourceOrBuilderList();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface ExecutionStageSummaryOrBuilder
    */
   java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource>
       getOutputSourceList();
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface ExecutionStageSummaryOrBuilder
    * </code>
    */
   com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource getOutputSource(int index);
+
   /**
    *
    *
@@ -192,6 +201,7 @@ public interface ExecutionStageSummaryOrBuilder
    * </code>
    */
   int getOutputSourceCount();
+
   /**
    *
    *
@@ -204,6 +214,7 @@ public interface ExecutionStageSummaryOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ExecutionStageSummary.StageSourceOrBuilder>
       getOutputSourceOrBuilderList();
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public interface ExecutionStageSummaryOrBuilder
    * @return A list containing the prerequisiteStage.
    */
   java.util.List<java.lang.String> getPrerequisiteStageList();
+
   /**
    *
    *
@@ -241,6 +253,7 @@ public interface ExecutionStageSummaryOrBuilder
    * @return The count of prerequisiteStage.
    */
   int getPrerequisiteStageCount();
+
   /**
    *
    *
@@ -254,6 +267,7 @@ public interface ExecutionStageSummaryOrBuilder
    * @return The prerequisiteStage at the given index.
    */
   java.lang.String getPrerequisiteStage(int index);
+
   /**
    *
    *
@@ -281,6 +295,7 @@ public interface ExecutionStageSummaryOrBuilder
    */
   java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform>
       getComponentTransformList();
+
   /**
    *
    *
@@ -294,6 +309,7 @@ public interface ExecutionStageSummaryOrBuilder
    */
   com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform getComponentTransform(
       int index);
+
   /**
    *
    *
@@ -306,6 +322,7 @@ public interface ExecutionStageSummaryOrBuilder
    * </code>
    */
   int getComponentTransformCount();
+
   /**
    *
    *
@@ -320,6 +337,7 @@ public interface ExecutionStageSummaryOrBuilder
   java.util.List<
           ? extends com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransformOrBuilder>
       getComponentTransformOrBuilderList();
+
   /**
    *
    *
@@ -347,6 +365,7 @@ public interface ExecutionStageSummaryOrBuilder
    */
   java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource>
       getComponentSourceList();
+
   /**
    *
    *
@@ -359,6 +378,7 @@ public interface ExecutionStageSummaryOrBuilder
    * </code>
    */
   com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource getComponentSource(int index);
+
   /**
    *
    *
@@ -371,6 +391,7 @@ public interface ExecutionStageSummaryOrBuilder
    * </code>
    */
   int getComponentSourceCount();
+
   /**
    *
    *
@@ -385,6 +406,7 @@ public interface ExecutionStageSummaryOrBuilder
   java.util.List<
           ? extends com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSourceOrBuilder>
       getComponentSourceOrBuilderList();
+
   /**
    *
    *

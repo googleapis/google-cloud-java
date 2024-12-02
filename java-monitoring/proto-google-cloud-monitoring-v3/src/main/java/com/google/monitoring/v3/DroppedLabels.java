@@ -48,6 +48,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.DroppedLabels)
     DroppedLabelsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DroppedLabels.newBuilder() to construct.
   private DroppedLabels(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -114,6 +115,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
   public int getLabelCount() {
     return internalGetLabel().getMap().size();
   }
+
   /**
    *
    *
@@ -130,12 +132,14 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabel().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabel() {
     return getLabelMap();
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelMap() {
     return internalGetLabel().getMap();
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabel().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -356,6 +362,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -601,6 +608,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
     public int getLabelCount() {
       return internalGetLabel().getMap().size();
     }
+
     /**
      *
      *
@@ -617,12 +625,14 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabel().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabel() {
       return getLabelMap();
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelMap() {
       return internalGetLabel().getMap();
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabel().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabel().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -698,12 +711,14 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabel().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabel() {
       bitField0_ |= 0x00000001;
       return internalGetMutableLabel().getMutableMap();
     }
+
     /**
      *
      *
@@ -724,6 +739,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.Parameter)
     ParameterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Parameter.newBuilder() to construct.
   private Parameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the int64Value field is set.
      */
     boolean hasInt64Value();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stringValue field is set.
      */
     boolean hasStringValue();
+
     /**
      *
      *
@@ -117,6 +120,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * @return The stringValue.
      */
     java.lang.String getStringValue();
+
     /**
      *
      *
@@ -142,6 +146,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the doubleValue field is set.
      */
     boolean hasDoubleValue();
+
     /**
      *
      *
@@ -157,12 +162,14 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.commerce.consumer.procurement.v1.Parameter.Value.KindCase getKindCase();
   }
+
   /** Protobuf type {@code google.cloud.commerce.consumer.procurement.v1.Parameter.Value} */
   public static final class Value extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.Parameter.Value)
       ValueOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Value.newBuilder() to construct.
     private Value(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -209,6 +216,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       private KindCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -244,6 +252,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INT64_VALUE_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -259,6 +268,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInt64Value() {
       return kindCase_ == 3;
     }
+
     /**
      *
      *
@@ -279,6 +289,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int STRING_VALUE_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -293,6 +304,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return kindCase_ == 4;
     }
+
     /**
      *
      *
@@ -320,6 +332,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -349,6 +362,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DOUBLE_VALUE_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -364,6 +378,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDoubleValue() {
       return kindCase_ == 5;
     }
+
     /**
      *
      *
@@ -592,6 +607,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code google.cloud.commerce.consumer.procurement.v1.Parameter.Value} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -841,6 +857,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInt64Value() {
         return kindCase_ == 3;
       }
+
       /**
        *
        *
@@ -858,6 +875,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         }
         return 0L;
       }
+
       /**
        *
        *
@@ -877,6 +895,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -912,6 +931,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStringValue() {
         return kindCase_ == 4;
       }
+
       /**
        *
        *
@@ -940,6 +960,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -968,6 +989,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -989,6 +1011,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1008,6 +1031,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1045,6 +1069,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDoubleValue() {
         return kindCase_ == 5;
       }
+
       /**
        *
        *
@@ -1062,6 +1087,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         }
         return 0D;
       }
+
       /**
        *
        *
@@ -1081,6 +1107,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1173,6 +1200,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1196,6 +1224,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1222,6 +1251,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.cloud.commerce.consumer.procurement.v1.Parameter.Value value_;
+
   /**
    *
    *
@@ -1237,6 +1267,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1254,6 +1285,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.commerce.consumer.procurement.v1.Parameter.Value.getDefaultInstance()
         : value_;
   }
+
   /**
    *
    *
@@ -1445,6 +1477,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1658,6 +1691,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1680,6 +1714,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1702,6 +1737,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1723,6 +1759,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1777,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1807,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.commerce.consumer.procurement.v1.Parameter.Value.Builder,
             com.google.cloud.commerce.consumer.procurement.v1.Parameter.ValueOrBuilder>
         valueBuilder_;
+
     /**
      *
      *
@@ -1783,6 +1822,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1803,6 +1843,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         return valueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1826,6 +1867,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1846,6 +1888,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1876,6 +1919,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1895,6 +1939,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1955,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1929,6 +1975,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
             : value_;
       }
     }
+
     /**
      *
      *

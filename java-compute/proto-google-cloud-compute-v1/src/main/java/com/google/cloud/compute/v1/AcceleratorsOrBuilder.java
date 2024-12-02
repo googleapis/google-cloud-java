@@ -36,6 +36,7 @@ public interface AcceleratorsOrBuilder
    * @return Whether the guestAcceleratorCount field is set.
    */
   boolean hasGuestAcceleratorCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AcceleratorsOrBuilder
    * @return Whether the guestAcceleratorType field is set.
    */
   boolean hasGuestAcceleratorType();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AcceleratorsOrBuilder
    * @return The guestAcceleratorType.
    */
   java.lang.String getGuestAcceleratorType();
+
   /**
    *
    *

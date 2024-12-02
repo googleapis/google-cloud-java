@@ -43,6 +43,7 @@ public interface CreateFindingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface CreateFindingRequestOrBuilder
    * @return The findingId.
    */
   java.lang.String getFindingId();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface CreateFindingRequestOrBuilder
    * @return Whether the finding field is set.
    */
   boolean hasFinding();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CreateFindingRequestOrBuilder
    * @return The finding.
    */
   com.google.cloud.securitycenter.v2.Finding getFinding();
+
   /**
    *
    *

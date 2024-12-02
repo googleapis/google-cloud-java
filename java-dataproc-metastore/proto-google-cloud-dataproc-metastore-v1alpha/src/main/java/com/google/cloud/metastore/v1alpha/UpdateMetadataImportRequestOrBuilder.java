@@ -40,6 +40,7 @@ public interface UpdateMetadataImportRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateMetadataImportRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface UpdateMetadataImportRequestOrBuilder
    * @return Whether the metadataImport field is set.
    */
   boolean hasMetadataImport();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface UpdateMetadataImportRequestOrBuilder
    * @return The metadataImport.
    */
   com.google.cloud.metastore.v1alpha.MetadataImport getMetadataImport();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface UpdateMetadataImportRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

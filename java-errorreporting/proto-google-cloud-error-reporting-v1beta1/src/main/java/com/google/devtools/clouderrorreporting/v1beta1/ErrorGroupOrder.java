@@ -93,6 +93,7 @@ public enum ErrorGroupOrder implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GROUP_ORDER_UNSPECIFIED = 0;</code>
    */
   public static final int GROUP_ORDER_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -103,6 +104,7 @@ public enum ErrorGroupOrder implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COUNT_DESC = 1;</code>
    */
   public static final int COUNT_DESC_VALUE = 1;
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public enum ErrorGroupOrder implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LAST_SEEN_DESC = 2;</code>
    */
   public static final int LAST_SEEN_DESC_VALUE = 2;
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public enum ErrorGroupOrder implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CREATED_DESC = 3;</code>
    */
   public static final int CREATED_DESC_VALUE = 3;
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface ListFirewallPoliciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface ListFirewallPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

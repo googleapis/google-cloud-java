@@ -40,6 +40,7 @@ public interface GenerateConfigReportRequestOrBuilder
    * @return Whether the newConfig field is set.
    */
   boolean hasNewConfig();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface GenerateConfigReportRequestOrBuilder
    * @return The newConfig.
    */
   com.google.protobuf.Any getNewConfig();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface GenerateConfigReportRequestOrBuilder
    * @return Whether the oldConfig field is set.
    */
   boolean hasOldConfig();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface GenerateConfigReportRequestOrBuilder
    * @return The oldConfig.
    */
   com.google.protobuf.Any getOldConfig();
+
   /**
    *
    *

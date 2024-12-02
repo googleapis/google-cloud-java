@@ -39,6 +39,7 @@ public interface UpdateAttributionSettingsRequestOrBuilder
    * @return Whether the attributionSettings field is set.
    */
   boolean hasAttributionSettings();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateAttributionSettingsRequestOrBuilder
    * @return The attributionSettings.
    */
   com.google.analytics.admin.v1alpha.AttributionSettings getAttributionSettings();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateAttributionSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateAttributionSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface CreateOfflineProfileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CreateOfflineProfileRequestOrBuilder
    * @return Whether the profile field is set.
    */
   boolean hasProfile();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface CreateOfflineProfileRequestOrBuilder
    * @return The profile.
    */
   com.google.devtools.cloudprofiler.v2.Profile getProfile();
+
   /**
    *
    *

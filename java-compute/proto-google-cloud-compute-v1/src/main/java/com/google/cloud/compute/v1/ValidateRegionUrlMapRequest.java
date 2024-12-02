@@ -33,6 +33,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ValidateRegionUrlMapRequest)
     ValidateRegionUrlMapRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidateRegionUrlMapRequest.newBuilder() to construct.
   private ValidateRegionUrlMapRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
   public static final int REGION_URL_MAPS_VALIDATE_REQUEST_RESOURCE_FIELD_NUMBER = 56632858;
   private com.google.cloud.compute.v1.RegionUrlMapsValidateRequest
       regionUrlMapsValidateRequestResource_;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
   public boolean hasRegionUrlMapsValidateRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.RegionUrlMapsValidateRequest.getDefaultInstance()
         : regionUrlMapsValidateRequestResource_;
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object urlMap_ = "";
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -474,6 +484,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -722,6 +733,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -744,6 +756,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -787,6 +801,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +819,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -850,6 +867,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -872,6 +890,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -893,6 +912,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +930,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.RegionUrlMapsValidateRequest.Builder,
             com.google.cloud.compute.v1.RegionUrlMapsValidateRequestOrBuilder>
         regionUrlMapsValidateRequestResourceBuilder_;
+
     /**
      *
      *
@@ -956,6 +978,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     public boolean hasRegionUrlMapsValidateRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         return regionUrlMapsValidateRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1105,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1123,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return getRegionUrlMapsValidateRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
             : regionUrlMapsValidateRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1175,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object urlMap_ = "";
+
     /**
      *
      *
@@ -1167,6 +1198,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1210,6 +1243,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1261,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

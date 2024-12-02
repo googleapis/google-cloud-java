@@ -34,6 +34,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.UserSegmentCriteria)
     UserSegmentCriteriaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserSegmentCriteria.newBuilder() to construct.
   private UserSegmentCriteria(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.UserSegmentConditionGroup>
       andConditionGroups_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       getAndConditionGroupsList() {
     return andConditionGroups_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       getAndConditionGroupsOrBuilderList() {
     return andConditionGroups_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
   public int getAndConditionGroupsCount() {
     return andConditionGroups_.size();
   }
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       int index) {
     return andConditionGroups_.get(index);
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.UserSegmentSequenceGroup>
       andSequenceGroups_;
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       getAndSequenceGroupsList() {
     return andSequenceGroups_;
   }
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       getAndSequenceGroupsOrBuilderList() {
     return andSequenceGroups_;
   }
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
   public int getAndSequenceGroupsCount() {
     return andSequenceGroups_.size();
   }
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       int index) {
     return andSequenceGroups_.get(index);
   }
+
   /**
    *
    *
@@ -427,6 +438,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -754,6 +766,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return andConditionGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -774,6 +787,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return andConditionGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -795,6 +809,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return andConditionGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -822,6 +837,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +863,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +891,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +919,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +944,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +996,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1062,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         getAndConditionGroupsBuilder(int index) {
       return getAndConditionGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1059,6 +1084,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return andConditionGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(andConditionGroups_);
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1127,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.analytics.data.v1alpha.UserSegmentConditionGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1120,6 +1148,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
               index,
               com.google.analytics.data.v1alpha.UserSegmentConditionGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1197,6 +1226,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return andSequenceGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1247,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return andSequenceGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1238,6 +1269,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return andSequenceGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1265,6 +1297,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1323,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1351,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1379,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1404,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1430,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1418,6 +1456,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1480,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1504,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1481,6 +1522,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         getAndSequenceGroupsBuilder(int index) {
       return getAndSequenceGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1502,6 +1544,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return andSequenceGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1524,6 +1567,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(andSequenceGroups_);
       }
     }
+
     /**
      *
      *
@@ -1543,6 +1587,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.analytics.data.v1alpha.UserSegmentSequenceGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1563,6 +1608,7 @@ public final class UserSegmentCriteria extends com.google.protobuf.GeneratedMess
               index,
               com.google.analytics.data.v1alpha.UserSegmentSequenceGroup.getDefaultInstance());
     }
+
     /**
      *
      *

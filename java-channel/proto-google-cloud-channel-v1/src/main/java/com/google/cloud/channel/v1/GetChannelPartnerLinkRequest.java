@@ -34,6 +34,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.GetChannelPartnerLinkRequest)
     GetChannelPartnerLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetChannelPartnerLinkRequest.newBuilder() to construct.
   private GetChannelPartnerLinkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -330,6 +335,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -528,6 +534,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -552,6 +559,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -576,6 +584,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +628,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -661,6 +673,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +716,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
           ? com.google.cloud.channel.v1.ChannelPartnerLinkView.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

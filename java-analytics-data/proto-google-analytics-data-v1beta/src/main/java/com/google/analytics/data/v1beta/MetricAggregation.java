@@ -92,6 +92,7 @@ public enum MetricAggregation implements com.google.protobuf.ProtocolMessageEnum
    * <code>METRIC_AGGREGATION_UNSPECIFIED = 0;</code>
    */
   public static final int METRIC_AGGREGATION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum MetricAggregation implements com.google.protobuf.ProtocolMessageEnum
    * <code>TOTAL = 1;</code>
    */
   public static final int TOTAL_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum MetricAggregation implements com.google.protobuf.ProtocolMessageEnum
    * <code>MINIMUM = 5;</code>
    */
   public static final int MINIMUM_VALUE = 5;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum MetricAggregation implements com.google.protobuf.ProtocolMessageEnum
    * <code>MAXIMUM = 6;</code>
    */
   public static final int MAXIMUM_VALUE = 6;
+
   /**
    *
    *

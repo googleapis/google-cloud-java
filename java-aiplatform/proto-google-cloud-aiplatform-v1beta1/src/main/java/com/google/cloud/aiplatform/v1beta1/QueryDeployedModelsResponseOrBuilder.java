@@ -37,6 +37,7 @@ public interface QueryDeployedModelsResponseOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.aiplatform.v1beta1.DeployedModel> getDeployedModelsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface QueryDeployedModelsResponseOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.DeployedModel getDeployedModels(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface QueryDeployedModelsResponseOrBuilder
    */
   @java.lang.Deprecated
   int getDeployedModelsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface QueryDeployedModelsResponseOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.DeployedModelOrBuilder>
       getDeployedModelsOrBuilderList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface QueryDeployedModelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface QueryDeployedModelsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.DeployedModelRef> getDeployedModelRefsList();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface QueryDeployedModelsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.DeployedModelRef getDeployedModelRefs(int index);
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public interface QueryDeployedModelsResponseOrBuilder
    * </code>
    */
   int getDeployedModelRefsCount();
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public interface QueryDeployedModelsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.DeployedModelRefOrBuilder>
       getDeployedModelRefsOrBuilderList();
+
   /**
    *
    *

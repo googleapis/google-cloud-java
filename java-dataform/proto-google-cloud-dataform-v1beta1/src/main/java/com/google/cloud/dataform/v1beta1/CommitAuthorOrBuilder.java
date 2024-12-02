@@ -36,6 +36,7 @@ public interface CommitAuthorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CommitAuthorOrBuilder
    * @return The emailAddress.
    */
   java.lang.String getEmailAddress();
+
   /**
    *
    *

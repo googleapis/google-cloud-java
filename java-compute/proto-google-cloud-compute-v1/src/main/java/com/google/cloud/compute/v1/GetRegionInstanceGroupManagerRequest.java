@@ -34,6 +34,7 @@ public final class GetRegionInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetRegionInstanceGroupManagerRequest)
     GetRegionInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetRegionInstanceGroupManagerRequest.newBuilder() to construct.
   private GetRegionInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class GetRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class GetRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class GetRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class GetRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class GetRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class GetRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -402,6 +409,7 @@ public final class GetRegionInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -620,6 +628,7 @@ public final class GetRegionInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
+
     /**
      *
      *
@@ -643,6 +652,7 @@ public final class GetRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -666,6 +676,7 @@ public final class GetRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -688,6 +699,7 @@ public final class GetRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class GetRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class GetRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -753,6 +767,7 @@ public final class GetRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -775,6 +790,7 @@ public final class GetRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class GetRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class GetRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class GetRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class GetRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class GetRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +923,7 @@ public final class GetRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +941,7 @@ public final class GetRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

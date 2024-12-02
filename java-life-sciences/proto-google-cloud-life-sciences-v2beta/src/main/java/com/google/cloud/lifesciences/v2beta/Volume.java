@@ -36,6 +36,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.Volume)
     VolumeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Volume.newBuilder() to construct.
   private Volume(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     private StorageCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -122,6 +124,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object volume_ = "";
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERSISTENT_DISK_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPersistentDisk() {
     return storageCase_ == 2;
   }
+
   /**
    *
    *
@@ -209,6 +215,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.PersistentDisk.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXISTING_DISK_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExistingDisk() {
     return storageCase_ == 3;
   }
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.ExistingDisk.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NFS_MOUNT_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNfsMount() {
     return storageCase_ == 4;
   }
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.NFSMount.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -541,6 +554,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -806,6 +820,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object volume_ = "";
+
     /**
      *
      *
@@ -831,6 +846,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -856,6 +872,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -880,6 +897,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +918,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +950,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.PersistentDisk.Builder,
             com.google.cloud.lifesciences.v2beta.PersistentDiskOrBuilder>
         persistentDiskBuilder_;
+
     /**
      *
      *
@@ -946,6 +966,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPersistentDisk() {
       return storageCase_ == 2;
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.PersistentDisk.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -993,6 +1015,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1036,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1070,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1096,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1109,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.PersistentDisk.Builder getPersistentDiskBuilder() {
       return getPersistentDiskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1104,6 +1131,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.PersistentDisk.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1170,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.ExistingDisk.Builder,
             com.google.cloud.lifesciences.v2beta.ExistingDiskOrBuilder>
         existingDiskBuilder_;
+
     /**
      *
      *
@@ -1157,6 +1186,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExistingDisk() {
       return storageCase_ == 3;
     }
+
     /**
      *
      *
@@ -1182,6 +1212,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.ExistingDisk.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1204,6 +1235,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1289,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1315,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1328,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.ExistingDisk.Builder getExistingDiskBuilder() {
       return getExistingDiskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1313,6 +1349,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.ExistingDisk.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1351,6 +1388,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.NFSMount.Builder,
             com.google.cloud.lifesciences.v2beta.NFSMountOrBuilder>
         nfsMountBuilder_;
+
     /**
      *
      *
@@ -1366,6 +1404,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNfsMount() {
       return storageCase_ == 4;
     }
+
     /**
      *
      *
@@ -1391,6 +1430,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.NFSMount.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1453,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1433,6 +1474,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1465,6 +1507,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1533,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1502,6 +1546,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.NFSMount.Builder getNfsMountBuilder() {
       return getNfsMountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1522,6 +1567,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.NFSMount.getDefaultInstance();
       }
     }
+
     /**
      *
      *

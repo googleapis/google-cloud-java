@@ -35,6 +35,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.SparkSqlBatch)
     SparkSqlBatchOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SparkSqlBatch.newBuilder() to construct.
   private SparkSqlBatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryFileUri_ = "";
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
   public int getQueryVariablesCount() {
     return internalGetQueryVariables().getMap().size();
   }
+
   /**
    *
    *
@@ -177,12 +181,14 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetQueryVariables().getMap().containsKey(key);
   }
+
   /** Use {@link #getQueryVariablesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getQueryVariables() {
     return getQueryVariablesMap();
   }
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getQueryVariablesMap() {
     return internalGetQueryVariables().getMap();
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetQueryVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList jarFileUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
   }
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
   }
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
   }
+
   /**
    *
    *
@@ -499,6 +511,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -747,6 +760,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object queryFileUri_ = "";
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -815,6 +831,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +903,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     public int getQueryVariablesCount() {
       return internalGetQueryVariables().getMap().size();
     }
+
     /**
      *
      *
@@ -904,12 +923,14 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetQueryVariables().getMap().containsKey(key);
     }
+
     /** Use {@link #getQueryVariablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getQueryVariables() {
       return getQueryVariablesMap();
     }
+
     /**
      *
      *
@@ -926,6 +947,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getQueryVariablesMap() {
       return internalGetQueryVariables().getMap();
     }
+
     /**
      *
      *
@@ -949,6 +971,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetQueryVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableQueryVariables().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -997,12 +1021,14 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableQueryVariables().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableQueryVariables() {
       bitField0_ |= 0x00000002;
       return internalGetMutableQueryVariables().getMutableMap();
     }
+
     /**
      *
      *
@@ -1026,6 +1052,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1080,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1068,6 +1096,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       jarFileUris_.makeImmutable();
       return jarFileUris_;
     }
+
     /**
      *
      *
@@ -1082,6 +1111,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
     }
+
     /**
      *
      *
@@ -1097,6 +1127,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
     }
+
     /**
      *
      *
@@ -1112,6 +1143,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1135,6 +1167,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1190,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1210,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1229,7 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

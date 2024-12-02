@@ -33,6 +33,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails)
     InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceManagedByIgmErrorInstanceActionDetails.newBuilder() to construct.
   private InstanceManagedByIgmErrorInstanceActionDetails(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -230,6 +231,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>UNDEFINED_ACTION = 0;</code>
      */
     public static final int UNDEFINED_ACTION_VALUE = 0;
+
     /**
      *
      *
@@ -240,6 +242,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>ABANDONING = 388244813;</code>
      */
     public static final int ABANDONING_VALUE = 388244813;
+
     /**
      *
      *
@@ -250,6 +253,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>CREATING = 455564985;</code>
      */
     public static final int CREATING_VALUE = 455564985;
+
     /**
      *
      *
@@ -260,6 +264,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>CREATING_WITHOUT_RETRIES = 428843785;</code>
      */
     public static final int CREATING_WITHOUT_RETRIES_VALUE = 428843785;
+
     /**
      *
      *
@@ -270,6 +275,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>DELETING = 528602024;</code>
      */
     public static final int DELETING_VALUE = 528602024;
+
     /**
      *
      *
@@ -280,6 +286,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>NONE = 2402104;</code>
      */
     public static final int NONE_VALUE = 2402104;
+
     /**
      *
      *
@@ -290,6 +297,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>RECREATING = 287278572;</code>
      */
     public static final int RECREATING_VALUE = 287278572;
+
     /**
      *
      *
@@ -300,6 +308,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>REFRESHING = 163266343;</code>
      */
     public static final int REFRESHING_VALUE = 163266343;
+
     /**
      *
      *
@@ -310,6 +319,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>RESTARTING = 320534387;</code>
      */
     public static final int RESTARTING_VALUE = 320534387;
+
     /**
      *
      *
@@ -320,6 +330,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>RESUMING = 446856618;</code>
      */
     public static final int RESUMING_VALUE = 446856618;
+
     /**
      *
      *
@@ -330,6 +341,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>STARTING = 488820800;</code>
      */
     public static final int STARTING_VALUE = 488820800;
+
     /**
      *
      *
@@ -340,6 +352,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>STOPPING = 350791796;</code>
      */
     public static final int STOPPING_VALUE = 350791796;
+
     /**
      *
      *
@@ -350,6 +363,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>SUSPENDING = 514206246;</code>
      */
     public static final int SUSPENDING_VALUE = 514206246;
+
     /**
      *
      *
@@ -474,6 +488,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
+
   /**
    *
    *
@@ -490,6 +505,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
   public boolean hasAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -514,6 +530,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       return s;
     }
   }
+
   /**
    *
    *
@@ -543,6 +560,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -558,6 +576,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -581,6 +600,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       return s;
     }
   }
+
   /**
    *
    *
@@ -607,6 +627,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
 
   public static final int VERSION_FIELD_NUMBER = 351608024;
   private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
+
   /**
    *
    *
@@ -622,6 +643,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -639,6 +661,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         ? com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()
         : version_;
   }
+
   /**
    *
    *
@@ -855,6 +878,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1095,6 +1119,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     private int bitField0_;
 
     private java.lang.Object action_ = "";
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     public boolean hasAction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1133,6 +1159,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1156,6 +1183,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1178,6 +1206,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1225,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1251,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     }
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -1235,6 +1266,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1257,6 +1289,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1279,6 +1312,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1300,6 +1334,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1352,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1382,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
             com.google.cloud.compute.v1.ManagedInstanceVersion.Builder,
             com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder>
         versionBuilder_;
+
     /**
      *
      *
@@ -1360,6 +1397,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1380,6 +1418,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         return versionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1402,6 +1441,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1462,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1491,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       }
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1511,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1526,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1501,6 +1545,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
             : version_;
       }
     }
+
     /**
      *
      *

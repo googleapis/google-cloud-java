@@ -39,6 +39,7 @@ public interface UpdateAwsClusterRequestOrBuilder
    * @return Whether the awsCluster field is set.
    */
   boolean hasAwsCluster();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateAwsClusterRequestOrBuilder
    * @return The awsCluster.
    */
   com.google.cloud.gkemulticloud.v1.AwsCluster getAwsCluster();
+
   /**
    *
    *
@@ -124,6 +126,7 @@ public interface UpdateAwsClusterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -167,6 +170,7 @@ public interface UpdateAwsClusterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

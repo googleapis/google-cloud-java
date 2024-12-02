@@ -34,6 +34,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.UnwrappedCryptoKey)
     UnwrappedCryptoKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UnwrappedCryptoKey.newBuilder() to construct.
   private UnwrappedCryptoKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
 
   public static final int KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -423,6 +426,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -438,6 +442,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
+
     /**
      *
      *
@@ -459,6 +464,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

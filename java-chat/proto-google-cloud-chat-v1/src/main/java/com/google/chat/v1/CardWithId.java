@@ -41,6 +41,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.CardWithId)
     CardWithIdOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CardWithId.newBuilder() to construct.
   private CardWithId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cardId_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CARD_FIELD_NUMBER = 2;
   private com.google.apps.card.v1.Card card_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCard() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
   public com.google.apps.card.v1.Card getCard() {
     return card_ == null ? com.google.apps.card.v1.Card.getDefaultInstance() : card_;
   }
+
   /**
    *
    *
@@ -340,6 +346,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -556,6 +563,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object cardId_ = "";
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +653,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +684,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.card.v1.Card.Builder,
             com.google.apps.card.v1.CardOrBuilder>
         cardBuilder_;
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCard() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -704,6 +718,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
         return cardBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -726,6 +741,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +761,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +809,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +824,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCardFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -821,6 +841,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessageV3
         return card_ == null ? com.google.apps.card.v1.Card.getDefaultInstance() : card_;
       }
     }
+
     /**
      *
      *

@@ -41,17 +41,18 @@ public final class RouteModifiersProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n+google/maps/places/v1/route_modifiers."
-          + "proto\022\025google.maps.places.v1\032\037google/api"
-          + "/field_behavior.proto\"~\n\016RouteModifiers\022"
-          + "\030\n\013avoid_tolls\030\001 \001(\010B\003\340A\001\022\033\n\016avoid_highw"
-          + "ays\030\002 \001(\010B\003\340A\001\022\032\n\ravoid_ferries\030\003 \001(\010B\003\340"
-          + "A\001\022\031\n\014avoid_indoor\030\004 \001(\010B\003\340A\001B\244\001\n\031com.go"
-          + "ogle.maps.places.v1B\023RouteModifiersProto"
+      "\n"
+          + "+google/maps/places/v1/route_modifiers."
+          + "proto\022\025google.maps.places.v1\032\037google/api/field_behavior.proto\"~\n"
+          + "\016RouteModifiers\022\030\n"
+          + "\013avoid_tolls\030\001 \001(\010B\003\340A\001\022\033\n"
+          + "\016avoid_highways\030\002 \001(\010B\003\340A\001\022\032\n\r"
+          + "avoid_ferries\030\003 \001(\010B\003\340A\001\022\031\n"
+          + "\014avoid_indoor\030\004 \001(\010B\003\340A\001B\244\001\n"
+          + "\031com.google.maps.places.v1B\023RouteModifiersProto"
           + "P\001Z7cloud.google.com/go/maps/places/apiv"
           + "1/placespb;placespb\242\002\006GMPSV1\252\002\025Google.Ma"
-          + "ps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006pr"
-          + "oto3"
+          + "ps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

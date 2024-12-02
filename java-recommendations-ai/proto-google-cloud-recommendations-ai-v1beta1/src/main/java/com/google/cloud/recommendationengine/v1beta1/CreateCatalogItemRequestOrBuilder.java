@@ -39,6 +39,7 @@ public interface CreateCatalogItemRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateCatalogItemRequestOrBuilder
    * @return Whether the catalogItem field is set.
    */
   boolean hasCatalogItem();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateCatalogItemRequestOrBuilder
    * @return The catalogItem.
    */
   com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItem();
+
   /**
    *
    *

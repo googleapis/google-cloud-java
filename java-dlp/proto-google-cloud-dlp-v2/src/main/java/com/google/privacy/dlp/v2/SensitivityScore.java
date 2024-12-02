@@ -34,6 +34,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.SensitivityScore)
     SensitivityScoreOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SensitivityScore.newBuilder() to construct.
   private SensitivityScore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -144,6 +145,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      * <code>SENSITIVITY_SCORE_UNSPECIFIED = 0;</code>
      */
     public static final int SENSITIVITY_SCORE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -155,6 +157,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      * <code>SENSITIVITY_LOW = 10;</code>
      */
     public static final int SENSITIVITY_LOW_VALUE = 10;
+
     /**
      *
      *
@@ -165,6 +168,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      * <code>SENSITIVITY_UNKNOWN = 12;</code>
      */
     public static final int SENSITIVITY_UNKNOWN_VALUE = 12;
+
     /**
      *
      *
@@ -178,6 +182,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      * <code>SENSITIVITY_MODERATE = 20;</code>
      */
     public static final int SENSITIVITY_MODERATE_VALUE = 20;
+
     /**
      *
      *
@@ -284,6 +289,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
 
   public static final int SCORE_FIELD_NUMBER = 1;
   private int score_ = 0;
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
   public int getScoreValue() {
     return score_;
   }
+
   /**
    *
    *
@@ -484,6 +491,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +674,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int score_ = 0;
+
     /**
      *
      *
@@ -681,6 +690,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
     public int getScoreValue() {
       return score_;
     }
+
     /**
      *
      *
@@ -699,6 +709,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +729,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
           ? com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -740,6 +752,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

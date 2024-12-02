@@ -39,6 +39,7 @@ public interface CreateAppGatewayRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateAppGatewayRequestOrBuilder
    * @return The appGatewayId.
    */
   java.lang.String getAppGatewayId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateAppGatewayRequestOrBuilder
    * @return Whether the appGateway field is set.
    */
   boolean hasAppGateway();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateAppGatewayRequestOrBuilder
    * @return The appGateway.
    */
   com.google.cloud.beyondcorp.appgateways.v1.AppGateway getAppGateway();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface CreateAppGatewayRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

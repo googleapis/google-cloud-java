@@ -36,6 +36,7 @@ public interface TransitAgencyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TransitAgencyOrBuilder
    * @return The phoneNumber.
    */
   java.lang.String getPhoneNumber();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface TransitAgencyOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

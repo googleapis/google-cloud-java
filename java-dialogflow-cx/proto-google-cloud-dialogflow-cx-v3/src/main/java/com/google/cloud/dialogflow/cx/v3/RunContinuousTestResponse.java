@@ -34,6 +34,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.RunContinuousTestResponse)
     RunContinuousTestResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunContinuousTestResponse.newBuilder() to construct.
   private RunContinuousTestResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int CONTINUOUS_TEST_RESULT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.cx.v3.ContinuousTestResult continuousTestResult_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
   public boolean hasContinuousTestResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
         ? com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.getDefaultInstance()
         : continuousTestResult_;
   }
+
   /**
    *
    *
@@ -280,6 +284,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -488,6 +493,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
             com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.Builder,
             com.google.cloud.dialogflow.cx.v3.ContinuousTestResultOrBuilder>
         continuousTestResultBuilder_;
+
     /**
      *
      *
@@ -502,6 +508,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
     public boolean hasContinuousTestResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
         return continuousTestResultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -545,6 +553,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -565,6 +574,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +604,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -613,6 +624,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -628,6 +640,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
       onChanged();
       return getContinuousTestResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -647,6 +660,7 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
             : continuousTestResult_;
       }
     }
+
     /**
      *
      *

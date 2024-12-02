@@ -34,6 +34,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest)
     RegionInstanceGroupManagersApplyUpdatesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder() to construct.
   private RegionInstanceGroupManagersApplyUpdatesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -318,6 +319,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   private int bitField0_;
   public static final int ALL_INSTANCES_FIELD_NUMBER = 403676512;
   private boolean allInstances_ = false;
+
   /**
    *
    *
@@ -333,6 +335,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   public boolean hasAllInstances() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -354,6 +357,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -368,6 +372,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -382,6 +387,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -397,6 +403,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -417,6 +424,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minimalAction_ = "";
+
   /**
    *
    *
@@ -433,6 +441,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   public boolean hasMinimalAction() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -457,6 +466,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -486,6 +496,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mostDisruptiveAllowedAction_ = "";
+
   /**
    *
    *
@@ -502,6 +513,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   public boolean hasMostDisruptiveAllowedAction() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -526,6 +538,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -771,6 +784,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1021,6 +1035,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     private int bitField0_;
 
     private boolean allInstances_;
+
     /**
      *
      *
@@ -1036,6 +1051,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     public boolean hasAllInstances() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1051,6 +1067,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     public boolean getAllInstances() {
       return allInstances_;
     }
+
     /**
      *
      *
@@ -1070,6 +1087,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1115,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1112,6 +1131,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       instances_.makeImmutable();
       return instances_;
     }
+
     /**
      *
      *
@@ -1126,6 +1146,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     public int getInstancesCount() {
       return instances_.size();
     }
+
     /**
      *
      *
@@ -1141,6 +1162,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
+
     /**
      *
      *
@@ -1156,6 +1178,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1179,6 +1202,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1225,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1245,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1264,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1290,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     }
 
     private java.lang.Object minimalAction_ = "";
+
     /**
      *
      *
@@ -1278,6 +1306,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     public boolean hasMinimalAction() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1301,6 +1330,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1324,6 +1354,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1346,6 +1377,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1396,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1422,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     }
 
     private java.lang.Object mostDisruptiveAllowedAction_ = "";
+
     /**
      *
      *
@@ -1404,6 +1438,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     public boolean hasMostDisruptiveAllowedAction() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1427,6 +1462,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1450,6 +1486,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1472,6 +1509,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1528,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

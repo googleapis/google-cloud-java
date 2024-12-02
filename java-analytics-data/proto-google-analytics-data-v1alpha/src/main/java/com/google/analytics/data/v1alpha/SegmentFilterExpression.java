@@ -33,6 +33,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SegmentFilterExpression)
     SegmentFilterExpressionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SegmentFilterExpression.newBuilder() to construct.
   private SegmentFilterExpression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     private ExprCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,6 +122,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   }
 
   public static final int AND_GROUP_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   public boolean hasAndGroup() {
     return exprCase_ == 1;
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     }
     return com.google.analytics.data.v1alpha.SegmentFilterExpressionList.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   }
 
   public static final int OR_GROUP_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   public boolean hasOrGroup() {
     return exprCase_ == 2;
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     }
     return com.google.analytics.data.v1alpha.SegmentFilterExpressionList.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   }
 
   public static final int NOT_EXPRESSION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   public boolean hasNotExpression() {
     return exprCase_ == 3;
   }
+
   /**
    *
    *
@@ -257,6 +267,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     }
     return com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   }
 
   public static final int SEGMENT_FILTER_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -291,6 +303,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   public boolean hasSegmentFilter() {
     return exprCase_ == 4;
   }
+
   /**
    *
    *
@@ -309,6 +322,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     }
     return com.google.analytics.data.v1alpha.SegmentFilter.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -327,6 +341,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   }
 
   public static final int SEGMENT_EVENT_FILTER_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -345,6 +360,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   public boolean hasSegmentEventFilter() {
     return exprCase_ == 5;
   }
+
   /**
    *
    *
@@ -366,6 +382,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     }
     return com.google.analytics.data.v1alpha.SegmentEventFilter.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -622,6 +639,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -910,6 +928,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
             com.google.analytics.data.v1alpha.SegmentFilterExpressionList.Builder,
             com.google.analytics.data.v1alpha.SegmentFilterExpressionListOrBuilder>
         andGroupBuilder_;
+
     /**
      *
      *
@@ -925,6 +944,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     public boolean hasAndGroup() {
       return exprCase_ == 1;
     }
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentFilterExpressionList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1015,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1051,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1077,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         getAndGroupBuilder() {
       return getAndGroupFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1087,6 +1113,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentFilterExpressionList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
             com.google.analytics.data.v1alpha.SegmentFilterExpressionList.Builder,
             com.google.analytics.data.v1alpha.SegmentFilterExpressionListOrBuilder>
         orGroupBuilder_;
+
     /**
      *
      *
@@ -1141,6 +1169,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     public boolean hasOrGroup() {
       return exprCase_ == 2;
     }
+
     /**
      *
      *
@@ -1166,6 +1195,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentFilterExpressionList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1239,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1275,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1301,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1315,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         getOrGroupBuilder() {
       return getOrGroupFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1302,6 +1337,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentFilterExpressionList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1377,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
             com.google.analytics.data.v1alpha.SegmentFilterExpression.Builder,
             com.google.analytics.data.v1alpha.SegmentFilterExpressionOrBuilder>
         notExpressionBuilder_;
+
     /**
      *
      *
@@ -1356,6 +1393,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     public boolean hasNotExpression() {
       return exprCase_ == 3;
     }
+
     /**
      *
      *
@@ -1381,6 +1419,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1404,6 +1443,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1464,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1499,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1525,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1539,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         getNotExpressionBuilder() {
       return getNotExpressionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1517,6 +1561,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1555,6 +1600,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
             com.google.analytics.data.v1alpha.SegmentFilter.Builder,
             com.google.analytics.data.v1alpha.SegmentFilterOrBuilder>
         segmentFilterBuilder_;
+
     /**
      *
      *
@@ -1570,6 +1616,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     public boolean hasSegmentFilter() {
       return exprCase_ == 4;
     }
+
     /**
      *
      *
@@ -1595,6 +1642,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1617,6 +1665,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1686,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1669,6 +1719,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1694,6 +1745,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1706,6 +1758,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     public com.google.analytics.data.v1alpha.SegmentFilter.Builder getSegmentFilterBuilder() {
       return getSegmentFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1726,6 +1779,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1764,6 +1818,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
             com.google.analytics.data.v1alpha.SegmentEventFilter.Builder,
             com.google.analytics.data.v1alpha.SegmentEventFilterOrBuilder>
         segmentEventFilterBuilder_;
+
     /**
      *
      *
@@ -1782,6 +1837,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     public boolean hasSegmentEventFilter() {
       return exprCase_ == 5;
     }
+
     /**
      *
      *
@@ -1810,6 +1866,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentEventFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1836,6 +1893,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1859,6 +1917,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1895,6 +1954,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       exprCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1983,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1939,6 +2000,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         getSegmentEventFilterBuilder() {
       return getSegmentEventFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1963,6 +2025,7 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
         return com.google.analytics.data.v1alpha.SegmentEventFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *

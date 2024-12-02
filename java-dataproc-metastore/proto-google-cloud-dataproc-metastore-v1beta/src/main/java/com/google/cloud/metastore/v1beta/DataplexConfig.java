@@ -34,6 +34,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1beta.DataplexConfig)
     DataplexConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataplexConfig.newBuilder() to construct.
   private DataplexConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
   public int getLakeResourcesCount() {
     return internalGetLakeResources().getMap().size();
   }
+
   /**
    *
    *
@@ -124,6 +126,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLakeResources().getMap().containsKey(key);
   }
+
   /** Use {@link #getLakeResourcesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -131,6 +134,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       getLakeResources() {
     return getLakeResourcesMap();
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       getLakeResourcesMap() {
     return internalGetLakeResources().getMap();
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
         internalGetLakeResources().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -362,6 +368,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -593,7 +600,8 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LakeResourcesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final LakeResourcesConverter lakeResourcesConverter =
         new LakeResourcesConverter();
@@ -634,6 +642,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLakeResourcesCount() {
       return internalGetLakeResources().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -652,6 +661,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLakeResources().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getLakeResourcesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -659,6 +669,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
         getLakeResources() {
       return getLakeResourcesMap();
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
         getLakeResourcesMap() {
       return internalGetLakeResources().getImmutableMap();
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableLakeResources().ensureBuilderMap();
       return map.containsKey(key) ? lakeResourcesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLakeResources().clear();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLakeResources().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.metastore.v1beta.Lake>
@@ -752,6 +767,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableLakeResources().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -775,6 +791,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

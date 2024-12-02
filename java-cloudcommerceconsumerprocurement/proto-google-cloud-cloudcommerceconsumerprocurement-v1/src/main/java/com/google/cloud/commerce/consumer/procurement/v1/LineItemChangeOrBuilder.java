@@ -37,6 +37,7 @@ public interface LineItemChangeOrBuilder
    * @return The changeId.
    */
   java.lang.String getChangeId();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface LineItemChangeOrBuilder
    * @return The enum numeric value on the wire for changeType.
    */
   int getChangeTypeValue();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface LineItemChangeOrBuilder
    * @return Whether the oldLineItemInfo field is set.
    */
   boolean hasOldLineItemInfo();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface LineItemChangeOrBuilder
    * @return The oldLineItemInfo.
    */
   com.google.cloud.commerce.consumer.procurement.v1.LineItemInfo getOldLineItemInfo();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface LineItemChangeOrBuilder
    * @return Whether the newLineItemInfo field is set.
    */
   boolean hasNewLineItemInfo();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface LineItemChangeOrBuilder
    * @return The newLineItemInfo.
    */
   com.google.cloud.commerce.consumer.procurement.v1.LineItemInfo getNewLineItemInfo();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface LineItemChangeOrBuilder
    * @return The enum numeric value on the wire for changeState.
    */
   int getChangeStateValue();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface LineItemChangeOrBuilder
    * @return The stateReason.
    */
   java.lang.String getStateReason();
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public interface LineItemChangeOrBuilder
    * @return The enum numeric value on the wire for changeStateReasonType.
    */
   int getChangeStateReasonTypeValue();
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public interface LineItemChangeOrBuilder
    * @return Whether the changeEffectiveTime field is set.
    */
   boolean hasChangeEffectiveTime();
+
   /**
    *
    *
@@ -289,6 +299,7 @@ public interface LineItemChangeOrBuilder
    * @return The changeEffectiveTime.
    */
   com.google.protobuf.Timestamp getChangeEffectiveTime();
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public interface LineItemChangeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public interface LineItemChangeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -355,6 +368,7 @@ public interface LineItemChangeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -369,6 +383,7 @@ public interface LineItemChangeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

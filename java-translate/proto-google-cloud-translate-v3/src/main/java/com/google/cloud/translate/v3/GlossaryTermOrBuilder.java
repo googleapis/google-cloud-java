@@ -36,6 +36,7 @@ public interface GlossaryTermOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GlossaryTermOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface GenerateAzureAccessTokenResponseOrBuilder
    * @return The accessToken.
    */
   java.lang.String getAccessToken();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GenerateAzureAccessTokenResponseOrBuilder
    * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface GenerateAzureAccessTokenResponseOrBuilder
    * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
+
   /**
    *
    *

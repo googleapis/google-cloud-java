@@ -37,6 +37,7 @@ public interface SecuritySettingsOrBuilder
    * @return Whether the awsV4Authentication field is set.
    */
   boolean hasAwsV4Authentication();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SecuritySettingsOrBuilder
    * @return The awsV4Authentication.
    */
   com.google.cloud.compute.v1.AWSV4Signature getAwsV4Authentication();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface SecuritySettingsOrBuilder
    * @return Whether the clientTlsPolicy field is set.
    */
   boolean hasClientTlsPolicy();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface SecuritySettingsOrBuilder
    * @return The clientTlsPolicy.
    */
   java.lang.String getClientTlsPolicy();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface SecuritySettingsOrBuilder
    * @return A list containing the subjectAltNames.
    */
   java.util.List<java.lang.String> getSubjectAltNamesList();
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface SecuritySettingsOrBuilder
    * @return The count of subjectAltNames.
    */
   int getSubjectAltNamesCount();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface SecuritySettingsOrBuilder
    * @return The subjectAltNames at the given index.
    */
   java.lang.String getSubjectAltNames(int index);
+
   /**
    *
    *

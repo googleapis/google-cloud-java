@@ -41,6 +41,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder
    * @return Whether the deidentifyTemplate field is set.
    */
   boolean hasDeidentifyTemplate();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder
    * @return The deidentifyTemplate.
    */
   com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

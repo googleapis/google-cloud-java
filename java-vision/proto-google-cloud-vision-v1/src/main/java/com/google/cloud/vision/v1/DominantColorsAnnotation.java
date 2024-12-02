@@ -33,6 +33,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.DominantColorsAnnotation)
     DominantColorsAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DominantColorsAnnotation.newBuilder() to construct.
   private DominantColorsAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.ColorInfo> colors_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.vision.v1.ColorInfo> getColorsList() {
     return colors_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       getColorsOrBuilderList() {
     return colors_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
   public int getColorsCount() {
     return colors_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
   public com.google.cloud.vision.v1.ColorInfo getColors(int index) {
     return colors_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -556,6 +563,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
         return colorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -572,6 +580,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
         return colorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
         return colorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +707,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +728,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +749,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +769,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +789,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +802,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
     public com.google.cloud.vision.v1.ColorInfo.Builder getColorsBuilder(int index) {
       return getColorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -799,6 +819,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
         return colorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -816,6 +837,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(colors_);
       }
     }
+
     /**
      *
      *
@@ -829,6 +851,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       return getColorsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.ColorInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -842,6 +865,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       return getColorsFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.ColorInfo.getDefaultInstance());
     }
+
     /**
      *
      *

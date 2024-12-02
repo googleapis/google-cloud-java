@@ -37,6 +37,7 @@ public interface UpdateVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface UpdateVersionRequestOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateVersionRequestOrBuilder
    * @return The version.
    */
   com.google.appengine.v1.Version getVersion();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UpdateVersionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface UpdateVersionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

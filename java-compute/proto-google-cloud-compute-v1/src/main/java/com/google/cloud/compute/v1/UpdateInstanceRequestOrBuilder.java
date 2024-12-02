@@ -36,6 +36,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return Whether the instanceResource field is set.
    */
   boolean hasInstanceResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The instanceResource.
    */
   com.google.cloud.compute.v1.Instance getInstanceResource();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return Whether the minimalAction field is set.
    */
   boolean hasMinimalAction();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The minimalAction.
    */
   java.lang.String getMinimalAction();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return Whether the mostDisruptiveAllowedAction field is set.
    */
   boolean hasMostDisruptiveAllowedAction();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The mostDisruptiveAllowedAction.
    */
   java.lang.String getMostDisruptiveAllowedAction();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -223,6 +232,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public interface UpdateInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

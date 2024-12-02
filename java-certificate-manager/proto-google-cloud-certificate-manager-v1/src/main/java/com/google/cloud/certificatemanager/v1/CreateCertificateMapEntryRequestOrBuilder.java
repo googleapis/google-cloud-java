@@ -39,6 +39,7 @@ public interface CreateCertificateMapEntryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateCertificateMapEntryRequestOrBuilder
    * @return The certificateMapEntryId.
    */
   java.lang.String getCertificateMapEntryId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateCertificateMapEntryRequestOrBuilder
    * @return Whether the certificateMapEntry field is set.
    */
   boolean hasCertificateMapEntry();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateCertificateMapEntryRequestOrBuilder
    * @return The certificateMapEntry.
    */
   com.google.cloud.certificatemanager.v1.CertificateMapEntry getCertificateMapEntry();
+
   /**
    *
    *

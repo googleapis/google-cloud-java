@@ -33,6 +33,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.ValidateAddressRequest)
     ValidateAddressRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidateAddressRequest.newBuilder() to construct.
   private ValidateAddressRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int ADDRESS_FIELD_NUMBER = 1;
   private com.google.type.PostalAddress address_;
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
   public boolean hasAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
   public com.google.type.PostalAddress getAddress() {
     return address_ == null ? com.google.type.PostalAddress.getDefaultInstance() : address_;
   }
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object previousResponseId_ = "";
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -227,6 +233,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
 
   public static final int ENABLE_USPS_CASS_FIELD_NUMBER = 3;
   private boolean enableUspsCass_ = false;
+
   /**
    *
    *
@@ -258,6 +265,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sessionToken_ = "";
+
   /**
    *
    *
@@ -300,6 +308,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -535,6 +544,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -781,6 +791,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
             com.google.type.PostalAddress.Builder,
             com.google.type.PostalAddressOrBuilder>
         addressBuilder_;
+
     /**
      *
      *
@@ -813,6 +824,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -849,6 +861,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
         return addressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -889,6 +902,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +940,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +986,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1024,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1057,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getAddressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1074,6 +1092,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
         return address_ == null ? com.google.type.PostalAddress.getDefaultInstance() : address_;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1138,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object previousResponseId_ = "";
+
     /**
      *
      *
@@ -1147,6 +1167,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1196,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1202,6 +1224,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1248,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1279,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean enableUspsCass_;
+
     /**
      *
      *
@@ -1281,6 +1306,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     public boolean getEnableUspsCass() {
       return enableUspsCass_;
     }
+
     /**
      *
      *
@@ -1311,6 +1337,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1341,6 +1368,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object sessionToken_ = "";
+
     /**
      *
      *
@@ -1382,6 +1410,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1452,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1463,6 +1493,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1499,6 +1530,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

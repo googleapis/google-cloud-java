@@ -36,6 +36,7 @@ public interface AccessoryWidgetOrBuilder
    * @return Whether the buttonList field is set.
    */
   boolean hasButtonList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AccessoryWidgetOrBuilder
    * @return The buttonList.
    */
   com.google.apps.card.v1.ButtonList getButtonList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.RoutineSpec)
     RoutineSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RoutineSpec.newBuilder() to construct.
   private RoutineSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTINE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ROUTINE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>SCALAR_FUNCTION = 1;</code>
      */
     public static final int SCALAR_FUNCTION_VALUE = 1;
+
     /**
      *
      *
@@ -243,6 +246,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -269,6 +273,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for mode.
      */
     int getModeValue();
+
     /**
      *
      *
@@ -295,6 +300,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     java.lang.String getType();
+
     /**
      *
      *
@@ -309,6 +315,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTypeBytes();
   }
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.RoutineSpec.Argument)
       ArgumentOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Argument.newBuilder() to construct.
     private Argument(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -418,6 +426,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
        * <code>MODE_UNSPECIFIED = 0;</code>
        */
       public static final int MODE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -428,6 +437,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
        * <code>IN = 1;</code>
        */
       public static final int IN_VALUE = 1;
+
       /**
        *
        *
@@ -438,6 +448,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
        * <code>OUT = 2;</code>
        */
       public static final int OUT_VALUE = 2;
+
       /**
        *
        *
@@ -540,6 +551,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -564,6 +576,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -591,6 +604,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MODE_FIELD_NUMBER = 2;
     private int mode_ = 0;
+
     /**
      *
      *
@@ -606,6 +620,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -630,6 +645,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -654,6 +670,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1077,6 +1095,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -1100,6 +1119,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1123,6 +1143,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1145,6 +1166,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1163,6 +1185,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1188,6 +1211,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int mode_ = 0;
+
       /**
        *
        *
@@ -1203,6 +1227,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       public int getModeValue() {
         return mode_;
       }
+
       /**
        *
        *
@@ -1221,6 +1246,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1240,6 +1266,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.datacatalog.v1.RoutineSpec.Argument.Mode.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1261,6 +1288,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1280,6 +1308,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object type_ = "";
+
       /**
        *
        *
@@ -1303,6 +1332,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1326,6 +1356,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1348,6 +1379,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1366,6 +1398,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1470,6 +1503,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     private SystemSpecCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1502,6 +1536,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTINE_TYPE_FIELD_NUMBER = 1;
   private int routineType_ = 0;
+
   /**
    *
    *
@@ -1517,6 +1552,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   public int getRoutineTypeValue() {
     return routineType_;
   }
+
   /**
    *
    *
@@ -1541,6 +1577,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object language_ = "";
+
   /**
    *
    *
@@ -1568,6 +1605,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1600,6 +1638,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.RoutineSpec.Argument> routineArguments_;
+
   /**
    *
    *
@@ -1614,6 +1653,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       getRoutineArgumentsList() {
     return routineArguments_;
   }
+
   /**
    *
    *
@@ -1628,6 +1668,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       getRoutineArgumentsOrBuilderList() {
     return routineArguments_;
   }
+
   /**
    *
    *
@@ -1641,6 +1682,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   public int getRoutineArgumentsCount() {
     return routineArguments_.size();
   }
+
   /**
    *
    *
@@ -1654,6 +1696,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1.RoutineSpec.Argument getRoutineArguments(int index) {
     return routineArguments_.get(index);
   }
+
   /**
    *
    *
@@ -1673,6 +1716,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object returnType_ = "";
+
   /**
    *
    *
@@ -1697,6 +1741,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1726,6 +1771,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object definitionBody_ = "";
+
   /**
    *
    *
@@ -1749,6 +1795,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1774,6 +1821,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_ROUTINE_SPEC_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -1789,6 +1837,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigqueryRoutineSpec() {
     return systemSpecCase_ == 6;
   }
+
   /**
    *
    *
@@ -1807,6 +1856,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.BigQueryRoutineSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2050,6 +2100,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2384,6 +2435,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int routineType_ = 0;
+
     /**
      *
      *
@@ -2399,6 +2451,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     public int getRoutineTypeValue() {
       return routineType_;
     }
+
     /**
      *
      *
@@ -2417,6 +2470,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2436,6 +2490,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datacatalog.v1.RoutineSpec.RoutineType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2457,6 +2512,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +2532,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object language_ = "";
+
     /**
      *
      *
@@ -2502,6 +2559,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2528,6 +2586,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2553,6 +2612,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2574,6 +2634,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2637,6 +2698,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return routineArgumentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2654,6 +2716,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return routineArgumentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2671,6 +2734,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return routineArgumentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2695,6 +2759,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2716,6 +2781,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2739,6 +2805,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2763,6 +2830,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2784,6 +2852,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2805,6 +2874,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2826,6 +2896,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2846,6 +2917,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2866,6 +2938,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2880,6 +2953,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getRoutineArgumentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2898,6 +2972,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return routineArgumentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2916,6 +2991,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(routineArguments_);
       }
     }
+
     /**
      *
      *
@@ -2931,6 +3007,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       return getRoutineArgumentsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.RoutineSpec.Argument.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2947,6 +3024,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.datacatalog.v1.RoutineSpec.Argument.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2983,6 +3061,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object returnType_ = "";
+
     /**
      *
      *
@@ -3006,6 +3085,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3029,6 +3109,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3051,6 +3132,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3069,6 +3151,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3094,6 +3177,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object definitionBody_ = "";
+
     /**
      *
      *
@@ -3116,6 +3200,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3138,6 +3223,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3159,6 +3245,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3176,6 +3263,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3204,6 +3292,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.BigQueryRoutineSpec.Builder,
             com.google.cloud.datacatalog.v1.BigQueryRoutineSpecOrBuilder>
         bigqueryRoutineSpecBuilder_;
+
     /**
      *
      *
@@ -3219,6 +3308,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigqueryRoutineSpec() {
       return systemSpecCase_ == 6;
     }
+
     /**
      *
      *
@@ -3244,6 +3334,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.BigQueryRoutineSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3267,6 +3358,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3287,6 +3379,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3321,6 +3414,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3346,6 +3440,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3359,6 +3454,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         getBigqueryRoutineSpecBuilder() {
       return getBigqueryRoutineSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3380,6 +3476,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.BigQueryRoutineSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *

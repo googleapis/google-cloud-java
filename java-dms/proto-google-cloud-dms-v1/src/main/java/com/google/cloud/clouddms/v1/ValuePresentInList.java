@@ -73,6 +73,7 @@ public enum ValuePresentInList implements com.google.protobuf.ProtocolMessageEnu
    * <code>VALUE_PRESENT_IN_LIST_UNSPECIFIED = 0;</code>
    */
   public static final int VALUE_PRESENT_IN_LIST_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum ValuePresentInList implements com.google.protobuf.ProtocolMessageEnu
    * <code>VALUE_PRESENT_IN_LIST_IF_VALUE_LIST = 1;</code>
    */
   public static final int VALUE_PRESENT_IN_LIST_IF_VALUE_LIST_VALUE = 1;
+
   /**
    *
    *

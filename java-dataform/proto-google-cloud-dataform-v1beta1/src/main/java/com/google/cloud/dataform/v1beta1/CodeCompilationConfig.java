@@ -33,6 +33,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CodeCompilationConfig)
     CodeCompilationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CodeCompilationConfig.newBuilder() to construct.
   private CodeCompilationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultDatabase_ = "";
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultSchema_ = "";
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultLocation_ = "";
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -242,6 +249,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assertionSchema_ = "";
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -315,6 +324,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
   public int getVarsCount() {
     return internalGetVars().getMap().size();
   }
+
   /**
    *
    *
@@ -332,12 +342,14 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
     return internalGetVars().getMap().containsKey(key);
   }
+
   /** Use {@link #getVarsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getVars() {
     return getVarsMap();
   }
+
   /**
    *
    *
@@ -352,6 +364,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, java.lang.String> getVarsMap() {
     return internalGetVars().getMap();
   }
+
   /**
    *
    *
@@ -373,6 +386,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.String, java.lang.String> map = internalGetVars().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -399,6 +413,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseSuffix_ = "";
+
   /**
    *
    *
@@ -423,6 +438,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -452,6 +468,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schemaSuffix_ = "";
+
   /**
    *
    *
@@ -476,6 +493,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -505,6 +523,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tablePrefix_ = "";
+
   /**
    *
    *
@@ -528,6 +547,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -783,6 +803,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1095,6 +1116,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object defaultDatabase_ = "";
+
     /**
      *
      *
@@ -1117,6 +1139,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1139,6 +1162,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1184,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1202,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1227,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object defaultSchema_ = "";
+
     /**
      *
      *
@@ -1223,6 +1250,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1273,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1266,6 +1295,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1313,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1338,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object defaultLocation_ = "";
+
     /**
      *
      *
@@ -1331,6 +1363,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1355,6 +1388,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1378,6 +1412,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1432,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1459,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object assertionSchema_ = "";
+
     /**
      *
      *
@@ -1445,6 +1482,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1467,6 +1505,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1527,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1545,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1553,6 +1594,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     public int getVarsCount() {
       return internalGetVars().getMap().size();
     }
+
     /**
      *
      *
@@ -1570,12 +1612,14 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       }
       return internalGetVars().getMap().containsKey(key);
     }
+
     /** Use {@link #getVarsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getVars() {
       return getVarsMap();
     }
+
     /**
      *
      *
@@ -1590,6 +1634,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.String> getVarsMap() {
       return internalGetVars().getMap();
     }
+
     /**
      *
      *
@@ -1611,6 +1656,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.String, java.lang.String> map = internalGetVars().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1638,6 +1684,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       internalGetMutableVars().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1655,12 +1702,14 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       internalGetMutableVars().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableVars() {
       bitField0_ |= 0x00000010;
       return internalGetMutableVars().getMutableMap();
     }
+
     /**
      *
      *
@@ -1682,6 +1731,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -1699,6 +1749,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object databaseSuffix_ = "";
+
     /**
      *
      *
@@ -1722,6 +1773,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1745,6 +1797,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1767,6 +1820,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1839,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1865,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object schemaSuffix_ = "";
+
     /**
      *
      *
@@ -1833,6 +1889,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1856,6 +1913,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1878,6 +1936,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1896,6 +1955,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1921,6 +1981,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object tablePrefix_ = "";
+
     /**
      *
      *
@@ -1943,6 +2004,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1965,6 +2027,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1986,6 +2049,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2003,6 +2067,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

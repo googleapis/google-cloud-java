@@ -40,6 +40,7 @@ public interface GetFeatureMonitorJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

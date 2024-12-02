@@ -33,6 +33,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.RevisionRef)
     RevisionRefOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RevisionRef.newBuilder() to construct.
   private RevisionRef(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,6 +125,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
      * <code>REVISION_CASE_UNSPECIFIED = 0;</code>
      */
     public static final int REVISION_CASE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -134,6 +136,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
      * <code>LATEST_HUMAN_REVIEW = 1;</code>
      */
     public static final int LATEST_HUMAN_REVIEW_VALUE = 1;
+
     /**
      *
      *
@@ -144,6 +147,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
      * <code>LATEST_TIMESTAMP = 2;</code>
      */
     public static final int LATEST_TIMESTAMP_VALUE = 2;
+
     /**
      *
      *
@@ -258,6 +262,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -293,6 +298,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REVISION_CASE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRevisionCase() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -324,6 +331,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
+
   /**
    *
    *
@@ -348,6 +356,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -362,6 +371,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRevisionId() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -389,6 +399,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -418,6 +429,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LATEST_PROCESSOR_VERSION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -434,6 +446,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatestProcessorVersion() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -463,6 +476,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -692,6 +706,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -943,6 +958,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRevisionCase() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -961,6 +977,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -979,6 +996,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1020,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.documentai.v1beta3.RevisionRef.RevisionCase.REVISION_CASE_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -1024,6 +1043,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1079,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRevisionId() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1087,6 +1108,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1137,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1159,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1179,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1220,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatestProcessorVersion() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1225,6 +1251,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1282,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1306,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1328,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *

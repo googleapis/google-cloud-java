@@ -33,6 +33,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoveryResult)
     DataDiscoveryResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataDiscoveryResult.newBuilder() to construct.
   private DataDiscoveryResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      * @return The dataset.
      */
     java.lang.String getDataset();
+
     /**
      *
      *
@@ -99,6 +101,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getDatasetBytes();
   }
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing)
       BigQueryPublishingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BigQueryPublishing.newBuilder() to construct.
     private BigQueryPublishing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -147,6 +151,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -174,6 +179,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -364,6 +370,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -558,6 +565,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
+
       /**
        *
        *
@@ -584,6 +592,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -610,6 +619,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -635,6 +645,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -656,6 +667,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -753,6 +765,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int BIGQUERY_PUBLISHING_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing bigqueryPublishing_;
+
   /**
    *
    *
@@ -770,6 +783,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
   public boolean hasBigqueryPublishing() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -790,6 +804,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing.getDefaultInstance()
         : bigqueryPublishing_;
   }
+
   /**
    *
    *
@@ -973,6 +988,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1180,6 +1196,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing.Builder,
             com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishingOrBuilder>
         bigqueryPublishingBuilder_;
+
     /**
      *
      *
@@ -1196,6 +1213,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     public boolean hasBigqueryPublishing() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1220,6 +1238,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         return bigqueryPublishingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1264,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1288,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1321,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1343,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1361,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return getBigqueryPublishingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1360,6 +1384,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
             : bigqueryPublishing_;
       }
     }
+
     /**
      *
      *

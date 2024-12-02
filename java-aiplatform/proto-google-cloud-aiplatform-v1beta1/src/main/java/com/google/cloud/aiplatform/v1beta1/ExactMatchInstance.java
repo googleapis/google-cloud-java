@@ -33,6 +33,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExactMatchInstance)
     ExactMatchInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExactMatchInstance.newBuilder() to construct.
   private ExactMatchInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reference_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
   public boolean hasReference() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -376,6 +383,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +587,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -658,6 +670,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +713,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object reference_ = "";
+
     /**
      *
      *
@@ -713,6 +728,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
     public boolean hasReference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -735,6 +751,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -757,6 +774,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +796,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +814,7 @@ public final class ExactMatchInstance extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.NormalizedBoundingBox)
     NormalizedBoundingBoxOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NormalizedBoundingBox.newBuilder() to construct.
   private NormalizedBoundingBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
 
   public static final int LEFT_FIELD_NUMBER = 1;
   private float left_ = 0F;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
 
   public static final int TOP_FIELD_NUMBER = 2;
   private float top_ = 0F;
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
 
   public static final int RIGHT_FIELD_NUMBER = 3;
   private float right_ = 0F;
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
 
   public static final int BOTTOM_FIELD_NUMBER = 4;
   private float bottom_ = 0F;
+
   /**
    *
    *
@@ -326,6 +331,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -549,6 +555,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private float left_;
+
     /**
      *
      *
@@ -564,6 +571,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public float getLeft() {
       return left_;
     }
+
     /**
      *
      *
@@ -583,6 +591,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     }
 
     private float top_;
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public float getTop() {
       return top_;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     }
 
     private float right_;
+
     /**
      *
      *
@@ -670,6 +683,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public float getRight() {
       return right_;
     }
+
     /**
      *
      *
@@ -689,6 +703,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +723,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     }
 
     private float bottom_;
+
     /**
      *
      *
@@ -723,6 +739,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public float getBottom() {
       return bottom_;
     }
+
     /**
      *
      *
@@ -742,6 +759,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

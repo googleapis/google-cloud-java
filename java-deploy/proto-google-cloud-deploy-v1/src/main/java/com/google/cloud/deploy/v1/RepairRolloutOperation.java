@@ -33,6 +33,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RepairRolloutOperation)
     RepairRolloutOperationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RepairRolloutOperation.newBuilder() to construct.
   private RepairRolloutOperation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rollout_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
 
   public static final int CURRENT_REPAIR_PHASE_INDEX_FIELD_NUMBER = 6;
   private long currentRepairPhaseIndex_ = 0L;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.RepairPhase> repairPhases_;
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.deploy.v1.RepairPhase> getRepairPhasesList() {
     return repairPhases_;
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       getRepairPhasesOrBuilderList() {
     return repairPhases_;
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
   public int getRepairPhasesCount() {
     return repairPhases_.size();
   }
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
   public com.google.cloud.deploy.v1.RepairPhase getRepairPhases(int index) {
     return repairPhases_.get(index);
   }
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phaseId_ = "";
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +289,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -522,6 +535,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -810,6 +824,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object rollout_ = "";
+
     /**
      *
      *
@@ -832,6 +847,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -854,6 +870,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +910,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +935,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     }
 
     private long currentRepairPhaseIndex_;
+
     /**
      *
      *
@@ -932,6 +952,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     public long getCurrentRepairPhaseIndex() {
       return currentRepairPhaseIndex_;
     }
+
     /**
      *
      *
@@ -952,6 +973,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1029,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return repairPhasesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1049,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return repairPhasesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return repairPhasesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1070,6 +1095,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1119,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1145,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1171,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1194,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1242,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1265,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1288,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1304,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     public com.google.cloud.deploy.v1.RepairPhase.Builder getRepairPhasesBuilder(int index) {
       return getRepairPhasesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1289,6 +1324,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return repairPhasesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1309,6 +1345,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(repairPhases_);
       }
     }
+
     /**
      *
      *
@@ -1325,6 +1362,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       return getRepairPhasesFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.RepairPhase.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1341,6 +1379,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       return getRepairPhasesFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.RepairPhase.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1376,6 +1415,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object phaseId_ = "";
+
     /**
      *
      *
@@ -1399,6 +1439,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1463,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1444,6 +1486,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1462,6 +1505,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1531,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object jobId_ = "";
+
     /**
      *
      *
@@ -1509,6 +1554,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1531,6 +1577,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1552,6 +1599,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1569,6 +1617,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

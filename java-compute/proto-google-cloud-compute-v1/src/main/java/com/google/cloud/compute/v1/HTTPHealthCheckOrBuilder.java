@@ -36,6 +36,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return Whether the portName field is set.
    */
   boolean hasPortName();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return The portName.
    */
   java.lang.String getPortName();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return Whether the portSpecification field is set.
    */
   boolean hasPortSpecification();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return The portSpecification.
    */
   java.lang.String getPortSpecification();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return Whether the proxyHeader field is set.
    */
   boolean hasProxyHeader();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return The proxyHeader.
    */
   java.lang.String getProxyHeader();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return Whether the requestPath field is set.
    */
   boolean hasRequestPath();
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return The requestPath.
    */
   java.lang.String getRequestPath();
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return Whether the response field is set.
    */
   boolean hasResponse();
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public interface HTTPHealthCheckOrBuilder
    * @return The response.
    */
   java.lang.String getResponse();
+
   /**
    *
    *

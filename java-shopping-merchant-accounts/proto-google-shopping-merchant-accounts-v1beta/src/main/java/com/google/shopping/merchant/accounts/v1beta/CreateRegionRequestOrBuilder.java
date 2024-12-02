@@ -39,6 +39,7 @@ public interface CreateRegionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateRegionRequestOrBuilder
    * @return The regionId.
    */
   java.lang.String getRegionId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateRegionRequestOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateRegionRequestOrBuilder
    * @return The region.
    */
   com.google.shopping.merchant.accounts.v1beta.Region getRegion();
+
   /**
    *
    *

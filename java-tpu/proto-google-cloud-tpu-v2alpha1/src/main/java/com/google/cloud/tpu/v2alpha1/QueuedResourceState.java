@@ -33,6 +33,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState)
     QueuedResourceStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueuedResourceState.newBuilder() to construct.
   private QueuedResourceState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -206,6 +207,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -217,6 +219,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -228,6 +231,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>ACCEPTED = 2;</code>
      */
     public static final int ACCEPTED_VALUE = 2;
+
     /**
      *
      *
@@ -240,6 +244,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>PROVISIONING = 3;</code>
      */
     public static final int PROVISIONING_VALUE = 3;
+
     /**
      *
      *
@@ -253,6 +258,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
+
     /**
      *
      *
@@ -263,6 +269,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>DELETING = 5;</code>
      */
     public static final int DELETING_VALUE = 5;
+
     /**
      *
      *
@@ -274,6 +281,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>ACTIVE = 6;</code>
      */
     public static final int ACTIVE_VALUE = 6;
+
     /**
      *
      *
@@ -286,6 +294,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>SUSPENDING = 7;</code>
      */
     public static final int SUSPENDING_VALUE = 7;
+
     /**
      *
      *
@@ -297,6 +306,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>SUSPENDED = 8;</code>
      */
     public static final int SUSPENDED_VALUE = 8;
+
     /**
      *
      *
@@ -468,6 +478,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>STATE_INITIATOR_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_INITIATOR_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -478,6 +489,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>USER = 1;</code>
      */
     public static final int USER_VALUE = 1;
+
     /**
      *
      *
@@ -578,6 +590,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2alpha1.QueuedResourceState.CreatingData)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -592,6 +605,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState.CreatingData)
       CreatingDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CreatingData.newBuilder() to construct.
     private CreatingData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -772,6 +786,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1007,6 +1022,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2alpha1.QueuedResourceState.AcceptedData)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -1021,6 +1037,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState.AcceptedData)
       AcceptedDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AcceptedData.newBuilder() to construct.
     private AcceptedData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1201,6 +1218,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1436,6 +1454,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2alpha1.QueuedResourceState.ProvisioningData)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -1450,6 +1469,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState.ProvisioningData)
       ProvisioningDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ProvisioningData.newBuilder() to construct.
     private ProvisioningData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1631,6 +1651,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1882,6 +1903,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * @return Whether the error field is set.
      */
     boolean hasError();
+
     /**
      *
      *
@@ -1894,6 +1916,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * @return The error.
      */
     com.google.rpc.Status getError();
+
     /**
      *
      *
@@ -1905,6 +1928,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      */
     com.google.rpc.StatusOrBuilder getErrorOrBuilder();
   }
+
   /**
    *
    *
@@ -1919,6 +1943,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData)
       FailedDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FailedData.newBuilder() to construct.
     private FailedData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1950,6 +1975,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     private int bitField0_;
     public static final int ERROR_FIELD_NUMBER = 1;
     private com.google.rpc.Status error_;
+
     /**
      *
      *
@@ -1965,6 +1991,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1980,6 +2007,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public com.google.rpc.Status getError() {
       return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
     }
+
     /**
      *
      *
@@ -2160,6 +2188,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2367,6 +2396,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           errorBuilder_;
+
       /**
        *
        *
@@ -2381,6 +2411,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       public boolean hasError() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2399,6 +2430,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
           return errorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2421,6 +2453,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2440,6 +2473,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2467,6 +2501,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2486,6 +2521,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2500,6 +2536,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         onChanged();
         return getErrorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2516,6 +2553,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
           return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
         }
       }
+
       /**
        *
        *
@@ -2610,6 +2648,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2alpha1.QueuedResourceState.DeletingData)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -2624,6 +2663,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState.DeletingData)
       DeletingDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DeletingData.newBuilder() to construct.
     private DeletingData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2804,6 +2844,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3039,6 +3080,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2alpha1.QueuedResourceState.ActiveData)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3053,6 +3095,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState.ActiveData)
       ActiveDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ActiveData.newBuilder() to construct.
     private ActiveData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3233,6 +3276,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3467,6 +3511,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendingData)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3481,6 +3526,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendingData)
       SuspendingDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SuspendingData.newBuilder() to construct.
     private SuspendingData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3662,6 +3708,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3900,6 +3947,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3914,6 +3962,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData)
       SuspendedDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SuspendedData.newBuilder() to construct.
     private SuspendedData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4095,6 +4144,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4350,6 +4400,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     private StateDataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4396,6 +4447,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -4411,6 +4463,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -4432,6 +4485,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CREATING_DATA_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -4447,6 +4501,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public boolean hasCreatingData() {
     return stateDataCase_ == 2;
   }
+
   /**
    *
    *
@@ -4465,6 +4520,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.CreatingData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4484,6 +4540,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ACCEPTED_DATA_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -4499,6 +4556,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public boolean hasAcceptedData() {
     return stateDataCase_ == 3;
   }
+
   /**
    *
    *
@@ -4517,6 +4575,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.AcceptedData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4536,6 +4595,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROVISIONING_DATA_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -4552,6 +4612,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public boolean hasProvisioningData() {
     return stateDataCase_ == 4;
   }
+
   /**
    *
    *
@@ -4571,6 +4632,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.ProvisioningData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4591,6 +4653,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FAILED_DATA_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -4606,6 +4669,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public boolean hasFailedData() {
     return stateDataCase_ == 5;
   }
+
   /**
    *
    *
@@ -4624,6 +4688,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4643,6 +4708,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DELETING_DATA_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -4658,6 +4724,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public boolean hasDeletingData() {
     return stateDataCase_ == 6;
   }
+
   /**
    *
    *
@@ -4676,6 +4743,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.DeletingData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4695,6 +4763,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ACTIVE_DATA_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -4710,6 +4779,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public boolean hasActiveData() {
     return stateDataCase_ == 7;
   }
+
   /**
    *
    *
@@ -4728,6 +4798,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.ActiveData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4747,6 +4818,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SUSPENDING_DATA_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -4762,6 +4834,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public boolean hasSuspendingData() {
     return stateDataCase_ == 8;
   }
+
   /**
    *
    *
@@ -4780,6 +4853,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendingData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4799,6 +4873,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SUSPENDED_DATA_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -4814,6 +4889,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public boolean hasSuspendedData() {
     return stateDataCase_ == 9;
   }
+
   /**
    *
    *
@@ -4832,6 +4908,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4852,6 +4929,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
 
   public static final int STATE_INITIATOR_FIELD_NUMBER = 10;
   private int stateInitiator_ = 0;
+
   /**
    *
    *
@@ -4869,6 +4947,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   public int getStateInitiatorValue() {
     return stateInitiator_;
   }
+
   /**
    *
    *
@@ -5204,6 +5283,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5564,6 +5644,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -5579,6 +5660,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -5597,6 +5679,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5616,6 +5699,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.tpu.v2alpha1.QueuedResourceState.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5637,6 +5721,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5660,6 +5745,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.CreatingData.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.CreatingDataOrBuilder>
         creatingDataBuilder_;
+
     /**
      *
      *
@@ -5675,6 +5761,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasCreatingData() {
       return stateDataCase_ == 2;
     }
+
     /**
      *
      *
@@ -5700,6 +5787,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.CreatingData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5723,6 +5811,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5743,6 +5832,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5778,6 +5868,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5803,6 +5894,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -5816,6 +5908,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         getCreatingDataBuilder() {
       return getCreatingDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5837,6 +5930,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.CreatingData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5876,6 +5970,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.AcceptedData.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.AcceptedDataOrBuilder>
         acceptedDataBuilder_;
+
     /**
      *
      *
@@ -5891,6 +5986,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasAcceptedData() {
       return stateDataCase_ == 3;
     }
+
     /**
      *
      *
@@ -5916,6 +6012,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.AcceptedData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5939,6 +6036,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5959,6 +6057,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5994,6 +6093,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -6019,6 +6119,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6032,6 +6133,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         getAcceptedDataBuilder() {
       return getAcceptedDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6053,6 +6155,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.AcceptedData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6092,6 +6195,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.ProvisioningData.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.ProvisioningDataOrBuilder>
         provisioningDataBuilder_;
+
     /**
      *
      *
@@ -6108,6 +6212,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasProvisioningData() {
       return stateDataCase_ == 4;
     }
+
     /**
      *
      *
@@ -6137,6 +6242,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6161,6 +6267,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -6183,6 +6290,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -6220,6 +6328,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -6246,6 +6355,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6260,6 +6370,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         getProvisioningDataBuilder() {
       return getProvisioningDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6283,6 +6394,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6324,6 +6436,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedDataOrBuilder>
         failedDataBuilder_;
+
     /**
      *
      *
@@ -6339,6 +6452,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasFailedData() {
       return stateDataCase_ == 5;
     }
+
     /**
      *
      *
@@ -6364,6 +6478,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6387,6 +6502,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6407,6 +6523,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6442,6 +6559,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6467,6 +6585,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6480,6 +6599,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         getFailedDataBuilder() {
       return getFailedDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6501,6 +6621,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6540,6 +6661,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.DeletingData.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.DeletingDataOrBuilder>
         deletingDataBuilder_;
+
     /**
      *
      *
@@ -6555,6 +6677,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasDeletingData() {
       return stateDataCase_ == 6;
     }
+
     /**
      *
      *
@@ -6580,6 +6703,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.DeletingData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6603,6 +6727,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -6623,6 +6748,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -6658,6 +6784,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -6683,6 +6810,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6696,6 +6824,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         getDeletingDataBuilder() {
       return getDeletingDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6717,6 +6846,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.DeletingData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6756,6 +6886,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.ActiveData.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.ActiveDataOrBuilder>
         activeDataBuilder_;
+
     /**
      *
      *
@@ -6771,6 +6902,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasActiveData() {
       return stateDataCase_ == 7;
     }
+
     /**
      *
      *
@@ -6796,6 +6928,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.ActiveData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6819,6 +6952,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -6839,6 +6973,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -6874,6 +7009,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -6899,6 +7035,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -6912,6 +7049,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         getActiveDataBuilder() {
       return getActiveDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6933,6 +7071,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.ActiveData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6972,6 +7111,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendingData.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendingDataOrBuilder>
         suspendingDataBuilder_;
+
     /**
      *
      *
@@ -6988,6 +7128,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasSuspendingData() {
       return stateDataCase_ == 8;
     }
+
     /**
      *
      *
@@ -7016,6 +7157,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7040,6 +7182,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -7061,6 +7204,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -7097,6 +7241,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -7123,6 +7268,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -7137,6 +7283,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         getSuspendingDataBuilder() {
       return getSuspendingDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7160,6 +7307,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7200,6 +7348,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData.Builder,
             com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedDataOrBuilder>
         suspendedDataBuilder_;
+
     /**
      *
      *
@@ -7215,6 +7364,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public boolean hasSuspendedData() {
       return stateDataCase_ == 9;
     }
+
     /**
      *
      *
@@ -7240,6 +7390,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7263,6 +7414,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -7283,6 +7435,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -7318,6 +7471,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       stateDataCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -7343,6 +7497,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -7356,6 +7511,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         getSuspendedDataBuilder() {
       return getSuspendedDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7377,6 +7533,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedData.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7412,6 +7569,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     }
 
     private int stateInitiator_ = 0;
+
     /**
      *
      *
@@ -7429,6 +7587,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public int getStateInitiatorValue() {
       return stateInitiator_;
     }
+
     /**
      *
      *
@@ -7449,6 +7608,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7471,6 +7631,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -7495,6 +7656,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

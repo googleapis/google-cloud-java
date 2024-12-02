@@ -36,6 +36,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the adminEnabled field is set.
    */
   boolean hasAdminEnabled();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the bandwidth field is set.
    */
   boolean hasBandwidth();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The bandwidth.
    */
   java.lang.String getBandwidth();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return A list containing the candidateIpv6Subnets.
    */
   java.util.List<java.lang.String> getCandidateIpv6SubnetsList();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The count of candidateIpv6Subnets.
    */
   int getCandidateIpv6SubnetsCount();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The candidateIpv6Subnets at the given index.
    */
   java.lang.String getCandidateIpv6Subnets(int index);
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return A list containing the candidateSubnets.
    */
   java.util.List<java.lang.String> getCandidateSubnetsList();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The count of candidateSubnets.
    */
   int getCandidateSubnetsCount();
+
   /**
    *
    *
@@ -177,6 +185,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The candidateSubnets at the given index.
    */
   java.lang.String getCandidateSubnets(int index);
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the cloudRouterIpAddress field is set.
    */
   boolean hasCloudRouterIpAddress();
+
   /**
    *
    *
@@ -215,6 +225,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The cloudRouterIpAddress.
    */
   java.lang.String getCloudRouterIpAddress();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the cloudRouterIpv6Address field is set.
    */
   boolean hasCloudRouterIpv6Address();
+
   /**
    *
    *
@@ -252,6 +264,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The cloudRouterIpv6Address.
    */
   java.lang.String getCloudRouterIpv6Address();
+
   /**
    *
    *
@@ -277,6 +290,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the cloudRouterIpv6InterfaceId field is set.
    */
   boolean hasCloudRouterIpv6InterfaceId();
+
   /**
    *
    *
@@ -289,6 +303,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The cloudRouterIpv6InterfaceId.
    */
   java.lang.String getCloudRouterIpv6InterfaceId();
+
   /**
    *
    *
@@ -316,6 +331,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the configurationConstraints field is set.
    */
   boolean hasConfigurationConstraints();
+
   /**
    *
    *
@@ -331,6 +347,7 @@ public interface InterconnectAttachmentOrBuilder
    */
   com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
       getConfigurationConstraints();
+
   /**
    *
    *
@@ -357,6 +374,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -369,6 +387,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -394,6 +413,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the customerRouterIpAddress field is set.
    */
   boolean hasCustomerRouterIpAddress();
+
   /**
    *
    *
@@ -406,6 +426,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The customerRouterIpAddress.
    */
   java.lang.String getCustomerRouterIpAddress();
+
   /**
    *
    *
@@ -431,6 +452,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the customerRouterIpv6Address field is set.
    */
   boolean hasCustomerRouterIpv6Address();
+
   /**
    *
    *
@@ -443,6 +465,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The customerRouterIpv6Address.
    */
   java.lang.String getCustomerRouterIpv6Address();
+
   /**
    *
    *
@@ -468,6 +491,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the customerRouterIpv6InterfaceId field is set.
    */
   boolean hasCustomerRouterIpv6InterfaceId();
+
   /**
    *
    *
@@ -480,6 +504,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The customerRouterIpv6InterfaceId.
    */
   java.lang.String getCustomerRouterIpv6InterfaceId();
+
   /**
    *
    *
@@ -505,6 +530,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the dataplaneVersion field is set.
    */
   boolean hasDataplaneVersion();
+
   /**
    *
    *
@@ -530,6 +556,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -542,6 +569,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -568,6 +596,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the edgeAvailabilityDomain field is set.
    */
   boolean hasEdgeAvailabilityDomain();
+
   /**
    *
    *
@@ -581,6 +610,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The edgeAvailabilityDomain.
    */
   java.lang.String getEdgeAvailabilityDomain();
+
   /**
    *
    *
@@ -608,6 +638,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the encryption field is set.
    */
   boolean hasEncryption();
+
   /**
    *
    *
@@ -621,6 +652,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The encryption.
    */
   java.lang.String getEncryption();
+
   /**
    *
    *
@@ -647,6 +679,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the googleReferenceId field is set.
    */
   boolean hasGoogleReferenceId();
+
   /**
    *
    *
@@ -659,6 +692,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The googleReferenceId.
    */
   java.lang.String getGoogleReferenceId();
+
   /**
    *
    *
@@ -684,6 +718,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -709,6 +744,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the interconnect field is set.
    */
   boolean hasInterconnect();
+
   /**
    *
    *
@@ -721,6 +757,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The interconnect.
    */
   java.lang.String getInterconnect();
+
   /**
    *
    *
@@ -746,6 +783,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return A list containing the ipsecInternalAddresses.
    */
   java.util.List<java.lang.String> getIpsecInternalAddressesList();
+
   /**
    *
    *
@@ -758,6 +796,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The count of ipsecInternalAddresses.
    */
   int getIpsecInternalAddressesCount();
+
   /**
    *
    *
@@ -771,6 +810,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The ipsecInternalAddresses at the given index.
    */
   java.lang.String getIpsecInternalAddresses(int index);
+
   /**
    *
    *
@@ -797,6 +837,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -809,6 +850,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -834,6 +876,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -846,6 +889,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -869,6 +913,7 @@ public interface InterconnectAttachmentOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -879,9 +924,11 @@ public interface InterconnectAttachmentOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -892,6 +939,7 @@ public interface InterconnectAttachmentOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -906,6 +954,7 @@ public interface InterconnectAttachmentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -929,6 +978,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the mtu field is set.
    */
   boolean hasMtu();
+
   /**
    *
    *
@@ -954,6 +1004,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -966,6 +1017,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -992,6 +1044,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the operationalStatus field is set.
    */
   boolean hasOperationalStatus();
+
   /**
    *
    *
@@ -1005,6 +1058,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The operationalStatus.
    */
   java.lang.String getOperationalStatus();
+
   /**
    *
    *
@@ -1031,6 +1085,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the pairingKey field is set.
    */
   boolean hasPairingKey();
+
   /**
    *
    *
@@ -1043,6 +1098,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The pairingKey.
    */
   java.lang.String getPairingKey();
+
   /**
    *
    *
@@ -1068,6 +1124,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the partnerAsn field is set.
    */
   boolean hasPartnerAsn();
+
   /**
    *
    *
@@ -1095,6 +1152,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the partnerMetadata field is set.
    */
   boolean hasPartnerMetadata();
+
   /**
    *
    *
@@ -1109,6 +1167,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The partnerMetadata.
    */
   com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata getPartnerMetadata();
+
   /**
    *
    *
@@ -1137,6 +1196,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the privateInterconnectInfo field is set.
    */
   boolean hasPrivateInterconnectInfo();
+
   /**
    *
    *
@@ -1151,6 +1211,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The privateInterconnectInfo.
    */
   com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo getPrivateInterconnectInfo();
+
   /**
    *
    *
@@ -1177,6 +1238,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -1189,6 +1251,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -1214,6 +1277,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the remoteService field is set.
    */
   boolean hasRemoteService();
+
   /**
    *
    *
@@ -1226,6 +1290,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The remoteService.
    */
   java.lang.String getRemoteService();
+
   /**
    *
    *
@@ -1251,6 +1316,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the router field is set.
    */
   boolean hasRouter();
+
   /**
    *
    *
@@ -1263,6 +1329,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
+
   /**
    *
    *
@@ -1288,6 +1355,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -1313,6 +1381,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -1325,6 +1394,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -1351,6 +1421,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
+
   /**
    *
    *
@@ -1364,6 +1435,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The stackType.
    */
   java.lang.String getStackType();
+
   /**
    *
    *
@@ -1391,6 +1463,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -1404,6 +1477,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *
@@ -1430,6 +1504,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the subnetLength field is set.
    */
   boolean hasSubnetLength();
+
   /**
    *
    *
@@ -1456,6 +1531,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -1469,6 +1545,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -1495,6 +1572,7 @@ public interface InterconnectAttachmentOrBuilder
    * @return Whether the vlanTag8021q field is set.
    */
   boolean hasVlanTag8021Q();
+
   /**
    *
    *

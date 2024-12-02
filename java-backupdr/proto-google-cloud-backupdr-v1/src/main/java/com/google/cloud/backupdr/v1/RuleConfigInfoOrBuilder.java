@@ -38,6 +38,7 @@ public interface RuleConfigInfoOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface RuleConfigInfoOrBuilder
    * @return The enum numeric value on the wire for lastBackupState.
    */
   int getLastBackupStateValue();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface RuleConfigInfoOrBuilder
    * @return Whether the lastBackupError field is set.
    */
   boolean hasLastBackupError();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface RuleConfigInfoOrBuilder
    * @return The lastBackupError.
    */
   com.google.rpc.Status getLastBackupError();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface RuleConfigInfoOrBuilder
    * @return Whether the lastSuccessfulBackupConsistencyTime field is set.
    */
   boolean hasLastSuccessfulBackupConsistencyTime();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface RuleConfigInfoOrBuilder
    * @return The lastSuccessfulBackupConsistencyTime.
    */
   com.google.protobuf.Timestamp getLastSuccessfulBackupConsistencyTime();
+
   /**
    *
    *

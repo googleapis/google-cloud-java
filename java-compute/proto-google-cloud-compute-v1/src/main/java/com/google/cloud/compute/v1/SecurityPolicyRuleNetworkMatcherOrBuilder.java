@@ -36,6 +36,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return A list containing the destIpRanges.
    */
   java.util.List<java.lang.String> getDestIpRangesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The count of destIpRanges.
    */
   int getDestIpRangesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The destIpRanges at the given index.
    */
   java.lang.String getDestIpRanges(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return A list containing the destPorts.
    */
   java.util.List<java.lang.String> getDestPortsList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The count of destPorts.
    */
   int getDestPortsCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The destPorts at the given index.
    */
   java.lang.String getDestPorts(int index);
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return A list containing the ipProtocols.
    */
   java.util.List<java.lang.String> getIpProtocolsList();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The count of ipProtocols.
    */
   int getIpProtocolsCount();
+
   /**
    *
    *
@@ -163,6 +171,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The ipProtocols at the given index.
    */
   java.lang.String getIpProtocols(int index);
+
   /**
    *
    *
@@ -189,6 +198,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return A list containing the srcAsns.
    */
   java.util.List<java.lang.Integer> getSrcAsnsList();
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The count of srcAsns.
    */
   int getSrcAsnsCount();
+
   /**
    *
    *
@@ -227,6 +238,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return A list containing the srcIpRanges.
    */
   java.util.List<java.lang.String> getSrcIpRangesList();
+
   /**
    *
    *
@@ -239,6 +251,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The count of srcIpRanges.
    */
   int getSrcIpRangesCount();
+
   /**
    *
    *
@@ -252,6 +265,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The srcIpRanges at the given index.
    */
   java.lang.String getSrcIpRanges(int index);
+
   /**
    *
    *
@@ -278,6 +292,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return A list containing the srcPorts.
    */
   java.util.List<java.lang.String> getSrcPortsList();
+
   /**
    *
    *
@@ -290,6 +305,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The count of srcPorts.
    */
   int getSrcPortsCount();
+
   /**
    *
    *
@@ -303,6 +319,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The srcPorts at the given index.
    */
   java.lang.String getSrcPorts(int index);
+
   /**
    *
    *
@@ -329,6 +346,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return A list containing the srcRegionCodes.
    */
   java.util.List<java.lang.String> getSrcRegionCodesList();
+
   /**
    *
    *
@@ -341,6 +359,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The count of srcRegionCodes.
    */
   int getSrcRegionCodesCount();
+
   /**
    *
    *
@@ -354,6 +373,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * @return The srcRegionCodes at the given index.
    */
   java.lang.String getSrcRegionCodes(int index);
+
   /**
    *
    *
@@ -381,6 +401,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch>
       getUserDefinedFieldsList();
+
   /**
    *
    *
@@ -394,6 +415,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       getUserDefinedFields(int index);
+
   /**
    *
    *
@@ -406,6 +428,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    * </code>
    */
   int getUserDefinedFieldsCount();
+
   /**
    *
    *
@@ -422,6 +445,7 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
               com.google.cloud.compute.v1
                   .SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatchOrBuilder>
       getUserDefinedFieldsOrBuilderList();
+
   /**
    *
    *

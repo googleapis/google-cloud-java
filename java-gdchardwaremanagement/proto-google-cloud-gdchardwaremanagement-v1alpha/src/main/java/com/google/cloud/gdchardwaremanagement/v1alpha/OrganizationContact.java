@@ -33,6 +33,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact)
     OrganizationContactOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OrganizationContact.newBuilder() to construct.
   private OrganizationContact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int ADDRESS_FIELD_NUMBER = 1;
   private com.google.type.PostalAddress address_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
   public boolean hasAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
   public com.google.type.PostalAddress getAddress() {
     return address_ == null ? com.google.type.PostalAddress.getDefaultInstance() : address_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phone_ = "";
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Contact> contacts_;
+
   /**
    *
    *
@@ -234,6 +243,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Contact> getContactsList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       getContactsOrBuilderList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
   public int getContactsCount() {
     return contacts_.size();
   }
+
   /**
    *
    *
@@ -283,6 +295,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
   public com.google.cloud.gdchardwaremanagement.v1alpha.Contact getContacts(int index) {
     return contacts_.get(index);
   }
+
   /**
    *
    *
@@ -496,6 +509,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -799,6 +813,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
             com.google.type.PostalAddress.Builder,
             com.google.type.PostalAddressOrBuilder>
         addressBuilder_;
+
     /**
      *
      *
@@ -814,6 +829,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return addressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -856,6 +873,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +923,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +944,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +960,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAddressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -956,6 +978,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return address_ == null ? com.google.type.PostalAddress.getDefaultInstance() : address_;
       }
     }
+
     /**
      *
      *
@@ -984,6 +1007,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object email_ = "";
+
     /**
      *
      *
@@ -1006,6 +1030,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1075,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1093,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1118,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object phone_ = "";
+
     /**
      *
      *
@@ -1112,6 +1141,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1164,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1155,6 +1186,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1204,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1266,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return contactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1252,6 +1286,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return contactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1306,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return contactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1297,6 +1333,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1320,6 +1357,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1345,6 +1383,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1410,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1434,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1458,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1483,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1506,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1529,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1546,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         int index) {
       return getContactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1521,6 +1567,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return contactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1541,6 +1588,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(contacts_);
       }
     }
+
     /**
      *
      *
@@ -1557,6 +1605,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
       return getContactsFieldBuilder()
           .addBuilder(com.google.cloud.gdchardwaremanagement.v1alpha.Contact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1575,6 +1624,7 @@ public final class OrganizationContact extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.gdchardwaremanagement.v1alpha.Contact.getDefaultInstance());
     }
+
     /**
      *
      *

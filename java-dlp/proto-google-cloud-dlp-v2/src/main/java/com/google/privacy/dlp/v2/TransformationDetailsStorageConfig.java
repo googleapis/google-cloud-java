@@ -33,6 +33,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationDetailsStorageConfig)
     TransformationDetailsStorageConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransformationDetailsStorageConfig.newBuilder() to construct.
   private TransformationDetailsStorageConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -78,6 +79,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
     private TypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -109,6 +111,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
   }
 
   public static final int TABLE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
   public boolean hasTable() {
     return typeCase_ == 1;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
     }
     return com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -349,6 +354,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +577,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
             com.google.privacy.dlp.v2.BigQueryTable.Builder,
             com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
         tableBuilder_;
+
     /**
      *
      *
@@ -591,6 +598,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
     public boolean hasTable() {
       return typeCase_ == 1;
     }
+
     /**
      *
      *
@@ -621,6 +629,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
         return com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -648,6 +657,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +720,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
       typeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +751,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
     public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableBuilder() {
       return getTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
         return com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance();
       }
     }
+
     /**
      *
      *

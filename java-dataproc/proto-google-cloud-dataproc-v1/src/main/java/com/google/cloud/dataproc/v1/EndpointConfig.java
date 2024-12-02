@@ -33,6 +33,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.EndpointConfig)
     EndpointConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EndpointConfig.newBuilder() to construct.
   private EndpointConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
   public int getHttpPortsCount() {
     return internalGetHttpPorts().getMap().size();
   }
+
   /**
    *
    *
@@ -117,12 +119,14 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetHttpPorts().getMap().containsKey(key);
   }
+
   /** Use {@link #getHttpPortsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHttpPorts() {
     return getHttpPortsMap();
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getHttpPortsMap() {
     return internalGetHttpPorts().getMap();
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHttpPorts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_HTTP_PORT_ACCESS_FIELD_NUMBER = 2;
   private boolean enableHttpPortAccess_ = false;
+
   /**
    *
    *
@@ -378,6 +385,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -626,6 +634,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     public int getHttpPortsCount() {
       return internalGetHttpPorts().getMap().size();
     }
+
     /**
      *
      *
@@ -644,12 +653,14 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetHttpPorts().getMap().containsKey(key);
     }
+
     /** Use {@link #getHttpPortsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHttpPorts() {
       return getHttpPortsMap();
     }
+
     /**
      *
      *
@@ -665,6 +676,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getHttpPortsMap() {
       return internalGetHttpPorts().getMap();
     }
+
     /**
      *
      *
@@ -687,6 +699,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHttpPorts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHttpPorts().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -733,12 +747,14 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHttpPorts().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHttpPorts() {
       bitField0_ |= 0x00000001;
       return internalGetMutableHttpPorts().getMutableMap();
     }
+
     /**
      *
      *
@@ -761,6 +777,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableHttpPortAccess_;
+
     /**
      *
      *
@@ -795,6 +813,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableHttpPortAccess() {
       return enableHttpPortAccess_;
     }
+
     /**
      *
      *
@@ -815,6 +834,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -32,6 +32,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterInterface)
     RouterInterfaceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouterInterface.newBuilder() to construct.
   private RouterInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,8 +108,10 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_IP_VERSION = 0;</code>
      */
     public static final int UNDEFINED_IP_VERSION_VALUE = 0;
+
     /** <code>IPV4 = 2254341;</code> */
     public static final int IPV4_VALUE = 2254341;
+
     /** <code>IPV6 = 2254343;</code> */
     public static final int IPV6_VALUE = 2254343;
 
@@ -248,6 +251,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_MANAGEMENT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_MANAGEMENT_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -258,6 +262,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * <code>MANAGED_BY_ATTACHMENT = 458926411;</code>
      */
     public static final int MANAGED_BY_ATTACHMENT_VALUE = 458926411;
+
     /**
      *
      *
@@ -357,6 +362,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipRange_ = "";
+
   /**
    *
    *
@@ -372,6 +378,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasIpRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -395,6 +402,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -423,6 +431,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipVersion_ = "";
+
   /**
    *
    *
@@ -439,6 +448,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasIpVersion() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -463,6 +473,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -492,6 +503,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object linkedInterconnectAttachment_ = "";
+
   /**
    *
    *
@@ -507,6 +519,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasLinkedInterconnectAttachment() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -530,6 +543,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -558,6 +572,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object linkedVpnTunnel_ = "";
+
   /**
    *
    *
@@ -573,6 +588,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasLinkedVpnTunnel() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -596,6 +612,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -624,6 +641,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object managementType_ = "";
+
   /**
    *
    *
@@ -640,6 +658,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasManagementType() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -664,6 +683,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -693,6 +713,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -708,6 +729,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -731,6 +753,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -759,6 +782,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateIpAddress_ = "";
+
   /**
    *
    *
@@ -774,6 +798,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasPrivateIpAddress() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -797,6 +822,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -825,6 +851,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object redundantInterface_ = "";
+
   /**
    *
    *
@@ -840,6 +867,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasRedundantInterface() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -863,6 +891,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -891,6 +920,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
+
   /**
    *
    *
@@ -906,6 +936,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
   public boolean hasSubnetwork() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -929,6 +960,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1235,6 +1267,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1548,6 +1581,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object ipRange_ = "";
+
     /**
      *
      *
@@ -1562,6 +1596,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasIpRange() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1584,6 +1619,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1606,6 +1642,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1664,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1644,6 +1682,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1707,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object ipVersion_ = "";
+
     /**
      *
      *
@@ -1683,6 +1723,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasIpVersion() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1706,6 +1747,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1729,6 +1771,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1751,6 +1794,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1813,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1839,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object linkedInterconnectAttachment_ = "";
+
     /**
      *
      *
@@ -1808,6 +1854,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasLinkedInterconnectAttachment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1830,6 +1877,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1852,6 +1900,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1873,6 +1922,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1890,6 +1940,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1914,6 +1965,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object linkedVpnTunnel_ = "";
+
     /**
      *
      *
@@ -1928,6 +1980,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasLinkedVpnTunnel() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1950,6 +2003,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1972,6 +2026,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1993,6 +2048,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2010,6 +2066,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2034,6 +2091,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object managementType_ = "";
+
     /**
      *
      *
@@ -2049,6 +2107,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasManagementType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2072,6 +2131,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2095,6 +2155,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2117,6 +2178,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2135,6 +2197,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2160,6 +2223,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2174,6 +2238,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2196,6 +2261,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2218,6 +2284,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2239,6 +2306,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2256,6 +2324,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2349,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object privateIpAddress_ = "";
+
     /**
      *
      *
@@ -2294,6 +2364,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasPrivateIpAddress() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2316,6 +2387,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2338,6 +2410,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2359,6 +2432,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2376,6 +2450,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2400,6 +2475,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object redundantInterface_ = "";
+
     /**
      *
      *
@@ -2414,6 +2490,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasRedundantInterface() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2436,6 +2513,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2458,6 +2536,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2479,6 +2558,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2496,6 +2576,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2520,6 +2601,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object subnetwork_ = "";
+
     /**
      *
      *
@@ -2534,6 +2616,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     public boolean hasSubnetwork() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2556,6 +2639,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2578,6 +2662,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2599,6 +2684,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2616,6 +2702,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig)
     VpcFlowLogsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VpcFlowLogsConfig.newBuilder() to construct.
   private VpcFlowLogsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -135,6 +136,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -145,6 +147,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -335,6 +338,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>AGGREGATION_INTERVAL_UNSPECIFIED = 0;</code>
      */
     public static final int AGGREGATION_INTERVAL_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -345,6 +349,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>INTERVAL_5_SEC = 1;</code>
      */
     public static final int INTERVAL_5_SEC_VALUE = 1;
+
     /**
      *
      *
@@ -355,6 +360,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>INTERVAL_30_SEC = 2;</code>
      */
     public static final int INTERVAL_30_SEC_VALUE = 2;
+
     /**
      *
      *
@@ -365,6 +371,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>INTERVAL_1_MIN = 3;</code>
      */
     public static final int INTERVAL_1_MIN_VALUE = 3;
+
     /**
      *
      *
@@ -375,6 +382,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>INTERVAL_5_MIN = 4;</code>
      */
     public static final int INTERVAL_5_MIN_VALUE = 4;
+
     /**
      *
      *
@@ -385,6 +393,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>INTERVAL_10_MIN = 5;</code>
      */
     public static final int INTERVAL_10_MIN_VALUE = 5;
+
     /**
      *
      *
@@ -555,6 +564,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>METADATA_UNSPECIFIED = 0;</code>
      */
     public static final int METADATA_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -565,6 +575,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>INCLUDE_ALL_METADATA = 1;</code>
      */
     public static final int INCLUDE_ALL_METADATA_VALUE = 1;
+
     /**
      *
      *
@@ -575,6 +586,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * <code>EXCLUDE_ALL_METADATA = 2;</code>
      */
     public static final int EXCLUDE_ALL_METADATA_VALUE = 2;
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     private TargetResourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -727,6 +740,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -751,6 +765,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -780,6 +795,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -796,6 +812,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -820,6 +837,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -847,6 +865,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -865,6 +884,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -883,6 +903,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -908,6 +929,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int AGGREGATION_INTERVAL_FIELD_NUMBER = 4;
   private int aggregationInterval_ = 0;
+
   /**
    *
    *
@@ -926,6 +948,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasAggregationInterval() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -944,6 +967,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public int getAggregationIntervalValue() {
     return aggregationInterval_;
   }
+
   /**
    *
    *
@@ -972,6 +996,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int FLOW_SAMPLING_FIELD_NUMBER = 5;
   private float flowSampling_ = 0F;
+
   /**
    *
    *
@@ -990,6 +1015,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasFlowSampling() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1011,6 +1037,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int METADATA_FIELD_NUMBER = 6;
   private int metadata_ = 0;
+
   /**
    *
    *
@@ -1030,6 +1057,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1049,6 +1077,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public int getMetadataValue() {
     return metadata_;
   }
+
   /**
    *
    *
@@ -1078,6 +1107,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList metadataFields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1093,6 +1123,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getMetadataFieldsList() {
     return metadataFields_;
   }
+
   /**
    *
    *
@@ -1108,6 +1139,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public int getMetadataFieldsCount() {
     return metadataFields_.size();
   }
+
   /**
    *
    *
@@ -1124,6 +1156,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public java.lang.String getMetadataFields(int index) {
     return metadataFields_.get(index);
   }
+
   /**
    *
    *
@@ -1145,6 +1178,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filterExpr_ = "";
+
   /**
    *
    *
@@ -1161,6 +1195,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasFilterExpr() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1185,6 +1220,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1211,6 +1247,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 102;
+
   /**
    *
    *
@@ -1227,6 +1264,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasInterconnectAttachment() {
     return targetResourceCase_ == 102;
   }
+
   /**
    *
    *
@@ -1256,6 +1294,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1287,6 +1326,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VPN_TUNNEL_FIELD_NUMBER = 103;
+
   /**
    *
    *
@@ -1302,6 +1342,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasVpnTunnel() {
     return targetResourceCase_ == 103;
   }
+
   /**
    *
    *
@@ -1330,6 +1371,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1385,6 +1427,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -1401,12 +1444,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -1420,6 +1465,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -1440,6 +1486,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1463,6 +1510,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1479,6 +1527,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1495,6 +1544,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1512,6 +1562,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1528,6 +1579,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1544,6 +1596,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1900,6 +1953,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2343,6 +2397,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2366,6 +2421,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2389,6 +2445,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2411,6 +2468,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2429,6 +2487,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2454,6 +2513,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2469,6 +2529,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2492,6 +2553,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2515,6 +2577,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2537,6 +2600,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2555,6 +2619,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2580,6 +2645,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2598,6 +2664,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2616,6 +2683,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2637,6 +2705,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2659,6 +2728,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2684,6 +2754,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2706,6 +2777,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int aggregationInterval_ = 0;
+
     /**
      *
      *
@@ -2724,6 +2796,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasAggregationInterval() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2742,6 +2815,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public int getAggregationIntervalValue() {
       return aggregationInterval_;
     }
+
     /**
      *
      *
@@ -2763,6 +2837,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2788,6 +2863,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2813,6 +2889,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2835,6 +2912,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private float flowSampling_;
+
     /**
      *
      *
@@ -2853,6 +2931,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasFlowSampling() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2871,6 +2950,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public float getFlowSampling() {
       return flowSampling_;
     }
+
     /**
      *
      *
@@ -2893,6 +2973,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2915,6 +2996,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int metadata_ = 0;
+
     /**
      *
      *
@@ -2934,6 +3016,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2953,6 +3036,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public int getMetadataValue() {
       return metadata_;
     }
+
     /**
      *
      *
@@ -2975,6 +3059,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2999,6 +3084,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.Metadata.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3025,6 +3111,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3056,6 +3143,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -3072,6 +3160,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       metadataFields_.makeImmutable();
       return metadataFields_;
     }
+
     /**
      *
      *
@@ -3087,6 +3176,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public int getMetadataFieldsCount() {
       return metadataFields_.size();
     }
+
     /**
      *
      *
@@ -3103,6 +3193,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public java.lang.String getMetadataFields(int index) {
       return metadataFields_.get(index);
     }
+
     /**
      *
      *
@@ -3119,6 +3210,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getMetadataFieldsBytes(int index) {
       return metadataFields_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3143,6 +3235,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3166,6 +3259,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3186,6 +3280,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3205,6 +3300,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3231,6 +3327,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object filterExpr_ = "";
+
     /**
      *
      *
@@ -3246,6 +3343,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasFilterExpr() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3269,6 +3367,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3292,6 +3391,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3314,6 +3414,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3332,6 +3433,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3373,6 +3475,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasInterconnectAttachment() {
       return targetResourceCase_ == 102;
     }
+
     /**
      *
      *
@@ -3403,6 +3506,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3433,6 +3537,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3456,6 +3561,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3477,6 +3583,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3518,6 +3625,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasVpnTunnel() {
       return targetResourceCase_ == 103;
     }
+
     /**
      *
      *
@@ -3547,6 +3655,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3576,6 +3685,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3598,6 +3708,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3618,6 +3729,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3667,6 +3779,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3683,12 +3796,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -3702,6 +3817,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -3722,6 +3838,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3748,6 +3865,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3764,12 +3882,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000400;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3790,6 +3910,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000400;
       return this;
     }
+
     /**
      *
      *
@@ -3811,6 +3932,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3827,6 +3949,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3849,6 +3972,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3873,6 +3997,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3894,6 +4019,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3923,6 +4049,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3944,6 +4071,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3960,6 +4088,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3980,6 +4109,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -4014,6 +4144,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -4030,6 +4161,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4052,6 +4184,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4076,6 +4209,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4097,6 +4231,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4126,6 +4261,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4147,6 +4283,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4163,6 +4300,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4183,6 +4321,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
+
     /**
      *
      *

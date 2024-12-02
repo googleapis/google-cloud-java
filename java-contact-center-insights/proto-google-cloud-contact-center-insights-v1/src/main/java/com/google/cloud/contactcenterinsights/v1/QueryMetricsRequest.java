@@ -33,6 +33,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QueryMetricsRequest)
     QueryMetricsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryMetricsRequest.newBuilder() to construct.
   private QueryMetricsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -167,6 +168,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
      * <code>TIME_GRANULARITY_UNSPECIFIED = 0;</code>
      */
     public static final int TIME_GRANULARITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -178,6 +180,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
      * <code>NONE = 1;</code>
      */
     public static final int NONE_VALUE = 1;
+
     /**
      *
      *
@@ -189,6 +192,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
      * <code>DAILY = 2;</code>
      */
     public static final int DAILY_VALUE = 2;
+
     /**
      *
      *
@@ -200,6 +204,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
      * <code>HOURLY = 3;</code>
      */
     public static final int HOURLY_VALUE = 3;
+
     /**
      *
      *
@@ -211,6 +216,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
      * <code>PER_MINUTE = 4;</code>
      */
     public static final int PER_MINUTE_VALUE = 4;
+
     /**
      *
      *
@@ -222,6 +228,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
      * <code>PER_5_MINUTES = 5;</code>
      */
     public static final int PER_5_MINUTES_VALUE = 5;
+
     /**
      *
      *
@@ -334,6 +341,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -391,6 +400,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -417,6 +427,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -446,6 +457,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int TIME_GRANULARITY_FIELD_NUMBER = 3;
   private int timeGranularity_ = 0;
+
   /**
    *
    *
@@ -464,6 +476,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
   public int getTimeGranularityValue() {
     return timeGranularity_;
   }
+
   /**
    *
    *
@@ -493,6 +506,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.Dimension> dimensions_;
+
   /**
    *
    *
@@ -513,6 +527,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.contactcenterinsights.v1.Dimension> getDimensionsList() {
     return dimensions_;
   }
+
   /**
    *
    *
@@ -534,6 +549,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       getDimensionsOrBuilderList() {
     return dimensions_;
   }
+
   /**
    *
    *
@@ -554,6 +570,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
   public int getDimensionsCount() {
     return dimensions_.size();
   }
+
   /**
    *
    *
@@ -574,6 +591,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.contactcenterinsights.v1.Dimension getDimensions(int index) {
     return dimensions_.get(index);
   }
+
   /**
    *
    *
@@ -598,6 +616,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int MEASURE_MASK_FIELD_NUMBER = 5;
   private com.google.protobuf.FieldMask measureMask_;
+
   /**
    *
    *
@@ -616,6 +635,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
   public boolean hasMeasureMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -634,6 +654,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getMeasureMask() {
     return measureMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : measureMask_;
   }
+
   /**
    *
    *
@@ -860,6 +881,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1168,6 +1190,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -1193,6 +1216,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1218,6 +1242,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1267,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1288,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1316,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1314,6 +1342,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1339,6 +1368,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1363,6 +1393,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1414,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1442,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int timeGranularity_ = 0;
+
     /**
      *
      *
@@ -1428,6 +1461,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
     public int getTimeGranularityValue() {
       return timeGranularity_;
     }
+
     /**
      *
      *
@@ -1449,6 +1483,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1474,6 +1509,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1499,6 +1535,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1561,6 +1598,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return dimensionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1584,6 +1622,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return dimensionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1607,6 +1646,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return dimensionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1637,6 +1677,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1705,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1693,6 +1735,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1723,6 +1766,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1794,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1822,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1804,6 +1850,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1830,6 +1877,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1856,6 +1904,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1876,6 +1925,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         int index) {
       return getDimensionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1900,6 +1950,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return dimensionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1924,6 +1975,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(dimensions_);
       }
     }
+
     /**
      *
      *
@@ -1944,6 +1996,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       return getDimensionsFieldBuilder()
           .addBuilder(com.google.cloud.contactcenterinsights.v1.Dimension.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1966,6 +2019,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.contactcenterinsights.v1.Dimension.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2010,6 +2064,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         measureMaskBuilder_;
+
     /**
      *
      *
@@ -2027,6 +2082,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
     public boolean hasMeasureMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2050,6 +2106,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
         return measureMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2075,6 +2132,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2097,6 +2155,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2127,6 +2186,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2149,6 +2209,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2166,6 +2227,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getMeasureMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2187,6 +2249,7 @@ public final class QueryMetricsRequest extends com.google.protobuf.GeneratedMess
             : measureMask_;
       }
     }
+
     /**
      *
      *

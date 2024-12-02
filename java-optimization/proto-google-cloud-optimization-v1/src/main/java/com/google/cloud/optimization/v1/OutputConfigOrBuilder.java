@@ -36,6 +36,7 @@ public interface OutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.optimization.v1.GcsDestination getGcsDestination();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface OutputConfigOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
+
   /**
    *
    *

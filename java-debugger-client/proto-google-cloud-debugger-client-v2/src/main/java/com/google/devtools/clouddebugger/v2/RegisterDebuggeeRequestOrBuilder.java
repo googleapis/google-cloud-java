@@ -40,6 +40,7 @@ public interface RegisterDebuggeeRequestOrBuilder
    * @return Whether the debuggee field is set.
    */
   boolean hasDebuggee();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface RegisterDebuggeeRequestOrBuilder
    * @return The debuggee.
    */
   com.google.devtools.clouddebugger.v2.Debuggee getDebuggee();
+
   /**
    *
    *

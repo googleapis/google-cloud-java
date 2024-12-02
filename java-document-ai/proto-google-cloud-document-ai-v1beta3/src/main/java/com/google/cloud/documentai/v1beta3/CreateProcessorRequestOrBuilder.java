@@ -39,6 +39,7 @@ public interface CreateProcessorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateProcessorRequestOrBuilder
    * @return Whether the processor field is set.
    */
   boolean hasProcessor();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CreateProcessorRequestOrBuilder
    * @return The processor.
    */
   com.google.cloud.documentai.v1beta3.Processor getProcessor();
+
   /**
    *
    *

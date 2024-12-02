@@ -34,6 +34,7 @@ public final class SendNotificationChannelVerificationCodeRequest
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.SendNotificationChannelVerificationCodeRequest)
     SendNotificationChannelVerificationCodeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SendNotificationChannelVerificationCodeRequest.newBuilder() to construct.
   private SendNotificationChannelVerificationCodeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class SendNotificationChannelVerificationCodeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SendNotificationChannelVerificationCodeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +284,7 @@ public final class SendNotificationChannelVerificationCodeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -475,6 +479,7 @@ public final class SendNotificationChannelVerificationCodeRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -499,6 +504,7 @@ public final class SendNotificationChannelVerificationCodeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -523,6 +529,7 @@ public final class SendNotificationChannelVerificationCodeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -546,6 +553,7 @@ public final class SendNotificationChannelVerificationCodeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -565,6 +573,7 @@ public final class SendNotificationChannelVerificationCodeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest)
     GetProcessedDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetProcessedDocumentRequest.newBuilder() to construct.
   private GetProcessedDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,6 +132,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      * <code>PROCESSED_DOCUMENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PROCESSED_DOCUMENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -141,6 +143,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      * <code>PARSED_DOCUMENT = 1;</code>
      */
     public static final int PARSED_DOCUMENT_VALUE = 1;
+
     /**
      *
      *
@@ -151,6 +154,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      * <code>CHUNKED_DOCUMENT = 2;</code>
      */
     public static final int CHUNKED_DOCUMENT_VALUE = 2;
+
     /**
      *
      *
@@ -297,6 +301,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      * <code>PROCESSED_DOCUMENT_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int PROCESSED_DOCUMENT_FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -398,6 +403,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -432,6 +438,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -469,6 +476,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
 
   public static final int PROCESSED_DOCUMENT_TYPE_FIELD_NUMBER = 2;
   private int processedDocumentType_ = 0;
+
   /**
    *
    *
@@ -486,6 +494,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
   public int getProcessedDocumentTypeValue() {
     return processedDocumentType_;
   }
+
   /**
    *
    *
@@ -514,6 +523,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
 
   public static final int PROCESSED_DOCUMENT_FORMAT_FIELD_NUMBER = 3;
   private int processedDocumentFormat_ = 0;
+
   /**
    *
    *
@@ -531,6 +541,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
   public int getProcessedDocumentFormatValue() {
     return processedDocumentFormat_;
   }
+
   /**
    *
    *
@@ -749,6 +760,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -968,6 +980,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1001,6 +1014,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1048,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1066,6 +1081,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1110,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1146,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
     }
 
     private int processedDocumentType_ = 0;
+
     /**
      *
      *
@@ -1146,6 +1164,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
     public int getProcessedDocumentTypeValue() {
       return processedDocumentType_;
     }
+
     /**
      *
      *
@@ -1166,6 +1185,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1212,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
               .ProcessedDocumentType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1217,6 +1238,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1260,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
     }
 
     private int processedDocumentFormat_ = 0;
+
     /**
      *
      *
@@ -1255,6 +1278,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
     public int getProcessedDocumentFormatValue() {
       return processedDocumentFormat_;
     }
+
     /**
      *
      *
@@ -1275,6 +1299,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1326,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
               .ProcessedDocumentFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1326,6 +1352,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

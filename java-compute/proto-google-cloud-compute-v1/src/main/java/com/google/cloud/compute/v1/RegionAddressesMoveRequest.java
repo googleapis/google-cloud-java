@@ -32,6 +32,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionAddressesMoveRequest)
     RegionAddressesMoveRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionAddressesMoveRequest.newBuilder() to construct.
   private RegionAddressesMoveRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationAddress_ = "";
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
   public boolean hasDestinationAddress() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -376,6 +383,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -578,6 +586,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -592,6 +601,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +712,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object destinationAddress_ = "";
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
     public boolean hasDestinationAddress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -756,6 +773,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +795,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +813,7 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

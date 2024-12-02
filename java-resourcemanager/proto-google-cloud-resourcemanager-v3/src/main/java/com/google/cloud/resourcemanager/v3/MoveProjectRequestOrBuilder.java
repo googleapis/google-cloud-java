@@ -38,6 +38,7 @@ public interface MoveProjectRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface MoveProjectRequestOrBuilder
    * @return The destinationParent.
    */
   java.lang.String getDestinationParent();
+
   /**
    *
    *

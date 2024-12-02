@@ -87,6 +87,7 @@ public enum LoginRequirement implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOGIN_UNSPECIFIED = 0;</code>
    */
   public static final int LOGIN_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -97,6 +98,7 @@ public enum LoginRequirement implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOGIN_OPTIONAL = 1;</code>
    */
   public static final int LOGIN_OPTIONAL_VALUE = 1;
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public enum LoginRequirement implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOGIN_ADMIN = 2;</code>
    */
   public static final int LOGIN_ADMIN_VALUE = 2;
+
   /**
    *
    *

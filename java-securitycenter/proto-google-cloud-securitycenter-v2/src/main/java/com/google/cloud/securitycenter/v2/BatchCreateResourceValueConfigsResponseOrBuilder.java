@@ -36,6 +36,7 @@ public interface BatchCreateResourceValueConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v2.ResourceValueConfig>
       getResourceValueConfigsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface BatchCreateResourceValueConfigsResponseOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v2.ResourceValueConfig getResourceValueConfigs(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface BatchCreateResourceValueConfigsResponseOrBuilder
    * </code>
    */
   int getResourceValueConfigsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface BatchCreateResourceValueConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ResourceValueConfigOrBuilder>
       getResourceValueConfigsOrBuilderList();
+
   /**
    *
    *

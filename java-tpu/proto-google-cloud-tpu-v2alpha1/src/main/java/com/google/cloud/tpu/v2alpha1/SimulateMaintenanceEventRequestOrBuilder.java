@@ -38,6 +38,7 @@ public interface SimulateMaintenanceEventRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface SimulateMaintenanceEventRequestOrBuilder
    * @return A list containing the workerIds.
    */
   java.util.List<java.lang.String> getWorkerIdsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SimulateMaintenanceEventRequestOrBuilder
    * @return The count of workerIds.
    */
   int getWorkerIdsCount();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface SimulateMaintenanceEventRequestOrBuilder
    * @return The workerIds at the given index.
    */
   java.lang.String getWorkerIds(int index);
+
   /**
    *
    *

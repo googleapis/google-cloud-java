@@ -36,6 +36,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureNodePoolAutoscaling)
     AzureNodePoolAutoscalingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AzureNodePoolAutoscaling.newBuilder() to construct.
   private AzureNodePoolAutoscaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
 
   public static final int MIN_NODE_COUNT_FIELD_NUMBER = 1;
   private int minNodeCount_ = 0;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
 
   public static final int MAX_NODE_COUNT_FIELD_NUMBER = 2;
   private int maxNodeCount_ = 0;
+
   /**
    *
    *
@@ -271,6 +274,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -469,6 +473,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int minNodeCount_;
+
     /**
      *
      *
@@ -485,6 +490,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     public int getMinNodeCount() {
       return minNodeCount_;
     }
+
     /**
      *
      *
@@ -505,6 +511,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -525,6 +532,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     }
 
     private int maxNodeCount_;
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     public int getMaxNodeCount() {
       return maxNodeCount_;
     }
+
     /**
      *
      *
@@ -561,6 +570,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

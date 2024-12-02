@@ -43,6 +43,7 @@ public interface CreateExternalAddressRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface CreateExternalAddressRequestOrBuilder
    * @return Whether the externalAddress field is set.
    */
   boolean hasExternalAddress();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CreateExternalAddressRequestOrBuilder
    * @return The externalAddress.
    */
   com.google.cloud.vmwareengine.v1.ExternalAddress getExternalAddress();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface CreateExternalAddressRequestOrBuilder
    * @return The externalAddressId.
    */
   java.lang.String getExternalAddressId();
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public interface CreateExternalAddressRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.ListPrivateConnectionsResponse)
     ListPrivateConnectionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPrivateConnectionsResponse.newBuilder() to construct.
   private ListPrivateConnectionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.PrivateConnection> privateConnections_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       getPrivateConnectionsList() {
     return privateConnections_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       getPrivateConnectionsOrBuilderList() {
     return privateConnections_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
   public int getPrivateConnectionsCount() {
     return privateConnections_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
   public com.google.cloud.datastream.v1.PrivateConnection getPrivateConnections(int index) {
     return privateConnections_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -444,6 +456,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -749,6 +762,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
         return privateConnectionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -765,6 +779,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
         return privateConnectionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
         return privateConnectionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +841,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +888,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +909,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +930,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +951,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +971,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1005,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
         int index) {
       return getPrivateConnectionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -997,6 +1023,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
         return privateConnectionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1041,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(privateConnections_);
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1055,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       return getPrivateConnectionsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.PrivateConnection.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1041,6 +1070,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       return getPrivateConnectionsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.PrivateConnection.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1076,6 +1106,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1099,6 +1130,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1154,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1177,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1196,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1230,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1210,6 +1246,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1224,6 +1261,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1239,6 +1277,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1254,6 +1293,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1277,6 +1317,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1340,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1360,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1379,7 @@ public final class ListPrivateConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

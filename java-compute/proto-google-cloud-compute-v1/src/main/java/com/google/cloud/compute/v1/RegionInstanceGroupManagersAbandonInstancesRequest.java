@@ -33,6 +33,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest)
     RegionInstanceGroupManagersAbandonInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder() to construct.
   private RegionInstanceGroupManagersAbandonInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -304,6 +309,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -515,6 +521,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -530,6 +537,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
       instances_.makeImmutable();
       return instances_;
     }
+
     /**
      *
      *
@@ -544,6 +552,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
     public int getInstancesCount() {
       return instances_.size();
     }
+
     /**
      *
      *
@@ -559,6 +568,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
+
     /**
      *
      *
@@ -574,6 +584,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
+
     /**
      *
      *
@@ -597,6 +608,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +631,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +651,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +670,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

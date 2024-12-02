@@ -43,6 +43,7 @@ public interface CustomTuningModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CustomTuningModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface CustomTuningModelOrBuilder
    * @return The enum numeric value on the wire for modelState.
    */
   int getModelStateValue();
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public interface CustomTuningModelOrBuilder
    */
   @java.lang.Deprecated
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface CustomTuningModelOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public interface CustomTuningModelOrBuilder
    * @return Whether the trainingStartTime field is set.
    */
   boolean hasTrainingStartTime();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface CustomTuningModelOrBuilder
    * @return The trainingStartTime.
    */
   com.google.protobuf.Timestamp getTrainingStartTime();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface CustomTuningModelOrBuilder
    * <code>map&lt;string, double&gt; metrics = 7;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -223,9 +231,11 @@ public interface CustomTuningModelOrBuilder
    * <code>map&lt;string, double&gt; metrics = 7;</code>
    */
   boolean containsMetrics(java.lang.String key);
+
   /** Use {@link #getMetricsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Double> getMetrics();
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public interface CustomTuningModelOrBuilder
    * <code>map&lt;string, double&gt; metrics = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.Double> getMetricsMap();
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public interface CustomTuningModelOrBuilder
    * <code>map&lt;string, double&gt; metrics = 7;</code>
    */
   double getMetricsOrDefault(java.lang.String key, double defaultValue);
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface CustomTuningModelOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *

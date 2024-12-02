@@ -42,6 +42,7 @@ public interface InfoTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface InfoTypeOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface InfoTypeOrBuilder
    * @return Whether the sensitivityScore field is set.
    */
   boolean hasSensitivityScore();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface InfoTypeOrBuilder
    * @return The sensitivityScore.
    */
   com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.AutoscalingSettings)
     AutoscalingSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoscalingSettings.newBuilder() to construct.
   private AutoscalingSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -105,6 +106,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      */
     int getScaleIn();
   }
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds)
       ThresholdsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Thresholds.newBuilder() to construct.
     private Thresholds(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -150,6 +153,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
     public static final int SCALE_OUT_FIELD_NUMBER = 1;
     private int scaleOut_ = 0;
+
     /**
      *
      *
@@ -168,6 +172,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
     public static final int SCALE_IN_FIELD_NUMBER = 2;
     private int scaleIn_ = 0;
+
     /**
      *
      *
@@ -355,6 +360,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -559,6 +565,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int scaleOut_;
+
       /**
        *
        *
@@ -574,6 +581,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       public int getScaleOut() {
         return scaleOut_;
       }
+
       /**
        *
        *
@@ -593,6 +601,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -612,6 +621,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       }
 
       private int scaleIn_;
+
       /**
        *
        *
@@ -627,6 +637,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       public int getScaleIn() {
         return scaleIn_;
       }
+
       /**
        *
        *
@@ -646,6 +657,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -749,6 +761,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return The nodeTypeId.
      */
     java.lang.String getNodeTypeId();
+
     /**
      *
      *
@@ -793,6 +806,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return Whether the cpuThresholds field is set.
      */
     boolean hasCpuThresholds();
+
     /**
      *
      *
@@ -807,6 +821,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return The cpuThresholds.
      */
     com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds getCpuThresholds();
+
     /**
      *
      *
@@ -835,6 +850,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return Whether the grantedMemoryThresholds field is set.
      */
     boolean hasGrantedMemoryThresholds();
+
     /**
      *
      *
@@ -849,6 +865,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return The grantedMemoryThresholds.
      */
     com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds getGrantedMemoryThresholds();
+
     /**
      *
      *
@@ -877,6 +894,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return Whether the consumedMemoryThresholds field is set.
      */
     boolean hasConsumedMemoryThresholds();
+
     /**
      *
      *
@@ -891,6 +909,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return The consumedMemoryThresholds.
      */
     com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds getConsumedMemoryThresholds();
+
     /**
      *
      *
@@ -920,6 +939,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return Whether the storageThresholds field is set.
      */
     boolean hasStorageThresholds();
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return The storageThresholds.
      */
     com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds getStorageThresholds();
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     com.google.cloud.vmwareengine.v1.AutoscalingSettings.ThresholdsOrBuilder
         getStorageThresholdsOrBuilder();
   }
+
   /**
    *
    *
@@ -969,6 +991,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.AutoscalingSettings.AutoscalingPolicy)
       AutoscalingPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AutoscalingPolicy.newBuilder() to construct.
     private AutoscalingPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1004,6 +1027,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object nodeTypeId_ = "";
+
     /**
      *
      *
@@ -1028,6 +1052,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
     public static final int SCALE_OUT_SIZE_FIELD_NUMBER = 2;
     private int scaleOutSize_ = 0;
+
     /**
      *
      *
@@ -1076,6 +1102,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
     public static final int CPU_THRESHOLDS_FIELD_NUMBER = 11;
     private com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds cpuThresholds_;
+
     /**
      *
      *
@@ -1093,6 +1120,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public boolean hasCpuThresholds() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1112,6 +1140,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds.getDefaultInstance()
           : cpuThresholds_;
     }
+
     /**
      *
      *
@@ -1134,6 +1163,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public static final int GRANTED_MEMORY_THRESHOLDS_FIELD_NUMBER = 12;
     private com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds
         grantedMemoryThresholds_;
+
     /**
      *
      *
@@ -1151,6 +1181,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public boolean hasGrantedMemoryThresholds() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1171,6 +1202,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds.getDefaultInstance()
           : grantedMemoryThresholds_;
     }
+
     /**
      *
      *
@@ -1193,6 +1225,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public static final int CONSUMED_MEMORY_THRESHOLDS_FIELD_NUMBER = 13;
     private com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds
         consumedMemoryThresholds_;
+
     /**
      *
      *
@@ -1210,6 +1243,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public boolean hasConsumedMemoryThresholds() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1230,6 +1264,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds.getDefaultInstance()
           : consumedMemoryThresholds_;
     }
+
     /**
      *
      *
@@ -1251,6 +1286,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
     public static final int STORAGE_THRESHOLDS_FIELD_NUMBER = 14;
     private com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds storageThresholds_;
+
     /**
      *
      *
@@ -1269,6 +1305,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public boolean hasStorageThresholds() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1289,6 +1326,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds.getDefaultInstance()
           : storageThresholds_;
     }
+
     /**
      *
      *
@@ -1543,6 +1581,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1857,6 +1896,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object nodeTypeId_ = "";
+
       /**
        *
        *
@@ -1880,6 +1920,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1903,6 +1944,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1925,6 +1967,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1943,6 +1986,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1968,6 +2012,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       }
 
       private int scaleOutSize_;
+
       /**
        *
        *
@@ -1986,6 +2031,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       public int getScaleOutSize() {
         return scaleOutSize_;
       }
+
       /**
        *
        *
@@ -2008,6 +2054,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2035,6 +2082,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
               com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds.Builder,
               com.google.cloud.vmwareengine.v1.AutoscalingSettings.ThresholdsOrBuilder>
           cpuThresholdsBuilder_;
+
       /**
        *
        *
@@ -2051,6 +2099,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       public boolean hasCpuThresholds() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -2073,6 +2122,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           return cpuThresholdsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2098,6 +2148,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2120,6 +2171,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2152,6 +2204,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2173,6 +2226,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2190,6 +2244,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return getCpuThresholdsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2211,6 +2266,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
               : cpuThresholds_;
         }
       }
+
       /**
        *
        *
@@ -2246,6 +2302,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
               com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds.Builder,
               com.google.cloud.vmwareengine.v1.AutoscalingSettings.ThresholdsOrBuilder>
           grantedMemoryThresholdsBuilder_;
+
       /**
        *
        *
@@ -2262,6 +2319,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       public boolean hasGrantedMemoryThresholds() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -2285,6 +2343,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           return grantedMemoryThresholdsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2310,6 +2369,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2332,6 +2392,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2364,6 +2425,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2385,6 +2447,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2402,6 +2465,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return getGrantedMemoryThresholdsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2423,6 +2487,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
               : grantedMemoryThresholds_;
         }
       }
+
       /**
        *
        *
@@ -2458,6 +2523,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
               com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds.Builder,
               com.google.cloud.vmwareengine.v1.AutoscalingSettings.ThresholdsOrBuilder>
           consumedMemoryThresholdsBuilder_;
+
       /**
        *
        *
@@ -2474,6 +2540,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       public boolean hasConsumedMemoryThresholds() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -2497,6 +2564,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           return consumedMemoryThresholdsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2522,6 +2590,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2544,6 +2613,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2576,6 +2646,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2597,6 +2668,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2614,6 +2686,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return getConsumedMemoryThresholdsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2635,6 +2708,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
               : consumedMemoryThresholds_;
         }
       }
+
       /**
        *
        *
@@ -2669,6 +2743,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
               com.google.cloud.vmwareengine.v1.AutoscalingSettings.Thresholds.Builder,
               com.google.cloud.vmwareengine.v1.AutoscalingSettings.ThresholdsOrBuilder>
           storageThresholdsBuilder_;
+
       /**
        *
        *
@@ -2686,6 +2761,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       public boolean hasStorageThresholds() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -2710,6 +2786,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           return storageThresholdsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2736,6 +2813,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2759,6 +2837,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2792,6 +2871,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2814,6 +2894,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2832,6 +2913,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         onChanged();
         return getStorageThresholdsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2854,6 +2936,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
               : storageThresholds_;
         }
       }
+
       /**
        *
        *
@@ -2990,6 +3073,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
   public int getAutoscalingPoliciesCount() {
     return internalGetAutoscalingPolicies().getMap().size();
   }
+
   /**
    *
    *
@@ -3020,6 +3104,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     }
     return internalGetAutoscalingPolicies().getMap().containsKey(key);
   }
+
   /** Use {@link #getAutoscalingPoliciesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -3028,6 +3113,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       getAutoscalingPolicies() {
     return getAutoscalingPoliciesMap();
   }
+
   /**
    *
    *
@@ -3057,6 +3143,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       getAutoscalingPoliciesMap() {
     return internalGetAutoscalingPolicies().getMap();
   }
+
   /**
    *
    *
@@ -3095,6 +3182,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         map = internalGetAutoscalingPolicies().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -3136,6 +3224,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int MIN_CLUSTER_NODE_COUNT_FIELD_NUMBER = 2;
   private int minClusterNodeCount_ = 0;
+
   /**
    *
    *
@@ -3155,6 +3244,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int MAX_CLUSTER_NODE_COUNT_FIELD_NUMBER = 3;
   private int maxClusterNodeCount_ = 0;
+
   /**
    *
    *
@@ -3174,6 +3264,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int COOL_DOWN_PERIOD_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration coolDownPeriod_;
+
   /**
    *
    *
@@ -3193,6 +3284,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
   public boolean hasCoolDownPeriod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3214,6 +3306,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Duration.getDefaultInstance()
         : coolDownPeriod_;
   }
+
   /**
    *
    *
@@ -3442,6 +3535,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3735,7 +3829,8 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return AutoscalingPoliciesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final AutoscalingPoliciesConverter autoscalingPoliciesConverter =
         new AutoscalingPoliciesConverter();
@@ -3777,6 +3872,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public int getAutoscalingPoliciesCount() {
       return internalGetAutoscalingPolicies().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3807,6 +3903,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       }
       return internalGetAutoscalingPolicies().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getAutoscalingPoliciesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3816,6 +3913,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         getAutoscalingPolicies() {
       return getAutoscalingPoliciesMap();
     }
+
     /**
      *
      *
@@ -3846,6 +3944,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         getAutoscalingPoliciesMap() {
       return internalGetAutoscalingPolicies().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3884,6 +3983,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           map = internalGetMutableAutoscalingPolicies().ensureBuilderMap();
       return map.containsKey(key) ? autoscalingPoliciesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -3928,6 +4028,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       internalGetMutableAutoscalingPolicies().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3958,6 +4059,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       internalGetMutableAutoscalingPolicies().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3967,6 +4069,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000001;
       return internalGetMutableAutoscalingPolicies().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -4003,6 +4106,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -4043,6 +4147,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -4088,6 +4193,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private int minClusterNodeCount_;
+
     /**
      *
      *
@@ -4104,6 +4210,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public int getMinClusterNodeCount() {
       return minClusterNodeCount_;
     }
+
     /**
      *
      *
@@ -4124,6 +4231,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4144,6 +4252,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private int maxClusterNodeCount_;
+
     /**
      *
      *
@@ -4160,6 +4269,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public int getMaxClusterNodeCount() {
       return maxClusterNodeCount_;
     }
+
     /**
      *
      *
@@ -4180,6 +4290,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4205,6 +4316,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         coolDownPeriodBuilder_;
+
     /**
      *
      *
@@ -4224,6 +4336,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public boolean hasCoolDownPeriod() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4249,6 +4362,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
         return coolDownPeriodBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4276,6 +4390,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4300,6 +4415,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4332,6 +4448,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4356,6 +4473,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4375,6 +4493,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCoolDownPeriodFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4398,6 +4517,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
             : coolDownPeriod_;
       }
     }
+
     /**
      *
      *

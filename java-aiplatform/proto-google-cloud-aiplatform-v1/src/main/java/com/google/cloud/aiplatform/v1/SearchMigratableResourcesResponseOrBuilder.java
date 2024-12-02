@@ -35,6 +35,7 @@ public interface SearchMigratableResourcesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.MigratableResource migratable_resources = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.MigratableResource> getMigratableResourcesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface SearchMigratableResourcesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.MigratableResource migratable_resources = 1;</code>
    */
   com.google.cloud.aiplatform.v1.MigratableResource getMigratableResources(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface SearchMigratableResourcesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.MigratableResource migratable_resources = 1;</code>
    */
   int getMigratableResourcesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface SearchMigratableResourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.MigratableResourceOrBuilder>
       getMigratableResourcesOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface SearchMigratableResourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

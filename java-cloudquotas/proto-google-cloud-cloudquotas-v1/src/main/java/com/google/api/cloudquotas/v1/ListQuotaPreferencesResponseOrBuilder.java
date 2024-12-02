@@ -34,6 +34,7 @@ public interface ListQuotaPreferencesResponseOrBuilder
    * <code>repeated .google.api.cloudquotas.v1.QuotaPreference quota_preferences = 1;</code>
    */
   java.util.List<com.google.api.cloudquotas.v1.QuotaPreference> getQuotaPreferencesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListQuotaPreferencesResponseOrBuilder
    * <code>repeated .google.api.cloudquotas.v1.QuotaPreference quota_preferences = 1;</code>
    */
   com.google.api.cloudquotas.v1.QuotaPreference getQuotaPreferences(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListQuotaPreferencesResponseOrBuilder
    * <code>repeated .google.api.cloudquotas.v1.QuotaPreference quota_preferences = 1;</code>
    */
   int getQuotaPreferencesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListQuotaPreferencesResponseOrBuilder
    */
   java.util.List<? extends com.google.api.cloudquotas.v1.QuotaPreferenceOrBuilder>
       getQuotaPreferencesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListQuotaPreferencesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListQuotaPreferencesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListQuotaPreferencesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListQuotaPreferencesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

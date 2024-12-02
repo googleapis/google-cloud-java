@@ -34,6 +34,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ConversationEvent)
     ConversationEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversationEvent.newBuilder() to construct.
   private ConversationEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -162,6 +163,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -173,6 +175,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      * <code>CONVERSATION_STARTED = 1;</code>
      */
     public static final int CONVERSATION_STARTED_VALUE = 1;
+
     /**
      *
      *
@@ -184,6 +187,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      * <code>CONVERSATION_FINISHED = 2;</code>
      */
     public static final int CONVERSATION_FINISHED_VALUE = 2;
+
     /**
      *
      *
@@ -195,6 +199,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      * <code>HUMAN_INTERVENTION_NEEDED = 3;</code>
      */
     public static final int HUMAN_INTERVENTION_NEEDED_VALUE = 3;
+
     /**
      *
      *
@@ -207,6 +212,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      * <code>NEW_MESSAGE = 5;</code>
      */
     public static final int NEW_MESSAGE_VALUE = 5;
+
     /**
      *
      *
@@ -333,6 +339,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     private PayloadCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -367,6 +374,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversation_ = "";
+
   /**
    *
    *
@@ -392,6 +400,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -420,6 +429,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -435,6 +445,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -457,6 +468,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int ERROR_STATUS_FIELD_NUMBER = 3;
   private com.google.rpc.Status errorStatus_;
+
   /**
    *
    *
@@ -473,6 +485,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
   public boolean hasErrorStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -489,6 +502,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
   public com.google.rpc.Status getErrorStatus() {
     return errorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : errorStatus_;
   }
+
   /**
    *
    *
@@ -505,6 +519,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NEW_MESSAGE_PAYLOAD_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -520,6 +535,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
   public boolean hasNewMessagePayload() {
     return payloadCase_ == 4;
   }
+
   /**
    *
    *
@@ -538,6 +554,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.dialogflow.v2.Message.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -763,6 +780,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1037,6 +1055,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object conversation_ = "";
+
     /**
      *
      *
@@ -1061,6 +1080,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1085,6 +1105,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1129,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1149,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1176,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1168,6 +1192,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1186,6 +1211,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1231,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.dialogflow.v2.ConversationEvent.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1226,6 +1253,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1276,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorStatusBuilder_;
+
     /**
      *
      *
@@ -1263,6 +1292,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     public boolean hasErrorStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1282,6 +1312,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
         return errorStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1305,6 +1336,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1357,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1386,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1407,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1423,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getErrorStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1405,6 +1441,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
         return errorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : errorStatus_;
       }
     }
+
     /**
      *
      *
@@ -1435,6 +1472,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dialogflow.v2.Message.Builder,
             com.google.cloud.dialogflow.v2.MessageOrBuilder>
         newMessagePayloadBuilder_;
+
     /**
      *
      *
@@ -1450,6 +1488,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     public boolean hasNewMessagePayload() {
       return payloadCase_ == 4;
     }
+
     /**
      *
      *
@@ -1475,6 +1514,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.dialogflow.v2.Message.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1497,6 +1537,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       payloadCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1558,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       payloadCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1591,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       payloadCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1574,6 +1617,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1586,6 +1630,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.v2.Message.Builder getNewMessagePayloadBuilder() {
       return getNewMessagePayloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1606,6 +1651,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.dialogflow.v2.Message.getDefaultInstance();
       }
     }
+
     /**
      *
      *

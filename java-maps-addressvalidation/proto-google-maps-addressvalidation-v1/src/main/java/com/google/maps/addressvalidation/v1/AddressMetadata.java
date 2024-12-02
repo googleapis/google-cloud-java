@@ -34,6 +34,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.AddressMetadata)
     AddressMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddressMetadata.newBuilder() to construct.
   private AddressMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int BUSINESS_FIELD_NUMBER = 2;
   private boolean business_ = false;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
   public boolean hasBusiness() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
 
   public static final int PO_BOX_FIELD_NUMBER = 3;
   private boolean poBox_ = false;
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
   public boolean hasPoBox() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
 
   public static final int RESIDENTIAL_FIELD_NUMBER = 6;
   private boolean residential_ = false;
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
   public boolean hasResidential() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -360,6 +367,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -574,6 +582,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private boolean business_;
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean hasBusiness() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean getBusiness() {
       return business_;
     }
+
     /**
      *
      *
@@ -626,6 +637,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean poBox_;
+
     /**
      *
      *
@@ -662,6 +675,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean hasPoBox() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -678,6 +692,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean getPoBox() {
       return poBox_;
     }
+
     /**
      *
      *
@@ -698,6 +713,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +734,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean residential_;
+
     /**
      *
      *
@@ -734,6 +751,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean hasResidential() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -750,6 +768,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean getResidential() {
       return residential_;
     }
+
     /**
      *
      *
@@ -770,6 +789,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

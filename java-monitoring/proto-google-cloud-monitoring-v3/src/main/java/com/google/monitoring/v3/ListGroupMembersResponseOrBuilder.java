@@ -34,6 +34,7 @@ public interface ListGroupMembersResponseOrBuilder
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
   java.util.List<com.google.api.MonitoredResource> getMembersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListGroupMembersResponseOrBuilder
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
   com.google.api.MonitoredResource getMembers(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListGroupMembersResponseOrBuilder
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
   int getMembersCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListGroupMembersResponseOrBuilder
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
   java.util.List<? extends com.google.api.MonitoredResourceOrBuilder> getMembersOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListGroupMembersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

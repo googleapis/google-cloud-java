@@ -42,6 +42,7 @@ public interface SignBlobResponseOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getKeyId();
+
   /**
    *
    *

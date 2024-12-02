@@ -38,6 +38,7 @@ public interface DeleteRegionSslPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DeleteRegionSslPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DeleteRegionSslPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface DeleteRegionSslPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface DeleteRegionSslPolicyRequestOrBuilder
    * @return The sslPolicy.
    */
   java.lang.String getSslPolicy();
+
   /**
    *
    *

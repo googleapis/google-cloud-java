@@ -40,6 +40,7 @@ public interface UpdateTargetProjectRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateTargetProjectRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateTargetProjectRequestOrBuilder
    * @return Whether the targetProject field is set.
    */
   boolean hasTargetProject();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateTargetProjectRequestOrBuilder
    * @return The targetProject.
    */
   com.google.cloud.vmmigration.v1.TargetProject getTargetProject();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface UpdateTargetProjectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

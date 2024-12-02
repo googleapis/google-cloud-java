@@ -37,6 +37,7 @@ public interface ViolationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ViolationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ViolationOrBuilder
    * @return Whether the beginTime field is set.
    */
   boolean hasBeginTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ViolationOrBuilder
    * @return The beginTime.
    */
   com.google.protobuf.Timestamp getBeginTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface ViolationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface ViolationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface ViolationOrBuilder
    * @return Whether the resolveTime field is set.
    */
   boolean hasResolveTime();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface ViolationOrBuilder
    * @return The resolveTime.
    */
   com.google.protobuf.Timestamp getResolveTime();
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface ViolationOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public interface ViolationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public interface ViolationOrBuilder
    * @return The nonCompliantOrgPolicy.
    */
   java.lang.String getNonCompliantOrgPolicy();
+
   /**
    *
    *
@@ -315,6 +326,7 @@ public interface ViolationOrBuilder
    * @return Whether the remediation field is set.
    */
   boolean hasRemediation();
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public interface ViolationOrBuilder
    * @return The remediation.
    */
   com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation getRemediation();
+
   /**
    *
    *

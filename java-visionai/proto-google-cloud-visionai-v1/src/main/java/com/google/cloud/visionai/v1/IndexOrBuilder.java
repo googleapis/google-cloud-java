@@ -36,6 +36,7 @@ public interface IndexOrBuilder
    * @return Whether the entireCorpus field is set.
    */
   boolean hasEntireCorpus();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface IndexOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface IndexOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface IndexOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface IndexOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface IndexOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface IndexOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface IndexOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public interface IndexOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public interface IndexOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.visionai.v1.DeployedIndexReference> getDeployedIndexesList();
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface IndexOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.DeployedIndexReference getDeployedIndexes(int index);
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public interface IndexOrBuilder
    * </code>
    */
   int getDeployedIndexesCount();
+
   /**
    *
    *
@@ -290,6 +302,7 @@ public interface IndexOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.DeployedIndexReferenceOrBuilder>
       getDeployedIndexesOrBuilderList();
+
   /**
    *
    *
@@ -320,6 +333,7 @@ public interface IndexOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -349,6 +363,7 @@ public interface IndexOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *

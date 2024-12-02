@@ -33,6 +33,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.RecommendationContent)
     RecommendationContentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecommendationContent.newBuilder() to construct.
   private RecommendationContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommender.v1beta1.OperationGroup> operationGroups_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       getOperationGroupsList() {
     return operationGroups_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       getOperationGroupsOrBuilderList() {
     return operationGroups_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
   public int getOperationGroupsCount() {
     return operationGroups_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
   public com.google.cloud.recommender.v1beta1.OperationGroup getOperationGroups(int index) {
     return operationGroups_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
 
   public static final int OVERVIEW_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct overview_;
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
   public boolean hasOverview() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Struct getOverview() {
     return overview_ == null ? com.google.protobuf.Struct.getDefaultInstance() : overview_;
   }
+
   /**
    *
    *
@@ -369,6 +378,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +676,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         return operationGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         return operationGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         return operationGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +905,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +943,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         int index) {
       return getOperationGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         return operationGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -959,6 +983,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(operationGroups_);
       }
     }
+
     /**
      *
      *
@@ -974,6 +999,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       return getOperationGroupsFieldBuilder()
           .addBuilder(com.google.cloud.recommender.v1beta1.OperationGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -991,6 +1017,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.recommender.v1beta1.OperationGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         overviewBuilder_;
+
     /**
      *
      *
@@ -1047,6 +1075,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     public boolean hasOverview() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1065,6 +1094,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         return overviewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1117,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1137,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1165,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1185,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1200,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       onChanged();
       return getOverviewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1182,6 +1217,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         return overview_ == null ? com.google.protobuf.Struct.getDefaultInstance() : overview_;
       }
     }
+
     /**
      *
      *

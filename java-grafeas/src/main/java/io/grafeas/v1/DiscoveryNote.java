@@ -36,6 +36,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryNote)
     DiscoveryNoteOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryNote.newBuilder() to construct.
   private DiscoveryNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANALYSIS_KIND_FIELD_NUMBER = 1;
   private int analysisKind_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
   public int getAnalysisKindValue() {
     return analysisKind_;
   }
+
   /**
    *
    *
@@ -256,6 +259,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -434,6 +438,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int analysisKind_ = 0;
+
     /**
      *
      *
@@ -450,6 +455,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     public int getAnalysisKindValue() {
       return analysisKind_;
     }
+
     /**
      *
      *
@@ -469,6 +475,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -486,6 +493,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.forNumber(analysisKind_);
       return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -508,6 +516,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

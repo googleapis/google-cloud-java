@@ -36,6 +36,7 @@ public interface InstallationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface InstallationOrBuilder
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
   java.util.List<io.grafeas.v1beta1.pkg.Location> getLocationList();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface InstallationOrBuilder
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
   io.grafeas.v1beta1.pkg.Location getLocation(int index);
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface InstallationOrBuilder
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
   int getLocationCount();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface InstallationOrBuilder
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
   java.util.List<? extends io.grafeas.v1beta1.pkg.LocationOrBuilder> getLocationOrBuilderList();
+
   /**
    *
    *

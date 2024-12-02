@@ -36,6 +36,7 @@ public interface VariantsHistoryOrBuilder
    * @return Whether the versionVariants field is set.
    */
   boolean hasVersionVariants();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface VariantsHistoryOrBuilder
    * @return The versionVariants.
    */
   com.google.cloud.dialogflow.cx.v3.VersionVariants getVersionVariants();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface VariantsHistoryOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface VariantsHistoryOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

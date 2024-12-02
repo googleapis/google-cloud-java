@@ -42,6 +42,7 @@ public interface CreateHcxActivationKeyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface CreateHcxActivationKeyRequestOrBuilder
    * @return Whether the hcxActivationKey field is set.
    */
   boolean hasHcxActivationKey();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CreateHcxActivationKeyRequestOrBuilder
    * @return The hcxActivationKey.
    */
   com.google.cloud.vmwareengine.v1.HcxActivationKey getHcxActivationKey();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface CreateHcxActivationKeyRequestOrBuilder
    * @return The hcxActivationKeyId.
    */
   java.lang.String getHcxActivationKeyId();
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public interface CreateHcxActivationKeyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

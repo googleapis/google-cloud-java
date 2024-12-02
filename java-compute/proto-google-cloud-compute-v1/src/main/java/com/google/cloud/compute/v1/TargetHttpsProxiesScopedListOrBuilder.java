@@ -35,6 +35,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetHttpsProxy> getTargetHttpsProxiesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.TargetHttpsProxy getTargetHttpsProxies(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * </code>
    */
   int getTargetHttpsProxiesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder>
       getTargetHttpsProxiesOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -105,6 +110,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

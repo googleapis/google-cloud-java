@@ -36,6 +36,7 @@ public interface InstancesSetServiceAccountRequestOrBuilder
    * @return Whether the email field is set.
    */
   boolean hasEmail();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstancesSetServiceAccountRequestOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InstancesSetServiceAccountRequestOrBuilder
    * @return A list containing the scopes.
    */
   java.util.List<java.lang.String> getScopesList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface InstancesSetServiceAccountRequestOrBuilder
    * @return The count of scopes.
    */
   int getScopesCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface InstancesSetServiceAccountRequestOrBuilder
    * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
+
   /**
    *
    *

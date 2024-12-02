@@ -33,6 +33,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.AutomatedAgentConfig)
     AutomatedAgentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomatedAgentConfig.newBuilder() to construct.
   private AutomatedAgentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object agent_ = "";
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -153,6 +156,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
 
   public static final int SESSION_TTL_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration sessionTtl_;
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
   public boolean hasSessionTtl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Duration getSessionTtl() {
     return sessionTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : sessionTtl_;
   }
+
   /**
    *
    *
@@ -382,6 +388,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -595,6 +602,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object agent_ = "";
+
     /**
      *
      *
@@ -635,6 +643,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -675,6 +684,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +760,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +808,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         sessionTtlBuilder_;
+
     /**
      *
      *
@@ -814,6 +827,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     public boolean hasSessionTtl() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -838,6 +852,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
         return sessionTtlBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -864,6 +879,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +903,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +935,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +959,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +978,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getSessionTtlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -981,6 +1001,7 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
             : sessionTtl_;
       }
     }
+
     /**
      *
      *

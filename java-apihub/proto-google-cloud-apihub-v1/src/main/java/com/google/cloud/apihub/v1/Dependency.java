@@ -37,6 +37,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.Dependency)
     DependencyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Dependency.newBuilder() to construct.
   private Dependency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,6 +138,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +150,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * <code>PROPOSED = 1;</code>
      */
     public static final int PROPOSED_VALUE = 1;
+
     /**
      *
      *
@@ -286,6 +289,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * <code>DISCOVERY_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int DISCOVERY_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -383,6 +387,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -408,6 +413,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -436,6 +442,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONSUMER_FIELD_NUMBER = 2;
   private com.google.cloud.apihub.v1.DependencyEntityReference consumer_;
+
   /**
    *
    *
@@ -453,6 +460,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConsumer() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -472,6 +480,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apihub.v1.DependencyEntityReference.getDefaultInstance()
         : consumer_;
   }
+
   /**
    *
    *
@@ -492,6 +501,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUPPLIER_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.DependencyEntityReference supplier_;
+
   /**
    *
    *
@@ -509,6 +519,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSupplier() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -528,6 +539,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apihub.v1.DependencyEntityReference.getDefaultInstance()
         : supplier_;
   }
+
   /**
    *
    *
@@ -548,6 +560,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -565,6 +578,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -589,6 +603,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -612,6 +627,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -638,6 +654,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISCOVERY_MODE_FIELD_NUMBER = 6;
   private int discoveryMode_ = 0;
+
   /**
    *
    *
@@ -655,6 +672,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public int getDiscoveryModeValue() {
     return discoveryMode_;
   }
+
   /**
    *
    *
@@ -679,6 +697,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_DETAIL_FIELD_NUMBER = 7;
   private com.google.cloud.apihub.v1.DependencyErrorDetail errorDetail_;
+
   /**
    *
    *
@@ -697,6 +716,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public boolean hasErrorDetail() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -717,6 +737,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apihub.v1.DependencyErrorDetail.getDefaultInstance()
         : errorDetail_;
   }
+
   /**
    *
    *
@@ -738,6 +759,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -754,6 +776,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -770,6 +793,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -787,6 +811,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -803,6 +828,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -819,6 +845,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -865,6 +892,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public int getAttributesCount() {
     return internalGetAttributes().getMap().size();
   }
+
   /**
    *
    *
@@ -886,6 +914,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAttributes().getMap().containsKey(key);
   }
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -893,6 +922,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       getAttributes() {
     return getAttributesMap();
   }
+
   /**
    *
    *
@@ -912,6 +942,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       getAttributesMap() {
     return internalGetAttributes().getMap();
   }
+
   /**
    *
    *
@@ -938,6 +969,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         internalGetAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1241,6 +1273,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1618,6 +1651,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1642,6 +1676,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1666,6 +1701,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1689,6 +1725,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1708,6 +1745,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1739,6 +1777,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.DependencyEntityReference.Builder,
             com.google.cloud.apihub.v1.DependencyEntityReferenceOrBuilder>
         consumerBuilder_;
+
     /**
      *
      *
@@ -1755,6 +1794,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConsumer() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1777,6 +1817,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return consumerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1801,6 +1842,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1823,6 +1865,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1853,6 +1896,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1874,6 +1918,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1890,6 +1935,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConsumerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1910,6 +1956,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             : consumer_;
       }
     }
+
     /**
      *
      *
@@ -1944,6 +1991,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.DependencyEntityReference.Builder,
             com.google.cloud.apihub.v1.DependencyEntityReferenceOrBuilder>
         supplierBuilder_;
+
     /**
      *
      *
@@ -1960,6 +2008,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSupplier() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1982,6 +2031,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return supplierBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2006,6 +2056,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2028,6 +2079,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2058,6 +2110,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2079,6 +2132,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2095,6 +2149,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSupplierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2115,6 +2170,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             : supplier_;
       }
     }
+
     /**
      *
      *
@@ -2144,6 +2200,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2161,6 +2218,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2181,6 +2239,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2200,6 +2259,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apihub.v1.Dependency.State.forNumber(state_);
       return result == null ? com.google.cloud.apihub.v1.Dependency.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2223,6 +2283,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2244,6 +2305,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2266,6 +2328,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2288,6 +2351,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2309,6 +2373,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2391,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2350,6 +2416,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int discoveryMode_ = 0;
+
     /**
      *
      *
@@ -2367,6 +2434,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public int getDiscoveryModeValue() {
       return discoveryMode_;
     }
+
     /**
      *
      *
@@ -2387,6 +2455,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2408,6 +2477,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.apihub.v1.Dependency.DiscoveryMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2431,6 +2501,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2457,6 +2528,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.DependencyErrorDetail.Builder,
             com.google.cloud.apihub.v1.DependencyErrorDetailOrBuilder>
         errorDetailBuilder_;
+
     /**
      *
      *
@@ -2474,6 +2546,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorDetail() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2497,6 +2570,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return errorDetailBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2522,6 +2596,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2545,6 +2620,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2576,6 +2652,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2598,6 +2675,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2615,6 +2693,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getErrorDetailFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2636,6 +2715,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             : errorDetail_;
       }
     }
+
     /**
      *
      *
@@ -2671,6 +2751,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2687,6 +2768,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2709,6 +2791,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2733,6 +2816,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2754,6 +2838,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2783,6 +2868,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2804,6 +2890,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2820,6 +2907,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2840,6 +2928,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2874,6 +2963,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2890,6 +2980,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2912,6 +3003,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2936,6 +3028,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2957,6 +3050,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2986,6 +3080,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3007,6 +3102,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3023,6 +3119,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3043,6 +3140,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3091,7 +3189,8 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return AttributesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final AttributesConverter attributesConverter = new AttributesConverter();
 
@@ -3131,6 +3230,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public int getAttributesCount() {
       return internalGetAttributes().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3152,6 +3252,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAttributes().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3159,6 +3260,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         getAttributes() {
       return getAttributesMap();
     }
+
     /**
      *
      *
@@ -3178,6 +3280,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         getAttributesMap() {
       return internalGetAttributes().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3204,6 +3307,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableAttributes().ensureBuilderMap();
       return map.containsKey(key) ? attributesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -3236,6 +3340,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3257,6 +3362,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues>
@@ -3264,6 +3370,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return internalGetMutableAttributes().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3290,6 +3397,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -3316,6 +3424,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *

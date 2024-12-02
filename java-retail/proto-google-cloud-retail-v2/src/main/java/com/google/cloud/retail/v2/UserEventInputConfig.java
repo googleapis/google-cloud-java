@@ -33,6 +33,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.UserEventInputConfig)
     UserEventInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserEventInputConfig.newBuilder() to construct.
   private UserEventInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int USER_EVENT_INLINE_SOURCE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
   public boolean hasUserEventInlineSource() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.retail.v2.UserEventInlineSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.retail.v2.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int BIG_QUERY_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
   public boolean hasBigQuerySource() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.retail.v2.BigQuerySource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -489,6 +500,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -742,6 +754,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.retail.v2.UserEventInlineSource.Builder,
             com.google.cloud.retail.v2.UserEventInlineSourceOrBuilder>
         userEventInlineSourceBuilder_;
+
     /**
      *
      *
@@ -759,6 +772,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     public boolean hasUserEventInlineSource() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -786,6 +800,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.retail.v2.UserEventInlineSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +885,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +913,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
         getUserEventInlineSourceBuilder() {
       return getUserEventInlineSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -933,6 +953,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.retail.v2.UserEventInlineSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.retail.v2.GcsSource.Builder,
             com.google.cloud.retail.v2.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -990,6 +1012,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.retail.v2.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1065,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1087,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1165,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1159,6 +1188,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.retail.v2.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1197,6 +1227,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.retail.v2.BigQuerySource.Builder,
             com.google.cloud.retail.v2.BigQuerySourceOrBuilder>
         bigQuerySourceBuilder_;
+
     /**
      *
      *
@@ -1214,6 +1245,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     public boolean hasBigQuerySource() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1241,6 +1273,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.retail.v2.BigQuerySource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1265,6 +1298,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1321,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1356,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1384,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1399,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2.BigQuerySource.Builder getBigQuerySourceBuilder() {
       return getBigQuerySourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1384,6 +1422,7 @@ public final class UserEventInputConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.retail.v2.BigQuerySource.getDefaultInstance();
       }
     }
+
     /**
      *
      *

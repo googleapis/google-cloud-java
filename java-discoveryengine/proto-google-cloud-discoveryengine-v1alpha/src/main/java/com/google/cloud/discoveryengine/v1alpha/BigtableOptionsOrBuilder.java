@@ -37,6 +37,7 @@ public interface BigtableOptionsOrBuilder
    * @return The keyFieldName.
    */
   java.lang.String getKeyFieldName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface BigtableOptionsOrBuilder
    * </code>
    */
   int getFamiliesCount();
+
   /**
    *
    *
@@ -79,12 +81,14 @@ public interface BigtableOptionsOrBuilder
    * </code>
    */
   boolean containsFamilies(java.lang.String key);
+
   /** Use {@link #getFamiliesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.discoveryengine.v1alpha.BigtableOptions.BigtableColumnFamily>
       getFamilies();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface BigtableOptionsOrBuilder
           java.lang.String,
           com.google.cloud.discoveryengine.v1alpha.BigtableOptions.BigtableColumnFamily>
       getFamiliesMap();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface BigtableOptionsOrBuilder
           /* nullable */
           com.google.cloud.discoveryengine.v1alpha.BigtableOptions.BigtableColumnFamily
               defaultValue);
+
   /**
    *
    *

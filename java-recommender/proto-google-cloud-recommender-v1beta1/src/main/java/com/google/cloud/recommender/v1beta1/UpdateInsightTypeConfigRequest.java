@@ -33,6 +33,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.UpdateInsightTypeConfigRequest)
     UpdateInsightTypeConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateInsightTypeConfigRequest.newBuilder() to construct.
   private UpdateInsightTypeConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int INSIGHT_TYPE_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.recommender.v1beta1.InsightTypeConfig insightTypeConfig_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
   public boolean hasInsightTypeConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
         ? com.google.cloud.recommender.v1beta1.InsightTypeConfig.getDefaultInstance()
         : insightTypeConfig_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -374,6 +382,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -620,6 +629,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
             com.google.cloud.recommender.v1beta1.InsightTypeConfig.Builder,
             com.google.cloud.recommender.v1beta1.InsightTypeConfigOrBuilder>
         insightTypeConfigBuilder_;
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
     public boolean hasInsightTypeConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
         return insightTypeConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return getInsightTypeConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
             : insightTypeConfig_;
       }
     }
+
     /**
      *
      *
@@ -829,6 +847,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -843,6 +862,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -885,6 +906,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +974,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +989,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -982,6 +1008,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1036,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1045,6 +1074,7 @@ public final class UpdateInsightTypeConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -41,6 +41,7 @@ public interface UpdateProcessorRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateProcessorRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateProcessorRequestOrBuilder
    * @return Whether the processor field is set.
    */
   boolean hasProcessor();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateProcessorRequestOrBuilder
    * @return The processor.
    */
   com.google.cloud.visionai.v1.Processor getProcessor();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface UpdateProcessorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

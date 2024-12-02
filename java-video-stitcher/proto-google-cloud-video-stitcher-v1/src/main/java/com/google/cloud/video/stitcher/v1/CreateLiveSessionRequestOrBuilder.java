@@ -39,6 +39,7 @@ public interface CreateLiveSessionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateLiveSessionRequestOrBuilder
    * @return Whether the liveSession field is set.
    */
   boolean hasLiveSession();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateLiveSessionRequestOrBuilder
    * @return The liveSession.
    */
   com.google.cloud.video.stitcher.v1.LiveSession getLiveSession();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListPlacementsResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Placement placements = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.Placement> getPlacementsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPlacementsResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Placement placements = 1;</code>
    */
   com.google.ads.admanager.v1.Placement getPlacements(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPlacementsResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Placement placements = 1;</code>
    */
   int getPlacementsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPlacementsResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.PlacementOrBuilder>
       getPlacementsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListPlacementsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

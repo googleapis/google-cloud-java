@@ -37,6 +37,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the listing field is set.
    */
   boolean hasListing();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SubscriptionOrBuilder
    * @return The listing.
    */
   java.lang.String getListing();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the dataExchange field is set.
    */
   boolean hasDataExchange();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface SubscriptionOrBuilder
    * @return The dataExchange.
    */
   java.lang.String getDataExchange();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface SubscriptionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the creationTime field is set.
    */
   boolean hasCreationTime();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface SubscriptionOrBuilder
    * @return The creationTime.
    */
   com.google.protobuf.Timestamp getCreationTime();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the lastModifyTime field is set.
    */
   boolean hasLastModifyTime();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface SubscriptionOrBuilder
    * @return The lastModifyTime.
    */
   com.google.protobuf.Timestamp getLastModifyTime();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface SubscriptionOrBuilder
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface SubscriptionOrBuilder
    * @return The organizationDisplayName.
    */
   java.lang.String getOrganizationDisplayName();
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public interface SubscriptionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public interface SubscriptionOrBuilder
    * </code>
    */
   int getLinkedDatasetMapCount();
+
   /**
    *
    *
@@ -330,11 +343,13 @@ public interface SubscriptionOrBuilder
    * </code>
    */
   boolean containsLinkedDatasetMap(java.lang.String key);
+
   /** Use {@link #getLinkedDatasetMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
       getLinkedDatasetMap();
+
   /**
    *
    *
@@ -355,6 +370,7 @@ public interface SubscriptionOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
       getLinkedDatasetMapMap();
+
   /**
    *
    *
@@ -378,6 +394,7 @@ public interface SubscriptionOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource defaultValue);
+
   /**
    *
    *
@@ -410,6 +427,7 @@ public interface SubscriptionOrBuilder
    * @return The subscriberContact.
    */
   java.lang.String getSubscriberContact();
+
   /**
    *
    *

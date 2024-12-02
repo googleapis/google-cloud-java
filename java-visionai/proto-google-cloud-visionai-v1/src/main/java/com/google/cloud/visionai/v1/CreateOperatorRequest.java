@@ -33,6 +33,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CreateOperatorRequest)
     CreateOperatorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateOperatorRequest.newBuilder() to construct.
   private CreateOperatorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operatorId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
 
   public static final int OPERATOR_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.Operator operator_;
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
   public boolean hasOperator() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.visionai.v1.Operator.getDefaultInstance()
         : operator_;
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -494,6 +504,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -737,6 +748,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -761,6 +773,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -785,6 +798,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -808,6 +822,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +842,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +869,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object operatorId_ = "";
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +915,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -918,6 +937,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +985,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.visionai.v1.Operator.Builder,
             com.google.cloud.visionai.v1.OperatorOrBuilder>
         operatorBuilder_;
+
     /**
      *
      *
@@ -980,6 +1002,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
     public boolean hasOperator() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1002,6 +1025,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
         return operatorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1050,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1072,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1102,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1124,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1141,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getOperatorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1133,6 +1162,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
             : operator_;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1192,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1196,6 +1227,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1230,6 +1262,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1263,6 +1296,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1326,7 @@ public final class CreateOperatorRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

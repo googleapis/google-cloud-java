@@ -33,6 +33,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ServerNetworkTemplate)
     ServerNetworkTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServerNetworkTemplate.newBuilder() to construct.
   private ServerNetworkTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -117,6 +119,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
      */
     boolean getRequired();
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface)
       LogicalInterfaceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LogicalInterface.newBuilder() to construct.
     private LogicalInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -246,6 +251,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
        * <code>INTERFACE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int INTERFACE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -256,6 +262,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
        * <code>BOND = 1;</code>
        */
       public static final int BOND_VALUE = 1;
+
       /**
        *
        *
@@ -359,6 +366,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -386,6 +394,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -416,6 +425,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
 
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_ = 0;
+
     /**
      *
      *
@@ -433,6 +443,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -462,6 +473,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
 
     public static final int REQUIRED_FIELD_NUMBER = 3;
     private boolean required_ = false;
+
     /**
      *
      *
@@ -671,6 +683,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -897,6 +910,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -923,6 +937,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -949,6 +964,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -974,6 +990,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -995,6 +1012,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1023,6 +1041,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -1040,6 +1059,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -1060,6 +1080,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1086,6 +1107,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
                 .InterfaceType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1111,6 +1133,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1132,6 +1155,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
 
       private boolean required_;
+
       /**
        *
        *
@@ -1147,6 +1171,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       public boolean getRequired() {
         return required_;
       }
+
       /**
        *
        *
@@ -1166,6 +1191,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1257,6 +1283,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1284,6 +1311,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -1317,6 +1345,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList applicableInstanceTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1331,6 +1360,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getApplicableInstanceTypesList() {
     return applicableInstanceTypes_;
   }
+
   /**
    *
    *
@@ -1345,6 +1375,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   public int getApplicableInstanceTypesCount() {
     return applicableInstanceTypes_.size();
   }
+
   /**
    *
    *
@@ -1360,6 +1391,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   public java.lang.String getApplicableInstanceTypes(int index) {
     return applicableInstanceTypes_.get(index);
   }
+
   /**
    *
    *
@@ -1382,6 +1414,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   private java.util.List<
           com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface>
       logicalInterfaces_;
+
   /**
    *
    *
@@ -1399,6 +1432,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       getLogicalInterfacesList() {
     return logicalInterfaces_;
   }
+
   /**
    *
    *
@@ -1417,6 +1451,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       getLogicalInterfacesOrBuilderList() {
     return logicalInterfaces_;
   }
+
   /**
    *
    *
@@ -1432,6 +1467,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   public int getLogicalInterfacesCount() {
     return logicalInterfaces_.size();
   }
+
   /**
    *
    *
@@ -1448,6 +1484,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       getLogicalInterfaces(int index) {
     return logicalInterfaces_.get(index);
   }
+
   /**
    *
    *
@@ -1655,6 +1692,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1924,6 +1962,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1950,6 +1989,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1976,6 +2016,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2001,6 +2042,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2022,6 +2064,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2059,6 +2102,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -2074,6 +2118,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       applicableInstanceTypes_.makeImmutable();
       return applicableInstanceTypes_;
     }
+
     /**
      *
      *
@@ -2088,6 +2133,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     public int getApplicableInstanceTypesCount() {
       return applicableInstanceTypes_.size();
     }
+
     /**
      *
      *
@@ -2103,6 +2149,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     public java.lang.String getApplicableInstanceTypes(int index) {
       return applicableInstanceTypes_.get(index);
     }
+
     /**
      *
      *
@@ -2118,6 +2165,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getApplicableInstanceTypesBytes(int index) {
       return applicableInstanceTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2141,6 +2189,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2212,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2182,6 +2232,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2200,6 +2251,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2264,6 +2316,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return logicalInterfacesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2282,6 +2335,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return logicalInterfacesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2301,6 +2355,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return logicalInterfacesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2327,6 +2382,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2351,6 +2407,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2376,6 +2433,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2402,6 +2460,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2425,6 +2484,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2449,6 +2509,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2474,6 +2535,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2495,6 +2557,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2516,6 +2579,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2531,6 +2595,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         getLogicalInterfacesBuilder(int index) {
       return getLogicalInterfacesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2550,6 +2615,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return logicalInterfacesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2572,6 +2638,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(logicalInterfaces_);
       }
     }
+
     /**
      *
      *
@@ -2590,6 +2657,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
               com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2609,6 +2677,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
               com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface
                   .getDefaultInstance());
     }
+
     /**
      *
      *

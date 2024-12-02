@@ -36,6 +36,7 @@ public interface PhoneUserOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

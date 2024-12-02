@@ -35,6 +35,7 @@ public interface ListPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
    */
   java.util.List<com.google.cloud.orgpolicy.v2.Policy> getPoliciesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
    */
   com.google.cloud.orgpolicy.v2.Policy getPolicies(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
    */
   int getPoliciesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.orgpolicy.v2.PolicyOrBuilder>
       getPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

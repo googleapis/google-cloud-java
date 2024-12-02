@@ -46,6 +46,7 @@ public interface UpdateLoggingConfigRequestOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface UpdateLoggingConfigRequestOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.retail.v2alpha.LoggingConfig getLoggingConfig();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface UpdateLoggingConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface UpdateLoggingConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

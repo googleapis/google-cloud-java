@@ -39,6 +39,7 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder
    * @return The domainName.
    */
   java.lang.String getDomainName();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder
    * @return Whether the domain field is set.
    */
   boolean hasDomain();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder
    * @return The domain.
    */
   com.google.cloud.managedidentities.v1.Domain getDomain();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoClassification)
     AutoMlVideoClassificationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlVideoClassification.newBuilder() to construct.
   private AutoMlVideoClassification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlVideoClassificationInputs
       inputs_;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
             .AutoMlVideoClassificationInputs.getDefaultInstance()
         : inputs_;
   }
+
   /**
    *
    *
@@ -322,6 +326,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +564,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlVideoClassificationInputsOrBuilder>
         inputsBuilder_;
+
     /**
      *
      *
@@ -575,6 +581,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -600,6 +607,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
         return inputsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -627,6 +635,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +660,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +695,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +717,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +736,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
             : inputs_;
       }
     }
+
     /**
      *
      *

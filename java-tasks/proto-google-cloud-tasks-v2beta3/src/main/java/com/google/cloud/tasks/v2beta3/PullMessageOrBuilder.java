@@ -57,6 +57,7 @@ public interface PullMessageOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
+
   /**
    *
    *

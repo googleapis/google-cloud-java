@@ -36,6 +36,7 @@ public interface TimeSeriesTableOrBuilder
    * </code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet> getDataSetsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TimeSeriesTableOrBuilder
    * </code>
    */
   com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet getDataSets(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface TimeSeriesTableOrBuilder
    * </code>
    */
   int getDataSetsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface TimeSeriesTableOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSetOrBuilder>
       getDataSetsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface TimeSeriesTableOrBuilder
    * @return The enum numeric value on the wire for metricVisualization.
    */
   int getMetricVisualizationValue();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface TimeSeriesTableOrBuilder
    */
   java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>
       getColumnSettingsList();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface TimeSeriesTableOrBuilder
    * </code>
    */
   com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings getColumnSettings(int index);
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface TimeSeriesTableOrBuilder
    * </code>
    */
   int getColumnSettingsCount();
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public interface TimeSeriesTableOrBuilder
   java.util.List<
           ? extends com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder>
       getColumnSettingsOrBuilderList();
+
   /**
    *
    *

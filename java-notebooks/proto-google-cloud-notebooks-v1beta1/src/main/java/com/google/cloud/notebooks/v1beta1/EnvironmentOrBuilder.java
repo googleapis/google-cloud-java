@@ -38,6 +38,7 @@ public interface EnvironmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface EnvironmentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface EnvironmentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the vmImage field is set.
    */
   boolean hasVmImage();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface EnvironmentOrBuilder
    * @return The vmImage.
    */
   com.google.cloud.notebooks.v1beta1.VmImage getVmImage();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the containerImage field is set.
    */
   boolean hasContainerImage();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface EnvironmentOrBuilder
    * @return The containerImage.
    */
   com.google.cloud.notebooks.v1beta1.ContainerImage getContainerImage();
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public interface EnvironmentOrBuilder
    * @return The postStartupScript.
    */
   java.lang.String getPostStartupScript();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public interface EnvironmentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

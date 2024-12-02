@@ -37,6 +37,7 @@ public interface ListBreakpointsResponseOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Breakpoint breakpoints = 1;</code>
    */
   java.util.List<com.google.devtools.clouddebugger.v2.Breakpoint> getBreakpointsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListBreakpointsResponseOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Breakpoint breakpoints = 1;</code>
    */
   com.google.devtools.clouddebugger.v2.Breakpoint getBreakpoints(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface ListBreakpointsResponseOrBuilder
    * <code>repeated .google.devtools.clouddebugger.v2.Breakpoint breakpoints = 1;</code>
    */
   int getBreakpointsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface ListBreakpointsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouddebugger.v2.BreakpointOrBuilder>
       getBreakpointsOrBuilderList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface ListBreakpointsResponseOrBuilder
    * @return The nextWaitToken.
    */
   java.lang.String getNextWaitToken();
+
   /**
    *
    *

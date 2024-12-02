@@ -39,6 +39,7 @@ public interface CreateSubmissionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateSubmissionRequestOrBuilder
    * @return Whether the submission field is set.
    */
   boolean hasSubmission();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateSubmissionRequestOrBuilder
    * @return The submission.
    */
   com.google.webrisk.v1.Submission getSubmission();
+
   /**
    *
    *

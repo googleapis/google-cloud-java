@@ -34,6 +34,7 @@ public interface MembershipBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MembershipDeletedEventData memberships = 1;</code>
    */
   java.util.List<com.google.chat.v1.MembershipDeletedEventData> getMembershipsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface MembershipBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MembershipDeletedEventData memberships = 1;</code>
    */
   com.google.chat.v1.MembershipDeletedEventData getMemberships(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface MembershipBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MembershipDeletedEventData memberships = 1;</code>
    */
   int getMembershipsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface MembershipBatchDeletedEventDataOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.MembershipDeletedEventDataOrBuilder>
       getMembershipsOrBuilderList();
+
   /**
    *
    *

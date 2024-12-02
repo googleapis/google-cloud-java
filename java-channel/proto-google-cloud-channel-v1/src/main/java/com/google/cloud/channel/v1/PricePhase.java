@@ -35,6 +35,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.PricePhase)
     PricePhaseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PricePhase.newBuilder() to construct.
   private PricePhase(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PERIOD_TYPE_FIELD_NUMBER = 1;
   private int periodType_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   public int getPeriodTypeValue() {
     return periodType_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIRST_PERIOD_FIELD_NUMBER = 2;
   private int firstPeriod_ = 0;
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_PERIOD_FIELD_NUMBER = 3;
   private int lastPeriod_ = 0;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRICE_FIELD_NUMBER = 4;
   private com.google.cloud.channel.v1.Price price_;
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.channel.v1.Price getPrice() {
     return price_ == null ? com.google.cloud.channel.v1.Price.getDefaultInstance() : price_;
   }
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.PriceTier> priceTiers_;
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.channel.v1.PriceTier> getPriceTiersList() {
     return priceTiers_;
   }
+
   /**
    *
    *
@@ -215,6 +225,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       getPriceTiersOrBuilderList() {
     return priceTiers_;
   }
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   public int getPriceTiersCount() {
     return priceTiers_.size();
   }
+
   /**
    *
    *
@@ -241,6 +253,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.channel.v1.PriceTier getPriceTiers(int index) {
     return priceTiers_.get(index);
   }
+
   /**
    *
    *
@@ -456,6 +469,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -755,6 +769,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int periodType_ = 0;
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public int getPeriodTypeValue() {
       return periodType_;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.channel.v1.PeriodType.forNumber(periodType_);
       return result == null ? com.google.cloud.channel.v1.PeriodType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int firstPeriod_;
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public int getFirstPeriod() {
       return firstPeriod_;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int lastPeriod_;
+
     /**
      *
      *
@@ -913,6 +936,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public int getLastPeriod() {
       return lastPeriod_;
     }
+
     /**
      *
      *
@@ -932,6 +956,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +981,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.channel.v1.Price.Builder,
             com.google.cloud.channel.v1.PriceOrBuilder>
         priceBuilder_;
+
     /**
      *
      *
@@ -970,6 +996,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrice() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -988,6 +1015,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         return priceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1038,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1058,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1086,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1106,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1121,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1105,6 +1138,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         return price_ == null ? com.google.cloud.channel.v1.Price.getDefaultInstance() : price_;
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1197,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         return priceTiersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1214,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         return priceTiersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1231,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         return priceTiersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1254,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1275,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1298,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1321,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1341,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1320,6 +1362,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1383,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1403,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1423,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1436,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.PriceTier.Builder getPriceTiersBuilder(int index) {
       return getPriceTiersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1406,6 +1453,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         return priceTiersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1471,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(priceTiers_);
       }
     }
+
     /**
      *
      *
@@ -1436,6 +1485,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       return getPriceTiersFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.PriceTier.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1449,6 +1499,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       return getPriceTiersFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.PriceTier.getDefaultInstance());
     }
+
     /**
      *
      *

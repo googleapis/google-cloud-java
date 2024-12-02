@@ -47,6 +47,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.discoveryengine.v1.Document getDocument();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

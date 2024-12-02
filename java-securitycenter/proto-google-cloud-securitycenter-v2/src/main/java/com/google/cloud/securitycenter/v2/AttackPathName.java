@@ -356,7 +356,8 @@ public class AttackPathName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               attackPathName.pathTemplate, ORGANIZATION_SIMULATION_VALUED_RESOURCE_ATTACK_PATH),
-          "toBuilder is only supported when AttackPathName has the pattern of organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}/attackPaths/{attack_path}");
+          "toBuilder is only supported when AttackPathName has the pattern of"
+              + " organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}/attackPaths/{attack_path}");
       this.organization = attackPathName.organization;
       this.simulation = attackPathName.simulation;
       this.valuedResource = attackPathName.valuedResource;

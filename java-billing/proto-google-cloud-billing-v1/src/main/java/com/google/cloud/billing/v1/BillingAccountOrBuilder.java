@@ -41,6 +41,7 @@ public interface BillingAccountOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface BillingAccountOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface BillingAccountOrBuilder
    * @return The masterBillingAccount.
    */
   java.lang.String getMasterBillingAccount();
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public interface BillingAccountOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

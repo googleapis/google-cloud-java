@@ -33,6 +33,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1alpha.LocationMetadata)
     LocationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationMetadata.newBuilder() to construct.
   private LocationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * @return The version.
      */
     java.lang.String getVersion();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      */
     boolean getIsDefault();
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1alpha.LocationMetadata.HiveMetastoreVersion)
       HiveMetastoreVersionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use HiveMetastoreVersion.newBuilder() to construct.
     private HiveMetastoreVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -156,6 +160,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -179,6 +184,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -205,6 +211,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
     public static final int IS_DEFAULT_FIELD_NUMBER = 2;
     private boolean isDefault_ = false;
+
     /**
      *
      *
@@ -399,6 +406,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -610,6 +618,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object version_ = "";
+
       /**
        *
        *
@@ -632,6 +641,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -654,6 +664,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -675,6 +686,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -692,6 +704,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -716,6 +729,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
 
       private boolean isDefault_;
+
       /**
        *
        *
@@ -732,6 +746,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       public boolean getIsDefault() {
         return isDefault_;
       }
+
       /**
        *
        *
@@ -752,6 +767,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -844,6 +860,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.metastore.v1alpha.LocationMetadata.HiveMetastoreVersion>
       supportedHiveMetastoreVersions_;
+
   /**
    *
    *
@@ -862,6 +879,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       getSupportedHiveMetastoreVersionsList() {
     return supportedHiveMetastoreVersions_;
   }
+
   /**
    *
    *
@@ -882,6 +900,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       getSupportedHiveMetastoreVersionsOrBuilderList() {
     return supportedHiveMetastoreVersions_;
   }
+
   /**
    *
    *
@@ -899,6 +918,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   public int getSupportedHiveMetastoreVersionsCount() {
     return supportedHiveMetastoreVersions_.size();
   }
+
   /**
    *
    *
@@ -917,6 +937,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       getSupportedHiveMetastoreVersions(int index) {
     return supportedHiveMetastoreVersions_.get(index);
   }
+
   /**
    *
    *
@@ -1100,6 +1121,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1373,6 +1395,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         return supportedHiveMetastoreVersionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1416,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         return supportedHiveMetastoreVersionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1438,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         return supportedHiveMetastoreVersionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1441,6 +1466,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1493,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1494,6 +1521,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1521,6 +1549,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1546,6 +1575,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1572,6 +1602,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1630,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1622,6 +1654,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1645,6 +1678,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1696,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         getSupportedHiveMetastoreVersionsBuilder(int index) {
       return getSupportedHiveMetastoreVersionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1683,6 +1718,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         return supportedHiveMetastoreVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1706,6 +1742,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(supportedHiveMetastoreVersions_);
       }
     }
+
     /**
      *
      *
@@ -1726,6 +1763,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
               com.google.cloud.metastore.v1alpha.LocationMetadata.HiveMetastoreVersion
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1747,6 +1785,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
               com.google.cloud.metastore.v1alpha.LocationMetadata.HiveMetastoreVersion
                   .getDefaultInstance());
     }
+
     /**
      *
      *

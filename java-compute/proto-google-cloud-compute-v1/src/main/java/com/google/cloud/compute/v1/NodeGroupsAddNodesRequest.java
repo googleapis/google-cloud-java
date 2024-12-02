@@ -32,6 +32,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeGroupsAddNodesRequest)
     NodeGroupsAddNodesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeGroupsAddNodesRequest.newBuilder() to construct.
   private NodeGroupsAddNodesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int ADDITIONAL_NODE_COUNT_FIELD_NUMBER = 134997930;
   private int additionalNodeCount_ = 0;
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
   public boolean hasAdditionalNodeCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -260,6 +263,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -444,6 +448,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int additionalNodeCount_;
+
     /**
      *
      *
@@ -459,6 +464,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     public boolean hasAdditionalNodeCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -474,6 +480,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     public int getAdditionalNodeCount() {
       return additionalNodeCount_;
     }
+
     /**
      *
      *
@@ -493,6 +500,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

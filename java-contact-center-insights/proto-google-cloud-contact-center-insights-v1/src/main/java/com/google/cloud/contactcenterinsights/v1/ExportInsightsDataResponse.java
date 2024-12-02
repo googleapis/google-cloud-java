@@ -33,6 +33,7 @@ public final class ExportInsightsDataResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse)
     ExportInsightsDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportInsightsDataResponse.newBuilder() to construct.
   private ExportInsightsDataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class ExportInsightsDataResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

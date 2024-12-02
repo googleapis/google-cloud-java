@@ -40,6 +40,7 @@ public interface FetchDomainVerificationStatusRequestOrBuilder
    * @return The siteSearchEngine.
    */
   java.lang.String getSiteSearchEngine();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface FetchDomainVerificationStatusRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

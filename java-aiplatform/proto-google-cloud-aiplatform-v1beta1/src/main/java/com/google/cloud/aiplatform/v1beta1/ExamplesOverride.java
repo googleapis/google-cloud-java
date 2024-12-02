@@ -33,6 +33,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExamplesOverride)
     ExamplesOverrideOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExamplesOverride.newBuilder() to construct.
   private ExamplesOverride(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
      * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
      * <code>INSTANCES = 1;</code>
      */
     public static final int INSTANCES_VALUE = 1;
+
     /**
      *
      *
@@ -225,6 +228,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
 
   public static final int NEIGHBOR_COUNT_FIELD_NUMBER = 1;
   private int neighborCount_ = 0;
+
   /**
    *
    *
@@ -243,6 +247,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
 
   public static final int CROWDING_COUNT_FIELD_NUMBER = 2;
   private int crowdingCount_ = 0;
+
   /**
    *
    *
@@ -264,6 +269,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace>
       restrictions_;
+
   /**
    *
    *
@@ -279,6 +285,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       getRestrictionsList() {
     return restrictions_;
   }
+
   /**
    *
    *
@@ -295,6 +302,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       getRestrictionsOrBuilderList() {
     return restrictions_;
   }
+
   /**
    *
    *
@@ -309,6 +317,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
   public int getRestrictionsCount() {
     return restrictions_.size();
   }
+
   /**
    *
    *
@@ -324,6 +333,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       int index) {
     return restrictions_.get(index);
   }
+
   /**
    *
    *
@@ -342,6 +352,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
 
   public static final int RETURN_EMBEDDINGS_FIELD_NUMBER = 4;
   private boolean returnEmbeddings_ = false;
+
   /**
    *
    *
@@ -360,6 +371,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 5;
   private int dataFormat_ = 0;
+
   /**
    *
    *
@@ -375,6 +387,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
   public int getDataFormatValue() {
     return dataFormat_;
   }
+
   /**
    *
    *
@@ -596,6 +609,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -879,6 +893,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int neighborCount_;
+
     /**
      *
      *
@@ -894,6 +909,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public int getNeighborCount() {
       return neighborCount_;
     }
+
     /**
      *
      *
@@ -913,6 +929,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +949,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     }
 
     private int crowdingCount_;
+
     /**
      *
      *
@@ -947,6 +965,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public int getCrowdingCount() {
       return crowdingCount_;
     }
+
     /**
      *
      *
@@ -966,6 +985,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1041,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
         return restrictionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1060,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
         return restrictionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
         return restrictionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1083,6 +1106,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1130,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1156,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1182,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1205,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1229,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1254,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1246,6 +1276,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1298,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1314,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
         getRestrictionsBuilder(int index) {
       return getRestrictionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1301,6 +1334,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
         return restrictionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1321,6 +1355,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(restrictions_);
       }
     }
+
     /**
      *
      *
@@ -1339,6 +1374,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
               com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1358,6 +1394,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
               com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1392,6 +1429,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean returnEmbeddings_;
+
     /**
      *
      *
@@ -1407,6 +1445,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public boolean getReturnEmbeddings() {
       return returnEmbeddings_;
     }
+
     /**
      *
      *
@@ -1426,6 +1465,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1445,6 +1485,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     }
 
     private int dataFormat_ = 0;
+
     /**
      *
      *
@@ -1460,6 +1501,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public int getDataFormatValue() {
       return dataFormat_;
     }
+
     /**
      *
      *
@@ -1478,6 +1520,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1497,6 +1540,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1519,6 +1563,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

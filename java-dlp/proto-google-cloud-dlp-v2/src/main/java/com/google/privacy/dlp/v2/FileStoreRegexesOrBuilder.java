@@ -38,6 +38,7 @@ public interface FileStoreRegexesOrBuilder
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.FileStoreRegex> getPatternsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface FileStoreRegexesOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.FileStoreRegex getPatterns(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface FileStoreRegexesOrBuilder
    * </code>
    */
   int getPatternsCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface FileStoreRegexesOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FileStoreRegexOrBuilder>
       getPatternsOrBuilderList();
+
   /**
    *
    *

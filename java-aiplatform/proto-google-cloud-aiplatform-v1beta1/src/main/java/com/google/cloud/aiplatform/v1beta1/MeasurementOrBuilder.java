@@ -39,6 +39,7 @@ public interface MeasurementOrBuilder
    * @return Whether the elapsedDuration field is set.
    */
   boolean hasElapsedDuration();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface MeasurementOrBuilder
    * @return The elapsedDuration.
    */
   com.google.protobuf.Duration getElapsedDuration();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface MeasurementOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Measurement.Metric> getMetricsList();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface MeasurementOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Measurement.Metric getMetrics(int index);
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface MeasurementOrBuilder
    * </code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface MeasurementOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.Measurement.MetricOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *

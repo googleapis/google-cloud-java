@@ -36,6 +36,7 @@ public interface DropInfoOrBuilder
    * @return The enum numeric value on the wire for cause.
    */
   int getCauseValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DropInfoOrBuilder
    * @return The resourceUri.
    */
   java.lang.String getResourceUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DropInfoOrBuilder
    * @return The sourceIp.
    */
   java.lang.String getSourceIp();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DropInfoOrBuilder
    * @return The destinationIp.
    */
   java.lang.String getDestinationIp();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface DropInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

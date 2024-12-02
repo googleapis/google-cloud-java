@@ -34,6 +34,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.SecondaryBootDisk)
     SecondaryBootDiskOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecondaryBootDisk.newBuilder() to construct.
   private SecondaryBootDisk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,6 +111,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -205,6 +207,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
 
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -220,6 +223,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -244,6 +248,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diskImage_ = "";
+
   /**
    *
    *
@@ -267,6 +272,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -459,6 +465,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -656,6 +663,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -671,6 +679,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -689,6 +698,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +718,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
           ? com.google.container.v1beta1.SecondaryBootDisk.Mode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -729,6 +740,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object diskImage_ = "";
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +806,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

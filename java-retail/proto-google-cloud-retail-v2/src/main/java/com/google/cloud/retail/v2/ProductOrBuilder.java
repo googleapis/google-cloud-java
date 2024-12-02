@@ -59,6 +59,7 @@ public interface ProductOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface ProductOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -161,6 +163,7 @@ public interface ProductOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -194,6 +197,7 @@ public interface ProductOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -239,6 +243,7 @@ public interface ProductOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -276,6 +281,7 @@ public interface ProductOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -315,6 +321,7 @@ public interface ProductOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -360,6 +367,7 @@ public interface ProductOrBuilder
    * @return The primaryProductId.
    */
   java.lang.String getPrimaryProductId();
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public interface ProductOrBuilder
    * @return A list containing the collectionMemberIds.
    */
   java.util.List<java.lang.String> getCollectionMemberIdsList();
+
   /**
    *
    *
@@ -434,6 +443,7 @@ public interface ProductOrBuilder
    * @return The count of collectionMemberIds.
    */
   int getCollectionMemberIdsCount();
+
   /**
    *
    *
@@ -457,6 +467,7 @@ public interface ProductOrBuilder
    * @return The collectionMemberIds at the given index.
    */
   java.lang.String getCollectionMemberIds(int index);
+
   /**
    *
    *
@@ -510,6 +521,7 @@ public interface ProductOrBuilder
    * @return The gtin.
    */
   java.lang.String getGtin();
+
   /**
    *
    *
@@ -586,6 +598,7 @@ public interface ProductOrBuilder
    * @return A list containing the categories.
    */
   java.util.List<java.lang.String> getCategoriesList();
+
   /**
    *
    *
@@ -632,6 +645,7 @@ public interface ProductOrBuilder
    * @return The count of categories.
    */
   int getCategoriesCount();
+
   /**
    *
    *
@@ -679,6 +693,7 @@ public interface ProductOrBuilder
    * @return The categories at the given index.
    */
   java.lang.String getCategories(int index);
+
   /**
    *
    *
@@ -746,6 +761,7 @@ public interface ProductOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -787,6 +803,7 @@ public interface ProductOrBuilder
    * @return A list containing the brands.
    */
   java.util.List<java.lang.String> getBrandsList();
+
   /**
    *
    *
@@ -808,6 +825,7 @@ public interface ProductOrBuilder
    * @return The count of brands.
    */
   int getBrandsCount();
+
   /**
    *
    *
@@ -830,6 +848,7 @@ public interface ProductOrBuilder
    * @return The brands at the given index.
    */
   java.lang.String getBrands(int index);
+
   /**
    *
    *
@@ -872,6 +891,7 @@ public interface ProductOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -913,6 +933,7 @@ public interface ProductOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -973,6 +994,7 @@ public interface ProductOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -1011,9 +1033,11 @@ public interface ProductOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> getAttributes();
+
   /**
    *
    *
@@ -1052,6 +1076,7 @@ public interface ProductOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> getAttributesMap();
+
   /**
    *
    *
@@ -1094,6 +1119,7 @@ public interface ProductOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.retail.v2.CustomAttribute defaultValue);
+
   /**
    *
    *
@@ -1157,6 +1183,7 @@ public interface ProductOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -1181,6 +1208,7 @@ public interface ProductOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -1206,6 +1234,7 @@ public interface ProductOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -1247,6 +1276,7 @@ public interface ProductOrBuilder
    * @return Whether the priceInfo field is set.
    */
   boolean hasPriceInfo();
+
   /**
    *
    *
@@ -1262,6 +1292,7 @@ public interface ProductOrBuilder
    * @return The priceInfo.
    */
   com.google.cloud.retail.v2.PriceInfo getPriceInfo();
+
   /**
    *
    *
@@ -1288,6 +1319,7 @@ public interface ProductOrBuilder
    * @return Whether the rating field is set.
    */
   boolean hasRating();
+
   /**
    *
    *
@@ -1300,6 +1332,7 @@ public interface ProductOrBuilder
    * @return The rating.
    */
   com.google.cloud.retail.v2.Rating getRating();
+
   /**
    *
    *
@@ -1329,6 +1362,7 @@ public interface ProductOrBuilder
    * @return Whether the availableTime field is set.
    */
   boolean hasAvailableTime();
+
   /**
    *
    *
@@ -1347,6 +1381,7 @@ public interface ProductOrBuilder
    * @return The availableTime.
    */
   com.google.protobuf.Timestamp getAvailableTime();
+
   /**
    *
    *
@@ -1391,6 +1426,7 @@ public interface ProductOrBuilder
    * @return The enum numeric value on the wire for availability.
    */
   int getAvailabilityValue();
+
   /**
    *
    *
@@ -1431,6 +1467,7 @@ public interface ProductOrBuilder
    * @return Whether the availableQuantity field is set.
    */
   boolean hasAvailableQuantity();
+
   /**
    *
    *
@@ -1443,6 +1480,7 @@ public interface ProductOrBuilder
    * @return The availableQuantity.
    */
   com.google.protobuf.Int32Value getAvailableQuantity();
+
   /**
    *
    *
@@ -1469,6 +1507,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
    */
   java.util.List<com.google.cloud.retail.v2.FulfillmentInfo> getFulfillmentInfoList();
+
   /**
    *
    *
@@ -1484,6 +1523,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
    */
   com.google.cloud.retail.v2.FulfillmentInfo getFulfillmentInfo(int index);
+
   /**
    *
    *
@@ -1499,6 +1539,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
    */
   int getFulfillmentInfoCount();
+
   /**
    *
    *
@@ -1515,6 +1556,7 @@ public interface ProductOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2.FulfillmentInfoOrBuilder>
       getFulfillmentInfoOrBuilderList();
+
   /**
    *
    *
@@ -1553,6 +1595,7 @@ public interface ProductOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -1593,6 +1636,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.Image images = 23;</code>
    */
   java.util.List<com.google.cloud.retail.v2.Image> getImagesList();
+
   /**
    *
    *
@@ -1610,6 +1654,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.Image images = 23;</code>
    */
   com.google.cloud.retail.v2.Image getImages(int index);
+
   /**
    *
    *
@@ -1627,6 +1672,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.Image images = 23;</code>
    */
   int getImagesCount();
+
   /**
    *
    *
@@ -1644,6 +1690,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.Image images = 23;</code>
    */
   java.util.List<? extends com.google.cloud.retail.v2.ImageOrBuilder> getImagesOrBuilderList();
+
   /**
    *
    *
@@ -1675,6 +1722,7 @@ public interface ProductOrBuilder
    * @return Whether the audience field is set.
    */
   boolean hasAudience();
+
   /**
    *
    *
@@ -1688,6 +1736,7 @@ public interface ProductOrBuilder
    * @return The audience.
    */
   com.google.cloud.retail.v2.Audience getAudience();
+
   /**
    *
    *
@@ -1716,6 +1765,7 @@ public interface ProductOrBuilder
    * @return Whether the colorInfo field is set.
    */
   boolean hasColorInfo();
+
   /**
    *
    *
@@ -1732,6 +1782,7 @@ public interface ProductOrBuilder
    * @return The colorInfo.
    */
   com.google.cloud.retail.v2.ColorInfo getColorInfo();
+
   /**
    *
    *
@@ -1776,6 +1827,7 @@ public interface ProductOrBuilder
    * @return A list containing the sizes.
    */
   java.util.List<java.lang.String> getSizesList();
+
   /**
    *
    *
@@ -1805,6 +1857,7 @@ public interface ProductOrBuilder
    * @return The count of sizes.
    */
   int getSizesCount();
+
   /**
    *
    *
@@ -1835,6 +1888,7 @@ public interface ProductOrBuilder
    * @return The sizes at the given index.
    */
   java.lang.String getSizes(int index);
+
   /**
    *
    *
@@ -1886,6 +1940,7 @@ public interface ProductOrBuilder
    * @return A list containing the materials.
    */
   java.util.List<java.lang.String> getMaterialsList();
+
   /**
    *
    *
@@ -1906,6 +1961,7 @@ public interface ProductOrBuilder
    * @return The count of materials.
    */
   int getMaterialsCount();
+
   /**
    *
    *
@@ -1927,6 +1983,7 @@ public interface ProductOrBuilder
    * @return The materials at the given index.
    */
   java.lang.String getMaterials(int index);
+
   /**
    *
    *
@@ -1971,6 +2028,7 @@ public interface ProductOrBuilder
    * @return A list containing the patterns.
    */
   java.util.List<java.lang.String> getPatternsList();
+
   /**
    *
    *
@@ -1993,6 +2051,7 @@ public interface ProductOrBuilder
    * @return The count of patterns.
    */
   int getPatternsCount();
+
   /**
    *
    *
@@ -2016,6 +2075,7 @@ public interface ProductOrBuilder
    * @return The patterns at the given index.
    */
   java.lang.String getPatterns(int index);
+
   /**
    *
    *
@@ -2063,6 +2123,7 @@ public interface ProductOrBuilder
    * @return A list containing the conditions.
    */
   java.util.List<java.lang.String> getConditionsList();
+
   /**
    *
    *
@@ -2086,6 +2147,7 @@ public interface ProductOrBuilder
    * @return The count of conditions.
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -2110,6 +2172,7 @@ public interface ProductOrBuilder
    * @return The conditions at the given index.
    */
   java.lang.String getConditions(int index);
+
   /**
    *
    *
@@ -2148,6 +2211,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
    */
   java.util.List<com.google.cloud.retail.v2.Promotion> getPromotionsList();
+
   /**
    *
    *
@@ -2161,6 +2225,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
    */
   com.google.cloud.retail.v2.Promotion getPromotions(int index);
+
   /**
    *
    *
@@ -2174,6 +2239,7 @@ public interface ProductOrBuilder
    * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
    */
   int getPromotionsCount();
+
   /**
    *
    *
@@ -2188,6 +2254,7 @@ public interface ProductOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2.PromotionOrBuilder>
       getPromotionsOrBuilderList();
+
   /**
    *
    *
@@ -2219,6 +2286,7 @@ public interface ProductOrBuilder
    * @return Whether the publishTime field is set.
    */
   boolean hasPublishTime();
+
   /**
    *
    *
@@ -2236,6 +2304,7 @@ public interface ProductOrBuilder
    * @return The publishTime.
    */
   com.google.protobuf.Timestamp getPublishTime();
+
   /**
    *
    *
@@ -2323,6 +2392,7 @@ public interface ProductOrBuilder
    */
   @java.lang.Deprecated
   boolean hasRetrievableFields();
+
   /**
    *
    *
@@ -2394,6 +2464,7 @@ public interface ProductOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.FieldMask getRetrievableFields();
+
   /**
    *
    *
@@ -2483,6 +2554,7 @@ public interface ProductOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.retail.v2.Product> getVariantsList();
+
   /**
    *
    *
@@ -2504,6 +2576,7 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2.Product getVariants(int index);
+
   /**
    *
    *
@@ -2525,6 +2598,7 @@ public interface ProductOrBuilder
    * </code>
    */
   int getVariantsCount();
+
   /**
    *
    *
@@ -2546,6 +2620,7 @@ public interface ProductOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.retail.v2.ProductOrBuilder> getVariantsOrBuilderList();
+
   /**
    *
    *
@@ -2586,6 +2661,7 @@ public interface ProductOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.retail.v2.LocalInventory> getLocalInventoriesList();
+
   /**
    *
    *
@@ -2604,6 +2680,7 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2.LocalInventory getLocalInventories(int index);
+
   /**
    *
    *
@@ -2622,6 +2699,7 @@ public interface ProductOrBuilder
    * </code>
    */
   int getLocalInventoriesCount();
+
   /**
    *
    *
@@ -2641,6 +2719,7 @@ public interface ProductOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2.LocalInventoryOrBuilder>
       getLocalInventoriesOrBuilderList();
+
   /**
    *
    *

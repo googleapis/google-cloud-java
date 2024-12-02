@@ -37,6 +37,7 @@ public interface ListImageVersionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ListImageVersionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

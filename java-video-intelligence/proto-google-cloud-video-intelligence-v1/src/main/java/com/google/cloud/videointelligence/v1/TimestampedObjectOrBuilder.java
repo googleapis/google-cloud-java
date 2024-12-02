@@ -37,6 +37,7 @@ public interface TimestampedObjectOrBuilder
    * @return Whether the normalizedBoundingBox field is set.
    */
   boolean hasNormalizedBoundingBox();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TimestampedObjectOrBuilder
    * @return The normalizedBoundingBox.
    */
   com.google.cloud.videointelligence.v1.NormalizedBoundingBox getNormalizedBoundingBox();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface TimestampedObjectOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface TimestampedObjectOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface TimestampedObjectOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.videointelligence.v1.DetectedAttribute> getAttributesList();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface TimestampedObjectOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.DetectedAttribute getAttributes(int index);
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface TimestampedObjectOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface TimestampedObjectOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.DetectedAttributeOrBuilder>
       getAttributesOrBuilderList();
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public interface TimestampedObjectOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.videointelligence.v1.DetectedLandmark> getLandmarksList();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface TimestampedObjectOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.DetectedLandmark getLandmarks(int index);
+
   /**
    *
    *
@@ -200,6 +210,7 @@ public interface TimestampedObjectOrBuilder
    * </code>
    */
   int getLandmarksCount();
+
   /**
    *
    *
@@ -213,6 +224,7 @@ public interface TimestampedObjectOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.DetectedLandmarkOrBuilder>
       getLandmarksOrBuilderList();
+
   /**
    *
    *

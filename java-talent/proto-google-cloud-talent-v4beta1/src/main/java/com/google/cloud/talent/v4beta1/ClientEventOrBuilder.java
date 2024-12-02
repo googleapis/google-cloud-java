@@ -39,6 +39,7 @@ public interface ClientEventOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ClientEventOrBuilder
    * @return The eventId.
    */
   java.lang.String getEventId();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface ClientEventOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ClientEventOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ClientEventOrBuilder
    * @return Whether the jobEvent field is set.
    */
   boolean hasJobEvent();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface ClientEventOrBuilder
    * @return The jobEvent.
    */
   com.google.cloud.talent.v4beta1.JobEvent getJobEvent();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface ClientEventOrBuilder
    * @return The eventNotes.
    */
   java.lang.String getEventNotes();
+
   /**
    *
    *
