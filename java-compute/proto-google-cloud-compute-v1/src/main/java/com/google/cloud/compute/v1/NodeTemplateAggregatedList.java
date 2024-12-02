@@ -1324,8 +1324,7 @@ public final class NodeTemplateAggregatedList extends com.google.protobuf.Genera
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

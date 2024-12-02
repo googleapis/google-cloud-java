@@ -2425,8 +2425,7 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ConcurrentExplanationSpecOverrideDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ConcurrentExplanationSpecOverrideConverter
         concurrentExplanationSpecOverrideConverter =

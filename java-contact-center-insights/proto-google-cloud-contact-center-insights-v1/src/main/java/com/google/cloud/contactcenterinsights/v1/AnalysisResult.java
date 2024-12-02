@@ -2565,8 +2565,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return EntitiesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final EntitiesConverter entitiesConverter = new EntitiesConverter();
 
@@ -3447,8 +3446,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return IntentsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final IntentsConverter intentsConverter = new IntentsConverter();
 
@@ -3695,8 +3693,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return PhraseMatchersDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final PhraseMatchersConverter phraseMatchersConverter =
           new PhraseMatchersConverter();

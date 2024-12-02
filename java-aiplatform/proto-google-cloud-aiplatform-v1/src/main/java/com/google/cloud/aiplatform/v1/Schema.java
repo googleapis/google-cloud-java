@@ -3392,8 +3392,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PropertiesConverter propertiesConverter = new PropertiesConverter();
 

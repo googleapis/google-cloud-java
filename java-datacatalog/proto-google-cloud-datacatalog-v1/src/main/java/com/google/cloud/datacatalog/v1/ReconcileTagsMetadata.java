@@ -944,8 +944,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       public com.google.protobuf.MapEntry<java.lang.String, com.google.rpc.Status> defaultEntry() {
         return ErrorsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ErrorsConverter errorsConverter = new ErrorsConverter();
 

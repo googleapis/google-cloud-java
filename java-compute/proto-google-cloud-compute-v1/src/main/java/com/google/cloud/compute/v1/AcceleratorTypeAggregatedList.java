@@ -1327,8 +1327,7 @@ public final class AcceleratorTypeAggregatedList extends com.google.protobuf.Gen
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

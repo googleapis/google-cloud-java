@@ -1335,8 +1335,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
             defaultEntry() {
           return MetadataDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final MetadataConverter metadataConverter = new MetadataConverter();
 

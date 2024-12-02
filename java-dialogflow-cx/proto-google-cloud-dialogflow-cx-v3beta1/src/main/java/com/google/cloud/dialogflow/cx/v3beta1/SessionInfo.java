@@ -876,8 +876,7 @@ public final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ParametersDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ParametersConverter parametersConverter = new ParametersConverter();
 

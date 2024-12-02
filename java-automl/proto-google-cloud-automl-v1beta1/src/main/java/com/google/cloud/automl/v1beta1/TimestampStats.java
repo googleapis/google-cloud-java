@@ -1468,8 +1468,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return GranularStatsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final GranularStatsConverter granularStatsConverter =
         new GranularStatsConverter();

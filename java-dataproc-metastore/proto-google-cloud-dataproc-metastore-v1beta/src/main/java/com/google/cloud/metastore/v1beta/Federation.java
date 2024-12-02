@@ -2480,8 +2480,7 @@ public final class Federation extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return BackendMetastoresDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final BackendMetastoresConverter backendMetastoresConverter =
         new BackendMetastoresConverter();

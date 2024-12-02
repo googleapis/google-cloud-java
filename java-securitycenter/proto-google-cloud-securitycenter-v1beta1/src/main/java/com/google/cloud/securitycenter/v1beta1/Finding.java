@@ -2278,8 +2278,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return SourcePropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final SourcePropertiesConverter sourcePropertiesConverter =
         new SourcePropertiesConverter();

@@ -2575,8 +2575,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           defaultEntry() {
         return MonthlyUsageDataDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MonthlyUsageDataConverter monthlyUsageDataConverter =
         new MonthlyUsageDataConverter();

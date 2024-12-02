@@ -1833,8 +1833,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
           defaultEntry() {
         return PerInstancePropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PerInstancePropertiesConverter perInstancePropertiesConverter =
         new PerInstancePropertiesConverter();

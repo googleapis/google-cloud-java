@@ -3098,8 +3098,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LabelsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LabelsConverter labelsConverter = new LabelsConverter();
 

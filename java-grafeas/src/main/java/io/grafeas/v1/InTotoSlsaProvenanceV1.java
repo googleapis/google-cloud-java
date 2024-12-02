@@ -3987,8 +3987,7 @@ public final class InTotoSlsaProvenanceV1 extends com.google.protobuf.GeneratedM
             defaultEntry() {
           return AnnotationsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final AnnotationsConverter annotationsConverter = new AnnotationsConverter();
 

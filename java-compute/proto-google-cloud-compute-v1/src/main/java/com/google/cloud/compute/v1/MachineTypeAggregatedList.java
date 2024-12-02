@@ -1324,8 +1324,7 @@ public final class MachineTypeAggregatedList extends com.google.protobuf.Generat
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

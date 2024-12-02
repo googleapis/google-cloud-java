@@ -2975,8 +2975,7 @@ public final class ModelMonitoringJobExecutionDetail extends com.google.protobuf
       public com.google.protobuf.MapEntry<java.lang.String, com.google.rpc.Status> defaultEntry() {
         return ObjectiveStatusDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ObjectiveStatusConverter objectiveStatusConverter =
         new ObjectiveStatusConverter();

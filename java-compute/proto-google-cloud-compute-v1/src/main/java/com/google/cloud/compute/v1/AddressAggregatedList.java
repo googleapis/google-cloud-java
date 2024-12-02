@@ -1319,8 +1319,7 @@ public final class AddressAggregatedList extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

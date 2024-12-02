@@ -3886,8 +3886,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
           defaultEntry() {
         return FileOperationsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FileOperationsConverter fileOperationsConverter =
         new FileOperationsConverter();

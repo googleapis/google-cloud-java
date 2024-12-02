@@ -6562,8 +6562,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return InputsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InputsConverter inputsConverter = new InputsConverter();
 
@@ -6844,8 +6843,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return OutputsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final OutputsConverter outputsConverter = new OutputsConverter();
 

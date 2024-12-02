@@ -1241,8 +1241,7 @@ public final class TargetHttpProxyAggregatedList extends com.google.protobuf.Gen
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

@@ -837,8 +837,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ChannelsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ChannelsConverter channelsConverter = new ChannelsConverter();
 

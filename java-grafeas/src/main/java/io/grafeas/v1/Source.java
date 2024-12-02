@@ -1053,8 +1053,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return FileHashesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FileHashesConverter fileHashesConverter = new FileHashesConverter();
 

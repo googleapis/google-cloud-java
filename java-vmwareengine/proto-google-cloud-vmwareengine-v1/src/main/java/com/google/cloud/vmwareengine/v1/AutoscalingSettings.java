@@ -3829,8 +3829,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return AutoscalingPoliciesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AutoscalingPoliciesConverter autoscalingPoliciesConverter =
         new AutoscalingPoliciesConverter();

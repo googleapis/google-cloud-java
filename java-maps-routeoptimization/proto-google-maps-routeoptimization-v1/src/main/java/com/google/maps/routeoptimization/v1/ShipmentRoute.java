@@ -1986,8 +1986,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return LoadDemandsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final LoadDemandsConverter loadDemandsConverter = new LoadDemandsConverter();
 
@@ -6724,8 +6723,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return VehicleLoadsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final VehicleLoadsConverter vehicleLoadsConverter =
           new VehicleLoadsConverter();

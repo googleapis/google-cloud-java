@@ -201,7 +201,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearParent()
                                           .clearProjectId()
                                           .clearZone()
@@ -250,7 +251,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -301,7 +303,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearNodePoolId()
@@ -353,7 +356,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearNodePoolId()
@@ -404,7 +408,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -454,7 +459,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -504,7 +510,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -554,7 +561,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -604,7 +612,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -654,7 +663,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -821,7 +831,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearName()
                                           .clearOperationId()
                                           .clearProjectId()
@@ -1021,7 +1032,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearParent()
                                           .clearProjectId()
@@ -1149,7 +1161,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearNodePoolId()
@@ -1201,7 +1214,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearNodePoolId()
@@ -1251,7 +1265,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                           ProtoRestSerializer.create()
                               .toBody(
                                   "*",
-                                  request.toBuilder()
+                                  request
+                                      .toBuilder()
                                       .clearClusterId()
                                       .clearName()
                                       .clearProjectId()
@@ -1301,7 +1316,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -1351,7 +1367,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -1401,7 +1418,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -1452,7 +1470,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearNodePoolId()
@@ -1503,7 +1522,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()
@@ -1553,7 +1573,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterId()
                                           .clearName()
                                           .clearProjectId()

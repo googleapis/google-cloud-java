@@ -1332,8 +1332,7 @@ public final class TargetVpnGatewayAggregatedList extends com.google.protobuf.Ge
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

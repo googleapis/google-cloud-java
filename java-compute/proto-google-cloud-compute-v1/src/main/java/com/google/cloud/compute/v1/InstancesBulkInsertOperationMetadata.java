@@ -615,8 +615,7 @@ public final class InstancesBulkInsertOperationMetadata
           defaultEntry() {
         return PerLocationStatusDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PerLocationStatusConverter perLocationStatusConverter =
         new PerLocationStatusConverter();

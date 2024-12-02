@@ -120,7 +120,8 @@ public class ProjectTest {
     assertNull(project.getParent());
     ResourceId parent = new ResourceId("id", "type");
     project =
-        project.toBuilder()
+        project
+            .toBuilder()
             .clearLabels()
             .addLabel("k3", "v3")
             .addLabel("k4", "v4")

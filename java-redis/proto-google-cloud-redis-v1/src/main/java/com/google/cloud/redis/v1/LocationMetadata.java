@@ -615,8 +615,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return AvailableZonesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AvailableZonesConverter availableZonesConverter =
         new AvailableZonesConverter();

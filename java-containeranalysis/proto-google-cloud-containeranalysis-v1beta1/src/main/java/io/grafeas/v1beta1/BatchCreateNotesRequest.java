@@ -771,8 +771,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
           defaultEntry() {
         return NotesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final NotesConverter notesConverter = new NotesConverter();
 

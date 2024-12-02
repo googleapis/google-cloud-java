@@ -2419,8 +2419,7 @@ public final class ModelMonitoringObjectiveSpec extends com.google.protobuf.Gene
             defaultEntry() {
           return FeatureAlertConditionsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final FeatureAlertConditionsConverter featureAlertConditionsConverter =
           new FeatureAlertConditionsConverter();
@@ -4433,8 +4432,7 @@ public final class ModelMonitoringObjectiveSpec extends com.google.protobuf.Gene
             defaultEntry() {
           return FeatureAlertConditionsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final FeatureAlertConditionsConverter featureAlertConditionsConverter =
           new FeatureAlertConditionsConverter();

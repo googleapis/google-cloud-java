@@ -959,8 +959,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
           defaultEntry() {
         return InstanceStatusesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InstanceStatusesConverter instanceStatusesConverter =
         new InstanceStatusesConverter();

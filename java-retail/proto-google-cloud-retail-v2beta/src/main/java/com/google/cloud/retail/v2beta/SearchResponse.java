@@ -2447,8 +2447,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return MatchingVariantFieldsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final MatchingVariantFieldsConverter matchingVariantFieldsConverter =
           new MatchingVariantFieldsConverter();
@@ -2781,8 +2780,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return VariantRollupValuesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final VariantRollupValuesConverter variantRollupValuesConverter =
           new VariantRollupValuesConverter();

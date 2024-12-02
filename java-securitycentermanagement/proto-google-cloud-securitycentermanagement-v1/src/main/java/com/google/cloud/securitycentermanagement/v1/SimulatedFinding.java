@@ -2625,8 +2625,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return SourcePropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final SourcePropertiesConverter sourcePropertiesConverter =
         new SourcePropertiesConverter();

@@ -7465,8 +7465,7 @@ public final class Explanations {
             defaultEntry() {
           return MembershipsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final MembershipsConverter membershipsConverter = new MembershipsConverter();
 

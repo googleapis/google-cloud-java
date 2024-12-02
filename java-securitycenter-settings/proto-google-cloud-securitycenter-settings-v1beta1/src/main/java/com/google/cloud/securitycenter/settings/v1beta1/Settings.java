@@ -3141,8 +3141,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ComponentSettingsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ComponentSettingsConverter componentSettingsConverter =
         new ComponentSettingsConverter();
@@ -3432,8 +3431,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return DetectorGroupSettingsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DetectorGroupSettingsConverter detectorGroupSettingsConverter =
         new DetectorGroupSettingsConverter();

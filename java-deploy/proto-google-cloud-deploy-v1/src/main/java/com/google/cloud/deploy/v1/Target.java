@@ -5057,8 +5057,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return AssociatedEntitiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AssociatedEntitiesConverter associatedEntitiesConverter =
         new AssociatedEntitiesConverter();

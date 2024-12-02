@@ -2715,8 +2715,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return ModulesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ModulesConverter modulesConverter = new ModulesConverter();
 

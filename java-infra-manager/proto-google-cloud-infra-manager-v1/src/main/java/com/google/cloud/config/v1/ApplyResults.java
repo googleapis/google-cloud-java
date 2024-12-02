@@ -979,8 +979,7 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return OutputsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final OutputsConverter outputsConverter = new OutputsConverter();
 

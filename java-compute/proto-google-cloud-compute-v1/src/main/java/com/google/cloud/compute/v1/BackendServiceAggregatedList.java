@@ -1328,8 +1328,7 @@ public final class BackendServiceAggregatedList extends com.google.protobuf.Gene
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

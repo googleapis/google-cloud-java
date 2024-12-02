@@ -699,8 +699,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
           defaultEntry() {
         return ResultsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ResultsConverter resultsConverter = new ResultsConverter();
 

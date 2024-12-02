@@ -5292,8 +5292,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ResourcePropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ResourcePropertiesConverter resourcePropertiesConverter =
         new ResourcePropertiesConverter();

@@ -1166,8 +1166,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return UsageWithinTimeRangeDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final UsageWithinTimeRangeConverter usageWithinTimeRangeConverter =
         new UsageWithinTimeRangeConverter();
@@ -1458,8 +1457,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return CommonUsageWithinTimeRangeDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CommonUsageWithinTimeRangeConverter commonUsageWithinTimeRangeConverter =
         new CommonUsageWithinTimeRangeConverter();

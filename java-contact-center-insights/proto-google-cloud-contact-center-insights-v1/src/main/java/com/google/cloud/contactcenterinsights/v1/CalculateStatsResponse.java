@@ -4785,8 +4785,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           defaultEntry() {
         return IssueMatchesStatsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final IssueMatchesStatsConverter issueMatchesStatsConverter =
         new IssueMatchesStatsConverter();

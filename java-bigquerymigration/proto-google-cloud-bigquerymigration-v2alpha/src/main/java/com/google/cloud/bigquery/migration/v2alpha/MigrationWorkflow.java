@@ -1500,8 +1500,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return TasksDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TasksConverter tasksConverter = new TasksConverter();
 

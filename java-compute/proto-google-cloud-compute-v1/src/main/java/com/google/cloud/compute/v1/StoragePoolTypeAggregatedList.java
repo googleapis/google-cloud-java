@@ -1219,8 +1219,7 @@ public final class StoragePoolTypeAggregatedList extends com.google.protobuf.Gen
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

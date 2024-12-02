@@ -804,8 +804,7 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
           defaultEntry() {
         return FeatureValuesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FeatureValuesConverter featureValuesConverter =
         new FeatureValuesConverter();

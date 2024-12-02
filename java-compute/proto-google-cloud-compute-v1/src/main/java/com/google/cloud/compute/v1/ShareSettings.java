@@ -917,8 +917,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ProjectMapDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ProjectMapConverter projectMapConverter = new ProjectMapConverter();
 

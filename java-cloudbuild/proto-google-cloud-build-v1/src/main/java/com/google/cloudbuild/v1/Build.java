@@ -10311,8 +10311,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return TimingDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TimingConverter timingConverter = new TimingConverter();
 

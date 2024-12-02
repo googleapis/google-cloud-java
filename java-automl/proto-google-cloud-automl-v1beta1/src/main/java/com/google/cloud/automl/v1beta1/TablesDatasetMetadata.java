@@ -1752,8 +1752,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return TargetColumnCorrelationsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TargetColumnCorrelationsConverter targetColumnCorrelationsConverter =
         new TargetColumnCorrelationsConverter();

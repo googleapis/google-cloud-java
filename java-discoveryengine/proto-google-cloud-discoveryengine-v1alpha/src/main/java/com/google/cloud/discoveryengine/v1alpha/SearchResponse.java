@@ -1680,8 +1680,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return ModelScoresDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final ModelScoresConverter modelScoresConverter = new ModelScoresConverter();
 

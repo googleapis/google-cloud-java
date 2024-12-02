@@ -1329,8 +1329,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return MaintenanceExclusionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MaintenanceExclusionsConverter maintenanceExclusionsConverter =
         new MaintenanceExclusionsConverter();

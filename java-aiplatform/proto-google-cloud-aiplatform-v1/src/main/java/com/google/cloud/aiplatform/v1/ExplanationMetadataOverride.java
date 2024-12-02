@@ -1845,8 +1845,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
           defaultEntry() {
         return InputsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InputsConverter inputsConverter = new InputsConverter();
 

@@ -2376,8 +2376,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return MembershipSpecsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MembershipSpecsConverter membershipSpecsConverter =
         new MembershipSpecsConverter();
@@ -2981,8 +2980,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return MembershipStatesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MembershipStatesConverter membershipStatesConverter =
         new MembershipStatesConverter();

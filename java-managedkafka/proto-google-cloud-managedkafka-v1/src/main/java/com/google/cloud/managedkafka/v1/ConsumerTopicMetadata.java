@@ -607,8 +607,7 @@ public final class ConsumerTopicMetadata extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return PartitionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PartitionsConverter partitionsConverter = new PartitionsConverter();
 

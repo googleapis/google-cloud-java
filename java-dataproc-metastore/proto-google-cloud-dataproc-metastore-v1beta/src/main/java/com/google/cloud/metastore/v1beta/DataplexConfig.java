@@ -600,8 +600,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LakeResourcesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LakeResourcesConverter lakeResourcesConverter =
         new LakeResourcesConverter();

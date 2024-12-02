@@ -621,8 +621,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PropertiesConverter propertiesConverter = new PropertiesConverter();
 

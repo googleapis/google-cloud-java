@@ -985,8 +985,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             defaultEntry() {
           return MetadataDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final MetadataConverter metadataConverter = new MetadataConverter();
 

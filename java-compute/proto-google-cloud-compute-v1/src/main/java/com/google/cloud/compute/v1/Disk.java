@@ -6458,8 +6458,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return AsyncSecondaryDisksDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AsyncSecondaryDisksConverter asyncSecondaryDisksConverter =
         new AsyncSecondaryDisksConverter();

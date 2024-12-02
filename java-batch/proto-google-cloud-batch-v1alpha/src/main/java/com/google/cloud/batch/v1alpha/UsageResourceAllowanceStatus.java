@@ -2962,8 +2962,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             defaultEntry() {
           return LatestPeriodConsumptionsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final LatestPeriodConsumptionsConverter latestPeriodConsumptionsConverter =
           new LatestPeriodConsumptionsConverter();

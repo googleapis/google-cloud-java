@@ -1094,8 +1094,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return AttributeMapDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final AttributeMapConverter attributeMapConverter =
           new AttributeMapConverter();

@@ -3655,8 +3655,7 @@ public final class Resources {
             defaultEntry() {
           return ClusterAdmissionRulesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final ClusterAdmissionRulesConverter clusterAdmissionRulesConverter =
           new ClusterAdmissionRulesConverter();
@@ -4016,8 +4015,7 @@ public final class Resources {
             defaultEntry() {
           return KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final KubernetesNamespaceAdmissionRulesConverter
           kubernetesNamespaceAdmissionRulesConverter =
@@ -4339,8 +4337,7 @@ public final class Resources {
             defaultEntry() {
           return KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final KubernetesServiceAccountAdmissionRulesConverter
           kubernetesServiceAccountAdmissionRulesConverter =
@@ -4670,8 +4667,7 @@ public final class Resources {
             defaultEntry() {
           return IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final IstioServiceIdentityAdmissionRulesConverter
           istioServiceIdentityAdmissionRulesConverter =

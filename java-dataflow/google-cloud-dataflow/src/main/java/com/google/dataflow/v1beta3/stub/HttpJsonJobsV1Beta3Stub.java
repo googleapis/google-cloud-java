@@ -286,7 +286,8 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearJobId()
                                           .clearLocation()
                                           .clearProjectId()

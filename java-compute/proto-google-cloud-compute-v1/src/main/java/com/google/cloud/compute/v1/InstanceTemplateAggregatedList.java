@@ -1226,8 +1226,7 @@ public final class InstanceTemplateAggregatedList extends com.google.protobuf.Ge
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

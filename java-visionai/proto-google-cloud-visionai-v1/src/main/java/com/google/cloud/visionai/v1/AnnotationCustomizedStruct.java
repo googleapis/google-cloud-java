@@ -592,8 +592,7 @@ public final class AnnotationCustomizedStruct extends com.google.protobuf.Genera
           defaultEntry() {
         return ElementsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ElementsConverter elementsConverter = new ElementsConverter();
 

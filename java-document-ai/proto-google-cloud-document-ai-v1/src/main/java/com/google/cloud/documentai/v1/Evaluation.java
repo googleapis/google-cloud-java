@@ -7901,8 +7901,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return EntityMetricsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final EntityMetricsConverter entityMetricsConverter =
         new EntityMetricsConverter();

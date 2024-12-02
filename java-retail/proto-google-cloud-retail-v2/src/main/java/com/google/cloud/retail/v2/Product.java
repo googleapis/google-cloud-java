@@ -8690,8 +8690,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return AttributesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AttributesConverter attributesConverter = new AttributesConverter();
 

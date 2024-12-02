@@ -1022,8 +1022,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             defaultEntry() {
           return AttributesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final AttributesConverter attributesConverter = new AttributesConverter();
 
@@ -5207,8 +5206,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return AttributeResultsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AttributeResultsConverter attributeResultsConverter =
         new AttributeResultsConverter();

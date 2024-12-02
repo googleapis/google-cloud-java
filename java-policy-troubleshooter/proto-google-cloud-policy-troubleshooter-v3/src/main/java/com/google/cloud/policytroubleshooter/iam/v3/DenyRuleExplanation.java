@@ -4431,8 +4431,7 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return DeniedPermissionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DeniedPermissionsConverter deniedPermissionsConverter =
         new DeniedPermissionsConverter();
@@ -5055,8 +5054,7 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return ExceptionPermissionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExceptionPermissionsConverter exceptionPermissionsConverter =
         new ExceptionPermissionsConverter();
@@ -5684,8 +5682,7 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return DeniedPrincipalsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DeniedPrincipalsConverter deniedPrincipalsConverter =
         new DeniedPrincipalsConverter();
@@ -6319,8 +6316,7 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return ExceptionPrincipalsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExceptionPrincipalsConverter exceptionPrincipalsConverter =
         new ExceptionPrincipalsConverter();

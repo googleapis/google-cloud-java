@@ -4664,8 +4664,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
               defaultEntry() {
             return ConfigsDefaultEntryHolder.defaultEntry;
           }
-        }
-        ;
+        };
 
         private static final ConfigsConverter configsConverter = new ConfigsConverter();
 

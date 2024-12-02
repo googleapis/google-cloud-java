@@ -1049,8 +1049,7 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return BundleStatesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final BundleStatesConverter bundleStatesConverter = new BundleStatesConverter();
 

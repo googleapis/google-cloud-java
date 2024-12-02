@@ -2111,8 +2111,7 @@ public final class PipelineTaskRerunConfig extends com.google.protobuf.Generated
             defaultEntry() {
           return ArtifactsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final ArtifactsConverter artifactsConverter = new ArtifactsConverter();
 
@@ -2396,8 +2395,7 @@ public final class PipelineTaskRerunConfig extends com.google.protobuf.Generated
             defaultEntry() {
           return ParameterValuesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final ParameterValuesConverter parameterValuesConverter =
           new ParameterValuesConverter();

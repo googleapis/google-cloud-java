@@ -1323,8 +1323,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

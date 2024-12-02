@@ -1500,8 +1500,7 @@ public final class SecurityPoliciesAggregatedList extends com.google.protobuf.Ge
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

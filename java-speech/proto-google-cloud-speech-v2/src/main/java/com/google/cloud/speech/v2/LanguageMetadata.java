@@ -588,8 +588,7 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return ModelsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ModelsConverter modelsConverter = new ModelsConverter();
 

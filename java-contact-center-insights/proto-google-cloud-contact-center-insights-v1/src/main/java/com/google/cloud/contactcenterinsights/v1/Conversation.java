@@ -17154,8 +17154,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return DialogflowIntentsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DialogflowIntentsConverter dialogflowIntentsConverter =
         new DialogflowIntentsConverter();

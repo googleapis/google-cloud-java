@@ -2566,8 +2566,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return DeploymentConfigsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DeploymentConfigsConverter deploymentConfigsConverter =
         new DeploymentConfigsConverter();

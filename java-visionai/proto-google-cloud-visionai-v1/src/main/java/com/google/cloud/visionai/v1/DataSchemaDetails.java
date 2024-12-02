@@ -2770,8 +2770,7 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             defaultEntry() {
           return FieldSchemasDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final FieldSchemasConverter fieldSchemasConverter =
           new FieldSchemasConverter();

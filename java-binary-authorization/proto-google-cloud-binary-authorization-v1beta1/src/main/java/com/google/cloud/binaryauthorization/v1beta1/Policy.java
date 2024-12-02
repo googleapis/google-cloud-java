@@ -2834,8 +2834,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ClusterAdmissionRulesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ClusterAdmissionRulesConverter clusterAdmissionRulesConverter =
         new ClusterAdmissionRulesConverter();
@@ -3159,8 +3158,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final KubernetesNamespaceAdmissionRulesConverter
         kubernetesNamespaceAdmissionRulesConverter =
@@ -3446,8 +3444,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final KubernetesServiceAccountAdmissionRulesConverter
         kubernetesServiceAccountAdmissionRulesConverter =
@@ -3737,8 +3734,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final IstioServiceIdentityAdmissionRulesConverter
         istioServiceIdentityAdmissionRulesConverter =

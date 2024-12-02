@@ -2615,8 +2615,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return MaxLoadsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MaxLoadsConverter maxLoadsConverter = new MaxLoadsConverter();
 

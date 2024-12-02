@@ -2841,8 +2841,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PathFiltersDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PathFiltersConverter pathFiltersConverter = new PathFiltersConverter();
 
@@ -3305,8 +3304,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PathValueMatchersDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PathValueMatchersConverter pathValueMatchersConverter =
         new PathValueMatchersConverter();

@@ -11137,8 +11137,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return SourcePropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final SourcePropertiesConverter sourcePropertiesConverter =
         new SourcePropertiesConverter();
@@ -13275,8 +13274,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ExternalSystemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExternalSystemsConverter externalSystemsConverter =
         new ExternalSystemsConverter();
@@ -14819,8 +14817,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ContactsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ContactsConverter contactsConverter = new ContactsConverter();
 

@@ -3733,8 +3733,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             defaultEntry() {
           return SkewThresholdsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final SkewThresholdsConverter skewThresholdsConverter =
           new SkewThresholdsConverter();
@@ -4027,8 +4026,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             defaultEntry() {
           return AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final AttributionScoreSkewThresholdsConverter
           attributionScoreSkewThresholdsConverter = new AttributionScoreSkewThresholdsConverter();
@@ -5775,8 +5773,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             defaultEntry() {
           return DriftThresholdsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final DriftThresholdsConverter driftThresholdsConverter =
           new DriftThresholdsConverter();
@@ -6069,8 +6066,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             defaultEntry() {
           return AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final AttributionScoreDriftThresholdsConverter
           attributionScoreDriftThresholdsConverter = new AttributionScoreDriftThresholdsConverter();

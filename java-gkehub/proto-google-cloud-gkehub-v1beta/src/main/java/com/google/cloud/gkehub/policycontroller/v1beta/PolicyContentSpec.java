@@ -732,8 +732,7 @@ public final class PolicyContentSpec extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return BundlesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final BundlesConverter bundlesConverter = new BundlesConverter();
 

@@ -591,8 +591,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ModelFeaturesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ModelFeaturesConverter modelFeaturesConverter =
         new ModelFeaturesConverter();

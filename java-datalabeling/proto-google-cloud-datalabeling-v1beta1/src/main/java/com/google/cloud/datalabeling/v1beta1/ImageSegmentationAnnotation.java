@@ -741,8 +741,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
           defaultEntry() {
         return AnnotationColorsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AnnotationColorsConverter annotationColorsConverter =
         new AnnotationColorsConverter();

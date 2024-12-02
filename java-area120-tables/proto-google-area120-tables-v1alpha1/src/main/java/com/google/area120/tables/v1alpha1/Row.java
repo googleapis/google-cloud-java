@@ -786,8 +786,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ValuesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ValuesConverter valuesConverter = new ValuesConverter();
 

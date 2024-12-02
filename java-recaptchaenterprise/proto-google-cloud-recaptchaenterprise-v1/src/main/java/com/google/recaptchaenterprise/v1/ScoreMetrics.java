@@ -903,8 +903,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ActionMetricsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ActionMetricsConverter actionMetricsConverter =
         new ActionMetricsConverter();

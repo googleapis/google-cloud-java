@@ -3463,8 +3463,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ServiceTermsMapDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ServiceTermsMapConverter serviceTermsMapConverter =
         new ServiceTermsMapConverter();

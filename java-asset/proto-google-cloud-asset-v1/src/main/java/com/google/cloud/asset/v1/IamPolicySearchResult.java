@@ -1636,8 +1636,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             defaultEntry() {
           return MatchedPermissionsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final MatchedPermissionsConverter matchedPermissionsConverter =
           new MatchedPermissionsConverter();

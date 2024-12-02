@@ -618,8 +618,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
           defaultEntry() {
         return TranscriptionMetadataDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TranscriptionMetadataConverter transcriptionMetadataConverter =
         new TranscriptionMetadataConverter();

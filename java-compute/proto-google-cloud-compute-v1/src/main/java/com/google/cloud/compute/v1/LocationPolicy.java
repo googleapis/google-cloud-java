@@ -886,8 +886,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LocationsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LocationsConverter locationsConverter = new LocationsConverter();
 

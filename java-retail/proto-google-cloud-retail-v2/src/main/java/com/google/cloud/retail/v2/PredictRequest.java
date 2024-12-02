@@ -2527,8 +2527,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ParamsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ParamsConverter paramsConverter = new ParamsConverter();
 

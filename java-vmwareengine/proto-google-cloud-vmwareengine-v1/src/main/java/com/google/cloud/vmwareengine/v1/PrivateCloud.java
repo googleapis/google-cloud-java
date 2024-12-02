@@ -1627,8 +1627,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return NodeTypeConfigsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final NodeTypeConfigsConverter nodeTypeConfigsConverter =
           new NodeTypeConfigsConverter();

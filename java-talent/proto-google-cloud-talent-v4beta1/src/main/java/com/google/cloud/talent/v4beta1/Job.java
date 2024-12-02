@@ -9512,8 +9512,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return CustomAttributesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CustomAttributesConverter customAttributesConverter =
         new CustomAttributesConverter();

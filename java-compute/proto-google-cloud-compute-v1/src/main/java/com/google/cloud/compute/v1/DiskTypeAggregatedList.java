@@ -1319,8 +1319,7 @@ public final class DiskTypeAggregatedList extends com.google.protobuf.GeneratedM
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

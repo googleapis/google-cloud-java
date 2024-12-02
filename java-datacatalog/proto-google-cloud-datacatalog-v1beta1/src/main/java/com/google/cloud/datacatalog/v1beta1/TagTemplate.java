@@ -1281,8 +1281,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return FieldsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FieldsConverter fieldsConverter = new FieldsConverter();
 

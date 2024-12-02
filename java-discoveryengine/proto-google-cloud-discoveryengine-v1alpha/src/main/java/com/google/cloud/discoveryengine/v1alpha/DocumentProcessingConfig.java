@@ -7298,8 +7298,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           defaultEntry() {
         return ParsingConfigOverridesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ParsingConfigOverridesConverter parsingConfigOverridesConverter =
         new ParsingConfigOverridesConverter();

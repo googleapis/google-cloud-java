@@ -849,8 +849,7 @@ public final class ReplayConfig extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PolicyOverlayDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PolicyOverlayConverter policyOverlayConverter =
         new PolicyOverlayConverter();

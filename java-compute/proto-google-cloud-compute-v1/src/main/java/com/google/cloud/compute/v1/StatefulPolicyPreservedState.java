@@ -979,8 +979,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
           defaultEntry() {
         return DisksDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DisksConverter disksConverter = new DisksConverter();
 
@@ -1261,8 +1260,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
           defaultEntry() {
         return ExternalIPsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExternalIPsConverter externalIPsConverter = new ExternalIPsConverter();
 
@@ -1541,8 +1539,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
           defaultEntry() {
         return InternalIPsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InternalIPsConverter internalIPsConverter = new InternalIPsConverter();
 

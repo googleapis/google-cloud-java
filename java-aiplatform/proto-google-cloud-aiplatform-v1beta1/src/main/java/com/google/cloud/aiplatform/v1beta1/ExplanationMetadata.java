@@ -11798,8 +11798,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return InputsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InputsConverter inputsConverter = new InputsConverter();
 
@@ -12195,8 +12194,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return OutputsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final OutputsConverter outputsConverter = new OutputsConverter();
 

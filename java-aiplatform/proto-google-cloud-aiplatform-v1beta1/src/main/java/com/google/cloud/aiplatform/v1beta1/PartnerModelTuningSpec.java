@@ -980,8 +980,7 @@ public final class PartnerModelTuningSpec extends com.google.protobuf.GeneratedM
           defaultEntry() {
         return HyperParametersDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final HyperParametersConverter hyperParametersConverter =
         new HyperParametersConverter();

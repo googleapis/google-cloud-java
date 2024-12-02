@@ -3104,8 +3104,7 @@ public final class AllowBindingExplanation extends com.google.protobuf.Generated
           defaultEntry() {
         return MembershipsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MembershipsConverter membershipsConverter = new MembershipsConverter();
 

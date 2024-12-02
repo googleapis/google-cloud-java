@@ -4183,8 +4183,7 @@ public final class AnalyzerDefinition extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return AttrsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AttrsConverter attrsConverter = new AttrsConverter();
 

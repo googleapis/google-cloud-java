@@ -959,8 +959,7 @@ public final class SnapshotSettingsStorageLocationSettings
           defaultEntry() {
         return LocationsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LocationsConverter locationsConverter = new LocationsConverter();
 

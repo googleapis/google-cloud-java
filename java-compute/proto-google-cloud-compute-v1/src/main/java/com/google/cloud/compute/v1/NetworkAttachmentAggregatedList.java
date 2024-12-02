@@ -1208,8 +1208,7 @@ public final class NetworkAttachmentAggregatedList extends com.google.protobuf.G
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

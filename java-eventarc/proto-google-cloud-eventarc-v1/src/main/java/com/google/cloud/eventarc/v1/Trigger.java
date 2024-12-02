@@ -3856,8 +3856,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ConditionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ConditionsConverter conditionsConverter = new ConditionsConverter();
 

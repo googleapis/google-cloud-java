@@ -1319,8 +1319,7 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

@@ -639,8 +639,7 @@ public final class GetUriPatternDocumentDataResponse extends com.google.protobuf
           defaultEntry() {
         return DocumentDataMapDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DocumentDataMapConverter documentDataMapConverter =
         new DocumentDataMapConverter();

@@ -3705,8 +3705,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LinkedDatasetMapDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LinkedDatasetMapConverter linkedDatasetMapConverter =
         new LinkedDatasetMapConverter();

@@ -1280,8 +1280,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return InputValuesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InputValuesConverter inputValuesConverter = new InputValuesConverter();
 

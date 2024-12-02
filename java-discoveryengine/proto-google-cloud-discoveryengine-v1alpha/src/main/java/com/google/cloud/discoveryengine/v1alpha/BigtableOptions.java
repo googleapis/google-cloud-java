@@ -4422,8 +4422,7 @@ public final class BigtableOptions extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return FamiliesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FamiliesConverter familiesConverter = new FamiliesConverter();
 

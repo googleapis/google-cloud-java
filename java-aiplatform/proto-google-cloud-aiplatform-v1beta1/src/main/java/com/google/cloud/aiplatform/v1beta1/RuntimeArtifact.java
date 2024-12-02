@@ -1557,8 +1557,7 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return PropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PropertiesConverter propertiesConverter = new PropertiesConverter();
 
@@ -1855,8 +1854,7 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return CustomPropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CustomPropertiesConverter customPropertiesConverter =
         new CustomPropertiesConverter();

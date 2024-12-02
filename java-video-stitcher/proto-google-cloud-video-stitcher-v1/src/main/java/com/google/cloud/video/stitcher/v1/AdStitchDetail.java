@@ -1455,8 +1455,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return MediaDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MediaConverter mediaConverter = new MediaConverter();
 

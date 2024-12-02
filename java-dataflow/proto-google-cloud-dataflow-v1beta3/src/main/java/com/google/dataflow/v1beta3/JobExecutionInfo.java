@@ -594,8 +594,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return StagesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final StagesConverter stagesConverter = new StagesConverter();
 

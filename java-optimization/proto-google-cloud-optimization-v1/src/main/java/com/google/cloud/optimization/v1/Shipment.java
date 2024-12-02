@@ -4583,8 +4583,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return LoadDemandsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final LoadDemandsConverter loadDemandsConverter = new LoadDemandsConverter();
 
@@ -9153,8 +9152,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LoadDemandsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LoadDemandsConverter loadDemandsConverter = new LoadDemandsConverter();
 

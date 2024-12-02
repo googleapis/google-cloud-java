@@ -2940,8 +2940,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return MembershipsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MembershipsConverter membershipsConverter = new MembershipsConverter();
 

@@ -2953,8 +2953,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return ScalingSchedulesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ScalingSchedulesConverter scalingSchedulesConverter =
         new ScalingSchedulesConverter();

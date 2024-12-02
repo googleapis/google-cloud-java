@@ -1196,8 +1196,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return ComponentStatesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ComponentStatesConverter componentStatesConverter =
         new ComponentStatesConverter();

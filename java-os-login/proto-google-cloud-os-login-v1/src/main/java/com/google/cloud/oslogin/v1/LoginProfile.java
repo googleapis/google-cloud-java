@@ -1328,8 +1328,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return SshPublicKeysDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final SshPublicKeysConverter sshPublicKeysConverter =
         new SshPublicKeysConverter();

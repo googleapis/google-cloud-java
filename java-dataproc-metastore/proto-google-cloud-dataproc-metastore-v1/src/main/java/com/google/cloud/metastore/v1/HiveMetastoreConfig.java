@@ -1887,8 +1887,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return AuxiliaryVersionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AuxiliaryVersionsConverter auxiliaryVersionsConverter =
         new AuxiliaryVersionsConverter();

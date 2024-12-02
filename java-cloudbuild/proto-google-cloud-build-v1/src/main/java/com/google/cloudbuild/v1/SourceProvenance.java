@@ -1580,8 +1580,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return FileHashesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FileHashesConverter fileHashesConverter = new FileHashesConverter();
 

@@ -5277,8 +5277,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return WindowsVersionMapsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final WindowsVersionMapsConverter windowsVersionMapsConverter =
         new WindowsVersionMapsConverter();

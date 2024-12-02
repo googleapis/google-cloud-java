@@ -2270,8 +2270,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return ParamsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ParamsConverter paramsConverter = new ParamsConverter();
 

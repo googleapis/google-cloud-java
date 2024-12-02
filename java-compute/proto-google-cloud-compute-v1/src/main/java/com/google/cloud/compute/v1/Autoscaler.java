@@ -3090,8 +3090,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ScalingScheduleStatusDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ScalingScheduleStatusConverter scalingScheduleStatusConverter =
         new ScalingScheduleStatusConverter();

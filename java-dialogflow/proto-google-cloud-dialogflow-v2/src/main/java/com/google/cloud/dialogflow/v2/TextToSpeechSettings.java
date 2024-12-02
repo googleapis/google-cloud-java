@@ -1015,8 +1015,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return SynthesizeSpeechConfigsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final SynthesizeSpeechConfigsConverter synthesizeSpeechConfigsConverter =
         new SynthesizeSpeechConfigsConverter();

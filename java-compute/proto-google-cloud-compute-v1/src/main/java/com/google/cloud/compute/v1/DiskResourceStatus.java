@@ -880,8 +880,7 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return AsyncSecondaryDisksDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AsyncSecondaryDisksConverter asyncSecondaryDisksConverter =
         new AsyncSecondaryDisksConverter();

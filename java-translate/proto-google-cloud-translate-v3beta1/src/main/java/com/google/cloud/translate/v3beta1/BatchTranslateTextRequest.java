@@ -3003,8 +3003,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
           defaultEntry() {
         return GlossariesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final GlossariesConverter glossariesConverter = new GlossariesConverter();
 

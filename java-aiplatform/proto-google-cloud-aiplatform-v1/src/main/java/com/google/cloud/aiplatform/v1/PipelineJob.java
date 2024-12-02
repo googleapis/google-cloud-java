@@ -2493,8 +2493,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return ParametersDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final ParametersConverter parametersConverter = new ParametersConverter();
 
@@ -2959,8 +2958,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return ParameterValuesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final ParameterValuesConverter parameterValuesConverter =
           new ParameterValuesConverter();
@@ -3377,8 +3375,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return InputArtifactsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final InputArtifactsConverter inputArtifactsConverter =
           new InputArtifactsConverter();

@@ -1327,8 +1327,7 @@ public final class TargetTcpProxyAggregatedList extends com.google.protobuf.Gene
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

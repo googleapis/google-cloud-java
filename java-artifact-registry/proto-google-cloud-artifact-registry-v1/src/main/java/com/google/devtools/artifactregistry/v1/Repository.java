@@ -8369,8 +8369,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return CleanupPoliciesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CleanupPoliciesConverter cleanupPoliciesConverter =
         new CleanupPoliciesConverter();

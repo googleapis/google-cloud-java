@@ -919,8 +919,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return NotificationSettingsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final NotificationSettingsConverter notificationSettingsConverter =
         new NotificationSettingsConverter();

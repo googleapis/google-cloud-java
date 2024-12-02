@@ -11925,8 +11925,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return TargetArtifactsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TargetArtifactsConverter targetArtifactsConverter =
         new TargetArtifactsConverter();
@@ -12197,8 +12196,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return TargetRendersDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TargetRendersConverter targetRendersConverter =
         new TargetRendersConverter();

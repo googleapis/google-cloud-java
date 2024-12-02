@@ -2402,8 +2402,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return CategoricalFeaturesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CategoricalFeaturesConverter categoricalFeaturesConverter =
         new CategoricalFeaturesConverter();
@@ -2742,8 +2741,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return NumericalFeaturesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final NumericalFeaturesConverter numericalFeaturesConverter =
         new NumericalFeaturesConverter();

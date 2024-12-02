@@ -1315,8 +1315,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

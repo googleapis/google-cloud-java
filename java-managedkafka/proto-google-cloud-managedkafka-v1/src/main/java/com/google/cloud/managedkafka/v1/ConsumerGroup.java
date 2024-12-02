@@ -815,8 +815,7 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return TopicsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TopicsConverter topicsConverter = new TopicsConverter();
 

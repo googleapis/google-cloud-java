@@ -902,8 +902,7 @@ public final class SetCommonInstanceMetadataOperationMetadata
           defaultEntry() {
         return PerLocationOperationsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PerLocationOperationsConverter perLocationOperationsConverter =
         new PerLocationOperationsConverter();

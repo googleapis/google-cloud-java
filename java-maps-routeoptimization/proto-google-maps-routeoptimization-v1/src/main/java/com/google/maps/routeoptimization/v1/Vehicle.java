@@ -10920,8 +10920,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LoadLimitsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LoadLimitsConverter loadLimitsConverter = new LoadLimitsConverter();
 
@@ -12250,8 +12249,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ExtraVisitDurationForVisitTypeDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExtraVisitDurationForVisitTypeConverter
         extraVisitDurationForVisitTypeConverter = new ExtraVisitDurationForVisitTypeConverter();

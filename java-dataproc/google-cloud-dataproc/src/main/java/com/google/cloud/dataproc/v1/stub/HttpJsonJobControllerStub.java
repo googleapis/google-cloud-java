@@ -300,7 +300,8 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                           ProtoRestSerializer.create()
                               .toBody(
                                   "*",
-                                  request.toBuilder()
+                                  request
+                                      .toBuilder()
                                       .clearJobId()
                                       .clearProjectId()
                                       .clearRegion()

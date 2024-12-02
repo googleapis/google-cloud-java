@@ -869,8 +869,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return FilesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FilesConverter filesConverter = new FilesConverter();
 

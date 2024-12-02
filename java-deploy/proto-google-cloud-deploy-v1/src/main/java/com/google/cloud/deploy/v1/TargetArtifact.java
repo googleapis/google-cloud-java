@@ -2434,8 +2434,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PhaseArtifactsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PhaseArtifactsConverter phaseArtifactsConverter =
         new PhaseArtifactsConverter();

@@ -2674,8 +2674,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return DetectorSettingsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DetectorSettingsConverter detectorSettingsConverter =
         new DetectorSettingsConverter();

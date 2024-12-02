@@ -1325,8 +1325,7 @@ public final class InstanceGroupAggregatedList extends com.google.protobuf.Gener
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

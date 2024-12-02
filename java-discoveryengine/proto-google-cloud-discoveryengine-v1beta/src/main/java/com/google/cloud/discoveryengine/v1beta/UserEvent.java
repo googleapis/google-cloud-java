@@ -6731,8 +6731,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return AttributesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AttributesConverter attributesConverter = new AttributesConverter();
 

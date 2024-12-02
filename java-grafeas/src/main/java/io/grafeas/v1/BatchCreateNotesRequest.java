@@ -784,8 +784,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       public com.google.protobuf.MapEntry<java.lang.String, io.grafeas.v1.Note> defaultEntry() {
         return NotesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final NotesConverter notesConverter = new NotesConverter();
 

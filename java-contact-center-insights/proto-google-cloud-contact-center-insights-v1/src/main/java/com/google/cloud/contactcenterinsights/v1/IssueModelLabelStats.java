@@ -1851,8 +1851,7 @@ public final class IssueModelLabelStats extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return IssueStatsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final IssueStatsConverter issueStatsConverter = new IssueStatsConverter();
 

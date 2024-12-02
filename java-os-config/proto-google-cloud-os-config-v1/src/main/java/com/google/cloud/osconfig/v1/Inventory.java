@@ -19654,8 +19654,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

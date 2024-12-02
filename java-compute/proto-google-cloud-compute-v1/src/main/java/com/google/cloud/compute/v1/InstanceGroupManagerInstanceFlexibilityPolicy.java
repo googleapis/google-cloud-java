@@ -673,8 +673,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
           defaultEntry() {
         return InstanceSelectionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InstanceSelectionsConverter instanceSelectionsConverter =
         new InstanceSelectionsConverter();

@@ -1698,8 +1698,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return CaiAssetsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CaiAssetsConverter caiAssetsConverter = new CaiAssetsConverter();
 

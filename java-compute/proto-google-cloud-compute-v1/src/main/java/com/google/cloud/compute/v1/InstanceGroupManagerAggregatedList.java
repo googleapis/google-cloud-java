@@ -1339,8 +1339,7 @@ public final class InstanceGroupManagerAggregatedList extends com.google.protobu
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 

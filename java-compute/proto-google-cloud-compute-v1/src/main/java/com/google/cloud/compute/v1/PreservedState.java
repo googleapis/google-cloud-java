@@ -1108,8 +1108,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return DisksDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DisksConverter disksConverter = new DisksConverter();
 
@@ -1376,8 +1375,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ExternalIPsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExternalIPsConverter externalIPsConverter = new ExternalIPsConverter();
 
@@ -1653,8 +1651,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return InternalIPsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InternalIPsConverter internalIPsConverter = new InternalIPsConverter();
 

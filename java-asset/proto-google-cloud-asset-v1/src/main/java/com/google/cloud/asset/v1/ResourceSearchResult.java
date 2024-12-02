@@ -8708,8 +8708,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return RelationshipsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final RelationshipsConverter relationshipsConverter =
         new RelationshipsConverter();

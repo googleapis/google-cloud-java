@@ -593,8 +593,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return FieldStatsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FieldStatsConverter fieldStatsConverter = new FieldStatsConverter();
 

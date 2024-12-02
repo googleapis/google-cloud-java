@@ -6281,8 +6281,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               defaultEntry() {
             return ReferencesDefaultEntryHolder.defaultEntry;
           }
-        }
-        ;
+        };
 
         private static final ReferencesConverter referencesConverter = new ReferencesConverter();
 

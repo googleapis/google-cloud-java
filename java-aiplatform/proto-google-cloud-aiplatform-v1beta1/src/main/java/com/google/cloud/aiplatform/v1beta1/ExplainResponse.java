@@ -2696,8 +2696,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return ConcurrentExplanationsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ConcurrentExplanationsConverter concurrentExplanationsConverter =
         new ConcurrentExplanationsConverter();

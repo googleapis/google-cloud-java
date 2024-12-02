@@ -66,9 +66,7 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import org.threeten.bp.Duration;
 
-/**
- * @deprecated v3 GAPIC client of ResourceManager is now available
- */
+/** @deprecated v3 GAPIC client of ResourceManager is now available */
 @Deprecated
 public class HttpResourceManagerRpc implements ResourceManagerRpc {
 

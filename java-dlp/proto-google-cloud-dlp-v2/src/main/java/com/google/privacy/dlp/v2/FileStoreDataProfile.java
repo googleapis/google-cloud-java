@@ -6046,8 +6046,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return ResourceAttributesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ResourceAttributesConverter resourceAttributesConverter =
         new ResourceAttributesConverter();

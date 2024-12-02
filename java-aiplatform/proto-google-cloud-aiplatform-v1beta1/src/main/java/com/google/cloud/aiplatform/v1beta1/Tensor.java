@@ -4161,8 +4161,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return StructValDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final StructValConverter structValConverter = new StructValConverter();
 

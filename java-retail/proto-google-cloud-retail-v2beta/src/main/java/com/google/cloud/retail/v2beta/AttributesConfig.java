@@ -921,8 +921,7 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return CatalogAttributesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CatalogAttributesConverter catalogAttributesConverter =
         new CatalogAttributesConverter();

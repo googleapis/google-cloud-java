@@ -1059,8 +1059,7 @@ public final class SetUriPatternDocumentDataRequest extends com.google.protobuf.
           defaultEntry() {
         return DocumentDataMapDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DocumentDataMapConverter documentDataMapConverter =
         new DocumentDataMapConverter();

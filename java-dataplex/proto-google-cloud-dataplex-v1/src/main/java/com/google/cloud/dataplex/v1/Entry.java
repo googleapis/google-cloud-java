@@ -1899,8 +1899,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return AspectsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AspectsConverter aspectsConverter = new AspectsConverter();
 

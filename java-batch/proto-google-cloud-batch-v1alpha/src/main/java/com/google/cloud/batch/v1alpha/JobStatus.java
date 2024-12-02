@@ -4516,8 +4516,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return TaskGroupsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TaskGroupsConverter taskGroupsConverter = new TaskGroupsConverter();
 
