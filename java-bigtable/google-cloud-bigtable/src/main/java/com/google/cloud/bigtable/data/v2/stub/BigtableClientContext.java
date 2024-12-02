@@ -71,14 +71,9 @@ public class BigtableClientContext {
     try {
       // We don't want client side metrics to crash the client, so catch any exception when getting
       // the OTEL instance and log the exception instead.
-      // TODO openTelemetry doesn't need to be tied to a project id. This is incorrect and will be
-      // fixed in the following PR.
       openTelemetry =
           getOpenTelemetryFromMetricsProvider(
-              settings.getProjectId(),
-              settings.getMetricsProvider(),
-              credentials,
-              settings.getMetricsEndpoint());
+              settings.getMetricsProvider(), credentials, settings.getMetricsEndpoint());
     } catch (Throwable t) {
       logger.log(Level.WARNING, "Failed to get OTEL, will skip exporting client side metrics", t);
     }
@@ -144,7 +139,6 @@ public class BigtableClientContext {
   }
 
   private static OpenTelemetry getOpenTelemetryFromMetricsProvider(
-      String projectId,
       MetricsProvider metricsProvider,
       @Nullable Credentials defaultCredentials,
       @Nullable String metricsEndpoint)
@@ -159,7 +153,7 @@ public class BigtableClientContext {
               ? BigtableDataSettings.getMetricsCredentials()
               : defaultCredentials;
       DefaultMetricsProvider defaultMetricsProvider = (DefaultMetricsProvider) metricsProvider;
-      return defaultMetricsProvider.getOpenTelemetry(projectId, metricsEndpoint, credentials);
+      return defaultMetricsProvider.getOpenTelemetry(metricsEndpoint, credentials);
     } else if (metricsProvider instanceof NoopMetricsProvider) {
       return null;
     }

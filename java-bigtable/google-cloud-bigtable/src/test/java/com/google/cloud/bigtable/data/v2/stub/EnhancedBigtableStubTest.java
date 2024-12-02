@@ -825,15 +825,16 @@ public class EnhancedBigtableStubTest {
     settings.setStreamWatchdogProvider(
         InstantiatingWatchdogProvider.create().withCheckInterval(WATCHDOG_CHECK_DURATION));
 
-    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
-    ApiFuture<ResultSetMetadata> future =
-        stub.executeQueryCallable().call(Statement.of(WAIT_TIME_QUERY)).metadataFuture();
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      ApiFuture<ResultSetMetadata> future =
+          stub.executeQueryCallable().call(Statement.of(WAIT_TIME_QUERY)).metadataFuture();
 
-    ExecutionException e = assertThrows(ExecutionException.class, future::get);
-    assertThat(e.getCause()).isInstanceOf(WatchdogTimeoutException.class);
-    assertThat(e.getCause().getMessage())
-        .contains("Canceled due to timeout waiting for next response");
-    assertThat(e).hasMessageThat().contains("Canceled due to timeout waiting for next response");
+      ExecutionException e = assertThrows(ExecutionException.class, future::get);
+      assertThat(e.getCause()).isInstanceOf(WatchdogTimeoutException.class);
+      assertThat(e.getCause().getMessage())
+          .contains("Canceled due to timeout waiting for next response");
+      assertThat(e).hasMessageThat().contains("Canceled due to timeout waiting for next response");
+    }
   }
 
   private static class MetadataInterceptor implements ServerInterceptor {

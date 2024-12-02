@@ -39,11 +39,9 @@ public final class DefaultMetricsProvider implements MetricsProvider {
 
   @InternalApi
   public OpenTelemetry getOpenTelemetry(
-      String projectId, @Nullable String metricsEndpoint, @Nullable Credentials credentials)
-      throws IOException {
+      @Nullable String metricsEndpoint, @Nullable Credentials credentials) throws IOException {
     SdkMeterProviderBuilder meterProvider = SdkMeterProvider.builder();
-    BuiltinMetricsView.registerBuiltinMetrics(
-        projectId, credentials, meterProvider, metricsEndpoint);
+    BuiltinMetricsView.registerBuiltinMetrics(credentials, meterProvider, metricsEndpoint);
     return OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
   }
 

@@ -63,6 +63,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -110,17 +111,24 @@ class BigtableExporterUtils {
     return pointData.getAttributes().get(BIGTABLE_PROJECT_ID_KEY);
   }
 
-  static List<TimeSeries> convertToBigtableTimeSeries(List<MetricData> collection, String taskId) {
-    List<TimeSeries> allTimeSeries = new ArrayList<>();
+  // Returns a list of timeseries by project id
+  static Map<String, List<TimeSeries>> convertToBigtableTimeSeries(
+      List<MetricData> collection, String taskId) {
+    Map<String, List<TimeSeries>> allTimeSeries = new HashMap<>();
 
     for (MetricData metricData : collection) {
       if (!metricData.getInstrumentationScopeInfo().getName().equals(METER_NAME)) {
         // Filter out metric data for instruments that are not part of the bigtable builtin metrics
         continue;
       }
-      metricData.getData().getPoints().stream()
-          .map(pointData -> convertPointToBigtableTimeSeries(metricData, pointData, taskId))
-          .forEach(allTimeSeries::add);
+
+      for (PointData pd : metricData.getData().getPoints()) {
+        String projectId = getProjectId(pd);
+        List<TimeSeries> current =
+            allTimeSeries.computeIfAbsent(projectId, ignored -> new ArrayList<>());
+        current.add(convertPointToBigtableTimeSeries(metricData, pd, taskId));
+        allTimeSeries.put(projectId, current);
+      }
     }
 
     return allTimeSeries;

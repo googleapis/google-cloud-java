@@ -30,6 +30,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.stub.BigtableBatchingCallSettings;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsProvider;
+import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import io.grpc.ManagedChannelBuilder;
@@ -127,6 +128,7 @@ public final class BigtableDataSettings {
         .setEndpoint(hostname + ":" + port)
         // disable channel refreshing when creating an emulator
         .setRefreshingChannel(false)
+        .setMetricsProvider(NoopMetricsProvider.INSTANCE) // disable exporting metrics for emulator
         .setTransportChannelProvider(
             InstantiatingGrpcChannelProvider.newBuilder()
                 .setMaxInboundMessageSize(256 * 1024 * 1024)

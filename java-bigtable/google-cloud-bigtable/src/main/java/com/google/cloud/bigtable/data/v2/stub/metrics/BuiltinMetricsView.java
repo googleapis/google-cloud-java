@@ -38,21 +38,55 @@ public class BuiltinMetricsView {
   /**
    * Register built-in metrics on the {@link SdkMeterProviderBuilder} with application default
    * credentials and default endpoint.
+   *
+   * @deprecated projectId is no longer used. Call {@link
+   *     #registerBuiltinMetrics(SdkMeterProviderBuilder)} instead.
    */
+  @Deprecated
   public static void registerBuiltinMetrics(String projectId, SdkMeterProviderBuilder builder)
       throws IOException {
     BuiltinMetricsView.registerBuiltinMetrics(
-        projectId, GoogleCredentials.getApplicationDefault(), builder);
+        GoogleCredentials.getApplicationDefault(), builder, null);
+  }
+
+  /**
+   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with application default
+   * credentials and default endpoint.
+   */
+  public static void registerBuiltinMetrics(SdkMeterProviderBuilder builder) throws IOException {
+    BuiltinMetricsView.registerBuiltinMetrics(
+        GoogleCredentials.getApplicationDefault(), builder, null);
   }
 
   /**
    * Register built-in metrics on the {@link SdkMeterProviderBuilder} with custom credentials and
    * default endpoint.
+   *
+   * @deprecated projectId is no longer used. Call {@link #registerBuiltinMetrics(Credentials,
+   *     SdkMeterProviderBuilder, String)} instead.
    */
+  @Deprecated
   public static void registerBuiltinMetrics(
       String projectId, @Nullable Credentials credentials, SdkMeterProviderBuilder builder)
       throws IOException {
-    BuiltinMetricsView.registerBuiltinMetrics(projectId, credentials, builder, null);
+    BuiltinMetricsView.registerBuiltinMetrics(credentials, builder, null);
+  }
+
+  /**
+   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with custom credentials and
+   * endpoint.
+   *
+   * @deprecated projectId is no longer used. Call {@link #registerBuiltinMetrics(Credentials,
+   *     SdkMeterProviderBuilder, String)} instead.
+   */
+  @Deprecated
+  public static void registerBuiltinMetrics(
+      String projectId,
+      @Nullable Credentials credentials,
+      SdkMeterProviderBuilder builder,
+      @Nullable String endpoint)
+      throws IOException {
+    registerBuiltinMetrics(credentials, builder, endpoint);
   }
 
   /**
@@ -60,13 +94,9 @@ public class BuiltinMetricsView {
    * endpoint.
    */
   public static void registerBuiltinMetrics(
-      String projectId,
-      @Nullable Credentials credentials,
-      SdkMeterProviderBuilder builder,
-      @Nullable String endpoint)
+      @Nullable Credentials credentials, SdkMeterProviderBuilder builder, @Nullable String endpoint)
       throws IOException {
-    MetricExporter metricExporter =
-        BigtableCloudMonitoringExporter.create(projectId, credentials, endpoint);
+    MetricExporter metricExporter = BigtableCloudMonitoringExporter.create(credentials, endpoint);
     for (Map.Entry<InstrumentSelector, View> entry :
         BuiltinMetricsConstants.getAllViews().entrySet()) {
       builder.registerView(entry.getKey(), entry.getValue());

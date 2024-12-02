@@ -58,6 +58,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
@@ -94,7 +95,6 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
 
   private final MetricServiceClient client;
 
-  private final String bigtableProjectId;
   private final String taskId;
 
   // The resource the client application is running on
@@ -128,8 +128,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
           .collect(ImmutableList.toImmutableList());
 
   public static BigtableCloudMonitoringExporter create(
-      String projectId, @Nullable Credentials credentials, @Nullable String endpoint)
-      throws IOException {
+      @Nullable Credentials credentials, @Nullable String endpoint) throws IOException {
     MetricServiceSettings.Builder settingsBuilder = MetricServiceSettings.newBuilder();
     CredentialsProvider credentialsProvider =
         Optional.ofNullable(credentials)
@@ -164,7 +163,6 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     }
 
     return new BigtableCloudMonitoringExporter(
-        projectId,
         MetricServiceClient.create(settingsBuilder.build()),
         applicationResource,
         BigtableExporterUtils.getDefaultTaskValue());
@@ -172,14 +170,10 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
 
   @VisibleForTesting
   BigtableCloudMonitoringExporter(
-      String projectId,
-      MetricServiceClient client,
-      @Nullable MonitoredResource applicationResource,
-      String taskId) {
+      MetricServiceClient client, @Nullable MonitoredResource applicationResource, String taskId) {
     this.client = client;
     this.taskId = taskId;
     this.applicationResource = applicationResource;
-    this.bigtableProjectId = projectId;
   }
 
   @Override
@@ -211,15 +205,8 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
       return CompletableResultCode.ofSuccess();
     }
 
-    // Verifies metrics project id are the same as the bigtable project id set on this client
-    if (!bigtableMetricData.stream()
-        .flatMap(metricData -> metricData.getData().getPoints().stream())
-        .allMatch(pd -> bigtableProjectId.equals(BigtableExporterUtils.getProjectId(pd)))) {
-      logger.log(Level.WARNING, "Metric data has different a projectId. Skip exporting.");
-      return CompletableResultCode.ofFailure();
-    }
-
-    List<TimeSeries> bigtableTimeSeries;
+    // List of timeseries by project id
+    Map<String, List<TimeSeries>> bigtableTimeSeries;
     try {
       bigtableTimeSeries =
           BigtableExporterUtils.convertToBigtableTimeSeries(bigtableMetricData, taskId);
@@ -231,37 +218,39 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
       return CompletableResultCode.ofFailure();
     }
 
-    ProjectName projectName = ProjectName.of(bigtableProjectId);
-    ApiFuture<List<Empty>> future = exportTimeSeries(projectName, bigtableTimeSeries);
-
     CompletableResultCode bigtableExportCode = new CompletableResultCode();
-    ApiFutures.addCallback(
-        future,
-        new ApiFutureCallback<List<Empty>>() {
-          @Override
-          public void onFailure(Throwable throwable) {
-            if (bigtableExportFailureLogged.compareAndSet(false, true)) {
-              String msg = "createServiceTimeSeries request failed for bigtable metrics.";
-              if (throwable instanceof PermissionDeniedException) {
-                msg +=
-                    String.format(
-                        " Need monitoring metric writer permission on project=%s. Follow https://cloud.google.com/bigtable/docs/client-side-metrics-setup to set up permissions.",
-                        projectName.getProject());
-              }
-              logger.log(Level.WARNING, msg, throwable);
-            }
-            bigtableExportCode.fail();
-          }
+    bigtableTimeSeries.forEach(
+        (projectId, ts) -> {
+          ProjectName projectName = ProjectName.of(projectId);
+          ApiFuture<List<Empty>> future = exportTimeSeries(projectName, ts);
+          ApiFutures.addCallback(
+              future,
+              new ApiFutureCallback<List<Empty>>() {
+                @Override
+                public void onFailure(Throwable throwable) {
+                  if (bigtableExportFailureLogged.compareAndSet(false, true)) {
+                    String msg = "createServiceTimeSeries request failed for bigtable metrics.";
+                    if (throwable instanceof PermissionDeniedException) {
+                      msg +=
+                          String.format(
+                              " Need monitoring metric writer permission on project=%s. Follow https://cloud.google.com/bigtable/docs/client-side-metrics-setup to set up permissions.",
+                              projectName.getProject());
+                    }
+                    logger.log(Level.WARNING, msg, throwable);
+                  }
+                  bigtableExportCode.fail();
+                }
 
-          @Override
-          public void onSuccess(List<Empty> emptyList) {
-            // When an export succeeded reset the export failure flag to false so if there's a
-            // transient failure it'll be logged.
-            bigtableExportFailureLogged.set(false);
-            bigtableExportCode.succeed();
-          }
-        },
-        MoreExecutors.directExecutor());
+                @Override
+                public void onSuccess(List<Empty> emptyList) {
+                  // When an export succeeded reset the export failure flag to false so if there's a
+                  // transient failure it'll be logged.
+                  bigtableExportFailureLogged.set(false);
+                  bigtableExportCode.succeed();
+                }
+              },
+              MoreExecutors.directExecutor());
+        });
 
     return bigtableExportCode;
   }
