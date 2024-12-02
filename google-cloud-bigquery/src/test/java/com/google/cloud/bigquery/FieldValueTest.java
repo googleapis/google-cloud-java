@@ -133,6 +133,25 @@ public class FieldValueTest {
   }
 
   @Test
+  public void testInt64Timestamp() {
+    FieldValue lossyFieldValue =
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "1.9954383398377106E10");
+    long lossy = lossyFieldValue.getTimestampValue();
+
+    FieldValue losslessFieldValue =
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "19954383398377106", true);
+    long lossless = losslessFieldValue.getTimestampValue();
+
+    assertEquals(lossy, lossless);
+
+    FieldValue fieldValue =
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "19954383398377106", true);
+    long received = fieldValue.getTimestampValue();
+    long expected = 19954383398377106L;
+    assertEquals(expected, received);
+  }
+
+  @Test
   public void testEquals() {
     FieldValue booleanValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "false");
     assertEquals(booleanValue, FieldValue.fromPb(BOOLEAN_FIELD));

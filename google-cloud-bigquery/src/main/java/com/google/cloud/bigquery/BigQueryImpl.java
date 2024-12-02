@@ -1206,7 +1206,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           new PageImpl<>(
               new TableDataPageFetcher(tableId, schema, serviceOptions, cursor, pageOptionMap),
               cursor,
-              transformTableData(result.getRows(), schema)),
+              transformTableData(result.getRows(), schema, serviceOptions.getUseInt64Timestamps())),
           result.getTotalRows());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -1214,7 +1214,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   private static Iterable<FieldValueList> transformTableData(
-      Iterable<TableRow> tableDataPb, final Schema schema) {
+      Iterable<TableRow> tableDataPb, final Schema schema, boolean useInt64Timestamps) {
     return ImmutableList.copyOf(
         Iterables.transform(
             tableDataPb != null ? tableDataPb : ImmutableList.<TableRow>of(),
@@ -1223,7 +1223,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
               @Override
               public FieldValueList apply(TableRow rowPb) {
-                return FieldValueList.fromPb(rowPb.getF(), fields);
+                return FieldValueList.fromPb(rowPb.getF(), fields, useInt64Timestamps);
               }
             }));
   }
@@ -1347,7 +1347,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     // If all parameters passed in configuration are supported by the query() method on the backend,
     // put on fast path
-    QueryRequestInfo requestInfo = new QueryRequestInfo(configuration);
+    QueryRequestInfo requestInfo =
+        new QueryRequestInfo(configuration, getOptions().getUseInt64Timestamps());
     if (requestInfo.isFastQuerySupported(null)) {
       String projectId = getOptions().getProjectId();
       QueryRequest content = requestInfo.toPb();
@@ -1420,7 +1421,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   // fetch next pages of results
                   new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
                   cursor,
-                  transformTableData(results.getRows(), schema)))
+                  transformTableData(
+                      results.getRows(), schema, getOptions().getUseInt64Timestamps())))
           .setJobId(jobId)
           .setQueryId(results.getQueryId())
           .build();
@@ -1433,7 +1435,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             new PageImpl<>(
                 new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
                 null,
-                transformTableData(results.getRows(), schema)))
+                transformTableData(
+                    results.getRows(), schema, getOptions().getUseInt64Timestamps())))
         // Return the JobID of the successful job
         .setJobId(
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
@@ -1448,7 +1451,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     // If all parameters passed in configuration are supported by the query() method on the backend,
     // put on fast path
-    QueryRequestInfo requestInfo = new QueryRequestInfo(configuration);
+    QueryRequestInfo requestInfo =
+        new QueryRequestInfo(configuration, getOptions().getUseInt64Timestamps());
     if (requestInfo.isFastQuerySupported(jobId)) {
       // Be careful when setting the projectID in JobId, if a projectID is specified in the JobId,
       // the job created by the query method will use that project. This may cause the query to

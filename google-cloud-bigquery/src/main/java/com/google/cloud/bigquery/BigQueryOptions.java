@@ -34,10 +34,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private static final int DEFAULT_READ_API_TIME_OUT = 60000;
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
-  private static final long serialVersionUID = -2437598817433266049L;
+  private static final long serialVersionUID = -2437598817433266048L;
   private final String location;
   // set the option ThrowNotFound when you want to throw the exception when the value not found
   private boolean setThrowNotFound;
+  private boolean useInt64Timestamps;
   private String queryPreviewEnabled = System.getenv("QUERY_PREVIEW_ENABLED");
 
   public static class DefaultBigQueryFactory implements BigQueryFactory {
@@ -63,6 +64,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   public static class Builder extends ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
 
     private String location;
+    private boolean useInt64Timestamps;
 
     private Builder() {}
 
@@ -84,6 +86,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
       return this;
     }
 
+    public Builder setUseInt64Timestamps(boolean useInt64Timestamps) {
+      this.useInt64Timestamps = useInt64Timestamps;
+      return this;
+    }
+
     @Override
     public BigQueryOptions build() {
       return new BigQueryOptions(this);
@@ -93,6 +100,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private BigQueryOptions(Builder builder) {
     super(BigQueryFactory.class, BigQueryRpcFactory.class, builder, new BigQueryDefaults());
     this.location = builder.location;
+    this.useInt64Timestamps = builder.useInt64Timestamps;
   }
 
   private static class BigQueryDefaults implements ServiceDefaults<BigQuery, BigQueryOptions> {
@@ -140,6 +148,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     this.setThrowNotFound = setThrowNotFound;
   }
 
+  public void setUseInt64Timestamps(boolean useInt64Timestamps) {
+    this.useInt64Timestamps = useInt64Timestamps;
+  }
+
   @VisibleForTesting
   public void setQueryPreviewEnabled(String queryPreviewEnabled) {
     this.queryPreviewEnabled = queryPreviewEnabled;
@@ -147,6 +159,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   public boolean getThrowNotFound() {
     return setThrowNotFound;
+  }
+
+  public boolean getUseInt64Timestamps() {
+    return useInt64Timestamps;
   }
 
   @SuppressWarnings("unchecked")

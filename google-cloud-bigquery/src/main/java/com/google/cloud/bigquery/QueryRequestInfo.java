@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.services.bigquery.model.DataFormatOptions;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
@@ -42,8 +43,9 @@ final class QueryRequestInfo {
   private final Boolean useQueryCache;
   private final Boolean useLegacySql;
   private final JobCreationMode jobCreationMode;
+  private final DataFormatOptions formatOptions;
 
-  QueryRequestInfo(QueryJobConfiguration config) {
+  QueryRequestInfo(QueryJobConfiguration config, Boolean useInt64Timestamps) {
     this.config = config;
     this.connectionProperties = config.getConnectionProperties();
     this.defaultDataset = config.getDefaultDataset();
@@ -58,6 +60,7 @@ final class QueryRequestInfo {
     this.useLegacySql = config.useLegacySql();
     this.useQueryCache = config.useQueryCache();
     this.jobCreationMode = config.getJobCreationMode();
+    this.formatOptions = new DataFormatOptions().setUseInt64Timestamp(useInt64Timestamps);
   }
 
   boolean isFastQuerySupported(JobId jobId) {
@@ -122,6 +125,9 @@ final class QueryRequestInfo {
     if (jobCreationMode != null) {
       request.setJobCreationMode(jobCreationMode.toString());
     }
+    if (formatOptions != null) {
+      request.setFormatOptions(formatOptions);
+    }
     return request;
   }
 
@@ -141,6 +147,7 @@ final class QueryRequestInfo {
         .add("useQueryCache", useQueryCache)
         .add("useLegacySql", useLegacySql)
         .add("jobCreationMode", jobCreationMode)
+        .add("formatOptions", formatOptions.getUseInt64Timestamp())
         .toString();
   }
 
@@ -159,7 +166,8 @@ final class QueryRequestInfo {
         createSession,
         useQueryCache,
         useLegacySql,
-        jobCreationMode);
+        jobCreationMode,
+        formatOptions);
   }
 
   @Override
