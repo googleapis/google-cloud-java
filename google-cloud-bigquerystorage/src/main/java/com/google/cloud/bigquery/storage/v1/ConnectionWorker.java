@@ -585,11 +585,21 @@ class ConnectionWorker implements AutoCloseable {
       }
 
       if (connectionFinalStatus != null) {
+        String connectionFinalStatusString;
+        if (connectionFinalStatus
+            .toString()
+            .contains("com.google.api.gax.rpc.UnavailableException")) {
+          connectionFinalStatusString =
+              connectionFinalStatus.toString()
+                  + ". This is a most likely a transient condition and may be corrected by retrying"
+                  + " with a backoff.";
+        } else {
+          connectionFinalStatusString = connectionFinalStatus.toString();
+        }
         requestWrapper.appendResult.setException(
             new Exceptions.StreamWriterClosedException(
                 Status.fromCode(Status.Code.FAILED_PRECONDITION)
-                    .withDescription(
-                        "Connection is closed due to " + connectionFinalStatus.toString()),
+                    .withDescription("Connection is closed due to " + connectionFinalStatusString),
                 streamName,
                 writerId));
         return requestWrapper.appendResult;
