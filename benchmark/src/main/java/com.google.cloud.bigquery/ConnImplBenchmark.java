@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import java.util.logging.Level;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -48,31 +49,19 @@ public class ConnImplBenchmark {
   public int rowLimit;
 
   private ConnectionSettings connectionSettingsReadAPIEnabled, connectionSettingsReadAPIDisabled;
-  private long numBuffRows = 100000L;
-  private final String DATASET = "new_york_taxi_trips";
   private final String QUERY =
       "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 LIMIT %s";
-  public static final long NUM_PAGE_ROW_CNT_RATIO =
-      10; // ratio of [records in the current page :: total rows] to be met to use read API
-  public static final long NUM_MIN_RESULT_SIZE =
-      200000; // min number of records to use to ReadAPI with
 
   @Setup
   public void setUp() throws IOException {
     java.util.logging.Logger.getGlobal().setLevel(Level.ALL);
 
-    connectionSettingsReadAPIEnabled =
-        ConnectionSettings.newBuilder()
-            .setUseReadAPI(true) // enable read api
-            .build();
+    connectionSettingsReadAPIEnabled = ConnectionSettings.newBuilder().setUseReadAPI(true).build();
     connectionSettingsReadAPIDisabled =
-        ConnectionSettings.newBuilder()
-            .setUseReadAPI(false) // disable read api
-            .build();
+        ConnectionSettings.newBuilder().setUseReadAPI(false).build();
   }
 
   @Benchmark
-  // uses bigquery.query
   public void iterateRecordsWithBigQuery_Query(Blackhole blackhole) throws InterruptedException {
     String selectQuery = String.format(QUERY, rowLimit);
     BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
@@ -81,81 +70,35 @@ public class ConnImplBenchmark {
     TableResult result = bigQuery.query(config);
     long hash = 0L;
     int cnt = 0;
-    System.out.print("\n Running");
-    // iterate al the records and compute the hash
+    long lastTime = System.currentTimeMillis();
+    System.out.println("\n Running");
     for (FieldValueList row : result.iterateAll()) {
-      hash +=
-          row.get("vendor_id").getStringValue() == null
-              ? 0
-              : row.get("vendor_id").getStringValue().hashCode();
-      hash +=
-          row.get("pickup_datetime").getStringValue() == null
-              ? 0
-              : row.get("pickup_datetime").getStringValue().hashCode();
-      hash +=
-          row.get("dropoff_datetime").getStringValue() == null
-              ? 0
-              : row.get("dropoff_datetime").getStringValue().hashCode();
-      hash +=
-          row.get("passenger_count").getValue() == null
-              ? 0
-              : row.get("passenger_count").getLongValue();
-      hash +=
-          row.get("trip_distance").getValue() == null
-              ? 0
-              : row.get("trip_distance").getDoubleValue();
-      hash +=
-          row.get("pickup_longitude").getValue() == null
-              ? 0
-              : row.get("pickup_longitude").getDoubleValue();
-      hash +=
-          row.get("pickup_latitude").getValue() == null
-              ? 0
-              : row.get("pickup_latitude").getDoubleValue();
-      hash +=
-          row.get("rate_code").getStringValue() == null
-              ? 0
-              : row.get("rate_code").getStringValue().hashCode();
-      hash +=
-          row.get("store_and_fwd_flag").getStringValue() == null
-              ? 0
-              : row.get("store_and_fwd_flag").getStringValue().hashCode();
-      hash +=
-          row.get("payment_type").getStringValue() == null
-              ? 0
-              : row.get("payment_type").getStringValue().hashCode();
-      hash +=
-          row.get("pickup_location_id").getStringValue() == null
-              ? 0
-              : row.get("pickup_location_id").getStringValue().hashCode();
-      hash +=
-          row.get("dropoff_location_id").getStringValue() == null
-              ? 0
-              : row.get("dropoff_location_id").getStringValue().hashCode();
-      hash +=
-          row.get("dropoff_longitude").getValue() == null
-              ? 0
-              : row.get("dropoff_longitude").getDoubleValue();
-      hash +=
-          row.get("dropoff_latitude").getValue() == null
-              ? 0
-              : row.get("dropoff_latitude").getDoubleValue();
-      hash +=
-          row.get("fare_amount").getValue() == null ? 0 : row.get("fare_amount").getDoubleValue();
-      hash += row.get("extra").getValue() == null ? 0 : row.get("extra").getDoubleValue();
-      hash += row.get("mta_tax").getValue() == null ? 0 : row.get("mta_tax").getDoubleValue();
-      hash += row.get("tip_amount").getValue() == null ? 0 : row.get("tip_amount").getDoubleValue();
-      hash +=
-          row.get("tolls_amount").getValue() == null ? 0 : row.get("tolls_amount").getDoubleValue();
-      hash +=
-          row.get("imp_surcharge").getValue() == null
-              ? 0
-              : row.get("imp_surcharge").getDoubleValue();
-      hash +=
-          row.get("total_amount").getValue() == null ? 0 : row.get("total_amount").getDoubleValue();
+      hash += computeHash(row.get("vendor_id"), FieldValue::getStringValue);
+      hash += computeHash(row.get("pickup_datetime"), FieldValue::getStringValue);
+      hash += computeHash(row.get("dropoff_datetime"), FieldValue::getStringValue);
+      hash += computeHash(row.get("passenger_count"), FieldValue::getLongValue);
+      hash += computeHash(row.get("trip_distance"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("rate_code"), FieldValue::getStringValue);
+      hash += computeHash(row.get("store_and_fwd_flag"), FieldValue::getStringValue);
+      hash += computeHash(row.get("payment_type"), FieldValue::getStringValue);
+      hash += computeHash(row.get("fare_amount"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("extra"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("mta_tax"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("tip_amount"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("tolls_amount"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("imp_surcharge"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("airport_fee"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("total_amount"), FieldValue::getDoubleValue);
+      hash += computeHash(row.get("pickup_location_id"), FieldValue::getStringValue);
+      hash += computeHash(row.get("dropoff_location_id"), FieldValue::getStringValue);
+      hash += computeHash(row.get("data_file_year"), FieldValue::getLongValue);
+      hash += computeHash(row.get("data_file_month"), FieldValue::getLongValue);
 
-      if (++cnt % 100000 == 0) { // just to indicate the progress while long running benchmarks
-        System.out.print(".");
+      if (++cnt % 100_000 == 0) {
+        long now = System.currentTimeMillis();
+        long duration = now - lastTime;
+        System.out.println("ROW " + cnt + " Time: " + duration + " ms");
+        lastTime = now;
       }
     }
     System.out.println(cnt + " records processed using bigquery.query");
@@ -202,52 +145,65 @@ public class ConnImplBenchmark {
     blackhole.consume(hash);
   }
 
-  // Hashes all the 20 columns of all the rows
   private long getResultHash(BigQueryResult bigQueryResultSet) throws SQLException {
     ResultSet rs = bigQueryResultSet.getResultSet();
     long hash = 0L;
     int cnt = 0;
-    System.out.print("\n Running");
+    long lastTime = System.currentTimeMillis();
+    System.out.println("\n Running");
     while (rs.next()) {
-      hash += rs.getString("vendor_id") == null ? 0 : rs.getString("vendor_id").hashCode();
-      hash +=
-          rs.getString("pickup_datetime") == null ? 0 : rs.getString("pickup_datetime").hashCode();
-      hash +=
-          rs.getString("dropoff_datetime") == null
-              ? 0
-              : rs.getString("dropoff_datetime").hashCode();
-      hash += rs.getLong("passenger_count");
-      hash += rs.getDouble("trip_distance");
-      hash += rs.getDouble("pickup_longitude");
-      hash += rs.getDouble("pickup_latitude");
-      hash += rs.getString("rate_code") == null ? 0 : rs.getString("rate_code").hashCode();
-      hash +=
-          rs.getString("store_and_fwd_flag") == null
-              ? 0
-              : rs.getString("store_and_fwd_flag").hashCode();
-      hash += rs.getDouble("dropoff_longitude");
-      hash += rs.getDouble("dropoff_latitude");
-      hash += rs.getString("payment_type") == null ? 0 : rs.getString("payment_type").hashCode();
-      hash += rs.getDouble("fare_amount");
-      hash += rs.getDouble("extra");
-      hash += rs.getDouble("mta_tax");
-      hash += rs.getDouble("tip_amount");
-      hash += rs.getDouble("tolls_amount");
-      hash += rs.getDouble("imp_surcharge");
-      hash += rs.getDouble("total_amount");
-      hash +=
-          rs.getString("pickup_location_id") == null
-              ? 0
-              : rs.getString("pickup_location_id").hashCode();
-      hash +=
-          rs.getString("dropoff_location_id") == null
-              ? 0
-              : rs.getString("dropoff_location_id").hashCode();
-      if (++cnt % 100000 == 0) { // just to indicate the progress while long running benchmarks
-        System.out.print(".");
+      hash += computeHash(rs, "vendor_id", ResultSet::getString);
+      hash += computeHash(rs, "pickup_datetime", ResultSet::getString);
+      hash += computeHash(rs, "dropoff_datetime", ResultSet::getString);
+      hash += computeHash(rs, "passenger_count", ResultSet::getLong);
+      hash += computeHash(rs, "trip_distance", ResultSet::getDouble);
+      hash += computeHash(rs, "rate_code", ResultSet::getString);
+      hash += computeHash(rs, "store_and_fwd_flag", ResultSet::getString);
+      hash += computeHash(rs, "payment_type", ResultSet::getString);
+      hash += computeHash(rs, "fare_amount", ResultSet::getDouble);
+      hash += computeHash(rs, "extra", ResultSet::getDouble);
+      hash += computeHash(rs, "mta_tax", ResultSet::getDouble);
+      hash += computeHash(rs, "tip_amount", ResultSet::getDouble);
+      hash += computeHash(rs, "tolls_amount", ResultSet::getDouble);
+      hash += computeHash(rs, "imp_surcharge", ResultSet::getDouble);
+      hash += computeHash(rs, "airport_fee", ResultSet::getDouble);
+      hash += computeHash(rs, "total_amount", ResultSet::getDouble);
+      hash += computeHash(rs, "pickup_location_id", ResultSet::getString);
+      hash += computeHash(rs, "dropoff_location_id", ResultSet::getString);
+      hash += computeHash(rs, "data_file_year", ResultSet::getLong);
+      hash += computeHash(rs, "data_file_month", ResultSet::getLong);
+
+      if (++cnt % 100_000 == 0) {
+        long now = System.currentTimeMillis();
+        long duration = now - lastTime;
+        System.out.println("ROW " + cnt + " Time: " + duration + " ms");
+        lastTime = now;
       }
     }
     return hash;
+  }
+
+  private <T> long computeHash(
+      ResultSet rs, String columnName, SQLFunction<ResultSet, T> extractor) {
+    try {
+      T value = extractor.apply(rs, columnName);
+      return (value == null) ? 0 : value.hashCode();
+    } catch (SQLException e) {
+      return 0;
+    }
+  }
+
+  @FunctionalInterface
+  private interface SQLFunction<T, R> {
+    R apply(T t, String columnName) throws SQLException;
+  }
+
+  private <T> long computeHash(FieldValue fieldValue, Function<FieldValue, T> extractor) {
+    if (fieldValue == null || fieldValue.isNull()) {
+      return 0;
+    }
+    T value = extractor.apply(fieldValue);
+    return (value == null) ? 0 : value.hashCode();
   }
 
   public static void main(String[] args) throws Exception {
