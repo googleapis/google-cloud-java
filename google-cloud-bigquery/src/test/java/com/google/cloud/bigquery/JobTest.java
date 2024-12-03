@@ -41,6 +41,7 @@ import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatus.State;
 import com.google.common.collect.ImmutableList;
+import java.time.Duration;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -48,7 +49,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.MockitoRule;
-import org.threeten.bp.Duration;
 
 @RunWith(MockitoJUnitRunner.class)
 public class JobTest {
@@ -83,8 +83,8 @@ public class JobTest {
 
   private static final RetryOption[] TEST_RETRY_OPTIONS =
       new RetryOption[] {
-        RetryOption.totalTimeout(Duration.ofSeconds(3)),
-        RetryOption.initialRetryDelay(Duration.ofMillis(1L)),
+        RetryOption.totalTimeoutDuration(Duration.ofSeconds(3)),
+        RetryOption.initialRetryDelayDuration(Duration.ofMillis(1L)),
         RetryOption.jittered(false),
         RetryOption.retryDelayMultiplier(1.0)
       };
@@ -402,7 +402,8 @@ public class JobTest {
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(runningJob);
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(runningJob);
     try {
-      job.waitFor(concat(TEST_RETRY_OPTIONS, RetryOption.totalTimeout(Duration.ofMillis(3))));
+      job.waitFor(
+          concat(TEST_RETRY_OPTIONS, RetryOption.totalTimeoutDuration(Duration.ofMillis(3))));
       Assert.fail();
     } catch (BigQueryException expected) {
       Assert.assertNotNull(expected.getMessage());

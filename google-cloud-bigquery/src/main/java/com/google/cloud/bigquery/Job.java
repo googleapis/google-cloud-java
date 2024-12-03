@@ -31,13 +31,13 @@ import com.google.cloud.bigquery.JobConfiguration.Type;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import org.threeten.bp.Duration;
 
 /**
  * A Google BigQuery Job.
@@ -52,20 +52,20 @@ public class Job extends JobInfo {
 
   private static final RetrySettings DEFAULT_JOB_WAIT_SETTINGS =
       RetrySettings.newBuilder()
-          .setTotalTimeout(Duration.ofHours(12L))
-          .setInitialRetryDelay(Duration.ofSeconds(1L))
+          .setTotalTimeoutDuration(Duration.ofHours(12L))
+          .setInitialRetryDelayDuration(Duration.ofSeconds(1L))
           .setRetryDelayMultiplier(2.0)
           .setJittered(true)
-          .setMaxRetryDelay(Duration.ofMinutes(1L))
+          .setMaxRetryDelayDuration(Duration.ofMinutes(1L))
           .build();
 
   static final RetrySettings DEFAULT_QUERY_JOB_WAIT_SETTINGS =
       RetrySettings.newBuilder()
-          .setTotalTimeout(Duration.ofHours(12L))
-          .setInitialRetryDelay(Duration.ofSeconds(3L))
+          .setTotalTimeoutDuration(Duration.ofHours(12L))
+          .setInitialRetryDelayDuration(Duration.ofSeconds(3L))
           .setRetryDelayMultiplier(1.0)
           .setJittered(true)
-          .setMaxRetryDelay(Duration.ofSeconds(3L))
+          .setMaxRetryDelayDuration(Duration.ofSeconds(3L))
           .build();
 
   static final QueryResultsOption[] DEFAULT_QUERY_WAIT_OPTIONS = {

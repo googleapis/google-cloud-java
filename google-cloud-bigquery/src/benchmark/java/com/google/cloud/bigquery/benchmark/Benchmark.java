@@ -23,10 +23,10 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import java.io.FileInputStream;
+import java.time.Clock;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
-import org.threeten.bp.Clock;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
 
 public class Benchmark {
 

@@ -25,12 +25,12 @@ import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.threeten.bp.Duration;
 
 @RunWith(MockitoJUnitRunner.class)
 public class RemoteBigQueryHelperTest {
@@ -83,8 +83,8 @@ public class RemoteBigQueryHelperTest {
     assertEquals(60000, ((HttpTransportOptions) options.getTransportOptions()).getConnectTimeout());
     assertEquals(60000, ((HttpTransportOptions) options.getTransportOptions()).getReadTimeout());
     assertEquals(10, options.getRetrySettings().getMaxAttempts());
-    assertEquals(Duration.ofMillis(30000), options.getRetrySettings().getMaxRetryDelay());
-    assertEquals(Duration.ofMillis(120000), options.getRetrySettings().getTotalTimeout());
-    assertEquals(Duration.ofMillis(250), options.getRetrySettings().getInitialRetryDelay());
+    assertEquals(Duration.ofMillis(30000), options.getRetrySettings().getMaxRetryDelayDuration());
+    assertEquals(Duration.ofMillis(120000), options.getRetrySettings().getTotalTimeoutDuration());
+    assertEquals(Duration.ofMillis(250), options.getRetrySettings().getInitialRetryDelayDuration());
   }
 }

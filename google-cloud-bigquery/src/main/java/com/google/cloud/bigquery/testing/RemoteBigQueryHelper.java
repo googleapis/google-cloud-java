@@ -24,10 +24,10 @@ import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote BigQuery configuration for testing. BigQuery options can be obtained
@@ -144,13 +144,13 @@ public class RemoteBigQueryHelper {
     long totalTimeOut = 120000L;
     return RetrySettings.newBuilder()
         .setMaxAttempts(maxAttempts)
-        .setMaxRetryDelay(Duration.ofMillis(maxRetryDelay))
-        .setTotalTimeout(Duration.ofMillis(totalTimeOut))
-        .setInitialRetryDelay(Duration.ofMillis(initialRetryDelay))
+        .setMaxRetryDelayDuration(Duration.ofMillis(maxRetryDelay))
+        .setTotalTimeoutDuration(Duration.ofMillis(totalTimeOut))
+        .setInitialRetryDelayDuration(Duration.ofMillis(initialRetryDelay))
         .setRetryDelayMultiplier(retryDelayMultiplier)
-        .setInitialRpcTimeout(Duration.ofMillis(totalTimeOut))
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(totalTimeOut))
         .setRpcTimeoutMultiplier(retryDelayMultiplier)
-        .setMaxRpcTimeout(Duration.ofMillis(totalTimeOut))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(totalTimeOut))
         .build();
   }
 

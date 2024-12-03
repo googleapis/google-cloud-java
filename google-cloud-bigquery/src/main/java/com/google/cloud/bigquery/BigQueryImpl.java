@@ -60,8 +60,6 @@ import java.util.concurrent.Callable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.NonNull;
-import org.threeten.bp.Instant;
-import org.threeten.bp.temporal.ChronoUnit;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
 
@@ -450,7 +448,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           long jobCreationTime = job.getStatistics().getCreationTime();
           long jobMinStaleTime = System.currentTimeMillis();
           long jobMaxStaleTime =
-              Instant.ofEpochMilli(jobMinStaleTime).minus(1, ChronoUnit.DAYS).toEpochMilli();
+              java.time.Instant.ofEpochMilli(jobMinStaleTime)
+                  .minus(1, java.time.temporal.ChronoUnit.DAYS)
+                  .toEpochMilli();
 
           // Only return the job if it has been created in the past 24 hours.
           // This is assuming any job older than 24 hours is a valid duplicate JobID

@@ -27,13 +27,13 @@ import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.api.gax.retrying.TimedRetryAlgorithmWithContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.CancellationException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-import org.threeten.bp.Duration;
 
 public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT> {
   private final BigQueryRetryConfig bigQueryRetryConfig;
@@ -67,7 +67,7 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
     // Log retry info
     int attemptCount = nextAttemptSettings == null ? 0 : nextAttemptSettings.getAttemptCount();
     Duration retryDelay =
-        nextAttemptSettings == null ? Duration.ZERO : nextAttemptSettings.getRetryDelay();
+        nextAttemptSettings == null ? Duration.ZERO : nextAttemptSettings.getRetryDelayDuration();
     String errorMessage = previousThrowable != null ? previousThrowable.getMessage() : "";
 
     // Implementing shouldRetryBasedOnBigQueryRetryConfig so that we can retry exceptions based on

@@ -169,6 +169,7 @@ import java.nio.file.Path;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalTime;
 import java.time.Period;
@@ -195,7 +196,6 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
-import org.threeten.bp.Duration;
 import org.threeten.extra.PeriodDuration;
 
 public class ITBigQueryTest {
@@ -5383,7 +5383,7 @@ public class ITBigQueryTest {
     assertEquals(createdJob.getSelfLink(), remoteJob.getSelfLink());
     assertEquals(createdJob.getUserEmail(), remoteJob.getUserEmail());
 
-    Job completedJob = remoteJob.waitFor(RetryOption.totalTimeout(Duration.ofMinutes(1)));
+    Job completedJob = remoteJob.waitFor(RetryOption.totalTimeoutDuration(Duration.ofMinutes(1)));
     assertNotNull(completedJob);
     assertNull(completedJob.getStatus().getError());
     assertTrue(createdTable.delete());
@@ -5451,8 +5451,8 @@ public class ITBigQueryTest {
     assertNull(remoteJob.getUserEmail());
     Job completedJob =
         remoteJob.waitFor(
-            RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-            RetryOption.totalTimeout(Duration.ofMinutes(1)));
+            RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+            RetryOption.totalTimeoutDuration(Duration.ofMinutes(1)));
     assertNotNull(completedJob);
     assertTrue(createdTable.delete());
     assertNull(completedJob.getStatus().getError());

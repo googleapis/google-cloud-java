@@ -16,11 +16,12 @@
 
 package com.google.cloud.bigquery;
 
-import static org.threeten.bp.temporal.ChronoField.HOUR_OF_DAY;
-import static org.threeten.bp.temporal.ChronoField.MINUTE_OF_HOUR;
-import static org.threeten.bp.temporal.ChronoField.NANO_OF_SECOND;
-import static org.threeten.bp.temporal.ChronoField.SECOND_OF_MINUTE;
+import static java.time.temporal.ChronoField.HOUR_OF_DAY;
+import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
+import static java.time.temporal.ChronoField.NANO_OF_SECOND;
+import static java.time.temporal.ChronoField.SECOND_OF_MINUTE;
 
+import com.google.api.core.ObsoleteApi;
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.api.services.bigquery.model.RangeValue;
 import com.google.auto.value.AutoValue;
@@ -33,17 +34,17 @@ import com.google.common.io.BaseEncoding;
 import com.google.gson.JsonObject;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.Instant;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
-import org.threeten.bp.Instant;
-import org.threeten.bp.ZoneOffset;
-import org.threeten.bp.format.DateTimeFormatter;
-import org.threeten.bp.format.DateTimeFormatterBuilder;
-import org.threeten.bp.format.DateTimeParseException;
 import org.threeten.extra.PeriodDuration;
 
 /**
@@ -345,7 +346,11 @@ public abstract class QueryParameterValue implements Serializable {
     return of(value, StandardSQLTypeName.INTERVAL);
   }
 
-  /** Creates a {@code QueryParameterValue} object with a type of INTERVAL. */
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of INTERVAL. This method is obsolete.
+   * Use {@link #interval(String)} instead.
+   */
+  @ObsoleteApi("Use interval(String) instead")
   public static QueryParameterValue interval(PeriodDuration value) {
     return of(value, StandardSQLTypeName.INTERVAL);
   }
