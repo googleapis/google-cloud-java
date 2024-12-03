@@ -87,6 +87,7 @@ import com.google.cloud.bigtable.data.v2.models.sql.Statement;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallable;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
 import com.google.common.io.BaseEncoding;
@@ -283,6 +284,28 @@ public class EnhancedBigtableStubTest {
 
     assertThat(featureFlags.getReverseScans()).isTrue();
     assertThat(featureFlags.getLastScannedRowResponses()).isTrue();
+  }
+
+  @Test
+  public void testPingAndWarmFeatureFlags()
+      throws InterruptedException, IOException, ExecutionException {
+    EnhancedBigtableStubSettings settings =
+        defaultSettings.toBuilder().setRefreshingChannel(true).build();
+    try (EnhancedBigtableStub ignored = EnhancedBigtableStub.create(settings)) {
+      Preconditions.checkState(
+          !fakeDataService.pingRequests.isEmpty(), "Ping request was not sent during setup");
+      Metadata metadata = metadataInterceptor.headers.take();
+
+      String encodedFeatureFlags =
+          metadata.get(Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+      FeatureFlags featureFlags =
+          FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedFeatureFlags));
+
+      assertThat(featureFlags.getReverseScans()).isTrue();
+      assertThat(featureFlags.getLastScannedRowResponses()).isTrue();
+      assertThat(featureFlags.getRoutingCookie()).isTrue();
+      assertThat(featureFlags.getRetryInfo()).isTrue();
+    }
   }
 
   @Test
