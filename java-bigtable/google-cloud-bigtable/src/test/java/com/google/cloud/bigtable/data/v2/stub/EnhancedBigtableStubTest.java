@@ -84,6 +84,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.models.sql.Statement;
+import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallable;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.common.collect.ImmutableMap;
@@ -97,7 +98,6 @@ import com.google.rpc.Status;
 import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Deadline;
-import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
@@ -172,6 +172,7 @@ public class EnhancedBigtableStubTest {
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
             .build()
             .getStubSettings();
 
@@ -187,9 +188,6 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testJwtAudience()
       throws InterruptedException, IOException, NoSuchAlgorithmException, ExecutionException {
-    // close default stub - need to create custom one
-    enhancedBigtableStub.close();
-
     // Create fake jwt creds
     KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
     KeyPair keyPair = keyGen.genKeyPair();
@@ -210,9 +208,10 @@ public class EnhancedBigtableStubTest {
             .setJwtAudienceMapping(ImmutableMap.of("localhost", expectedAudience))
             .setCredentialsProvider(FixedCredentialsProvider.create(jwtCreds))
             .build();
-    enhancedBigtableStub = EnhancedBigtableStub.create(settings);
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
+      stub.readRowCallable().futureCall(Query.create("fake-table")).get();
+    }
     // Send rpc and grab the credentials sent
-    enhancedBigtableStub.readRowCallable().futureCall(Query.create("fake-table")).get();
     Metadata metadata = metadataInterceptor.headers.take();
 
     String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
@@ -226,9 +225,6 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testBatchJwtAudience()
       throws InterruptedException, IOException, NoSuchAlgorithmException, ExecutionException {
-    // close default stub - need to create custom one
-    enhancedBigtableStub.close();
-
     // Create fake jwt creds
     KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
     KeyPair keyPair = keyGen.genKeyPair();
@@ -241,31 +237,30 @@ public class EnhancedBigtableStubTest {
             .setPrivateKeyId("fake-private-key")
             .build();
 
-    // Create a fixed channel that will ignore the default endpoint and connect to the emulator
-    ManagedChannel emulatorChannel =
-        ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
+    EnhancedBigtableStubSettings settings =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId("fake-project")
+            .setInstanceId("fake-instance")
+            .setEndpoint("batch-bigtable.googleapis.com:443")
+            .setCredentialsProvider(FixedCredentialsProvider.create(jwtCreds))
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            // Use a fixed channel that will ignore the default endpoint and connect to the emulator
+            .setTransportChannelProvider(
+                FixedTransportChannelProvider.create(
+                    GrpcTransportChannel.create(
+                        ManagedChannelBuilder.forAddress("localhost", server.getPort())
+                            .usePlaintext()
+                            .build())))
+            // Channel refreshing doesn't work with FixedTransportChannelProvider. Disable it for
+            // the test
+            .setRefreshingChannel(false)
+            .build();
 
     Metadata metadata;
-    try {
-      EnhancedBigtableStubSettings settings =
-          EnhancedBigtableStubSettings.newBuilder()
-              .setProjectId("fake-project")
-              .setInstanceId("fake-instance")
-              .setEndpoint("batch-bigtable.googleapis.com:443")
-              .setCredentialsProvider(FixedCredentialsProvider.create(jwtCreds))
-              .setTransportChannelProvider(
-                  FixedTransportChannelProvider.create(
-                      GrpcTransportChannel.create(emulatorChannel)))
-              // Channel refreshing doesn't work with FixedTransportChannelProvider. Disable it for
-              // the test
-              .setRefreshingChannel(false)
-              .build();
-      enhancedBigtableStub = EnhancedBigtableStub.create(settings);
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
       // Send rpc and grab the credentials sent
-      enhancedBigtableStub.readRowCallable().futureCall(Query.create("fake-table")).get();
+      stub.readRowCallable().futureCall(Query.create("fake-table")).get();
       metadata = metadataInterceptor.headers.take();
-    } finally {
-      emulatorChannel.shutdown();
     }
 
     String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
@@ -278,7 +273,6 @@ public class EnhancedBigtableStubTest {
 
   @Test
   public void testFeatureFlags() throws InterruptedException, IOException, ExecutionException {
-
     enhancedBigtableStub.readRowCallable().futureCall(Query.create("fake-table")).get();
     Metadata metadata = metadataInterceptor.headers.take();
 
