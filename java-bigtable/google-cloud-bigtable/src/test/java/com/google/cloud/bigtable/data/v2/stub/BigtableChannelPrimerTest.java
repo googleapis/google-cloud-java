@@ -24,6 +24,7 @@ import com.google.bigtable.v2.BigtableGrpc.BigtableImplBase;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.common.collect.ImmutableMap;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
@@ -69,10 +70,11 @@ public class BigtableChannelPrimerTest {
 
     primer =
         BigtableChannelPrimer.create(
-            OAuth2Credentials.create(new AccessToken(TOKEN_VALUE, null)),
             "fake-project",
             "fake-instance",
-            "fake-app-profile");
+            "fake-app-profile",
+            OAuth2Credentials.create(new AccessToken(TOKEN_VALUE, null)),
+            ImmutableMap.of("bigtable-feature", "fake-feature"));
 
     channel =
         ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
@@ -133,7 +135,7 @@ public class BigtableChannelPrimerTest {
 
     assertThat(logHandler.logs).hasSize(1);
     for (LogRecord log : logHandler.logs) {
-      assertThat(log.getMessage()).contains("FAILED_PRECONDITION");
+      assertThat(log.getThrown().getMessage()).contains("FAILED_PRECONDITION");
     }
   }
 
@@ -146,7 +148,21 @@ public class BigtableChannelPrimerTest {
 
     assertThat(logHandler.logs).hasSize(1);
     for (LogRecord log : logHandler.logs) {
-      assertThat(log.getMessage()).contains("UnsupportedOperationException");
+      assertThat(log.getThrown()).isInstanceOf(UnsupportedOperationException.class);
+    }
+  }
+
+  @Test
+  public void testHeadersAreSent() {
+    primer.primeChannel(channel);
+
+    for (Metadata metadata : metadataInterceptor.metadataList) {
+      assertThat(metadata.get(BigtableChannelPrimer.REQUEST_PARAMS))
+          .isEqualTo(
+              "name=projects%2Ffake-project%2Finstances%2Ffake-instance&app_profile_id=fake-app-profile");
+      assertThat(
+              metadata.get(Metadata.Key.of("bigtable-feature", Metadata.ASCII_STRING_MARSHALLER)))
+          .isEqualTo("fake-feature");
     }
   }
 

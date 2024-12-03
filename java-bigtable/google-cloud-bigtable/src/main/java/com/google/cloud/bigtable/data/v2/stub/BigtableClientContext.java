@@ -100,10 +100,11 @@ public class BigtableClientContext {
       if (builder.isRefreshingChannel()) {
         transportProvider.setChannelPrimer(
             BigtableChannelPrimer.create(
+                builder.getProjectId(),
+                builder.getInstanceId(),
+                builder.getAppProfileId(),
                 credentials,
-                settings.getProjectId(),
-                settings.getInstanceId(),
-                settings.getAppProfileId()));
+                builder.getHeaderProvider().getHeaders()));
       }
 
       builder.setTransportChannelProvider(transportProvider.build());

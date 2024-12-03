@@ -16,18 +16,27 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.ChannelPrimer;
-import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.auth.Credentials;
+import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.PingAndWarmRequest;
-import com.google.cloud.bigtable.data.v2.internal.NameUtil;
-import com.google.common.base.Preconditions;
+import com.google.bigtable.v2.PingAndWarmResponse;
+import io.grpc.CallCredentials;
+import io.grpc.CallOptions;
+import io.grpc.ClientCall;
+import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
-import java.util.concurrent.ExecutionException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -41,27 +50,40 @@ import java.util.logging.Logger;
 class BigtableChannelPrimer implements ChannelPrimer {
   private static Logger LOG = Logger.getLogger(BigtableChannelPrimer.class.toString());
 
-  private final EnhancedBigtableStubSettings settingsTemplate;
+  static final Metadata.Key<String> REQUEST_PARAMS =
+      Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
+  private final PingAndWarmRequest request;
+  private final CallCredentials callCredentials;
+  private final Map<String, String> headers;
 
   static BigtableChannelPrimer create(
-      Credentials credentials, String projectId, String instanceId, String appProfileId) {
-    EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .setAppProfileId(appProfileId)
-            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
-            // Disable refreshing channel here to avoid creating settings in a loop
-            .setRefreshingChannel(false)
-            .setExecutorProvider(
-                InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build());
-
-    return new BigtableChannelPrimer(builder.build());
+      String projectId,
+      String instanceId,
+      String appProfileId,
+      Credentials credentials,
+      Map<String, String> headers) {
+    return new BigtableChannelPrimer(projectId, instanceId, appProfileId, credentials, headers);
   }
 
-  private BigtableChannelPrimer(EnhancedBigtableStubSettings settingsTemplate) {
-    Preconditions.checkNotNull(settingsTemplate, "settingsTemplate can't be null");
-    this.settingsTemplate = settingsTemplate;
+  BigtableChannelPrimer(
+      String projectId,
+      String instanceId,
+      String appProfileId,
+      Credentials credentials,
+      Map<String, String> headers) {
+    if (credentials != null) {
+      callCredentials = MoreCallCredentials.from(credentials);
+    } else {
+      callCredentials = null;
+    }
+
+    request =
+        PingAndWarmRequest.newBuilder()
+            .setName(InstanceName.format(projectId, instanceId))
+            .setAppProfileId(appProfileId)
+            .build();
+
+    this.headers = headers;
   }
 
   @Override
@@ -69,8 +91,7 @@ class BigtableChannelPrimer implements ChannelPrimer {
     try {
       primeChannelUnsafe(managedChannel);
     } catch (IOException | RuntimeException e) {
-      LOG.warning(
-          String.format("Unexpected error while trying to prime a channel: %s", e.getMessage()));
+      LOG.log(Level.WARNING, "Unexpected error while trying to prime a channel", e);
     }
   }
 
@@ -78,35 +99,64 @@ class BigtableChannelPrimer implements ChannelPrimer {
     sendPrimeRequests(managedChannel);
   }
 
-  private void sendPrimeRequests(ManagedChannel managedChannel) throws IOException {
-    // Wrap the channel in a temporary stub
-    EnhancedBigtableStubSettings primingSettings =
-        settingsTemplate
-            .toBuilder()
-            .setTransportChannelProvider(
-                FixedTransportChannelProvider.create(GrpcTransportChannel.create(managedChannel)))
-            .build();
+  private void sendPrimeRequests(ManagedChannel managedChannel) {
+    try {
+      ClientCall<PingAndWarmRequest, PingAndWarmResponse> clientCall =
+          managedChannel.newCall(
+              BigtableGrpc.getPingAndWarmMethod(),
+              CallOptions.DEFAULT
+                  .withCallCredentials(callCredentials)
+                  .withDeadline(Deadline.after(1, TimeUnit.MINUTES)));
 
-    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(primingSettings)) {
-      PingAndWarmRequest request =
-          PingAndWarmRequest.newBuilder()
-              .setName(
-                  NameUtil.formatInstanceName(
-                      primingSettings.getProjectId(), primingSettings.getInstanceId()))
-              .setAppProfileId(primingSettings.getAppProfileId())
-              .build();
+      SettableApiFuture<PingAndWarmResponse> future = SettableApiFuture.create();
+      clientCall.start(
+          new ClientCall.Listener<PingAndWarmResponse>() {
+            PingAndWarmResponse response;
 
-      try {
-        stub.pingAndWarmCallable().call(request);
-      } catch (Throwable e) {
-        // TODO: Not sure if we should swallow the error here. We are pre-emptively swapping
-        // channels if the new
-        // channel is bad.
-        if (e instanceof ExecutionException) {
-          e = e.getCause();
-        }
-        LOG.warning(String.format("Failed to prime channel: %s", e));
-      }
+            @Override
+            public void onMessage(PingAndWarmResponse message) {
+              response = message;
+            }
+
+            @Override
+            public void onClose(Status status, Metadata trailers) {
+              if (status.isOk()) {
+                future.set(response);
+              } else {
+                future.setException(status.asException());
+              }
+            }
+          },
+          createMetadata(headers, request));
+      clientCall.sendMessage(request);
+      clientCall.halfClose();
+      clientCall.request(Integer.MAX_VALUE);
+
+      future.get(1, TimeUnit.MINUTES);
+    } catch (Throwable e) {
+      // TODO: Not sure if we should swallow the error here. We are pre-emptively swapping
+      // channels if the new
+      // channel is bad.
+      LOG.log(Level.WARNING, "Failed to prime channel", e);
     }
+  }
+
+  private static Metadata createMetadata(Map<String, String> headers, PingAndWarmRequest request) {
+    Metadata metadata = new Metadata();
+
+    headers.forEach(
+        (k, v) -> metadata.put(Metadata.Key.of(k, Metadata.ASCII_STRING_MARSHALLER), v));
+    try {
+      metadata.put(
+          REQUEST_PARAMS,
+          String.format(
+              "name=%s&app_profile_id=%s",
+              URLEncoder.encode(request.getName(), "UTF-8"),
+              URLEncoder.encode(request.getAppProfileId(), "UTF-8")));
+    } catch (UnsupportedEncodingException e) {
+      LOG.log(Level.WARNING, "Failed to encode request params", e);
+    }
+
+    return metadata;
   }
 }

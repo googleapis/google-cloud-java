@@ -709,7 +709,6 @@
             grpc-auth is not directly used transitively, but is pulled to align with other grpc parts
             opencensus-impl-core is brought in transitively through opencensus-impl
             -->
-          <usedDependencies>io.grpc:grpc-auth</usedDependencies>
           <ignoredUsedUndeclaredDependencies>
             <ignoredUsedUndeclaredDependency>io.opencensus:opencensus-impl-core</ignoredUsedUndeclaredDependency>
           </ignoredUsedUndeclaredDependencies>
