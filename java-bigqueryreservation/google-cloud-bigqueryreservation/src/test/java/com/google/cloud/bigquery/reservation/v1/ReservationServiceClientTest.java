@@ -100,6 +100,9 @@ public class ReservationServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -152,6 +155,9 @@ public class ReservationServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -292,6 +298,9 @@ public class ReservationServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -338,6 +347,9 @@ public class ReservationServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -452,6 +464,9 @@ public class ReservationServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -489,6 +504,61 @@ public class ReservationServiceClientTest {
   }
 
   @Test
+  public void failoverReservationTest() throws Exception {
+    Reservation expectedResponse =
+        Reservation.newBuilder()
+            .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+            .setSlotCapacity(-1516717605)
+            .setIgnoreIdleSlots(true)
+            .setAutoscale(Reservation.Autoscale.newBuilder().build())
+            .setConcurrency(1476186003)
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
+            .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    FailoverReservationRequest request =
+        FailoverReservationRequest.newBuilder()
+            .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+            .build();
+
+    Reservation actualResponse = client.failoverReservation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FailoverReservationRequest actualRequest = ((FailoverReservationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void failoverReservationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      FailoverReservationRequest request =
+          FailoverReservationRequest.newBuilder()
+              .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+              .build();
+      client.failoverReservation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createCapacityCommitmentTest() throws Exception {
     CapacityCommitment expectedResponse =
         CapacityCommitment.newBuilder()
@@ -501,6 +571,7 @@ public class ReservationServiceClientTest {
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setIsFlatRate(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -551,6 +622,7 @@ public class ReservationServiceClientTest {
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setIsFlatRate(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -691,6 +763,7 @@ public class ReservationServiceClientTest {
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setIsFlatRate(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -740,6 +813,7 @@ public class ReservationServiceClientTest {
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setIsFlatRate(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -859,6 +933,7 @@ public class ReservationServiceClientTest {
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setIsFlatRate(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1000,6 +1075,7 @@ public class ReservationServiceClientTest {
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setIsFlatRate(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1051,6 +1127,7 @@ public class ReservationServiceClientTest {
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
             .setEdition(Edition.forNumber(0))
+            .setIsFlatRate(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 

@@ -122,6 +122,11 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     return ((ReservationServiceStubSettings) getStubSettings()).updateReservationSettings();
   }
 
+  /** Returns the object with the settings used for calls to failoverReservation. */
+  public UnaryCallSettings<FailoverReservationRequest, Reservation> failoverReservationSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).failoverReservationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createCapacityCommitment. */
   public UnaryCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentSettings() {
@@ -365,6 +370,12 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     public UnaryCallSettings.Builder<UpdateReservationRequest, Reservation>
         updateReservationSettings() {
       return getStubSettingsBuilder().updateReservationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to failoverReservation. */
+    public UnaryCallSettings.Builder<FailoverReservationRequest, Reservation>
+        failoverReservationSettings() {
+      return getStubSettingsBuilder().failoverReservationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createCapacityCommitment. */

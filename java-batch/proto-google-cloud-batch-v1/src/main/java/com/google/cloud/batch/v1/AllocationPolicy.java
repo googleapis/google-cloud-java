@@ -5803,10 +5803,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If specified, VMs will consume only the specified reservation.
-     * If not specified (default), VMs will consume any applicable reservation.
-     * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-     * is specified.
+     * Optional. If not specified (default), VMs will consume any applicable
+     * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+     * reservation. Otherwise, if specified, VMs will consume only the specified
+     * reservation.
      * </pre>
      *
      * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5818,10 +5818,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If specified, VMs will consume only the specified reservation.
-     * If not specified (default), VMs will consume any applicable reservation.
-     * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-     * is specified.
+     * Optional. If not specified (default), VMs will consume any applicable
+     * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+     * reservation. Otherwise, if specified, VMs will consume only the specified
+     * reservation.
      * </pre>
      *
      * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6257,10 +6257,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If specified, VMs will consume only the specified reservation.
-     * If not specified (default), VMs will consume any applicable reservation.
-     * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-     * is specified.
+     * Optional. If not specified (default), VMs will consume any applicable
+     * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+     * reservation. Otherwise, if specified, VMs will consume only the specified
+     * reservation.
      * </pre>
      *
      * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6283,10 +6283,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If specified, VMs will consume only the specified reservation.
-     * If not specified (default), VMs will consume any applicable reservation.
-     * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-     * is specified.
+     * Optional. If not specified (default), VMs will consume any applicable
+     * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+     * reservation. Otherwise, if specified, VMs will consume only the specified
+     * reservation.
      * </pre>
      *
      * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8252,10 +8252,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. If specified, VMs will consume only the specified reservation.
-       * If not specified (default), VMs will consume any applicable reservation.
-       * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-       * is specified.
+       * Optional. If not specified (default), VMs will consume any applicable
+       * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+       * reservation. Otherwise, if specified, VMs will consume only the specified
+       * reservation.
        * </pre>
        *
        * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8277,10 +8277,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. If specified, VMs will consume only the specified reservation.
-       * If not specified (default), VMs will consume any applicable reservation.
-       * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-       * is specified.
+       * Optional. If not specified (default), VMs will consume any applicable
+       * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+       * reservation. Otherwise, if specified, VMs will consume only the specified
+       * reservation.
        * </pre>
        *
        * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8302,10 +8302,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. If specified, VMs will consume only the specified reservation.
-       * If not specified (default), VMs will consume any applicable reservation.
-       * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-       * is specified.
+       * Optional. If not specified (default), VMs will consume any applicable
+       * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+       * reservation. Otherwise, if specified, VMs will consume only the specified
+       * reservation.
        * </pre>
        *
        * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8326,10 +8326,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. If specified, VMs will consume only the specified reservation.
-       * If not specified (default), VMs will consume any applicable reservation.
-       * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-       * is specified.
+       * Optional. If not specified (default), VMs will consume any applicable
+       * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+       * reservation. Otherwise, if specified, VMs will consume only the specified
+       * reservation.
        * </pre>
        *
        * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8346,10 +8346,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. If specified, VMs will consume only the specified reservation.
-       * If not specified (default), VMs will consume any applicable reservation.
-       * Additionally, VMs will not consume any reservation if "NO_RESERVATION"
-       * is specified.
+       * Optional. If not specified (default), VMs will consume any applicable
+       * reservation. If "NO_RESERVATION" is specified, VMs will not consume any
+       * reservation. Otherwise, if specified, VMs will consume only the specified
+       * reservation.
        * </pre>
        *
        * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

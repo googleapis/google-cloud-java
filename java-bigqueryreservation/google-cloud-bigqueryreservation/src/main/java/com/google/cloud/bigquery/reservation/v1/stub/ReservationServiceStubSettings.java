@@ -57,6 +57,7 @@ import com.google.cloud.bigquery.reservation.v1.CreateReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest;
+import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.GetReservationRequest;
@@ -157,6 +158,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   private final UnaryCallSettings<GetReservationRequest, Reservation> getReservationSettings;
   private final UnaryCallSettings<DeleteReservationRequest, Empty> deleteReservationSettings;
   private final UnaryCallSettings<UpdateReservationRequest, Reservation> updateReservationSettings;
+  private final UnaryCallSettings<FailoverReservationRequest, Reservation>
+      failoverReservationSettings;
   private final UnaryCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentSettings;
   private final PagedCallSettings<
@@ -521,6 +524,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     return updateReservationSettings;
   }
 
+  /** Returns the object with the settings used for calls to failoverReservation. */
+  public UnaryCallSettings<FailoverReservationRequest, Reservation> failoverReservationSettings() {
+    return failoverReservationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createCapacityCommitment. */
   public UnaryCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentSettings() {
@@ -741,6 +749,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     getReservationSettings = settingsBuilder.getReservationSettings().build();
     deleteReservationSettings = settingsBuilder.deleteReservationSettings().build();
     updateReservationSettings = settingsBuilder.updateReservationSettings().build();
+    failoverReservationSettings = settingsBuilder.failoverReservationSettings().build();
     createCapacityCommitmentSettings = settingsBuilder.createCapacityCommitmentSettings().build();
     listCapacityCommitmentsSettings = settingsBuilder.listCapacityCommitmentsSettings().build();
     getCapacityCommitmentSettings = settingsBuilder.getCapacityCommitmentSettings().build();
@@ -774,6 +783,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
         deleteReservationSettings;
     private final UnaryCallSettings.Builder<UpdateReservationRequest, Reservation>
         updateReservationSettings;
+    private final UnaryCallSettings.Builder<FailoverReservationRequest, Reservation>
+        failoverReservationSettings;
     private final UnaryCallSettings.Builder<CreateCapacityCommitmentRequest, CapacityCommitment>
         createCapacityCommitmentSettings;
     private final PagedCallSettings.Builder<
@@ -873,6 +884,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       getReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      failoverReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCapacityCommitmentsSettings =
           PagedCallSettings.newBuilder(LIST_CAPACITY_COMMITMENTS_PAGE_STR_FACT);
@@ -899,6 +911,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               getReservationSettings,
               deleteReservationSettings,
               updateReservationSettings,
+              failoverReservationSettings,
               createCapacityCommitmentSettings,
               listCapacityCommitmentsSettings,
               getCapacityCommitmentSettings,
@@ -926,6 +939,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       getReservationSettings = settings.getReservationSettings.toBuilder();
       deleteReservationSettings = settings.deleteReservationSettings.toBuilder();
       updateReservationSettings = settings.updateReservationSettings.toBuilder();
+      failoverReservationSettings = settings.failoverReservationSettings.toBuilder();
       createCapacityCommitmentSettings = settings.createCapacityCommitmentSettings.toBuilder();
       listCapacityCommitmentsSettings = settings.listCapacityCommitmentsSettings.toBuilder();
       getCapacityCommitmentSettings = settings.getCapacityCommitmentSettings.toBuilder();
@@ -950,6 +964,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               getReservationSettings,
               deleteReservationSettings,
               updateReservationSettings,
+              failoverReservationSettings,
               createCapacityCommitmentSettings,
               listCapacityCommitmentsSettings,
               getCapacityCommitmentSettings,
@@ -1017,6 +1032,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           .updateReservationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .failoverReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createCapacityCommitmentSettings()
@@ -1143,6 +1163,12 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     public UnaryCallSettings.Builder<UpdateReservationRequest, Reservation>
         updateReservationSettings() {
       return updateReservationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to failoverReservation. */
+    public UnaryCallSettings.Builder<FailoverReservationRequest, Reservation>
+        failoverReservationSettings() {
+      return failoverReservationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createCapacityCommitment. */
