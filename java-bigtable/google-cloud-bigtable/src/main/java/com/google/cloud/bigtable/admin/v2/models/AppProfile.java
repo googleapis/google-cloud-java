@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly;
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
-import com.google.bigtable.admin.v2.AppProfile.Priority;
 import com.google.bigtable.admin.v2.AppProfile.StandardIsolation;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.common.base.Objects;
@@ -69,6 +68,10 @@ public final class AppProfile {
   @SuppressWarnings("WeakerAccess")
   public RoutingPolicy getPolicy() {
     if (proto.hasMultiClusterRoutingUseAny()) {
+      if (proto.getMultiClusterRoutingUseAny().hasRowAffinity()) {
+        return MultiClusterRoutingPolicy.withRowAffinity(
+            ImmutableSet.copyOf(proto.getMultiClusterRoutingUseAny().getClusterIdsList()));
+      }
       return MultiClusterRoutingPolicy.of(
           ImmutableSet.copyOf(proto.getMultiClusterRoutingUseAny().getClusterIdsList()));
     } else if (proto.hasSingleClusterRouting()) {
@@ -265,6 +268,34 @@ public final class AppProfile {
     public static MultiClusterRoutingPolicy of(Set<String> clusterIds) {
       return new MultiClusterRoutingPolicy(
           MultiClusterRoutingUseAny.newBuilder().addAllClusterIds(clusterIds).build());
+    }
+
+    /** Creates a new instance of {@link MultiClusterRoutingPolicy}. */
+    public static MultiClusterRoutingPolicy withRowAffinity() {
+      return new MultiClusterRoutingPolicy(
+          MultiClusterRoutingUseAny.newBuilder()
+              .setRowAffinity(MultiClusterRoutingUseAny.RowAffinity.getDefaultInstance())
+              .build());
+    }
+
+    /**
+     * Creates a new instance of {@link MultiClusterRoutingPolicy} with row affinity enabled and
+     * specified cluster ids to route to.
+     */
+    public static MultiClusterRoutingPolicy withRowAffinity(String... clusterIds) {
+      return withRowAffinity(ImmutableSet.copyOf(clusterIds));
+    }
+
+    /**
+     * Creates a new instance of {@link MultiClusterRoutingPolicy} with specified cluster ids to
+     * route to.
+     */
+    public static MultiClusterRoutingPolicy withRowAffinity(Set<String> clusterIds) {
+      return new MultiClusterRoutingPolicy(
+          MultiClusterRoutingUseAny.newBuilder()
+              .addAllClusterIds(clusterIds)
+              .setRowAffinity(MultiClusterRoutingUseAny.RowAffinity.getDefaultInstance())
+              .build());
     }
 
     /*

@@ -286,6 +286,43 @@ public class BigtableInstanceAdminClientIT {
   }
 
   @Test
+  public void appProfileTestRowAffinity() {
+    String newInstanceId = prefixGenerator.newPrefix();
+    String newClusterId = newInstanceId + "-c1";
+    String newClusterId2 = newInstanceId + "-c2";
+
+    client.createInstance(
+        CreateInstanceRequest.of(newInstanceId)
+            .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD)
+            .addCluster(newClusterId2, testEnvRule.env().getSecondaryZone(), 1, StorageType.SSD)
+            .setDisplayName("Row-Affinity-Instance-Test")
+            .addLabel("state", "readytodelete")
+            .setType(Type.PRODUCTION));
+
+    try {
+      assertThat(client.exists(newInstanceId)).isTrue();
+
+      String testAppProfile = prefixGenerator.newPrefix();
+
+      CreateAppProfileRequest request =
+          CreateAppProfileRequest.of(newInstanceId, testAppProfile)
+              .setRoutingPolicy(
+                  AppProfile.MultiClusterRoutingPolicy.withRowAffinity(newClusterId, newClusterId2))
+              .setDescription("row affinity app profile");
+
+      AppProfile newlyCreateAppProfile = client.createAppProfile(request);
+      AppProfile.RoutingPolicy routingPolicy = newlyCreateAppProfile.getPolicy();
+      assertThat(routingPolicy)
+          .isEqualTo(
+              AppProfile.MultiClusterRoutingPolicy.withRowAffinity(newClusterId, newClusterId2));
+    } finally {
+      if (client.exists(newInstanceId)) {
+        client.deleteInstance(newInstanceId);
+      }
+    }
+  }
+
+  @Test
   public void iamUpdateTest() {
     Policy policy = client.getIamPolicy(instanceId);
     assertThat(policy).isNotNull();
