@@ -7976,6 +7976,80 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     return com.google.chat.v1.Space.PermissionSettings.getDefaultInstance();
   }
 
+  public static final int IMPORT_MODE_EXPIRE_TIME_FIELD_NUMBER = 28;
+  private com.google.protobuf.Timestamp importModeExpireTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the importModeExpireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportModeExpireTime() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The importModeExpireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getImportModeExpireTime() {
+    return importModeExpireTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : importModeExpireTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getImportModeExpireTimeOrBuilder() {
+    return importModeExpireTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : importModeExpireTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8051,6 +8125,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           27, (com.google.chat.v1.Space.PermissionSettings) spacePermissionSettings_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(28, getImportModeExpireTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -8124,6 +8201,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, (com.google.chat.v1.Space.PermissionSettings) spacePermissionSettings_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, getImportModeExpireTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8171,6 +8252,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       if (!getAccessSettings().equals(other.getAccessSettings())) return false;
     }
     if (!getSpaceUri().equals(other.getSpaceUri())) return false;
+    if (hasImportModeExpireTime() != other.hasImportModeExpireTime()) return false;
+    if (hasImportModeExpireTime()) {
+      if (!getImportModeExpireTime().equals(other.getImportModeExpireTime())) return false;
+    }
     if (!getSpacePermissionSettingsCase().equals(other.getSpacePermissionSettingsCase()))
       return false;
     switch (spacePermissionSettingsCase_) {
@@ -8239,6 +8324,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SPACE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getSpaceUri().hashCode();
+    if (hasImportModeExpireTime()) {
+      hash = (37 * hash) + IMPORT_MODE_EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getImportModeExpireTime().hashCode();
+    }
     switch (spacePermissionSettingsCase_) {
       case 26:
         hash = (37 * hash) + PREDEFINED_PERMISSION_SETTINGS_FIELD_NUMBER;
@@ -8393,6 +8482,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         getLastActiveTimeFieldBuilder();
         getMembershipCountFieldBuilder();
         getAccessSettingsFieldBuilder();
+        getImportModeExpireTimeFieldBuilder();
       }
     }
 
@@ -8439,6 +8529,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       spaceUri_ = "";
       if (permissionSettingsBuilder_ != null) {
         permissionSettingsBuilder_.clear();
+      }
+      importModeExpireTime_ = null;
+      if (importModeExpireTimeBuilder_ != null) {
+        importModeExpireTimeBuilder_.dispose();
+        importModeExpireTimeBuilder_ = null;
       }
       spacePermissionSettingsCase_ = 0;
       spacePermissionSettings_ = null;
@@ -8537,6 +8632,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.spaceUri_ = spaceUri_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.importModeExpireTime_ =
+            importModeExpireTimeBuilder_ == null
+                ? importModeExpireTime_
+                : importModeExpireTimeBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -8650,6 +8752,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         spaceUri_ = other.spaceUri_;
         bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (other.hasImportModeExpireTime()) {
+        mergeImportModeExpireTime(other.getImportModeExpireTime());
       }
       switch (other.getSpacePermissionSettingsCase()) {
         case PREDEFINED_PERMISSION_SETTINGS:
@@ -8809,6 +8914,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
                 spacePermissionSettingsCase_ = 27;
                 break;
               } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    getImportModeExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11464,6 +11576,263 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       spacePermissionSettingsCase_ = 27;
       onChanged();
       return permissionSettingsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp importModeExpireTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        importModeExpireTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the importModeExpireTime field is set.
+     */
+    public boolean hasImportModeExpireTime() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The importModeExpireTime.
+     */
+    public com.google.protobuf.Timestamp getImportModeExpireTime() {
+      if (importModeExpireTimeBuilder_ == null) {
+        return importModeExpireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : importModeExpireTime_;
+      } else {
+        return importModeExpireTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setImportModeExpireTime(com.google.protobuf.Timestamp value) {
+      if (importModeExpireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importModeExpireTime_ = value;
+      } else {
+        importModeExpireTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setImportModeExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (importModeExpireTimeBuilder_ == null) {
+        importModeExpireTime_ = builderForValue.build();
+      } else {
+        importModeExpireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeImportModeExpireTime(com.google.protobuf.Timestamp value) {
+      if (importModeExpireTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && importModeExpireTime_ != null
+            && importModeExpireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getImportModeExpireTimeBuilder().mergeFrom(value);
+        } else {
+          importModeExpireTime_ = value;
+        }
+      } else {
+        importModeExpireTimeBuilder_.mergeFrom(value);
+      }
+      if (importModeExpireTime_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearImportModeExpireTime() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      importModeExpireTime_ = null;
+      if (importModeExpireTimeBuilder_ != null) {
+        importModeExpireTimeBuilder_.dispose();
+        importModeExpireTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getImportModeExpireTimeBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getImportModeExpireTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getImportModeExpireTimeOrBuilder() {
+      if (importModeExpireTimeBuilder_ != null) {
+        return importModeExpireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return importModeExpireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : importModeExpireTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getImportModeExpireTimeFieldBuilder() {
+      if (importModeExpireTimeBuilder_ == null) {
+        importModeExpireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getImportModeExpireTime(), getParentForChildren(), isClean());
+        importModeExpireTime_ = null;
+      }
+      return importModeExpireTimeBuilder_;
     }
 
     @java.lang.Override

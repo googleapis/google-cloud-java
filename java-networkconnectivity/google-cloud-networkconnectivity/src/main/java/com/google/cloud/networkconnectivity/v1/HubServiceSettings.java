@@ -23,6 +23,7 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocat
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.QueryHubStatusPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -179,6 +180,13 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     return ((HubServiceStubSettings) getStubSettings()).listHubSpokesSettings();
   }
 
+  /** Returns the object with the settings used for calls to queryHubStatus. */
+  public PagedCallSettings<
+          QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+      queryHubStatusSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).queryHubStatusSettings();
+  }
+
   /** Returns the object with the settings used for calls to listSpokes. */
   public PagedCallSettings<ListSpokesRequest, ListSpokesResponse, ListSpokesPagedResponse>
       listSpokesSettings() {
@@ -277,6 +285,17 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
   public PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings() {
     return ((HubServiceStubSettings) getStubSettings()).listGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGroup. */
+  public UnaryCallSettings<UpdateGroupRequest, Operation> updateGroupSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).updateGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGroup. */
+  public OperationCallSettings<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).updateGroupOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -452,6 +471,13 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
       return getStubSettingsBuilder().listHubSpokesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to queryHubStatus. */
+    public PagedCallSettings.Builder<
+            QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+        queryHubStatusSettings() {
+      return getStubSettingsBuilder().queryHubStatusSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listSpokes. */
     public PagedCallSettings.Builder<ListSpokesRequest, ListSpokesResponse, ListSpokesPagedResponse>
         listSpokesSettings() {
@@ -552,6 +578,17 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     public PagedCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings() {
       return getStubSettingsBuilder().listGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGroup. */
+    public UnaryCallSettings.Builder<UpdateGroupRequest, Operation> updateGroupSettings() {
+      return getStubSettingsBuilder().updateGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGroup. */
+    public OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
+        updateGroupOperationSettings() {
+      return getStubSettingsBuilder().updateGroupOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

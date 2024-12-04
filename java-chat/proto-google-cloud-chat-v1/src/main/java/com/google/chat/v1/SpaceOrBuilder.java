@@ -666,5 +666,64 @@ public interface SpaceOrBuilder
    */
   com.google.chat.v1.Space.PermissionSettingsOrBuilder getPermissionSettingsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the importModeExpireTime field is set.
+   */
+  boolean hasImportModeExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The importModeExpireTime.
+   */
+  com.google.protobuf.Timestamp getImportModeExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getImportModeExpireTimeOrBuilder();
+
   com.google.chat.v1.Space.SpacePermissionSettingsCase getSpacePermissionSettingsCase();
 }
