@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.49.0](https://github.com/googleapis/java-bigtable/compare/v2.48.0...v2.49.0) (2024-12-03)
+
+
+### Features
+
+* Add support for table deletion protection ([#2430](https://github.com/googleapis/java-bigtable/issues/2430)) ([687b6df](https://github.com/googleapis/java-bigtable/commit/687b6df14b743358e8207cda26022dfc75338d55))
+
+
+### Bug Fixes
+
+* Allow factory to export to different projects ([#2374](https://github.com/googleapis/java-bigtable/issues/2374)) ([06b912c](https://github.com/googleapis/java-bigtable/commit/06b912cc5d63436757008e79edfa8286b2ccac18))
+* Send priming requests on the channel directly ([#2435](https://github.com/googleapis/java-bigtable/issues/2435)) ([b76698d](https://github.com/googleapis/java-bigtable/commit/b76698dfb2c8552185f34e01e924ecc80798ba4f))
+
 ## [2.48.0](https://github.com/googleapis/java-bigtable/compare/v2.47.0...v2.48.0) (2024-11-19)
 
 
