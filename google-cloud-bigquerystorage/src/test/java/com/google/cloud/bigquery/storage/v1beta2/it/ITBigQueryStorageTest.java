@@ -63,6 +63,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -78,13 +85,6 @@ import org.apache.avro.util.Utf8;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.LocalTime;
-import org.threeten.bp.ZoneOffset;
-import org.threeten.bp.ZonedDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
 
 /** Integration tests for BigQuery Storage API. */
 public class ITBigQueryStorageTest {
@@ -1265,8 +1265,8 @@ public class ITBigQueryStorageTest {
     Job job = bigquery.create(JobInfo.of(configuration));
     Job completedJob =
         job.waitFor(
-            RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-            RetryOption.totalTimeout(Duration.ofMinutes(1)));
+            RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+            RetryOption.totalTimeoutDuration(Duration.ofMinutes(1)));
 
     assertNotNull(completedJob);
     assertNull(

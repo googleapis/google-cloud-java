@@ -28,10 +28,10 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.common.base.Preconditions;
+import java.time.Duration;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import javax.annotation.concurrent.GuardedBy;
-import org.threeten.bp.Duration;
 
 final class ReadRowsAttemptCallable implements Callable<Void> {
   private final Object lock = new Object();
@@ -122,10 +122,10 @@ final class ReadRowsAttemptCallable implements Callable<Void> {
 
     // Propagate the totalTimeout as the overall stream deadline.
     Duration totalTimeout =
-        outerRetryingFuture.getAttemptSettings().getGlobalSettings().getTotalTimeout();
+        outerRetryingFuture.getAttemptSettings().getGlobalSettings().getTotalTimeoutDuration();
 
     if (totalTimeout != null && context != null) {
-      context = context.withTimeout(totalTimeout);
+      context = context.withTimeoutDuration(totalTimeout);
     }
 
     // Call the inner callable

@@ -55,10 +55,10 @@ public class ConnectionWorkerTest {
   private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
   private static final RetrySettings retrySettings =
       RetrySettings.newBuilder()
-          .setInitialRetryDelay(org.threeten.bp.Duration.ofMillis(500))
+          .setInitialRetryDelayDuration(java.time.Duration.ofMillis(500))
           .setRetryDelayMultiplier(1.1)
           .setMaxAttempts(3)
-          .setMaxRetryDelay(org.threeten.bp.Duration.ofMinutes(5))
+          .setMaxRetryDelayDuration(java.time.Duration.ofMinutes(5))
           .build();
 
   private FakeBigQueryWrite testBigQueryWrite;
@@ -338,7 +338,7 @@ public class ConnectionWorkerTest {
             /*enableRequestProfiler=*/ false,
             /*enableOpenTelemetry=*/ false,
             /*isMultiplexing=*/ false);
-    testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(1));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(1));
     ConnectionWorker.setMaxInflightQueueWaitTime(500);
 
     long appendCount = 6;
@@ -398,7 +398,7 @@ public class ConnectionWorkerTest {
             /*enableRequestProfiler=*/ false,
             /*enableOpenTelemetry=*/ false,
             /*isMultiplexing=*/ true);
-    testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(1));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(1));
     ConnectionWorker.setMaxInflightQueueWaitTime(500);
 
     long appendCount = 10;
@@ -660,7 +660,7 @@ public class ConnectionWorkerTest {
             /*enableRequestProfiler=*/ false,
             /*enableOpenTelemetry=*/ false,
             /*isMultiplexing*/ false);
-    org.threeten.bp.Duration durationSleep = org.threeten.bp.Duration.ofSeconds(2);
+    java.time.Duration durationSleep = java.time.Duration.ofSeconds(2);
     testBigQueryWrite.setResponseSleep(durationSleep);
 
     long appendCount = 2;

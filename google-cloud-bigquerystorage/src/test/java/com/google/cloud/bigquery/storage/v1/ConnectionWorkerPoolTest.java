@@ -34,6 +34,7 @@ import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -48,7 +49,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class ConnectionWorkerPoolTest {
@@ -67,7 +67,7 @@ public class ConnectionWorkerPoolTest {
   private static final int MAX_RETRY_DELAY_MINUTES = 5;
   private static final RetrySettings retrySettings =
       RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ofMillis(INITIAL_RETRY_MILLIS))
+          .setInitialRetryDelayDuration(Duration.ofMillis(INITIAL_RETRY_MILLIS))
           .setRetryDelayMultiplier(RETRY_MULTIPLIER)
           .setMaxAttempts(MAX_RETRY_NUM_ATTEMPTS)
           .setMaxRetryDelay(org.threeten.bp.Duration.ofMinutes(MAX_RETRY_DELAY_MINUTES))

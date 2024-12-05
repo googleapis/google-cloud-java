@@ -372,8 +372,8 @@ public class StreamWriter implements AutoCloseable {
           new BigQueryWriteSettings.Builder()
               .setTransportChannelProvider(
                   BigQueryWriteSettings.defaultGrpcTransportProviderBuilder()
-                      .setKeepAliveTime(org.threeten.bp.Duration.ofMinutes(1))
-                      .setKeepAliveTimeout(org.threeten.bp.Duration.ofMinutes(1))
+                      .setKeepAliveTimeDuration(java.time.Duration.ofMinutes(1))
+                      .setKeepAliveTimeoutDuration(java.time.Duration.ofMinutes(1))
                       .setKeepAliveWithoutCalls(true)
                       .setChannelsPerCpu(2)
                       .build())

@@ -40,6 +40,8 @@ import com.google.cloud.bigquery.storage.v1.TableSchema;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.protobuf.Descriptors;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
 import org.json.JSONArray;
@@ -48,8 +50,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.LocalTime;
 
 public class ITBigQueryTimeEncoderTest {
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
@@ -158,25 +158,27 @@ public class ITBigQueryTimeEncoderTest {
           "test_time_micros",
           new JSONArray(
               new long[] {
-                CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(13, 14, 15, 16_000_000)),
-                CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(23, 59, 59, 999_999_000)),
-                CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(0, 0, 0, 0)),
-                CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 2, 3, 4_000)),
-                CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(5, 6, 7, 8_000))
+                CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(
+                    LocalTime.of(13, 14, 15, 16_000_000)),
+                CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(
+                    LocalTime.of(23, 59, 59, 999_999_000)),
+                CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(LocalTime.of(0, 0, 0, 0)),
+                CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(LocalTime.of(1, 2, 3, 4_000)),
+                CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(LocalTime.of(5, 6, 7, 8_000))
               }));
       row.put(
           "test_datetime_micros",
           new JSONArray(
               new long[] {
-                CivilTimeEncoder.encodePacked64DatetimeMicros(
+                CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
                     LocalDateTime.of(1, 1, 1, 12, 0, 0, 0)),
-                CivilTimeEncoder.encodePacked64DatetimeMicros(
+                CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
                     LocalDateTime.of(1995, 5, 19, 10, 30, 45, 0)),
-                CivilTimeEncoder.encodePacked64DatetimeMicros(
+                CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
                     LocalDateTime.of(2000, 1, 1, 0, 0, 0, 0)),
-                CivilTimeEncoder.encodePacked64DatetimeMicros(
+                CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
                     LocalDateTime.of(2026, 3, 11, 5, 45, 12, 9_000_000)),
-                CivilTimeEncoder.encodePacked64DatetimeMicros(
+                CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
                     LocalDateTime.of(2050, 1, 2, 3, 4, 5, 6_000)),
               }));
       row.put("test_date_repeated", new JSONArray(new int[] {0, 300, 14238}));

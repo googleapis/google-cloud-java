@@ -19,7 +19,7 @@ import com.google.rpc.RetryInfo;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.protobuf.ProtoUtils;
-import org.threeten.bp.Duration;
+import java.time.Duration;
 
 /** Static utility methods for working with Errors returned from the service. */
 public class Errors {

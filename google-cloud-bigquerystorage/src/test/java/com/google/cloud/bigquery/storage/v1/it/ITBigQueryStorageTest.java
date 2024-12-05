@@ -81,6 +81,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -98,13 +105,6 @@ import org.json.JSONObject;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.LocalTime;
-import org.threeten.bp.ZoneOffset;
-import org.threeten.bp.ZonedDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
 
 /** Integration tests for BigQuery Storage API. */
 public class ITBigQueryStorageTest {
@@ -618,10 +618,10 @@ public class ITBigQueryStorageTest {
     TableName parentTable = TableName.of(projectName, DATASET, tableName);
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelay(Duration.ofMillis(500))
+            .setInitialRetryDelayDuration(Duration.ofMillis(500))
             .setRetryDelayMultiplier(1.1)
             .setMaxAttempts(5)
-            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxRetryDelayDuration(Duration.ofMinutes(1))
             .build();
     try (JsonStreamWriter writer =
         JsonStreamWriter.newBuilder(parentTable.toString(), RANGE_TABLE_SCHEMA)
@@ -1712,8 +1712,8 @@ public class ITBigQueryStorageTest {
     Job job = bigquery.create(JobInfo.of(configuration));
     Job completedJob =
         job.waitFor(
-            RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-            RetryOption.totalTimeout(Duration.ofMinutes(1)));
+            RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+            RetryOption.totalTimeoutDuration(Duration.ofMinutes(1)));
 
     assertNotNull(completedJob);
     assertNull(

@@ -37,13 +37,13 @@ import com.google.cloud.bigquery.storage.v1.TableSchema;
 import com.google.cloud.bigquery.storage.v1.WriteStream;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Assert;
-import org.threeten.bp.Duration;
 
 public class WriteRetryTestUtil {
   private static final Logger LOG =
@@ -61,10 +61,10 @@ public class WriteRetryTestUtil {
       throws IOException, InterruptedException, DescriptorValidationException {
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelay(Duration.ofMillis(500))
+            .setInitialRetryDelayDuration(Duration.ofMillis(500))
             .setRetryDelayMultiplier(1.1)
             .setMaxAttempts(5)
-            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxRetryDelayDuration(Duration.ofMinutes(1))
             .build();
     String tableName = "RetryTest";
     TableId tableId = TableId.of(dataset, tableName);
@@ -122,10 +122,10 @@ public class WriteRetryTestUtil {
       throws IOException, InterruptedException, DescriptorValidationException {
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelay(Duration.ofMillis(500))
+            .setInitialRetryDelayDuration(Duration.ofMillis(500))
             .setRetryDelayMultiplier(1.1)
             .setMaxAttempts(5)
-            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxRetryDelayDuration(Duration.ofMinutes(1))
             .build();
     ArrayList<ApiFuture<AppendRowsResponse>> allResponses = new ArrayList<>(requestCount);
     try (JsonStreamWriter jsonStreamWriter =

@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.storage.v1beta2;
 import com.google.common.base.Optional;
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.stub.StreamObserver;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -26,7 +27,6 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
 
 /**
  * A fake implementation of {@link BigQueryWriteImplBase} that can acts like server in StreamWriter

@@ -152,8 +152,9 @@ message TestTimestamp {
   optional int64 test_int = 4;
   optional int64 test_float = 5;
   optional int64 test_offset = 6;
-  optional int64 test_timezone = 7;
-  optional int64 test_saformat = 8;
+  optional int64 test_zero_offset = 7;
+  optional int64 test_timezone = 8;
+  optional int64 test_saformat = 9;
 }
 
 message TestRepeatedTimestamp {
@@ -163,8 +164,9 @@ message TestRepeatedTimestamp {
   repeated int64 test_int_repeated = 4;
   repeated int64 test_float_repeated = 5;
   repeated int64 test_offset_repeated = 6;
-  repeated int64 test_timezone_repeated = 7;
-  repeated int64 test_saformat_repeated = 8;
+  repeated int64 test_zero_offset_repeated = 7;
+  repeated int64 test_timezone_repeated = 8;
+  repeated int64 test_saformat_repeated = 9;
 }
 
 message TestDate {

@@ -24,7 +24,7 @@ import com.google.cloud.bigquery.storage.util.Errors;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import io.grpc.Metadata;
 import io.grpc.Status;
-import org.threeten.bp.Duration;
+import java.time.Duration;
 
 /** For internal use, public for technical reasons. */
 @InternalApi
@@ -56,7 +56,7 @@ public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<
         Duration retryDelay = result.retryDelay;
         Duration randomizedRetryDelay = result.retryDelay;
         if (retryDelay == null) {
-          retryDelay = prevSettings.getRetryDelay();
+          retryDelay = prevSettings.getRetryDelayDuration();
           randomizedRetryDelay = DEADLINE_SLEEP_DURATION;
         }
         if (retryAttemptListener != null) {
@@ -64,9 +64,9 @@ public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<
         }
         return TimedAttemptSettings.newBuilder()
             .setGlobalSettings(prevSettings.getGlobalSettings())
-            .setRetryDelay(retryDelay)
+            .setRetryDelayDuration(retryDelay)
             .setRpcTimeout(prevSettings.getRpcTimeout())
-            .setRandomizedRetryDelay(randomizedRetryDelay)
+            .setRandomizedRetryDelayDuration(randomizedRetryDelay)
             .setAttemptCount(prevSettings.getAttemptCount() + 1)
             .setFirstAttemptStartTimeNanos(prevSettings.getFirstAttemptStartTimeNanos())
             .build();

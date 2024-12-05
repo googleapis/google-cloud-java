@@ -30,12 +30,12 @@ import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse;
+import java.time.Duration;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class EnhancedBigQueryReadStubSettingsTest {
@@ -51,7 +51,7 @@ public class EnhancedBigQueryReadStubSettingsTest {
         EnhancedBigQueryReadStubSettings.newBuilder()
             .setEndpoint(endpoint)
             .setCredentialsProvider(credentialsProvider)
-            .setStreamWatchdogCheckInterval(watchdogInterval)
+            .setStreamWatchdogCheckIntervalDuration(watchdogInterval)
             .setStreamWatchdogProvider(watchdogProvider);
 
     verifyBuilder(builder, endpoint, credentialsProvider, watchdogInterval, watchdogProvider);
@@ -75,7 +75,7 @@ public class EnhancedBigQueryReadStubSettingsTest {
       WatchdogProvider watchdogProvider) {
     assertThat(builder.getEndpoint()).isEqualTo(endpoint);
     assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
-    assertThat(builder.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
+    assertThat(builder.getStreamWatchdogCheckIntervalDuration()).isEqualTo(watchdogInterval);
     assertThat(builder.getStreamWatchdogProvider()).isEqualTo(watchdogProvider);
 
     InstantiatingGrpcChannelProvider channelProvider =
@@ -91,7 +91,7 @@ public class EnhancedBigQueryReadStubSettingsTest {
       WatchdogProvider watchdogProvider) {
     assertThat(settings.getEndpoint()).isEqualTo(endpoint);
     assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
-    assertThat(settings.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
+    assertThat(settings.getStreamWatchdogCheckIntervalDuration()).isEqualTo(watchdogInterval);
     assertThat(settings.getStreamWatchdogProvider()).isEqualTo(watchdogProvider);
 
     InstantiatingGrpcChannelProvider channelProvider =
@@ -112,14 +112,14 @@ public class EnhancedBigQueryReadStubSettingsTest {
         EnhancedBigQueryReadStubSettings.newBuilder().readRowsSettings();
     assertThat(builder.getRetryableCodes()).contains(Code.UNAVAILABLE);
     RetrySettings retrySettings = builder.getRetrySettings();
-    assertThat(retrySettings.getInitialRetryDelay()).isEqualTo(Duration.ofMillis(100L));
+    assertThat(retrySettings.getInitialRetryDelayDuration()).isEqualTo(Duration.ofMillis(100L));
     assertThat(retrySettings.getRetryDelayMultiplier()).isWithin(1e-6).of(1.3);
-    assertThat(retrySettings.getMaxRetryDelay()).isEqualTo(Duration.ofMinutes(1L));
-    assertThat(retrySettings.getInitialRpcTimeout()).isEqualTo(Duration.ofDays(1L));
+    assertThat(retrySettings.getMaxRetryDelayDuration()).isEqualTo(Duration.ofMinutes(1L));
+    assertThat(retrySettings.getInitialRpcTimeoutDuration()).isEqualTo(Duration.ofDays(1L));
     assertThat(retrySettings.getRpcTimeoutMultiplier()).isWithin(1e-6).of(1.0);
-    assertThat(retrySettings.getMaxRpcTimeout()).isEqualTo(Duration.ofDays(1L));
-    assertThat(retrySettings.getTotalTimeout()).isEqualTo(Duration.ofDays(1L));
-    assertThat(builder.getIdleTimeout()).isEqualTo(Duration.ZERO);
+    assertThat(retrySettings.getMaxRpcTimeoutDuration()).isEqualTo(Duration.ofDays(1L));
+    assertThat(retrySettings.getTotalTimeoutDuration()).isEqualTo(Duration.ofDays(1L));
+    assertThat(builder.getIdleTimeoutDuration()).isEqualTo(Duration.ZERO);
   }
 
   @Test
@@ -131,12 +131,12 @@ public class EnhancedBigQueryReadStubSettingsTest {
 
   private void verifyRetrySettings(Set<Code> retryCodes, RetrySettings retrySettings) {
     assertThat(retryCodes).contains(Code.UNAVAILABLE);
-    assertThat(retrySettings.getTotalTimeout()).isGreaterThan(Duration.ZERO);
-    assertThat(retrySettings.getInitialRetryDelay()).isGreaterThan(Duration.ZERO);
+    assertThat(retrySettings.getTotalTimeoutDuration()).isGreaterThan(Duration.ZERO);
+    assertThat(retrySettings.getInitialRetryDelayDuration()).isGreaterThan(Duration.ZERO);
     assertThat(retrySettings.getRetryDelayMultiplier()).isAtLeast(1.0);
-    assertThat(retrySettings.getMaxRetryDelay()).isGreaterThan(Duration.ZERO);
-    assertThat(retrySettings.getInitialRpcTimeout()).isGreaterThan(Duration.ZERO);
+    assertThat(retrySettings.getMaxRetryDelayDuration()).isGreaterThan(Duration.ZERO);
+    assertThat(retrySettings.getInitialRpcTimeoutDuration()).isGreaterThan(Duration.ZERO);
     assertThat(retrySettings.getRpcTimeoutMultiplier()).isAtLeast(1.0);
-    assertThat(retrySettings.getMaxRpcTimeout()).isGreaterThan(Duration.ZERO);
+    assertThat(retrySettings.getMaxRpcTimeoutDuration()).isGreaterThan(Duration.ZERO);
   }
 }

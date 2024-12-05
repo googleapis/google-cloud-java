@@ -20,6 +20,7 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.rpc.Code;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
+import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +34,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
 
 /**
  * A fake implementation of {@link BigQueryWriteImplBase} that can acts like server in StreamWriter

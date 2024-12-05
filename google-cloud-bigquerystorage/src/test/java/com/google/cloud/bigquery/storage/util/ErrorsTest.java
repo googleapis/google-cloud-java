@@ -130,6 +130,6 @@ public class ErrorsTest {
         Errors.isRetryableStatus(
             Status.RESOURCE_EXHAUSTED.withDescription("Stop for a while"), metadata);
     assertTrue(result.isRetryable);
-    assertEquals(result.retryDelay, org.threeten.bp.Duration.ofSeconds(123, 456));
+    assertEquals(result.retryDelay, java.time.Duration.ofSeconds(123, 456));
   }
 }

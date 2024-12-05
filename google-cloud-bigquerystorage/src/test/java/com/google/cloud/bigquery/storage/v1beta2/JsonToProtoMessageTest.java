@@ -26,6 +26,7 @@ import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import java.math.BigDecimal;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -35,7 +36,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.LocalTime;
 
 @RunWith(JUnit4.class)
 public class JsonToProtoMessageTest {
@@ -794,7 +794,7 @@ public class JsonToProtoMessageTest {
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")))
             .setTestGeo("POINT(1,1)")
             .setTestTimestamp(12345678)
-            .setTestTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
+            .setTestTime(CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(LocalTime.of(1, 0, 1)))
             .setTestTimeStr(89332507144L)
             .addTestNumericRepeated(
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0")))
@@ -871,7 +871,8 @@ public class JsonToProtoMessageTest {
             }));
     json.put("test_geo", "POINT(1,1)");
     json.put("test_timestamp", 12345678);
-    json.put("test_time", CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)));
+    json.put(
+        "test_time", CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(LocalTime.of(1, 0, 1)));
     json.put("test_time_str", "20:51:10.1234");
     json.put("test_numeric_str", "12.4");
     json.put("test_numeric_short", 1);

@@ -18,6 +18,8 @@ package com.google.cloud.bigquery.storage.v1;
 import com.google.api.core.ApiClock;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.SettableFuture;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -33,8 +35,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
 
 /**
  * Fake implementation of {@link ScheduledExecutorService} that allows tests control the reference

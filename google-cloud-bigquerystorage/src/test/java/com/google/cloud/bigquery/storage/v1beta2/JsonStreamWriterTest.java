@@ -30,6 +30,8 @@ import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.time.Instant;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -42,8 +44,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Instant;
-import org.threeten.bp.LocalTime;
 
 @RunWith(JUnit4.class)
 public class JsonStreamWriterTest {
@@ -209,7 +209,7 @@ public class JsonStreamWriterTest {
 
     JsonTest.TestTime expectedProto =
         JsonTest.TestTime.newBuilder()
-            .addTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
+            .addTime(CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(LocalTime.of(1, 0, 1)))
             .build();
     JSONObject foo = new JSONObject();
     foo.put("time", new JSONArray(new String[] {"01:00:01"}));

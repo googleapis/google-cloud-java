@@ -78,7 +78,6 @@ import org.junit.Test;
 import org.junit.function.ThrowingRunnable;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class StreamWriterTest {
@@ -96,10 +95,10 @@ public class StreamWriterTest {
   private static final int MAX_RETRY_DELAY_MINUTES = 5;
   private static final RetrySettings retrySettings =
       RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ofMillis(INITIAL_RETRY_MILLIS))
+          .setInitialRetryDelayDuration(java.time.Duration.ofMillis(INITIAL_RETRY_MILLIS))
           .setRetryDelayMultiplier(RETRY_MULTIPLIER)
           .setMaxAttempts(MAX_RETRY_NUM_ATTEMPTS)
-          .setMaxRetryDelay(org.threeten.bp.Duration.ofMinutes(MAX_RETRY_DELAY_MINUTES))
+          .setMaxRetryDelayDuration(java.time.Duration.ofMinutes(MAX_RETRY_DELAY_MINUTES))
           .build();
   private FakeScheduledExecutorService fakeExecutor;
   private FakeBigQueryWrite testBigQueryWrite;
@@ -694,7 +693,7 @@ public class StreamWriterTest {
   public void userCloseWhileRequestInflight() throws Exception {
     final StreamWriter writer = getTestStreamWriter();
     // Server will sleep 2 seconds before sending back the response.
-    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(2));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(2));
     testBigQueryWrite.addResponse(createAppendResponse(0));
 
     // Send a request and close the stream in separate thread while the request is inflight.
@@ -730,7 +729,7 @@ public class StreamWriterTest {
   public void serverCloseWhileRequestsInflight() throws Exception {
     StreamWriter writer = getTestStreamWriter();
     // Server will sleep 2 seconds before closing the connection.
-    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(2));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(2));
     testBigQueryWrite.addException(Status.INVALID_ARGUMENT.asException());
 
     // Send 10 requests, so that there are 10 inflight requests.
@@ -785,7 +784,7 @@ public class StreamWriterTest {
             .setMaxInflightRequests(1)
             .build();
     // Server will sleep 1 second before every response.
-    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(1));
     testBigQueryWrite.addResponse(createAppendResponse(0));
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
@@ -814,7 +813,7 @@ public class StreamWriterTest {
             .build();
 
     // Server will sleep 1 second before every response.
-    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(1));
     testBigQueryWrite.addResponse(createAppendResponse(0));
     testBigQueryWrite.addResponse(createAppendResponse(1));
 
@@ -1142,7 +1141,7 @@ public class StreamWriterTest {
             .setMaxInflightBytes(1)
             .build();
     // Server will sleep 100ms before every response.
-    testBigQueryWrite.setResponseSleep(Duration.ofMillis(100));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(100));
     long appendCount = 10;
     for (int i = 0; i < appendCount; i++) {
       testBigQueryWrite.addResponse(createAppendResponse(i));
@@ -1254,7 +1253,7 @@ public class StreamWriterTest {
     StreamWriter.setMaxRequestCallbackWaitTime(java.time.Duration.ofSeconds(1));
     StreamWriter writer =
         StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
-    testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(3));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(3));
 
     long appendCount = 10;
     for (int i = 0; i < appendCount; i++) {
@@ -1741,12 +1740,12 @@ public class StreamWriterTest {
             .getKeepAliveWithoutCalls());
     assertEquals(
         ((InstantiatingGrpcChannelProvider) writeSettings.getTransportChannelProvider())
-            .getKeepAliveTimeout(),
-        org.threeten.bp.Duration.ofMinutes(1));
+            .getKeepAliveTimeoutDuration(),
+        java.time.Duration.ofMinutes(1));
     assertEquals(
         ((InstantiatingGrpcChannelProvider) writeSettings.getTransportChannelProvider())
-            .getKeepAliveTime(),
-        org.threeten.bp.Duration.ofMinutes(1));
+            .getKeepAliveTimeDuration(),
+        java.time.Duration.ofMinutes(1));
     assertEquals(
         BigQueryWriteSettings.getDefaultEndpoint(), writeSettings.getEndpoint().toString());
   }
@@ -1781,7 +1780,7 @@ public class StreamWriterTest {
                 InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build())
             .setChannelProvider(
                 BigQueryWriteSettings.defaultGrpcTransportProviderBuilder()
-                    .setKeepAliveTimeout(Duration.ofSeconds(500))
+                    .setKeepAliveTimeoutDuration(java.time.Duration.ofSeconds(500))
                     .build())
             .setCredentialsProvider(
                 BigQueryWriteSettings.defaultCredentialsProviderBuilder()
@@ -1799,9 +1798,9 @@ public class StreamWriterTest {
     assertTrue(
         writerSettings2.getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider);
     assertEquals(
-        Duration.ofSeconds(500),
+        java.time.Duration.ofSeconds(500),
         ((InstantiatingGrpcChannelProvider) writerSettings2.getTransportChannelProvider())
-            .getKeepAliveTimeout());
+            .getKeepAliveTimeoutDuration());
     assertTrue(writerSettings2.getCredentialsProvider() instanceof GoogleCredentialsProvider);
     assertEquals(
         2,
@@ -2104,7 +2103,7 @@ public class StreamWriterTest {
   public void testExclusiveAppendSuccessAndInternalErrorRetryMaxRetry() throws Exception {
     testBigQueryWrite.setReturnErrorDuringExclusiveStreamRetry(true);
     // Ensure messages will be in the inflight queue
-    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(1));
     StreamWriter writer = getTestStreamWriterExclusiveRetryEnabled();
 
     int appendCount = 10;
@@ -2140,7 +2139,7 @@ public class StreamWriterTest {
   public void testExclusiveAppendSuccessAndQuotaErrorRetryMaxRetry() throws Exception {
     testBigQueryWrite.setReturnErrorDuringExclusiveStreamRetry(true);
     // Ensure messages will be in the inflight queue
-    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(1));
     StreamWriter writer = getTestStreamWriterExclusiveRetryEnabled();
 
     int appendCount = 10;

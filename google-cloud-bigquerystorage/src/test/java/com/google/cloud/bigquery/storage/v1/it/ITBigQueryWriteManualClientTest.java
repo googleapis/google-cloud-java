@@ -54,6 +54,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -66,7 +67,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.threeten.bp.LocalDateTime;
 
 /** Integration tests for BigQuery Write API. */
 public class ITBigQueryWriteManualClientTest {
@@ -387,7 +387,8 @@ public class ITBigQueryWriteManualClientTest {
               }));
       row1.put(
           "test_datetime",
-          CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));
+          CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
+              LocalDateTime.of(2020, 10, 1, 12, 0)));
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
       ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);
@@ -629,7 +630,8 @@ public class ITBigQueryWriteManualClientTest {
       row1.put("unknown_field", "a");
       row1.put(
           "test_datetime",
-          CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));
+          CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
+              LocalDateTime.of(2020, 10, 1, 12, 0)));
       row1.put(
           "test_bytestring_repeated",
           new JSONArray(
@@ -801,7 +803,8 @@ public class ITBigQueryWriteManualClientTest {
       row1.put("unknown_field", "a");
       row1.put(
           "test_datetime",
-          CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));
+          CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
+              LocalDateTime.of(2020, 10, 1, 12, 0)));
       row1.put(
           "test_bytestring_repeated",
           new JSONArray(
@@ -1475,7 +1478,8 @@ public class ITBigQueryWriteManualClientTest {
               }));
       row1.put(
           "test-datetime列",
-          CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));
+          CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
+              LocalDateTime.of(2020, 10, 1, 12, 0)));
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
       ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);

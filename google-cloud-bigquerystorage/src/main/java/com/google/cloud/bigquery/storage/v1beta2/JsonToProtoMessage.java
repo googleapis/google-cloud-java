@@ -25,13 +25,13 @@ import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import com.google.protobuf.UninitializedMessageException;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.LocalTime;
 
 /**
  * Converts Json data to protocol buffer messages given the protocol buffer descriptor. The protobuf
@@ -267,7 +267,8 @@ public class JsonToProtoMessage {
             if (val instanceof String) {
               protoMsg.setField(
                   fieldDescriptor,
-                  CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.parse((String) val)));
+                  CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
+                      LocalDateTime.parse((String) val)));
               return;
             } else if (val instanceof Long) {
               protoMsg.setField(fieldDescriptor, (Long) val);
@@ -277,7 +278,8 @@ public class JsonToProtoMessage {
             if (val instanceof String) {
               protoMsg.setField(
                   fieldDescriptor,
-                  CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.parse((String) val)));
+                  CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(
+                      LocalTime.parse((String) val)));
               return;
             } else if (val instanceof Long) {
               protoMsg.setField(fieldDescriptor, (Long) val);
@@ -458,7 +460,8 @@ public class JsonToProtoMessage {
             if (val instanceof String) {
               protoMsg.addRepeatedField(
                   fieldDescriptor,
-                  CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.parse((String) val)));
+                  CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
+                      LocalDateTime.parse((String) val)));
             } else if (val instanceof Long) {
               protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
             } else {
@@ -468,7 +471,8 @@ public class JsonToProtoMessage {
             if (val instanceof String) {
               protoMsg.addRepeatedField(
                   fieldDescriptor,
-                  CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.parse((String) val)));
+                  CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(
+                      LocalTime.parse((String) val)));
             } else if (val instanceof Long) {
               protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
             } else {

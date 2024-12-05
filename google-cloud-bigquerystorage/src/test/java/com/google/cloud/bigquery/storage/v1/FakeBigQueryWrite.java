@@ -19,13 +19,13 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.ServerServiceDefinition;
 import io.grpc.Status;
+import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Supplier;
-import org.threeten.bp.Duration;
 
 /**
  * A fake implementation of {@link MockGrpcService}, that can be used to test clients of a

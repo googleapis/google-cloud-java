@@ -18,10 +18,10 @@ package com.google.cloud.bigquery.storage.v1beta2;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.ServerServiceDefinition;
+import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
-import org.threeten.bp.Duration;
 
 /**
  * A fake implementation of {@link MockGrpcService}, that can be used to test clients of a
