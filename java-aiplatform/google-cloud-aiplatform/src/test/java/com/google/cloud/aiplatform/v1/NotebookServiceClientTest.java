@@ -1554,6 +1554,7 @@ public class NotebookServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKernelName("kernelName1230361704")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1624,6 +1625,7 @@ public class NotebookServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKernelName("kernelName1230361704")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1694,6 +1696,7 @@ public class NotebookServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKernelName("kernelName1230361704")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);
@@ -1747,6 +1750,7 @@ public class NotebookServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKernelName("kernelName1230361704")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);

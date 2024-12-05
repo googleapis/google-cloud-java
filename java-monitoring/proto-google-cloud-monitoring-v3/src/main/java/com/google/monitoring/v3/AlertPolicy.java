@@ -25,7 +25,7 @@ package com.google.monitoring.v3;
  * <pre>
  * A description of the conditions under which some aspect of your system is
  * considered to be "unhealthy" and the ways to notify people or services about
- * this state. For an overview of alert policies, see
+ * this state. For an overview of alerting policies, see
  * [Introduction to Alerting](https://cloud.google.com/monitoring/alerts/).
  * </pre>
  *
@@ -281,7 +281,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An enumeration of possible severity level for an Alert Policy.
+   * An enumeration of possible severity level for an alerting policy.
    * </pre>
    *
    * Protobuf enum {@code google.monitoring.v3.AlertPolicy.Severity}
@@ -477,7 +477,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
      * smaller. This text can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -493,7 +493,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
      * smaller. This text can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -545,7 +545,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * it is common to define textual fields in databases as VARCHAR(255).
      *
      * The contents of the subject line can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * If this field is missing or empty, a default subject line will be
      * generated.
      * </pre>
@@ -569,7 +569,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * it is common to define textual fields in databases as VARCHAR(255).
      *
      * The contents of the subject line can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * If this field is missing or empty, a default subject line will be
      * generated.
      * </pre>
@@ -1601,7 +1601,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
      * smaller. This text can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -1628,7 +1628,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
      * smaller. This text can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -1721,7 +1721,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * it is common to define textual fields in databases as VARCHAR(255).
      *
      * The contents of the subject line can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * If this field is missing or empty, a default subject line will be
      * generated.
      * </pre>
@@ -1756,7 +1756,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * it is common to define textual fields in databases as VARCHAR(255).
      *
      * The contents of the subject line can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * If this field is missing or empty, a default subject line will be
      * generated.
      * </pre>
@@ -2343,7 +2343,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2369,7 +2369,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2395,7 +2395,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2420,7 +2420,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2441,7 +2441,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2591,7 +2591,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -2625,7 +2625,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -2659,7 +2659,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -2692,7 +2692,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -2721,7 +2721,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -13754,7 +13754,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition type that allows alert policies to be defined using
+     * A condition type that allows alerting policies to be defined using
      * [Monitoring Query Language](https://cloud.google.com/monitoring/mql).
      * </pre>
      *
@@ -14257,7 +14257,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition type that allows alert policies to be defined using
+       * A condition type that allows alerting policies to be defined using
        * [Monitoring Query Language](https://cloud.google.com/monitoring/mql).
        * </pre>
        *
@@ -15460,7 +15460,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15477,7 +15477,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15497,7 +15497,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15514,7 +15514,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15535,7 +15535,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15645,7 +15645,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition type that allows alert policies to be defined using
+     * A condition type that allows alerting policies to be defined using
      * [Prometheus Query Language
      * (PromQL)](https://prometheus.io/docs/prometheus/latest/querying/basics/).
      *
@@ -15959,7 +15959,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15988,7 +15988,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -16008,7 +16008,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -16035,7 +16035,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -16443,7 +16443,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition type that allows alert policies to be defined using
+       * A condition type that allows alerting policies to be defined using
        * [Prometheus Query Language
        * (PromQL)](https://prometheus.io/docs/prometheus/latest/querying/basics/).
        *
@@ -17435,7 +17435,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17464,7 +17464,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17484,7 +17484,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17511,7 +17511,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17544,7 +17544,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17573,7 +17573,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17600,7 +17600,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -20733,9 +20733,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -20749,9 +20751,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -20766,9 +20770,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -20782,7 +20788,92 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return A list containing the notificationPrompts.
+     */
+    java.util.List<com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+        getNotificationPromptsList();
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return The count of notificationPrompts.
+     */
+    int getNotificationPromptsCount();
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The notificationPrompts at the given index.
+     */
+    com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt getNotificationPrompts(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for notificationPrompts.
+     */
+    java.util.List<java.lang.Integer> getNotificationPromptsValueList();
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of notificationPrompts at the given index.
+     */
+    int getNotificationPromptsValue(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -20795,7 +20886,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -20808,7 +20899,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -20905,6 +20996,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private AlertStrategy() {
+      notificationPrompts_ = java.util.Collections.emptyList();
       notificationChannelStrategy_ = java.util.Collections.emptyList();
     }
 
@@ -20927,6 +21019,168 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.monitoring.v3.AlertPolicy.AlertStrategy.class,
               com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Control when notifications will be sent out.
+     * </pre>
+     *
+     * Protobuf enum {@code google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt}
+     */
+    public enum NotificationPrompt implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No strategy specified. Treated as error.
+       * </pre>
+       *
+       * <code>NOTIFICATION_PROMPT_UNSPECIFIED = 0;</code>
+       */
+      NOTIFICATION_PROMPT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Notify when an incident is opened.
+       * </pre>
+       *
+       * <code>OPENED = 1;</code>
+       */
+      OPENED(1),
+      /**
+       *
+       *
+       * <pre>
+       * Notify when an incident is closed.
+       * </pre>
+       *
+       * <code>CLOSED = 3;</code>
+       */
+      CLOSED(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * No strategy specified. Treated as error.
+       * </pre>
+       *
+       * <code>NOTIFICATION_PROMPT_UNSPECIFIED = 0;</code>
+       */
+      public static final int NOTIFICATION_PROMPT_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Notify when an incident is opened.
+       * </pre>
+       *
+       * <code>OPENED = 1;</code>
+       */
+      public static final int OPENED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Notify when an incident is closed.
+       * </pre>
+       *
+       * <code>CLOSED = 3;</code>
+       */
+      public static final int CLOSED_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static NotificationPrompt valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static NotificationPrompt forNumber(int value) {
+        switch (value) {
+          case 0:
+            return NOTIFICATION_PROMPT_UNSPECIFIED;
+          case 1:
+            return OPENED;
+          case 3:
+            return CLOSED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<NotificationPrompt>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<NotificationPrompt>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<NotificationPrompt>() {
+                public NotificationPrompt findValueByNumber(int number) {
+                  return NotificationPrompt.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertPolicy.AlertStrategy.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final NotificationPrompt[] VALUES = values();
+
+      public static NotificationPrompt valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private NotificationPrompt(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt)
     }
 
     public interface NotificationRateLimitOrBuilder
@@ -20973,7 +21227,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over the rate of notifications sent to this alert policy's
+     * Control over the rate of notifications sent to this alerting policy's
      * notification channels.
      * </pre>
      *
@@ -21239,7 +21493,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Control over the rate of notifications sent to this alert policy's
+       * Control over the rate of notifications sent to this alerting policy's
        * notification channels.
        * </pre>
        *
@@ -22946,9 +23200,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -22965,9 +23221,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -22988,9 +23246,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -23006,13 +23266,140 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           : notificationRateLimit_;
     }
 
+    public static final int NOTIFICATION_PROMPTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<java.lang.Integer> notificationPrompts_;
+
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer,
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+        notificationPrompts_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer,
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>() {
+              public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt convert(
+                  java.lang.Integer from) {
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt result =
+                    com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt.forNumber(
+                        from);
+                return result == null
+                    ? com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt
+                        .UNRECOGNIZED
+                    : result;
+              }
+            };
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return A list containing the notificationPrompts.
+     */
+    @java.lang.Override
+    public java.util.List<com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+        getNotificationPromptsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>(
+          notificationPrompts_, notificationPrompts_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return The count of notificationPrompts.
+     */
+    @java.lang.Override
+    public int getNotificationPromptsCount() {
+      return notificationPrompts_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The notificationPrompts at the given index.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt
+        getNotificationPrompts(int index) {
+      return notificationPrompts_converter_.convert(notificationPrompts_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for notificationPrompts.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getNotificationPromptsValueList() {
+      return notificationPrompts_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of notificationPrompts at the given index.
+     */
+    @java.lang.Override
+    public int getNotificationPromptsValue(int index) {
+      return notificationPrompts_.get(index);
+    }
+
+    private int notificationPromptsMemoizedSerializedSize;
+
     public static final int AUTO_CLOSE_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration autoClose_;
     /**
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -23028,7 +23415,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -23044,7 +23431,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -23159,8 +23546,16 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getNotificationRateLimit());
+      }
+      if (getNotificationPromptsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(notificationPromptsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < notificationPrompts_.size(); i++) {
+        output.writeEnumNoTag(notificationPrompts_.get(i));
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(3, getAutoClose());
@@ -23180,6 +23575,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, getNotificationRateLimit());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < notificationPrompts_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                  notificationPrompts_.get(i));
+        }
+        size += dataSize;
+        if (!getNotificationPromptsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        notificationPromptsMemoizedSerializedSize = dataSize;
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAutoClose());
@@ -23209,6 +23618,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (hasNotificationRateLimit()) {
         if (!getNotificationRateLimit().equals(other.getNotificationRateLimit())) return false;
       }
+      if (!notificationPrompts_.equals(other.notificationPrompts_)) return false;
       if (hasAutoClose() != other.hasAutoClose()) return false;
       if (hasAutoClose()) {
         if (!getAutoClose().equals(other.getAutoClose())) return false;
@@ -23229,6 +23639,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (hasNotificationRateLimit()) {
         hash = (37 * hash) + NOTIFICATION_RATE_LIMIT_FIELD_NUMBER;
         hash = (53 * hash) + getNotificationRateLimit().hashCode();
+      }
+      if (getNotificationPromptsCount() > 0) {
+        hash = (37 * hash) + NOTIFICATION_PROMPTS_FIELD_NUMBER;
+        hash = (53 * hash) + notificationPrompts_.hashCode();
       }
       if (hasAutoClose()) {
         hash = (37 * hash) + AUTO_CLOSE_FIELD_NUMBER;
@@ -23396,6 +23810,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           notificationRateLimitBuilder_.dispose();
           notificationRateLimitBuilder_ = null;
         }
+        notificationPrompts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         autoClose_ = null;
         if (autoCloseBuilder_ != null) {
           autoCloseBuilder_.dispose();
@@ -23407,7 +23823,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           notificationChannelStrategy_ = null;
           notificationChannelStrategyBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -23445,11 +23861,16 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.monitoring.v3.AlertPolicy.AlertStrategy result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          notificationPrompts_ = java.util.Collections.unmodifiableList(notificationPrompts_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.notificationPrompts_ = notificationPrompts_;
         if (notificationChannelStrategyBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             notificationChannelStrategy_ =
                 java.util.Collections.unmodifiableList(notificationChannelStrategy_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.notificationChannelStrategy_ = notificationChannelStrategy_;
         } else {
@@ -23467,7 +23888,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   : notificationRateLimitBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.autoClose_ = autoCloseBuilder_ == null ? autoClose_ : autoCloseBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
@@ -23525,6 +23946,16 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (other.hasNotificationRateLimit()) {
           mergeNotificationRateLimit(other.getNotificationRateLimit());
         }
+        if (!other.notificationPrompts_.isEmpty()) {
+          if (notificationPrompts_.isEmpty()) {
+            notificationPrompts_ = other.notificationPrompts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureNotificationPromptsIsMutable();
+            notificationPrompts_.addAll(other.notificationPrompts_);
+          }
+          onChanged();
+        }
         if (other.hasAutoClose()) {
           mergeAutoClose(other.getAutoClose());
         }
@@ -23532,7 +23963,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           if (!other.notificationChannelStrategy_.isEmpty()) {
             if (notificationChannelStrategy_.isEmpty()) {
               notificationChannelStrategy_ = other.notificationChannelStrategy_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureNotificationChannelStrategyIsMutable();
               notificationChannelStrategy_.addAll(other.notificationChannelStrategy_);
@@ -23545,7 +23976,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
               notificationChannelStrategyBuilder_.dispose();
               notificationChannelStrategyBuilder_ = null;
               notificationChannelStrategy_ = other.notificationChannelStrategy_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               notificationChannelStrategyBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getNotificationChannelStrategyFieldBuilder()
@@ -23589,10 +24020,29 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureNotificationPromptsIsMutable();
+                  notificationPrompts_.add(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureNotificationPromptsIsMutable();
+                    notificationPrompts_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 18
               case 26:
                 {
                   input.readMessage(getAutoCloseFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -23640,9 +24090,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23658,9 +24110,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23684,9 +24138,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23711,9 +24167,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23736,9 +24194,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23770,9 +24230,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23793,9 +24255,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23812,9 +24276,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23836,9 +24302,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23863,6 +24331,283 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         return notificationRateLimitBuilder_;
       }
 
+      private java.util.List<java.lang.Integer> notificationPrompts_ =
+          java.util.Collections.emptyList();
+
+      private void ensureNotificationPromptsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          notificationPrompts_ = new java.util.ArrayList<java.lang.Integer>(notificationPrompts_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @return A list containing the notificationPrompts.
+       */
+      public java.util.List<com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+          getNotificationPromptsList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer,
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>(
+            notificationPrompts_, notificationPrompts_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @return The count of notificationPrompts.
+       */
+      public int getNotificationPromptsCount() {
+        return notificationPrompts_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The notificationPrompts at the given index.
+       */
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt
+          getNotificationPrompts(int index) {
+        return notificationPrompts_converter_.convert(notificationPrompts_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The notificationPrompts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationPrompts(
+          int index, com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNotificationPromptsIsMutable();
+        notificationPrompts_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param value The notificationPrompts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNotificationPrompts(
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNotificationPromptsIsMutable();
+        notificationPrompts_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param values The notificationPrompts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNotificationPrompts(
+          java.lang.Iterable<
+                  ? extends com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+              values) {
+        ensureNotificationPromptsIsMutable();
+        for (com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt value : values) {
+          notificationPrompts_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNotificationPrompts() {
+        notificationPrompts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for notificationPrompts.
+       */
+      public java.util.List<java.lang.Integer> getNotificationPromptsValueList() {
+        return java.util.Collections.unmodifiableList(notificationPrompts_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of notificationPrompts at the given index.
+       */
+      public int getNotificationPromptsValue(int index) {
+        return notificationPrompts_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for notificationPrompts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationPromptsValue(int index, int value) {
+        ensureNotificationPromptsIsMutable();
+        notificationPrompts_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for notificationPrompts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNotificationPromptsValue(int value) {
+        ensureNotificationPromptsIsMutable();
+        notificationPrompts_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for notificationPrompts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNotificationPromptsValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensureNotificationPromptsIsMutable();
+        for (int value : values) {
+          notificationPrompts_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Duration autoClose_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Duration,
@@ -23873,7 +24618,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23882,13 +24627,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the autoClose field is set.
        */
       public boolean hasAutoClose() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23909,7 +24654,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23924,7 +24669,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         } else {
           autoCloseBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -23932,7 +24677,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23944,7 +24689,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         } else {
           autoCloseBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -23952,7 +24697,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23960,7 +24705,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeAutoClose(com.google.protobuf.Duration value) {
         if (autoCloseBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)
+          if (((bitField0_ & 0x00000004) != 0)
               && autoClose_ != null
               && autoClose_ != com.google.protobuf.Duration.getDefaultInstance()) {
             getAutoCloseBuilder().mergeFrom(value);
@@ -23971,7 +24716,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           autoCloseBuilder_.mergeFrom(value);
         }
         if (autoClose_ != null) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         return this;
@@ -23980,14 +24725,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
        * <code>.google.protobuf.Duration auto_close = 3;</code>
        */
       public Builder clearAutoClose() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         autoClose_ = null;
         if (autoCloseBuilder_ != null) {
           autoCloseBuilder_.dispose();
@@ -24000,14 +24745,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
        * <code>.google.protobuf.Duration auto_close = 3;</code>
        */
       public com.google.protobuf.Duration.Builder getAutoCloseBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return getAutoCloseFieldBuilder().getBuilder();
       }
@@ -24015,7 +24760,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -24034,7 +24779,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -24062,12 +24807,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           notificationChannelStrategy_ = java.util.Collections.emptyList();
 
       private void ensureNotificationChannelStrategyIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           notificationChannelStrategy_ =
               new java.util.ArrayList<
                   com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationChannelStrategy>(
                   notificationChannelStrategy_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -24325,7 +25070,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       public Builder clearNotificationChannelStrategy() {
         if (notificationChannelStrategyBuilder_ == null) {
           notificationChannelStrategy_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           notificationChannelStrategyBuilder_.clear();
@@ -24480,7 +25225,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   com.google.monitoring.v3.AlertPolicy.AlertStrategy
                       .NotificationChannelStrategyOrBuilder>(
                   notificationChannelStrategy_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           notificationChannelStrategy_ = null;
@@ -24561,8 +25306,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required if the policy exists. The resource name for this policy. The
-   * format is:
+   * Identifier. Required if the policy exists. The resource name for this
+   * policy. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    *
@@ -24573,7 +25318,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * part of the request.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -24593,8 +25338,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required if the policy exists. The resource name for this policy. The
-   * format is:
+   * Identifier. Required if the policy exists. The resource name for this
+   * policy. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    *
@@ -24605,7 +25350,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * part of the request.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -25120,9 +25865,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. This field is
-   * only set when the alert policy is invalid. An invalid alert policy will not
-   * generate incidents.
+   * Read-only description of how the alerting policy is invalid. This field is
+   * only set when the alerting policy is invalid. An invalid alerting policy
+   * will not generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
@@ -25137,9 +25882,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. This field is
-   * only set when the alert policy is invalid. An invalid alert policy will not
-   * generate incidents.
+   * Read-only description of how the alerting policy is invalid. This field is
+   * only set when the alerting policy is invalid. An invalid alerting policy
+   * will not generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
@@ -25154,9 +25899,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. This field is
-   * only set when the alert policy is invalid. An invalid alert policy will not
-   * generate incidents.
+   * Read-only description of how the alerting policy is invalid. This field is
+   * only set when the alerting policy is invalid. An invalid alerting policy
+   * will not generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
@@ -25378,7 +26123,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Control over how this alert policy's notification channels are notified.
+   * Control over how this alerting policy's notification channels are notified.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -25393,7 +26138,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Control over how this alert policy's notification channels are notified.
+   * Control over how this alerting policy's notification channels are notified.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -25410,7 +26155,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Control over how this alert policy's notification channels are notified.
+   * Control over how this alerting policy's notification channels are notified.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -25428,9 +26173,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The severity of an alert policy indicates how important incidents
-   * generated by that policy are. The severity level will be displayed on the
-   * Incident detail page and in notifications.
+   * Optional. The severity of an alerting policy indicates how important
+   * incidents generated by that policy are. The severity level will be
+   * displayed on the Incident detail page and in notifications.
    * </pre>
    *
    * <code>
@@ -25447,9 +26192,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The severity of an alert policy indicates how important incidents
-   * generated by that policy are. The severity level will be displayed on the
-   * Incident detail page and in notifications.
+   * Optional. The severity of an alerting policy indicates how important
+   * incidents generated by that policy are. The severity level will be
+   * displayed on the Incident detail page and in notifications.
    * </pre>
    *
    * <code>
@@ -25790,7 +26535,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A description of the conditions under which some aspect of your system is
    * considered to be "unhealthy" and the ways to notify people or services about
-   * this state. For an overview of alert policies, see
+   * this state. For an overview of alerting policies, see
    * [Introduction to Alerting](https://cloud.google.com/monitoring/alerts/).
    * </pre>
    *
@@ -26266,8 +27011,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26278,7 +27023,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -26297,8 +27042,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26309,7 +27054,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -26328,8 +27073,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26340,7 +27085,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -26358,8 +27103,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26370,7 +27115,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -26384,8 +27129,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26396,7 +27141,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -27853,9 +28598,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27869,9 +28614,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27889,9 +28634,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27913,9 +28658,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27934,9 +28679,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27963,9 +28708,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27984,9 +28729,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -28000,9 +28745,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -28018,9 +28763,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -28694,7 +29439,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28708,7 +29453,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28728,7 +29473,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28750,7 +29495,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28770,7 +29515,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28798,7 +29543,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28817,7 +29562,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28831,7 +29576,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28849,7 +29594,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28876,9 +29621,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>
@@ -28895,9 +29640,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>
@@ -28917,9 +29662,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>
@@ -28938,9 +29683,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>
@@ -28963,9 +29708,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>

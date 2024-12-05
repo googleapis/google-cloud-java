@@ -43,6 +43,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     displayName_ = "";
     scheduleResourceName_ = "";
     jobState_ = 0;
+    kernelName_ = "";
   }
 
   @java.lang.Override
@@ -3827,6 +3828,440 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public interface WorkbenchRuntimeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a Workbench Instances-based environment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime}
+   */
+  public static final class WorkbenchRuntime extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+      WorkbenchRuntimeOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use WorkbenchRuntime.newBuilder() to construct.
+    private WorkbenchRuntime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private WorkbenchRuntime() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WorkbenchRuntime();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.NotebookExecutionJobProto
+          .internal_static_google_cloud_aiplatform_v1_NotebookExecutionJob_WorkbenchRuntime_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.NotebookExecutionJobProto
+          .internal_static_google_cloud_aiplatform_v1_NotebookExecutionJob_WorkbenchRuntime_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.class,
+              com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime other =
+          (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a Workbench Instances-based environment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+        com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntimeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.NotebookExecutionJobProto
+            .internal_static_google_cloud_aiplatform_v1_NotebookExecutionJob_WorkbenchRuntime_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.NotebookExecutionJobProto
+            .internal_static_google_cloud_aiplatform_v1_NotebookExecutionJob_WorkbenchRuntime_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.class,
+                com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.NotebookExecutionJobProto
+            .internal_static_google_cloud_aiplatform_v1_NotebookExecutionJob_WorkbenchRuntime_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime build() {
+        com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime buildPartial() {
+        com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime result =
+            new com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+    private static final com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime();
+    }
+
+    public static com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkbenchRuntime> PARSER =
+        new com.google.protobuf.AbstractParser<WorkbenchRuntime>() {
+          @java.lang.Override
+          public WorkbenchRuntime parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<WorkbenchRuntime> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkbenchRuntime> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int notebookSourceCase_ = 0;
 
@@ -4022,6 +4457,52 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   public ExecutionIdentityCase getExecutionIdentityCase() {
     return ExecutionIdentityCase.forNumber(executionIdentityCase_);
+  }
+
+  private int runtimeEnvironmentCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object runtimeEnvironment_;
+
+  public enum RuntimeEnvironmentCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    WORKBENCH_RUNTIME(23),
+    RUNTIMEENVIRONMENT_NOT_SET(0);
+    private final int value;
+
+    private RuntimeEnvironmentCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RuntimeEnvironmentCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RuntimeEnvironmentCase forNumber(int value) {
+      switch (value) {
+        case 23:
+          return WORKBENCH_RUNTIME;
+        case 0:
+          return RUNTIMEENVIRONMENT_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RuntimeEnvironmentCase getRuntimeEnvironmentCase() {
+    return RuntimeEnvironmentCase.forNumber(runtimeEnvironmentCase_);
   }
 
   public static final int DATAFORM_REPOSITORY_SOURCE_FIELD_NUMBER = 3;
@@ -4568,6 +5049,66 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int WORKBENCH_RUNTIME_FIELD_NUMBER = 23;
+  /**
+   *
+   *
+   * <pre>
+   * The Workbench runtime configuration to use for the notebook execution.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+   * </code>
+   *
+   * @return Whether the workbenchRuntime field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkbenchRuntime() {
+    return runtimeEnvironmentCase_ == 23;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Workbench runtime configuration to use for the notebook execution.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+   * </code>
+   *
+   * @return The workbenchRuntime.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+      getWorkbenchRuntime() {
+    if (runtimeEnvironmentCase_ == 23) {
+      return (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+          runtimeEnvironment_;
+    }
+    return com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Workbench runtime configuration to use for the notebook execution.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntimeOrBuilder
+      getWorkbenchRuntimeOrBuilder() {
+    if (runtimeEnvironmentCase_ == 23) {
+      return (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+          runtimeEnvironment_;
+    }
+    return com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+        .getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -5109,6 +5650,59 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     return map.get(key);
   }
 
+  public static final int KERNEL_NAME_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kernelName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The name of the kernel to use during notebook execution. If unset, the
+   * default kernel is used.
+   * </pre>
+   *
+   * <code>string kernel_name = 20;</code>
+   *
+   * @return The kernelName.
+   */
+  @java.lang.Override
+  public java.lang.String getKernelName() {
+    java.lang.Object ref = kernelName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kernelName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the kernel to use during notebook execution. If unset, the
+   * default kernel is used.
+   * </pre>
+   *
+   * <code>string kernel_name = 20;</code>
+   *
+   * @return The bytes for kernelName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKernelNameBytes() {
+    java.lang.Object ref = kernelName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kernelName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 22;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
   /**
@@ -5117,7 +5711,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
    * <pre>
    * Customer-managed encryption key spec for the notebook execution job.
    * This field is auto-populated if the
-   * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+   * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+   * has an encryption spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
@@ -5134,7 +5729,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
    * <pre>
    * Customer-managed encryption key spec for the notebook execution job.
    * This field is auto-populated if the
-   * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+   * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+   * has an encryption spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
@@ -5153,7 +5749,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
    * <pre>
    * Customer-managed encryption key spec for the notebook execution job.
    * This field is auto-populated if the
-   * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+   * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+   * has an encryption spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
@@ -5240,8 +5837,17 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 19);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kernelName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, kernelName_);
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(22, getEncryptionSpec());
+    }
+    if (runtimeEnvironmentCase_ == 23) {
+      output.writeMessage(
+          23,
+          (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+              runtimeEnvironment_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5326,8 +5932,18 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, labels__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kernelName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, kernelName_);
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getEncryptionSpec());
+    }
+    if (runtimeEnvironmentCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23,
+              (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+                  runtimeEnvironment_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5366,6 +5982,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getKernelName().equals(other.getKernelName())) return false;
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
@@ -5416,6 +6033,14 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       case 0:
       default:
     }
+    if (!getRuntimeEnvironmentCase().equals(other.getRuntimeEnvironmentCase())) return false;
+    switch (runtimeEnvironmentCase_) {
+      case 23:
+        if (!getWorkbenchRuntime().equals(other.getWorkbenchRuntime())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5455,6 +6080,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + KERNEL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKernelName().hashCode();
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
@@ -5503,6 +6130,14 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       case 18:
         hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getServiceAccount().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (runtimeEnvironmentCase_) {
+      case 23:
+        hash = (37 * hash) + WORKBENCH_RUNTIME_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkbenchRuntime().hashCode();
         break;
       case 0:
       default:
@@ -5693,6 +6328,9 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       if (customEnvironmentSpecBuilder_ != null) {
         customEnvironmentSpecBuilder_.clear();
       }
+      if (workbenchRuntimeBuilder_ != null) {
+        workbenchRuntimeBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       executionTimeout_ = null;
@@ -5718,6 +6356,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      kernelName_ = "";
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -5731,6 +6370,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       executionSink_ = null;
       executionIdentityCase_ = 0;
       executionIdentity_ = null;
+      runtimeEnvironmentCase_ = 0;
+      runtimeEnvironment_ = null;
       return this;
     }
 
@@ -5768,41 +6409,44 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.NotebookExecutionJob result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.displayName_ = displayName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.executionTimeout_ =
             executionTimeoutBuilder_ == null ? executionTimeout_ : executionTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.scheduleResourceName_ = scheduleResourceName_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.jobState_ = jobState_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.kernelName_ = kernelName_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
         to_bitField0_ |= 0x00000010;
@@ -5831,6 +6475,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       result.executionSink_ = this.executionSink_;
       result.executionIdentityCase_ = executionIdentityCase_;
       result.executionIdentity_ = this.executionIdentity_;
+      result.runtimeEnvironmentCase_ = runtimeEnvironmentCase_;
+      result.runtimeEnvironment_ = this.runtimeEnvironment_;
+      if (runtimeEnvironmentCase_ == 23 && workbenchRuntimeBuilder_ != null) {
+        result.runtimeEnvironment_ = workbenchRuntimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5881,12 +6530,12 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasExecutionTimeout()) {
@@ -5894,7 +6543,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       if (!other.getScheduleResourceName().isEmpty()) {
         scheduleResourceName_ = other.scheduleResourceName_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.jobState_ != 0) {
@@ -5910,7 +6559,12 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
+      if (!other.getKernelName().isEmpty()) {
+        kernelName_ = other.kernelName_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
       }
@@ -5986,6 +6640,17 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             break;
           }
       }
+      switch (other.getRuntimeEnvironmentCase()) {
+        case WORKBENCH_RUNTIME:
+          {
+            mergeWorkbenchRuntime(other.getWorkbenchRuntime());
+            break;
+          }
+        case RUNTIMEENVIRONMENT_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -6015,13 +6680,13 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 18
             case 26:
@@ -6042,13 +6707,13 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getExecutionTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 42
             case 50:
               {
                 scheduleResourceName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 50
             case 66:
@@ -6068,25 +6733,25 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             case 80:
               {
                 jobState_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 106
             case 114:
@@ -6126,15 +6791,28 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 154
+            case 162:
+              {
+                kernelName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 162
             case 178:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    getWorkbenchRuntimeFieldBuilder().getBuilder(), extensionRegistry);
+                runtimeEnvironmentCase_ = 23;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6204,6 +6882,20 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public Builder clearExecutionIdentity() {
       executionIdentityCase_ = 0;
       executionIdentity_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int runtimeEnvironmentCase_ = 0;
+    private java.lang.Object runtimeEnvironment_;
+
+    public RuntimeEnvironmentCase getRuntimeEnvironmentCase() {
+      return RuntimeEnvironmentCase.forNumber(runtimeEnvironmentCase_);
+    }
+
+    public Builder clearRuntimeEnvironment() {
+      runtimeEnvironmentCase_ = 0;
+      runtimeEnvironment_ = null;
       onChanged();
       return this;
     }
@@ -7753,6 +8445,250 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime,
+            com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.Builder,
+            com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntimeOrBuilder>
+        workbenchRuntimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     *
+     * @return Whether the workbenchRuntime field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkbenchRuntime() {
+      return runtimeEnvironmentCase_ == 23;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     *
+     * @return The workbenchRuntime.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+        getWorkbenchRuntime() {
+      if (workbenchRuntimeBuilder_ == null) {
+        if (runtimeEnvironmentCase_ == 23) {
+          return (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+              runtimeEnvironment_;
+        }
+        return com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+            .getDefaultInstance();
+      } else {
+        if (runtimeEnvironmentCase_ == 23) {
+          return workbenchRuntimeBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     */
+    public Builder setWorkbenchRuntime(
+        com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime value) {
+      if (workbenchRuntimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runtimeEnvironment_ = value;
+        onChanged();
+      } else {
+        workbenchRuntimeBuilder_.setMessage(value);
+      }
+      runtimeEnvironmentCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     */
+    public Builder setWorkbenchRuntime(
+        com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.Builder
+            builderForValue) {
+      if (workbenchRuntimeBuilder_ == null) {
+        runtimeEnvironment_ = builderForValue.build();
+        onChanged();
+      } else {
+        workbenchRuntimeBuilder_.setMessage(builderForValue.build());
+      }
+      runtimeEnvironmentCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     */
+    public Builder mergeWorkbenchRuntime(
+        com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime value) {
+      if (workbenchRuntimeBuilder_ == null) {
+        if (runtimeEnvironmentCase_ == 23
+            && runtimeEnvironment_
+                != com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+                    .getDefaultInstance()) {
+          runtimeEnvironment_ =
+              com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.newBuilder(
+                      (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+                          runtimeEnvironment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          runtimeEnvironment_ = value;
+        }
+        onChanged();
+      } else {
+        if (runtimeEnvironmentCase_ == 23) {
+          workbenchRuntimeBuilder_.mergeFrom(value);
+        } else {
+          workbenchRuntimeBuilder_.setMessage(value);
+        }
+      }
+      runtimeEnvironmentCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     */
+    public Builder clearWorkbenchRuntime() {
+      if (workbenchRuntimeBuilder_ == null) {
+        if (runtimeEnvironmentCase_ == 23) {
+          runtimeEnvironmentCase_ = 0;
+          runtimeEnvironment_ = null;
+          onChanged();
+        }
+      } else {
+        if (runtimeEnvironmentCase_ == 23) {
+          runtimeEnvironmentCase_ = 0;
+          runtimeEnvironment_ = null;
+        }
+        workbenchRuntimeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.Builder
+        getWorkbenchRuntimeBuilder() {
+      return getWorkbenchRuntimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntimeOrBuilder
+        getWorkbenchRuntimeOrBuilder() {
+      if ((runtimeEnvironmentCase_ == 23) && (workbenchRuntimeBuilder_ != null)) {
+        return workbenchRuntimeBuilder_.getMessageOrBuilder();
+      } else {
+        if (runtimeEnvironmentCase_ == 23) {
+          return (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+              runtimeEnvironment_;
+        }
+        return com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Workbench runtime configuration to use for the notebook execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime,
+            com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.Builder,
+            com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntimeOrBuilder>
+        getWorkbenchRuntimeFieldBuilder() {
+      if (workbenchRuntimeBuilder_ == null) {
+        if (!(runtimeEnvironmentCase_ == 23)) {
+          runtimeEnvironment_ =
+              com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
+                  .getDefaultInstance();
+        }
+        workbenchRuntimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime,
+                com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.Builder,
+                com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntimeOrBuilder>(
+                (com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
+                    runtimeEnvironment_,
+                getParentForChildren(),
+                isClean());
+        runtimeEnvironment_ = null;
+      }
+      runtimeEnvironmentCase_ = 23;
+      onChanged();
+      return workbenchRuntimeBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -7818,7 +8754,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -7836,7 +8772,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -7859,7 +8795,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -7929,7 +8865,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7947,7 +8883,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -7970,7 +8906,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7993,7 +8929,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the executionTimeout field is set.
      */
     public boolean hasExecutionTimeout() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -8033,7 +8969,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         executionTimeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8052,7 +8988,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         executionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8067,7 +9003,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeExecutionTimeout(com.google.protobuf.Duration value) {
       if (executionTimeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && executionTimeout_ != null
             && executionTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getExecutionTimeoutBuilder().mergeFrom(value);
@@ -8078,7 +9014,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         executionTimeoutBuilder_.mergeFrom(value);
       }
       if (executionTimeout_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -8093,7 +9029,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration execution_timeout = 5;</code>
      */
     public Builder clearExecutionTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       executionTimeout_ = null;
       if (executionTimeoutBuilder_ != null) {
         executionTimeoutBuilder_.dispose();
@@ -8112,7 +9048,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration execution_timeout = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getExecutionTimeoutBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getExecutionTimeoutFieldBuilder().getBuilder();
     }
@@ -8234,7 +9170,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       scheduleResourceName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8255,7 +9191,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder clearScheduleResourceName() {
       scheduleResourceName_ = getDefaultInstance().getScheduleResourceName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -8281,7 +9217,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       scheduleResourceName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8320,7 +9256,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder setJobStateValue(int value) {
       jobState_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -8361,7 +9297,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       jobState_ = value.getNumber();
       onChanged();
       return this;
@@ -8380,7 +9316,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearJobState() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       jobState_ = 0;
       onChanged();
       return this;
@@ -8404,7 +9340,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -8446,7 +9382,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8467,7 +9403,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8484,7 +9420,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && status_ != null
             && status_ != com.google.rpc.Status.getDefaultInstance()) {
           getStatusBuilder().mergeFrom(value);
@@ -8495,7 +9431,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -8512,7 +9448,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -8533,7 +9469,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -8600,7 +9536,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -8644,7 +9580,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8665,7 +9601,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8682,7 +9618,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -8693,7 +9629,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -8710,7 +9646,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -8731,7 +9667,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -8804,7 +9740,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -8850,7 +9786,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -8872,7 +9808,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -8890,7 +9826,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -8901,7 +9837,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -8919,7 +9855,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -8941,7 +9877,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -9012,7 +9948,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return labels_;
     }
@@ -9129,7 +10065,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -9160,7 +10096,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -9188,7 +10124,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return this;
     }
     /**
@@ -9210,7 +10146,118 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
+      return this;
+    }
+
+    private java.lang.Object kernelName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the kernel to use during notebook execution. If unset, the
+     * default kernel is used.
+     * </pre>
+     *
+     * <code>string kernel_name = 20;</code>
+     *
+     * @return The kernelName.
+     */
+    public java.lang.String getKernelName() {
+      java.lang.Object ref = kernelName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kernelName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the kernel to use during notebook execution. If unset, the
+     * default kernel is used.
+     * </pre>
+     *
+     * <code>string kernel_name = 20;</code>
+     *
+     * @return The bytes for kernelName.
+     */
+    public com.google.protobuf.ByteString getKernelNameBytes() {
+      java.lang.Object ref = kernelName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kernelName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the kernel to use during notebook execution. If unset, the
+     * default kernel is used.
+     * </pre>
+     *
+     * <code>string kernel_name = 20;</code>
+     *
+     * @param value The kernelName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKernelName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kernelName_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the kernel to use during notebook execution. If unset, the
+     * default kernel is used.
+     * </pre>
+     *
+     * <code>string kernel_name = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKernelName() {
+      kernelName_ = getDefaultInstance().getKernelName();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the kernel to use during notebook execution. If unset, the
+     * default kernel is used.
+     * </pre>
+     *
+     * <code>string kernel_name = 20;</code>
+     *
+     * @param value The bytes for kernelName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKernelNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kernelName_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
 
@@ -9226,7 +10273,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
@@ -9234,7 +10282,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -9242,7 +10290,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
@@ -9264,7 +10313,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
@@ -9278,7 +10328,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9288,7 +10338,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
@@ -9300,7 +10351,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9310,14 +10361,15 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
@@ -9329,7 +10381,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         encryptionSpecBuilder_.mergeFrom(value);
       }
       if (encryptionSpec_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -9340,13 +10392,14 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -9361,13 +10414,14 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -9377,7 +10431,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>
@@ -9397,7 +10452,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <pre>
      * Customer-managed encryption key spec for the notebook execution job.
      * This field is auto-populated if the
-     * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+     * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1.NotebookRuntimeTemplate]
+     * has an encryption spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 22;</code>

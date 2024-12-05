@@ -49,6 +49,10 @@ public final class NotebookExecutionJobProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_CustomEnvironmentSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_WorkbenchRuntime_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_WorkbenchRuntime_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_LabelsEntry_fieldAccessorTable;
@@ -72,7 +76,7 @@ public final class NotebookExecutionJobProto {
           + "ogle/cloud/aiplatform/v1beta1/network_sp"
           + "ec.proto\032\036google/protobuf/duration.proto"
           + "\032\037google/protobuf/timestamp.proto\032\027googl"
-          + "e/rpc/status.proto\"\225\017\n\024NotebookExecution"
+          + "e/rpc/status.proto\"\272\020\n\024NotebookExecution"
           + "Job\022t\n\032dataform_repository_source\030\003 \001(\0132"
           + "N.google.cloud.aiplatform.v1beta1.Notebo"
           + "okExecutionJob.DataformRepositorySourceH"
@@ -88,46 +92,50 @@ public final class NotebookExecutionJobProto {
           + "ogle.cloud.aiplatform.v1beta1.NotebookEx"
           + "ecutionJob.CustomEnvironmentSpecH\001\022\030\n\016gc"
           + "s_output_uri\030\010 \001(\tH\002\022\030\n\016execution_user\030\t"
-          + " \001(\tH\003\022\031\n\017service_account\030\022 \001(\tH\003\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\002 \001(\t\0224\n\021ex"
-          + "ecution_timeout\030\005 \001(\0132\031.google.protobuf."
-          + "Duration\022J\n\026schedule_resource_name\030\006 \001(\t"
-          + "B*\340A\003\372A$\n\"aiplatform.googleapis.com/Sche"
-          + "dule\022A\n\tjob_state\030\n \001(\0162).google.cloud.a"
-          + "iplatform.v1beta1.JobStateB\003\340A\003\022\'\n\006statu"
-          + "s\030\013 \001(\0132\022.google.rpc.StatusB\003\340A\003\0224\n\013crea"
-          + "te_time\030\014 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\0224\n\013update_time\030\r \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\022Q\n\006labels\030\023 \003(\0132A.g"
-          + "oogle.cloud.aiplatform.v1beta1.NotebookE"
-          + "xecutionJob.LabelsEntry\022H\n\017encryption_sp"
-          + "ec\030\026 \001(\0132/.google.cloud.aiplatform.v1bet"
-          + "a1.EncryptionSpec\032Y\n\030DataformRepositoryS"
-          + "ource\022)\n!dataform_repository_resource_na"
-          + "me\030\001 \001(\t\022\022\n\ncommit_sha\030\002 \001(\t\0324\n\021GcsNoteb"
-          + "ookSource\022\013\n\003uri\030\001 \001(\t\022\022\n\ngeneration\030\002 \001"
-          + "(\t\032\'\n\024DirectNotebookSource\022\017\n\007content\030\001 "
-          + "\001(\014\032\362\001\n\025CustomEnvironmentSpec\022B\n\014machine"
-          + "_spec\030\001 \001(\0132,.google.cloud.aiplatform.v1"
-          + "beta1.MachineSpec\022Q\n\024persistent_disk_spe"
-          + "c\030\002 \001(\01323.google.cloud.aiplatform.v1beta"
-          + "1.PersistentDiskSpec\022B\n\014network_spec\030\003 \001"
-          + "(\0132,.google.cloud.aiplatform.v1beta1.Net"
-          + "workSpec\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001:\271\001\352A\265\001\n.aiplatform.googl"
-          + "eapis.com/NotebookExecutionJob\022Vprojects"
-          + "/{project}/locations/{location}/notebook"
-          + "ExecutionJobs/{notebook_execution_job}*\025"
-          + "notebookExecutionJobs2\024notebookExecution"
-          + "JobB\021\n\017notebook_sourceB\022\n\020environment_sp"
-          + "ecB\020\n\016execution_sinkB\024\n\022execution_identi"
-          + "tyB\360\001\n#com.google.cloud.aiplatform.v1bet"
-          + "a1B\031NotebookExecutionJobProtoP\001ZCcloud.g"
-          + "oogle.com/go/aiplatform/apiv1beta1/aipla"
-          + "tformpb;aiplatformpb\252\002\037Google.Cloud.AIPl"
-          + "atform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform"
-          + "\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1"
-          + "beta1b\006proto3"
+          + " \001(\tH\003\022\031\n\017service_account\030\022 \001(\tH\003\022c\n\021wor"
+          + "kbench_runtime\030\027 \001(\0132F.google.cloud.aipl"
+          + "atform.v1beta1.NotebookExecutionJob.Work"
+          + "benchRuntimeH\004\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014dis"
+          + "play_name\030\002 \001(\t\0224\n\021execution_timeout\030\005 \001"
+          + "(\0132\031.google.protobuf.Duration\022J\n\026schedul"
+          + "e_resource_name\030\006 \001(\tB*\340A\003\372A$\n\"aiplatfor"
+          + "m.googleapis.com/Schedule\022A\n\tjob_state\030\n"
+          + " \001(\0162).google.cloud.aiplatform.v1beta1.J"
+          + "obStateB\003\340A\003\022\'\n\006status\030\013 \001(\0132\022.google.rp"
+          + "c.StatusB\003\340A\003\0224\n\013create_time\030\014 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013update_ti"
+          + "me\030\r \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\022Q\n\006labels\030\023 \003(\0132A.google.cloud.aiplatf"
+          + "orm.v1beta1.NotebookExecutionJob.LabelsE"
+          + "ntry\022\023\n\013kernel_name\030\024 \001(\t\022H\n\017encryption_"
+          + "spec\030\026 \001(\0132/.google.cloud.aiplatform.v1b"
+          + "eta1.EncryptionSpec\032Y\n\030DataformRepositor"
+          + "ySource\022)\n!dataform_repository_resource_"
+          + "name\030\001 \001(\t\022\022\n\ncommit_sha\030\002 \001(\t\0324\n\021GcsNot"
+          + "ebookSource\022\013\n\003uri\030\001 \001(\t\022\022\n\ngeneration\030\002"
+          + " \001(\t\032\'\n\024DirectNotebookSource\022\017\n\007content\030"
+          + "\001 \001(\014\032\362\001\n\025CustomEnvironmentSpec\022B\n\014machi"
+          + "ne_spec\030\001 \001(\0132,.google.cloud.aiplatform."
+          + "v1beta1.MachineSpec\022Q\n\024persistent_disk_s"
+          + "pec\030\002 \001(\01323.google.cloud.aiplatform.v1be"
+          + "ta1.PersistentDiskSpec\022B\n\014network_spec\030\003"
+          + " \001(\0132,.google.cloud.aiplatform.v1beta1.N"
+          + "etworkSpec\032\022\n\020WorkbenchRuntime\032-\n\013Labels"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\271\001"
+          + "\352A\265\001\n.aiplatform.googleapis.com/Notebook"
+          + "ExecutionJob\022Vprojects/{project}/locatio"
+          + "ns/{location}/notebookExecutionJobs/{not"
+          + "ebook_execution_job}*\025notebookExecutionJ"
+          + "obs2\024notebookExecutionJobB\021\n\017notebook_so"
+          + "urceB\022\n\020environment_specB\020\n\016execution_si"
+          + "nkB\024\n\022execution_identityB\025\n\023runtime_envi"
+          + "ronmentB\360\001\n#com.google.cloud.aiplatform."
+          + "v1beta1B\031NotebookExecutionJobProtoP\001ZCcl"
+          + "oud.google.com/go/aiplatform/apiv1beta1/"
+          + "aiplatformpb;aiplatformpb\252\002\037Google.Cloud"
+          + ".AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPla"
+          + "tform\\V1beta1\352\002\"Google::Cloud::AIPlatfor"
+          + "m::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -157,6 +165,7 @@ public final class NotebookExecutionJobProto {
               "GcsOutputUri",
               "ExecutionUser",
               "ServiceAccount",
+              "WorkbenchRuntime",
               "Name",
               "DisplayName",
               "ExecutionTimeout",
@@ -166,11 +175,13 @@ public final class NotebookExecutionJobProto {
               "CreateTime",
               "UpdateTime",
               "Labels",
+              "KernelName",
               "EncryptionSpec",
               "NotebookSource",
               "EnvironmentSpec",
               "ExecutionSink",
               "ExecutionIdentity",
+              "RuntimeEnvironment",
             });
     internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_DataformRepositorySource_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_descriptor
@@ -212,10 +223,18 @@ public final class NotebookExecutionJobProto {
             new java.lang.String[] {
               "MachineSpec", "PersistentDiskSpec", "NetworkSpec",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_LabelsEntry_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_WorkbenchRuntime_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_descriptor
             .getNestedTypes()
             .get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_WorkbenchRuntime_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_WorkbenchRuntime_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_descriptor
+            .getNestedTypes()
+            .get(5);
     internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_LabelsEntry_descriptor,

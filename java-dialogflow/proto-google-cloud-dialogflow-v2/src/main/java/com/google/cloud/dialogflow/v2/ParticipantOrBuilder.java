@@ -129,9 +129,9 @@ public interface ParticipantOrBuilder
    *    Dialogflow adds the obfuscated user id with the participant.
    *
    * 2. If you set this field in
-   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
    *    or
-   *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
+   *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
    *
@@ -173,9 +173,9 @@ public interface ParticipantOrBuilder
    *    Dialogflow adds the obfuscated user id with the participant.
    *
    * 2. If you set this field in
-   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
    *    or
-   *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
+   *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
    *

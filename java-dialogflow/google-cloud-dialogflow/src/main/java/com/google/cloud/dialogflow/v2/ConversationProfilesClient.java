@@ -120,7 +120,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> CreateConversationProfile</td>
  *      <td><p> Creates a conversation profile in the specified project.
- * <p>  [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated in the response. You can retrieve them via [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile] API.</td>
+ * <p>  [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time] and [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time] aren't populated in the response. You can retrieve them via [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile] API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -141,7 +141,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> UpdateConversationProfile</td>
  *      <td><p> Updates the specified conversation profile.
- * <p>  [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated in the response. You can retrieve them via [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile] API.</td>
+ * <p>  [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time] and [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time] aren't populated in the response. You can retrieve them via [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile] API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -729,8 +729,10 @@ public class ConversationProfilesClient implements BackgroundResource {
   /**
    * Creates a conversation profile in the specified project.
    *
-   * <p>[ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated
-   * in the response. You can retrieve them via
+   * <p>[ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+   * and
+   * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+   * aren't populated in the response. You can retrieve them via
    * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
    * API.
    *
@@ -770,8 +772,10 @@ public class ConversationProfilesClient implements BackgroundResource {
   /**
    * Creates a conversation profile in the specified project.
    *
-   * <p>[ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated
-   * in the response. You can retrieve them via
+   * <p>[ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+   * and
+   * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+   * aren't populated in the response. You can retrieve them via
    * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
    * API.
    *
@@ -811,8 +815,10 @@ public class ConversationProfilesClient implements BackgroundResource {
   /**
    * Creates a conversation profile in the specified project.
    *
-   * <p>[ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated
-   * in the response. You can retrieve them via
+   * <p>[ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+   * and
+   * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+   * aren't populated in the response. You can retrieve them via
    * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
    * API.
    *
@@ -852,8 +858,10 @@ public class ConversationProfilesClient implements BackgroundResource {
   /**
    * Creates a conversation profile in the specified project.
    *
-   * <p>[ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated
-   * in the response. You can retrieve them via
+   * <p>[ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+   * and
+   * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+   * aren't populated in the response. You can retrieve them via
    * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
    * API.
    *
@@ -888,8 +896,10 @@ public class ConversationProfilesClient implements BackgroundResource {
   /**
    * Creates a conversation profile in the specified project.
    *
-   * <p>[ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated
-   * in the response. You can retrieve them via
+   * <p>[ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+   * and
+   * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+   * aren't populated in the response. You can retrieve them via
    * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
    * API.
    *
@@ -924,8 +934,10 @@ public class ConversationProfilesClient implements BackgroundResource {
   /**
    * Updates the specified conversation profile.
    *
-   * <p>[ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated
-   * in the response. You can retrieve them via
+   * <p>[ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+   * and
+   * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+   * aren't populated in the response. You can retrieve them via
    * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
    * API.
    *
@@ -964,8 +976,10 @@ public class ConversationProfilesClient implements BackgroundResource {
   /**
    * Updates the specified conversation profile.
    *
-   * <p>[ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated
-   * in the response. You can retrieve them via
+   * <p>[ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+   * and
+   * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+   * aren't populated in the response. You can retrieve them via
    * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
    * API.
    *
@@ -1000,8 +1014,10 @@ public class ConversationProfilesClient implements BackgroundResource {
   /**
    * Updates the specified conversation profile.
    *
-   * <p>[ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated
-   * in the response. You can retrieve them via
+   * <p>[ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+   * and
+   * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+   * aren't populated in the response. You can retrieve them via
    * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
    * API.
    *

@@ -23,7 +23,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The message returned from the DetectIntent method.
+ * The message returned from the [DetectIntent][] method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.DetectIntentResponse}
@@ -508,7 +508,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The message returned from the DetectIntent method.
+   * The message returned from the [DetectIntent][] method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.DetectIntentResponse}
