@@ -486,8 +486,9 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
    * Fills a non-repetaed protoField with the json data.
    *
    * @param protoMsg The protocol buffer message being constructed
-   * @param fieldDescriptor
-   * @param fieldSchema
+   * @param fieldDescriptor Proto format to be transmitted over the wire (derived from table schema
+   *     via BQTableSchemaToProtoDescriptor.BQTableSchemaModeMap)
+   * @param fieldSchema Actual table column schema type if available
    * @param json
    * @param exactJsonKeyName Exact key name in JSONObject instead of lowercased version
    * @param currentScope Debugging purposes
@@ -647,6 +648,12 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
         } else if (val instanceof Long) {
           protoMsg.setField(fieldDescriptor, val);
           return;
+        } else if (val instanceof Byte) {
+          protoMsg.setField(fieldDescriptor, Long.valueOf((Byte) val));
+          return;
+        } else if (val instanceof Short) {
+          protoMsg.setField(fieldDescriptor, Long.valueOf((Short) val));
+          return;
         }
         if (val instanceof String) {
           Long parsed = Longs.tryParse((String) val);
@@ -727,8 +734,9 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
    * Fills a repeated protoField with the json data.
    *
    * @param protoMsg The protocol buffer message being constructed
-   * @param fieldDescriptor
-   * @param fieldSchema
+   * @param fieldDescriptor Proto format to be transmitted over the wire (derived from table schema
+   *     via BQTableSchemaToProtoDescriptor.BQTableSchemaModeMap)
+   * @param fieldSchema Actual table column schema type if available
    * @param json If root level has no matching fields, throws exception.
    * @param exactJsonKeyName Exact key name in JSONObject instead of lowercased version
    * @param currentScope Debugging purposes
@@ -912,6 +920,10 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
             protoMsg.addRepeatedField(fieldDescriptor, Long.valueOf((Integer) val));
           } else if (val instanceof Long) {
             protoMsg.addRepeatedField(fieldDescriptor, val);
+          } else if (val instanceof Byte) {
+            protoMsg.addRepeatedField(fieldDescriptor, Long.valueOf((Byte) val));
+          } else if (val instanceof Short) {
+            protoMsg.addRepeatedField(fieldDescriptor, Long.valueOf((Short) val));
           } else if (val instanceof String) {
             Long parsed = Longs.tryParse((String) val);
             if (parsed != null) {

@@ -30,7 +30,9 @@ import com.google.protobuf.Message;
 import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -579,13 +581,53 @@ public class JsonToProtoMessageTest {
     TestInt64 expectedProto =
         TestInt64.newBuilder().setByte(1).setShort(1).setInt(1).setLong(1).setString(1).build();
     JSONObject json = new JSONObject();
-    json.put("byte", (byte) 1);
-    json.put("short", (short) 1);
+    json.put("byte", (byte) 1); // This does NOT actually verify byte as it is converted to int
+    json.put("short", (short) 1); // This does NOT actually verify short as it is converted to int
     json.put("int", 1);
     json.put("long", 1L);
     json.put("string", "1");
     DynamicMessage protoMsg =
         JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt64.getDescriptor(), json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testInt64Extended() throws Exception {
+    TestInt64 expectedProto =
+        TestInt64.newBuilder().setByte(1).setShort(1).setInt(1).setLong(1).setString(1).build();
+    Map map = new HashMap();
+    map.put("byte", (byte) 1);
+    map.put("short", (short) 1);
+    map.put("int", (int) 1);
+    map.put("long", (long) 1);
+    map.put("string", "1");
+    JSONObject json = new JSONObject(map);
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt64.getDescriptor(), json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testInt64Repeated() throws Exception {
+    RepeatedInt64 expectedProto =
+        RepeatedInt64.newBuilder()
+            .addTestRepeated(1)
+            .addTestRepeated(1)
+            .addTestRepeated(1)
+            .addTestRepeated(1)
+            .addTestRepeated(1)
+            .build();
+    Collection collection = new ArrayList();
+    collection.add((byte) 1);
+    collection.add((short) 1);
+    collection.add((int) 1);
+    collection.add((long) 1);
+    collection.add("1");
+    JSONArray array = new JSONArray(collection);
+    JSONObject json = new JSONObject();
+    json.put("test_repeated", array);
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(RepeatedInt64.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
