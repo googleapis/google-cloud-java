@@ -15,8 +15,11 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import com.google.auth.Credentials;
 import com.google.common.base.MoreObjects;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import java.io.IOException;
 
 /**
  * Set a custom OpenTelemetry instance.
@@ -26,8 +29,8 @@ import io.opentelemetry.api.OpenTelemetry;
  * <pre>{@code
  * SdkMeterProviderBuilder sdkMeterProvider = SdkMeterProvider.builder();
  *
- * // register Builtin metrics on your meter provider with default credentials
- * BuiltinMetricsView.registerBuiltinMetrics(sdkMeterProvider);
+ * // Set up SdkMeterProvider for client side metrics
+ * CustomOpenTelemetryMetricsProvider.setupSdkMeterProvider(sdkMeterProvider);
  *
  * // register other metrics reader and views
  * sdkMeterProvider.registerMetricReader(..);
@@ -61,6 +64,32 @@ public final class CustomOpenTelemetryMetricsProvider implements MetricsProvider
 
   public OpenTelemetry getOpenTelemetry() {
     return otel;
+  }
+
+  /**
+   * Convenient method to set up SdkMeterProviderBuilder with the default credential and endpoint.
+   */
+  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder) throws IOException {
+    setupSdkMeterProvider(builder, null, null);
+  }
+
+  /** Convenient method to set up SdkMeterProviderBuilder with a custom credential. */
+  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder, Credentials credentials)
+      throws IOException {
+    setupSdkMeterProvider(builder, credentials, null);
+  }
+
+  /** Convenient method to set up SdkMeterProviderBuilder with a custom endpoint. */
+  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder, String endpoint)
+      throws IOException {
+    setupSdkMeterProvider(builder, null, endpoint);
+  }
+
+  /** Convenient method to set up SdkMeterProviderBuilder with a custom credentials and endpoint. */
+  public static void setupSdkMeterProvider(
+      SdkMeterProviderBuilder builder, Credentials credentials, String endpoint)
+      throws IOException {
+    BuiltinMetricsView.registerBuiltinMetrics(credentials, builder, endpoint);
   }
 
   @Override

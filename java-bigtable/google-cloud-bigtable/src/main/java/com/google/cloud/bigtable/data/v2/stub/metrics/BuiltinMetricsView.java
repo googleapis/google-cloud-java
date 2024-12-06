@@ -29,8 +29,11 @@ import javax.annotation.Nullable;
 /**
  * A util class to register built-in metrics on a custom OpenTelemetry instance. This is for
  * advanced usage, and is only necessary when wanting to write built-in metrics to cloud monitoring
- * and custom sinks. Please refer to {@link CustomOpenTelemetryMetricsProvider} for example usage.
+ * and custom sinks.
+ *
+ * @deprecated Use methods in {@link CustomOpenTelemetryMetricsProvider} instead.
  */
+@Deprecated
 public class BuiltinMetricsView {
 
   private BuiltinMetricsView() {}
