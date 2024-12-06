@@ -2,7 +2,7 @@
 
 1. Clone this repo and navigate to the `snippets` directory.
    ```shell
-   git clone https://github.com/googlepis/java-pubsub
+   git clone https://github.com/googleapis/java-pubsub
    cd java-pubsub/samples/snippets
    ```
 
